@@ -25,9 +25,9 @@ export default async function AdminPage() {
     const serviceRegs = registrations.filter((r: any) => r.service_id === s.id);
     return {
       ...s,
-      sound: serviceRegs.filter((r: any) => r.team === 'SOUND').map((r: any) => users.find((u: any) => u.id === r.user_id)),
-      singer: serviceRegs.filter((r: any) => r.team === 'SINGER').map((r: any) => users.find((u: any) => u.id === r.user_id)),
-      musician: serviceRegs.filter((r: any) => r.team === 'MUSICIAN').map((r: any) => users.find((u: any) => u.id === r.user_id)),
+      sound: serviceRegs.filter((r: any) => r.team === 'SOUND').map((r: any) => users.find((u: any) => u.id === r.user_id)).filter(Boolean),
+      singer: serviceRegs.filter((r: any) => r.team === 'SINGER').map((r: any) => users.find((u: any) => u.id === r.user_id)).filter(Boolean),
+      musician: serviceRegs.filter((r: any) => r.team === 'MUSICIAN').map((r: any) => users.find((u: any) => u.id === r.user_id)).filter(Boolean),
     };
   });
 
