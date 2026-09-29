@@ -65,7 +65,7 @@ export default async function ProfilePage() {
               <p className="font-bold opacity-50 text-center py-8">No serving history yet.</p>
             ) : (
               <div className="space-y-4">
-                {history.map((h, i) => (
+                {history.map((h: any, i: any) => (
                   <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between border-b-2 border-brand-black pb-4 last:border-0">
                     <div>
                       <h3 className="font-bold text-lg">{h.title}</h3>

@@ -60,7 +60,7 @@ export default async function SchedulePage({
     `, uniqueServiceIds);
 
     for (const id of uniqueServiceIds) {
-      registrationsMap[id] = registrations.filter(r => r.service_id === id);
+      registrationsMap[id] = registrations.filter((r: any) => r.service_id === id);
     }
   }
 

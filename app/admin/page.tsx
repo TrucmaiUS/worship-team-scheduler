@@ -21,13 +21,13 @@ export default async function AdminPage() {
   };
 
   // Build grid data for services
-  const gridData = services.map(s => {
-    const serviceRegs = registrations.filter(r => r.service_id === s.id);
+  const gridData = services.map((s: any) => {
+    const serviceRegs = registrations.filter((r: any) => r.service_id === s.id);
     return {
       ...s,
-      sound: serviceRegs.filter(r => r.team === 'SOUND').map(r => users.find(u => u.id === r.user_id)),
-      singer: serviceRegs.filter(r => r.team === 'SINGER').map(r => users.find(u => u.id === r.user_id)),
-      musician: serviceRegs.filter(r => r.team === 'MUSICIAN').map(r => users.find(u => u.id === r.user_id)),
+      sound: serviceRegs.filter((r: any) => r.team === 'SOUND').map((r: any) => users.find((u: any) => u.id === r.user_id)),
+      singer: serviceRegs.filter((r: any) => r.team === 'SINGER').map((r: any) => users.find((u: any) => u.id === r.user_id)),
+      musician: serviceRegs.filter((r: any) => r.team === 'MUSICIAN').map((r: any) => users.find((u: any) => u.id === r.user_id)),
     };
   });
 
