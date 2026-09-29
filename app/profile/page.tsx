@@ -13,14 +13,15 @@ export default async function ProfilePage() {
     redirect('/login');
   }
 
-  const user = db.prepare('SELECT * FROM users WHERE id = ?').get(session.id) as any;
-  const history = db.prepare(`
+  const { rows: userRows } = await db.query('SELECT * FROM users WHERE id = $1', [session.id]);
+  const user = userRows[0] as any;
+  const { rows: history } = await db.query(`
     SELECT r.team, s.title, s.date, s.start_time 
     FROM registrations r
     JOIN services s ON r.service_id = s.id
-    WHERE r.user_id = ?
+    WHERE r.user_id = $1
     ORDER BY s.date DESC
-  `).all(session.id) as any[];
+  `, [session.id]);
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-cream">

@@ -5,12 +5,17 @@ import { Button } from '@/components/ui/Button';
 import { adminAssignMember, adminRemoveAssignment } from './actions';
 
 export default function AdminDashboardClient({ gridData, allUsers }: any) {
+  const [activeTab, setActiveTab] = useState<'SCHEDULE' | 'TABLE' | 'MEMBERS'>('SCHEDULE');
   const [modalState, setModalState] = useState<{ open: boolean, serviceId: string, team: string }>({
     open: false,
     serviceId: '',
     team: ''
   });
   const [loading, setLoading] = useState(false);
+
+  // Determine current month in YYYY-MM
+  const currentMonthStr = new Date().toISOString().slice(0, 7);
+  const [selectedMonth, setSelectedMonth] = useState(currentMonthStr);
 
   const handleAssign = async (userId: string) => {
     setLoading(true);
@@ -58,24 +63,222 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
     );
   };
 
+  // Extract unique years and months from gridData
+  const years = Array.from(new Set(gridData.map((s: any) => s.date.slice(0, 4)))).sort() as string[];
+  const currentYearStr = new Date().getFullYear().toString();
+  const [selectedYear, setSelectedYear] = useState(years.includes(currentYearStr) ? currentYearStr : years[0] || '');
+
+  // Extract unique months for the selected year
+  const monthsInYear = Array.from(
+    new Set(
+      gridData
+        .filter((s: any) => s.date.startsWith(selectedYear))
+        .map((s: any) => s.date.slice(0, 7))
+    )
+  ).sort() as string[];
+
+  // Fallback to current month if selected is not in data
+  const filteredGridData = gridData.filter((s: any) => s.date.startsWith(selectedMonth));
+
+  const handleYearSelect = (y: string) => {
+    setSelectedYear(y);
+    const firstMonth = gridData.find((s: any) => s.date.startsWith(y))?.date.slice(0, 7);
+    if (firstMonth) setSelectedMonth(firstMonth);
+  };
+
+  // Group filtered data by Week (1-5)
+  const groupedByWeek = [1, 2, 3, 4, 5].map(weekNum => {
+    return {
+      weekNum,
+      services: filteredGridData.filter((s: any) => {
+        const d = new Date(s.date);
+        const w = Math.ceil(d.getDate() / 7);
+        return w === weekNum;
+      })
+    };
+  });
+
   return (
-    <div className="overflow-x-auto bg-brand-white border-8 border-brand-black shadow-[12px_12px_0_0_#111111]">
-      <div className="min-w-[800px]">
-        {gridData.map((service: any) => (
-          <div key={service.id} className="flex border-b-4 border-brand-black last:border-b-0">
-            <div className="w-1/4 p-4 border-r-4 border-brand-black bg-brand-cream/50 flex flex-col justify-center">
-              <h3 className="font-bold text-brand-blue uppercase tracking-widest">{new Date(service.date).toLocaleDateString('en-US', { weekday: 'long' })}</h3>
-              <p className="font-bold">{service.start_time}</p>
-              <p className="text-sm font-bold opacity-70">{service.title}</p>
-            </div>
-            
-            {renderTeamCell(service, 'SOUND', service.sound)}
-            {renderTeamCell(service, 'SINGER', service.singer)}
-            {renderTeamCell(service, 'MUSICIAN', service.musician)}
+    <div>
+      {/* HEADER: TABS (Left) & FILTERS (Right) */}
+      <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-8">
+        {/* TABS */}
+        <div className="flex gap-4">
+          <Button 
+            variant={activeTab === 'SCHEDULE' ? 'primary' : 'outline'} 
+            className={`border-4 ${activeTab === 'SCHEDULE' ? 'rotate-1 shadow-[4px_4px_0_0_#111111]' : ''}`}
+            onClick={() => setActiveTab('SCHEDULE')}
+          >
+            SCHEDULE
+          </Button>
+          <Button 
+            variant={activeTab === 'TABLE' ? 'primary' : 'outline'} 
+            className={`border-4 ${activeTab === 'TABLE' ? 'rotate-1 shadow-[4px_4px_0_0_#111111]' : ''}`}
+            onClick={() => setActiveTab('TABLE')}
+          >
+            TABLE VIEW
+          </Button>
+          <Button 
+            variant={activeTab === 'MEMBERS' ? 'sticker' : 'outline'}
+            className={`border-4 ${activeTab === 'MEMBERS' ? '-rotate-1 shadow-[4px_4px_0_0_#111111]' : ''}`}
+            onClick={() => setActiveTab('MEMBERS')}
+          >
+            MEMBERS
+          </Button>
+        </div>
+
+        {/* FILTERS */}
+        {(activeTab === 'SCHEDULE' || activeTab === 'TABLE') && (
+          <div className="flex gap-2 items-center bg-brand-white px-4 py-2 border-2 border-brand-black">
+            <label className="font-bold uppercase tracking-widest text-xs opacity-70">Filter:</label>
+            <select 
+              value={selectedYear}
+              onChange={(e) => handleYearSelect(e.target.value)}
+              className="border-none bg-transparent font-bold outline-none cursor-pointer"
+            >
+              {years.map(y => <option key={y} value={y}>{y}</option>)}
+            </select>
+            <span className="opacity-50">/</span>
+            <select 
+              value={selectedMonth}
+              onChange={(e) => setSelectedMonth(e.target.value)}
+              className="border-none bg-transparent font-bold outline-none cursor-pointer uppercase"
+            >
+              {monthsInYear.map(m => {
+                const [year, month] = m.split('-');
+                const dateObj = new Date(parseInt(year), parseInt(month) - 1, 1);
+                return (
+                  <option key={m} value={m}>
+                    {dateObj.toLocaleDateString('en-US', { month: 'short' })}
+                  </option>
+                );
+              })}
+            </select>
           </div>
-        ))}
+        )}
       </div>
 
+      {activeTab === 'SCHEDULE' && (
+        <div className="animate-in fade-in slide-in-from-bottom-2">
+          
+          <div className="space-y-12">
+            {filteredGridData.length === 0 ? (
+              <div className="p-8 text-center font-bold text-xl opacity-50 border-4 border-brand-black bg-brand-white border-dashed">
+                No events found for this month.
+              </div>
+            ) : (
+              groupedByWeek.map(week => {
+                if (week.services.length === 0) return null;
+                
+                return (
+                  <div key={week.weekNum} className="relative">
+                    <h3 className="absolute -top-4 left-4 bg-brand-blue text-brand-white font-bold px-4 py-1 border-4 border-brand-black z-10 shadow-[4px_4px_0_0_#111111] transform -rotate-1">
+                      WEEK {week.weekNum}
+                    </h3>
+                    <div className="overflow-x-auto bg-brand-white border-8 border-brand-black shadow-[12px_12px_0_0_#111111] pt-6">
+                      <div className="min-w-[800px]">
+                        {week.services.map((service: any) => (
+                          <div key={service.id} className="flex border-b-4 border-brand-black last:border-b-0 hover:bg-brand-cream/20 transition-colors">
+                            <div className="w-1/4 p-4 border-r-4 border-brand-black bg-brand-cream flex flex-col justify-center">
+                              <h3 className="font-bold text-brand-blue uppercase tracking-widest">{new Date(service.date).toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}</h3>
+                              <p className="font-black text-xl">{service.start_time}</p>
+                              <p className="text-sm font-bold opacity-70 mt-1">{service.title}</p>
+                            </div>
+                            
+                            {renderTeamCell(service, 'SOUND', service.sound)}
+                            {renderTeamCell(service, 'SINGER', service.singer)}
+                            {renderTeamCell(service, 'MUSICIAN', service.musician)}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })
+            )}
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'TABLE' && (
+        <div className="animate-in fade-in slide-in-from-bottom-2">
+          <div className="bg-white overflow-hidden p-4 border-2 border-brand-black">
+            <h2 className="text-xl font-bold text-center mb-4 uppercase">
+              Schedule {new Date(selectedMonth + '-01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+            </h2>
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b-2 border-brand-black">
+                  <th className="p-2 border-r-2 border-brand-black w-1/5">Sự kiện</th>
+                  <th className="p-2 border-r-2 border-brand-black w-1/6">Ngày</th>
+                  <th className="p-2 border-r-2 border-brand-black w-1/4">Ca sỹ</th>
+                  <th className="p-2 border-r-2 border-brand-black w-1/4">Nhạc công</th>
+                  <th className="p-2 w-1/6">Âm thanh</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredGridData.length === 0 ? (
+                  <tr>
+                    <td colSpan={5} className="p-4 text-center font-bold opacity-50">No events found</td>
+                  </tr>
+                ) : (
+                  filteredGridData.map((s: any) => {
+                    const dateObj = new Date(s.date);
+                    const dateStr = `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`;
+                    const singers = s.singer.map((u: any) => u.full_name).join(', ');
+                    const musicians = s.musician.map((u: any) => u.full_name).join(', ');
+                    const sounds = s.sound.map((u: any) => u.full_name).join(', ');
+                    
+                    return (
+                      <tr key={s.id} className="border-b border-brand-black last:border-b-0">
+                        <td className="p-2 border-r border-brand-black font-bold">{s.title || ''}</td>
+                        <td className="p-2 border-r border-brand-black text-center">{dateStr}</td>
+                        <td className="p-2 border-r border-brand-black">{singers}</td>
+                        <td className="p-2 border-r border-brand-black">{musicians}</td>
+                        <td className="p-2">{sounds}</td>
+                      </tr>
+                    );
+                  })
+                )}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-4 text-center opacity-70 font-bold text-sm">
+            (You can easily take a screenshot of this table)
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'MEMBERS' && (
+        <div className="animate-in fade-in slide-in-from-bottom-2">
+          <div className="bg-brand-white border-4 border-brand-black overflow-hidden">
+            <table className="w-full text-left">
+              <thead className="bg-brand-pink text-brand-white font-bold uppercase tracking-widest border-b-8 border-brand-black">
+                <tr>
+                  <th className="p-4 border-r-4 border-brand-black">Name</th>
+                  <th className="p-4 border-r-4 border-brand-black">Email</th>
+                  <th className="p-4">Role</th>
+                </tr>
+              </thead>
+              <tbody className="font-bold">
+                {allUsers.map((u: any) => (
+                  <tr key={u.id} className="border-b-4 border-brand-black last:border-b-0 hover:bg-brand-cream transition-colors">
+                    <td className="p-4 border-r-4 border-brand-black">{u.full_name}</td>
+                    <td className="p-4 border-r-4 border-brand-black opacity-70">{u.email}</td>
+                    <td className="p-4">
+                      <span className={`px-2 py-1 border-2 border-brand-black ${u.role === 'ADMIN' ? 'bg-brand-blue text-brand-white' : 'bg-brand-white'}`}>
+                        {u.role}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL */}
       {modalState.open && (
         <div className="fixed inset-0 bg-brand-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-brand-cream border-8 border-brand-black p-8 max-w-md w-full shadow-[12px_12px_0_0_#FF2E93] max-h-[80vh] flex flex-col">

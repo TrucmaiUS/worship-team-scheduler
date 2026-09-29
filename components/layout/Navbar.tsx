@@ -18,7 +18,10 @@ export async function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b-4 border-brand-black bg-brand-cream checkerboard-pink">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-8 bg-brand-cream/95 border-x-4 border-brand-black">
-        <Link href={session ? "/schedule" : "/"} className="editorial-heading text-2xl md:text-3xl text-brand-black hover:text-brand-pink transition-colors">
+        <Link 
+          href={!session ? "/" : session.role === "ADMIN" ? "/admin" : "/schedule"} 
+          className="editorial-heading text-2xl md:text-3xl text-brand-black hover:text-brand-pink transition-colors"
+        >
           MUSIC MINISTRY
         </Link>
         <div className="flex items-center gap-4 md:gap-8 font-bold uppercase tracking-widest text-sm">

@@ -58,10 +58,6 @@ async function seed() {
             } else {
               await pool.query(
                 'INSERT INTO services (id, title, date, start_time, end_time, location, notes) VALUES ($1, $2, $3, $4, $5, $6, $7) ON CONFLICT (id) DO NOTHING',
-                [`s_${dateStr}_intl`, 'International Service', dateStr, '09:00', '10:30', 'Main Hall', 'English Service']
-              );
-              await pool.query(
-                'INSERT INTO services (id, title, date, start_time, end_time, location, notes) VALUES ($1, $2, $3, $4, $5, $6, $7) ON CONFLICT (id) DO NOTHING',
                 [`s_${dateStr}_vn`, 'Vietnamese Service', dateStr, '11:00', '12:30', 'Main Hall', 'Vietnamese Service']
               );
             }

@@ -10,8 +10,10 @@ export async function adminAssignMember(serviceId: string, userId: string, team:
 
   try {
     const id = `r_${Date.now()}`;
-    const stmt = db.prepare('INSERT INTO registrations (id, service_id, user_id, team) VALUES (?, ?, ?, ?)');
-    stmt.run(id, serviceId, userId, team);
+    await db.query(
+      'INSERT INTO registrations (id, service_id, user_id, team) VALUES ($1, $2, $3, $4)',
+      [id, serviceId, userId, team]
+    );
     revalidatePath('/admin');
     revalidatePath('/schedule');
     return { success: true };
@@ -25,8 +27,10 @@ export async function adminRemoveAssignment(serviceId: string, userId: string) {
   if (!session || session.role !== 'ADMIN') return { error: 'Unauthorized' };
 
   try {
-    const stmt = db.prepare('DELETE FROM registrations WHERE service_id = ? AND user_id = ?');
-    stmt.run(serviceId, userId);
+    await db.query(
+      'DELETE FROM registrations WHERE service_id = $1 AND user_id = $2',
+      [serviceId, userId]
+    );
     revalidatePath('/admin');
     revalidatePath('/schedule');
     return { success: true };

@@ -54,13 +54,7 @@ function generateForMonth(year, monthIndex) { // monthIndex is 0-11
           insertService.run(`s_${dateStr}_combined`, title, dateStr, start, '13:00', 'Main Hall', 'Combined Service for all congregations');
         }
       } else {
-        // Other Sundays: Int'l and VN Services
-        const intlTitle = 'International Service';
-        const intlStart = '09:00';
-        if (!checkService.get(dateStr, intlStart, intlTitle)) {
-          insertService.run(`s_${dateStr}_intl`, intlTitle, dateStr, intlStart, '10:30', 'Main Hall', 'English Service');
-        }
-
+        // Other Sundays: VN Services
         const vnTitle = 'Vietnamese Service';
         const vnStart = '11:00';
         if (!checkService.get(dateStr, vnStart, vnTitle)) {
