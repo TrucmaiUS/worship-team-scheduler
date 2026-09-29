@@ -206,42 +206,44 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
             <h2 className="text-xl font-bold text-center mb-4 uppercase">
               Schedule {new Date(selectedMonth + '-01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
             </h2>
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="border-b-2 border-brand-black">
-                  <th className="p-2 border-r-2 border-brand-black w-1/5">Sự kiện</th>
-                  <th className="p-2 border-r-2 border-brand-black w-1/6">Ngày</th>
-                  <th className="p-2 border-r-2 border-brand-black w-1/4">Ca sỹ</th>
-                  <th className="p-2 border-r-2 border-brand-black w-1/4">Nhạc công</th>
-                  <th className="p-2 w-1/6">Âm thanh</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredGridData.length === 0 ? (
-                  <tr>
-                    <td colSpan={5} className="p-4 text-center font-bold opacity-50">No events found</td>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse min-w-[700px]">
+                <thead>
+                  <tr className="border-b-2 border-brand-black">
+                    <th className="p-2 border-r-2 border-brand-black w-1/5">Sự kiện</th>
+                    <th className="p-2 border-r-2 border-brand-black w-1/6">Ngày</th>
+                    <th className="p-2 border-r-2 border-brand-black w-1/4">Ca sỹ</th>
+                    <th className="p-2 border-r-2 border-brand-black w-1/4">Nhạc công</th>
+                    <th className="p-2 w-1/6">Âm thanh</th>
                   </tr>
-                ) : (
-                  filteredGridData.map((s: any) => {
-                    const dateObj = new Date(s.date);
-                    const dateStr = `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`;
-                    const singers = s.singer.map((u: any) => u.full_name).join(', ');
-                    const musicians = s.musician.map((u: any) => u.full_name).join(', ');
-                    const sounds = s.sound.map((u: any) => u.full_name).join(', ');
-                    
-                    return (
-                      <tr key={s.id} className="border-b border-brand-black last:border-b-0">
-                        <td className="p-2 border-r border-brand-black font-bold">{s.title || ''}</td>
-                        <td className="p-2 border-r border-brand-black text-center">{dateStr}</td>
-                        <td className="p-2 border-r border-brand-black">{singers}</td>
-                        <td className="p-2 border-r border-brand-black">{musicians}</td>
-                        <td className="p-2">{sounds}</td>
-                      </tr>
-                    );
-                  })
-                )}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {filteredGridData.length === 0 ? (
+                    <tr>
+                      <td colSpan={5} className="p-4 text-center font-bold opacity-50">No events found</td>
+                    </tr>
+                  ) : (
+                    filteredGridData.map((s: any) => {
+                      const dateObj = new Date(s.date);
+                      const dateStr = `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`;
+                      const singers = s.singer.map((u: any) => u.full_name).join(', ');
+                      const musicians = s.musician.map((u: any) => u.full_name).join(', ');
+                      const sounds = s.sound.map((u: any) => u.full_name).join(', ');
+                      
+                      return (
+                        <tr key={s.id} className="border-b border-brand-black last:border-b-0">
+                          <td className="p-2 border-r border-brand-black font-bold">{s.title || ''}</td>
+                          <td className="p-2 border-r border-brand-black text-center">{dateStr}</td>
+                          <td className="p-2 border-r border-brand-black">{singers}</td>
+                          <td className="p-2 border-r border-brand-black">{musicians}</td>
+                          <td className="p-2">{sounds}</td>
+                        </tr>
+                      );
+                    })
+                  )}
+                </tbody>
+              </table>
+            </div>
           </div>
           <div className="mt-4 text-center opacity-70 font-bold text-sm">
             (You can easily take a screenshot of this table)
