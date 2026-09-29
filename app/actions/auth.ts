@@ -13,7 +13,14 @@ export async function login(formData: FormData) {
     return { error: 'Email and password are required' };
   }
 
-  const { rows } = await db.query('SELECT * FROM users WHERE email = $1', [email]);
+  let rows;
+  try {
+    const result = await db.query('SELECT * FROM users WHERE email = $1', [email]);
+    rows = result.rows;
+  } catch (err: any) {
+    return { error: 'DB Connection Error: ' + err.message + ' (Check Vercel Environment Variables)' };
+  }
+
   const user = rows[0] as any;
 
   if (!user || user.password !== password) {
@@ -24,21 +31,26 @@ export async function login(formData: FormData) {
     return { error: 'Account is disabled' };
   }
 
-  const token = await signToken({
-    id: user.id,
-    email: user.email,
-    role: user.role,
-    name: user.full_name,
-    avatarUrl: user.avatar_url
-  });
+  let token;
+  try {
+    token = await signToken({
+      id: user.id,
+      email: user.email,
+      role: user.role,
+      name: user.full_name,
+      avatarUrl: user.avatar_url
+    });
 
-  const cookieStore = await cookies();
-  cookieStore.set('auth-token', token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
-    maxAge: 60 * 60 * 24, // 1 day
-  });
+    const cookieStore = await cookies();
+    cookieStore.set('auth-token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 60 * 60 * 24, // 1 day
+    });
+  } catch (err: any) {
+    return { error: 'Token/Cookie Error: ' + err.message };
+  }
 
   if (user.role === 'ADMIN') {
     redirect('/admin');
