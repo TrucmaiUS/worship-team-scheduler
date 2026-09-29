@@ -8,7 +8,7 @@ export async function GET(request: Request) {
   const code = searchParams.get('code');
   const error = searchParams.get('error');
   
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+  const baseUrl = process.env.APP_URL || 'http://localhost:3000';
 
   if (error) {
     return NextResponse.redirect(`${baseUrl}/login?error=Google_OAuth_Error`);
