@@ -13,9 +13,12 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
   });
   const [loading, setLoading] = useState(false);
 
-  // Determine current month in YYYY-MM
-  const currentMonthStr = new Date().toISOString().slice(0, 7);
-  const [selectedMonth, setSelectedMonth] = useState(currentMonthStr);
+  // Determine current month in YYYY-MM based on the NEXT upcoming service
+  const todayStr = new Date().toISOString().slice(0, 10);
+  const upcomingService = gridData.find((s: any) => s.date >= todayStr);
+  const defaultMonthStr = upcomingService ? upcomingService.date.slice(0, 7) : todayStr.slice(0, 7);
+  
+  const [selectedMonth, setSelectedMonth] = useState(defaultMonthStr);
 
   const handleAssign = async (userId: string) => {
     setLoading(true);
@@ -63,40 +66,35 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
     );
   };
 
-  // Extract unique years and months from gridData
-  const years = Array.from(new Set(gridData.map((s: any) => s.date.slice(0, 4)))).sort() as string[];
-  const currentYearStr = new Date().getFullYear().toString();
-  const [selectedYear, setSelectedYear] = useState(years.includes(currentYearStr) ? currentYearStr : years[0] || '');
-
-  // Extract unique months for the selected year
-  const monthsInYear = Array.from(
-    new Set(
-      gridData
-        .filter((s: any) => s.date.startsWith(selectedYear))
-        .map((s: any) => s.date.slice(0, 7))
-    )
-  ).sort() as string[];
-
+  // All available months in data
+  const allAvailableMonths = Array.from(new Set(gridData.map((s: any) => s.date.slice(0, 7)))).sort() as string[];
+  
   // Fallback to current month if selected is not in data
   const filteredGridData = gridData.filter((s: any) => s.date.startsWith(selectedMonth));
-
-  const handleYearSelect = (y: string) => {
-    setSelectedYear(y);
-    const firstMonth = gridData.find((s: any) => s.date.startsWith(y))?.date.slice(0, 7);
-    if (firstMonth) setSelectedMonth(firstMonth);
-  };
 
   // Group filtered data by Week (1-5)
   const groupedByWeek = [1, 2, 3, 4, 5].map(weekNum => {
     return {
       weekNum,
       services: filteredGridData.filter((s: any) => {
-        const d = new Date(s.date);
+        const d = new Date(s.date + 'T00:00:00');
         const w = Math.ceil(d.getDate() / 7);
         return w === weekNum;
       })
     };
   });
+
+  const handlePrevMonth = () => {
+    const d = new Date(selectedMonth + '-01T00:00:00');
+    d.setMonth(d.getMonth() - 1);
+    setSelectedMonth(d.toISOString().slice(0, 7));
+  };
+
+  const handleNextMonth = () => {
+    const d = new Date(selectedMonth + '-01T00:00:00');
+    d.setMonth(d.getMonth() + 1);
+    setSelectedMonth(d.toISOString().slice(0, 7));
+  };
 
   return (
     <div>
@@ -129,31 +127,35 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
 
         {/* FILTERS */}
         {(activeTab === 'SCHEDULE' || activeTab === 'TABLE') && (
-          <div className="flex gap-2 items-center bg-brand-white px-4 py-2 border-2 border-brand-black">
-            <label className="font-bold uppercase tracking-widest text-xs opacity-70">Filter:</label>
-            <select 
-              value={selectedYear}
-              onChange={(e) => handleYearSelect(e.target.value)}
-              className="border-none bg-transparent font-bold outline-none cursor-pointer"
+          <div className="flex gap-4 items-center bg-brand-white px-4 py-2 border-4 border-brand-black shadow-[4px_4px_0_0_#111111]">
+            <button 
+              onClick={handlePrevMonth}
+              className="font-black text-xl hover:text-brand-blue hover:scale-110 transition-transform"
             >
-              {years.map(y => <option key={y} value={y}>{y}</option>)}
-            </select>
-            <span className="opacity-50">/</span>
+              &lt;
+            </button>
             <select 
               value={selectedMonth}
               onChange={(e) => setSelectedMonth(e.target.value)}
-              className="border-none bg-transparent font-bold outline-none cursor-pointer uppercase"
+              className="border-none bg-transparent font-bold text-lg outline-none cursor-pointer uppercase text-center min-w-[140px]"
             >
-              {monthsInYear.map(m => {
+              {/* Ensure selected month is in options even if no data */}
+              {Array.from(new Set([...allAvailableMonths, selectedMonth])).sort().map((m: any) => {
                 const [year, month] = m.split('-');
                 const dateObj = new Date(parseInt(year), parseInt(month) - 1, 1);
                 return (
                   <option key={m} value={m}>
-                    {dateObj.toLocaleDateString('en-US', { month: 'short' })}
+                    {dateObj.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
                   </option>
                 );
               })}
             </select>
+            <button 
+              onClick={handleNextMonth}
+              className="font-black text-xl hover:text-brand-blue hover:scale-110 transition-transform"
+            >
+              &gt;
+            </button>
           </div>
         )}
       </div>
@@ -180,7 +182,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                         {week.services.map((service: any) => (
                           <div key={service.id} className="flex border-b-4 border-brand-black last:border-b-0 hover:bg-brand-cream/20 transition-colors">
                             <div className="w-1/4 p-4 border-r-4 border-brand-black bg-brand-cream flex flex-col justify-center">
-                              <h3 className="font-bold text-brand-blue uppercase tracking-widest">{new Date(service.date).toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}</h3>
+                              <h3 className="font-bold text-brand-blue uppercase tracking-widest">{new Date(service.date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}</h3>
                               <p className="font-black text-xl">{service.start_time}</p>
                               <p className="text-sm font-bold opacity-70 mt-1">{service.title}</p>
                             </div>
@@ -224,7 +226,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                     </tr>
                   ) : (
                     filteredGridData.map((s: any) => {
-                      const dateObj = new Date(s.date);
+                      const dateObj = new Date(s.date + 'T00:00:00');
                       const dateStr = `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`;
                       const singers = s.singer.map((u: any) => u.full_name).join(', ');
                       const musicians = s.musician.map((u: any) => u.full_name).join(', ');
