@@ -72,7 +72,7 @@ export default async function SchedulePage({
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-cream">
-      <main className="flex-1 container mx-auto px-4 py-8">
+      <main className="flex-1 container mx-auto px-4 py-8 pb-32">
         <ClientSchedule 
           upcomingServices={upcomingServices}
           monthlyServices={monthlyServices} 

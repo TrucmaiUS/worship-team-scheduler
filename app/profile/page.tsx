@@ -32,7 +32,7 @@ export default async function ProfilePage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-cream">
-      <main className="flex-1 container mx-auto px-4 py-12">
+      <main className="flex-1 container mx-auto px-4 py-12 pb-32">
         <div className="max-w-2xl mx-auto">
           <div className="bg-brand-white border-8 border-brand-black shadow-[12px_12px_0_0_#FF2E93] p-8 mb-12 transform rotate-1 flex flex-col md:flex-row gap-8 items-start">
             <div className="flex flex-col items-center gap-4 w-full md:w-auto">

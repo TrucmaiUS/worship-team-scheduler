@@ -110,6 +110,19 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
     setSelectedMonth(`${newYear}-${newMonth.toString().padStart(2, '0')}`);
   };
 
+  // Upcoming Special Events (Next 3 months, not 'Vietnamese Service')
+  const specialEvents = gridData.filter((s: any) => {
+    if (s.title === 'Vietnamese Service') return false;
+    if (s.date < todayStr) return false;
+    
+    // Check if within 3 months
+    const eventDate = new Date(s.date + 'T00:00:00');
+    const threeMonthsFromNow = new Date(localDate);
+    threeMonthsFromNow.setMonth(threeMonthsFromNow.getMonth() + 3);
+    
+    return eventDate <= threeMonthsFromNow;
+  });
+
   return (
     <div>
       {/* HEADER: TABS (Left) & FILTERS (Right) */}
@@ -177,6 +190,32 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
       {activeTab === 'SCHEDULE' && (
         <div className="animate-in fade-in slide-in-from-bottom-2">
           
+          {/* SPECIAL EVENTS SECTION */}
+          {specialEvents.length > 0 && (
+            <div className="mb-12">
+              <h2 className="editorial-heading text-2xl mb-4 text-brand-pink border-b-4 border-brand-pink inline-block pr-4">★ UPCOMING SPECIAL EVENTS</h2>
+              <div className="overflow-x-auto bg-brand-white border-8 border-brand-pink shadow-[12px_12px_0_0_#FF2E93] pt-2 mt-4">
+                <div className="min-w-[800px]">
+                  {specialEvents.map((service: any) => (
+                    <div key={service.id} className="flex border-b-4 border-brand-pink last:border-b-0 hover:bg-brand-cream/20 transition-colors">
+                      <div className="w-1/4 p-4 border-r-4 border-brand-pink bg-brand-cream flex flex-col justify-center">
+                        <h3 className="font-bold text-brand-pink uppercase tracking-widest">{new Date(service.date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}</h3>
+                        <p className="font-black text-xl">{service.start_time}</p>
+                        <p className="text-sm font-bold opacity-70 mt-1">{service.title}</p>
+                      </div>
+                      
+                      {renderTeamCell(service, 'SOUND', service.sound)}
+                      {renderTeamCell(service, 'SINGER', service.singer)}
+                      {renderTeamCell(service, 'MUSICIAN', service.musician)}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* REGULAR MONTHLY SCHEDULE */}
+          <h2 className="editorial-heading text-2xl mb-6">MONTHLY OVERVIEW</h2>
           <div className="space-y-12">
             {filteredGridData.length === 0 ? (
               <div className="p-8 text-center font-bold text-xl opacity-50 border-4 border-brand-black bg-brand-white border-dashed">

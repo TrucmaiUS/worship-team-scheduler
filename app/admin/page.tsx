@@ -47,7 +47,7 @@ export default async function AdminPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-cream">
-      <main className="flex-1 container mx-auto px-4 py-8">
+      <main className="flex-1 container mx-auto px-4 py-8 pb-32">
         <div className="mb-8 border-b-8 border-brand-black pb-4">
           <h1 className="editorial-heading text-4xl text-brand-blue mb-2">ADMIN DASHBOARD</h1>
           <p className="font-bold uppercase tracking-widest text-brand-black/60">Manage Services & Teams</p>
