@@ -193,23 +193,69 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
           {/* SPECIAL EVENTS SECTION */}
           {specialEvents.length > 0 && (
             <div className="mb-12">
-              <h2 className="editorial-heading text-2xl mb-4 text-brand-pink border-b-4 border-brand-pink inline-block pr-4">★ UPCOMING SPECIAL EVENTS</h2>
-              <div className="overflow-x-auto bg-brand-white border-8 border-brand-pink shadow-[12px_12px_0_0_#FF2E93] pt-2 mt-4">
-                <div className="min-w-[800px]">
-                  {specialEvents.map((service: any) => (
-                    <div key={service.id} className="flex border-b-4 border-brand-pink last:border-b-0 hover:bg-brand-cream/20 transition-colors">
-                      <div className="w-1/4 p-4 border-r-4 border-brand-pink bg-brand-cream flex flex-col justify-center">
-                        <h3 className="font-bold text-brand-pink uppercase tracking-widest">{new Date(service.date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}</h3>
-                        <p className="font-black text-xl">{service.start_time}</p>
-                        <p className="text-sm font-bold opacity-70 mt-1">{service.title}</p>
+              <h2 className="editorial-heading text-2xl mb-6 text-brand-pink border-b-4 border-brand-pink inline-block pr-4">★ UPCOMING SPECIAL EVENTS</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {specialEvents.map((service: any) => (
+                  <div key={service.id} className="bg-brand-white border-4 border-brand-black p-6 relative flex flex-col justify-between shadow-[8px_8px_0_0_#FF2E93] transition-transform hover:-translate-y-1">
+                    <div>
+                      <h3 className="font-bold uppercase tracking-widest text-brand-pink mb-1">
+                        {new Date(service.date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}
+                      </h3>
+                      <h2 className="editorial-heading text-3xl mb-1 leading-tight text-brand-black">{service.title}</h2>
+                      <p className="font-bold opacity-80 mb-6">{service.start_time} - {service.end_time}</p>
+                    </div>
+
+                    <div className="border-t-4 border-brand-black pt-4 flex flex-col gap-4 mt-auto">
+                      {/* Sounds */}
+                      <div>
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="font-bold uppercase tracking-widest text-xs">Sound</span>
+                          <button className="text-brand-blue font-bold text-xs hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SOUND' })}>+ Add</button>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {service.sound.length > 0 ? service.sound.map((s:any) => (
+                            <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-2 py-1 border-2 border-brand-black text-xs font-bold">
+                              {s.full_name}
+                              <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-1 hover:scale-125 transition-transform" title="Remove">✕</button>
+                            </span>
+                          )) : <span className="opacity-50 italic text-sm font-bold">None</span>}
+                        </div>
                       </div>
                       
-                      {renderTeamCell(service, 'SOUND', service.sound)}
-                      {renderTeamCell(service, 'SINGER', service.singer)}
-                      {renderTeamCell(service, 'MUSICIAN', service.musician)}
+                      {/* Singers */}
+                      <div>
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="font-bold uppercase tracking-widest text-xs">Singers</span>
+                          <button className="text-brand-blue font-bold text-xs hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SINGER' })}>+ Add</button>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {service.singer.length > 0 ? service.singer.map((s:any) => (
+                            <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-2 py-1 border-2 border-brand-black text-xs font-bold">
+                              {s.full_name}
+                              <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-1 hover:scale-125 transition-transform" title="Remove">✕</button>
+                            </span>
+                          )) : <span className="opacity-50 italic text-sm font-bold">None</span>}
+                        </div>
+                      </div>
+
+                      {/* Musicians */}
+                      <div>
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="font-bold uppercase tracking-widest text-xs">Band</span>
+                          <button className="text-brand-blue font-bold text-xs hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'MUSICIAN' })}>+ Add</button>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {service.musician.length > 0 ? service.musician.map((s:any) => (
+                            <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-2 py-1 border-2 border-brand-black text-xs font-bold">
+                              {s.full_name}
+                              <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-1 hover:scale-125 transition-transform" title="Remove">✕</button>
+                            </span>
+                          )) : <span className="opacity-50 italic text-sm font-bold">None</span>}
+                        </div>
+                      </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
           )}
