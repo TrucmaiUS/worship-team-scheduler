@@ -14,7 +14,11 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
   const [loading, setLoading] = useState(false);
 
   // Determine current month in YYYY-MM based on the NEXT upcoming service
-  const todayStr = new Date().toISOString().slice(0, 10);
+  const now = new Date();
+  const tzOffset = now.getTimezoneOffset() * 60000; // offset in milliseconds
+  const localDate = new Date(now.getTime() - tzOffset);
+  const todayStr = localDate.toISOString().slice(0, 10);
+  
   const upcomingService = gridData.find((s: any) => s.date >= todayStr);
   const defaultMonthStr = upcomingService ? upcomingService.date.slice(0, 7) : todayStr.slice(0, 7);
   
@@ -85,15 +89,25 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
   });
 
   const handlePrevMonth = () => {
-    const d = new Date(selectedMonth + '-01T00:00:00');
-    d.setMonth(d.getMonth() - 1);
-    setSelectedMonth(d.toISOString().slice(0, 7));
+    const [year, month] = selectedMonth.split('-').map(Number);
+    let newYear = year;
+    let newMonth = month - 1;
+    if (newMonth < 1) {
+      newMonth = 12;
+      newYear--;
+    }
+    setSelectedMonth(`${newYear}-${newMonth.toString().padStart(2, '0')}`);
   };
 
   const handleNextMonth = () => {
-    const d = new Date(selectedMonth + '-01T00:00:00');
-    d.setMonth(d.getMonth() + 1);
-    setSelectedMonth(d.toISOString().slice(0, 7));
+    const [year, month] = selectedMonth.split('-').map(Number);
+    let newYear = year;
+    let newMonth = month + 1;
+    if (newMonth > 12) {
+      newMonth = 1;
+      newYear++;
+    }
+    setSelectedMonth(`${newYear}-${newMonth.toString().padStart(2, '0')}`);
   };
 
   return (
