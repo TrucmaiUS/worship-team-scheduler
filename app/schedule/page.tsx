@@ -25,43 +25,49 @@ export default async function SchedulePage({
   endDate.setDate(endDate.getDate() + 14);
   const upcomingEndStr = format(endDate, 'yyyy-MM-dd');
 
-  const { rows: upcomingServices } = await db.query(`
-    SELECT * FROM services 
-    WHERE date >= $1 AND date <= $2
-    ORDER BY date ASC, start_time ASC
-  `, [todayStr, upcomingEndStr]);
-
-  // 2. Fetch Monthly Services for the calendar
   const currentMonthStart = addMonths(startOfMonth(today), offset);
   const currentMonthEnd = endOfMonth(currentMonthStart);
   
   const startStr = format(currentMonthStart, 'yyyy-MM-dd');
   const monthEndStr = format(currentMonthEnd, 'yyyy-MM-dd');
 
-  const { rows: monthlyServices } = await db.query(`
-    SELECT * FROM services 
-    WHERE date >= $1 AND date <= $2
-    ORDER BY date ASC, start_time ASC
-  `, [startStr, monthEndStr]);
+  let upcomingServices = [];
+  let monthlyServices = [];
+  let registrationsMap: Record<string, any[]> = {};
 
-  // Fetch registrations for all fetched services
-  const allServices = [...upcomingServices, ...monthlyServices];
-  // Deduplicate service IDs to avoid fetching registrations twice
-  const uniqueServiceIds = Array.from(new Set(allServices.map(s => s.id)));
-  
-  const registrationsMap: Record<string, any[]> = {};
-  if (uniqueServiceIds.length > 0) {
-    const idsString = uniqueServiceIds.map((_, i) => `$${i + 1}`).join(',');
-    const { rows: registrations } = await db.query(`
-      SELECT r.service_id, r.team, r.user_id, u.full_name as user_name
-      FROM registrations r
-      JOIN users u ON r.user_id = u.id
-      WHERE r.service_id IN (${idsString})
-    `, uniqueServiceIds);
+  try {
+    const resUpcoming = await db.query(`
+      SELECT * FROM services 
+      WHERE date >= $1 AND date <= $2
+      ORDER BY date ASC, start_time ASC
+    `, [todayStr, upcomingEndStr]);
+    upcomingServices = resUpcoming.rows;
 
-    for (const id of uniqueServiceIds) {
-      registrationsMap[id] = registrations.filter((r: any) => r.service_id === id);
+    const resMonthly = await db.query(`
+      SELECT * FROM services 
+      WHERE date >= $1 AND date <= $2
+      ORDER BY date ASC, start_time ASC
+    `, [startStr, monthEndStr]);
+    monthlyServices = resMonthly.rows;
+
+    const allServices = [...upcomingServices, ...monthlyServices];
+    const uniqueServiceIds = Array.from(new Set(allServices.map(s => s.id)));
+    
+    if (uniqueServiceIds.length > 0) {
+      const idsString = uniqueServiceIds.map((_, i) => `$${i + 1}`).join(',');
+      const { rows: registrations } = await db.query(`
+        SELECT r.service_id, r.team, r.user_id, u.full_name as user_name
+        FROM registrations r
+        JOIN users u ON r.user_id = u.id
+        WHERE r.service_id IN (${idsString})
+      `, uniqueServiceIds);
+
+      for (const id of uniqueServiceIds) {
+        registrationsMap[id] = registrations.filter((r: any) => r.service_id === id);
+      }
     }
+  } catch (err: any) {
+    return <div className="p-8 text-red-500 font-bold text-2xl">FATAL SCHEDULE ERROR: {err.message}</div>;
   }
 
   return (

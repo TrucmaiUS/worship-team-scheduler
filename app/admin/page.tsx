@@ -9,9 +9,23 @@ export default async function AdminPage() {
     redirect('/login');
   }
 
-  const { rows: services } = await db.query('SELECT * FROM services ORDER BY date ASC, start_time ASC');
-  const { rows: users } = await db.query('SELECT id, full_name, email, role FROM users');
-  const { rows: registrations } = await db.query('SELECT * FROM registrations');
+  let services, users, registrations;
+  try {
+    const resServices = await db.query('SELECT * FROM services ORDER BY date ASC, start_time ASC');
+    services = resServices.rows;
+    
+    const resUsers = await db.query('SELECT id, full_name, email, role FROM users');
+    users = resUsers.rows;
+    
+    const resRegs = await db.query('SELECT * FROM registrations');
+    registrations = resRegs.rows;
+  } catch (err: any) {
+    return (
+      <div className="p-8 text-red-500 font-bold text-2xl">
+        FATAL ADMIN ERROR: {err.message}
+      </div>
+    );
+  }
 
   // Stats
   const stats = {

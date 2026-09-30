@@ -13,15 +13,22 @@ export default async function ProfilePage() {
     redirect('/login');
   }
 
-  const { rows: userRows } = await db.query('SELECT * FROM users WHERE id = $1', [session.id]);
-  const user = userRows[0] as any;
-  const { rows: history } = await db.query(`
-    SELECT r.team, s.title, s.date, s.start_time 
-    FROM registrations r
-    JOIN services s ON r.service_id = s.id
-    WHERE r.user_id = $1
-    ORDER BY s.date DESC
-  `, [session.id]);
+  let user;
+  let history = [];
+  try {
+    const { rows: userRows } = await db.query('SELECT * FROM users WHERE id = $1', [session.id]);
+    user = userRows[0] as any;
+    const resHistory = await db.query(`
+      SELECT r.team, s.title, s.date, s.start_time 
+      FROM registrations r
+      JOIN services s ON r.service_id = s.id
+      WHERE r.user_id = $1
+      ORDER BY s.date DESC
+    `, [session.id]);
+    history = resHistory.rows;
+  } catch (err: any) {
+    return <div className="p-8 text-red-500 font-bold text-2xl">FATAL PROFILE ERROR: {err.message}</div>;
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-cream">
