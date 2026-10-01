@@ -194,63 +194,63 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
           {specialEvents.length > 0 && (
             <div className="mb-12">
               <h2 className="editorial-heading text-2xl mb-6 text-brand-pink border-b-4 border-brand-pink inline-block pr-4">★ UPCOMING SPECIAL EVENTS</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {specialEvents.map((service: any) => (
-                  <div key={service.id} className="bg-brand-white border-4 border-brand-black p-6 relative flex flex-col justify-between shadow-[8px_8px_0_0_#FF2E93] transition-transform hover:-translate-y-1">
+                  <div key={service.id} className="bg-brand-white border-2 border-brand-black p-4 relative flex flex-col justify-between shadow-[4px_4px_0_0_#FF2E93] transition-transform hover:-translate-y-1">
                     <div>
-                      <h3 className="font-bold uppercase tracking-widest text-brand-pink mb-1">
+                      <h3 className="font-bold uppercase tracking-widest text-brand-pink text-xs mb-1">
                         {new Date(service.date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}
                       </h3>
-                      <h2 className="editorial-heading text-3xl mb-1 leading-tight text-brand-black">{service.title}</h2>
-                      <p className="font-bold opacity-80 mb-6">{service.start_time} - {service.end_time}</p>
+                      <h2 className="editorial-heading text-xl mb-1 leading-tight text-brand-black">{service.title}</h2>
+                      <p className="font-bold opacity-80 mb-3 text-xs">{service.start_time} - {service.end_time}</p>
                     </div>
 
-                    <div className="border-t-4 border-brand-black pt-4 flex flex-col gap-4 mt-auto">
+                    <div className="border-t-2 border-brand-black pt-3 flex flex-col gap-3 mt-auto">
                       {/* Sounds */}
                       <div>
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="font-bold uppercase tracking-widest text-xs">Sound</span>
-                          <button className="text-brand-blue font-bold text-xs hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SOUND' })}>+ Add</button>
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="font-bold uppercase tracking-widest text-[10px]">Sound</span>
+                          <button className="text-brand-blue font-bold text-[10px] hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SOUND' })}>+ Add</button>
                         </div>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-1">
                           {service.sound.length > 0 ? service.sound.map((s:any) => (
-                            <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-2 py-1 border-2 border-brand-black text-xs font-bold">
+                            <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-[10px] font-bold">
                               {s.full_name}
-                              <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-1 hover:scale-125 transition-transform" title="Remove">✕</button>
+                              <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
                             </span>
-                          )) : <span className="opacity-50 italic text-sm font-bold">None</span>}
+                          )) : <span className="opacity-50 italic text-[10px] font-bold">None</span>}
                         </div>
                       </div>
                       
                       {/* Singers */}
                       <div>
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="font-bold uppercase tracking-widest text-xs">Singers</span>
-                          <button className="text-brand-blue font-bold text-xs hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SINGER' })}>+ Add</button>
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="font-bold uppercase tracking-widest text-[10px]">Singers</span>
+                          <button className="text-brand-blue font-bold text-[10px] hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SINGER' })}>+ Add</button>
                         </div>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-1">
                           {service.singer.length > 0 ? service.singer.map((s:any) => (
-                            <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-2 py-1 border-2 border-brand-black text-xs font-bold">
+                            <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-[10px] font-bold">
                               {s.full_name}
-                              <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-1 hover:scale-125 transition-transform" title="Remove">✕</button>
+                              <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
                             </span>
-                          )) : <span className="opacity-50 italic text-sm font-bold">None</span>}
+                          )) : <span className="opacity-50 italic text-[10px] font-bold">None</span>}
                         </div>
                       </div>
 
                       {/* Musicians */}
                       <div>
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="font-bold uppercase tracking-widest text-xs">Band</span>
-                          <button className="text-brand-blue font-bold text-xs hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'MUSICIAN' })}>+ Add</button>
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="font-bold uppercase tracking-widest text-[10px]">Band</span>
+                          <button className="text-brand-blue font-bold text-[10px] hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'MUSICIAN' })}>+ Add</button>
                         </div>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-1">
                           {service.musician.length > 0 ? service.musician.map((s:any) => (
-                            <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-2 py-1 border-2 border-brand-black text-xs font-bold">
+                            <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-[10px] font-bold">
                               {s.full_name}
-                              <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-1 hover:scale-125 transition-transform" title="Remove">✕</button>
+                              <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
                             </span>
-                          )) : <span className="opacity-50 italic text-sm font-bold">None</span>}
+                          )) : <span className="opacity-50 italic text-[10px] font-bold">None</span>}
                         </div>
                       </div>
                     </div>
