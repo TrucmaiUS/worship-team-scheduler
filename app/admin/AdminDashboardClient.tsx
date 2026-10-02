@@ -14,6 +14,12 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
     serviceId: '',
     team: ''
   });
+  const [removeModalState, setRemoveModalState] = useState<{ open: boolean, serviceId: string, userId: string }>({
+    open: false,
+    serviceId: '',
+    userId: ''
+  });
+  });
   const [roleDetails, setRoleDetails] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
 
@@ -445,6 +451,27 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
+      {/* REMOVE MODAL */}
+      <Dialog.Root open={removeModalState.open} onOpenChange={(open) => !open && setRemoveModalState({ open: false, serviceId: '', userId: '' })}>
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 bg-brand-black/50 backdrop-blur-sm z-50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+          <Dialog.Content className="fixed left-[50%] top-[50%] z-50 w-[95vw] max-w-md translate-x-[-50%] translate-y-[-50%] bg-brand-cream border-8 border-brand-black p-8 shadow-[12px_12px_0_0_#FFA6C9] flex flex-col data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] outline-none">
+            <Dialog.Title className="editorial-heading text-3xl mb-4 text-brand-red">CONFIRM REMOVAL</Dialog.Title>
+            <Dialog.Description className="text-lg font-bold mb-8">
+              Are you sure you want to remove this member from the service? This action cannot be undone.
+            </Dialog.Description>
+            <div className="flex justify-end gap-4">
+              <Dialog.Close asChild>
+                <Button variant="ghost">CANCEL</Button>
+              </Dialog.Close>
+              <Button variant="primary" className="bg-brand-red shadow-[4px_4px_0_0_#111111]" onClick={confirmRemove}>
+                YES, REMOVE
+              </Button>
+            </div>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
+
     </div>
   );
 }
