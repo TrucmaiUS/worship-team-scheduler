@@ -95,7 +95,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
           {userReg ? (
             <div className="flex items-center gap-2 mt-2">
               <span className="font-bold bg-brand-blue text-brand-white px-3 py-1 text-sm border-2 border-brand-black rounded-md flex-1 text-center truncate">
-                {userReg.team, currentRoleDetail: userReg.role_detail}
+                {userReg.team}
               </span>
               <Button variant="outline" size="sm" className="px-2" onClick={() => setModalState({ open: true, serviceId: service.id, currentTeam: userReg.team, currentRoleDetail: userReg.role_detail })}>
                 EDIT
