@@ -19,7 +19,6 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
     serviceId: '',
     userId: ''
   });
-  });
   const [roleDetails, setRoleDetails] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
 
