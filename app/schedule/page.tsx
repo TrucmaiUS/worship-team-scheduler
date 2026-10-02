@@ -56,7 +56,7 @@ export default async function SchedulePage({
     if (uniqueServiceIds.length > 0) {
       const idsString = uniqueServiceIds.map((_, i) => `$${i + 1}`).join(',');
       const { rows: registrations } = await db.query(`
-        SELECT r.service_id, r.team, r.user_id, u.full_name as user_name
+        SELECT r.service_id, r.team, r.role_detail, r.user_id, u.full_name as user_name
         FROM registrations r
         JOIN users u ON r.user_id = u.id
         WHERE r.service_id IN (${idsString})
@@ -87,3 +87,4 @@ export default async function SchedulePage({
     </div>
   );
 }
+

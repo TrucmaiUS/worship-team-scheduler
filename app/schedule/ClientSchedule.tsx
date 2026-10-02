@@ -10,10 +10,10 @@ import { getDay, getDaysInMonth, startOfMonth, format, isSameDay } from 'date-fn
 export default function ClientSchedule({ upcomingServices, monthlyServices, registrationsMap, userId, userName, avatarUrl, offset, currentMonthDate }: any) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
-  const [modalState, setModalState] = useState<{ open: boolean, serviceId: string, currentTeam: string | null }>({
+  const [modalState, setModalState] = useState<{ open: boolean, serviceId: string, currentTeam: string | null, currentRoleDetail: string | null }>({
     open: false,
     serviceId: '',
-    currentTeam: null
+    currentTeam: null, currentRoleDetail: null
   });
 
   const monthDate = new Date(currentMonthDate);
@@ -25,14 +25,14 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
     router.push(`/schedule?offset=${newOffset}`, { scroll: false });
   };
 
-  const handleAction = async (team: string) => {
+  const handleAction = async (team: string, roleDetail = '') => {
     setLoading(true);
     if (modalState.currentTeam) {
-      await changeRole(modalState.serviceId, team);
+      await changeRole(modalState.serviceId, team, roleDetail);
     } else {
-      await joinService(modalState.serviceId, team);
+      await joinService(modalState.serviceId, team, roleDetail);
     }
-    setModalState({ open: false, serviceId: '', currentTeam: null });
+    setModalState({ open: false, serviceId: '', currentTeam: null, currentRoleDetail: null });
     setLoading(false);
   };
 
@@ -40,7 +40,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
     if (confirm('Are you sure you want to cancel your serving registration?')) {
       setLoading(true);
       await cancelRegistration(modalState.serviceId);
-      setModalState({ open: false, serviceId: '', currentTeam: null });
+      setModalState({ open: false, serviceId: '', currentTeam: null, currentRoleDetail: null });
       setLoading(false);
     }
   };
@@ -81,28 +81,28 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
           <div className="text-xs space-y-1.5 opacity-90">
             <p>
               <span className="font-bold inline-block w-16">Sound:</span> 
-              {sounds.length > 0 ? sounds.map((s:any) => s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
+              {sounds.length > 0 ? sounds.map((s:any) => s.role_detail ? ` ()` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
             </p>
             <p>
               <span className="font-bold inline-block w-16">Singers:</span> 
-              {singers.length > 0 ? singers.map((s:any) => s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
+              {singers.length > 0 ? singers.map((s:any) => s.role_detail ? ` ()` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
             </p>
             <p>
               <span className="font-bold inline-block w-16">Band:</span> 
-              {musicians.length > 0 ? musicians.map((s:any) => s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
+              {musicians.length > 0 ? musicians.map((s:any) => s.role_detail ? ` ()` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
             </p>
           </div>
           {userReg ? (
             <div className="flex items-center gap-2 mt-2">
               <span className="font-bold bg-brand-blue text-brand-white px-3 py-1 text-sm border-2 border-brand-black rounded-md flex-1 text-center truncate">
-                {userReg.team}
+                {userReg.team, currentRoleDetail: userReg.role_detail}
               </span>
-              <Button variant="outline" size="sm" className="px-2" onClick={() => setModalState({ open: true, serviceId: service.id, currentTeam: userReg.team })}>
+              <Button variant="outline" size="sm" className="px-2" onClick={() => setModalState({ open: true, serviceId: service.id, currentTeam: userReg.team, currentRoleDetail: userReg.role_detail })}>
                 EDIT
               </Button>
             </div>
           ) : (
-            <Button variant="sticker" className="w-full mt-2 text-sm" onClick={() => setModalState({ open: true, serviceId: service.id, currentTeam: null })}>
+            <Button variant="sticker" className="w-full mt-2 text-sm" onClick={() => setModalState({ open: true, serviceId: service.id, currentTeam: null, currentRoleDetail: null })}>
               JOIN
             </Button>
           )}
@@ -244,35 +244,59 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                   SOUND TEAM
                 </Button>
                 <div className="mt-2 text-sm text-brand-black/60 pl-3 border-l-2 border-brand-black/20">
-                  <span className="font-bold">Serving:</span> {activeSounds.length > 0 ? activeSounds.map((s:any) => s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
+                  <span className="font-bold">Serving:</span> {activeSounds.length > 0 ? activeSounds.map((s:any) => s.role_detail ? `${s.user_name} (${s.role_detail})` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
                 </div>
               </div>
               
               <div>
-                <Button 
-                  variant={modalState.currentTeam === 'SINGER' ? 'primary' : 'outline'} 
-                  className="w-full text-left justify-start text-lg h-14"
-                  disabled={loading}
-                  onClick={() => handleAction('SINGER')}
-                >
-                  SINGER
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <Button 
+                    variant={modalState.currentTeam === 'SINGER' ? 'primary' : 'outline'} 
+                    className="flex-1 text-left justify-start text-lg h-14"
+                    disabled={loading}
+                    onClick={() => handleAction('SINGER', modalState.currentRoleDetail || 'vocal 1')}
+                  >
+                    SINGER
+                  </Button>
+                  <select 
+                    className="border-2 border-brand-black bg-brand-cream font-bold px-4 rounded-xl focus:outline-none"
+                    onChange={(e) => handleAction('SINGER', e.target.value)}
+                    value={modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || 'vocal 1') : 'vocal 1'}
+                  >
+                    <option value="vocal 1">vocal 1</option>
+                    <option value="vocal 2">vocal 2</option>
+                    <option value="vocal 3">vocal 3</option>
+                  </select>
+                </div>
                 <div className="mt-2 text-sm text-brand-black/60 pl-3 border-l-2 border-brand-black/20">
-                  <span className="font-bold">Serving:</span> {activeSingers.length > 0 ? activeSingers.map((s:any) => s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
+                  <span className="font-bold">Serving:</span> {activeSingers.length > 0 ? activeSingers.map((s:any) => s.role_detail ? `${s.user_name} (${s.role_detail})` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
                 </div>
               </div>
               
               <div>
-                <Button 
-                  variant={modalState.currentTeam === 'MUSICIAN' ? 'primary' : 'outline'} 
-                  className="w-full text-left justify-start text-lg h-14"
-                  disabled={loading}
-                  onClick={() => handleAction('MUSICIAN')}
-                >
-                  MUSICIAN
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <Button 
+                    variant={modalState.currentTeam === 'MUSICIAN' ? 'primary' : 'outline'} 
+                    className="flex-1 text-left justify-start text-lg h-14"
+                    disabled={loading}
+                    onClick={() => handleAction('MUSICIAN', modalState.currentRoleDetail || 'e-guitar')}
+                  >
+                    MUSICIAN
+                  </Button>
+                  <select 
+                    className="border-2 border-brand-black bg-brand-cream font-bold px-4 rounded-xl focus:outline-none"
+                    onChange={(e) => handleAction('MUSICIAN', e.target.value)}
+                    value={modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || 'e-guitar') : 'e-guitar'}
+                  >
+                    <option value="e-guitar">e-guitar</option>
+                    <option value="acoustic guitar">acoustic guitar</option>
+                    <option value="bass">bass</option>
+                    <option value="drum">drum</option>
+                    <option value="piano">piano</option>
+                  </select>
+                </div>
                 <div className="mt-2 text-sm text-brand-black/60 pl-3 border-l-2 border-brand-black/20">
-                  <span className="font-bold">Serving:</span> {activeMusicians.length > 0 ? activeMusicians.map((s:any) => s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
+                  <span className="font-bold">Serving:</span> {activeMusicians.length > 0 ? activeMusicians.map((s:any) => s.role_detail ? `${s.user_name} (${s.role_detail})` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
                 </div>
               </div>
             </div>
@@ -283,7 +307,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                   CANCEL REGISTRATION
                 </Button>
               ) : <div></div>}
-              <Button variant="ghost" disabled={loading} onClick={() => setModalState({ open: false, serviceId: '', currentTeam: null })}>
+              <Button variant="ghost" disabled={loading} onClick={() => setModalState({ open: false, serviceId: '', currentTeam: null, currentRoleDetail: null })}>
                 CLOSE
               </Button>
             </div>
@@ -293,3 +317,4 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
     </div>
   );
 }
+
