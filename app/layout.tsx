@@ -38,12 +38,12 @@ export default function RootLayout({
         <Toaster 
           toastOptions={{
             classNames: {
-              toast: 'bg-brand-cream border-4 border-brand-black shadow-[6px_6px_0_0_#111111] rounded-none font-bold text-brand-black text-sm p-4',
-              title: 'text-base font-black',
-              description: 'opacity-80',
-              actionButton: 'bg-brand-blue text-brand-white border-2 border-brand-black rounded-none shadow-[2px_2px_0_0_#111111]',
-              cancelButton: 'bg-brand-white text-brand-black border-2 border-brand-black rounded-none shadow-[2px_2px_0_0_#111111]',
-              success: '!border-[#00E676] !text-[#00E676] [&>svg]:!text-[#00E676]',
+              toast: '!bg-brand-cream !border-4 !border-brand-black !shadow-[6px_6px_0_0_#111111] !rounded-none !font-bold !text-brand-black !text-sm !p-4',
+              title: '!text-base !font-black',
+              description: '!opacity-80',
+              actionButton: '!bg-brand-blue !text-brand-white !border-2 !border-brand-black !rounded-none !shadow-[2px_2px_0_0_#111111]',
+              cancelButton: '!bg-brand-white !text-brand-black !border-2 !border-brand-black !rounded-none !shadow-[2px_2px_0_0_#111111]',
+              success: '!border-green-700 !text-green-700 [&>svg]:!text-green-700',
               error: '!border-brand-red !text-brand-red [&>svg]:!text-brand-red',
               warning: '!border-brand-red !text-brand-red [&>svg]:!text-brand-red',
               info: '!border-brand-blue !text-brand-blue [&>svg]:!text-brand-blue',
