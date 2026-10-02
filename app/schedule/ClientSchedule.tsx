@@ -213,7 +213,10 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                         <div key={s.id} 
                              title={hoverText}
                              className={`text-[10px] md:text-xs font-bold leading-tight border border-brand-pink/30 rounded p-1 truncate cursor-pointer hover:bg-brand-pink/10 transition-colors ${isUserServing ? 'bg-brand-blue text-brand-white border-brand-blue' : 'bg-white text-brand-black/70'}`}
-                             onClick={() => setModalState({ open: true, serviceId: s.id, currentTeam: isUserServing ? registrationsMap[s.id].find((r:any) => r.user_id === userId).team : null })}
+                             onClick={() => {
+                               const rReg = isUserServing ? registrationsMap[s.id].find((r:any) => r.user_id === userId) : null;
+                               setModalState({ open: true, serviceId: s.id, currentTeam: rReg ? rReg.team : null, currentRoleDetail: rReg ? rReg.role_detail : null })
+                             }}
                         >
                           {s.start_time} {s.title}
                         </div>
