@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import { toast } from 'sonner';
 import { Button } from '@/components/ui/Button';
 import Cropper from 'react-easy-crop';
 import { getCroppedImg } from '@/lib/cropImage';
