@@ -1,12 +1,22 @@
 import Link from "next/link";
 import { Button } from "../ui/Button";
 import { getSession } from "@/lib/auth";
+import db from "@/lib/db";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { Avatar } from "../ui/Avatar";
 
 export async function Navbar() {
   const session = await getSession();
+  let dbUser = null;
+  if (session) {
+    try {
+      const { rows } = await db.query('SELECT full_name, avatar_url FROM users WHERE id = ', [session.id]);
+      if (rows.length > 0) dbUser = rows[0];
+    } catch (e) {
+      console.error("Failed to fetch user for Navbar", e);
+    }
+  }
 
   async function handleLogout() {
     "use server";
@@ -32,9 +42,9 @@ export async function Navbar() {
               </form>
               <Link href="/profile" className="flex items-center gap-2 group">
                 <span className="hidden sm:block group-hover:text-brand-pink transition-colors">
-                  {(session as any).name?.split(' ')[0] || "Profile"}
+                  {(dbUser?.full_name || (session as any).name)?.split(' ')[0] || "Profile"}
                 </span>
-                <Avatar name={(session as any).name} imgUrl={(session as any).avatarUrl} className="w-8 h-8 text-xs shadow-[2px_2px_0_0_#111111] group-hover:shadow-none group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all" />
+                <Avatar name={dbUser?.full_name || (session as any).name} imgUrl={dbUser?.avatar_url || (session as any).avatarUrl} className="w-8 h-8 text-xs shadow-[2px_2px_0_0_#111111] group-hover:shadow-none group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all" />
               </Link>
             </div>
           ) : (

@@ -78,8 +78,8 @@ export default async function SchedulePage({
           monthlyServices={monthlyServices} 
           registrationsMap={registrationsMap} 
           userId={session.id} 
-          userName={(session as any).name}
-          avatarUrl={(session as any).avatarUrl}
+          userName={dbUser?.full_name || (session as any).name}
+          avatarUrl={dbUser?.avatar_url || (session as any).avatarUrl}
           offset={offset}
           currentMonthDate={currentMonthStart.toISOString()}
         />
