@@ -12,6 +12,8 @@ import * as Dialog from '@radix-ui/react-dialog';
 export default function ClientSchedule({ upcomingServices, monthlyServices, registrationsMap, userId, userName, avatarUrl, offset, currentMonthDate }: any) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [singerRole, setSingerRole] = useState('');
+  const [musicianRole, setMusicianRole] = useState('');
   const [cancelModalState, setCancelModalState] = useState<{ open: boolean }>({ open: false });
   const [modalState, setModalState] = useState<{ open: boolean, serviceId: string, currentTeam: string | null, currentRoleDetail: string | null }>({
     open: false,
@@ -29,6 +31,10 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
   };
 
   const handleAction = async (team: string, roleDetail = '') => {
+    if ((team === 'SINGER' || team === 'MUSICIAN') && !roleDetail) {
+      toast.error('Please select a specific role before registering.');
+      return;
+    }
     setLoading(true);
     try {
       if (modalState.currentTeam) {
@@ -276,15 +282,16 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     variant={modalState.currentTeam === 'SINGER' ? 'primary' : 'outline'} 
                     className="flex-1 text-left justify-start text-lg h-14"
                     disabled={loading}
-                    onClick={() => handleAction('SINGER', modalState.currentRoleDetail || 'Vocal 1')}
+                    onClick={() => handleAction('SINGER', singerRole || (modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : ''))}
                   >
                     SINGER
                   </Button>
                   <select 
                     className="border-2 border-brand-black bg-brand-cream font-bold px-4 rounded-xl focus:outline-none"
-                    onChange={(e) => handleAction('SINGER', e.target.value)}
-                    value={modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || 'Vocal 1') : 'Vocal 1'}
+                    onChange={(e) => setSingerRole(e.target.value)}
+                    value={singerRole || (modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '')}
                   >
+                    <option value="">-Select Role-</option>
                     <option value="Vocal 1">Vocal 1</option>
                     <option value="Vocal 2">Vocal 2</option>
                     <option value="Vocal 3">Vocal 3</option>
@@ -301,15 +308,16 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     variant={modalState.currentTeam === 'MUSICIAN' ? 'primary' : 'outline'} 
                     className="flex-1 text-left justify-start text-lg h-14"
                     disabled={loading}
-                    onClick={() => handleAction('MUSICIAN', modalState.currentRoleDetail || 'E-Guitar')}
+                    onClick={() => handleAction('MUSICIAN', musicianRole || (modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : ''))}
                   >
                     MUSICIAN
                   </Button>
                   <select 
                     className="border-2 border-brand-black bg-brand-cream font-bold px-4 rounded-xl focus:outline-none"
-                    onChange={(e) => handleAction('MUSICIAN', e.target.value)}
-                    value={modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || 'E-Guitar') : 'E-Guitar'}
+                    onChange={(e) => setMusicianRole(e.target.value)}
+                    value={musicianRole || (modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '')}
                   >
+                    <option value="">-Select Role-</option>
                     <option value="E-Guitar">E-Guitar</option>
                     <option value="Acoustic Guitar">Acoustic Guitar</option>
                     <option value="Bass">Bass</option>
