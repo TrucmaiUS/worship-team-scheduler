@@ -84,10 +84,10 @@ export async function updateName(newName: string) {
   }
 
   // Update DB
-  await db.query('UPDATE users SET full_name =  WHERE id = ', [newName.trim(), session.id]);
+  await db.query('UPDATE users SET full_name = $1 WHERE id = $2', [newName.trim(), session.id]);
 
   // Re-issue JWT
-  const { rows } = await db.query('SELECT * FROM users WHERE id = ', [session.id]);
+  const { rows } = await db.query('SELECT * FROM users WHERE id = $1', [session.id]);
   const user = rows[0] as any;
   const token = await signToken({
     id: user.id,
