@@ -9,12 +9,12 @@ import fs from 'fs/promises';
 import path from 'path';
 import { createClient } from '@supabase/supabase-js';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
-
 export async function uploadAvatar(formData: FormData) {
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co',
+    process.env.SUPABASE_SERVICE_ROLE_KEY || 'placeholder'
+  );
+
   const session = await getSession();
   if (!session) {
     return { error: 'Unauthorized' };
