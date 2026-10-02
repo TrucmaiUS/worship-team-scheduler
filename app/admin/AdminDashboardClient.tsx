@@ -228,7 +228,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                               <div className="flex flex-wrap gap-1">
                                 {service.sound.length > 0 ? service.sound.map((s:any) => (
                                   <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-[10px] font-bold">
-                                    {s.role_detail ? ${s.full_name} () : s.full_name}
+                                    {s.role_detail ? `${s.full_name} (${s.role_detail})` : s.full_name}
                                     <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
                                   </span>
                                 )) : <span className="opacity-50 italic text-[10px] font-bold">None</span>}
@@ -244,7 +244,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                               <div className="flex flex-wrap gap-1">
                                 {service.singer.length > 0 ? service.singer.map((s:any) => (
                                   <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-[10px] font-bold">
-                                    {s.role_detail ? ${s.full_name} () : s.full_name}
+                                    {s.role_detail ? `${s.full_name} (${s.role_detail})` : s.full_name}
                                     <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
                                   </span>
                                 )) : <span className="opacity-50 italic text-[10px] font-bold">None</span>}
@@ -260,7 +260,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                               <div className="flex flex-wrap gap-1">
                                 {service.musician.length > 0 ? service.musician.map((s:any) => (
                                   <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-[10px] font-bold">
-                                    {s.role_detail ? ${s.full_name} () : s.full_name}
+                                    {s.role_detail ? `${s.full_name} (${s.role_detail})` : s.full_name}
                                     <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
                                   </span>
                                 )) : <span className="opacity-50 italic text-[10px] font-bold">None</span>}
