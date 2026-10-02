@@ -246,48 +246,48 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                             {/* Sounds */}
                             <div>
                               <div className="flex justify-between items-center mb-1">
-                                <span className="font-bold uppercase tracking-widest text-[10px]">Sound</span>
-                                <button className="text-brand-blue font-bold text-[10px] hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SOUND' })}>+ Add</button>
+                                <span className="font-bold uppercase tracking-widest text-sm">Sound</span>
+                                <button className="text-brand-blue font-bold text-sm hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SOUND' })}>+ Add</button>
                               </div>
                               <div className="flex flex-wrap gap-1">
                                 {service.sound.length > 0 ? service.sound.map((s:any) => (
-                                  <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-[10px] font-bold">
+                                  <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-sm font-bold">
                                     {s.role_detail ? `${s.full_name} (${s.role_detail})` : s.full_name}
                                     <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
                                   </span>
-                                )) : <span className="opacity-50 italic text-[10px] font-bold">None</span>}
+                                )) : <span className="opacity-50 italic text-sm font-bold">None</span>}
                               </div>
                             </div>
                             
                             {/* Singers */}
                             <div>
                               <div className="flex justify-between items-center mb-1">
-                                <span className="font-bold uppercase tracking-widest text-[10px]">Singer</span>
-                                <button className="text-brand-blue font-bold text-[10px] hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SINGER' })}>+ Add</button>
+                                <span className="font-bold uppercase tracking-widest text-sm">Singer</span>
+                                <button className="text-brand-blue font-bold text-sm hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SINGER' })}>+ Add</button>
                               </div>
                               <div className="flex flex-wrap gap-1">
                                 {service.singer.length > 0 ? service.singer.map((s:any) => (
-                                  <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-[10px] font-bold">
+                                  <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-sm font-bold">
                                     {s.role_detail ? `${s.full_name} (${s.role_detail})` : s.full_name}
                                     <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
                                   </span>
-                                )) : <span className="opacity-50 italic text-[10px] font-bold">None</span>}
+                                )) : <span className="opacity-50 italic text-sm font-bold">None</span>}
                               </div>
                             </div>
 
                             {/* Musicians */}
                             <div>
                               <div className="flex justify-between items-center mb-1">
-                                <span className="font-bold uppercase tracking-widest text-[10px]">Musician</span>
-                                <button className="text-brand-blue font-bold text-[10px] hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'MUSICIAN' })}>+ Add</button>
+                                <span className="font-bold uppercase tracking-widest text-sm">Musician</span>
+                                <button className="text-brand-blue font-bold text-sm hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'MUSICIAN' })}>+ Add</button>
                               </div>
                               <div className="flex flex-wrap gap-1">
                                 {service.musician.length > 0 ? service.musician.map((s:any) => (
-                                  <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-[10px] font-bold">
+                                  <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-sm font-bold">
                                     {s.role_detail ? `${s.full_name} (${s.role_detail})` : s.full_name}
                                     <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
                                   </span>
-                                )) : <span className="opacity-50 italic text-[10px] font-bold">None</span>}
+                                )) : <span className="opacity-50 italic text-sm font-bold">None</span>}
                               </div>
                             </div>
                           </div>
