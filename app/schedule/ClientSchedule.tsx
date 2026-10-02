@@ -6,10 +6,13 @@ import { Button } from '@/components/ui/Button';
 import { Avatar } from '@/components/ui/Avatar';
 import { joinService, changeRole, cancelRegistration } from '@/app/actions/schedule';
 import { getDay, getDaysInMonth, startOfMonth, format, isSameDay } from 'date-fns';
+import { toast } from 'sonner';
+import * as Dialog from '@radix-ui/react-dialog';
 
 export default function ClientSchedule({ upcomingServices, monthlyServices, registrationsMap, userId, userName, avatarUrl, offset, currentMonthDate }: any) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [cancelModalState, setCancelModalState] = useState<{ open: boolean }>({ open: false });
   const [modalState, setModalState] = useState<{ open: boolean, serviceId: string, currentTeam: string | null, currentRoleDetail: string | null }>({
     open: false,
     serviceId: '',
@@ -27,21 +30,37 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
 
   const handleAction = async (team: string, roleDetail = '') => {
     setLoading(true);
-    if (modalState.currentTeam) {
-      await changeRole(modalState.serviceId, team, roleDetail);
-    } else {
-      await joinService(modalState.serviceId, team, roleDetail);
+    try {
+      if (modalState.currentTeam) {
+        await changeRole(modalState.serviceId, team, roleDetail);
+        toast.success('Role changed successfully!');
+      } else {
+        await joinService(modalState.serviceId, team, roleDetail);
+        toast.success('Successfully registered to serve!');
+      }
+      setModalState({ open: false, serviceId: '', currentTeam: null, currentRoleDetail: null });
+    } catch (e: any) {
+      toast.error('Failed to register: ' + e.message);
+    } finally {
+      setLoading(false);
     }
-    setModalState({ open: false, serviceId: '', currentTeam: null, currentRoleDetail: null });
-    setLoading(false);
   };
 
-  const handleCancel = async () => {
-    if (confirm('Are you sure you want to cancel your serving registration?')) {
-      setLoading(true);
+  const handleCancel = () => {
+    setCancelModalState({ open: true });
+  };
+
+  const confirmCancel = async () => {
+    setLoading(true);
+    try {
       await cancelRegistration(modalState.serviceId);
+      toast.success('Registration cancelled successfully!');
       setModalState({ open: false, serviceId: '', currentTeam: null, currentRoleDetail: null });
+    } catch (e: any) {
+      toast.error('Failed to cancel registration: ' + e.message);
+    } finally {
       setLoading(false);
+      setCancelModalState({ open: false });
     }
   };
 

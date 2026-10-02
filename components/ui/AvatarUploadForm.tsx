@@ -42,12 +42,12 @@ export function AvatarUploadForm({ uploadAction }: { uploadAction: (formData: Fo
       
       const result = await uploadAction(formData);
       if (result?.error) {
-        alert('Upload failed: ' + result.error);
+        toast.error('Upload failed: ' + result.error);
       } else {
         setImageSrc(null); // Close the cropper on success
       }
     } catch (e: any) {
-      alert('An error occurred during upload: ' + e.message);
+      toast.error('An error occurred during upload: ' + e.message);
     } finally {
       setIsUploading(false);
     }

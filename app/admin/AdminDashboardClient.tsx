@@ -43,9 +43,18 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
     setLoading(false);
   };
 
-  const handleRemove = async (serviceId: string, userId: string) => {
-    if (confirm('Remove this member from the service?')) {
-      await adminRemoveAssignment(serviceId, userId);
+  const handleRemove = (serviceId: string, userId: string) => {
+    setRemoveModalState({ open: true, serviceId, userId });
+  };
+
+  const confirmRemove = async () => {
+    try {
+      await adminRemoveAssignment(removeModalState.serviceId, removeModalState.userId);
+      toast.success('Member removed!');
+    } catch (e: any) {
+      toast.error('Failed to remove member: ' + e.message);
+    } finally {
+      setRemoveModalState({ open: false, serviceId: '', userId: '' });
     }
   };
 
