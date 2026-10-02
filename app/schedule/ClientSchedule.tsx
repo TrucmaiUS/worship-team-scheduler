@@ -147,7 +147,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
       {/* HEADER */}
       <div className="flex flex-col items-center text-center mb-12">
         <Avatar name={userName} imgUrl={avatarUrl} className="w-20 h-20 text-3xl mb-4 shadow-[4px_4px_0_0_#111111]" />
-        <h1 className="editorial-heading text-5xl text-brand-pink mb-2 opacity-90">WELCOME, {userName?.split(' ')[0]?.toUpperCase() || 'VOLUNTEER'}!</h1>
+        <h1 className="editorial-heading text-3xl sm:text-5xl text-brand-pink mb-2 opacity-90">WELCOME, {userName?.split(' ')[0]?.toUpperCase() || 'VOLUNTEER'}!</h1>
         <p className="font-bold text-brand-black/50 uppercase tracking-widest">Find your place to serve</p>
       </div>
 
@@ -193,14 +193,14 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
 
       {/* MONTHLY CALENDAR SECTION */}
       <section>
-        <div className="flex flex-col md:flex-row justify-between items-center mb-6 bg-brand-cream border-2 border-brand-pink rounded-xl p-4 shadow-sm">
-          <Button variant="ghost" onClick={() => handleNavigate(offset - 1)}>&larr; Prev Month</Button>
-          <div className="text-center my-4 md:my-0">
-            <h2 className="editorial-heading text-3xl text-brand-blue">{monthName.toUpperCase()}</h2>
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 mb-6 bg-brand-cream border-2 border-brand-pink rounded-xl p-3 sm:p-4 shadow-sm">
+          <Button variant="ghost" onClick={() => handleNavigate(offset - 1)}>&larr; Prev</Button>
+          <div className="text-center">
+            <h2 className="editorial-heading text-2xl sm:text-3xl text-brand-blue">{monthName.toUpperCase()}</h2>
           </div>
           <div className="flex gap-2">
-            {offset !== 0 && <Button variant="outline" onClick={() => handleNavigate(0)}>THIS MONTH</Button>}
-            <Button variant="ghost" onClick={() => handleNavigate(offset + 1)}>Next Month &rarr;</Button>
+            {offset !== 0 && <Button variant="outline" onClick={() => handleNavigate(0)} className="text-xs sm:text-sm">THIS MONTH</Button>}
+            <Button variant="ghost" onClick={() => handleNavigate(offset + 1)}>Next &rarr;</Button>
           </div>
         </div>
 
@@ -226,7 +226,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
 
               return (
                 <div key={day} className={`min-h-[80px] md:min-h-[120px] border border-brand-pink/20 rounded-md p-1 md:p-2 relative flex flex-col ${isToday ? 'bg-brand-yellow/20 border-brand-yellow' : 'bg-brand-white/50'}`}>
-                  <span className="font-bold text-lg inline-block mb-1">{day}</span>
+                  <span className="font-bold text-sm sm:text-lg inline-block mb-1">{day}</span>
                   <div className="flex-1 flex flex-col gap-1 overflow-y-auto no-scrollbar">
                     {dayServices.map((s: any) => {
                       const isUserServing = registrationsMap[s.id]?.some((r: any) => r.user_id === userId);

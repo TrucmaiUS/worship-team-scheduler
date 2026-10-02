@@ -13,7 +13,7 @@ export default async function LandingPage() {
         {/* HERO SECTION */}
         <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-20 relative">
           
-          <div className="relative border-8 border-brand-black bg-brand-white shadow-[12px_12px_0_0_#0038FF] transform rotate-1 transition-transform hover:rotate-0">
+          <div className="relative border-4 sm:border-8 border-brand-black bg-brand-white shadow-[6px_6px_0_0_#0038FF] sm:shadow-[12px_12px_0_0_#0038FF] transform rotate-1 transition-transform hover:rotate-0">
             <div className="relative w-full border-b-8 border-brand-black bg-brand-cream flex justify-center">
               <Image 
                 src="/images/real-cover.png" 
@@ -24,13 +24,13 @@ export default async function LandingPage() {
                 priority
               />
             </div>
-            <div className="p-8 md:p-12 text-center bg-brand-cream checkerboard-pink">
-              <h1 className="editorial-heading text-5xl md:text-7xl lg:text-8xl mb-6">
-                <span className="bg-brand-white text-brand-black px-6 py-2 border-4 border-brand-black shadow-[6px_6px_0_0_#0038FF] inline-block -rotate-2">
+            <div className="p-4 sm:p-8 md:p-12 text-center bg-brand-cream checkerboard-pink">
+              <h1 className="editorial-heading text-3xl sm:text-5xl md:text-7xl lg:text-8xl mb-4 sm:mb-6">
+                <span className="bg-brand-white text-brand-black px-3 sm:px-6 py-1 sm:py-2 border-4 border-brand-black shadow-[4px_4px_0_0_#0038FF] sm:shadow-[6px_6px_0_0_#0038FF] inline-block -rotate-2">
                   MUSIC MINISTRY
                 </span>
               </h1>
-              <p className="font-bold text-xl md:text-3xl text-brand-black bg-brand-white inline-block px-4 py-2 border-4 border-brand-black rotate-1 mt-4">
+              <p className="font-bold text-base sm:text-xl md:text-3xl text-brand-black bg-brand-white inline-block px-3 sm:px-4 py-1 sm:py-2 border-4 border-brand-black rotate-1 mt-2 sm:mt-4">
                 Serve together. Worship together.
               </p>
               
@@ -54,8 +54,8 @@ export default async function LandingPage() {
         <section className="py-24 pattern-grid border-t-8 border-b-8 border-brand-black relative">
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-20">
-              <div className="inline-block bg-brand-cream px-8 md:px-12 py-6 border-8 border-brand-black shadow-[12px_12px_0_0_#0038FF] transform -rotate-2 hover:rotate-0 transition-transform">
-                <h2 className="editorial-heading text-5xl md:text-7xl text-brand-black">
+              <div className="inline-block bg-brand-cream px-4 sm:px-8 md:px-12 py-4 sm:py-6 border-4 sm:border-8 border-brand-black shadow-[6px_6px_0_0_#0038FF] sm:shadow-[12px_12px_0_0_#0038FF] transform -rotate-2 hover:rotate-0 transition-transform">
+                <h2 className="editorial-heading text-3xl sm:text-5xl md:text-7xl text-brand-black">
                   SERVE THROUGH <br className="hidden md:block" />
                   <span className="text-brand-pink">YOUR GIFT</span>
                 </h2>
@@ -97,7 +97,7 @@ export default async function LandingPage() {
         {/* HOW IT WORKS */}
         <section className="w-full py-24 relative overflow-hidden">
           <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="editorial-heading text-5xl md:text-7xl text-brand-black mb-16 text-center">HOW IT WORKS</h2>
+            <h2 className="editorial-heading text-3xl sm:text-5xl md:text-7xl text-brand-black mb-8 sm:mb-16 text-center">HOW IT WORKS</h2>
             
             <div className="flex flex-col md:flex-row gap-12 relative mt-12">
               {/* Line connects exactly behind the center of the 80px (h-20) circles */}
@@ -136,13 +136,13 @@ export default async function LandingPage() {
                  <h2 className="editorial-heading text-[12vw] leading-none text-brand-black whitespace-nowrap">READY TO SERVE?</h2>
               </div>
               
-              <h2 className="editorial-heading text-5xl md:text-7xl text-brand-black relative z-10">
-                READY TO <span className="bg-brand-blue text-brand-white px-4 py-1 inline-block rotate-2 border-4 border-brand-black shadow-[6px_6px_0_0_#111111]">SERVE?</span>
+              <h2 className="editorial-heading text-3xl sm:text-5xl md:text-7xl text-brand-black relative z-10">
+                READY TO <span className="bg-brand-blue text-brand-white px-2 sm:px-4 py-1 inline-block rotate-2 border-4 border-brand-black shadow-[4px_4px_0_0_#111111] sm:shadow-[6px_6px_0_0_#111111]">SERVE?</span>
               </h2>
             </div>
             
             <Link href={scheduleHref}>
-              <Button size="lg" className="bg-brand-white text-brand-black text-2xl font-bold px-12 py-6 border-8 border-brand-black rounded-none shadow-[12px_12px_0_0_#FFA6C9] hover:-translate-y-1 transition-transform -rotate-1">
+              <Button size="lg" className="bg-brand-white text-brand-black text-base sm:text-xl md:text-2xl font-bold px-6 sm:px-12 py-4 sm:py-6 border-4 sm:border-8 border-brand-black rounded-none shadow-[6px_6px_0_0_#FFA6C9] sm:shadow-[12px_12px_0_0_#FFA6C9] hover:-translate-y-1 transition-transform -rotate-1">
                 VIEW THIS WEEK&apos;S SCHEDULE
               </Button>
             </Link>

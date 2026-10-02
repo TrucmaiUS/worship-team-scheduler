@@ -17,6 +17,12 @@ export const metadata: Metadata = {
   description: "Worship Team Serving Schedule Web App",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Toaster } from "sonner";

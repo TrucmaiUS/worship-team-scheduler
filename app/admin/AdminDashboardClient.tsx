@@ -153,7 +153,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
       {/* HEADER: TABS (Left) & FILTERS (Right) */}
       <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-8">
         {/* TABS */}
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-2 sm:gap-4">
           <Button 
             variant={activeTab === 'SCHEDULE' ? 'primary' : 'outline'} 
             className={`border-4 ${activeTab === 'SCHEDULE' ? 'rotate-1 shadow-[4px_4px_0_0_#111111]' : ''}`}
@@ -395,20 +395,21 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
       {activeTab === 'MEMBERS' && (
         <div className="animate-in fade-in slide-in-from-bottom-2">
           <div className="bg-brand-white border-4 border-brand-black overflow-hidden">
-            <table className="w-full text-left">
+            <div className="overflow-x-auto">
+            <table className="w-full text-left min-w-[500px]">
               <thead className="bg-brand-pink text-brand-white font-bold uppercase tracking-widest border-b-8 border-brand-black">
                 <tr>
-                  <th className="p-4 border-r-4 border-brand-black">Name</th>
-                  <th className="p-4 border-r-4 border-brand-black">Email</th>
-                  <th className="p-4">Role</th>
+                  <th className="p-3 sm:p-4 border-r-4 border-brand-black">Name</th>
+                  <th className="p-3 sm:p-4 border-r-4 border-brand-black">Email</th>
+                  <th className="p-3 sm:p-4">Role</th>
                 </tr>
               </thead>
               <tbody className="font-bold">
                 {allUsers.map((u: any) => (
                   <tr key={u.id} className="border-b-4 border-brand-black last:border-b-0 hover:bg-brand-cream transition-colors">
-                    <td className="p-4 border-r-4 border-brand-black">{u.full_name}</td>
-                    <td className="p-4 border-r-4 border-brand-black opacity-70">{u.email}</td>
-                    <td className="p-4">
+                    <td className="p-3 sm:p-4 border-r-4 border-brand-black">{u.full_name}</td>
+                    <td className="p-3 sm:p-4 border-r-4 border-brand-black opacity-70 text-sm">{u.email}</td>
+                    <td className="p-3 sm:p-4">
                       <span className={`px-2 py-1 border-2 border-brand-black ${u.role === 'ADMIN' ? 'bg-brand-blue text-brand-white' : 'bg-brand-white'}`}>
                         {u.role}
                       </span>
@@ -417,6 +418,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
         </div>
       )}
