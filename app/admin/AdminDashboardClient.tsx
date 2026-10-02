@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/Button';
 import { adminAssignMember, adminRemoveAssignment } from './actions';
+import * as Dialog from '@radix-ui/react-dialog';
+import { toast } from 'sonner';
 
 export default function AdminDashboardClient({ gridData, allUsers }: any) {
   const assignableUsers = allUsers.filter((u: any) => u.role !== 'ADMIN');
@@ -402,10 +404,11 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
       )}
 
       {/* MODAL */}
-      {modalState.open && (
-        <div className="fixed inset-0 bg-brand-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-brand-cream border-8 border-brand-black p-8 max-w-xl w-full shadow-[12px_12px_0_0_#FFA6C9] max-h-[80vh] flex flex-col">
-            <h2 className="editorial-heading text-2xl mb-4">Assign to {modalState.team}</h2>
+      <Dialog.Root open={modalState.open} onOpenChange={(open) => !open && setModalState({ open: false, serviceId: '', team: '' })}>
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 bg-brand-black/50 backdrop-blur-sm z-50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+          <Dialog.Content className="fixed left-[50%] top-[50%] z-50 w-[95vw] max-w-xl translate-x-[-50%] translate-y-[-50%] bg-brand-cream border-8 border-brand-black p-8 shadow-[12px_12px_0_0_#FFA6C9] max-h-[80vh] flex flex-col data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] outline-none">
+            <Dialog.Title className="editorial-heading text-2xl mb-4">Assign to {modalState.team}</Dialog.Title>
             <div className="flex-1 overflow-y-auto border-4 border-brand-black bg-brand-white p-2 mb-4 space-y-2">
               {assignableUsers.map((u: any) => (
                 <div key={u.id} className="flex justify-between items-center p-2 hover:bg-brand-cream border-b-2 border-brand-black last:border-0">
@@ -434,14 +437,14 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                 </div>
               ))}
             </div>
-            <div className="flex justify-end">
-              <Button variant="ghost" onClick={() => setModalState({ open: false, serviceId: '', team: '' })}>
-                CLOSE
-              </Button>
+            <div className="flex justify-end mt-4">
+              <Dialog.Close asChild>
+                <Button variant="ghost">CLOSE</Button>
+              </Dialog.Close>
             </div>
-          </div>
-        </div>
-      )}
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </div>
   );
 }
