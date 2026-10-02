@@ -112,7 +112,8 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
 
   // Upcoming Special Events (Next 3 months, not 'Vietnamese Service')
   const specialEvents = gridData.filter((s: any) => {
-    if (s.title === 'Vietnamese Service') return false;
+    if (s.title.toLowerCase().includes('vietnamese service')) return false;
+    if (s.title.toLowerCase().includes('combine')) return false;
     if (s.date < todayStr) return false;
     
     // Check if within 3 months
@@ -194,65 +195,80 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
           {specialEvents.length > 0 && (
             <div className="mb-12">
               <h2 className="editorial-heading text-2xl mb-6 text-brand-pink border-b-4 border-brand-pink inline-block pr-4">★ UPCOMING SPECIAL EVENTS</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                {specialEvents.map((service: any) => (
-                  <div key={service.id} className="bg-brand-white border-2 border-brand-black p-4 relative flex flex-col justify-between shadow-[4px_4px_0_0_#FF2E93] transition-transform hover:-translate-y-1">
-                    <div>
-                      <h3 className="font-bold uppercase tracking-widest text-brand-pink text-xs mb-1">
-                        {new Date(service.date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}
-                      </h3>
-                      <h2 className="editorial-heading text-xl mb-1 leading-tight text-brand-black">{service.title}</h2>
-                      <p className="font-bold opacity-80 mb-3 text-xs">{service.start_time} - {service.end_time}</p>
-                    </div>
+              <div className="space-y-8">
+                {Object.entries(
+                  specialEvents.reduce((groups: any, service: any) => {
+                    const d = new Date(service.date + 'T00:00:00');
+                    const month = d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }).toUpperCase();
+                    if (!groups[month]) groups[month] = [];
+                    groups[month].push(service);
+                    return groups;
+                  }, {})
+                ).map(([monthName, services]: any) => (
+                  <div key={monthName}>
+                    <h3 className="font-bold uppercase tracking-widest text-brand-black/50 mb-4 pb-2 border-b border-brand-black/20 text-lg">{monthName}</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                      {services.map((service: any) => (
+                        <div key={service.id} className="bg-brand-white border-2 border-brand-black p-4 relative flex flex-col justify-between shadow-[4px_4px_0_0_#FFA6C9] transition-transform hover:-translate-y-1">
+                          <div>
+                            <h3 className="font-bold uppercase tracking-widest text-brand-pink text-xs mb-1">
+                              {new Date(service.date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}
+                            </h3>
+                            <h2 className="editorial-heading text-xl mb-1 leading-tight text-brand-black">{service.title}</h2>
+                            <p className="font-bold opacity-80 mb-3 text-xs">{service.start_time} - {service.end_time}</p>
+                          </div>
 
-                    <div className="border-t-2 border-brand-black pt-3 flex flex-col gap-3 mt-auto">
-                      {/* Sounds */}
-                      <div>
-                        <div className="flex justify-between items-center mb-1">
-                          <span className="font-bold uppercase tracking-widest text-[10px]">Sound</span>
-                          <button className="text-brand-blue font-bold text-[10px] hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SOUND' })}>+ Add</button>
-                        </div>
-                        <div className="flex flex-wrap gap-1">
-                          {service.sound.length > 0 ? service.sound.map((s:any) => (
-                            <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-[10px] font-bold">
-                              {s.full_name}
-                              <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
-                            </span>
-                          )) : <span className="opacity-50 italic text-[10px] font-bold">None</span>}
-                        </div>
-                      </div>
-                      
-                      {/* Singers */}
-                      <div>
-                        <div className="flex justify-between items-center mb-1">
-                          <span className="font-bold uppercase tracking-widest text-[10px]">Singers</span>
-                          <button className="text-brand-blue font-bold text-[10px] hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SINGER' })}>+ Add</button>
-                        </div>
-                        <div className="flex flex-wrap gap-1">
-                          {service.singer.length > 0 ? service.singer.map((s:any) => (
-                            <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-[10px] font-bold">
-                              {s.full_name}
-                              <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
-                            </span>
-                          )) : <span className="opacity-50 italic text-[10px] font-bold">None</span>}
-                        </div>
-                      </div>
+                          <div className="border-t-2 border-brand-black pt-3 flex flex-col gap-3 mt-auto">
+                            {/* Sounds */}
+                            <div>
+                              <div className="flex justify-between items-center mb-1">
+                                <span className="font-bold uppercase tracking-widest text-[10px]">Sound</span>
+                                <button className="text-brand-blue font-bold text-[10px] hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SOUND' })}>+ Add</button>
+                              </div>
+                              <div className="flex flex-wrap gap-1">
+                                {service.sound.length > 0 ? service.sound.map((s:any) => (
+                                  <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-[10px] font-bold">
+                                    {s.full_name}
+                                    <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
+                                  </span>
+                                )) : <span className="opacity-50 italic text-[10px] font-bold">None</span>}
+                              </div>
+                            </div>
+                            
+                            {/* Singers */}
+                            <div>
+                              <div className="flex justify-between items-center mb-1">
+                                <span className="font-bold uppercase tracking-widest text-[10px]">Singers</span>
+                                <button className="text-brand-blue font-bold text-[10px] hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SINGER' })}>+ Add</button>
+                              </div>
+                              <div className="flex flex-wrap gap-1">
+                                {service.singer.length > 0 ? service.singer.map((s:any) => (
+                                  <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-[10px] font-bold">
+                                    {s.full_name}
+                                    <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
+                                  </span>
+                                )) : <span className="opacity-50 italic text-[10px] font-bold">None</span>}
+                              </div>
+                            </div>
 
-                      {/* Musicians */}
-                      <div>
-                        <div className="flex justify-between items-center mb-1">
-                          <span className="font-bold uppercase tracking-widest text-[10px]">Band</span>
-                          <button className="text-brand-blue font-bold text-[10px] hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'MUSICIAN' })}>+ Add</button>
+                            {/* Musicians */}
+                            <div>
+                              <div className="flex justify-between items-center mb-1">
+                                <span className="font-bold uppercase tracking-widest text-[10px]">Band</span>
+                                <button className="text-brand-blue font-bold text-[10px] hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'MUSICIAN' })}>+ Add</button>
+                              </div>
+                              <div className="flex flex-wrap gap-1">
+                                {service.musician.length > 0 ? service.musician.map((s:any) => (
+                                  <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-[10px] font-bold">
+                                    {s.full_name}
+                                    <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
+                                  </span>
+                                )) : <span className="opacity-50 italic text-[10px] font-bold">None</span>}
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div className="flex flex-wrap gap-1">
-                          {service.musician.length > 0 ? service.musician.map((s:any) => (
-                            <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-[10px] font-bold">
-                              {s.full_name}
-                              <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
-                            </span>
-                          )) : <span className="opacity-50 italic text-[10px] font-bold">None</span>}
-                        </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 ))}
@@ -276,7 +292,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                     <h3 className="absolute -top-4 left-4 bg-brand-blue text-brand-white font-bold px-4 py-1 border-4 border-brand-black z-10 shadow-[4px_4px_0_0_#111111] transform -rotate-1">
                       WEEK {week.weekNum}
                     </h3>
-                    <div className="overflow-x-auto bg-brand-white border-8 border-brand-black shadow-[12px_12px_0_0_#111111] pt-6">
+                    <div className="overflow-x-auto bg-brand-white border-4 border-brand-black shadow-[6px_6px_0_0_#111111] pt-6">
                       <div className="min-w-[800px]">
                         {week.services.map((service: any) => (
                           <div key={service.id} className="flex border-b-4 border-brand-black last:border-b-0 hover:bg-brand-cream/20 transition-colors">
@@ -384,7 +400,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
       {/* MODAL */}
       {modalState.open && (
         <div className="fixed inset-0 bg-brand-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-brand-cream border-8 border-brand-black p-8 max-w-md w-full shadow-[12px_12px_0_0_#FF2E93] max-h-[80vh] flex flex-col">
+          <div className="bg-brand-cream border-8 border-brand-black p-8 max-w-md w-full shadow-[12px_12px_0_0_#FFA6C9] max-h-[80vh] flex flex-col">
             <h2 className="editorial-heading text-2xl mb-4">Assign to {modalState.team}</h2>
             <div className="flex-1 overflow-y-auto border-4 border-brand-black bg-brand-white p-2 mb-4 space-y-2">
               {allUsers.map((u: any) => (

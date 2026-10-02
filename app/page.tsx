@@ -138,7 +138,7 @@ export default function LandingPage() {
             </div>
             
             <Link href="/schedule">
-              <Button size="lg" className="bg-brand-white text-brand-black text-2xl font-bold px-12 py-6 border-8 border-brand-black rounded-none shadow-[12px_12px_0_0_#FF2E93] hover:-translate-y-1 transition-transform -rotate-1">
+              <Button size="lg" className="bg-brand-white text-brand-black text-2xl font-bold px-12 py-6 border-8 border-brand-black rounded-none shadow-[12px_12px_0_0_#FFA6C9] hover:-translate-y-1 transition-transform -rotate-1">
                 VIEW THIS WEEK'S SCHEDULE
               </Button>
             </Link>

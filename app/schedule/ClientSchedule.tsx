@@ -129,29 +129,26 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
         <h2 className="editorial-heading text-3xl mb-6 bg-brand-black text-brand-white inline-block px-4 py-2 rounded-lg">
           UPCOMING EVENTS
         </h2>
-        {upcomingServices.length === 0 ? (
+        {upcomingServices.filter((s: any) => !s.title.toLowerCase().includes('vietnamese service') && !s.title.toLowerCase().includes('combine')).length === 0 ? (
           <div className="text-center py-12 border-2 border-dashed border-brand-black/20 rounded-xl">
             <p className="font-bold text-xl opacity-50">No upcoming events scheduled.</p>
           </div>
         ) : (
           <div className="space-y-8">
             {Object.entries(
-              upcomingServices.reduce((groups: any, service: any) => {
-                const serviceDate = new Date(service.date);
-                const today = new Date();
-                const diffTime = serviceDate.getTime() - today.getTime();
-                const diffDays = diffTime / (1000 * 3600 * 24);
-                
-                let label = "NEXT WEEK";
-                if (diffDays <= 7) label = "THIS WEEK";
-                
-                if (!groups[label]) groups[label] = [];
-                groups[label].push(service);
-                return groups;
-              }, {})
+              upcomingServices
+                .filter((s: any) => !s.title.toLowerCase().includes('vietnamese service') && !s.title.toLowerCase().includes('combine'))
+                .reduce((groups: any, service: any) => {
+                  const serviceDate = new Date(service.date);
+                  const label = format(serviceDate, 'MMMM yyyy').toUpperCase();
+                  
+                  if (!groups[label]) groups[label] = [];
+                  groups[label].push(service);
+                  return groups;
+                }, {})
             ).map(([label, services]: any) => (
               <div key={label}>
-                <h3 className="font-bold uppercase tracking-widest text-brand-black/50 mb-4 pb-2 border-b border-brand-black/20 text-xl">{label}</h3>
+                <h3 className="font-bold uppercase tracking-widest text-brand-black/50 mb-4 pb-2 border-b border-brand-black/20 text-lg">{label}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {services.map((service: any) => renderServiceCard(service))}
                 </div>
