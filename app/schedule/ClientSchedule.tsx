@@ -85,11 +85,11 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
             </p>
             <p>
               <span className="font-bold inline-block w-16">Singers:</span> 
-              {singers.length > 0 ? singers.map((s:any) => s.role_detail ? ` ()` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
+              {singers.length > 0 ? singers.map((s:any) => s.role_detail ? `${s.user_name} (${s.role_detail})` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
             </p>
             <p>
               <span className="font-bold inline-block w-16">Band:</span> 
-              {musicians.length > 0 ? musicians.map((s:any) => s.role_detail ? ` ()` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
+              {musicians.length > 0 ? musicians.map((s:any) => s.role_detail ? `${s.user_name} (${s.role_detail})` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
             </p>
           </div>
           {userReg ? (
@@ -320,4 +320,5 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
     </div>
   );
 }
+
 

@@ -40,9 +40,9 @@ export default async function AdminPage() {
     const serviceRegs = registrations.filter((r: any) => r.service_id === s.id);
     return {
       ...s,
-      sound: serviceRegs.filter((r: any) => r.team === 'SOUND').map((r: any) => users.find((u: any) => u.id === r.user_id)).filter(Boolean),
-      singer: serviceRegs.filter((r: any) => r.team === 'SINGER').map((r: any) => users.find((u: any) => u.id === r.user_id)).filter(Boolean),
-      musician: serviceRegs.filter((r: any) => r.team === 'MUSICIAN').map((r: any) => users.find((u: any) => u.id === r.user_id)).filter(Boolean),
+      sound: serviceRegs.filter((r: any) => r.team === 'SOUND').map((r: any) => { const u = users.find((u: any) => u.id === r.user_id); return u ? { ...u, role_detail: r.role_detail } : null; }).filter(Boolean),
+      singer: serviceRegs.filter((r: any) => r.team === 'SINGER').map((r: any) => { const u = users.find((u: any) => u.id === r.user_id); return u ? { ...u, role_detail: r.role_detail } : null; }).filter(Boolean),
+      musician: serviceRegs.filter((r: any) => r.team === 'MUSICIAN').map((r: any) => { const u = users.find((u: any) => u.id === r.user_id); return u ? { ...u, role_detail: r.role_detail } : null; }).filter(Boolean),
     };
   });
 
