@@ -7,6 +7,12 @@ import { cookies } from 'next/headers';
 import { revalidatePath } from 'next/cache';
 import fs from 'fs/promises';
 import path from 'path';
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!
+);
 
 export async function uploadAvatar(formData: FormData) {
   const session = await getSession();
@@ -19,18 +25,25 @@ export async function uploadAvatar(formData: FormData) {
     return { error: 'No file uploaded' };
   }
 
-  // Ensure uploads directory exists
-  const uploadsDir = path.join(process.cwd(), 'public', 'uploads', 'avatars');
-  await fs.mkdir(uploadsDir, { recursive: true });
-
   const ext = file.name.split('.').pop();
   const filename = `${session.id}_${Date.now()}.${ext}`;
-  const filePath = path.join(uploadsDir, filename);
 
   const buffer = Buffer.from(await file.arrayBuffer());
-  await fs.writeFile(filePath, buffer);
 
-  const avatarUrl = `/uploads/avatars/${filename}`;
+  // Upload to Supabase Storage
+  const { data, error } = await supabase.storage
+    .from('avatars')
+    .upload(filename, buffer, {
+      contentType: file.type,
+      upsert: true
+    });
+
+  if (error) {
+    return { error: 'Upload to storage failed: ' + error.message };
+  }
+
+  const { data: publicUrlData } = supabase.storage.from('avatars').getPublicUrl(filename);
+  const avatarUrl = publicUrlData.publicUrl;
 
   // Update DB
   await db.query('UPDATE users SET avatar_url = $1 WHERE id = $2', [avatarUrl, session.id]);
