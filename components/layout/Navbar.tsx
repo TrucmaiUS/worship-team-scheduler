@@ -8,7 +8,7 @@ import { Avatar } from "../ui/Avatar";
 
 export async function Navbar() {
   const session = await getSession();
-  let dbUser = null;
+  let dbUser: any = null;
   if (session) {
     try {
       const { rows } = await db.query('SELECT full_name, avatar_url FROM users WHERE id = ', [session.id]);

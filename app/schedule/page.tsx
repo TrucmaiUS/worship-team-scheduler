@@ -13,6 +13,13 @@ export default async function SchedulePage({
   if (!session) {
     redirect('/register');
   }
+  
+  let dbUser: any = null;
+  try {
+    const { rows } = await db.query('SELECT full_name, avatar_url FROM users WHERE id = ', [session.id]);
+    if (rows.length > 0) dbUser = rows[0];
+  } catch(e) {}
+
 
   const params = await searchParams;
   const offset = parseInt(params.offset || '0', 10);
