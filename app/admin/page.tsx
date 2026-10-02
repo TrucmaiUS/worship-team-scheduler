@@ -2,6 +2,7 @@ import { getSession } from '@/lib/auth';
 import db from '@/lib/db';
 import { redirect } from 'next/navigation';
 import AdminDashboardClient from './AdminDashboardClient';
+import { AddEventButton } from '@/components/admin/AddEventButton';
 
 export default async function AdminPage() {
   const session = await getSession();
@@ -70,7 +71,10 @@ export default async function AdminPage() {
         </div>
 
         {/* OVERVIEW GRID */}
-        <h2 className="editorial-heading text-2xl mb-4">SCHEDULE OVERVIEW</h2>
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="editorial-heading text-2xl">SCHEDULE OVERVIEW</h2>
+          <AddEventButton />
+        </div>
         <AdminDashboardClient gridData={gridData} allUsers={users} />
       </main>
     </div>
