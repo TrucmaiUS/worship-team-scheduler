@@ -34,8 +34,12 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
   const [selectedMonth, setSelectedMonth] = useState(defaultMonthStr);
 
   const handleAssign = async (userId: string) => {
-    setLoading(true);
     const detail = roleDetails[userId] || null;
+    if (!detail && (modalState.team === 'SINGER' || modalState.team === 'MUSICIAN')) {
+      toast.error('Please select a specific role before assigning.');
+      return;
+    }
+    setLoading(true);
     await adminAssignMember(modalState.serviceId, userId, modalState.team, detail);
     setModalState({ open: false, serviceId: '', team: '' });
     setRoleDetails({});

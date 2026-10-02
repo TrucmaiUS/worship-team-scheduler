@@ -53,6 +53,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
   };
 
   const handleCancel = () => {
+    setModalState(prev => ({ ...prev, open: false }));
     setCancelModalState({ open: true });
   };
 
@@ -287,7 +288,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     SINGER
                   </Button>
                   <select 
-                    className="border-2 border-brand-black bg-brand-cream font-bold px-4 rounded-xl focus:outline-none"
+                    className="flex-1 border-4 border-brand-black bg-brand-cream font-bold px-4 rounded-none shadow-[4px_4px_0_0_#111111] focus:outline-none h-14 cursor-pointer hover:shadow-[4px_4px_0_0_#0038FF] transition-all outline-none"
                     onChange={(e) => setSingerRole(e.target.value)}
                     value={singerRole || (modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '')}
                   >
@@ -313,7 +314,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     MUSICIAN
                   </Button>
                   <select 
-                    className="border-2 border-brand-black bg-brand-cream font-bold px-4 rounded-xl focus:outline-none"
+                    className="flex-1 border-4 border-brand-black bg-brand-cream font-bold px-4 rounded-none shadow-[4px_4px_0_0_#111111] focus:outline-none h-14 cursor-pointer hover:shadow-[4px_4px_0_0_#0038FF] transition-all outline-none"
                     onChange={(e) => setMusicianRole(e.target.value)}
                     value={musicianRole || (modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '')}
                   >
@@ -344,6 +345,28 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
           </div>
         </div>
       )}
+
+      {/* CANCEL REGISTRATION MODAL */}
+      <Dialog.Root open={cancelModalState.open} onOpenChange={(open) => !open && setCancelModalState({ open: false })}>
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 bg-brand-black/50 backdrop-blur-sm z-[60] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+          <Dialog.Content className="fixed left-[50%] top-[50%] z-[60] w-[95vw] max-w-md translate-x-[-50%] translate-y-[-50%] bg-brand-cream border-8 border-brand-black p-8 shadow-[12px_12px_0_0_#FFA6C9] flex flex-col data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] outline-none">
+            <Dialog.Title className="editorial-heading text-3xl mb-4 text-brand-red">CANCEL REGISTRATION</Dialog.Title>
+            <Dialog.Description className="text-lg font-bold mb-8">
+              Are you sure you want to cancel your serving registration?
+            </Dialog.Description>
+            <div className="flex justify-end gap-4">
+              <Dialog.Close asChild>
+                <Button variant="ghost" disabled={loading}>BACK</Button>
+              </Dialog.Close>
+              <Button variant="primary" className="bg-brand-red shadow-[4px_4px_0_0_#111111]" onClick={confirmCancel} disabled={loading}>
+                YES, CANCEL
+              </Button>
+            </div>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
+
     </div>
   );
 }

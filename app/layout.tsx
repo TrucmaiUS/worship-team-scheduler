@@ -38,8 +38,8 @@ export default function RootLayout({
         <Toaster 
           toastOptions={{
             classNames: {
-              toast: 'bg-brand-cream border-4 border-brand-black shadow-[6px_6px_0_0_#111111] rounded-none font-bold text-brand-black text-lg p-4',
-              title: 'text-brand-black text-xl font-black ',
+              toast: 'bg-brand-cream border-4 border-brand-black shadow-[6px_6px_0_0_#111111] rounded-none font-bold text-brand-black text-sm p-4',
+              title: 'text-brand-black text-base font-black ',
               description: 'text-brand-black opacity-80',
               actionButton: 'bg-brand-blue text-brand-white border-2 border-brand-black rounded-none shadow-[2px_2px_0_0_#111111]',
               cancelButton: 'bg-brand-white text-brand-black border-2 border-brand-black rounded-none shadow-[2px_2px_0_0_#111111]',
