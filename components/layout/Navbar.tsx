@@ -32,9 +32,9 @@ export async function Navbar() {
               </form>
               <Link href="/profile" className="flex items-center gap-2 group">
                 <span className="hidden sm:block group-hover:text-brand-pink transition-colors">
-                  {(session as any).full_name?.split(' ')[0] || "Profile"}
+                  {(session as any).name?.split(' ')[0] || "Profile"}
                 </span>
-                <Avatar name={(session as any).full_name} imgUrl={(session as any).avatarUrl} className="w-8 h-8 text-xs shadow-[2px_2px_0_0_#111111] group-hover:shadow-none group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all" />
+                <Avatar name={(session as any).name} imgUrl={(session as any).avatarUrl} className="w-8 h-8 text-xs shadow-[2px_2px_0_0_#111111] group-hover:shadow-none group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all" />
               </Link>
             </div>
           ) : (
