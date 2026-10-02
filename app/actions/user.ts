@@ -67,9 +67,7 @@ export async function uploadAvatar(formData: FormData) {
     maxAge: 60 * 60 * 24, // 1 day
   });
 
-  revalidatePath('/');
-  revalidatePath('/profile');
-  revalidatePath('/schedule');
+  revalidatePath('/', 'layout');
   
   return { success: true, avatarUrl };
 }
@@ -105,9 +103,7 @@ export async function updateName(newName: string) {
     maxAge: 60 * 60 * 24, // 1 day
   });
 
-  revalidatePath('/');
-  revalidatePath('/profile');
-  revalidatePath('/schedule');
+  revalidatePath('/', 'layout');
   
   return { success: true };
 }
