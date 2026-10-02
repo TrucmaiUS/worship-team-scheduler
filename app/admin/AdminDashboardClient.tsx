@@ -262,7 +262,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                             {/* Singers */}
                             <div>
                               <div className="flex justify-between items-center mb-1">
-                                <span className="font-bold uppercase tracking-widest text-[10px]">Singers</span>
+                                <span className="font-bold uppercase tracking-widest text-[10px]">Singer</span>
                                 <button className="text-brand-blue font-bold text-[10px] hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SINGER' })}>+ Add</button>
                               </div>
                               <div className="flex flex-wrap gap-1">
@@ -278,7 +278,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                             {/* Musicians */}
                             <div>
                               <div className="flex justify-between items-center mb-1">
-                                <span className="font-bold uppercase tracking-widest text-[10px]">Band</span>
+                                <span className="font-bold uppercase tracking-widest text-[10px]">Musician</span>
                                 <button className="text-brand-blue font-bold text-[10px] hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'MUSICIAN' })}>+ Add</button>
                               </div>
                               <div className="flex flex-wrap gap-1">
