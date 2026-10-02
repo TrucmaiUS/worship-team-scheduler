@@ -11,8 +11,8 @@ import { createClient } from '@supabase/supabase-js';
 
 export async function uploadAvatar(formData: FormData) {
   const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co',
-    process.env.SUPABASE_SERVICE_ROLE_KEY || 'placeholder'
+    (process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co').replace(/"/g, ''),
+    (process.env.SUPABASE_SERVICE_ROLE_KEY || 'placeholder').replace(/"/g, '')
   );
 
   const session = await getSession();
