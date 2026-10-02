@@ -4,15 +4,15 @@ import db from '@/lib/db';
 import { getSession } from '@/lib/auth';
 import { revalidatePath } from 'next/cache';
 
-export async function adminAssignMember(serviceId: string, userId: string, team: string) {
+export async function adminAssignMember(serviceId: string, userId: string, team: string, roleDetail: string | null = null) {
   const session = await getSession();
   if (!session || session.role !== 'ADMIN') return { error: 'Unauthorized' };
 
   try {
     const id = `r_${Date.now()}`;
     await db.query(
-      'INSERT INTO registrations (id, service_id, user_id, team) VALUES ($1, $2, $3, $4)',
-      [id, serviceId, userId, team]
+      'INSERT INTO registrations (id, service_id, user_id, team, role_detail) VALUES ($1, $2, $3, $4, $5)',
+      [id, serviceId, userId, team, roleDetail]
     );
     revalidatePath('/admin');
     revalidatePath('/schedule');

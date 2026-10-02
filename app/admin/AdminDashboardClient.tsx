@@ -5,12 +5,14 @@ import { Button } from '@/components/ui/Button';
 import { adminAssignMember, adminRemoveAssignment } from './actions';
 
 export default function AdminDashboardClient({ gridData, allUsers }: any) {
+  const assignableUsers = allUsers.filter((u: any) => u.role !== 'ADMIN');
   const [activeTab, setActiveTab] = useState<'SCHEDULE' | 'TABLE' | 'MEMBERS'>('SCHEDULE');
   const [modalState, setModalState] = useState<{ open: boolean, serviceId: string, team: string }>({
     open: false,
     serviceId: '',
     team: ''
   });
+  const [roleDetails, setRoleDetails] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
 
   // Determine current month in YYYY-MM based on the NEXT upcoming service
@@ -26,8 +28,10 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
 
   const handleAssign = async (userId: string) => {
     setLoading(true);
-    await adminAssignMember(modalState.serviceId, userId, modalState.team);
+    const detail = roleDetails[userId] || null;
+    await adminAssignMember(modalState.serviceId, userId, modalState.team, detail);
     setModalState({ open: false, serviceId: '', team: '' });
+    setRoleDetails({});
     setLoading(false);
   };
 
@@ -47,7 +51,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
           ) : (
             members.map(u => (
               <div key={u.id} className="text-sm font-bold flex justify-between group">
-                <span>✓ {u.full_name}</span>
+                  <span>✓ {u.role_detail ? `${u.full_name} (${u.role_detail})` : u.full_name}</span>
                 <button 
                   onClick={() => handleRemove(service.id, u.id)}
                   className="text-brand-red opacity-0 group-hover:opacity-100 hover:underline"
@@ -343,9 +347,9 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                     filteredGridData.map((s: any) => {
                       const dateObj = new Date(s.date + 'T00:00:00');
                       const dateStr = `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`;
-                      const singers = s.singer.map((u: any) => u.full_name).join(', ');
-                      const musicians = s.musician.map((u: any) => u.full_name).join(', ');
-                      const sounds = s.sound.map((u: any) => u.full_name).join(', ');
+                      const singers = s.singer.map((u: any) => u.role_detail ? `${u.full_name} (${u.role_detail})` : u.full_name).join(', ');
+                      const musicians = s.musician.map((u: any) => u.role_detail ? `${u.full_name} (${u.role_detail})` : u.full_name).join(', ');
+                      const sounds = s.sound.map((u: any) => u.role_detail ? `${u.full_name} (${u.role_detail})` : u.full_name).join(', ');
                       
                       return (
                         <tr key={s.id} className="border-b border-brand-black last:border-b-0">
@@ -400,13 +404,33 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
       {/* MODAL */}
       {modalState.open && (
         <div className="fixed inset-0 bg-brand-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-brand-cream border-8 border-brand-black p-8 max-w-md w-full shadow-[12px_12px_0_0_#FFA6C9] max-h-[80vh] flex flex-col">
+          <div className="bg-brand-cream border-8 border-brand-black p-8 max-w-xl w-full shadow-[12px_12px_0_0_#FFA6C9] max-h-[80vh] flex flex-col">
             <h2 className="editorial-heading text-2xl mb-4">Assign to {modalState.team}</h2>
             <div className="flex-1 overflow-y-auto border-4 border-brand-black bg-brand-white p-2 mb-4 space-y-2">
-              {allUsers.map((u: any) => (
+              {assignableUsers.map((u: any) => (
                 <div key={u.id} className="flex justify-between items-center p-2 hover:bg-brand-cream border-b-2 border-brand-black last:border-0">
                   <span className="font-bold">{u.full_name}</span>
-                  <Button size="sm" onClick={() => handleAssign(u.id)} disabled={loading}>Assign</Button>
+                  <div className="flex gap-2 items-center">
+                    {modalState.team === 'SINGER' && (
+                      <select className="border-2 border-brand-black px-2 py-1 text-xs font-bold bg-brand-white shadow-[2px_2px_0_0_#111111] hover:shadow-[2px_2px_0_0_#0038FF] focus:outline-none focus:shadow-[2px_2px_0_0_#FFA6C9] transition-all cursor-pointer outline-none" value={roleDetails[u.id] || ''} onChange={e => setRoleDetails({...roleDetails, [u.id]: e.target.value})}>
+                        <option value="">-Select-</option>
+                        <option value="Vocal 1">Vocal 1</option>
+                        <option value="Vocal 2">Vocal 2</option>
+                        <option value="Vocal 3">Vocal 3</option>
+                      </select>
+                    )}
+                    {modalState.team === 'MUSICIAN' && (
+                      <select className="border-2 border-brand-black px-2 py-1 text-xs font-bold bg-brand-white shadow-[2px_2px_0_0_#111111] hover:shadow-[2px_2px_0_0_#0038FF] focus:outline-none focus:shadow-[2px_2px_0_0_#FFA6C9] transition-all cursor-pointer outline-none" value={roleDetails[u.id] || ''} onChange={e => setRoleDetails({...roleDetails, [u.id]: e.target.value})}>
+                        <option value="">-Select-</option>
+                        <option value="E-Guitar">E-Guitar</option>
+                        <option value="Acoustic Guitar">Acoustic Guitar</option>
+                        <option value="Bass">Bass</option>
+                        <option value="Drum">Drum</option>
+                        <option value="Piano">Piano</option>
+                      </select>
+                    )}
+                    <Button size="sm" onClick={() => handleAssign(u.id)} disabled={loading}>Assign</Button>
+                  </div>
                 </div>
               ))}
             </div>

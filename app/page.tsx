@@ -1,8 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import { getSession } from "@/lib/auth";
 
-export default function LandingPage() {
+export default async function LandingPage() {
+  const session = await getSession();
+  const scheduleHref = session?.role === "ADMIN" ? "/admin" : "/schedule";
+
   return (
     <>
       <main className="flex-1 flex flex-col items-center">
@@ -31,7 +35,7 @@ export default function LandingPage() {
               </p>
               
               <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center">
-                <Link href="/schedule">
+                <Link href={scheduleHref}>
                   <Button variant="primary" size="lg" className="w-full sm:w-auto text-xl rotate-1 hover:rotate-0">
                     View Schedule
                   </Button>
@@ -137,9 +141,9 @@ export default function LandingPage() {
               </h2>
             </div>
             
-            <Link href="/schedule">
+            <Link href={scheduleHref}>
               <Button size="lg" className="bg-brand-white text-brand-black text-2xl font-bold px-12 py-6 border-8 border-brand-black rounded-none shadow-[12px_12px_0_0_#FFA6C9] hover:-translate-y-1 transition-transform -rotate-1">
-                VIEW THIS WEEK'S SCHEDULE
+                VIEW THIS WEEK&apos;S SCHEDULE
               </Button>
             </Link>
           </div>

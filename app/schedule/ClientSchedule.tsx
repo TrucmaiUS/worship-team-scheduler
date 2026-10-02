@@ -204,9 +204,9 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                   <div className="flex-1 flex flex-col gap-1 overflow-y-auto no-scrollbar">
                     {dayServices.map((s: any) => {
                       const isUserServing = registrationsMap[s.id]?.some((r: any) => r.user_id === userId);
-                      const sounds = registrationsMap[s.id]?.filter((r: any) => r.team === 'SOUND').map((r:any) => r.user_name).join(', ') || 'None';
-                      const singers = registrationsMap[s.id]?.filter((r: any) => r.team === 'SINGER').map((r:any) => r.user_name).join(', ') || 'None';
-                      const musicians = registrationsMap[s.id]?.filter((r: any) => r.team === 'MUSICIAN').map((r:any) => r.user_name).join(', ') || 'None';
+                      const sounds = registrationsMap[s.id]?.filter((r: any) => r.team === 'SOUND').map((r:any) => r.role_detail ? `${r.user_name} (${r.role_detail})` : r.user_name).join(', ') || 'None';
+                      const singers = registrationsMap[s.id]?.filter((r: any) => r.team === 'SINGER').map((r:any) => r.role_detail ? `${r.user_name} (${r.role_detail})` : r.user_name).join(', ') || 'None';
+                      const musicians = registrationsMap[s.id]?.filter((r: any) => r.team === 'MUSICIAN').map((r:any) => r.role_detail ? `${r.user_name} (${r.role_detail})` : r.user_name).join(', ') || 'None';
                       const hoverText = `Sound: ${sounds}\nSingers: ${singers}\nBand: ${musicians}`;
 
                       return (
@@ -257,18 +257,18 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     variant={modalState.currentTeam === 'SINGER' ? 'primary' : 'outline'} 
                     className="flex-1 text-left justify-start text-lg h-14"
                     disabled={loading}
-                    onClick={() => handleAction('SINGER', modalState.currentRoleDetail || 'vocal 1')}
+                    onClick={() => handleAction('SINGER', modalState.currentRoleDetail || 'Vocal 1')}
                   >
                     SINGER
                   </Button>
                   <select 
                     className="border-2 border-brand-black bg-brand-cream font-bold px-4 rounded-xl focus:outline-none"
                     onChange={(e) => handleAction('SINGER', e.target.value)}
-                    value={modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || 'vocal 1') : 'vocal 1'}
+                    value={modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || 'Vocal 1') : 'Vocal 1'}
                   >
-                    <option value="vocal 1">vocal 1</option>
-                    <option value="vocal 2">vocal 2</option>
-                    <option value="vocal 3">vocal 3</option>
+                    <option value="Vocal 1">Vocal 1</option>
+                    <option value="Vocal 2">Vocal 2</option>
+                    <option value="Vocal 3">Vocal 3</option>
                   </select>
                 </div>
                 <div className="mt-2 text-sm text-brand-black/60 pl-3 border-l-2 border-brand-black/20">
@@ -282,20 +282,20 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     variant={modalState.currentTeam === 'MUSICIAN' ? 'primary' : 'outline'} 
                     className="flex-1 text-left justify-start text-lg h-14"
                     disabled={loading}
-                    onClick={() => handleAction('MUSICIAN', modalState.currentRoleDetail || 'e-guitar')}
+                    onClick={() => handleAction('MUSICIAN', modalState.currentRoleDetail || 'E-Guitar')}
                   >
                     MUSICIAN
                   </Button>
                   <select 
                     className="border-2 border-brand-black bg-brand-cream font-bold px-4 rounded-xl focus:outline-none"
                     onChange={(e) => handleAction('MUSICIAN', e.target.value)}
-                    value={modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || 'e-guitar') : 'e-guitar'}
+                    value={modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || 'E-Guitar') : 'E-Guitar'}
                   >
-                    <option value="e-guitar">e-guitar</option>
-                    <option value="acoustic guitar">acoustic guitar</option>
-                    <option value="bass">bass</option>
-                    <option value="drum">drum</option>
-                    <option value="piano">piano</option>
+                    <option value="E-Guitar">E-Guitar</option>
+                    <option value="Acoustic Guitar">Acoustic Guitar</option>
+                    <option value="Bass">Bass</option>
+                    <option value="Drum">Drum</option>
+                    <option value="Piano">Piano</option>
                   </select>
                 </div>
                 <div className="mt-2 text-sm text-brand-black/60 pl-3 border-l-2 border-brand-black/20">

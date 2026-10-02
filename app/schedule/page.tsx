@@ -33,7 +33,7 @@ export default async function SchedulePage({
 
   let upcomingServices = [];
   let monthlyServices = [];
-  let registrationsMap: Record<string, any[]> = {};
+  const registrationsMap: Record<string, any[]> = {};
 
   try {
     const resUpcoming = await db.query(`
