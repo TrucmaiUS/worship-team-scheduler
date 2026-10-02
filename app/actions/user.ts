@@ -73,3 +73,41 @@ export async function uploadAvatar(formData: FormData) {
   
   return { success: true, avatarUrl };
 }
+
+
+export async function updateName(newName: string) {
+  const session = await getSession();
+  if (!session) return { error: 'Unauthorized' };
+
+  if (!newName || newName.trim().length < 2) {
+    return { error: 'Name is too short.' };
+  }
+
+  // Update DB
+  await db.query('UPDATE users SET full_name =  WHERE id = ', [newName.trim(), session.id]);
+
+  // Re-issue JWT
+  const { rows } = await db.query('SELECT * FROM users WHERE id = ', [session.id]);
+  const user = rows[0] as any;
+  const token = await signToken({
+    id: user.id,
+    email: user.email,
+    role: user.role,
+    name: user.full_name,
+    avatarUrl: user.avatar_url
+  });
+
+  const cookieStore = await cookies();
+  cookieStore.set('auth-token', token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax',
+    maxAge: 60 * 60 * 24, // 1 day
+  });
+
+  revalidatePath('/');
+  revalidatePath('/profile');
+  revalidatePath('/schedule');
+  
+  return { success: true };
+}

@@ -5,7 +5,8 @@ import { logout } from '@/app/actions/auth';
 import { Button } from '@/components/ui/Button';
 import { Avatar } from '@/components/ui/Avatar';
 import { AvatarUploadForm } from '@/components/ui/AvatarUploadForm';
-import { uploadAvatar } from '@/app/actions/user';
+import { uploadAvatar, updateName } from '@/app/actions/user';
+import { ProfileNameForm } from '@/components/ui/ProfileNameForm';
 
 export default async function ProfilePage() {
   const session = await getSession();
@@ -43,9 +44,9 @@ export default async function ProfilePage() {
               <h1 className="editorial-heading text-4xl text-brand-black mb-6">PROFILE</h1>
             
             <div className="space-y-4 font-bold text-sm mb-8">
-              <div className="border-b-4 border-brand-black pb-2">
+              <div className="border-b-4 border-brand-black pb-2 flex items-center">
                 <span className="opacity-50 inline-block w-24 uppercase tracking-widest">Name:</span> 
-                <span className="text-xl tracking-normal">{user.full_name}</span>
+                <ProfileNameForm initialName={user.full_name} updateAction={updateName} />
               </div>
               <div className="border-b-4 border-brand-black pb-2">
                 <span className="opacity-50 inline-block w-24 uppercase tracking-widest">Email:</span> 
