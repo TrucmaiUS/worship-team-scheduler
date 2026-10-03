@@ -38,3 +38,20 @@ export async function adminRemoveAssignment(serviceId: string, userId: string) {
     return { error: 'Failed to remove' };
   }
 }
+
+export async function adminDeleteUser(userId: string) {
+  const session = await getSession();
+  if (!session || session.role !== 'ADMIN') return { error: 'Unauthorized' };
+
+  try {
+    // Delete their registrations first (just in case no cascade)
+    await db.query('DELETE FROM registrations WHERE user_id = $1', [userId]);
+    // Then delete user
+    await db.query('DELETE FROM users WHERE id = $1', [userId]);
+    
+    revalidatePath('/admin');
+    return { success: true };
+  } catch (err: any) {
+    return { error: err.message || 'Failed to delete user' };
+  }
+}

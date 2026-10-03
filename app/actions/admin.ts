@@ -19,9 +19,10 @@ export async function addService(formData: FormData) {
   }
 
   try {
+    const id = `s_${Date.now()}`;
     await db.query(
-      'INSERT INTO services (title, date, start_time) VALUES ($1, $2, $3)',
-      [title, date, start_time]
+      'INSERT INTO services (id, title, date, start_time) VALUES ($1, $2, $3, $4)',
+      [id, title, date, start_time]
     );
 
     revalidatePath('/admin');

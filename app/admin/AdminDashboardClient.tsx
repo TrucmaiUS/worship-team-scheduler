@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/Button';
-import { adminAssignMember, adminRemoveAssignment } from './actions';
+import { adminAssignMember, adminRemoveAssignment, adminDeleteUser } from './actions';
 import * as Dialog from '@radix-ui/react-dialog';
 import { toast } from 'sonner';
 
@@ -18,6 +18,11 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
     open: false,
     serviceId: '',
     userId: ''
+  });
+  const [deleteUserModal, setDeleteUserModal] = useState<{ open: boolean, userId: string, userName: string }>({
+    open: false,
+    userId: '',
+    userName: ''
   });
   const [roleDetails, setRoleDetails] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
@@ -58,6 +63,18 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
       toast.error('Failed to remove member: ' + e.message);
     } finally {
       setRemoveModalState({ open: false, serviceId: '', userId: '' });
+    }
+  };
+
+  const confirmDeleteUser = async () => {
+    try {
+      const res = await adminDeleteUser(deleteUserModal.userId);
+      if (res?.error) throw new Error(res.error);
+      toast.success('User deleted successfully!');
+    } catch (e: any) {
+      toast.error('Failed to delete user: ' + e.message);
+    } finally {
+      setDeleteUserModal({ open: false, userId: '', userName: '' });
     }
   };
 
@@ -414,7 +431,8 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                 <tr>
                   <th className="p-3 sm:p-4 border-r-4 border-brand-black">Name</th>
                   <th className="p-3 sm:p-4 border-r-4 border-brand-black">Email</th>
-                  <th className="p-3 sm:p-4">Role</th>
+                  <th className="p-3 sm:p-4 border-r-4 border-brand-black">Role</th>
+                  <th className="p-3 sm:p-4">Actions</th>
                 </tr>
               </thead>
               <tbody className="font-bold">
@@ -422,10 +440,22 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                   <tr key={u.id} className="border-b-4 border-brand-black last:border-b-0 hover:bg-brand-cream transition-colors">
                     <td className="p-3 sm:p-4 border-r-4 border-brand-black">{u.full_name}</td>
                     <td className="p-3 sm:p-4 border-r-4 border-brand-black opacity-70 text-sm">{u.email}</td>
-                    <td className="p-3 sm:p-4">
+                    <td className="p-3 sm:p-4 border-r-4 border-brand-black">
                       <span className={`px-2 py-1 border-2 border-brand-black ${u.role === 'ADMIN' ? 'bg-brand-blue text-brand-white' : 'bg-brand-white'}`}>
                         {u.role}
                       </span>
+                    </td>
+                    <td className="p-3 sm:p-4">
+                      {u.role !== 'ADMIN' && (
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          className="text-xs h-7 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-brand-white"
+                          onClick={() => setDeleteUserModal({ open: true, userId: u.id, userName: u.full_name })}
+                        >
+                          DELETE
+                        </Button>
+                      )}
                     </td>
                   </tr>
                 ))}
@@ -493,6 +523,27 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
               </Dialog.Close>
               <Button variant="primary" className="bg-brand-red shadow-[4px_4px_0_0_#111111]" onClick={confirmRemove}>
                 YES, REMOVE
+              </Button>
+            </div>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
+
+      {/* DELETE USER MODAL */}
+      <Dialog.Root open={deleteUserModal.open} onOpenChange={(open) => !open && setDeleteUserModal({ open: false, userId: '', userName: '' })}>
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 bg-brand-black/50 backdrop-blur-sm z-50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+          <Dialog.Content className="fixed left-[50%] top-[50%] z-50 w-[95vw] max-w-md translate-x-[-50%] translate-y-[-50%] bg-brand-cream border-8 border-brand-black p-8 shadow-[12px_12px_0_0_#FFA6C9] flex flex-col data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] outline-none">
+            <Dialog.Title className="editorial-heading text-3xl mb-4 text-brand-red">DELETE USER</Dialog.Title>
+            <Dialog.Description className="text-lg font-bold mb-8">
+              Are you sure you want to delete {deleteUserModal.userName}? This will remove all their registrations and cannot be undone.
+            </Dialog.Description>
+            <div className="flex justify-end gap-4">
+              <Dialog.Close asChild>
+                <Button variant="ghost">CANCEL</Button>
+              </Dialog.Close>
+              <Button variant="primary" className="bg-brand-red shadow-[4px_4px_0_0_#111111]" onClick={confirmDeleteUser}>
+                YES, DELETE
               </Button>
             </div>
           </Dialog.Content>
