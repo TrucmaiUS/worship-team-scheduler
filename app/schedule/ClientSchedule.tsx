@@ -278,25 +278,25 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
               </div>
               
               <div>
-                <div className="flex flex-col sm:flex-row gap-2">
+                <div className="flex flex-col gap-2">
+                  <select 
+                    className="w-full border-4 border-brand-black bg-brand-cream font-bold px-4 rounded-none shadow-[4px_4px_0_0_#111111] focus:outline-none h-12 cursor-pointer hover:shadow-[4px_4px_0_0_#0038FF] transition-all outline-none"
+                    onChange={(e) => setSingerRole(e.target.value)}
+                    value={singerRole || (modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '')}
+                  >
+                    <option value="">— Chọn vai trò ca sỹ —</option>
+                    <option value="Vocal 1">Vocal 1</option>
+                    <option value="Vocal 2">Vocal 2</option>
+                    <option value="Vocal 3">Vocal 3</option>
+                  </select>
                   <Button 
                     variant={modalState.currentTeam === 'SINGER' ? 'primary' : 'outline'} 
-                    className="flex-1 text-left justify-start text-lg h-14"
+                    className="w-full text-left justify-start text-lg h-14"
                     disabled={loading}
                     onClick={() => handleAction('SINGER', singerRole || (modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : ''))}
                   >
                     SINGER
                   </Button>
-                  <select 
-                    className="flex-1 border-4 border-brand-black bg-brand-cream font-bold px-4 rounded-none shadow-[4px_4px_0_0_#111111] focus:outline-none h-14 cursor-pointer hover:shadow-[4px_4px_0_0_#0038FF] transition-all outline-none"
-                    onChange={(e) => setSingerRole(e.target.value)}
-                    value={singerRole || (modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '')}
-                  >
-                    <option value="">-Select Role-</option>
-                    <option value="Vocal 1">Vocal 1</option>
-                    <option value="Vocal 2">Vocal 2</option>
-                    <option value="Vocal 3">Vocal 3</option>
-                  </select>
                 </div>
                 <div className="mt-2 text-sm text-brand-black/60 pl-3 border-l-2 border-brand-black/20">
                   <span className="font-bold">Serving:</span> {activeSingers.length > 0 ? activeSingers.map((s:any) => s.role_detail ? `${s.user_name} (${s.role_detail})` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
@@ -304,27 +304,27 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
               </div>
               
               <div>
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <Button 
-                    variant={modalState.currentTeam === 'MUSICIAN' ? 'primary' : 'outline'} 
-                    className="flex-1 text-left justify-start text-lg h-14"
-                    disabled={loading}
-                    onClick={() => handleAction('MUSICIAN', musicianRole || (modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : ''))}
-                  >
-                    MUSICIAN
-                  </Button>
+                <div className="flex flex-col gap-2">
                   <select 
-                    className="flex-1 border-4 border-brand-black bg-brand-cream font-bold px-4 rounded-none shadow-[4px_4px_0_0_#111111] focus:outline-none h-14 cursor-pointer hover:shadow-[4px_4px_0_0_#0038FF] transition-all outline-none"
+                    className="w-full border-4 border-brand-black bg-brand-cream font-bold px-4 rounded-none shadow-[4px_4px_0_0_#111111] focus:outline-none h-12 cursor-pointer hover:shadow-[4px_4px_0_0_#0038FF] transition-all outline-none"
                     onChange={(e) => setMusicianRole(e.target.value)}
                     value={musicianRole || (modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '')}
                   >
-                    <option value="">-Select Role-</option>
+                    <option value="">— Chọn nhạc cụ —</option>
                     <option value="E-Guitar">E-Guitar</option>
                     <option value="Acoustic Guitar">Acoustic Guitar</option>
                     <option value="Bass">Bass</option>
                     <option value="Drum">Drum</option>
                     <option value="Piano">Piano</option>
                   </select>
+                  <Button 
+                    variant={modalState.currentTeam === 'MUSICIAN' ? 'primary' : 'outline'} 
+                    className="w-full text-left justify-start text-lg h-14"
+                    disabled={loading}
+                    onClick={() => handleAction('MUSICIAN', musicianRole || (modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : ''))}
+                  >
+                    MUSICIAN
+                  </Button>
                 </div>
                 <div className="mt-2 text-sm text-brand-black/60 pl-3 border-l-2 border-brand-black/20">
                   <span className="font-bold">Serving:</span> {activeMusicians.length > 0 ? activeMusicians.map((s:any) => s.role_detail ? `${s.user_name} (${s.role_detail})` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}

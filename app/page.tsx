@@ -57,7 +57,7 @@ export default async function LandingPage() {
               <div className="inline-block bg-brand-cream px-4 sm:px-8 md:px-12 py-4 sm:py-6 border-4 sm:border-8 border-brand-black shadow-[6px_6px_0_0_#0038FF] sm:shadow-[12px_12px_0_0_#0038FF] transform -rotate-2 hover:rotate-0 transition-transform">
                 <h2 className="editorial-heading text-3xl sm:text-5xl md:text-7xl text-brand-black">
                   SERVE THROUGH <br className="hidden md:block" />
-                  <span className="text-brand-pink">YOUR GIFT</span>
+                  <span className="text-brand-pink whitespace-nowrap">YOUR GIFT</span>
                 </h2>
               </div>
             </div>
