@@ -9,6 +9,11 @@ export async function adminAssignMember(serviceId: string, userId: string, team:
   if (!session || session.role !== 'ADMIN') return { error: 'Unauthorized' };
 
   try {
+    const check = await db.query('SELECT * FROM registrations WHERE service_id = $1 AND user_id = $2', [serviceId, userId]);
+    if (check.rows.length > 0) {
+      return { error: 'Thành viên này đã được phân công trong buổi này rồi!' };
+    }
+
     const id = `r_${Date.now()}`;
     await db.query(
       'INSERT INTO registrations (id, service_id, user_id, team, role_detail) VALUES ($1, $2, $3, $4, $5)',
@@ -18,7 +23,7 @@ export async function adminAssignMember(serviceId: string, userId: string, team:
     revalidatePath('/schedule');
     return { success: true };
   } catch (err) {
-    return { error: 'Failed or already registered' };
+    return { error: 'Failed to assign member' };
   }
 }
 

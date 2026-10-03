@@ -45,10 +45,16 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
       return;
     }
     setLoading(true);
-    await adminAssignMember(modalState.serviceId, userId, modalState.team, detail);
-    setModalState({ open: false, serviceId: '', team: '' });
-    setRoleDetails({});
+    const res = await adminAssignMember(modalState.serviceId, userId, modalState.team, detail);
     setLoading(false);
+    
+    if (res?.error) {
+      toast.error(res.error);
+    } else {
+      toast.success('Assigned successfully!');
+      setModalState({ open: false, serviceId: '', team: '' });
+      setRoleDetails({});
+    }
   };
 
   const handleRemove = (serviceId: string, userId: string) => {
