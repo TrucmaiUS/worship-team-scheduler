@@ -194,11 +194,13 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
       {/* MONTHLY CALENDAR SECTION */}
       <section>
         <div className="flex flex-col sm:flex-row justify-between items-center gap-3 mb-6 bg-brand-cream border-2 border-brand-pink rounded-xl p-3 sm:p-4 shadow-sm">
-          <Button variant="ghost" onClick={() => handleNavigate(offset - 1)}>&larr; Prev</Button>
-          <div className="text-center">
+          <div className="flex-1 flex justify-start">
+            <Button variant="ghost" onClick={() => handleNavigate(offset - 1)}>&larr; Prev</Button>
+          </div>
+          <div className="flex-1 flex justify-center text-center">
             <h2 className="editorial-heading text-2xl sm:text-3xl text-brand-blue">{monthName.toUpperCase()}</h2>
           </div>
-          <div className="flex gap-2">
+          <div className="flex-1 flex justify-end gap-2">
             {offset !== 0 && <Button variant="outline" onClick={() => handleNavigate(0)} className="text-xs sm:text-sm">THIS MONTH</Button>}
             <Button variant="ghost" onClick={() => handleNavigate(offset + 1)}>Next &rarr;</Button>
           </div>

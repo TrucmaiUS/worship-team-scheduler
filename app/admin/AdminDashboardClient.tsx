@@ -151,60 +151,58 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
   return (
     <div>
       {/* HEADER: TABS (Left) & FILTERS (Right) */}
-      <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-8">
+      <div className="flex flex-col md:flex-row justify-between md:items-center gap-6 mb-8">
+        
         {/* TABS */}
-        <div className="flex flex-wrap gap-2 sm:gap-4">
-          <Button 
-            variant={activeTab === 'SCHEDULE' ? 'primary' : 'outline'} 
-            className={`border-4 ${activeTab === 'SCHEDULE' ? 'rotate-1 shadow-[4px_4px_0_0_#111111]' : ''}`}
-            onClick={() => setActiveTab('SCHEDULE')}
-          >
-            SCHEDULE
-          </Button>
-          <Button 
-            variant={activeTab === 'TABLE' ? 'primary' : 'outline'} 
-            className={`border-4 ${activeTab === 'TABLE' ? 'rotate-1 shadow-[4px_4px_0_0_#111111]' : ''}`}
-            onClick={() => setActiveTab('TABLE')}
-          >
-            TABLE VIEW
-          </Button>
-          <Button 
-            variant={activeTab === 'MEMBERS' ? 'sticker' : 'outline'}
-            className={`border-4 ${activeTab === 'MEMBERS' ? '-rotate-1 shadow-[4px_4px_0_0_#111111]' : ''}`}
-            onClick={() => setActiveTab('MEMBERS')}
-          >
-            MEMBERS
-          </Button>
+        <div className="flex w-full md:w-auto border-4 border-brand-black bg-brand-white shadow-[4px_4px_0_0_#111111] overflow-x-auto no-scrollbar">
+          {[
+            { id: 'SCHEDULE', label: 'SCHEDULE' },
+            { id: 'TABLE', label: 'TABLE VIEW' },
+            { id: 'MEMBERS', label: 'MEMBERS' }
+          ].map((tab, i, arr) => (
+            <button 
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id as any)}
+              className={`flex-1 min-w-[120px] px-4 py-3 font-bold uppercase tracking-widest text-xs sm:text-sm transition-colors whitespace-nowrap
+                ${i !== arr.length - 1 ? 'border-r-4 border-brand-black' : ''} 
+                ${activeTab === tab.id ? 'bg-brand-pink text-brand-white' : 'hover:bg-brand-cream text-brand-black'}
+              `}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
 
         {/* FILTERS */}
         {(activeTab === 'SCHEDULE' || activeTab === 'TABLE') && (
-          <div className="flex gap-4 items-center bg-brand-white px-4 py-2 border-4 border-brand-black shadow-[4px_4px_0_0_#111111]">
+          <div className="flex justify-between items-center bg-brand-white px-4 py-2 border-4 border-brand-black shadow-[4px_4px_0_0_#111111] min-w-[280px]">
             <button 
               onClick={handlePrevMonth}
-              className="font-black text-xl hover:text-brand-blue hover:scale-110 transition-transform"
+              className="font-black text-2xl hover:text-brand-blue hover:scale-110 transition-transform px-2"
             >
               &lt;
             </button>
-            <select 
-              value={selectedMonth}
-              onChange={(e) => setSelectedMonth(e.target.value)}
-              className="border-none bg-transparent font-bold text-lg outline-none cursor-pointer uppercase text-center min-w-[140px]"
-            >
-              {/* Ensure selected month is in options even if no data */}
-              {Array.from(new Set([...allAvailableMonths, selectedMonth])).sort().map((m: any) => {
-                const [year, month] = m.split('-');
-                const dateObj = new Date(parseInt(year), parseInt(month) - 1, 1);
-                return (
-                  <option key={m} value={m}>
-                    {dateObj.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
-                  </option>
-                );
-              })}
-            </select>
+            <div className="flex-1 flex justify-center">
+              <select 
+                value={selectedMonth}
+                onChange={(e) => setSelectedMonth(e.target.value)}
+                className="border-none bg-transparent font-bold text-lg outline-none cursor-pointer uppercase text-center"
+              >
+                {/* Ensure selected month is in options even if no data */}
+                {Array.from(new Set([...allAvailableMonths, selectedMonth])).sort().map((m: any) => {
+                  const [year, month] = m.split('-');
+                  const dateObj = new Date(parseInt(year), parseInt(month) - 1, 1);
+                  return (
+                    <option key={m} value={m}>
+                      {dateObj.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
             <button 
               onClick={handleNextMonth}
-              className="font-black text-xl hover:text-brand-blue hover:scale-110 transition-transform"
+              className="font-black text-2xl hover:text-brand-blue hover:scale-110 transition-transform px-2"
             >
               &gt;
             </button>
