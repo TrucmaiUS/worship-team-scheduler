@@ -81,10 +81,7 @@ export default function LoginPage() {
             </p>
           </div>
           
-          <div className="mt-8 pt-6 border-t-4 border-dashed border-brand-black/20 text-xs font-bold text-brand-black/50 text-center">
-            <p>Admin: admin@musicministry.local / password123</p>
-            <p>User: mai@musicministry.local / password123</p>
-          </div>
+
         </div>
       </main>
     </>
