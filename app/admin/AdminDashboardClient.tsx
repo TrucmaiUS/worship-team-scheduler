@@ -205,41 +205,6 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
           })}
         </div>
 
-        {/* FILTERS */}
-        {(activeTab === 'SCHEDULE' || activeTab === 'TABLE') && (
-          <div className="flex justify-between items-center bg-brand-white px-4 py-2 border-4 border-brand-black shadow-[4px_4px_0_0_#111111] min-w-[280px]">
-            <button 
-              onClick={handlePrevMonth}
-              className="font-black text-2xl hover:text-brand-blue hover:scale-110 transition-transform px-2"
-            >
-              &lt;
-            </button>
-            <div className="flex-1 flex justify-center">
-              <select 
-                value={selectedMonth}
-                onChange={(e) => setSelectedMonth(e.target.value)}
-                className="border-none bg-transparent font-bold text-lg outline-none cursor-pointer uppercase text-center"
-              >
-                {/* Ensure selected month is in options even if no data */}
-                {Array.from(new Set([...allAvailableMonths, selectedMonth])).sort().map((m: any) => {
-                  const [year, month] = m.split('-');
-                  const dateObj = new Date(parseInt(year), parseInt(month) - 1, 1);
-                  return (
-                    <option key={m} value={m}>
-                      {dateObj.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
-                    </option>
-                  );
-                })}
-              </select>
-            </div>
-            <button 
-              onClick={handleNextMonth}
-              className="font-black text-2xl hover:text-brand-blue hover:scale-110 transition-transform px-2"
-            >
-              &gt;
-            </button>
-          </div>
-        )}
       </div>
 
       {activeTab === 'SCHEDULE' && (
@@ -331,7 +296,40 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
           )}
 
           {/* REGULAR MONTHLY SCHEDULE */}
-          <h2 className="editorial-heading text-2xl mb-6">MONTHLY OVERVIEW</h2>
+          <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-6">
+            <h2 className="editorial-heading text-2xl">MONTHLY OVERVIEW</h2>
+            <div className="flex justify-between items-center bg-brand-white px-4 py-2 border-4 border-brand-black shadow-[4px_4px_0_0_#111111] min-w-[280px]">
+              <button 
+                onClick={handlePrevMonth}
+                className="font-black text-2xl hover:text-brand-blue hover:scale-110 transition-transform px-2"
+              >
+                &lt;
+              </button>
+              <div className="flex-1 flex justify-center">
+                <select 
+                  value={selectedMonth}
+                  onChange={(e) => setSelectedMonth(e.target.value)}
+                  className="border-none bg-transparent font-bold text-lg outline-none cursor-pointer uppercase text-center"
+                >
+                  {Array.from(new Set([...allAvailableMonths, selectedMonth])).sort().map((m: any) => {
+                    const [year, month] = m.split('-');
+                    const dateObj = new Date(parseInt(year), parseInt(month) - 1, 1);
+                    return (
+                      <option key={m} value={m}>
+                        {dateObj.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+              <button 
+                onClick={handleNextMonth}
+                className="font-black text-2xl hover:text-brand-blue hover:scale-110 transition-transform px-2"
+              >
+                &gt;
+              </button>
+            </div>
+          </div>
           <div className="space-y-12">
             {filteredGridData.length === 0 ? (
               <div className="p-8 text-center font-bold text-xl opacity-50 border-4 border-brand-black bg-brand-white border-dashed">
@@ -374,9 +372,42 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
       {activeTab === 'TABLE' && (
         <div className="animate-in fade-in slide-in-from-bottom-2">
           <div className="bg-white overflow-hidden p-4 border-2 border-brand-black">
-            <h2 className="text-xl font-bold text-center mb-4 uppercase">
-              Schedule {new Date(selectedMonth + '-01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-            </h2>
+            <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-4">
+              <h2 className="text-xl font-bold uppercase">
+                Schedule {new Date(selectedMonth + '-01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+              </h2>
+              <div className="flex justify-between items-center bg-brand-white px-4 py-2 border-4 border-brand-black shadow-[4px_4px_0_0_#111111] min-w-[280px]">
+                <button 
+                  onClick={handlePrevMonth}
+                  className="font-black text-2xl hover:text-brand-blue hover:scale-110 transition-transform px-2"
+                >
+                  &lt;
+                </button>
+                <div className="flex-1 flex justify-center">
+                  <select 
+                    value={selectedMonth}
+                    onChange={(e) => setSelectedMonth(e.target.value)}
+                    className="border-none bg-transparent font-bold text-lg outline-none cursor-pointer uppercase text-center"
+                  >
+                    {Array.from(new Set([...allAvailableMonths, selectedMonth])).sort().map((m: any) => {
+                      const [year, month] = m.split('-');
+                      const dateObj = new Date(parseInt(year), parseInt(month) - 1, 1);
+                      return (
+                        <option key={m} value={m}>
+                          {dateObj.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+                <button 
+                  onClick={handleNextMonth}
+                  className="font-black text-2xl hover:text-brand-blue hover:scale-110 transition-transform px-2"
+                >
+                  &gt;
+                </button>
+              </div>
+            </div>
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse min-w-[700px]">
                 <thead>

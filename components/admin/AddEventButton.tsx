@@ -85,18 +85,6 @@ export function AddEventButton() {
                 />
               </div>
 
-              <div>
-                <label className="block font-bold mb-2 uppercase tracking-widest text-sm opacity-70">Location</label>
-                <input 
-                  name="location" 
-                  type="text" 
-                  required 
-                  placeholder="e.g. Main Hall"
-                  defaultValue="Main Hall"
-                  className="w-full p-3 border-4 border-brand-black focus:outline-none focus:ring-4 focus:ring-brand-pink/30 bg-brand-cream"
-                />
-              </div>
-
               <div className="flex justify-end gap-4 mt-8">
                 <Button 
                   type="button" 
