@@ -158,12 +158,19 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
           {[
             { id: 'SCHEDULE', label: 'SCHEDULE' },
             { id: 'TABLE', label: 'TABLE VIEW' },
-            { id: 'MEMBERS', label: 'MEMBERS' }
+            { id: 'MEMBERS', label: 'MEMBERS' },
+            { id: 'STATISTICS', label: 'STATISTICS' }
           ].map((tab, i, arr) => (
             <button 
               key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
-              className={`flex-1 min-w-[120px] px-4 py-3 font-bold uppercase tracking-widest text-xs sm:text-sm transition-colors whitespace-nowrap
+              onClick={() => {
+                if (tab.id === 'STATISTICS') {
+                  window.location.href = '/admin/statistics';
+                } else {
+                  setActiveTab(tab.id as any);
+                }
+              }}
+              className={`flex-1 min-w-[100px] px-3 sm:px-4 py-3 font-bold uppercase tracking-widest text-xs sm:text-sm transition-colors whitespace-nowrap
                 ${i !== arr.length - 1 ? 'border-r-4 border-brand-black' : ''} 
                 ${activeTab === tab.id ? 'bg-brand-pink text-brand-white' : 'hover:bg-brand-cream text-brand-black'}
               `}
