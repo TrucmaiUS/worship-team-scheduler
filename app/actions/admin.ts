@@ -16,7 +16,7 @@ export async function addService(formData: FormData) {
   const end_time = formData.get('end_time') as string;
 
   if (!title || !date || !start_time || !end_time) {
-    return { error: 'Vui lòng điền đầy đủ thông tin' };
+    return { error: 'Please fill in all required fields' };
   }
 
   try {
@@ -32,6 +32,6 @@ export async function addService(formData: FormData) {
     
     return { success: true };
   } catch (err: any) {
-    return { error: 'Lỗi Database: ' + err.message };
+    return { error: 'Database Error: ' + err.message };
   }
 }

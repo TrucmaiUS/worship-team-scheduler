@@ -11,7 +11,7 @@ export async function adminAssignMember(serviceId: string, userId: string, team:
   try {
     const check = await db.query('SELECT * FROM registrations WHERE service_id = $1 AND user_id = $2', [serviceId, userId]);
     if (check.rows.length > 0) {
-      return { error: 'Thành viên này đã được phân công trong buổi này rồi!' };
+      return { error: 'This member is already assigned to this service!' };
     }
 
     const id = `r_${Date.now()}`;
