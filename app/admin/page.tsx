@@ -12,13 +12,14 @@ export default async function AdminPage() {
 
   let services, users, registrations;
   try {
-    const resServices = await db.query('SELECT * FROM services ORDER BY date ASC, start_time ASC');
+    const [resServices, resUsers, resRegs] = await Promise.all([
+      db.query('SELECT * FROM services ORDER BY date ASC, start_time ASC'),
+      db.query('SELECT id, full_name, email, role FROM users'),
+      db.query('SELECT * FROM registrations')
+    ]);
+    
     services = resServices.rows;
-    
-    const resUsers = await db.query('SELECT id, full_name, email, role FROM users');
     users = resUsers.rows;
-    
-    const resRegs = await db.query('SELECT * FROM registrations');
     registrations = resRegs.rows;
   } catch (err: any) {
     return (

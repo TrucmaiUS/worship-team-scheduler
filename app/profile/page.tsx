@@ -17,16 +17,19 @@ export default async function ProfilePage() {
   let user;
   let history = [];
   try {
-    const { rows: userRows } = await db.query('SELECT * FROM users WHERE id = $1', [session.id]);
-    user = userRows[0] as any;
-    const resHistory = await db.query(`
-      SELECT r.team, s.title, s.date, s.start_time 
-      FROM registrations r
-      JOIN services s ON r.service_id = s.id
-      WHERE r.user_id = $1
-      ORDER BY s.date DESC
-    `, [session.id]);
-    history = resHistory.rows;
+    const [userRes, historyRes] = await Promise.all([
+      db.query('SELECT * FROM users WHERE id = $1', [session.id]),
+      db.query(`
+        SELECT r.team, s.title, s.date, s.start_time 
+        FROM registrations r
+        JOIN services s ON r.service_id = s.id
+        WHERE r.user_id = $1
+        ORDER BY s.date DESC
+      `, [session.id])
+    ]);
+    
+    user = userRes.rows[0] as any;
+    history = historyRes.rows;
   } catch (err: any) {
     return <div className="p-8 text-red-500 font-bold text-2xl">FATAL PROFILE ERROR: {err.message}</div>;
   }

@@ -16,7 +16,7 @@ export default async function SchedulePage({
   
   let dbUser: any = null;
   try {
-    const { rows } = await db.query('SELECT full_name, avatar_url FROM users WHERE id = ', [session.id]);
+    const { rows } = await db.query('SELECT full_name, avatar_url FROM users WHERE id = $1', [session.id]);
     if (rows.length > 0) dbUser = rows[0];
   } catch(e) {}
 
@@ -43,18 +43,21 @@ export default async function SchedulePage({
   const registrationsMap: Record<string, any[]> = {};
 
   try {
-    const resUpcoming = await db.query(`
-      SELECT * FROM services 
-      WHERE date >= $1 AND date <= $2
-      ORDER BY date ASC, start_time ASC
-    `, [todayStr, upcomingEndStr]);
-    upcomingServices = resUpcoming.rows;
+    // RUN QUERIES IN PARALLEL (Promise.all) TO REDUCE WATERFALL DELAY
+    const [resUpcoming, resMonthly] = await Promise.all([
+      db.query(`
+        SELECT * FROM services 
+        WHERE date >= $1 AND date <= $2
+        ORDER BY date ASC, start_time ASC
+      `, [todayStr, upcomingEndStr]),
+      db.query(`
+        SELECT * FROM services 
+        WHERE date >= $1 AND date <= $2
+        ORDER BY date ASC, start_time ASC
+      `, [startStr, monthEndStr])
+    ]);
 
-    const resMonthly = await db.query(`
-      SELECT * FROM services 
-      WHERE date >= $1 AND date <= $2
-      ORDER BY date ASC, start_time ASC
-    `, [startStr, monthEndStr]);
+    upcomingServices = resUpcoming.rows;
     monthlyServices = resMonthly.rows;
 
     const allServices = [...upcomingServices, ...monthlyServices];
