@@ -108,3 +108,16 @@
     @apply font-heading font-bold uppercase tracking-normal;
   }
 }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@layer utilities {
+  .skeleton-shimmer {
+    background: linear-gradient(90deg, rgba(17,17,17,0.06) 25%, rgba(17,17,17,0.12) 50%, rgba(17,17,17,0.06) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+}
