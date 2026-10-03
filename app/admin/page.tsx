@@ -66,7 +66,7 @@ export default async function AdminPage() {
             <p className="editorial-heading text-2xl sm:text-4xl">{stats.members}</p>
           </div>
           <div className="bg-brand-white border-2 sm:border-4 border-brand-black p-2 sm:p-4 text-center shadow-[2px_2px_0_0_#111111] sm:shadow-[4px_4px_0_0_#111111]">
-            <h3 className="font-bold text-[10px] sm:text-sm uppercase tracking-widest mb-1 sm:mb-2 opacity-70 truncate">Sign-ups</h3>
+            <h3 className="font-bold text-[10px] sm:text-sm uppercase tracking-widest mb-1 sm:mb-2 opacity-70 truncate">Assignments</h3>
             <p className="editorial-heading text-2xl sm:text-4xl">{stats.registrations}</p>
           </div>
         </div>
