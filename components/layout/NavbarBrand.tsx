@@ -14,8 +14,12 @@ export function NavbarBrand({ href }: NavbarBrandProps) {
 
   // Reset pressed state when navigation completes
   useEffect(() => {
-    setIsPressed(false);
-  }, [pathname]);
+    let timeoutId: NodeJS.Timeout;
+    if (isPressed) {
+      timeoutId = setTimeout(() => setIsPressed(false), 150);
+    }
+    return () => clearTimeout(timeoutId);
+  }, [pathname, isPressed]);
 
   return (
     <Link
