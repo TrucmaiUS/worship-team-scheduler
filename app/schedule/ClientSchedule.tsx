@@ -302,6 +302,101 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
         </div>
       </section>
 
+      {/* SECTION DIVIDER */}
+      <div className="flex justify-center items-center my-20 opacity-30">
+        <div className="h-[2px] bg-brand-black w-1/3"></div>
+        <div className="mx-4 font-bold tracking-widest uppercase">Table View</div>
+        <div className="h-[2px] bg-brand-black w-1/3"></div>
+      </div>
+
+      {/* MONTHLY TABLE VIEW SECTION */}
+      <section className="mb-16">
+        <div className="bg-white border-2 border-brand-black p-4 sm:p-6 shadow-[4px_4px_0_0_#111111]">
+          <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
+            <h2 className="text-xl font-bold uppercase tracking-wider text-brand-black">
+              SCHEDULE {monthName.toUpperCase()} (TABLE VIEW)
+            </h2>
+            <div className="flex items-center gap-2">
+              <Button variant="ghost" size="sm" onClick={() => handleNavigate(offset - 1)} className="border-2 border-brand-black">
+                &larr; Prev
+              </Button>
+              {offset !== 0 && (
+                <Button variant="outline" size="sm" onClick={() => handleNavigate(0)} className="border-2 border-brand-black text-xs">
+                  THIS MONTH
+                </Button>
+              )}
+              <Button variant="ghost" size="sm" onClick={() => handleNavigate(offset + 1)} className="border-2 border-brand-black">
+                Next &rarr;
+              </Button>
+            </div>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse min-w-[700px]">
+              <thead>
+                <tr className="border-b-2 border-brand-black bg-brand-cream/50">
+                  <th className="p-2.5 border-r-2 border-brand-black w-1/5 font-bold">Sự kiện</th>
+                  <th className="p-2.5 border-r-2 border-brand-black w-1/6 text-center font-bold">Ngày</th>
+                  <th className="p-2.5 border-r-2 border-brand-black w-1/4 font-bold">Ca sỹ</th>
+                  <th className="p-2.5 border-r-2 border-brand-black w-1/4 font-bold">Nhạc công</th>
+                  <th className="p-2.5 w-1/6 font-bold">Âm thanh</th>
+                </tr>
+              </thead>
+              <tbody>
+                {monthlyServices.length === 0 ? (
+                  <tr>
+                    <td colSpan={5} className="p-8 text-center font-bold opacity-50">
+                      No events found for {monthName}
+                    </td>
+                  </tr>
+                ) : (
+                  monthlyServices.map((s: any) => {
+                    const regs = registrationsMap[s.id] || [];
+                    const dateObj = new Date(s.date.includes('T') ? s.date : `${s.date}T00:00:00`);
+                    const dateStr = `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`;
+                    
+                    const singers = regs.filter((r: any) => r.team === 'SINGER').map((r: any) => r.role_detail ? `${r.user_name} (${r.role_detail})` : r.user_name).join(', ');
+                    const musicians = regs.filter((r: any) => r.team === 'MUSICIAN').map((r: any) => r.role_detail ? `${r.user_name} (${r.role_detail})` : r.user_name).join(', ');
+                    const sounds = regs.filter((r: any) => r.team === 'SOUND').map((r: any) => r.role_detail ? `${r.user_name} (${r.role_detail})` : r.user_name).join(', ');
+
+                    const isUserServing = regs.some((r: any) => r.user_id === userId);
+                    const userReg = isUserServing ? regs.find((r: any) => r.user_id === userId) : null;
+
+                    return (
+                      <tr 
+                        key={s.id} 
+                        className={`border-b border-brand-black last:border-b-0 hover:bg-brand-pink/5 transition-colors cursor-pointer ${isUserServing ? 'bg-brand-blue/5' : ''}`}
+                        onClick={() => handleOpenModal(s.id, userReg ? userReg.team : null, userReg ? userReg.role_detail : null)}
+                        title="Click to view or register"
+                      >
+                        <td className="p-2.5 border-r border-brand-black font-bold">
+                          {s.title || ''}
+                        </td>
+                        <td className="p-2.5 border-r border-brand-black text-center font-medium whitespace-nowrap">
+                          {dateStr}
+                        </td>
+                        <td className="p-2.5 border-r border-brand-black text-sm">
+                          {singers || <span className="opacity-40 italic">None</span>}
+                        </td>
+                        <td className="p-2.5 border-r border-brand-black text-sm">
+                          {musicians || <span className="opacity-40 italic">None</span>}
+                        </td>
+                        <td className="p-2.5 text-sm">
+                          {sounds || <span className="opacity-40 italic">None</span>}
+                        </td>
+                      </tr>
+                    );
+                  })
+                )}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-4 text-center opacity-70 font-bold text-sm">
+            (You can easily take a screenshot of this table)
+          </div>
+        </div>
+      </section>
+
       {/* Modal */}
       {modalState.open && (
         <div className="fixed inset-0 bg-brand-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
