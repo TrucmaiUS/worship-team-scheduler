@@ -360,14 +360,11 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     const sounds = regs.filter((r: any) => r.team === 'SOUND').map((r: any) => r.role_detail ? `${r.user_name} (${r.role_detail})` : r.user_name).join(', ');
 
                     const isUserServing = regs.some((r: any) => r.user_id === userId);
-                    const userReg = isUserServing ? regs.find((r: any) => r.user_id === userId) : null;
 
                     return (
                       <tr 
                         key={s.id} 
-                        className={`border-b border-brand-black last:border-b-0 hover:bg-brand-pink/5 transition-colors cursor-pointer ${isUserServing ? 'bg-brand-blue/5' : ''}`}
-                        onClick={() => handleOpenModal(s.id, userReg ? userReg.team : null, userReg ? userReg.role_detail : null)}
-                        title="Click to view or register"
+                        className={`border-b border-brand-black last:border-b-0 hover:bg-brand-black/5 ${isUserServing ? 'bg-brand-blue/5' : ''}`}
                       >
                         <td className="p-2.5 border-r border-brand-black font-bold">
                           {s.title || ''}
