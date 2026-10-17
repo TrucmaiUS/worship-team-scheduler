@@ -358,14 +358,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     disabled={loading}
                     onClick={() => setExpandedTeam(prev => prev === 'SINGER' ? null : 'SINGER')}
                   >
-                    <div className="flex items-center gap-2">
-                      <span>SINGER</span>
-                      {modalState.currentTeam === 'SINGER' && modalState.currentRoleDetail && (
-                        <span className="text-xs bg-white text-brand-pink font-bold px-2 py-0.5 border border-brand-black">
-                          {modalState.currentRoleDetail}
-                        </span>
-                      )}
-                    </div>
+                    <span>SINGER</span>
                     <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${expandedTeam === 'SINGER' ? 'rotate-180' : ''}`} />
                   </Button>
 
@@ -430,14 +423,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     disabled={loading}
                     onClick={() => setExpandedTeam(prev => prev === 'MUSICIAN' ? null : 'MUSICIAN')}
                   >
-                    <div className="flex items-center gap-2">
-                      <span>MUSICIAN</span>
-                      {modalState.currentTeam === 'MUSICIAN' && modalState.currentRoleDetail && (
-                        <span className="text-xs bg-white text-brand-blue font-bold px-2 py-0.5 border border-brand-black">
-                          {modalState.currentRoleDetail}
-                        </span>
-                      )}
-                    </div>
+                    <span>MUSICIAN</span>
                     <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${expandedTeam === 'MUSICIAN' ? 'rotate-180' : ''}`} />
                   </Button>
 
@@ -463,10 +449,10 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                             }}
                             className={`w-full flex items-center justify-between p-3 font-bold text-sm border-2 border-brand-black transition-all text-left ${
                               isCurrent
-                                ? 'bg-brand-blue text-white shadow-[2px_2px_0_0_#111111]'
+                                ? 'bg-brand-pink text-white shadow-[2px_2px_0_0_#111111]'
                                 : user
                                 ? 'bg-gray-100 text-gray-400 cursor-not-allowed opacity-70'
-                                : 'bg-white hover:bg-brand-blue/15 hover:translate-x-1 shadow-[2px_2px_0_0_#111111] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none cursor-pointer'
+                                : 'bg-white hover:bg-brand-pink/20 hover:translate-x-1 shadow-[2px_2px_0_0_#111111] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none cursor-pointer'
                             }`}
                           >
                             <span className="flex items-center gap-2">
@@ -478,7 +464,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                                 Taken: {user}
                               </span>
                             ) : isCurrent ? (
-                              <span className="text-xs bg-white text-brand-blue font-black px-2 py-0.5 border border-brand-black">
+                              <span className="text-xs bg-white text-brand-pink font-black px-2 py-0.5 border border-brand-black">
                                 CURRENT
                               </span>
                             ) : null}
