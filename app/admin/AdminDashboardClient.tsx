@@ -263,12 +263,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                               <div className="flex flex-wrap gap-1.5">
                                 {service.sound.length > 0 ? service.sound.map((s:any) => (
                                   <span key={s.id} className="inline-flex items-center gap-1.5 bg-brand-white border-2 border-brand-black px-2.5 py-1 text-xs font-bold shadow-[2px_2px_0_0_#111111] rounded-md transition-transform hover:-translate-y-0.5">
-                                    <span className="text-brand-black">{s.full_name}</span>
-                                    {s.role_detail && (
-                                      <span className="bg-brand-black/5 text-brand-black/70 px-1.5 py-0.5 rounded text-[10px] font-extrabold border border-brand-black/20">
-                                        {s.role_detail}
-                                      </span>
-                                    )}
+                                    <span className="text-brand-black">{s.role_detail ? `${s.full_name} (${s.role_detail})` : s.full_name}</span>
                                     <button 
                                       onClick={() => handleRemove(service.id, s.id)} 
                                       className="w-4 h-4 rounded-full bg-brand-red/10 hover:bg-brand-red text-brand-red hover:text-white flex items-center justify-center transition-colors ml-0.5" 
@@ -292,12 +287,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                               <div className="flex flex-wrap gap-1.5">
                                 {service.singer.length > 0 ? service.singer.map((s:any) => (
                                   <span key={s.id} className="inline-flex items-center gap-1.5 bg-brand-white border-2 border-brand-black px-2.5 py-1 text-xs font-bold shadow-[2px_2px_0_0_#111111] rounded-md transition-transform hover:-translate-y-0.5">
-                                    <span className="text-brand-black">{s.full_name}</span>
-                                    {s.role_detail && (
-                                      <span className="bg-brand-pink/15 text-brand-pink px-1.5 py-0.5 rounded text-[10px] font-extrabold border border-brand-pink/30">
-                                        {s.role_detail}
-                                      </span>
-                                    )}
+                                    <span className="text-brand-black">{s.role_detail ? `${s.full_name} (${s.role_detail})` : s.full_name}</span>
                                     <button 
                                       onClick={() => handleRemove(service.id, s.id)} 
                                       className="w-4 h-4 rounded-full bg-brand-red/10 hover:bg-brand-red text-brand-red hover:text-white flex items-center justify-center transition-colors ml-0.5" 
@@ -321,12 +311,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                               <div className="flex flex-wrap gap-1.5">
                                 {service.musician.length > 0 ? service.musician.map((s:any) => (
                                   <span key={s.id} className="inline-flex items-center gap-1.5 bg-brand-white border-2 border-brand-black px-2.5 py-1 text-xs font-bold shadow-[2px_2px_0_0_#111111] rounded-md transition-transform hover:-translate-y-0.5">
-                                    <span className="text-brand-black">{s.full_name}</span>
-                                    {s.role_detail && (
-                                      <span className="bg-brand-blue/15 text-brand-blue px-1.5 py-0.5 rounded text-[10px] font-extrabold border border-brand-blue/30">
-                                        {s.role_detail}
-                                      </span>
-                                    )}
+                                    <span className="text-brand-black">{s.role_detail ? `${s.full_name} (${s.role_detail})` : s.full_name}</span>
                                     <button 
                                       onClick={() => handleRemove(service.id, s.id)} 
                                       className="w-4 h-4 rounded-full bg-brand-red/10 hover:bg-brand-red text-brand-red hover:text-white flex items-center justify-center transition-colors ml-0.5" 
