@@ -8,7 +8,7 @@ import { toast } from 'sonner';
 
 const ROSTER_GROUPS = [
   {
-    name: '🎤 CA SỸ (SINGERS)',
+    name: 'SINGER',
     headerBg: 'bg-brand-pink text-brand-white',
     slots: [
       { key: 'vocal_1', label: 'Vocal 1', team: 'SINGER', roleDetail: 'Vocal 1' },
@@ -17,7 +17,7 @@ const ROSTER_GROUPS = [
     ]
   },
   {
-    name: '🎸 NHẠC CÔNG (MUSICIANS)',
+    name: 'MUSICIAN',
     headerBg: 'bg-brand-blue text-brand-white',
     slots: [
       { key: 'piano', label: 'Piano', team: 'MUSICIAN', roleDetail: 'Piano' },
@@ -28,7 +28,7 @@ const ROSTER_GROUPS = [
     ]
   },
   {
-    name: '🎧 ÂM THANH (SOUND TEAM)',
+    name: 'SOUND TEAM',
     headerBg: 'bg-brand-black text-brand-white',
     slots: [
       { key: 'sound', label: 'Sound Team', team: 'SOUND', roleDetail: null },
@@ -152,10 +152,10 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                 </span>
                 <button 
                   onClick={() => handleRemove(service.id, u.id)}
-                  className="w-3.5 h-3.5 rounded-full bg-brand-red/10 hover:bg-brand-red text-brand-red hover:text-white flex items-center justify-center transition-colors opacity-0 group-hover:opacity-100 shrink-0 ml-1"
+                  className="w-4 h-4 rounded-full bg-brand-red/10 hover:bg-brand-red text-brand-red hover:text-white flex items-center justify-center transition-colors shrink-0 ml-1"
                   title="Remove"
                 >
-                  <svg className="w-2 h-2" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
@@ -703,9 +703,9 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
 
                     return (
                       <div key={group.name} className="border-2 border-brand-black bg-white rounded-lg overflow-hidden shadow-[2px_2px_0_0_#111111]">
-                        <div className={`${group.headerBg} px-3.5 py-2 font-black text-xs uppercase tracking-wider flex items-center justify-between border-b-2 border-brand-black`}>
-                          <span>{group.name}</span>
-                          <span className="text-[11px] font-extrabold opacity-80">
+                        <div className={`${group.headerBg} px-3.5 py-2 uppercase tracking-wide flex items-center justify-between border-b-2 border-brand-black`}>
+                          <span className="text-base sm:text-lg font-normal">{group.name}</span>
+                          <span className="text-xs font-normal opacity-85">
                             ({assignedInGroup}/{group.slots.length})
                           </span>
                         </div>
@@ -791,8 +791,8 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                   {/* EXTRA MEMBERS (IF ANY) */}
                   {extraMembers.length > 0 && (
                     <div className="border-2 border-brand-black bg-white rounded-lg overflow-hidden shadow-[2px_2px_0_0_#111111]">
-                      <div className="bg-brand-black text-white px-3.5 py-2 font-black text-xs uppercase tracking-wider border-b-2 border-brand-black">
-                        THÀNH VIÊN KHÁC
+                      <div className="bg-brand-black text-white px-3.5 py-2 uppercase tracking-wide border-b-2 border-brand-black">
+                        <span className="text-base sm:text-lg font-normal">THÀNH VIÊN KHÁC</span>
                       </div>
                       <div className="p-2.5 sm:p-3 space-y-2 bg-brand-cream/30">
                         {extraMembers.map((u: any) => (
