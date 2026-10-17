@@ -93,13 +93,23 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
             <div className="text-sm font-bold text-brand-red">⚠ --</div>
           ) : (
             members.map(u => (
-              <div key={u.id} className="text-sm font-bold flex justify-between group">
-                  <span>✓ {u.role_detail ? `${u.full_name} (${u.role_detail})` : u.full_name}</span>
+              <div key={u.id} className="text-xs font-bold flex justify-between items-center group bg-brand-white border border-brand-black/30 px-2 py-1 rounded shadow-[1px_1px_0_0_#111111] mb-1.5">
+                <span className="flex items-center gap-1.5 truncate">
+                  <span className="text-brand-black">✓ {u.full_name}</span>
+                  {u.role_detail && (
+                    <span className="bg-brand-black/5 text-brand-black/70 px-1.5 py-0.2 rounded text-[10px] font-extrabold border border-brand-black/15">
+                      {u.role_detail}
+                    </span>
+                  )}
+                </span>
                 <button 
                   onClick={() => handleRemove(service.id, u.id)}
-                  className="text-brand-red opacity-0 group-hover:opacity-100 hover:underline"
+                  className="w-3.5 h-3.5 rounded-full bg-brand-red/10 hover:bg-brand-red text-brand-red hover:text-white flex items-center justify-center transition-colors opacity-0 group-hover:opacity-100 shrink-0 ml-1"
+                  title="Remove"
                 >
-                  X
+                  <svg className="w-2 h-2" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                 </button>
               </div>
             ))
@@ -250,11 +260,24 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                                 <span className="font-bold uppercase tracking-widest text-sm">Sound</span>
                                 <button className="text-brand-blue font-bold text-sm hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SOUND' })}>+ Add</button>
                               </div>
-                              <div className="flex flex-wrap gap-1">
+                              <div className="flex flex-wrap gap-1.5">
                                 {service.sound.length > 0 ? service.sound.map((s:any) => (
-                                  <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-sm font-bold">
-                                    {s.role_detail ? `${s.full_name} (${s.role_detail})` : s.full_name}
-                                    <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
+                                  <span key={s.id} className="inline-flex items-center gap-1.5 bg-brand-white border-2 border-brand-black px-2.5 py-1 text-xs font-bold shadow-[2px_2px_0_0_#111111] rounded-md transition-transform hover:-translate-y-0.5">
+                                    <span className="text-brand-black">{s.full_name}</span>
+                                    {s.role_detail && (
+                                      <span className="bg-brand-black/5 text-brand-black/70 px-1.5 py-0.5 rounded text-[10px] font-extrabold border border-brand-black/20">
+                                        {s.role_detail}
+                                      </span>
+                                    )}
+                                    <button 
+                                      onClick={() => handleRemove(service.id, s.id)} 
+                                      className="w-4 h-4 rounded-full bg-brand-red/10 hover:bg-brand-red text-brand-red hover:text-white flex items-center justify-center transition-colors ml-0.5" 
+                                      title="Remove"
+                                    >
+                                      <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                      </svg>
+                                    </button>
                                   </span>
                                 )) : <span className="opacity-50 italic text-sm font-bold">None</span>}
                               </div>
@@ -266,11 +289,24 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                                 <span className="font-bold uppercase tracking-widest text-sm">Singer</span>
                                 <button className="text-brand-blue font-bold text-sm hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'SINGER' })}>+ Add</button>
                               </div>
-                              <div className="flex flex-wrap gap-1">
+                              <div className="flex flex-wrap gap-1.5">
                                 {service.singer.length > 0 ? service.singer.map((s:any) => (
-                                  <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-sm font-bold">
-                                    {s.role_detail ? `${s.full_name} (${s.role_detail})` : s.full_name}
-                                    <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
+                                  <span key={s.id} className="inline-flex items-center gap-1.5 bg-brand-white border-2 border-brand-black px-2.5 py-1 text-xs font-bold shadow-[2px_2px_0_0_#111111] rounded-md transition-transform hover:-translate-y-0.5">
+                                    <span className="text-brand-black">{s.full_name}</span>
+                                    {s.role_detail && (
+                                      <span className="bg-brand-pink/15 text-brand-pink px-1.5 py-0.5 rounded text-[10px] font-extrabold border border-brand-pink/30">
+                                        {s.role_detail}
+                                      </span>
+                                    )}
+                                    <button 
+                                      onClick={() => handleRemove(service.id, s.id)} 
+                                      className="w-4 h-4 rounded-full bg-brand-red/10 hover:bg-brand-red text-brand-red hover:text-white flex items-center justify-center transition-colors ml-0.5" 
+                                      title="Remove"
+                                    >
+                                      <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                      </svg>
+                                    </button>
                                   </span>
                                 )) : <span className="opacity-50 italic text-sm font-bold">None</span>}
                               </div>
@@ -282,11 +318,24 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                                 <span className="font-bold uppercase tracking-widest text-sm">Musician</span>
                                 <button className="text-brand-blue font-bold text-sm hover:underline" onClick={() => setModalState({ open: true, serviceId: service.id, team: 'MUSICIAN' })}>+ Add</button>
                               </div>
-                              <div className="flex flex-wrap gap-1">
+                              <div className="flex flex-wrap gap-1.5">
                                 {service.musician.length > 0 ? service.musician.map((s:any) => (
-                                  <span key={s.id} className="inline-flex items-center gap-1 bg-brand-cream px-1.5 py-0.5 border border-brand-black text-sm font-bold">
-                                    {s.role_detail ? `${s.full_name} (${s.role_detail})` : s.full_name}
-                                    <button onClick={() => handleRemove(service.id, s.id)} className="text-brand-red ml-0.5 hover:scale-125 transition-transform" title="Remove">✕</button>
+                                  <span key={s.id} className="inline-flex items-center gap-1.5 bg-brand-white border-2 border-brand-black px-2.5 py-1 text-xs font-bold shadow-[2px_2px_0_0_#111111] rounded-md transition-transform hover:-translate-y-0.5">
+                                    <span className="text-brand-black">{s.full_name}</span>
+                                    {s.role_detail && (
+                                      <span className="bg-brand-blue/15 text-brand-blue px-1.5 py-0.5 rounded text-[10px] font-extrabold border border-brand-blue/30">
+                                        {s.role_detail}
+                                      </span>
+                                    )}
+                                    <button 
+                                      onClick={() => handleRemove(service.id, s.id)} 
+                                      className="w-4 h-4 rounded-full bg-brand-red/10 hover:bg-brand-red text-brand-red hover:text-white flex items-center justify-center transition-colors ml-0.5" 
+                                      title="Remove"
+                                    >
+                                      <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                      </svg>
+                                    </button>
                                   </span>
                                 )) : <span className="opacity-50 italic text-sm font-bold">None</span>}
                               </div>
