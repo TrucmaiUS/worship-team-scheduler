@@ -27,9 +27,9 @@ export default async function SchedulePage({
   const today = new Date();
   const todayStr = format(today, 'yyyy-MM-dd');
   
-  // 1. Fetch Upcoming Services (Next 14 days)
+  // 1. Fetch Upcoming Services (Next 30 days)
   const endDate = new Date(today);
-  endDate.setDate(endDate.getDate() + 14);
+  endDate.setDate(endDate.getDate() + 30);
   const upcomingEndStr = format(endDate, 'yyyy-MM-dd');
 
   const currentMonthStart = addMonths(startOfMonth(today), offset);

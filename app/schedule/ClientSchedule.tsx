@@ -96,7 +96,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
         <div>
           {showDate && (
             <h3 className="font-bold uppercase tracking-widest text-brand-blue mb-1">
-              {format(new Date(service.date), 'EEEE, MMM do')}
+              {format(new Date(service.date.includes('T') ? service.date : `${service.date}T00:00:00`), 'EEEE, MMM do')}
             </h3>
           )}
           <h2 className="editorial-heading text-2xl mb-1 leading-tight">{service.title}</h2>
@@ -107,7 +107,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
           <div className="text-xs space-y-1.5 opacity-90">
             <p>
               <span className="font-bold inline-block w-16">Sound:</span> 
-              {sounds.length > 0 ? sounds.map((s:any) => s.role_detail ? ` ()` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
+              {sounds.length > 0 ? sounds.map((s:any) => s.role_detail ? `${s.user_name} (${s.role_detail})` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
             </p>
             <p>
               <span className="font-bold inline-block w-16">Singers:</span> 
@@ -165,7 +165,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
               upcomingServices
                 .filter((s: any) => !s.title.toLowerCase().includes('vietnamese service') && !s.title.toLowerCase().includes('combine'))
                 .reduce((groups: any, service: any) => {
-                  const serviceDate = new Date(service.date);
+                  const serviceDate = new Date(service.date.includes('T') ? service.date : `${service.date}T00:00:00`);
                   const label = format(serviceDate, 'MMMM yyyy').toUpperCase();
                   
                   if (!groups[label]) groups[label] = [];
