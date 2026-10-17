@@ -9,6 +9,7 @@ import { toast } from 'sonner';
 const ROSTER_GROUPS = [
   {
     name: '🎤 CA SỸ (SINGERS)',
+    headerBg: 'bg-brand-pink text-brand-white',
     slots: [
       { key: 'vocal_1', label: 'Vocal 1', team: 'SINGER', roleDetail: 'Vocal 1' },
       { key: 'vocal_2', label: 'Vocal 2', team: 'SINGER', roleDetail: 'Vocal 2' },
@@ -17,6 +18,7 @@ const ROSTER_GROUPS = [
   },
   {
     name: '🎸 NHẠC CÔNG (MUSICIANS)',
+    headerBg: 'bg-brand-blue text-brand-white',
     slots: [
       { key: 'piano', label: 'Piano', team: 'MUSICIAN', roleDetail: 'Piano' },
       { key: 'acoustic', label: 'Acoustic Guitar', team: 'MUSICIAN', roleDetail: 'Acoustic Guitar' },
@@ -27,6 +29,7 @@ const ROSTER_GROUPS = [
   },
   {
     name: '🎧 ÂM THANH (SOUND TEAM)',
+    headerBg: 'bg-brand-black text-brand-white',
     slots: [
       { key: 'sound', label: 'Sound Team', team: 'SOUND', roleDetail: null },
     ]
@@ -690,97 +693,131 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                 </div>
 
                 <div className="flex-1 overflow-y-auto space-y-4 pr-1">
-                  {ROSTER_GROUPS.map((group) => (
-                    <div key={group.name} className="border-2 border-brand-black bg-white">
-                      <div className="bg-brand-cream/80 px-3 py-1.5 border-b-2 border-brand-black font-black text-xs uppercase tracking-wider text-brand-black">
-                        {group.name}
-                      </div>
-                      <div className="divide-y divide-brand-black/10">
-                        {group.slots.map((slot) => {
-                          let assignee: any = null;
-                          if (slot.team === 'SOUND') {
-                            assignee = selectedManageService.sound[0] || null;
-                          } else if (slot.team === 'SINGER') {
-                            assignee = selectedManageService.singer.find((s: any) => 
-                              s.role_detail?.toLowerCase() === slot.roleDetail?.toLowerCase()
-                            ) || null;
-                          } else if (slot.team === 'MUSICIAN') {
-                            assignee = selectedManageService.musician.find((s: any) => 
-                              s.role_detail?.toLowerCase() === slot.roleDetail?.toLowerCase()
-                            ) || null;
-                          }
+                  {ROSTER_GROUPS.map((group) => {
+                    const assignedInGroup = group.slots.filter(slot => {
+                      if (slot.team === 'SOUND') return selectedManageService.sound.length > 0;
+                      if (slot.team === 'SINGER') return selectedManageService.singer.some((s: any) => s.role_detail?.toLowerCase() === slot.roleDetail?.toLowerCase());
+                      if (slot.team === 'MUSICIAN') return selectedManageService.musician.some((s: any) => s.role_detail?.toLowerCase() === slot.roleDetail?.toLowerCase());
+                      return false;
+                    }).length;
 
-                          return (
-                            <div key={slot.key} className="flex items-center justify-between p-2.5 gap-2 hover:bg-brand-cream/20">
-                              <span className="font-bold text-xs sm:text-sm text-brand-black w-28 sm:w-36 shrink-0">
-                                {slot.label}
-                              </span>
+                    return (
+                      <div key={group.name} className="border-2 border-brand-black bg-white rounded-lg overflow-hidden shadow-[2px_2px_0_0_#111111]">
+                        <div className={`${group.headerBg} px-3.5 py-2 font-black text-xs uppercase tracking-wider flex items-center justify-between border-b-2 border-brand-black`}>
+                          <span>{group.name}</span>
+                          <span className="text-[11px] font-extrabold opacity-80">
+                            ({assignedInGroup}/{group.slots.length})
+                          </span>
+                        </div>
+                        <div className="p-2.5 sm:p-3 space-y-2 bg-brand-cream/30">
+                          {group.slots.map((slot) => {
+                            let assignee: any = null;
+                            if (slot.team === 'SOUND') {
+                              assignee = selectedManageService.sound[0] || null;
+                            } else if (slot.team === 'SINGER') {
+                              assignee = selectedManageService.singer.find((s: any) => 
+                                s.role_detail?.toLowerCase() === slot.roleDetail?.toLowerCase()
+                              ) || null;
+                            } else if (slot.team === 'MUSICIAN') {
+                              assignee = selectedManageService.musician.find((s: any) => 
+                                s.role_detail?.toLowerCase() === slot.roleDetail?.toLowerCase()
+                              ) || null;
+                            }
 
-                              <div className="flex-1 flex items-center justify-end gap-2">
-                                {assignee ? (
-                                  <div className="flex items-center gap-2">
-                                    <span className="font-bold text-xs sm:text-sm text-brand-black bg-brand-cream border border-brand-black px-2 py-0.5 rounded">
-                                      ✓ {assignee.full_name}
-                                    </span>
-                                    <button
-                                      type="button"
-                                      disabled={loading}
-                                      onClick={() => handleRemove(selectedManageService.id, assignee.id)}
-                                      className="text-xs font-bold text-brand-red hover:underline px-1 py-0.5"
-                                      title="Gỡ người này"
-                                    >
-                                      ✕ Gỡ
-                                    </button>
-                                  </div>
-                                ) : (
-                                  <div className="flex items-center gap-1.5 w-full justify-end">
-                                    <select
-                                      className="border-2 border-brand-black text-xs font-bold py-1 px-2 bg-white max-w-[150px] sm:max-w-[180px] w-full"
-                                      value={slotAssigns[slot.key] || ''}
-                                      onChange={(e) => setSlotAssigns(prev => ({ ...prev, [slot.key]: e.target.value }))}
-                                    >
-                                      <option value="">-- Trống --</option>
-                                      {availableUsers.map((u: any) => (
-                                        <option key={u.id} value={u.id}>{u.full_name}</option>
-                                      ))}
-                                    </select>
-                                    <Button
-                                      size="sm"
-                                      disabled={loading || !slotAssigns[slot.key]}
-                                      onClick={() => handleSlotAssign(slot)}
-                                      className="text-xs h-7 px-2.5 shrink-0"
-                                    >
-                                      Gán
-                                    </Button>
-                                  </div>
-                                )}
+                            return assignee ? (
+                              /* ASSIGNED CARD (MATCHING USER SCREENSHOT) */
+                              <div 
+                                key={slot.key} 
+                                className="flex items-center justify-between bg-white border-2 border-brand-black px-3 py-2 rounded-lg shadow-[2px_2px_0_0_#111111]"
+                              >
+                                <div className="flex items-center gap-2 truncate">
+                                  <span className="font-black text-sm text-brand-black flex items-center gap-1.5 truncate">
+                                    <span>✓</span>
+                                    <span>{assignee.full_name}</span>
+                                  </span>
+                                  <span className="bg-brand-black/5 text-brand-black/70 px-2 py-0.5 rounded text-[11px] font-extrabold border border-brand-black/15 shrink-0">
+                                    {slot.roleDetail || slot.label}
+                                  </span>
+                                </div>
+                                <button
+                                  type="button"
+                                  disabled={loading}
+                                  onClick={() => handleRemove(selectedManageService.id, assignee.id)}
+                                  className="w-5 h-5 rounded-full bg-brand-red/10 hover:bg-brand-red text-brand-red hover:text-white flex items-center justify-center transition-colors ml-2 shrink-0"
+                                  title="Gỡ người này"
+                                >
+                                  <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </button>
                               </div>
-                            </div>
-                          );
-                        })}
+                            ) : (
+                              /* EMPTY SLOT */
+                              <div 
+                                key={slot.key} 
+                                className="flex items-center justify-between bg-white/70 border-2 border-dashed border-brand-black/25 px-3 py-1.5 rounded-lg"
+                              >
+                                <span className="font-bold text-xs text-brand-black/60">
+                                  {slot.label}
+                                </span>
+                                <div className="flex items-center gap-1.5">
+                                  <select
+                                    className="border-2 border-brand-black text-xs font-bold py-1 px-2 bg-white rounded shadow-[1px_1px_0_0_#111111] max-w-[140px] sm:max-w-[180px] focus:outline-none"
+                                    value={slotAssigns[slot.key] || ''}
+                                    onChange={(e) => setSlotAssigns(prev => ({ ...prev, [slot.key]: e.target.value }))}
+                                  >
+                                    <option value="">-- Chọn người --</option>
+                                    {availableUsers.map((u: any) => (
+                                      <option key={u.id} value={u.id}>{u.full_name}</option>
+                                    ))}
+                                  </select>
+                                  <Button
+                                    size="sm"
+                                    disabled={loading || !slotAssigns[slot.key]}
+                                    onClick={() => handleSlotAssign(slot)}
+                                    className="text-xs h-7 px-2.5 font-bold shadow-[1px_1px_0_0_#111111] rounded"
+                                  >
+                                    Gán
+                                  </Button>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
 
                   {/* EXTRA MEMBERS (IF ANY) */}
                   {extraMembers.length > 0 && (
-                    <div className="border-2 border-brand-black bg-white">
-                      <div className="bg-brand-cream/80 px-3 py-1.5 border-b-2 border-brand-black font-black text-xs uppercase tracking-wider text-brand-black">
+                    <div className="border-2 border-brand-black bg-white rounded-lg overflow-hidden shadow-[2px_2px_0_0_#111111]">
+                      <div className="bg-brand-black text-white px-3.5 py-2 font-black text-xs uppercase tracking-wider border-b-2 border-brand-black">
                         THÀNH VIÊN KHÁC
                       </div>
-                      <div className="divide-y divide-brand-black/10">
+                      <div className="p-2.5 sm:p-3 space-y-2 bg-brand-cream/30">
                         {extraMembers.map((u: any) => (
-                          <div key={u.id} className="flex items-center justify-between p-2.5 gap-2">
-                            <span className="font-bold text-xs sm:text-sm text-brand-black">
-                              {u.full_name} {u.role_detail ? `(${u.role_detail})` : ''}
-                            </span>
+                          <div key={u.id} className="flex items-center justify-between bg-white border-2 border-brand-black px-3 py-2 rounded-lg shadow-[2px_2px_0_0_#111111]">
+                            <div className="flex items-center gap-2 truncate">
+                              <span className="font-black text-sm text-brand-black flex items-center gap-1.5 truncate">
+                                <span>✓</span>
+                                <span>{u.full_name}</span>
+                              </span>
+                              {u.role_detail && (
+                                <span className="bg-brand-black/5 text-brand-black/70 px-2 py-0.5 rounded text-[11px] font-extrabold border border-brand-black/15 shrink-0">
+                                  {u.role_detail}
+                                </span>
+                              )}
+                            </div>
                             <button
                               type="button"
                               disabled={loading}
                               onClick={() => handleRemove(selectedManageService.id, u.id)}
-                              className="text-xs font-bold text-brand-red hover:underline px-1 py-0.5"
+                              className="w-5 h-5 rounded-full bg-brand-red/10 hover:bg-brand-red text-brand-red hover:text-white flex items-center justify-center transition-colors ml-2 shrink-0"
+                              title="Gỡ người này"
                             >
-                              ✕ Gỡ
+                              <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                              </svg>
                             </button>
                           </div>
                         ))}
