@@ -560,7 +560,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                             <div className="flex items-center justify-between gap-2">
                               <span>{s.title || ''}</span>
                               <span className="text-[10px] bg-brand-pink text-white font-extrabold px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-[1px_1px_0_0_#111111]">
-                                ✏️ Edit
+                                Edit
                               </span>
                             </div>
                           </td>
@@ -766,7 +766,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                                     value={slotAssigns[slot.key] || ''}
                                     onChange={(e) => setSlotAssigns(prev => ({ ...prev, [slot.key]: e.target.value }))}
                                   >
-                                    <option value="">-- Select Member --</option>
+                                    <option value="">Select</option>
                                     {availableUsers.map((u: any) => (
                                       <option key={u.id} value={u.id}>{u.full_name}</option>
                                     ))}
