@@ -42,6 +42,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <Toaster 
+          position="top-right"
           toastOptions={{
             classNames: {
               toast: '!bg-brand-cream !border-4 !border-brand-black !shadow-[6px_6px_0_0_#111111] !rounded-none !font-medium !text-brand-black !text-sm !p-4',

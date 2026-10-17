@@ -14,7 +14,7 @@ export async function joinService(serviceId: string, team: string, roleDetail: s
       [serviceId, session.id]
     );
     if (userCheck.rows.length > 0) {
-      return { error: 'Bạn đã đăng ký phục vụ cho buổi này rồi!' };
+      return { error: 'You are already registered for this service!' };
     }
 
     let roleCheck;
@@ -39,7 +39,7 @@ export async function joinService(serviceId: string, team: string, roleDetail: s
     if (roleCheck.rows.length > 0) {
       const existingUser = roleCheck.rows[0].user_name;
       const roleName = roleDetail || (team === 'SOUND' ? 'Sound Team' : team);
-      return { error: `Vị trí ${roleName} đã có ${existingUser} đăng ký!` };
+      return { error: `${roleName} is already taken by ${existingUser}!` };
     }
 
     const id = `r_${Date.now()}`;
@@ -51,7 +51,7 @@ export async function joinService(serviceId: string, team: string, roleDetail: s
     revalidatePath('/admin');
     return { success: true };
   } catch (err: any) {
-    return { error: err.message || 'Lỗi khi đăng ký' };
+    return { error: err.message || 'Failed to register' };
   }
 }
 
@@ -82,7 +82,7 @@ export async function changeRole(serviceId: string, newTeam: string, roleDetail:
     if (roleCheck.rows.length > 0) {
       const existingUser = roleCheck.rows[0].user_name;
       const roleName = roleDetail || (newTeam === 'SOUND' ? 'Sound Team' : newTeam);
-      return { error: `Vị trí ${roleName} đã có ${existingUser} đăng ký!` };
+      return { error: `${roleName} is already taken by ${existingUser}!` };
     }
 
     await db.query(

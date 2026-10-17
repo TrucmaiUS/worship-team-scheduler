@@ -57,14 +57,14 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
 
   const handleAction = async (team: string, roleDetail = '') => {
     if ((team === 'SINGER' || team === 'MUSICIAN') && !roleDetail) {
-      toast.error('Vui lòng chọn vai trò cụ thể trước khi đăng ký.');
+      toast.error('Please select a specific role before registering.');
       return;
     }
 
     const existingUser = getExistingAssignee(team, roleDetail);
     if (existingUser) {
       const roleName = roleDetail || (team === 'SOUND' ? 'Sound Team' : team);
-      toast.warning(`Vị trí ${roleName} đã có ${existingUser} đăng ký!`);
+      toast.warning(`${roleName} is already taken by ${existingUser}!`);
       if (team === 'SINGER') setSingerRole(modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '');
       if (team === 'MUSICIAN') setMusicianRole(modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '');
       return;
@@ -78,18 +78,18 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
           toast.warning(res.error);
           return;
         }
-        toast.success('Đổi vai trò thành công!');
+        toast.success('Role changed successfully!');
       } else {
         const res = await joinService(modalState.serviceId, team, roleDetail);
         if (res?.error) {
           toast.warning(res.error);
           return;
         }
-        toast.success('Đăng ký phục vụ thành công!');
+        toast.success('Successfully registered to serve!');
       }
       closeModal();
     } catch (e: any) {
-      toast.error('Lỗi khi đăng ký: ' + e.message);
+      toast.error('Failed to register: ' + e.message);
     } finally {
       setLoading(false);
     }
@@ -104,10 +104,10 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
     setLoading(true);
     try {
       await cancelRegistration(modalState.serviceId);
-      toast.success('Hủy đăng ký thành công!');
+      toast.success('Registration cancelled successfully!');
       closeModal();
     } catch (e: any) {
-      toast.error('Lỗi khi hủy đăng ký: ' + e.message);
+      toast.error('Failed to cancel registration: ' + e.message);
     } finally {
       setLoading(false);
       setCancelModalState({ open: false });
@@ -319,7 +319,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                         disabled={loading}
                         onClick={() => {
                           if (soundUser) {
-                            toast.warning(`Vị trí Sound Team đã có ${soundUser} đăng ký!`);
+                            toast.warning(`Sound Team is already taken by ${soundUser}!`);
                             return;
                           }
                           handleAction('SOUND');
@@ -329,7 +329,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                           <span>SOUND TEAM</span>
                           {soundUser && (
                             <span className="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-1 rounded border border-amber-300">
-                              Đã có: {soundUser}
+                              Taken: {soundUser}
                             </span>
                           )}
                         </div>
@@ -351,12 +351,12 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     onClick={() => {
                       const role = singerRole || (modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '');
                       if (!role) {
-                        toast.error('Vui lòng chọn vai trò ca sỹ.');
+                        toast.error('Please select a singer role.');
                         return;
                       }
                       const existing = getExistingAssignee('SINGER', role);
                       if (existing) {
-                        toast.warning(`Vị trí ${role} đã có ${existing} đăng ký!`);
+                        toast.warning(`${role} is already taken by ${existing}!`);
                         return;
                       }
                       handleAction('SINGER', role);
@@ -374,7 +374,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                       }
                       const existing = getExistingAssignee('SINGER', val);
                       if (existing) {
-                        toast.warning(`Vị trí ${val} đã có ${existing} đăng ký!`);
+                        toast.warning(`${val} is already taken by ${existing}!`);
                         setSingerRole(modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '');
                         e.target.value = modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '';
                         return;
@@ -384,12 +384,12 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     }}
                     value={singerRole || (modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '')}
                   >
-                    <option value="">— Chọn vai trò ca sỹ —</option>
+                    <option value="">— Select Singer Role —</option>
                     {['Vocal 1', 'Vocal 2', 'Vocal 3'].map((role) => {
                       const user = getExistingAssignee('SINGER', role);
                       return (
                         <option key={role} value={role}>
-                          {role} {user ? `(Đã có: ${user})` : ''}
+                          {role} {user ? `(Taken: ${user})` : ''}
                         </option>
                       );
                     })}
@@ -409,12 +409,12 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     onClick={() => {
                       const role = musicianRole || (modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '');
                       if (!role) {
-                        toast.error('Vui lòng chọn nhạc cụ.');
+                        toast.error('Please select an instrument.');
                         return;
                       }
                       const existing = getExistingAssignee('MUSICIAN', role);
                       if (existing) {
-                        toast.warning(`Vị trí ${role} đã có ${existing} đăng ký!`);
+                        toast.warning(`${role} is already taken by ${existing}!`);
                         return;
                       }
                       handleAction('MUSICIAN', role);
@@ -432,7 +432,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                       }
                       const existing = getExistingAssignee('MUSICIAN', val);
                       if (existing) {
-                        toast.warning(`Vị trí ${val} đã có ${existing} đăng ký!`);
+                        toast.warning(`${val} is already taken by ${existing}!`);
                         setMusicianRole(modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '');
                         e.target.value = modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '';
                         return;
@@ -442,12 +442,12 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     }}
                     value={musicianRole || (modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '')}
                   >
-                    <option value="">— Chọn nhạc cụ —</option>
+                    <option value="">— Select Instrument —</option>
                     {['E-Guitar', 'Acoustic Guitar', 'Bass', 'Drum', 'Piano'].map((role) => {
                       const user = getExistingAssignee('MUSICIAN', role);
                       return (
                         <option key={role} value={role}>
-                          {role} {user ? `(Đã có: ${user})` : ''}
+                          {role} {user ? `(Taken: ${user})` : ''}
                         </option>
                       );
                     })}
