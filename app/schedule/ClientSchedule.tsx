@@ -335,11 +335,11 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
             <table className="w-full text-left border-collapse min-w-[700px]">
               <thead>
                 <tr className="border-b-2 border-brand-black bg-brand-cream/50">
-                  <th className="p-2.5 border-r-2 border-brand-black w-1/5 font-bold">Sự kiện</th>
-                  <th className="p-2.5 border-r-2 border-brand-black w-1/6 text-center font-bold">Ngày</th>
-                  <th className="p-2.5 border-r-2 border-brand-black w-1/4 font-bold">Ca sỹ</th>
-                  <th className="p-2.5 border-r-2 border-brand-black w-1/4 font-bold">Nhạc công</th>
-                  <th className="p-2.5 w-1/6 font-bold">Âm thanh</th>
+                  <th className="p-2.5 border-r-2 border-brand-black w-1/5 font-bold">Event</th>
+                  <th className="p-2.5 border-r-2 border-brand-black w-1/6 text-center font-bold">Date</th>
+                  <th className="p-2.5 border-r-2 border-brand-black w-1/4 font-bold">Singer</th>
+                  <th className="p-2.5 border-r-2 border-brand-black w-1/4 font-bold">Musician</th>
+                  <th className="p-2.5 w-1/6 font-bold">Sound</th>
                 </tr>
               </thead>
               <tbody>

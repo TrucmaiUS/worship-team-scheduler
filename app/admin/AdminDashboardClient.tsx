@@ -100,7 +100,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
     if (res?.error) {
       toast.error(res.error);
     } else {
-      toast.success(`Đã phân công ${slot.label}!`);
+      toast.success(`Assigned ${slot.label} successfully!`);
       setSlotAssigns(prev => ({ ...prev, [slot.key]: '' }));
     }
   };
@@ -490,7 +490,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                   Schedule {new Date(selectedMonth + '-01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
                 </h2>
                 <p className="text-xs font-bold text-brand-black/60 mt-1">
-                  (Bấm vào để chỉnh sửa)
+                  (Click to edit)
                 </p>
               </div>
               <div className="flex justify-between items-center bg-brand-white px-4 py-2 border-4 border-brand-black shadow-[4px_4px_0_0_#111111] min-w-[280px]">
@@ -529,11 +529,11 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
               <table className="w-full text-left border-collapse min-w-[700px]">
                 <thead>
                   <tr className="border-b-2 border-brand-black">
-                    <th className="p-2 border-r-2 border-brand-black w-1/5">Sự kiện</th>
-                    <th className="p-2 border-r-2 border-brand-black w-1/6">Ngày</th>
-                    <th className="p-2 border-r-2 border-brand-black w-1/4">Ca sỹ</th>
-                    <th className="p-2 border-r-2 border-brand-black w-1/4">Nhạc công</th>
-                    <th className="p-2 w-1/6">Âm thanh</th>
+                    <th className="p-2 border-r-2 border-brand-black w-1/5">Event</th>
+                    <th className="p-2 border-r-2 border-brand-black w-1/6">Date</th>
+                    <th className="p-2 border-r-2 border-brand-black w-1/4">Singer</th>
+                    <th className="p-2 border-r-2 border-brand-black w-1/4">Musician</th>
+                    <th className="p-2 w-1/6">Sound</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -554,7 +554,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                           key={s.id} 
                           onClick={() => setManageServiceId(s.id)}
                           className="border-b border-brand-black last:border-b-0 hover:bg-brand-pink/10 transition-colors cursor-pointer group"
-                          title="Bấm để phân công & chỉnh sửa"
+                          title="Click to edit"
                         >
                           <td className="p-2 border-r border-brand-black font-bold">
                             <div className="flex items-center justify-between gap-2">
@@ -682,7 +682,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
               <>
                 <div className="mb-4 pb-3 border-b-2 border-brand-black">
                   <Dialog.Title className="editorial-heading text-2xl text-brand-black">
-                    QUẢN LÝ PHÂN CÔNG
+                    MANAGE ROSTER
                   </Dialog.Title>
                   <p className="font-bold text-xs text-brand-black/70 mt-0.5">
                     {selectedManageService.title} • {(() => {
@@ -704,8 +704,8 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                     return (
                       <div key={group.name} className="border-2 border-brand-black bg-white rounded-lg overflow-hidden shadow-[2px_2px_0_0_#111111]">
                         <div className={`${group.headerBg} px-3.5 py-2 uppercase tracking-wide flex items-center justify-between border-b-2 border-brand-black`}>
-                          <span className="text-base sm:text-lg font-normal">{group.name}</span>
-                          <span className="text-xs font-normal opacity-85">
+                          <span className="text-base sm:text-lg font-bold">{group.name}</span>
+                          <span className="text-xs font-bold opacity-85">
                             ({assignedInGroup}/{group.slots.length})
                           </span>
                         </div>
@@ -744,7 +744,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                                   disabled={loading}
                                   onClick={() => handleRemove(selectedManageService.id, assignee.id)}
                                   className="w-5 h-5 rounded-full bg-brand-red/10 hover:bg-brand-red text-brand-red hover:text-white flex items-center justify-center transition-colors ml-2 shrink-0"
-                                  title="Gỡ người này"
+                                  title="Remove"
                                 >
                                   <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -766,7 +766,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                                     value={slotAssigns[slot.key] || ''}
                                     onChange={(e) => setSlotAssigns(prev => ({ ...prev, [slot.key]: e.target.value }))}
                                   >
-                                    <option value="">-- Chọn người --</option>
+                                    <option value="">-- Select Member --</option>
                                     {availableUsers.map((u: any) => (
                                       <option key={u.id} value={u.id}>{u.full_name}</option>
                                     ))}
@@ -777,7 +777,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                                     onClick={() => handleSlotAssign(slot)}
                                     className="text-xs h-7 px-2.5 font-bold shadow-[1px_1px_0_0_#111111] rounded"
                                   >
-                                    Gán
+                                    Assign
                                   </Button>
                                 </div>
                               </div>
@@ -792,7 +792,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                   {extraMembers.length > 0 && (
                     <div className="border-2 border-brand-black bg-white rounded-lg overflow-hidden shadow-[2px_2px_0_0_#111111]">
                       <div className="bg-brand-black text-white px-3.5 py-2 uppercase tracking-wide border-b-2 border-brand-black">
-                        <span className="text-base sm:text-lg font-normal">THÀNH VIÊN KHÁC</span>
+                        <span className="text-base sm:text-lg font-bold">OTHER MEMBERS</span>
                       </div>
                       <div className="p-2.5 sm:p-3 space-y-2 bg-brand-cream/30">
                         {extraMembers.map((u: any) => (
@@ -813,7 +813,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                               disabled={loading}
                               onClick={() => handleRemove(selectedManageService.id, u.id)}
                               className="w-5 h-5 rounded-full bg-brand-red/10 hover:bg-brand-red text-brand-red hover:text-white flex items-center justify-center transition-colors ml-2 shrink-0"
-                              title="Gỡ người này"
+                              title="Remove"
                             >
                               <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -828,7 +828,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
 
                 <div className="flex justify-end pt-3 border-t-2 border-brand-black mt-4">
                   <Dialog.Close asChild>
-                    <Button variant="ghost">ĐÓNG</Button>
+                    <Button variant="ghost">CLOSE</Button>
                   </Dialog.Close>
                 </div>
               </>
