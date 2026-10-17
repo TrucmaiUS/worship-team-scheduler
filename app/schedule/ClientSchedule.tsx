@@ -8,12 +8,12 @@ import { joinService, changeRole, cancelRegistration } from '@/app/actions/sched
 import { getDay, getDaysInMonth, startOfMonth, format, isSameDay } from 'date-fns';
 import { toast } from 'sonner';
 import * as Dialog from '@radix-ui/react-dialog';
+import { ChevronDown, Check } from 'lucide-react';
 
 export default function ClientSchedule({ upcomingServices, monthlyServices, registrationsMap, userId, userName, avatarUrl, offset, currentMonthDate }: any) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
-  const [singerRole, setSingerRole] = useState('');
-  const [musicianRole, setMusicianRole] = useState('');
+  const [expandedTeam, setExpandedTeam] = useState<'SINGER' | 'MUSICIAN' | null>(null);
   const [cancelModalState, setCancelModalState] = useState<{ open: boolean }>({ open: false });
   const [modalState, setModalState] = useState<{ open: boolean, serviceId: string, currentTeam: string | null, currentRoleDetail: string | null }>({
     open: false,
@@ -31,15 +31,13 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
   };
 
   const handleOpenModal = (serviceId: string, currentTeam: string | null = null, currentRoleDetail: string | null = null) => {
-    setSingerRole(currentTeam === 'SINGER' ? (currentRoleDetail || '') : '');
-    setMusicianRole(currentTeam === 'MUSICIAN' ? (currentRoleDetail || '') : '');
+    setExpandedTeam(currentTeam === 'SINGER' ? 'SINGER' : currentTeam === 'MUSICIAN' ? 'MUSICIAN' : null);
     setModalState({ open: true, serviceId, currentTeam, currentRoleDetail });
   };
 
   const closeModal = () => {
     setModalState({ open: false, serviceId: '', currentTeam: null, currentRoleDetail: null });
-    setSingerRole('');
-    setMusicianRole('');
+    setExpandedTeam(null);
   };
 
   const getExistingAssignee = (team: string, roleDetail = '') => {
@@ -65,8 +63,11 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
     if (existingUser) {
       const roleName = roleDetail || (team === 'SOUND' ? 'Sound Team' : team);
       toast.warning(`${roleName} is already taken by ${existingUser}!`);
-      if (team === 'SINGER') setSingerRole(modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '');
-      if (team === 'MUSICIAN') setMusicianRole(modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '');
+      return;
+    }
+
+    if (modalState.currentTeam === team && (modalState.currentRoleDetail || '') === roleDetail) {
+      closeModal();
       return;
     }
 
@@ -308,13 +309,15 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
             <h2 className="editorial-heading text-3xl mb-6">Choose your serving role</h2>
             
             <div className="space-y-6 mb-8">
+              {/* SOUND TEAM */}
               <div>
                 {(() => {
                   const soundUser = getExistingAssignee('SOUND');
+                  const isCurrent = modalState.currentTeam === 'SOUND';
                   return (
                     <>
                       <Button 
-                        variant={modalState.currentTeam === 'SOUND' ? 'primary' : 'outline'} 
+                        variant={isCurrent ? 'primary' : 'outline'} 
                         className="w-full text-left justify-start text-lg h-14"
                         disabled={loading}
                         onClick={() => {
@@ -327,9 +330,17 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                       >
                         <div className="flex items-center justify-between w-full">
                           <span>SOUND TEAM</span>
-                          {soundUser && (
+                          {soundUser ? (
                             <span className="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-1 rounded border border-amber-300">
                               Taken: {soundUser}
+                            </span>
+                          ) : isCurrent ? (
+                            <span className="text-xs bg-white text-brand-blue font-black px-2 py-0.5 border border-brand-black">
+                              CURRENT
+                            </span>
+                          ) : (
+                            <span className="text-xs font-bold uppercase tracking-wider text-brand-black/60">
+                              Click to join →
                             </span>
                           )}
                         </div>
@@ -342,116 +353,152 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                 })()}
               </div>
               
+              {/* SINGER */}
               <div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col">
                   <Button 
                     variant={modalState.currentTeam === 'SINGER' ? 'primary' : 'outline'} 
-                    className="w-full text-left justify-start text-lg h-14"
+                    className="w-full text-left justify-between text-lg h-14"
                     disabled={loading}
-                    onClick={() => {
-                      const role = singerRole || (modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '');
-                      if (!role) {
-                        toast.error('Please select a singer role.');
-                        return;
-                      }
-                      const existing = getExistingAssignee('SINGER', role);
-                      if (existing) {
-                        toast.warning(`${role} is already taken by ${existing}!`);
-                        return;
-                      }
-                      handleAction('SINGER', role);
-                    }}
+                    onClick={() => setExpandedTeam(prev => prev === 'SINGER' ? null : 'SINGER')}
                   >
-                    SINGER
+                    <div className="flex items-center gap-2">
+                      <span>SINGER</span>
+                      {modalState.currentTeam === 'SINGER' && modalState.currentRoleDetail && (
+                        <span className="text-xs bg-white text-brand-pink font-bold px-2 py-0.5 border border-brand-black">
+                          {modalState.currentRoleDetail}
+                        </span>
+                      )}
+                    </div>
+                    <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${expandedTeam === 'SINGER' ? 'rotate-180' : ''}`} />
                   </Button>
-                  <select 
-                    className="w-full border-4 border-brand-black bg-brand-cream font-bold px-4 rounded-none shadow-[4px_4px_0_0_#111111] focus:outline-none h-12 cursor-pointer hover:shadow-[4px_4px_0_0_#0038FF] transition-all outline-none"
-                    onChange={(e) => {
-                      const val = e.target.value;
-                      if (!val) {
-                        setSingerRole('');
-                        return;
-                      }
-                      const existing = getExistingAssignee('SINGER', val);
-                      if (existing) {
-                        toast.warning(`${val} is already taken by ${existing}!`);
-                        setSingerRole(modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '');
-                        e.target.value = modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '';
-                        return;
-                      }
-                      setSingerRole(val);
-                      handleAction('SINGER', val);
-                    }}
-                    value={singerRole || (modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '')}
-                  >
-                    <option value="">— Select Singer Role —</option>
-                    {['Vocal 1', 'Vocal 2', 'Vocal 3'].map((role) => {
-                      const user = getExistingAssignee('SINGER', role);
-                      return (
-                        <option key={role} value={role}>
-                          {role} {user ? `(Taken: ${user})` : ''}
-                        </option>
-                      );
-                    })}
-                  </select>
+
+                  {expandedTeam === 'SINGER' && (
+                    <div className="mt-2 p-2.5 flex flex-col gap-2 bg-brand-cream/60 border-2 border-brand-black rounded-lg animate-in fade-in-50 duration-150">
+                      <p className="text-xs font-bold uppercase tracking-wider text-brand-black/70 px-1">
+                        Select your vocal role:
+                      </p>
+                      {['Vocal 1', 'Vocal 2', 'Vocal 3'].map((role) => {
+                        const user = getExistingAssignee('SINGER', role);
+                        const isCurrent = modalState.currentTeam === 'SINGER' && modalState.currentRoleDetail === role;
+                        return (
+                          <button
+                            key={role}
+                            type="button"
+                            disabled={loading}
+                            onClick={() => {
+                              if (user) {
+                                toast.warning(`${role} is already taken by ${user}!`);
+                                return;
+                              }
+                              handleAction('SINGER', role);
+                            }}
+                            className={`w-full flex items-center justify-between p-3 font-bold text-sm border-2 border-brand-black transition-all text-left ${
+                              isCurrent
+                                ? 'bg-brand-pink text-white shadow-[2px_2px_0_0_#111111]'
+                                : user
+                                ? 'bg-gray-100 text-gray-400 cursor-not-allowed opacity-70'
+                                : 'bg-white hover:bg-brand-pink/20 hover:translate-x-1 shadow-[2px_2px_0_0_#111111] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none cursor-pointer'
+                            }`}
+                          >
+                            <span className="flex items-center gap-2">
+                              {isCurrent && <Check className="w-4 h-4 text-white" />}
+                              {role}
+                            </span>
+                            {user ? (
+                              <span className="text-xs bg-amber-100 text-amber-900 font-bold px-2 py-0.5 border border-amber-300 rounded">
+                                Taken: {user}
+                              </span>
+                            ) : isCurrent ? (
+                              <span className="text-xs bg-white text-brand-pink font-black px-2 py-0.5 border border-brand-black">
+                                CURRENT
+                              </span>
+                            ) : (
+                              <span className="text-xs text-brand-black/60 font-bold">
+                                Select & Register →
+                              </span>
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
                 <div className="mt-2 text-sm text-brand-black/60 pl-3 border-l-2 border-brand-black/20">
                   <span className="font-bold">Serving:</span> {activeSingers.length > 0 ? activeSingers.map((s:any) => s.role_detail ? `${s.user_name} (${s.role_detail})` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
                 </div>
               </div>
               
+              {/* MUSICIAN */}
               <div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col">
                   <Button 
                     variant={modalState.currentTeam === 'MUSICIAN' ? 'primary' : 'outline'} 
-                    className="w-full text-left justify-start text-lg h-14"
+                    className="w-full text-left justify-between text-lg h-14"
                     disabled={loading}
-                    onClick={() => {
-                      const role = musicianRole || (modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '');
-                      if (!role) {
-                        toast.error('Please select an instrument.');
-                        return;
-                      }
-                      const existing = getExistingAssignee('MUSICIAN', role);
-                      if (existing) {
-                        toast.warning(`${role} is already taken by ${existing}!`);
-                        return;
-                      }
-                      handleAction('MUSICIAN', role);
-                    }}
+                    onClick={() => setExpandedTeam(prev => prev === 'MUSICIAN' ? null : 'MUSICIAN')}
                   >
-                    MUSICIAN
+                    <div className="flex items-center gap-2">
+                      <span>MUSICIAN</span>
+                      {modalState.currentTeam === 'MUSICIAN' && modalState.currentRoleDetail && (
+                        <span className="text-xs bg-white text-brand-blue font-bold px-2 py-0.5 border border-brand-black">
+                          {modalState.currentRoleDetail}
+                        </span>
+                      )}
+                    </div>
+                    <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${expandedTeam === 'MUSICIAN' ? 'rotate-180' : ''}`} />
                   </Button>
-                  <select 
-                    className="w-full border-4 border-brand-black bg-brand-cream font-bold px-4 rounded-none shadow-[4px_4px_0_0_#111111] focus:outline-none h-12 cursor-pointer hover:shadow-[4px_4px_0_0_#0038FF] transition-all outline-none"
-                    onChange={(e) => {
-                      const val = e.target.value;
-                      if (!val) {
-                        setMusicianRole('');
-                        return;
-                      }
-                      const existing = getExistingAssignee('MUSICIAN', val);
-                      if (existing) {
-                        toast.warning(`${val} is already taken by ${existing}!`);
-                        setMusicianRole(modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '');
-                        e.target.value = modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '';
-                        return;
-                      }
-                      setMusicianRole(val);
-                      handleAction('MUSICIAN', val);
-                    }}
-                    value={musicianRole || (modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '')}
-                  >
-                    <option value="">— Select Instrument —</option>
-                    {['E-Guitar', 'Acoustic Guitar', 'Bass', 'Drum', 'Piano'].map((role) => {
-                      const user = getExistingAssignee('MUSICIAN', role);
-                      return (
-                        <option key={role} value={role}>
-                          {role} {user ? `(Taken: ${user})` : ''}
-                        </option>
-                      );
-                    })}
-                  </select>
+
+                  {expandedTeam === 'MUSICIAN' && (
+                    <div className="mt-2 p-2.5 flex flex-col gap-2 bg-brand-cream/60 border-2 border-brand-black rounded-lg animate-in fade-in-50 duration-150">
+                      <p className="text-xs font-bold uppercase tracking-wider text-brand-black/70 px-1">
+                        Select your instrument:
+                      </p>
+                      {['Acoustic Guitar', 'E-Guitar', 'Bass', 'Piano', 'Drum'].map((role) => {
+                        const user = getExistingAssignee('MUSICIAN', role);
+                        const isCurrent = modalState.currentTeam === 'MUSICIAN' && modalState.currentRoleDetail === role;
+                        return (
+                          <button
+                            key={role}
+                            type="button"
+                            disabled={loading}
+                            onClick={() => {
+                              if (user) {
+                                toast.warning(`${role} is already taken by ${user}!`);
+                                return;
+                              }
+                              handleAction('MUSICIAN', role);
+                            }}
+                            className={`w-full flex items-center justify-between p-3 font-bold text-sm border-2 border-brand-black transition-all text-left ${
+                              isCurrent
+                                ? 'bg-brand-blue text-white shadow-[2px_2px_0_0_#111111]'
+                                : user
+                                ? 'bg-gray-100 text-gray-400 cursor-not-allowed opacity-70'
+                                : 'bg-white hover:bg-brand-blue/15 hover:translate-x-1 shadow-[2px_2px_0_0_#111111] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none cursor-pointer'
+                            }`}
+                          >
+                            <span className="flex items-center gap-2">
+                              {isCurrent && <Check className="w-4 h-4 text-white" />}
+                              {role}
+                            </span>
+                            {user ? (
+                              <span className="text-xs bg-amber-100 text-amber-900 font-bold px-2 py-0.5 border border-amber-300 rounded">
+                                Taken: {user}
+                              </span>
+                            ) : isCurrent ? (
+                              <span className="text-xs bg-white text-brand-blue font-black px-2 py-0.5 border border-brand-black">
+                                CURRENT
+                              </span>
+                            ) : (
+                              <span className="text-xs text-brand-black/60 font-bold">
+                                Select & Register →
+                              </span>
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
                 <div className="mt-2 text-sm text-brand-black/60 pl-3 border-l-2 border-brand-black/20">
                   <span className="font-bold">Serving:</span> {activeMusicians.length > 0 ? activeMusicians.map((s:any) => s.role_detail ? `${s.user_name} (${s.role_detail})` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
