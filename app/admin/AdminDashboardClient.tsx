@@ -487,7 +487,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                   Schedule {new Date(selectedMonth + '-01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
                 </h2>
                 <p className="text-xs font-bold text-brand-black/60 mt-1">
-                  💡 Bấm vào bất kỳ dòng nào để phân công thêm hoặc chỉnh sửa
+                  (Bấm vào để chỉnh sửa)
                 </p>
               </div>
               <div className="flex justify-between items-center bg-brand-white px-4 py-2 border-4 border-brand-black shadow-[4px_4px_0_0_#111111] min-w-[280px]">
