@@ -13,13 +13,6 @@ export default async function SchedulePage({
   if (!session) {
     redirect('/register');
   }
-  
-  let dbUser: any = null;
-  try {
-    const { rows } = await db.query('SELECT full_name, avatar_url FROM users WHERE id = $1', [session.id]);
-    if (rows.length > 0) dbUser = rows[0];
-  } catch(e) {}
-
 
   const params = await searchParams;
   const offset = parseInt(params.offset || '0', 10);
@@ -87,9 +80,9 @@ export default async function SchedulePage({
           upcomingServices={upcomingServices}
           monthlyServices={monthlyServices} 
           registrationsMap={registrationsMap} 
-          userId={session.id} 
-          userName={dbUser?.full_name || (session as any).name}
-          avatarUrl={dbUser?.avatar_url || (session as any).avatarUrl}
+          userId={session.id as string} 
+          userName={(session as any).name || ''}
+          avatarUrl={(session as any).avatarUrl || null}
           offset={offset}
           currentMonthDate={currentMonthStart.toISOString()}
         />

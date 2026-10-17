@@ -1,31 +1,13 @@
 import { Button } from "../ui/Button";
 import { getSession } from "@/lib/auth";
-import db from "@/lib/db";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { Avatar } from "../ui/Avatar";
-import { cache } from "react";
 import Link from "next/link";
 import { NavbarBrand } from "./NavbarBrand";
 
-const getUserForNavbar = cache(async (id: string) => {
-  const { rows } = await db.query(
-    'SELECT full_name, avatar_url FROM users WHERE id = $1',
-    [id]
-  );
-  return rows.length > 0 ? rows[0] : null;
-});
-
 export async function Navbar() {
   const session = await getSession();
-  let dbUser: any = null;
-  if (session) {
-    try {
-      dbUser = await getUserForNavbar(session.id);
-    } catch (e) {
-      console.error("Failed to fetch user for Navbar", e);
-    }
-  }
 
   async function handleLogout() {
     "use server";
@@ -33,6 +15,9 @@ export async function Navbar() {
     cookieStore.delete("auth-token");
     redirect("/");
   }
+
+  const userName = (session as any)?.name;
+  const avatarUrl = (session as any)?.avatarUrl;
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b-4 border-brand-black bg-brand-cream checkerboard-pink">
@@ -46,9 +31,9 @@ export async function Navbar() {
               </form>
               <Link href="/profile" className="flex items-center gap-2 group">
                 <span className="hidden sm:block group-hover:text-brand-pink transition-colors">
-                  {(dbUser?.full_name || (session as any).name)?.split(' ')[0] || "Profile"}
+                  {userName?.split(' ')[0] || "Profile"}
                 </span>
-                <Avatar name={dbUser?.full_name || (session as any).name} imgUrl={dbUser?.avatar_url || (session as any).avatarUrl} className="w-8 h-8 text-xs shadow-[2px_2px_0_0_#111111] group-hover:shadow-none group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all" />
+                <Avatar name={userName} imgUrl={avatarUrl} className="w-8 h-8 text-xs shadow-[2px_2px_0_0_#111111] group-hover:shadow-none group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all" />
               </Link>
             </div>
           ) : (

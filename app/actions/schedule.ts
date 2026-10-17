@@ -48,7 +48,6 @@ export async function joinService(serviceId: string, team: string, roleDetail: s
       [id, serviceId, session.id, team, roleDetail]
     );
     revalidatePath('/schedule');
-    revalidatePath('/admin');
     return { success: true };
   } catch (err: any) {
     return { error: err.message || 'Failed to register' };
@@ -90,7 +89,6 @@ export async function changeRole(serviceId: string, newTeam: string, roleDetail:
       [newTeam, serviceId, session.id, roleDetail]
     );
     revalidatePath('/schedule');
-    revalidatePath('/admin');
     return { success: true };
   } catch (err: any) {
     return { error: err.message || 'Failed to update' };
@@ -107,7 +105,6 @@ export async function cancelRegistration(serviceId: string) {
       [serviceId, session.id]
     );
     revalidatePath('/schedule');
-    revalidatePath('/admin');
     return { success: true };
   } catch (err) {
     return { error: 'Failed to cancel' };
