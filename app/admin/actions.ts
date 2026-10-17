@@ -11,7 +11,32 @@ export async function adminAssignMember(serviceId: string, userId: string, team:
   try {
     const check = await db.query('SELECT * FROM registrations WHERE service_id = $1 AND user_id = $2', [serviceId, userId]);
     if (check.rows.length > 0) {
-      return { error: 'This member is already assigned to this service!' };
+      return { error: 'Thành viên này đã đăng ký trong buổi này rồi!' };
+    }
+
+    let roleCheck;
+    if (team === 'SOUND') {
+      roleCheck = await db.query(
+        `SELECT r.id, u.full_name as user_name 
+         FROM registrations r 
+         JOIN users u ON r.user_id = u.id 
+         WHERE r.service_id = $1 AND r.team = 'SOUND' AND r.user_id != $2`,
+        [serviceId, userId]
+      );
+    } else {
+      roleCheck = await db.query(
+        `SELECT r.id, u.full_name as user_name 
+         FROM registrations r 
+         JOIN users u ON r.user_id = u.id 
+         WHERE r.service_id = $1 AND r.team = $2 AND LOWER(COALESCE(r.role_detail, '')) = LOWER($3) AND r.user_id != $4`,
+        [serviceId, team, roleDetail || '', userId]
+      );
+    }
+
+    if (roleCheck.rows.length > 0) {
+      const existingUser = roleCheck.rows[0].user_name;
+      const roleName = roleDetail || (team === 'SOUND' ? 'Sound Team' : team);
+      return { error: `Vị trí ${roleName} đã có ${existingUser} đăng ký!` };
     }
 
     const id = `r_${Date.now()}`;

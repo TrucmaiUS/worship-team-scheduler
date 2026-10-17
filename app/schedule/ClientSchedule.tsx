@@ -30,23 +30,66 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
     router.push(`/schedule?offset=${newOffset}`, { scroll: false });
   };
 
+  const handleOpenModal = (serviceId: string, currentTeam: string | null = null, currentRoleDetail: string | null = null) => {
+    setSingerRole(currentTeam === 'SINGER' ? (currentRoleDetail || '') : '');
+    setMusicianRole(currentTeam === 'MUSICIAN' ? (currentRoleDetail || '') : '');
+    setModalState({ open: true, serviceId, currentTeam, currentRoleDetail });
+  };
+
+  const closeModal = () => {
+    setModalState({ open: false, serviceId: '', currentTeam: null, currentRoleDetail: null });
+    setSingerRole('');
+    setMusicianRole('');
+  };
+
+  const getExistingAssignee = (team: string, roleDetail = '') => {
+    if (!modalState.serviceId) return null;
+    const regs = registrationsMap[modalState.serviceId] || [];
+    if (team === 'SOUND') {
+      const found = regs.find((r: any) => r.team === 'SOUND' && r.user_id !== userId);
+      return found ? found.user_name : null;
+    }
+    const found = regs.find(
+      (r: any) => r.team === team && (r.role_detail || '').toLowerCase() === roleDetail.toLowerCase() && r.user_id !== userId
+    );
+    return found ? found.user_name : null;
+  };
+
   const handleAction = async (team: string, roleDetail = '') => {
     if ((team === 'SINGER' || team === 'MUSICIAN') && !roleDetail) {
-      toast.error('Please select a specific role before registering.');
+      toast.error('Vui lòng chọn vai trò cụ thể trước khi đăng ký.');
       return;
     }
+
+    const existingUser = getExistingAssignee(team, roleDetail);
+    if (existingUser) {
+      const roleName = roleDetail || (team === 'SOUND' ? 'Sound Team' : team);
+      toast.warning(`Vị trí ${roleName} đã có ${existingUser} đăng ký!`);
+      if (team === 'SINGER') setSingerRole(modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '');
+      if (team === 'MUSICIAN') setMusicianRole(modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '');
+      return;
+    }
+
     setLoading(true);
     try {
       if (modalState.currentTeam) {
-        await changeRole(modalState.serviceId, team, roleDetail);
-        toast.success('Role changed successfully!');
+        const res = await changeRole(modalState.serviceId, team, roleDetail);
+        if (res?.error) {
+          toast.warning(res.error);
+          return;
+        }
+        toast.success('Đổi vai trò thành công!');
       } else {
-        await joinService(modalState.serviceId, team, roleDetail);
-        toast.success('Successfully registered to serve!');
+        const res = await joinService(modalState.serviceId, team, roleDetail);
+        if (res?.error) {
+          toast.warning(res.error);
+          return;
+        }
+        toast.success('Đăng ký phục vụ thành công!');
       }
-      setModalState({ open: false, serviceId: '', currentTeam: null, currentRoleDetail: null });
+      closeModal();
     } catch (e: any) {
-      toast.error('Failed to register: ' + e.message);
+      toast.error('Lỗi khi đăng ký: ' + e.message);
     } finally {
       setLoading(false);
     }
@@ -61,10 +104,10 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
     setLoading(true);
     try {
       await cancelRegistration(modalState.serviceId);
-      toast.success('Registration cancelled successfully!');
-      setModalState({ open: false, serviceId: '', currentTeam: null, currentRoleDetail: null });
+      toast.success('Hủy đăng ký thành công!');
+      closeModal();
     } catch (e: any) {
-      toast.error('Failed to cancel registration: ' + e.message);
+      toast.error('Lỗi khi hủy đăng ký: ' + e.message);
     } finally {
       setLoading(false);
       setCancelModalState({ open: false });
@@ -123,12 +166,12 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
               <span className="font-bold bg-brand-blue text-brand-white px-3 py-1 text-sm border-2 border-brand-black rounded-md flex-1 text-center truncate">
                 {userReg.team}
               </span>
-              <Button variant="outline" size="sm" className="px-2" onClick={() => setModalState({ open: true, serviceId: service.id, currentTeam: userReg.team, currentRoleDetail: userReg.role_detail })}>
+              <Button variant="outline" size="sm" className="px-2" onClick={() => handleOpenModal(service.id, userReg.team, userReg.role_detail)}>
                 EDIT
               </Button>
             </div>
           ) : (
-            <Button variant="sticker" className="w-full mt-2 text-sm" onClick={() => setModalState({ open: true, serviceId: service.id, currentTeam: null, currentRoleDetail: null })}>
+            <Button variant="sticker" className="w-full mt-2 text-sm" onClick={() => handleOpenModal(service.id, null, null)}>
               JOIN
             </Button>
           )}
@@ -243,7 +286,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                              className={`text-[10px] md:text-xs font-bold leading-tight border border-brand-pink/30 rounded p-1 truncate cursor-pointer hover:bg-brand-pink/10 transition-colors ${isUserServing ? 'bg-brand-blue text-brand-white border-brand-blue' : 'bg-white text-brand-black/70'}`}
                              onClick={() => {
                                const rReg = isUserServing ? registrationsMap[s.id].find((r:any) => r.user_id === userId) : null;
-                               setModalState({ open: true, serviceId: s.id, currentTeam: rReg ? rReg.team : null, currentRoleDetail: rReg ? rReg.role_detail : null })
+                               handleOpenModal(s.id, rReg ? rReg.team : null, rReg ? rReg.role_detail : null);
                              }}
                         >
                           {s.start_time} {s.title}
@@ -266,17 +309,37 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
             
             <div className="space-y-6 mb-8">
               <div>
-                <Button 
-                  variant={modalState.currentTeam === 'SOUND' ? 'primary' : 'outline'} 
-                  className="w-full text-left justify-start text-lg h-14"
-                  disabled={loading}
-                  onClick={() => handleAction('SOUND')}
-                >
-                  SOUND TEAM
-                </Button>
-                <div className="mt-2 text-sm text-brand-black/60 pl-3 border-l-2 border-brand-black/20">
-                  <span className="font-bold">Serving:</span> {activeSounds.length > 0 ? activeSounds.map((s:any) => s.role_detail ? `${s.user_name} (${s.role_detail})` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
-                </div>
+                {(() => {
+                  const soundUser = getExistingAssignee('SOUND');
+                  return (
+                    <>
+                      <Button 
+                        variant={modalState.currentTeam === 'SOUND' ? 'primary' : 'outline'} 
+                        className="w-full text-left justify-start text-lg h-14"
+                        disabled={loading}
+                        onClick={() => {
+                          if (soundUser) {
+                            toast.warning(`Vị trí Sound Team đã có ${soundUser} đăng ký!`);
+                            return;
+                          }
+                          handleAction('SOUND');
+                        }}
+                      >
+                        <div className="flex items-center justify-between w-full">
+                          <span>SOUND TEAM</span>
+                          {soundUser && (
+                            <span className="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-1 rounded border border-amber-300">
+                              Đã có: {soundUser}
+                            </span>
+                          )}
+                        </div>
+                      </Button>
+                      <div className="mt-2 text-sm text-brand-black/60 pl-3 border-l-2 border-brand-black/20">
+                        <span className="font-bold">Serving:</span> {activeSounds.length > 0 ? activeSounds.map((s:any) => s.role_detail ? `${s.user_name} (${s.role_detail})` : s.user_name).join(', ') : <span className="opacity-50 italic">None</span>}
+                      </div>
+                    </>
+                  );
+                })()}
               </div>
               
               <div>
@@ -285,7 +348,19 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     variant={modalState.currentTeam === 'SINGER' ? 'primary' : 'outline'} 
                     className="w-full text-left justify-start text-lg h-14"
                     disabled={loading}
-                    onClick={() => handleAction('SINGER', singerRole || (modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : ''))}
+                    onClick={() => {
+                      const role = singerRole || (modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '');
+                      if (!role) {
+                        toast.error('Vui lòng chọn vai trò ca sỹ.');
+                        return;
+                      }
+                      const existing = getExistingAssignee('SINGER', role);
+                      if (existing) {
+                        toast.warning(`Vị trí ${role} đã có ${existing} đăng ký!`);
+                        return;
+                      }
+                      handleAction('SINGER', role);
+                    }}
                   >
                     SINGER
                   </Button>
@@ -293,15 +368,31 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     className="w-full border-4 border-brand-black bg-brand-cream font-bold px-4 rounded-none shadow-[4px_4px_0_0_#111111] focus:outline-none h-12 cursor-pointer hover:shadow-[4px_4px_0_0_#0038FF] transition-all outline-none"
                     onChange={(e) => {
                       const val = e.target.value;
+                      if (!val) {
+                        setSingerRole('');
+                        return;
+                      }
+                      const existing = getExistingAssignee('SINGER', val);
+                      if (existing) {
+                        toast.warning(`Vị trí ${val} đã có ${existing} đăng ký!`);
+                        setSingerRole(modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '');
+                        e.target.value = modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '';
+                        return;
+                      }
                       setSingerRole(val);
-                      if (val) handleAction('SINGER', val);
+                      handleAction('SINGER', val);
                     }}
                     value={singerRole || (modalState.currentTeam === 'SINGER' ? (modalState.currentRoleDetail || '') : '')}
                   >
                     <option value="">— Chọn vai trò ca sỹ —</option>
-                    <option value="Vocal 1">Vocal 1</option>
-                    <option value="Vocal 2">Vocal 2</option>
-                    <option value="Vocal 3">Vocal 3</option>
+                    {['Vocal 1', 'Vocal 2', 'Vocal 3'].map((role) => {
+                      const user = getExistingAssignee('SINGER', role);
+                      return (
+                        <option key={role} value={role}>
+                          {role} {user ? `(Đã có: ${user})` : ''}
+                        </option>
+                      );
+                    })}
                   </select>
                 </div>
                 <div className="mt-2 text-sm text-brand-black/60 pl-3 border-l-2 border-brand-black/20">
@@ -315,7 +406,19 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     variant={modalState.currentTeam === 'MUSICIAN' ? 'primary' : 'outline'} 
                     className="w-full text-left justify-start text-lg h-14"
                     disabled={loading}
-                    onClick={() => handleAction('MUSICIAN', musicianRole || (modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : ''))}
+                    onClick={() => {
+                      const role = musicianRole || (modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '');
+                      if (!role) {
+                        toast.error('Vui lòng chọn nhạc cụ.');
+                        return;
+                      }
+                      const existing = getExistingAssignee('MUSICIAN', role);
+                      if (existing) {
+                        toast.warning(`Vị trí ${role} đã có ${existing} đăng ký!`);
+                        return;
+                      }
+                      handleAction('MUSICIAN', role);
+                    }}
                   >
                     MUSICIAN
                   </Button>
@@ -323,17 +426,31 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                     className="w-full border-4 border-brand-black bg-brand-cream font-bold px-4 rounded-none shadow-[4px_4px_0_0_#111111] focus:outline-none h-12 cursor-pointer hover:shadow-[4px_4px_0_0_#0038FF] transition-all outline-none"
                     onChange={(e) => {
                       const val = e.target.value;
+                      if (!val) {
+                        setMusicianRole('');
+                        return;
+                      }
+                      const existing = getExistingAssignee('MUSICIAN', val);
+                      if (existing) {
+                        toast.warning(`Vị trí ${val} đã có ${existing} đăng ký!`);
+                        setMusicianRole(modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '');
+                        e.target.value = modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '';
+                        return;
+                      }
                       setMusicianRole(val);
-                      if (val) handleAction('MUSICIAN', val);
+                      handleAction('MUSICIAN', val);
                     }}
                     value={musicianRole || (modalState.currentTeam === 'MUSICIAN' ? (modalState.currentRoleDetail || '') : '')}
                   >
                     <option value="">— Chọn nhạc cụ —</option>
-                    <option value="E-Guitar">E-Guitar</option>
-                    <option value="Acoustic Guitar">Acoustic Guitar</option>
-                    <option value="Bass">Bass</option>
-                    <option value="Drum">Drum</option>
-                    <option value="Piano">Piano</option>
+                    {['E-Guitar', 'Acoustic Guitar', 'Bass', 'Drum', 'Piano'].map((role) => {
+                      const user = getExistingAssignee('MUSICIAN', role);
+                      return (
+                        <option key={role} value={role}>
+                          {role} {user ? `(Đã có: ${user})` : ''}
+                        </option>
+                      );
+                    })}
                   </select>
                 </div>
                 <div className="mt-2 text-sm text-brand-black/60 pl-3 border-l-2 border-brand-black/20">
@@ -348,7 +465,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                   CANCEL REGISTRATION
                 </Button>
               ) : <div></div>}
-              <Button variant="ghost" disabled={loading} onClick={() => setModalState({ open: false, serviceId: '', currentTeam: null, currentRoleDetail: null })}>
+              <Button variant="ghost" disabled={loading} onClick={closeModal}>
                 CLOSE
               </Button>
             </div>

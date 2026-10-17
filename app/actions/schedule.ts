@@ -9,6 +9,39 @@ export async function joinService(serviceId: string, team: string, roleDetail: s
   if (!session) return { error: 'Unauthorized' };
 
   try {
+    const userCheck = await db.query(
+      'SELECT id FROM registrations WHERE service_id = $1 AND user_id = $2',
+      [serviceId, session.id]
+    );
+    if (userCheck.rows.length > 0) {
+      return { error: 'Bạn đã đăng ký phục vụ cho buổi này rồi!' };
+    }
+
+    let roleCheck;
+    if (team === 'SOUND') {
+      roleCheck = await db.query(
+        `SELECT r.id, u.full_name as user_name 
+         FROM registrations r 
+         JOIN users u ON r.user_id = u.id 
+         WHERE r.service_id = $1 AND r.team = 'SOUND' AND r.user_id != $2`,
+        [serviceId, session.id]
+      );
+    } else {
+      roleCheck = await db.query(
+        `SELECT r.id, u.full_name as user_name 
+         FROM registrations r 
+         JOIN users u ON r.user_id = u.id 
+         WHERE r.service_id = $1 AND r.team = $2 AND LOWER(COALESCE(r.role_detail, '')) = LOWER($3) AND r.user_id != $4`,
+        [serviceId, team, roleDetail, session.id]
+      );
+    }
+
+    if (roleCheck.rows.length > 0) {
+      const existingUser = roleCheck.rows[0].user_name;
+      const roleName = roleDetail || (team === 'SOUND' ? 'Sound Team' : team);
+      return { error: `Vị trí ${roleName} đã có ${existingUser} đăng ký!` };
+    }
+
     const id = `r_${Date.now()}`;
     await db.query(
       'INSERT INTO registrations (id, service_id, user_id, team, role_detail) VALUES ($1, $2, $3, $4, $5)',
@@ -17,8 +50,8 @@ export async function joinService(serviceId: string, team: string, roleDetail: s
     revalidatePath('/schedule');
     revalidatePath('/admin');
     return { success: true };
-  } catch (err) {
-    return { error: 'You are already registered for this service.' };
+  } catch (err: any) {
+    return { error: err.message || 'Lỗi khi đăng ký' };
   }
 }
 
@@ -27,6 +60,31 @@ export async function changeRole(serviceId: string, newTeam: string, roleDetail:
   if (!session) return { error: 'Unauthorized' };
 
   try {
+    let roleCheck;
+    if (newTeam === 'SOUND') {
+      roleCheck = await db.query(
+        `SELECT r.id, u.full_name as user_name 
+         FROM registrations r 
+         JOIN users u ON r.user_id = u.id 
+         WHERE r.service_id = $1 AND r.team = 'SOUND' AND r.user_id != $2`,
+        [serviceId, session.id]
+      );
+    } else {
+      roleCheck = await db.query(
+        `SELECT r.id, u.full_name as user_name 
+         FROM registrations r 
+         JOIN users u ON r.user_id = u.id 
+         WHERE r.service_id = $1 AND r.team = $2 AND LOWER(COALESCE(r.role_detail, '')) = LOWER($3) AND r.user_id != $4`,
+        [serviceId, newTeam, roleDetail, session.id]
+      );
+    }
+
+    if (roleCheck.rows.length > 0) {
+      const existingUser = roleCheck.rows[0].user_name;
+      const roleName = roleDetail || (newTeam === 'SOUND' ? 'Sound Team' : newTeam);
+      return { error: `Vị trí ${roleName} đã có ${existingUser} đăng ký!` };
+    }
+
     await db.query(
       'UPDATE registrations SET team = $1, role_detail = $4 WHERE service_id = $2 AND user_id = $3',
       [newTeam, serviceId, session.id, roleDetail]
@@ -34,8 +92,8 @@ export async function changeRole(serviceId: string, newTeam: string, roleDetail:
     revalidatePath('/schedule');
     revalidatePath('/admin');
     return { success: true };
-  } catch (err) {
-    return { error: 'Failed to update' };
+  } catch (err: any) {
+    return { error: err.message || 'Failed to update' };
   }
 }
 
