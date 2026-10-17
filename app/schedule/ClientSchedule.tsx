@@ -338,11 +338,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                             <span className="text-xs bg-white text-brand-blue font-black px-2 py-0.5 border border-brand-black">
                               CURRENT
                             </span>
-                          ) : (
-                            <span className="text-xs font-bold uppercase tracking-wider text-brand-black/60">
-                              Click to join →
-                            </span>
-                          )}
+                          ) : null}
                         </div>
                       </Button>
                       <div className="mt-2 text-sm text-brand-black/60 pl-3 border-l-2 border-brand-black/20">
@@ -413,11 +409,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                               <span className="text-xs bg-white text-brand-pink font-black px-2 py-0.5 border border-brand-black">
                                 CURRENT
                               </span>
-                            ) : (
-                              <span className="text-xs text-brand-black/60 font-bold">
-                                Select & Register →
-                              </span>
-                            )}
+                            ) : null}
                           </button>
                         );
                       })}
@@ -489,11 +481,7 @@ export default function ClientSchedule({ upcomingServices, monthlyServices, regi
                               <span className="text-xs bg-white text-brand-blue font-black px-2 py-0.5 border border-brand-black">
                                 CURRENT
                               </span>
-                            ) : (
-                              <span className="text-xs text-brand-black/60 font-bold">
-                                Select & Register →
-                              </span>
-                            )}
+                            ) : null}
                           </button>
                         );
                       })}
