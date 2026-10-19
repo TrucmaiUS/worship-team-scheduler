@@ -215,18 +215,18 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
     setSelectedMonth(`${newYear}-${newMonth.toString().padStart(2, '0')}`);
   };
 
-  // Upcoming Special Events (Next 3 months, not 'Vietnamese Service')
+  // Upcoming Special Events (Next 1 month, not 'Vietnamese Service')
   const specialEvents = gridData.filter((s: any) => {
     if (s.title.toLowerCase().includes('vietnamese service')) return false;
     if (s.title.toLowerCase().includes('combine')) return false;
     if (s.date < todayStr) return false;
     
-    // Check if within 3 months
+    // Check if within 1 month
     const eventDate = new Date(s.date + 'T00:00:00');
-    const threeMonthsFromNow = new Date(localDate);
-    threeMonthsFromNow.setMonth(threeMonthsFromNow.getMonth() + 3);
+    const oneMonthFromNow = new Date(localDate);
+    oneMonthFromNow.setMonth(oneMonthFromNow.getMonth() + 1);
     
-    return eventDate <= threeMonthsFromNow;
+    return eventDate <= oneMonthFromNow;
   });
 
   const selectedManageService = gridData.find((s: any) => s.id === manageServiceId);
