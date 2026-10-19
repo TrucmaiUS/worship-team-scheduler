@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/Button';
+import { Avatar } from '@/components/ui/Avatar';
 import { adminAssignMember, adminRemoveAssignment, adminDeleteUser, adminDeleteService } from './actions';
 import * as Dialog from '@radix-ui/react-dialog';
 import { toast } from 'sonner';
@@ -698,7 +699,16 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
               <tbody className="font-bold">
                 {allUsers.map((u: any) => (
                   <tr key={u.id} className="border-b-4 border-brand-black last:border-b-0 hover:bg-brand-cream transition-colors">
-                    <td className="p-3 sm:p-4 border-r-4 border-brand-black">{u.full_name}</td>
+                    <td className="p-3 sm:p-4 border-r-4 border-brand-black">
+                      <div className="flex items-center gap-3">
+                        <Avatar 
+                          name={u.full_name} 
+                          imgUrl={u.avatar_url} 
+                          className="w-10 h-10 text-xs sm:text-sm shrink-0 shadow-[2px_2px_0_0_#111111]" 
+                        />
+                        <span className="truncate">{u.full_name}</span>
+                      </div>
+                    </td>
                     <td className="p-3 sm:p-4 border-r-4 border-brand-black opacity-70 text-sm">{u.email}</td>
                     <td className="p-3 sm:p-4 border-r-4 border-brand-black">
                       <span className={`px-2 py-1 border-2 border-brand-black ${u.role === 'ADMIN' ? 'bg-brand-blue text-brand-white' : 'bg-brand-white'}`}>
@@ -752,6 +762,11 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                     }`}
                   >
                     <div className="flex items-center gap-2 truncate pr-2">
+                      <Avatar 
+                        name={u.full_name} 
+                        imgUrl={u.avatar_url} 
+                        className="w-7 h-7 text-[10px] shrink-0 shadow-[1px_1px_0_0_#111111]" 
+                      />
                       <span className={`font-bold ${isAssigned ? 'text-brand-black/60' : 'text-brand-black'}`}>
                         {u.full_name}
                       </span>
@@ -907,6 +922,11 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                                 className="flex items-center justify-between bg-white border-2 border-brand-black px-3 py-2 rounded-lg shadow-[2px_2px_0_0_#111111]"
                               >
                                 <div className="flex items-center gap-2 truncate">
+                                  <Avatar 
+                                    name={assignee.full_name} 
+                                    imgUrl={assignee.avatar_url} 
+                                    className="w-6 h-6 text-[10px] shrink-0 shadow-[1px_1px_0_0_#111111]" 
+                                  />
                                   <span className="font-black text-sm text-brand-black flex items-center gap-1.5 truncate">
                                     <span>✓</span>
                                     <span>{assignee.full_name}</span>
@@ -974,6 +994,11 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                         {extraMembers.map((u: any) => (
                           <div key={u.id} className="flex items-center justify-between bg-white border-2 border-brand-black px-3 py-2 rounded-lg shadow-[2px_2px_0_0_#111111]">
                             <div className="flex items-center gap-2 truncate">
+                              <Avatar 
+                                name={u.full_name} 
+                                imgUrl={u.avatar_url} 
+                                className="w-6 h-6 text-[10px] shrink-0 shadow-[1px_1px_0_0_#111111]" 
+                              />
                               <span className="font-black text-sm text-brand-black flex items-center gap-1.5 truncate">
                                 <span>✓</span>
                                 <span>{u.full_name}</span>

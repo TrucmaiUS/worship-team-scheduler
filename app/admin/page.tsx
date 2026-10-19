@@ -14,7 +14,7 @@ export default async function AdminPage() {
   try {
     const [resServices, resUsers, resRegs] = await Promise.all([
       db.query('SELECT * FROM services ORDER BY date ASC, start_time ASC'),
-      db.query('SELECT id, full_name, email, role FROM users'),
+      db.query('SELECT id, full_name, email, role, avatar_url FROM users'),
       db.query('SELECT * FROM registrations')
     ]);
     
