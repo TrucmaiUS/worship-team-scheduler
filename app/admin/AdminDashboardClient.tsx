@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/Button';
-import { adminAssignMember, adminRemoveAssignment, adminDeleteUser } from './actions';
+import { adminAssignMember, adminRemoveAssignment, adminDeleteUser, adminDeleteService } from './actions';
 import * as Dialog from '@radix-ui/react-dialog';
 import { toast } from 'sonner';
 
@@ -53,6 +53,12 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
     open: false,
     userId: '',
     userName: ''
+  });
+  const [deleteEventModal, setDeleteEventModal] = useState<{ open: boolean, serviceId: string, eventTitle: string, eventDate: string }>({
+    open: false,
+    serviceId: '',
+    eventTitle: '',
+    eventDate: ''
   });
   const [roleDetails, setRoleDetails] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
@@ -155,6 +161,23 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
       toast.error('Failed to delete user: ' + e.message);
     } finally {
       setDeleteUserModal({ open: false, userId: '', userName: '' });
+    }
+  };
+
+  const confirmDeleteEvent = async () => {
+    try {
+      setLoading(true);
+      const res = await adminDeleteService(deleteEventModal.serviceId);
+      if (res?.error) throw new Error(res.error);
+      toast.success('Event deleted successfully!');
+      if (manageServiceId === deleteEventModal.serviceId) {
+        setManageServiceId(null);
+      }
+    } catch (e: any) {
+      toast.error('Failed to delete event: ' + e.message);
+    } finally {
+      setLoading(false);
+      setDeleteEventModal({ open: false, serviceId: '', eventTitle: '', eventDate: '' });
     }
   };
 
@@ -344,9 +367,25 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                       {services.map((service: any) => (
                         <div key={service.id} className="bg-brand-white border-2 border-brand-black p-4 relative flex flex-col justify-between shadow-[4px_4px_0_0_#FFA6C9] transition-transform hover:-translate-y-1">
                           <div>
-                            <h3 className="font-bold uppercase tracking-widest text-brand-pink text-xs mb-1">
-                              {new Date(service.date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}
-                            </h3>
+                            <div className="flex justify-between items-start gap-2 mb-1">
+                              <h3 className="font-bold uppercase tracking-widest text-brand-pink text-xs">
+                                {new Date(service.date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}
+                              </h3>
+                              <button
+                                onClick={() => setDeleteEventModal({
+                                  open: true,
+                                  serviceId: service.id,
+                                  eventTitle: service.title,
+                                  eventDate: service.date
+                                })}
+                                className="w-5 h-5 rounded-full bg-brand-red/10 hover:bg-brand-red text-brand-red hover:text-white flex items-center justify-center transition-colors shrink-0"
+                                title="Delete Event"
+                              >
+                                <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                </svg>
+                              </button>
+                            </div>
                             <h2 className="editorial-heading text-xl mb-1 leading-tight text-brand-black">{service.title}</h2>
                             <p className="font-bold opacity-80 mb-3 text-xs">{service.start_time} - {service.end_time}</p>
                           </div>
@@ -486,10 +525,27 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                       <div className="min-w-[800px]">
                         {week.services.map((service: any) => (
                           <div key={service.id} className="flex border-b-4 border-brand-black last:border-b-0 hover:bg-brand-cream/20 transition-colors">
-                            <div className="w-1/4 p-4 border-r-4 border-brand-black bg-brand-cream flex flex-col justify-center">
-                              <h3 className="font-bold text-brand-blue uppercase tracking-widest">{new Date(service.date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}</h3>
-                              <p className="font-black text-xl">{service.start_time}</p>
-                              <p className="text-sm font-bold opacity-70 mt-1">{service.title}</p>
+                            <div className="w-1/4 p-4 border-r-4 border-brand-black bg-brand-cream flex flex-col justify-between">
+                              <div>
+                                <h3 className="font-bold text-brand-blue uppercase tracking-widest">{new Date(service.date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}</h3>
+                                <p className="font-black text-xl">{service.start_time}</p>
+                                <p className="text-sm font-bold opacity-70 mt-1">{service.title}</p>
+                              </div>
+                              <button
+                                onClick={() => setDeleteEventModal({
+                                  open: true,
+                                  serviceId: service.id,
+                                  eventTitle: service.title,
+                                  eventDate: service.date
+                                })}
+                                className="mt-3 text-xs font-bold text-brand-red hover:underline flex items-center gap-1 opacity-70 hover:opacity-100 transition-opacity w-fit"
+                                title="Delete Event"
+                              >
+                                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                </svg>
+                                Delete Event
+                              </button>
                             </div>
                             
                             {renderTeamCell(service, 'SOUND', service.sound)}
@@ -559,13 +615,14 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                     <th className="p-2 border-r-2 border-brand-black w-1/6">Date</th>
                     <th className="p-2 border-r-2 border-brand-black w-1/4">Singer</th>
                     <th className="p-2 border-r-2 border-brand-black w-1/4">Musician</th>
-                    <th className="p-2 w-1/6">Sound</th>
+                    <th className="p-2 border-r-2 border-brand-black w-1/6">Sound</th>
+                    <th className="p-2 w-12 text-center">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   {filteredGridData.length === 0 ? (
                     <tr>
-                      <td colSpan={5} className="p-4 text-center font-bold opacity-50">No events found</td>
+                      <td colSpan={6} className="p-4 text-center font-bold opacity-50">No events found</td>
                     </tr>
                   ) : (
                     filteredGridData.map((s: any) => {
@@ -578,11 +635,9 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                       return (
                         <tr 
                           key={s.id} 
-                          onClick={() => setManageServiceId(s.id)}
-                          className="border-b border-brand-black last:border-b-0 hover:bg-brand-pink/10 transition-colors cursor-pointer group"
-                          title="Click to edit"
+                          className="border-b border-brand-black last:border-b-0 hover:bg-brand-pink/10 transition-colors group"
                         >
-                          <td className="p-2 border-r border-brand-black font-bold">
+                          <td className="p-2 border-r border-brand-black font-bold cursor-pointer" onClick={() => setManageServiceId(s.id)} title="Click to edit">
                             <div className="flex items-center justify-between gap-2">
                               <span>{s.title || ''}</span>
                               <span className="text-[10px] bg-brand-pink text-white font-extrabold px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-[1px_1px_0_0_#111111]">
@@ -590,10 +645,29 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                               </span>
                             </div>
                           </td>
-                          <td className="p-2 border-r border-brand-black text-center whitespace-nowrap">{dateStr}</td>
-                          <td className="p-2 border-r border-brand-black">{singers || <span className="opacity-40 italic">None</span>}</td>
-                          <td className="p-2 border-r border-brand-black">{musicians || <span className="opacity-40 italic">None</span>}</td>
-                          <td className="p-2">{sounds || <span className="opacity-40 italic">None</span>}</td>
+                          <td className="p-2 border-r border-brand-black text-center whitespace-nowrap cursor-pointer" onClick={() => setManageServiceId(s.id)} title="Click to edit">{dateStr}</td>
+                          <td className="p-2 border-r border-brand-black cursor-pointer" onClick={() => setManageServiceId(s.id)} title="Click to edit">{singers || <span className="opacity-40 italic">None</span>}</td>
+                          <td className="p-2 border-r border-brand-black cursor-pointer" onClick={() => setManageServiceId(s.id)} title="Click to edit">{musicians || <span className="opacity-40 italic">None</span>}</td>
+                          <td className="p-2 border-r border-brand-black cursor-pointer" onClick={() => setManageServiceId(s.id)} title="Click to edit">{sounds || <span className="opacity-40 italic">None</span>}</td>
+                          <td className="p-2 text-center">
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setDeleteEventModal({
+                                  open: true,
+                                  serviceId: s.id,
+                                  eventTitle: s.title,
+                                  eventDate: s.date
+                                });
+                              }}
+                              className="w-7 h-7 inline-flex items-center justify-center rounded-full bg-brand-red/10 hover:bg-brand-red text-brand-red hover:text-white transition-colors"
+                              title="Delete Event"
+                            >
+                              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                              </svg>
+                            </button>
+                          </td>
                         </tr>
                       );
                     })
@@ -766,16 +840,32 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
           <Dialog.Content className="fixed left-[50%] top-[50%] z-[60] w-[95vw] max-w-lg translate-x-[-50%] translate-y-[-50%] bg-white border-4 border-brand-black p-6 shadow-[8px_8px_0_0_#111111] max-h-[85vh] flex flex-col data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] outline-none">
             {selectedManageService && (
               <>
-                <div className="mb-4 pb-3 border-b-2 border-brand-black">
-                  <Dialog.Title className="editorial-heading text-2xl text-brand-black">
-                    MANAGE ROSTER
-                  </Dialog.Title>
-                  <p className="font-bold text-xs text-brand-black/70 mt-0.5">
-                    {selectedManageService.title} • {(() => {
-                      const d = new Date(selectedManageService.date + 'T00:00:00');
-                      return `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
-                    })()} ({selectedManageService.start_time} - {selectedManageService.end_time})
-                  </p>
+                <div className="mb-4 pb-3 border-b-2 border-brand-black flex justify-between items-start gap-2">
+                  <div>
+                    <Dialog.Title className="editorial-heading text-2xl text-brand-black">
+                      MANAGE ROSTER
+                    </Dialog.Title>
+                    <p className="font-bold text-xs text-brand-black/70 mt-0.5">
+                      {selectedManageService.title} • {(() => {
+                        const d = new Date(selectedManageService.date + 'T00:00:00');
+                        return `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
+                      })()} ({selectedManageService.start_time} - {selectedManageService.end_time})
+                    </p>
+                  </div>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setDeleteEventModal({
+                      open: true,
+                      serviceId: selectedManageService.id,
+                      eventTitle: selectedManageService.title,
+                      eventDate: selectedManageService.date
+                    })}
+                    className="border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white text-xs h-7 px-2 font-bold shrink-0"
+                  >
+                    Delete Event
+                  </Button>
                 </div>
 
                 <div className="flex-1 overflow-y-auto space-y-4 pr-1">
@@ -959,6 +1049,32 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
               </Dialog.Close>
               <Button variant="primary" className="bg-brand-red shadow-[4px_4px_0_0_#111111]" onClick={confirmDeleteUser}>
                 YES, DELETE
+              </Button>
+            </div>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
+
+      {/* DELETE EVENT MODAL */}
+      <Dialog.Root open={deleteEventModal.open} onOpenChange={(open) => !open && setDeleteEventModal({ open: false, serviceId: '', eventTitle: '', eventDate: '' })}>
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 bg-brand-black/50 backdrop-blur-sm z-[80] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+          <Dialog.Content className="fixed left-[50%] top-[50%] z-[80] w-[95vw] max-w-md translate-x-[-50%] translate-y-[-50%] bg-brand-cream border-8 border-brand-black p-8 shadow-[12px_12px_0_0_#FFA6C9] flex flex-col data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] outline-none">
+            <Dialog.Title className="editorial-heading text-3xl mb-4 text-brand-red">DELETE EVENT</Dialog.Title>
+            <Dialog.Description className="text-base font-bold mb-8">
+              Are you sure you want to delete <span className="text-brand-red font-black">"{deleteEventModal.eventTitle}"</span> ({deleteEventModal.eventDate})? This will permanently remove the event and all assigned roles. This action cannot be undone.
+            </Dialog.Description>
+            <div className="flex justify-end gap-4">
+              <Dialog.Close asChild>
+                <Button variant="ghost" disabled={loading}>CANCEL</Button>
+              </Dialog.Close>
+              <Button 
+                variant="primary" 
+                className="bg-brand-red shadow-[4px_4px_0_0_#111111]" 
+                disabled={loading}
+                onClick={confirmDeleteEvent}
+              >
+                {loading ? 'DELETING...' : 'YES, DELETE EVENT'}
               </Button>
             </div>
           </Dialog.Content>

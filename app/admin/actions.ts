@@ -85,3 +85,21 @@ export async function adminDeleteUser(userId: string) {
     return { error: err.message || 'Failed to delete user' };
   }
 }
+
+export async function adminDeleteService(serviceId: string) {
+  const session = await getSession();
+  if (!session || session.role !== 'ADMIN') return { error: 'Unauthorized' };
+
+  try {
+    await db.query('DELETE FROM registrations WHERE service_id = $1', [serviceId]);
+    await db.query('DELETE FROM services WHERE id = $1', [serviceId]);
+    
+    revalidatePath('/admin');
+    revalidatePath('/schedule');
+    revalidatePath('/');
+    return { success: true };
+  } catch (err: any) {
+    return { error: err.message || 'Failed to delete service' };
+  }
+}
+
