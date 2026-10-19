@@ -72,7 +72,33 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
   
   const [selectedMonth, setSelectedMonth] = useState(defaultMonthStr);
 
+  const currentModalService = gridData.find((s: any) => s.id === modalState.serviceId);
+
+  const getAssignedRoleInModal = (userId: string) => {
+    if (!currentModalService) return null;
+    const inSound = currentModalService.sound?.find((m: any) => m.id === userId);
+    if (inSound) return inSound.role_detail ? `Sound (${inSound.role_detail})` : 'Sound';
+    const inSinger = currentModalService.singer?.find((m: any) => m.id === userId);
+    if (inSinger) return inSinger.role_detail || 'Singer';
+    const inMusician = currentModalService.musician?.find((m: any) => m.id === userId);
+    if (inMusician) return inMusician.role_detail || 'Musician';
+    return null;
+  };
+
+  const takenSingerRoles = (currentModalService?.singer || [])
+    .map((s: any) => (s.role_detail || '').toLowerCase())
+    .filter(Boolean);
+
+  const takenMusicianRoles = (currentModalService?.musician || [])
+    .map((m: any) => (m.role_detail || '').toLowerCase())
+    .filter(Boolean);
+
   const handleAssign = async (userId: string) => {
+    const existingRole = getAssignedRoleInModal(userId);
+    if (existingRole) {
+      toast.error('This member is already assigned to this service!');
+      return;
+    }
     const detail = roleDetails[userId] || null;
     if (!detail && (modalState.team === 'SINGER' || modalState.team === 'MUSICIAN')) {
       toast.error('Please select a specific role before assigning.');
@@ -631,34 +657,94 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
         <Dialog.Portal>
           <Dialog.Overlay className="fixed inset-0 bg-brand-black/50 backdrop-blur-sm z-50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
           <Dialog.Content className="fixed left-[50%] top-[50%] z-50 w-[95vw] max-w-xl translate-x-[-50%] translate-y-[-50%] bg-brand-cream border-8 border-brand-black p-8 shadow-[12px_12px_0_0_#FFA6C9] max-h-[80vh] flex flex-col data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] outline-none">
-            <Dialog.Title className="editorial-heading text-2xl mb-4">Assign to {modalState.team}</Dialog.Title>
+            <div className="mb-4">
+              <Dialog.Title className="editorial-heading text-2xl">Assign to {modalState.team}</Dialog.Title>
+              {currentModalService && (
+                <p className="font-bold text-xs text-brand-black/70 mt-1">
+                  {currentModalService.title} • {new Date(currentModalService.date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })} ({currentModalService.start_time} - {currentModalService.end_time})
+                </p>
+              )}
+            </div>
             <div className="flex-1 overflow-y-auto border-4 border-brand-black bg-brand-white p-2 mb-4 space-y-2">
-              {assignableUsers.map((u: any) => (
-                <div key={u.id} className="flex justify-between items-center p-2 hover:bg-brand-cream border-b-2 border-brand-black last:border-0">
-                  <span className="font-bold">{u.full_name}</span>
-                  <div className="flex gap-2 items-center">
-                    {modalState.team === 'SINGER' && (
-                      <select className="border-2 border-brand-black px-2 py-1 text-xs font-bold bg-brand-white shadow-[2px_2px_0_0_#111111] hover:shadow-[2px_2px_0_0_#0038FF] focus:outline-none focus:shadow-[2px_2px_0_0_#FFA6C9] transition-all cursor-pointer outline-none" value={roleDetails[u.id] || ''} onChange={e => setRoleDetails({...roleDetails, [u.id]: e.target.value})}>
-                        <option value="">-Select-</option>
-                        <option value="Vocal 1">Vocal 1</option>
-                        <option value="Vocal 2">Vocal 2</option>
-                        <option value="Vocal 3">Vocal 3</option>
-                      </select>
-                    )}
-                    {modalState.team === 'MUSICIAN' && (
-                      <select className="border-2 border-brand-black px-2 py-1 text-xs font-bold bg-brand-white shadow-[2px_2px_0_0_#111111] hover:shadow-[2px_2px_0_0_#0038FF] focus:outline-none focus:shadow-[2px_2px_0_0_#FFA6C9] transition-all cursor-pointer outline-none" value={roleDetails[u.id] || ''} onChange={e => setRoleDetails({...roleDetails, [u.id]: e.target.value})}>
-                        <option value="">-Select-</option>
-                        <option value="E-Guitar">E-Guitar</option>
-                        <option value="Acoustic Guitar">Acoustic Guitar</option>
-                        <option value="Bass">Bass</option>
-                        <option value="Drum">Drum</option>
-                        <option value="Piano">Piano</option>
-                      </select>
-                    )}
-                    <Button size="sm" onClick={() => handleAssign(u.id)} disabled={loading}>Assign</Button>
+              {assignableUsers.map((u: any) => {
+                const assignedRole = getAssignedRoleInModal(u.id);
+                const isAssigned = !!assignedRole;
+
+                return (
+                  <div 
+                    key={u.id} 
+                    className={`flex justify-between items-center p-2 border-b-2 border-brand-black last:border-0 transition-colors ${
+                      isAssigned ? 'bg-brand-black/5 opacity-50' : 'hover:bg-brand-cream'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2 truncate pr-2">
+                      <span className={`font-bold ${isAssigned ? 'text-brand-black/60' : 'text-brand-black'}`}>
+                        {u.full_name}
+                      </span>
+                      {isAssigned && (
+                        <span className="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-brand-black/10 text-brand-black/70 border border-brand-black/20 shrink-0">
+                          {assignedRole}
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex gap-2 items-center shrink-0">
+                      {modalState.team === 'SINGER' && (
+                        <select 
+                          disabled={isAssigned || loading}
+                          className="border-2 border-brand-black px-2 py-1 text-xs font-bold bg-brand-white shadow-[2px_2px_0_0_#111111] hover:shadow-[2px_2px_0_0_#0038FF] focus:outline-none focus:shadow-[2px_2px_0_0_#FFA6C9] transition-all cursor-pointer outline-none disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none" 
+                          value={roleDetails[u.id] || ''} 
+                          onChange={e => setRoleDetails({...roleDetails, [u.id]: e.target.value})}
+                        >
+                          <option value="">-Select-</option>
+                          <option value="Vocal 1" disabled={takenSingerRoles.includes('vocal 1')}>
+                            Vocal 1 {takenSingerRoles.includes('vocal 1') ? '(Taken)' : ''}
+                          </option>
+                          <option value="Vocal 2" disabled={takenSingerRoles.includes('vocal 2')}>
+                            Vocal 2 {takenSingerRoles.includes('vocal 2') ? '(Taken)' : ''}
+                          </option>
+                          <option value="Vocal 3" disabled={takenSingerRoles.includes('vocal 3')}>
+                            Vocal 3 {takenSingerRoles.includes('vocal 3') ? '(Taken)' : ''}
+                          </option>
+                        </select>
+                      )}
+                      {modalState.team === 'MUSICIAN' && (
+                        <select 
+                          disabled={isAssigned || loading}
+                          className="border-2 border-brand-black px-2 py-1 text-xs font-bold bg-brand-white shadow-[2px_2px_0_0_#111111] hover:shadow-[2px_2px_0_0_#0038FF] focus:outline-none focus:shadow-[2px_2px_0_0_#FFA6C9] transition-all cursor-pointer outline-none disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none" 
+                          value={roleDetails[u.id] || ''} 
+                          onChange={e => setRoleDetails({...roleDetails, [u.id]: e.target.value})}
+                        >
+                          <option value="">-Select-</option>
+                          <option value="E-Guitar" disabled={takenMusicianRoles.includes('e-guitar')}>
+                            E-Guitar {takenMusicianRoles.includes('e-guitar') ? '(Taken)' : ''}
+                          </option>
+                          <option value="Acoustic Guitar" disabled={takenMusicianRoles.includes('acoustic guitar')}>
+                            Acoustic Guitar {takenMusicianRoles.includes('acoustic guitar') ? '(Taken)' : ''}
+                          </option>
+                          <option value="Bass" disabled={takenMusicianRoles.includes('bass')}>
+                            Bass {takenMusicianRoles.includes('bass') ? '(Taken)' : ''}
+                          </option>
+                          <option value="Drum" disabled={takenMusicianRoles.includes('drum')}>
+                            Drum {takenMusicianRoles.includes('drum') ? '(Taken)' : ''}
+                          </option>
+                          <option value="Piano" disabled={takenMusicianRoles.includes('piano')}>
+                            Piano {takenMusicianRoles.includes('piano') ? '(Taken)' : ''}
+                          </option>
+                        </select>
+                      )}
+                      <Button 
+                        size="sm" 
+                        onClick={() => handleAssign(u.id)} 
+                        disabled={loading || isAssigned}
+                        variant={isAssigned ? "outline" : "primary"}
+                        className={isAssigned ? "opacity-50 cursor-not-allowed border-2 border-brand-black/30 text-xs h-7 pointer-events-none" : "text-xs h-7"}
+                      >
+                        {isAssigned ? 'Assigned' : 'Assign'}
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
             <div className="flex justify-end mt-4">
               <Dialog.Close asChild>
