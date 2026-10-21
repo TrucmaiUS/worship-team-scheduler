@@ -69,7 +69,11 @@ export default async function LandingPage() {
                   <p className="font-bold text-lg mb-8">Support the worship experience</p>
                 </div>
                 <div className="opacity-50">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" />
+                    <path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14" />
+                    <path d="M8 6v8" />
+                  </svg>
                 </div>
               </div>
               <div className="bg-brand-red text-brand-white p-8 border-8 border-brand-black shadow-[12px_12px_0_0_#111111] transform rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all flex flex-col h-full justify-between">
@@ -78,7 +82,7 @@ export default async function LandingPage() {
                   <p className="font-bold text-lg mb-8">Lead people in worship</p>
                 </div>
                 <div className="opacity-50">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
                 </div>
               </div>
               <div className="bg-brand-pink text-brand-white p-8 border-8 border-brand-black shadow-[12px_12px_0_0_#111111] transform -rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all flex flex-col h-full justify-between">
@@ -87,7 +91,7 @@ export default async function LandingPage() {
                   <p className="font-bold text-lg mb-8">Serve through music</p>
                 </div>
                 <div className="opacity-50">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="12 2 20 8.5 20 22 4 22 4 8.5 12 2"></polygon><line x1="12" y1="22" x2="12" y2="15"></line></svg>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
                 </div>
               </div>
             </div>
