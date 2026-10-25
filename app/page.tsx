@@ -16,10 +16,10 @@ export default async function LandingPage() {
           <div className="relative border-4 sm:border-8 border-brand-black bg-brand-white shadow-[6px_6px_0_0_#0038FF] sm:shadow-[12px_12px_0_0_#0038FF] transform rotate-1 transition-transform hover:rotate-0">
             <div className="relative w-full border-b-8 border-brand-black bg-brand-cream flex justify-center">
               <Image 
-                src="/images/real-cover.png" 
+                src="/images/real-cover.webp" 
                 alt="Music Ministry Cover" 
-                width={1200}
-                height={800}
+                width={1600}
+                height={835}
                 className="w-full h-auto object-contain"
                 priority
               />
