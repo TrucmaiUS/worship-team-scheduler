@@ -39,9 +39,27 @@ export async function getCroppedImg(
     return null
   }
 
-  // Set the size of the cropped canvas
-  croppedCanvas.width = pixelCrop.width
-  croppedCanvas.height = pixelCrop.height
+  // Set the size of the cropped canvas with max limit of 400px (retina-ready for avatars)
+  const maxDimension = 400;
+  let targetWidth = pixelCrop.width;
+  let targetHeight = pixelCrop.height;
+
+  if (targetWidth > maxDimension || targetHeight > maxDimension) {
+    if (targetWidth >= targetHeight) {
+      targetHeight = Math.round((targetHeight * maxDimension) / targetWidth);
+      targetWidth = maxDimension;
+    } else {
+      targetWidth = Math.round((targetWidth * maxDimension) / targetHeight);
+      targetHeight = maxDimension;
+    }
+  }
+
+  croppedCanvas.width = targetWidth;
+  croppedCanvas.height = targetHeight;
+
+  // Use high-quality smoothing for downscaling
+  croppedCtx.imageSmoothingEnabled = true;
+  croppedCtx.imageSmoothingQuality = 'high';
 
   croppedCtx.drawImage(
     canvas,
@@ -51,13 +69,17 @@ export async function getCroppedImg(
     pixelCrop.height,
     0,
     0,
-    pixelCrop.width,
-    pixelCrop.height
-  )
+    targetWidth,
+    targetHeight
+  );
 
   return new Promise((resolve) => {
-    croppedCanvas.toBlob((blob) => {
-      resolve(blob)
-    }, 'image/jpeg')
-  })
+    croppedCanvas.toBlob(
+      (blob) => {
+        resolve(blob);
+      },
+      'image/jpeg',
+      0.9 // High quality 90%
+    );
+  });
 }

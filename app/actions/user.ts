@@ -35,7 +35,8 @@ export async function uploadAvatar(formData: FormData) {
     .from('avatars')
     .upload(filename, buffer, {
       contentType: file.type,
-      upsert: true
+      upsert: true,
+      cacheControl: '31536000'
     });
 
   if (error) {

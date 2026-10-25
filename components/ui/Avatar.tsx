@@ -4,7 +4,7 @@ export function Avatar({ name, imgUrl, className = "" }: { name?: string, imgUrl
   if (imgUrl) {
     return (
       <div className={`relative overflow-hidden flex items-center justify-center rounded-full border-2 border-brand-black bg-brand-black ${className}`}>
-        <Image src={imgUrl} alt={name || "Avatar"} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+        <Image src={imgUrl} alt={name || "Avatar"} fill className="object-cover" unoptimized />
       </div>
     );
   }
