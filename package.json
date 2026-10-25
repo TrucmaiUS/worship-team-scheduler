@@ -17,13 +17,15 @@
     "date-fns": "^4.4.0",
     "jose": "^6.2.12",
     "lucide-react": "^1.47.0",
+    "mammoth": "^1.13.0",
     "next": "16.3.5",
     "pg": "^8.23.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "react-easy-crop": "^6.2.3",
     "sonner": "^2.0.8",
-    "tailwind-merge": "^3.7.0"
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -35,6 +37,8 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
   }
 }

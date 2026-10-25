@@ -3,6 +3,9 @@ import db from '@/lib/db';
 import { redirect } from 'next/navigation';
 import AdminDashboardClient from './AdminDashboardClient';
 import { AddEventButton } from '@/components/admin/AddEventButton';
+import Link from 'next/link';
+import { Button } from '@/components/ui/Button';
+import { Music } from 'lucide-react';
 
 export default async function AdminPage() {
   const session = await getSession();
@@ -74,7 +77,14 @@ export default async function AdminPage() {
         {/* OVERVIEW GRID */}
         <div className="flex justify-between items-center mb-4">
           <h2 className="editorial-heading text-2xl">SCHEDULE OVERVIEW</h2>
-          <AddEventButton />
+          <div className="flex items-center gap-3">
+            <Link href="/admin/songs">
+              <Button variant="secondary" className="flex items-center gap-2 shadow-[2px_2px_0_0_#111111]">
+                <Music className="w-4 h-4" /> Song Management
+              </Button>
+            </Link>
+            <AddEventButton />
+          </div>
         </div>
         <AdminDashboardClient gridData={gridData} allUsers={users} />
       </main>
