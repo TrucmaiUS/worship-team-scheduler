@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { 
   Search, 
-  Sparkles, 
   Cpu, 
   Layers, 
   ArrowLeft, 
@@ -25,7 +24,7 @@ import { SongSearchResult } from '@/lib/search/types';
 
 export default function SearchPlaygroundClient() {
   const [query, setQuery] = useState('');
-  const [selectedMethod, setSelectedMethod] = useState<'comparison' | 'hybrid' | 'semantic' | 'keyword'>('comparison');
+  const [selectedMethod, setSelectedMethod] = useState<'comparison' | 'hybrid' | 'semantic' | 'keyword'>('hybrid');
   const [statusFilter, setStatusFilter] = useState<'all' | 'approved'>('all');
   const [typeFilter, setTypeFilter] = useState<'all' | 'praise' | 'worship'>('all');
   const [limit, setLimit] = useState<number>(10);
@@ -189,11 +188,10 @@ export default function SearchPlaygroundClient() {
               </Link>
               <span className="text-gray-400">/</span>
               <span className="text-xs uppercase tracking-widest text-brand-black/70 font-bold">
-                Phase 3 Engine
+                Search Engine
               </span>
             </div>
             <h1 className="editorial-heading text-2xl sm:text-3xl text-brand-blue mt-1 flex items-center gap-2">
-              <Sparkles className="w-6 h-6 text-brand-pink fill-brand-pink" />
               AI SEARCH & RETRIEVAL PLAYGROUND
             </h1>
           </div>
@@ -203,8 +201,7 @@ export default function SearchPlaygroundClient() {
               href="/admin/songs/setlist"
               className="bg-brand-pink text-brand-white border-2 border-brand-black px-3.5 py-1.5 text-xs font-black shadow-[2px_2px_0_0_#111111] hover:-translate-y-0.5 transition-transform uppercase flex items-center gap-1.5"
             >
-              <Sparkles className="w-3.5 h-3.5" />
-              AI Setlist Generator (Phase 5)
+              AI Setlist Generator
             </Link>
           </div>
         </div>
@@ -302,9 +299,9 @@ export default function SearchPlaygroundClient() {
                     className="appearance-none bg-brand-white border border-brand-black pl-2.5 pr-7 py-1 text-xs font-bold text-brand-black cursor-pointer shadow-[1px_1px_0_0_#111111] focus:outline-none"
                   >
                     <option value="comparison">3-Way Comparison</option>
-                    <option value="hybrid">Baseline 3: Hybrid RRF</option>
-                    <option value="semantic">Baseline 2: Vector Search</option>
-                    <option value="keyword">Baseline 1: Keyword FTS</option>
+                    <option value="hybrid">Hybrid Search (Default)</option>
+                    <option value="semantic">Vector Search (Semantic)</option>
+                    <option value="keyword">Keyword Search (FTS)</option>
                   </select>
                   <ChevronDown className="w-3.5 h-3.5 text-brand-black absolute right-1.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                 </div>
@@ -466,9 +463,8 @@ export default function SearchPlaygroundClient() {
         ) : (
           /* Empty State / Welcome Guide */
           <div className="bg-brand-white border-4 border-brand-black p-8 text-center shadow-[6px_6px_0_0_#111111]">
-            <Sparkles className="w-12 h-12 text-brand-pink fill-brand-pink mx-auto mb-4" />
             <h3 className="editorial-heading text-2xl text-brand-blue mb-2">
-              Explore Phase 3 AI Song Retrieval
+              Explore AI Song Retrieval
             </h3>
             <p className="text-sm text-brand-black/70 max-w-xl mx-auto mb-6">
               Enter any sermon topic, scripture passage, or spiritual theme above to test and compare how our 3 search baselines retrieve and rank the church's 67 song catalog in real time.
