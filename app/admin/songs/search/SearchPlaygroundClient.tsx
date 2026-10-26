@@ -197,6 +197,16 @@ export default function SearchPlaygroundClient() {
               AI SEARCH & RETRIEVAL PLAYGROUND
             </h1>
           </div>
+
+          <div className="flex items-center gap-2">
+            <Link
+              href="/admin/songs/setlist"
+              className="bg-brand-pink text-brand-white border-2 border-brand-black px-3.5 py-1.5 text-xs font-black shadow-[2px_2px_0_0_#111111] hover:-translate-y-0.5 transition-transform uppercase flex items-center gap-1.5"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              AI Setlist Generator (Phase 5)
+            </Link>
+          </div>
         </div>
       </div>
 
