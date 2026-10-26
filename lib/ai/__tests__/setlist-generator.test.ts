@@ -6,7 +6,6 @@ describe('Phase 5: AI Controlled Setlist Generator', () => {
     const theme = 'Sự tha thứ & Yêu thương kẻ thù';
     const setlist = await generateWorshipSetlist({
       theme,
-      leaderVocalRange: 'male',
       scriptureReference: 'Ma-thi-ơ 5:43-48',
     });
 
@@ -20,34 +19,19 @@ describe('Phase 5: AI Controlled Setlist Generator', () => {
     expect(setlist.songs[1].position).toBe('worship');
     expect(setlist.songs[2].position).toBe('closing');
 
-    // 3. Recommended keys exist
+    // 3. Songs have real IDs and liturgical reasoning
     setlist.songs.forEach((s) => {
       expect(s.song_id).toBeTruthy();
       expect(s.song_title).toBeTruthy();
-      expect(s.recommended_key).toBeTruthy();
       expect(s.liturgical_reasoning).toBeTruthy();
     });
 
-    // 4. Transitions
+    // 4. Exactly 2 transitions
     expect(setlist.transitions).toHaveLength(2);
     expect(setlist.transitions[0].prayer_script).toBeTruthy();
     expect(setlist.transitions[1].prayer_script).toBeTruthy();
-    expect(setlist.transitions[0].musical_tip).toBeTruthy();
 
     // 5. Closing prayer
     expect(setlist.closing_prayer).toBeTruthy();
-  }, 45000);
-
-  it('should respect female vocal range by adjusting recommended keys', async () => {
-    const setlist = await generateWorshipSetlist({
-      theme: 'Đức Thánh Linh & Sự đổi mới',
-      leaderVocalRange: 'female',
-    });
-
-    expect(setlist.songs).toHaveLength(3);
-    expect(setlist.leader_vocal_range).toBe('female');
-    setlist.songs.forEach((s) => {
-      expect(s.recommended_key).toBeTruthy();
-    });
   }, 45000);
 });

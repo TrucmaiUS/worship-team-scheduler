@@ -5,7 +5,6 @@ import { z } from 'zod';
 const RequestSchema = z.object({
   theme: z.string().min(2, 'Chủ đề bài giảng phải có ít nhất 2 ký tự'),
   scriptureReference: z.string().optional(),
-  leaderVocalRange: z.enum(['male', 'female', 'any']).default('male'),
 });
 
 export async function POST(req: NextRequest) {
@@ -23,12 +22,11 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { theme, scriptureReference, leaderVocalRange } = parsed.data;
+    const { theme, scriptureReference } = parsed.data;
 
     const setlist = await generateWorshipSetlist({
       theme,
       scriptureReference,
-      leaderVocalRange,
     });
 
     return NextResponse.json({
