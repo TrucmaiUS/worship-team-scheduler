@@ -156,7 +156,7 @@ export async function searchBySemantic(
   const typeFilter = options?.songTypeFilter || 'all';
   const targetType = options?.semanticTarget || 'section';
 
-  let provider = getActiveEmbeddingProvider();
+  let provider = options?.embeddingProvider || getActiveEmbeddingProvider();
   let queryVector: number[] | null = null;
 
   try {

@@ -29,6 +29,7 @@ export interface SearchOptions {
   songTypeFilter?: 'all' | 'praise' | 'worship';
   semanticTarget?: 'section' | 'song';
   rrfConstant?: number; // Standard is 60
+  embeddingProvider?: EmbeddingProvider;
 }
 
 export interface EmbeddingProvider {
