@@ -4,27 +4,19 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { 
   Search, 
-  Cpu, 
-  Layers, 
   ArrowLeft, 
-  Filter, 
   BookOpen, 
-  CheckCircle, 
-  Music,
-  ChevronRight,
-  ChevronDown,
-  X,
-  HelpCircle,
-  TrendingUp,
-  FileText
+  ChevronDown, 
+  X, 
+  TrendingUp, 
+  FileText 
 } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
 import { toast } from 'sonner';
 import { SongSearchResult } from '@/lib/search/types';
 
 export default function SearchPlaygroundClient() {
   const [query, setQuery] = useState('');
-  const [selectedMethod, setSelectedMethod] = useState<'comparison' | 'hybrid' | 'semantic' | 'keyword'>('hybrid');
+  const [selectedMethod, setSelectedMethod] = useState<'comparison' | 'reranked' | 'hybrid' | 'semantic' | 'keyword'>('hybrid');
   const [statusFilter, setStatusFilter] = useState<'all' | 'approved'>('all');
   const [typeFilter, setTypeFilter] = useState<'all' | 'praise' | 'worship'>('all');
   const [limit, setLimit] = useState<number>(10);
@@ -34,6 +26,7 @@ export default function SearchPlaygroundClient() {
   const [keywordResults, setKeywordResults] = useState<SongSearchResult[]>([]);
   const [semanticResults, setSemanticResults] = useState<SongSearchResult[]>([]);
   const [hybridResults, setHybridResults] = useState<SongSearchResult[]>([]);
+  const [rerankedResults, setRerankedResults] = useState<SongSearchResult[]>([]);
   const [hasSearched, setHasSearched] = useState(false);
 
   const sampleQueries = [
@@ -64,22 +57,25 @@ export default function SearchPlaygroundClient() {
       });
 
       if (selectedMethod === 'comparison') {
-        // Fetch all 3 concurrently
-        const [kwRes, semRes, hybRes] = await Promise.all([
+        // Fetch all 4 concurrently
+        const [kwRes, semRes, hybRes, rerankRes] = await Promise.all([
           fetch(`/api/songs/search?${baseParams.toString()}&method=keyword`).then((r) => r.json()),
           fetch(`/api/songs/search?${baseParams.toString()}&method=semantic`).then((r) => r.json()),
           fetch(`/api/songs/search?${baseParams.toString()}&method=hybrid`).then((r) => r.json()),
+          fetch(`/api/songs/search?${baseParams.toString()}&method=reranked`).then((r) => r.json()),
         ]);
 
         if (kwRes.success) setKeywordResults(kwRes.results || []);
         if (semRes.success) setSemanticResults(semRes.results || []);
         if (hybRes.success) setHybridResults(hybRes.results || []);
+        if (rerankRes.success) setRerankedResults(rerankRes.results || []);
       } else {
         const res = await fetch(`/api/songs/search?${baseParams.toString()}&method=${selectedMethod}`).then((r) => r.json());
         if (res.success) {
           if (selectedMethod === 'keyword') setKeywordResults(res.results || []);
           if (selectedMethod === 'semantic') setSemanticResults(res.results || []);
           if (selectedMethod === 'hybrid') setHybridResults(res.results || []);
+          if (selectedMethod === 'reranked') setRerankedResults(res.results || []);
         }
       }
     } catch (err: any) {
@@ -89,7 +85,7 @@ export default function SearchPlaygroundClient() {
     }
   };
 
-  const renderSongCard = (song: SongSearchResult, method: 'keyword' | 'semantic' | 'hybrid') => {
+  const renderSongCard = (song: SongSearchResult, method: 'keyword' | 'semantic' | 'hybrid' | 'reranked') => {
     return (
       <div
         key={`${method}-${song.song_id}-${song.rank}`}
@@ -119,7 +115,7 @@ export default function SearchPlaygroundClient() {
           </p>
         )}
 
-        {/* Retrieval Score & Details - Clean, Simple Styling */}
+        {/* Retrieval Score & Details */}
         <div className="flex flex-wrap items-center gap-2 mb-3 text-[11px] font-mono">
           {method === 'keyword' && (
             <span className="bg-brand-cream px-2 py-0.5 border border-brand-black text-brand-black">
@@ -150,7 +146,32 @@ export default function SearchPlaygroundClient() {
               )}
             </>
           )}
+
+          {method === 'reranked' && (
+            <>
+              <span className="bg-brand-pink text-brand-white px-2 py-0.5 border border-brand-black font-black">
+                Relevance: {song.rerank_score !== undefined ? `${(song.rerank_score * 100).toFixed(0)}%` : `${(song.score * 100).toFixed(0)}%`}
+              </span>
+              {song.score !== undefined && (
+                <span className="bg-brand-cream text-brand-black px-1.5 py-0.5 border border-brand-black">
+                  RRF: {song.score.toFixed(4)}
+                </span>
+              )}
+            </>
+          )}
         </div>
+
+        {/* AI Liturgical Rationale for Reranked candidates */}
+        {method === 'reranked' && song.rerank_reason && (
+          <div className="bg-brand-cream border border-brand-black p-2.5 mb-3 text-xs text-brand-black leading-relaxed">
+            <span className="font-black text-[10px] text-brand-blue uppercase block mb-0.5">
+              Liturgical Rationale
+            </span>
+            <p className="text-xs text-brand-black/90 font-medium">
+              {song.rerank_reason}
+            </p>
+          </div>
+        )}
 
         {/* Explainable Evidence */}
         {song.matched_evidence ? (
@@ -298,7 +319,8 @@ export default function SearchPlaygroundClient() {
                     onChange={(e: any) => setSelectedMethod(e.target.value)}
                     className="appearance-none bg-brand-white border border-brand-black pl-2.5 pr-7 py-1 text-xs font-bold text-brand-black cursor-pointer shadow-[1px_1px_0_0_#111111] focus:outline-none"
                   >
-                    <option value="comparison">3-Way Comparison</option>
+                    <option value="comparison">4-Way Comparison</option>
+                    <option value="reranked">Two-Stage (Hybrid + Reranker)</option>
                     <option value="hybrid">Hybrid Search (Default)</option>
                     <option value="semantic">Vector Search (Semantic)</option>
                     <option value="keyword">Keyword Search (FTS)</option>
@@ -368,14 +390,14 @@ export default function SearchPlaygroundClient() {
         {hasSearched ? (
           <div>
             {selectedMethod === 'comparison' ? (
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
                 {/* Column 1: Baseline 1 Keyword */}
                 <div className="flex flex-col">
                   <div className="bg-brand-black text-brand-white p-3.5 border-2 border-brand-black shadow-[3px_3px_0_0_#111111] mb-4">
                     <div className="flex items-center justify-between">
-                      <h3 className="font-black text-sm uppercase tracking-wide">Baseline 1: Keyword FTS</h3>
+                      <h3 className="font-black text-sm uppercase tracking-wide">1. Keyword FTS</h3>
                       <span className="text-xs font-mono font-bold bg-brand-white text-brand-black px-2 py-0.5 border border-brand-black">
-                        {keywordResults.length} matches
+                        {keywordResults.length}
                       </span>
                     </div>
                     <p className="text-[11px] text-brand-white/70 mt-1">
@@ -398,9 +420,9 @@ export default function SearchPlaygroundClient() {
                 <div className="flex flex-col">
                   <div className="bg-brand-black text-brand-white p-3.5 border-2 border-brand-black shadow-[3px_3px_0_0_#111111] mb-4">
                     <div className="flex items-center justify-between">
-                      <h3 className="font-black text-sm uppercase tracking-wide">Baseline 2: Semantic Vector</h3>
+                      <h3 className="font-black text-sm uppercase tracking-wide">2. Semantic Vector</h3>
                       <span className="text-xs font-mono font-bold bg-brand-white text-brand-black px-2 py-0.5 border border-brand-black">
-                        {semanticResults.length} matches
+                        {semanticResults.length}
                       </span>
                     </div>
                     <p className="text-[11px] text-brand-white/70 mt-1">
@@ -423,9 +445,9 @@ export default function SearchPlaygroundClient() {
                 <div className="flex flex-col">
                   <div className="bg-brand-black text-brand-white p-3.5 border-2 border-brand-black shadow-[3px_3px_0_0_#111111] mb-4">
                     <div className="flex items-center justify-between">
-                      <h3 className="font-black text-sm uppercase tracking-wide">Baseline 3: Hybrid RRF</h3>
+                      <h3 className="font-black text-sm uppercase tracking-wide">3. Hybrid RRF</h3>
                       <span className="text-xs font-mono font-bold bg-brand-white text-brand-black px-2 py-0.5 border border-brand-black">
-                        Recommended
+                        {hybridResults.length}
                       </span>
                     </div>
                     <p className="text-[11px] text-brand-white/70 mt-1">
@@ -443,18 +465,45 @@ export default function SearchPlaygroundClient() {
                     )}
                   </div>
                 </div>
+
+                {/* Column 4: Two-Stage Reranked */}
+                <div className="flex flex-col">
+                  <div className="bg-brand-pink text-brand-white p-3.5 border-2 border-brand-black shadow-[3px_3px_0_0_#111111] mb-4">
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-black text-sm uppercase tracking-wide">4. Two-Stage Reranker</h3>
+                      <span className="text-xs font-mono font-bold bg-brand-white text-brand-black px-2 py-0.5 border border-brand-black">
+                        {rerankedResults.length}
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-brand-white/90 mt-1">
+                      Gemini Flash cross-attention scores top candidates with Vietnamese theological reasoning.
+                    </p>
+                  </div>
+
+                  <div className="space-y-3">
+                    {rerankedResults.length === 0 ? (
+                      <div className="p-6 text-center bg-brand-white border-2 border-brand-black text-xs text-brand-black/60 italic">
+                        No reranked results available.
+                      </div>
+                    ) : (
+                      rerankedResults.map((song) => renderSongCard(song, 'reranked'))
+                    )}
+                  </div>
+                </div>
               </div>
             ) : (
               /* Single View */
               <div className="max-w-3xl mx-auto space-y-4">
                 <h3 className="font-black text-lg text-brand-blue uppercase flex items-center gap-2">
                   <TrendingUp className="w-5 h-5 text-brand-pink" />
-                  Top Ranked Recommendations ({selectedMethod.toUpperCase()})
+                  Top Ranked Recommendations ({selectedMethod === 'reranked' ? 'Two-Stage Reranker' : selectedMethod.toUpperCase()})
                 </h3>
                 {(selectedMethod === 'keyword'
                   ? keywordResults
                   : selectedMethod === 'semantic'
                   ? semanticResults
+                  : selectedMethod === 'reranked'
+                  ? rerankedResults
                   : hybridResults
                 ).map((song) => renderSongCard(song, selectedMethod))}
               </div>
@@ -467,25 +516,31 @@ export default function SearchPlaygroundClient() {
               Explore AI Song Retrieval
             </h3>
             <p className="text-sm text-brand-black/70 max-w-xl mx-auto mb-6">
-              Enter any sermon topic, scripture passage, or spiritual theme above to test and compare how our 3 search baselines retrieve and rank the church's 67 song catalog in real time.
+              Enter any sermon topic, scripture passage, or spiritual theme above to test and compare how our search engines retrieve and rank the church's 67 song catalog in real time.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto text-left">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto text-left">
               <div className="bg-brand-cream border-2 border-brand-black p-4">
-                <div className="font-black text-xs uppercase mb-1 text-brand-blue">Baseline 1: Keyword FTS</div>
+                <div className="font-black text-xs uppercase mb-1 text-brand-blue">1. Keyword FTS</div>
                 <p className="text-[11px] text-brand-black/80">
                   Exact term & lemma matching using PostgreSQL GIN index with unaccented Vietnamese support.
                 </p>
               </div>
               <div className="bg-brand-cream border-2 border-brand-black p-4">
-                <div className="font-black text-xs uppercase mb-1 text-brand-blue">Baseline 2: Semantic Vector</div>
+                <div className="font-black text-xs uppercase mb-1 text-brand-blue">2. Semantic Vector</div>
                 <p className="text-[11px] text-brand-black/80">
                   Matches underlying meaning & theological concepts using 768-dimensional embeddings and cosine distance.
                 </p>
               </div>
               <div className="bg-brand-cream border-2 border-brand-black p-4">
-                <div className="font-black text-xs uppercase mb-1 text-brand-blue">Baseline 3: Hybrid RRF</div>
+                <div className="font-black text-xs uppercase mb-1 text-brand-blue">3. Hybrid RRF</div>
                 <p className="text-[11px] text-brand-black/80">
                   Combines the strengths of both algorithms via Reciprocal Rank Fusion for optimal recall and precision.
+                </p>
+              </div>
+              <div className="bg-brand-cream border-2 border-brand-black p-4">
+                <div className="font-black text-xs uppercase mb-1 text-brand-blue">4. Two-Stage Reranker</div>
+                <p className="text-[11px] text-brand-black/80">
+                  Cross-attention second stage with Gemini Flash to eliminate false positives and provide theological rationale.
                 </p>
               </div>
             </div>

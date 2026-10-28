@@ -17,10 +17,12 @@ export interface SongSearchResult {
   approval_status: 'pending_review' | 'approved' | 'rejected';
   score: number;
   rank: number;
-  retrieval_method: 'keyword' | 'semantic' | 'hybrid';
+  retrieval_method: 'keyword' | 'semantic' | 'hybrid' | 'reranked';
   keyword_score?: number;
   semantic_score?: number;
   matched_evidence?: MatchedSectionEvidence;
+  rerank_score?: number;
+  rerank_reason?: string;
 }
 
 export interface SearchOptions {
@@ -30,6 +32,15 @@ export interface SearchOptions {
   semanticTarget?: 'section' | 'song';
   rrfConstant?: number; // Standard is 60
   embeddingProvider?: EmbeddingProvider;
+  enableReranker?: boolean;
+}
+
+export interface RerankerOptions {
+  topK?: number;
+  temperature?: number;
+  signal?: AbortSignal;
+  provider?: 'gemini' | 'deterministic';
+  apiKey?: string;
 }
 
 export interface EmbeddingProvider {

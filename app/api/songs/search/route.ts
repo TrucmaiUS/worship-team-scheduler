@@ -2,16 +2,22 @@ import { NextRequest, NextResponse } from 'next/server';
 import { searchByKeyword } from '@/lib/search/keyword-search';
 import { searchBySemantic } from '@/lib/search/semantic-search';
 import { searchHybrid } from '@/lib/search/hybrid-search';
+import { searchTwoStage } from '@/lib/search/reranker';
 import { SearchOptions } from '@/lib/search/types';
 
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
     const query = searchParams.get('q') || '';
-    const method = (searchParams.get('method') || 'hybrid') as 'keyword' | 'semantic' | 'hybrid';
+    const rawMethod = searchParams.get('method') || 'hybrid';
+    const enableRerank = searchParams.get('rerank') === 'true';
     const status = (searchParams.get('status') || 'all') as 'approved' | 'all';
     const type = (searchParams.get('type') || 'all') as 'all' | 'praise' | 'worship';
     const limit = parseInt(searchParams.get('limit') || '10', 10);
+
+    const method = enableRerank || rawMethod === 'two_stage' || rawMethod === 'reranked'
+      ? 'reranked'
+      : (rawMethod as 'keyword' | 'semantic' | 'hybrid');
 
     if (!query.trim()) {
       return NextResponse.json({
@@ -37,6 +43,9 @@ export async function GET(req: NextRequest) {
         break;
       case 'semantic':
         results = await searchBySemantic(query, options);
+        break;
+      case 'reranked':
+        results = await searchTwoStage(query, options);
         break;
       case 'hybrid':
       default:

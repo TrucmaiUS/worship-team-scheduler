@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { searchHybrid } from '../search/hybrid-search';
+import { searchTwoStage } from '../search/reranker';
 import { SongSearchResult } from '../search/types';
 
 // ============================================================================
@@ -55,7 +56,7 @@ interface CandidateSongContext {
 }
 
 async function retrieveCandidateSongs(theme: string): Promise<CandidateSongContext[]> {
-  const candidates = await searchHybrid(theme, {
+  const candidates = await searchTwoStage(theme, {
     limit: 12,
     eligibilityStatus: 'approved',
     rrfConstant: 60,
@@ -159,6 +160,8 @@ Hãy chọn đúng 3 bài hát từ danh sách trên để tạo thành setlist 
 }`;
 
   const models = [
+    'gemini-flash-lite-latest',
+    'gemini-3.5-flash-lite',
     'gemini-3.5-flash',
     'gemini-flash-latest',
   ];
