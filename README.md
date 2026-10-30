@@ -52,11 +52,11 @@ Evaluated with 50 standardized queries across 4 behavioral categories (`scripts/
 
 | Retrieval Method | Hit@1 | Hit@3 | Hit@5 | MRR | NDCG@3 | NDCG@5 | Latency (Avg) | Latency (P95) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Baseline 1: Keyword (PostgreSQL FTS)** | 60.0% | 60.0% | 60.0% | 0.600 | 0.593 | 0.593 | 67.2 ms | 63.1 ms |
-| **Baseline 2: Semantic (Gemini Cloud)** | 90.0% | 98.0% | 98.0% | 0.940 | 0.901 | 0.915 | 470.1 ms | 501.0 ms |
-| **Baseline 3: Hybrid (RRF Cloud)** | **90.0%** | **98.0%** | **98.0%** | **0.940** | **0.901** | **0.915** | 476.3 ms | 522.7 ms |
-| *Variant 2B: Semantic (Offline Local)* | 76.0% | 84.0% | 92.0% | 0.811 | 0.778 | 0.812 | 60.7 ms | 65.6 ms |
-| *Variant 3B: Hybrid (Offline Local)* | 82.0% | 86.0% | 94.0% | 0.855 | 0.813 | 0.847 | 102.4 ms | 116.6 ms |
+| **Baseline 1: Keyword (PostgreSQL FTS)** | 60.0% | 60.0% | 60.0% | 0.600 | 0.593 | 0.593 | 45.3 ms | 51.7 ms |
+| **Baseline 2: Semantic (Gemini Cloud)** | 90.0% | 98.0% | 98.0% | 0.940 | 0.901 | 0.915 | 454.9 ms | 561.7 ms |
+| **Baseline 3: Hybrid (RRF Cloud)** | **90.0%** | **98.0%** | **98.0%** | **0.940** | **0.901** | **0.915** | 468.2 ms | 607.7 ms |
+| *Variant 2B: Semantic (Offline Local)* | 76.0% | 84.0% | 92.0% | 0.811 | 0.778 | 0.812 | 46.6 ms | 51.2 ms |
+| *Variant 3B: Hybrid (Offline Local)* | 82.0% | 86.0% | 94.0% | 0.855 | 0.813 | 0.847 | 75.4 ms | 97.5 ms |
 
 ### Key Findings
 - **Title/Artist Queries**: Keyword and Hybrid reach 100% Hit@3 (MRR 1.000).

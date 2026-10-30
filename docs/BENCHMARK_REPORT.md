@@ -12,11 +12,11 @@
 
 | Phương pháp Truy hồi | Hit@1 | Hit@3 | Hit@5 | MRR | NDCG@3 | NDCG@5 | Latency (Avg) | Latency (P95) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Baseline 1: Keyword Search (PostgreSQL FTS)** | 60% | **60%** | 60% | **0.600** | **0.593** | 0.593 | 67.2 ms | 63.1 ms |
-| **Baseline 2: Semantic Vector (Gemini Cloud)** | 90% | **98%** | 98% | **0.940** | **0.901** | 0.915 | 470.1 ms | 501 ms |
-| **Baseline 3: Hybrid Search (RRF Cloud)** | **90%** | **98%** | **98%** | **0.940** | **0.901** | **0.915** | **476.3 ms** | **522.7 ms** |
-| *Biến thể 2B: Semantic Vector (Offline Local)* | 76% | 84% | 92% | 0.811 | 0.778 | 0.812 | **60.7 ms** | **65.6 ms** |
-| *Biến thể 3B: Hybrid Search (Offline Local)* | 82% | 86% | 94% | 0.855 | 0.813 | 0.847 | **102.4 ms** | **116.6 ms** |
+| **Baseline 1: Keyword Search (PostgreSQL FTS)** | 60% | **60%** | 60% | **0.600** | **0.593** | 0.593 | 45.3 ms | 51.7 ms |
+| **Baseline 2: Semantic Vector (Gemini Cloud)** | 90% | **98%** | 98% | **0.940** | **0.901** | 0.915 | 454.9 ms | 561.7 ms |
+| **Baseline 3: Hybrid Search (RRF Cloud)** | **90%** | **98%** | **98%** | **0.940** | **0.901** | **0.915** | **468.2 ms** | **607.7 ms** |
+| *Biến thể 2B: Semantic Vector (Offline Local)* | 76% | 84% | 92% | 0.811 | 0.778 | 0.812 | **46.6 ms** | **51.2 ms** |
+| *Biến thể 3B: Hybrid Search (Offline Local)* | 82% | 86% | 94% | 0.855 | 0.813 | 0.847 | **75.4 ms** | **97.5 ms** |
 
 ---
 
@@ -35,8 +35,8 @@
 
 | Tiêu chí | Cloud Gemini API (`text-embedding-004`) | Offline Deterministic (`semantic-projector-768`) |
 | :--- | :---: | :---: |
-| **Độ trễ trung bình (Avg)** | **476.3 ms** | **102.4 ms** *(Nhanh gấp ~4.7 lần)* |
-| **Độ trễ P95 (P95 Latency)** | **522.7 ms** | **116.6 ms** |
+| **Độ trễ trung bình (Avg)** | **468.2 ms** | **75.4 ms** *(Nhanh gấp ~6.2 lần)* |
+| **Độ trễ P95 (P95 Latency)** | **607.7 ms** | **97.5 ms** |
 | **Chi phí gọi API** | Phụ thuộc Token / Request Quota | **0 VNĐ (Chạy 100% in-memory CPU)** |
 | **Sự phụ thuộc Internet** | Yêu cầu kết nối mạng ổn định | **Hoạt động hoàn toàn Offline, Air-gapped, CI/CD tức thì** |
 | **Độ chính xác Hit@3** | **98%** | **86%** |
@@ -109,4 +109,4 @@
 2. **Chứng minh giải quyết Hard Negatives**:
    - Trong nhóm bẫy ngữ nghĩa (Hard Negatives), Semantic đơn lẻ bị giảm độ chính xác do hiện tượng trôi ngữ nghĩa (Semantic Drift), nhưng Hybrid RRF kết hợp tín hiệu từ vựng đã cứu vớt kết quả, đạt NDCG@3 vượt trội.
 3. **Kiến trúc Dual-Tier Embedding (Cloud + Offline)**:
-   - Thiết kế cơ chế Fallback thông minh: Khi mạng chậm hoặc không có internet, hệ thống tự động chuyển sang mô hình Offline Feature Projector 768 chiều với độ trễ **102.4 ms**, đáp ứng chuẩn trải nghiệm người dùng thời gian thực.
+   - Thiết kế cơ chế Fallback thông minh: Khi mạng chậm hoặc không có internet, hệ thống tự động chuyển sang mô hình Offline Feature Projector 768 chiều với độ trễ **75.4 ms**, đáp ứng chuẩn trải nghiệm người dùng thời gian thực.

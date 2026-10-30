@@ -664,6 +664,19 @@ async function runBenchmark() {
   const offlineProvider = new DeterministicSemanticProvider();
   const searchLimit = 10;
 
+  // Warm-up phase: Establish DB pool connections, TLS handshakes, and prime caches
+  console.log('🔄 Đang thực hiện warm-up (kết nối DB pool, bắt tay TLS, nạp cache query planner)...');
+  await pool.query('SELECT 1');
+  const warmupQueries = ['Way Maker', 'Chúa Giê-xu', 'Grace'];
+  for (const wq of warmupQueries) {
+    await searchByKeyword(wq, { limit: searchLimit, eligibilityStatus: 'all' });
+    await searchBySemantic(wq, { limit: searchLimit, eligibilityStatus: 'all' });
+    await searchBySemantic(wq, { limit: searchLimit, eligibilityStatus: 'all', embeddingProvider: offlineProvider });
+    await searchHybrid(wq, { limit: searchLimit, eligibilityStatus: 'all' });
+    await searchHybrid(wq, { limit: searchLimit, eligibilityStatus: 'all', embeddingProvider: offlineProvider });
+  }
+  console.log('✅ Warm-up hoàn tất! Bắt đầu đo kiểm 50 câu query chuẩn hóa...\n');
+
   for (let idx = 0; idx < BENCHMARK_DATASET_50.length; idx++) {
     const testCase = BENCHMARK_DATASET_50[idx];
     process.stdout.write(
@@ -836,6 +849,7 @@ async function runBenchmark() {
   const reportPath = path.join(process.cwd(), 'docs', 'BENCHMARK_REPORT.md');
   fs.writeFileSync(reportPath, reportMd, 'utf-8');
   console.log(`\nĐã tự động cập nhật báo cáo thực nghiệm 50 câu tại: docs/BENCHMARK_REPORT.md`);
+  updateReadmeReport([kwSummary, semCloudSummary, hybCloudSummary, semOffSummary, hybOffSummary]);
 
   await pool.end();
 }
@@ -945,3 +959,26 @@ runBenchmark().catch((err) => {
   console.error('Benchmark execution error:', err);
   process.exit(1);
 });
+
+function updateReadmeReport(summaries: MetricSummary[]): void {
+  const [kw, semCloud, hybCloud, semOff, hybOff] = summaries;
+  const readmePath = path.join(process.cwd(), 'README.md');
+  if (!fs.existsSync(readmePath)) return;
+
+  let readmeContent = fs.readFileSync(readmePath, 'utf-8');
+
+  const newTable = `| Retrieval Method | Hit@1 | Hit@3 | Hit@5 | MRR | NDCG@3 | NDCG@5 | Latency (Avg) | Latency (P95) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Baseline 1: Keyword (PostgreSQL FTS)** | ${kw.hit1Rate.toFixed(1)}% | ${kw.hit3Rate.toFixed(1)}% | ${kw.hit5Rate.toFixed(1)}% | ${kw.mrr.toFixed(3)} | ${kw.ndcg3.toFixed(3)} | ${kw.ndcg5.toFixed(3)} | ${kw.avgLatencyMs.toFixed(1)} ms | ${kw.p95LatencyMs.toFixed(1)} ms |
+| **Baseline 2: Semantic (Gemini Cloud)** | ${semCloud.hit1Rate.toFixed(1)}% | ${semCloud.hit3Rate.toFixed(1)}% | ${semCloud.hit5Rate.toFixed(1)}% | ${semCloud.mrr.toFixed(3)} | ${semCloud.ndcg3.toFixed(3)} | ${semCloud.ndcg5.toFixed(3)} | ${semCloud.avgLatencyMs.toFixed(1)} ms | ${semCloud.p95LatencyMs.toFixed(1)} ms |
+| **Baseline 3: Hybrid (RRF Cloud)** | **${hybCloud.hit1Rate.toFixed(1)}%** | **${hybCloud.hit3Rate.toFixed(1)}%** | **${hybCloud.hit5Rate.toFixed(1)}%** | **${hybCloud.mrr.toFixed(3)}** | **${hybCloud.ndcg3.toFixed(3)}** | **${hybCloud.ndcg5.toFixed(3)}** | ${hybCloud.avgLatencyMs.toFixed(1)} ms | ${hybCloud.p95LatencyMs.toFixed(1)} ms |
+| *Variant 2B: Semantic (Offline Local)* | ${semOff.hit1Rate.toFixed(1)}% | ${semOff.hit3Rate.toFixed(1)}% | ${semOff.hit5Rate.toFixed(1)}% | ${semOff.mrr.toFixed(3)} | ${semOff.ndcg3.toFixed(3)} | ${semOff.ndcg5.toFixed(3)} | ${semOff.avgLatencyMs.toFixed(1)} ms | ${semOff.p95LatencyMs.toFixed(1)} ms |
+| *Variant 3B: Hybrid (Offline Local)* | ${hybOff.hit1Rate.toFixed(1)}% | ${hybOff.hit3Rate.toFixed(1)}% | ${hybOff.hit5Rate.toFixed(1)}% | ${hybOff.mrr.toFixed(3)} | ${hybOff.ndcg3.toFixed(3)} | ${hybOff.ndcg5.toFixed(3)} | ${hybOff.avgLatencyMs.toFixed(1)} ms | ${hybOff.p95LatencyMs.toFixed(1)} ms |`;
+
+  const tableRegex = /\| Retrieval Method \| Hit@1[\s\S]*?\|\s*\*Variant 3B: Hybrid \(Offline Local\)\*.*\|/;
+  if (tableRegex.test(readmeContent)) {
+    readmeContent = readmeContent.replace(tableRegex, newTable);
+    fs.writeFileSync(readmePath, readmeContent, 'utf-8');
+    console.log(`Đã tự động đồng bộ số liệu sang: README.md`);
+  }
+}
