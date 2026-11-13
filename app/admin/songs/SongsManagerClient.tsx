@@ -104,6 +104,8 @@ export default function SongsManagerClient({
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Client-only hydration guard; intentionally flips once after hydration.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 

@@ -181,7 +181,7 @@ export default function SearchPlaygroundClient() {
               <span>Matched {song.matched_evidence.section_label}</span>
             </div>
             <p className="font-sans font-medium whitespace-pre-line text-brand-black/85 text-xs leading-relaxed line-clamp-3">
-              "{song.matched_evidence.lyrics_snippet?.normalize('NFC')}"
+              “{song.matched_evidence.lyrics_snippet?.normalize('NFC')}”
             </p>
           </div>
         ) : (
@@ -516,7 +516,7 @@ export default function SearchPlaygroundClient() {
               Explore AI Song Retrieval
             </h3>
             <p className="text-sm text-brand-black/70 max-w-xl mx-auto mb-6">
-              Enter any sermon topic, scripture passage, or spiritual theme above to test and compare how our search engines retrieve and rank the church's 67 song catalog in real time.
+              Enter any sermon topic, scripture passage, or spiritual theme above to test and compare how our search engines retrieve and rank the church’s 67 song catalog in real time.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto text-left">
               <div className="bg-brand-cream border-2 border-brand-black p-4">

@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "benchmark": "npx tsx --env-file=.env.local scripts/benchmark.ts"
+    "benchmark": "npx tsx --env-file=.env.local scripts/benchmark.ts",
+    "research:test": "vitest run lib/research/e5-distillation/__tests__/protocol.test.ts",
+    "research:validate": "npx tsx scripts/validate_distillation_protocol.ts"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.23",

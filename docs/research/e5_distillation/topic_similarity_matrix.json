@@ -1,0 +1,56 @@
+[
+  {
+    "held_out_id": "T11",
+    "held_out_title": "Holy Spirit as Witness",
+    "held_out_taxonomy": "Holy Spirit",
+    "max_train_match": "T10 (Holy Spirit as Teacher)",
+    "max_similarity": 0.9531,
+    "second_train_match": "T09 (Holy Spirit as Helper)",
+    "second_similarity": 0.9459
+  },
+  {
+    "held_out_id": "T12",
+    "held_out_title": "Holy Spirit as Guide to all Truth",
+    "held_out_taxonomy": "Holy Spirit",
+    "max_train_match": "T09 (Holy Spirit as Helper)",
+    "max_similarity": 0.9366,
+    "second_train_match": "T10 (Holy Spirit as Teacher)",
+    "second_similarity": 0.925
+  },
+  {
+    "held_out_id": "T13",
+    "held_out_title": "Call of Discipleship",
+    "held_out_taxonomy": "Discipleship",
+    "max_train_match": "T03 (Pass it on)",
+    "max_similarity": 0.8929,
+    "second_train_match": "T01 (THE SPIRIT’S POWER)",
+    "second_similarity": 0.8861
+  },
+  {
+    "held_out_id": "T14",
+    "held_out_title": "Cost of Discipleship",
+    "held_out_taxonomy": "Discipleship",
+    "max_train_match": "T01 (THE SPIRIT’S POWER)",
+    "max_similarity": 0.8745,
+    "second_train_match": "T03 (Pass it on)",
+    "second_similarity": 0.8704
+  },
+  {
+    "held_out_id": "T15",
+    "held_out_title": "Command of Discipleship",
+    "held_out_taxonomy": "Discipleship",
+    "max_train_match": "T01 (THE SPIRIT’S POWER)",
+    "max_similarity": 0.8955,
+    "second_train_match": "T03 (Pass it on)",
+    "second_similarity": 0.8882
+  },
+  {
+    "held_out_id": "T16",
+    "held_out_title": "Commission of Discipleship",
+    "held_out_taxonomy": "Discipleship",
+    "max_train_match": "T01 (THE SPIRIT’S POWER)",
+    "max_similarity": 0.8811,
+    "second_train_match": "T03 (Pass it on)",
+    "second_similarity": 0.8765
+  }
+]

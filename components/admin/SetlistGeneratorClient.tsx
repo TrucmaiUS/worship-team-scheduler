@@ -341,7 +341,7 @@ export default function SetlistGeneratorClient() {
                         </div>
 
                         <p className="text-xs sm:text-sm text-brand-black font-medium italic leading-relaxed mb-3 bg-white/70 p-3 border border-pink-200">
-                          "{transitionAfter.prayer_script}"
+                          “{transitionAfter.prayer_script}”
                         </p>
 
                         <div className="text-xs text-brand-black/70">
@@ -381,7 +381,7 @@ export default function SetlistGeneratorClient() {
               </div>
 
               <p className="text-xs sm:text-sm text-brand-black font-serif italic leading-relaxed bg-brand-cream/60 p-4 border-2 border-brand-black/10">
-                "{setlist.closing_prayer}"
+                “{setlist.closing_prayer}”
               </p>
             </div>
           </div>

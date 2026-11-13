@@ -6,6 +6,7 @@ import { Avatar } from '@/components/ui/Avatar';
 import { adminAssignMember, adminRemoveAssignment, adminDeleteUser, adminDeleteService } from './actions';
 import * as Dialog from '@radix-ui/react-dialog';
 import { toast } from 'sonner';
+import { useRouter } from 'next/navigation';
 
 const ROSTER_GROUPS = [
   {
@@ -38,6 +39,7 @@ const ROSTER_GROUPS = [
 ];
 
 export default function AdminDashboardClient({ gridData, allUsers }: any) {
+  const router = useRouter();
   const assignableUsers = allUsers.filter((u: any) => u.role !== 'ADMIN');
   const [activeTab, setActiveTab] = useState<'SCHEDULE' | 'TABLE' | 'MEMBERS'>('SCHEDULE');
   const [modalState, setModalState] = useState<{ open: boolean, serviceId: string, team: string }>({
@@ -327,7 +329,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
                 key={tab.id}
                 onClick={() => {
                   if (tab.id === 'STATISTICS') {
-                    window.location.href = '/admin/statistics';
+                    router.push('/admin/statistics');
                   } else {
                     setActiveTab(tab.id as any);
                   }
@@ -1087,7 +1089,7 @@ export default function AdminDashboardClient({ gridData, allUsers }: any) {
           <Dialog.Content className="fixed left-[50%] top-[50%] z-[80] w-[95vw] max-w-md translate-x-[-50%] translate-y-[-50%] bg-brand-cream border-8 border-brand-black p-8 shadow-[12px_12px_0_0_#FFA6C9] flex flex-col data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] outline-none">
             <Dialog.Title className="editorial-heading text-3xl mb-4 text-brand-red">DELETE EVENT</Dialog.Title>
             <Dialog.Description className="text-base font-bold mb-8">
-              Are you sure you want to delete <span className="text-brand-red font-black">"{deleteEventModal.eventTitle}"</span> ({deleteEventModal.eventDate})? This will permanently remove the event and all assigned roles. This action cannot be undone.
+              Are you sure you want to delete <span className="text-brand-red font-black">“{deleteEventModal.eventTitle}”</span> ({deleteEventModal.eventDate})? This will permanently remove the event and all assigned roles. This action cannot be undone.
             </Dialog.Description>
             <div className="flex justify-end gap-4">
               <Dialog.Close asChild>

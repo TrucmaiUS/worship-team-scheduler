@@ -30,8 +30,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files (real credentials are never committed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -48,3 +49,28 @@ next-env.d.ts
 
 # Uploads
 /public/uploads/
+
+# Local model/runtime caches
+/.cache/
+/.huggingface/
+/.transformers-cache/
+
+# Research execution artifacts that may contain provider output or sealed test data
+/benchmark/distillation/raw_responses/
+/benchmark/distillation/private_external/
+/benchmark/distillation/secrets/
+/benchmark/distillation/checkpoints/
+/benchmark/distillation/logs/
+
+# Training outputs and large model artifacts
+/training/**/checkpoints/
+/training/**/runs/
+/training/**/outputs/
+*.onnx
+*.safetensors
+*.ckpt
+
+# Local credentials and signing material
+*.key
+*.p12
+*.pfx
