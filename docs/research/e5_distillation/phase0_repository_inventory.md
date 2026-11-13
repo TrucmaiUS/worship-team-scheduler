@@ -3,7 +3,7 @@
 **Date:** 13 November 2026
 **Base commit:** `746e13d` (`feat/rag-ai-search`)
 **Working branch:** `codex/e5-distillation-m2`
-**Status:** Stabilization checks complete; scoped checkpoint prepared
+**Status:** Complete; scoped checkpoint `b49e607` created
 
 ## 1. Working-Tree Classification
 
@@ -79,4 +79,8 @@ The checkpoint intentionally excludes the broad `benchmark/` tree, mixed product
 - [x] Secret/network/database-call scan passes.
 - [x] `git diff --check` passes (line-ending warnings only).
 - [x] Exact checkpoint file list reviewed.
-- [x] Scoped checkpoint commit prepared as the final Phase 0 action.
+- [x] Scoped checkpoint commit `b49e607` created.
+
+## 4. Remaining Working Tree
+
+Broad benchmark, production-search, dependency, and analysis changes remain intentionally unstaged/uncommitted. They were preserved in place and must be reviewed as separate ownership groups before any later checkpoint. Phase 0 did not use `git add -A`, reset, clean, stash, or any destructive operation.
