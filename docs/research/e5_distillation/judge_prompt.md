@@ -1,5 +1,5 @@
 # Groq Independent Judge Prompt Specification
-## Phase 2 – Blind Relevance Cross-Validation (Revision 4.1)
+## Phase 2 – Blind Relevance Cross-Validation (Revision 4.2)
 
 **Project:** LLM-Guided Relevance-Supervised Domain Adaptation for Local E5-small
 
@@ -9,7 +9,7 @@
 
 **Candidate model IDs:** `openai/gpt-oss-120b`, `qwen/qwen3.8-27b`
 
-**Prompt version:** `groq-independent-judge-v4.1`
+**Prompt version:** `groq-independent-judge-v4.2`
 
 **Execution status:** Adapter and synthetic two-model smoke test complete; Human Reference v2 ready; no development selection run yet
 
@@ -48,7 +48,9 @@ Mandatory rules:
 7. Scores 2 and 3 require at least one evidence quote. Score 1 may use an empty array. Score 0 must use an empty array.
 8. Score 1 must explain both the partial connection and the missing core intent. It is not automatically a strong negative.
 9. Score 0 must include a concise reason.
-10. Return only JSON that matches the required schema. Do not add prose outside JSON.
+10. Return only one JSON object with exactly the six required fields. Do not rename, omit or add fields, and do not add prose outside JSON.
+
+Required keys are `candidate_alias`, `relevance_score`, `relevance_label`, `evidence_quotes`, `reasoning_summary` and `is_lexical_overlap_only`. Copy the candidate alias exactly. Use only the frozen score-to-label mapping. Alternate keys such as `score`, `label`, `explanation`, `evidence` or `reasoning` are prohibited.
 ```
 
 ## 4. Shared rubric and blind schemas

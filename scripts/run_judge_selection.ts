@@ -21,13 +21,14 @@ const requiredApiKey: string = apiKey;
 const referencePath = path.join(ROOT,
   'benchmark/distillation/human_reference/judge_selection_reference_v2.json');
 const promptPath = path.join(ROOT,
-  'docs/research/e5_distillation/prompts/groq-independent-judge-v4.1.txt');
+  'docs/research/e5_distillation/prompts/groq-independent-judge-v4.2.txt');
 const references = validateJudgeSelectionSet(JSON.parse(fs.readFileSync(referencePath, 'utf8')));
 const systemPrompt = fs.readFileSync(promptPath, 'utf8').replace(/\r\n/gu, '\n').trimEnd();
 const promptSha256 = crypto.createHash('sha256').update(systemPrompt).digest('hex');
 const referenceSha256 = crypto.createHash('sha256').update(fs.readFileSync(referencePath)).digest('hex');
 const createdAtUtc = new Date().toISOString();
-const runId = `judge-selection-v3-${createdAtUtc.replace(/[:.]/gu, '-')}`;
+const preflight = process.argv.includes('--preflight');
+const runId = `judge-selection-v3${preflight ? '-preflight' : ''}-${createdAtUtc.replace(/[:.]/gu, '-')}`;
 const outputDirectory = path.join(ROOT, 'benchmark/distillation/judge_selection_runs', runId);
 if (fs.existsSync(outputDirectory)) throw new Error(`Run directory already exists: ${outputDirectory}`);
 fs.mkdirSync(outputDirectory, { recursive: true });
@@ -37,7 +38,7 @@ const configFor = (modelId: typeof JUDGE_CANDIDATE_MODEL_IDS[number]) => ({
   task: 'label' as const,
   provider: 'groq' as const,
   modelId,
-  promptVersion: 'groq-independent-judge-v4.1',
+  promptVersion: 'groq-independent-judge-v4.2',
   promptSha256,
   allowFallback: false as const,
   maxAttempts: 3,
@@ -82,6 +83,7 @@ async function main(): Promise<void> {
     schemaVersion: 'judge-selection-execution-v3',
     status: 'running',
     runId,
+    mode: preflight ? 'one_pair_per_model_preflight' : 'full_50_pair_comparison',
     createdAtUtc,
     provider: 'groq',
     models: observedModels,
@@ -103,12 +105,13 @@ async function main(): Promise<void> {
     'evidence_quotes', 'evidence_context_supported', 'auditor_notes',
   ]];
 
+  const executionPairs = preflight ? references.slice(0, 1) : references;
   for (const modelId of JUDGE_CANDIDATE_MODEL_IDS) {
     const rawRecords: unknown[] = [];
     const evaluationOutputs: JudgeSelectionOutput[] = [];
     const partialName = `${modelId.replaceAll('/', '__')}.partial.json`;
-    for (let index = 0; index < references.length; index += 1) {
-      const pair = references[index];
+    for (let index = 0; index < executionPairs.length; index += 1) {
+      const pair = executionPairs[index];
       const attempts: GroqJudgeAttemptLog[] = [];
       let result: GroqJudgeResult;
       try {
@@ -160,8 +163,10 @@ async function main(): Promise<void> {
         ]);
       }
       writeJson(partialName, { modelId, completedPairs: index + 1, rawRecords, evaluationOutputs });
-      if ((index + 1) % 5 === 0) console.log(`${modelId}: ${index + 1}/${references.length}`);
-      if (index + 1 < references.length) await pause(6_000);
+      if (preflight || (index + 1) % 5 === 0) {
+        console.log(`${modelId}: ${index + 1}/${executionPairs.length}`);
+      }
+      if (index + 1 < executionPairs.length) await pause(6_000);
     }
     writeJson(`${modelId.replaceAll('/', '__')}_raw.json`, rawRecords);
     writeJson(`${modelId.replaceAll('/', '__')}_evaluation.json`, evaluationOutputs);

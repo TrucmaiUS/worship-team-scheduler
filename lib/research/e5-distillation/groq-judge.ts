@@ -279,6 +279,8 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
         ? 'protocol_validation_failure'
         : error instanceof SyntaxError
           ? 'invalid_json'
+          : error instanceof Error && error.name === 'ZodError'
+            ? 'schema_validation_failure'
           : error instanceof Error && error.name === 'TimeoutError'
             ? 'timeout'
             : 'network_or_runtime_failure';

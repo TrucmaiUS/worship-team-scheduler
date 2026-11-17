@@ -1,0 +1,94 @@
+{
+  "pairId": "P001",
+  "pairIndex": 0,
+  "attempts": [
+    {
+      "provider": "groq",
+      "modelId": "openai/gpt-oss-120b",
+      "attempt": 1,
+      "requestSha256": "5bda2508bc26c592897eefcace4f370528f87d54968c06c6156c41a4744478bc",
+      "responseSha256": "a826cd701f5bfce6964b67f14de471cc1524fffc753696963da91c38c0ed8b8d",
+      "promptSha256": "a9f9cd07b1494080bee54d5134b59204632c93ae2f6919046b1d4b2da0d6f15f",
+      "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+      "httpStatus": 200,
+      "latencyMs": 998,
+      "usage": {
+        "inputTokens": null,
+        "outputTokens": null,
+        "totalTokens": null
+      },
+      "providerRequestId": "req_01m7n5kp9fenvr0krce4ew5jfq",
+      "systemFingerprint": null,
+      "rateLimit": {
+        "requestLimit": "1000",
+        "remainingRequests": "996",
+        "tokenLimit": "8000",
+        "remainingTokens": "7355",
+        "requestReset": "5m45.6s",
+        "tokenReset": "4.837s"
+      },
+      "failureCode": "network_or_runtime_failure",
+      "failureDetail": "[\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"candidate_alias\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  },\n  {\n    \"code\": \"invalid_union\",\n    \"errors\": [\n      [\n        {\n          \"code\": \"invalid_value\",\n          \"values\": [\n            0\n          ],\n          \"path\": [],\n          \"message\": \"Invalid input: expected 0\"\n        }\n      ],\n      [\n        {\n          \"code\": \"invalid_value\",\n          \"values\": [\n            1\n          ],\n          \"path\": [],\n          \"message\": \"Invalid input: expected 1\"\n        }\n      ],\n      [\n        {\n          \"code\": \"invalid_value\",\n          \"values\": [\n            2\n          ],\n          \"path\": [],\n          \"message\": \"Invalid input: expected 2\"\n        }\n      ],\n      [\n        {\n          \"code\": \"invalid_value\",\n          \"values\": [\n            3\n          ],\n          \"path\": [],\n          \"message\": \"Invalid input: expected 3\"\n        }\n      ]\n    ],\n    \"path\": [\n      \"relevance_score\"\n    ],\n    \"message\": \"Invalid input\"\n  },\n  {\n    \"code\": \"invalid_value\",\n    \"values\": [\n      \"Not Relevant\",\n      \"Partially Relevant\",\n      \"Relevant\",\n      \"Highly Relevant\"\n    ],\n    \"path\": [\n      \"relevance_label\"\n    ],\n    \"message\": \"Invalid option: expected one of \\\"Not Relevant\\\"|\\\"Partially Relevant\\\"|\\\"Relevant\\\"|\\\"Highly Relevant\\\"\"\n  },\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"reasoning_summary\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  },\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"is_lexical_overlap_only\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received undefined\"\n  },\n  {\n    \"code\": \"unrecognized_keys\",\n    \"keys\": [\n      \"score\"\n    ],\n    \"path\": [],\n    \"message\": \"Unrecognized key: \\\"score\\\"\"\n  }\n]",
+      "retryable": true
+    },
+    {
+      "provider": "groq",
+      "modelId": "openai/gpt-oss-120b",
+      "attempt": 2,
+      "requestSha256": "5bda2508bc26c592897eefcace4f370528f87d54968c06c6156c41a4744478bc",
+      "responseSha256": "6161d43d06f09ce8071d010caa0c2b6912038f5b140bf5233c01e23449884099",
+      "promptSha256": "a9f9cd07b1494080bee54d5134b59204632c93ae2f6919046b1d4b2da0d6f15f",
+      "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+      "httpStatus": 200,
+      "latencyMs": 993,
+      "usage": {
+        "inputTokens": null,
+        "outputTokens": null,
+        "totalTokens": null
+      },
+      "providerRequestId": "req_01m7n5kqjbeagb7hr2jrtbb02f",
+      "systemFingerprint": null,
+      "rateLimit": {
+        "requestLimit": "1000",
+        "remainingRequests": "995",
+        "tokenLimit": "8000",
+        "remainingTokens": "6545",
+        "requestReset": "7m12s",
+        "tokenReset": "10.912s"
+      },
+      "failureCode": "network_or_runtime_failure",
+      "failureDetail": "[\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"candidate_alias\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  },\n  {\n    \"code\": \"invalid_union\",\n    \"errors\": [\n      [\n        {\n          \"code\": \"invalid_value\",\n          \"values\": [\n            0\n          ],\n          \"path\": [],\n          \"message\": \"Invalid input: expected 0\"\n        }\n      ],\n      [\n        {\n          \"code\": \"invalid_value\",\n          \"values\": [\n            1\n          ],\n          \"path\": [],\n          \"message\": \"Invalid input: expected 1\"\n        }\n      ],\n      [\n        {\n          \"code\": \"invalid_value\",\n          \"values\": [\n            2\n          ],\n          \"path\": [],\n          \"message\": \"Invalid input: expected 2\"\n        }\n      ],\n      [\n        {\n          \"code\": \"invalid_value\",\n          \"values\": [\n            3\n          ],\n          \"path\": [],\n          \"message\": \"Invalid input: expected 3\"\n        }\n      ]\n    ],\n    \"path\": [\n      \"relevance_score\"\n    ],\n    \"message\": \"Invalid input\"\n  },\n  {\n    \"code\": \"invalid_value\",\n    \"values\": [\n      \"Not Relevant\",\n      \"Partially Relevant\",\n      \"Relevant\",\n      \"Highly Relevant\"\n    ],\n    \"path\": [\n      \"relevance_label\"\n    ],\n    \"message\": \"Invalid option: expected one of \\\"Not Relevant\\\"|\\\"Partially Relevant\\\"|\\\"Relevant\\\"|\\\"Highly Relevant\\\"\"\n  },\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"reasoning_summary\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  },\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"is_lexical_overlap_only\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received undefined\"\n  },\n  {\n    \"code\": \"unrecognized_keys\",\n    \"keys\": [\n      \"score\"\n    ],\n    \"path\": [],\n    \"message\": \"Unrecognized key: \\\"score\\\"\"\n  }\n]",
+      "retryable": true
+    },
+    {
+      "provider": "groq",
+      "modelId": "openai/gpt-oss-120b",
+      "attempt": 3,
+      "requestSha256": "5bda2508bc26c592897eefcace4f370528f87d54968c06c6156c41a4744478bc",
+      "responseSha256": "af3baadd30c89ee83789234207ef340d1d4dc5806fd22bc0ee81800551634170",
+      "promptSha256": "a9f9cd07b1494080bee54d5134b59204632c93ae2f6919046b1d4b2da0d6f15f",
+      "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+      "httpStatus": 200,
+      "latencyMs": 1575,
+      "usage": {
+        "inputTokens": null,
+        "outputTokens": null,
+        "totalTokens": null
+      },
+      "providerRequestId": "req_01m7n5ksgaectv3212ygege301",
+      "systemFingerprint": null,
+      "rateLimit": {
+        "requestLimit": "1000",
+        "remainingRequests": "994",
+        "tokenLimit": "8000",
+        "remainingTokens": "6181",
+        "requestReset": "8m38.4s",
+        "tokenReset": "13.642s"
+      },
+      "failureCode": "network_or_runtime_failure",
+      "failureDetail": "[\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"candidate_alias\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  },\n  {\n    \"code\": \"invalid_union\",\n    \"errors\": [\n      [\n        {\n          \"code\": \"invalid_value\",\n          \"values\": [\n            0\n          ],\n          \"path\": [],\n          \"message\": \"Invalid input: expected 0\"\n        }\n      ],\n      [\n        {\n          \"code\": \"invalid_value\",\n          \"values\": [\n            1\n          ],\n          \"path\": [],\n          \"message\": \"Invalid input: expected 1\"\n        }\n      ],\n      [\n        {\n          \"code\": \"invalid_value\",\n          \"values\": [\n            2\n          ],\n          \"path\": [],\n          \"message\": \"Invalid input: expected 2\"\n        }\n      ],\n      [\n        {\n          \"code\": \"invalid_value\",\n          \"values\": [\n            3\n          ],\n          \"path\": [],\n          \"message\": \"Invalid input: expected 3\"\n        }\n      ]\n    ],\n    \"path\": [\n      \"relevance_score\"\n    ],\n    \"message\": \"Invalid input\"\n  },\n  {\n    \"code\": \"invalid_value\",\n    \"values\": [\n      \"Not Relevant\",\n      \"Partially Relevant\",\n      \"Relevant\",\n      \"Highly Relevant\"\n    ],\n    \"path\": [\n      \"relevance_label\"\n    ],\n    \"message\": \"Invalid option: expected one of \\\"Not Relevant\\\"|\\\"Partially Relevant\\\"|\\\"Relevant\\\"|\\\"Highly Relevant\\\"\"\n  },\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"reasoning_summary\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  },\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"is_lexical_overlap_only\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received undefined\"\n  },\n  {\n    \"code\": \"unrecognized_keys\",\n    \"keys\": [\n      \"score\",\n      \"explanation\"\n    ],\n    \"path\": [],\n    \"message\": \"Unrecognized keys: \\\"score\\\", \\\"explanation\\\"\"\n  }\n]",
+      "retryable": true
+    }
+  ],
+  "message": "Groq Judge stopped without fallback after attempt 3: network_or_runtime_failure ([\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"candidate_alias\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  },\n  {\n    \"code\": \"invalid_union\",\n    \"errors\": [\n      [\n        {\n          \"code\": \"invalid_value\",\n          \"values\": [\n            0\n          ],\n          \"path\": [],\n          \"message\": \"Invalid input: expected 0\"\n        }\n      ],\n      [\n        {\n          \"code\": \"invalid_value\",\n          \"values\": [\n            1\n          ],\n          \"path\": [],\n          \"message\": \"Invalid input: expected 1\"\n        }\n      ],\n      [\n        {\n          \"code\": \"invalid_value\",\n          \"values\": [\n            2\n          ],\n          \"path\": [],\n          \"message\": \"Invalid input: expected 2\"\n        }\n      ],\n      [\n        {\n          \"code\": \"invalid_value\",\n          \"values\": [\n            3\n          ],\n          \"path\": [],\n          \"message\": \"Invalid input: expected 3\"\n        }\n      ]\n    ],\n    \"path\": [\n      \"relevance_score\"\n    ],\n    \"message\": \"Invalid input\"\n  },\n  {\n    \"code\": \"invalid_value\",\n    \"values\": [\n      \"Not Relevant\",\n      \"Partially Relevant\",\n      \"Relevant\",\n      \"Highly Relevant\"\n    ],\n    \"path\": [\n      \"relevance_label\"\n    ],\n    \"message\": \"Invalid option: expected one of \\\"Not Relevant\\\"|\\\"Partially Relevant\\\"|\\\"Relevant\\\"|\\\"Highly Relevant\\\"\"\n  },\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"reasoning_summary\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  },\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"is_lexical_overlap_only\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received undefined\"\n  },\n  {\n    \"code\": \"unrecognized_keys\",\n    \"keys\": [\n      \"score\",\n      \"explanation\"\n    ],\n    \"path\": [],\n    \"message\": \"Unrecognized keys: \\\"score\\\", \\\"explanation\\\"\"\n  }\n])."
+}

@@ -16,6 +16,7 @@
     "research:judge:smoke": "npx tsx --env-file=.env.local scripts/groq_judge_smoke.ts",
     "research:judge:smoke:live": "npx tsx --env-file=.env.local scripts/groq_judge_smoke.ts --live",
     "research:judge:run-selection": "npx tsx --env-file=.env.local scripts/run_judge_selection.ts",
+    "research:judge:preflight": "npx tsx --env-file=.env.local scripts/run_judge_selection.ts --preflight",
     "research:judge:evaluate": "npx tsx scripts/evaluate_judge_selection.ts"
   },
   "dependencies": {
