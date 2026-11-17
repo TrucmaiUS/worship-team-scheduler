@@ -42,7 +42,7 @@ const configFor = (modelId: typeof JUDGE_CANDIDATE_MODEL_IDS[number]) => ({
   promptSha256,
   allowFallback: false as const,
   maxAttempts: 3,
-  maxOutputTokens: 1024,
+  maxOutputTokens: 900,
   timeoutMs: 30_000,
   responseSchemaSha256: groqJudgeResponseSchemaSha256(),
   responseFormat: 'json_object' as const,

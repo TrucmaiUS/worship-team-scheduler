@@ -1,0 +1,5 @@
+{
+  "status": "FAILED",
+  "failedAtUtc": "2026-11-17T16:44:59.693Z",
+  "message": "Groq Judge stopped without fallback after attempt 3: http_429 ({\"message\":\"Request too large for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Requested 1024. The request's expected output tokens exceed the enforced limit; reduce max_tokens (or the request's expected output) and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"})."
+}

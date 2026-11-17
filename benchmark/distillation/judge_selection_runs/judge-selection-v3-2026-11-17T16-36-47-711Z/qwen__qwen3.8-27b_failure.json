@@ -1,0 +1,94 @@
+{
+  "pairId": "P006",
+  "pairIndex": 5,
+  "attempts": [
+    {
+      "provider": "groq",
+      "modelId": "qwen/qwen3.8-27b",
+      "attempt": 1,
+      "requestSha256": "7bbf4962a5e51188d4eddf4013b7164820ba65e520168eea919f8c98b87c8580",
+      "responseSha256": "35c5a5e057ec7d5ca20b9b83fceba0dca7beb97dc0890d1033d27eae5ef57402",
+      "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+      "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+      "httpStatus": 429,
+      "latencyMs": 275,
+      "usage": {
+        "inputTokens": null,
+        "outputTokens": null,
+        "totalTokens": null
+      },
+      "providerRequestId": "req_01m7n6ahpbe00v6mvrk8s1m2ch",
+      "systemFingerprint": null,
+      "rateLimit": {
+        "requestLimit": "1000",
+        "remainingRequests": "994",
+        "tokenLimit": "8000",
+        "remainingTokens": "7137",
+        "requestReset": "8m38.4s",
+        "tokenReset": "51.78s"
+      },
+      "failureCode": "http_429",
+      "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 863, Requested 649. Please try again in 30.72s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
+      "retryable": true
+    },
+    {
+      "provider": "groq",
+      "modelId": "qwen/qwen3.8-27b",
+      "attempt": 2,
+      "requestSha256": "7bbf4962a5e51188d4eddf4013b7164820ba65e520168eea919f8c98b87c8580",
+      "responseSha256": "1d1cb91ba7d6cd4362de51ba85459bda5de27ac79b4371c9d888752bc84d27c1",
+      "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+      "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+      "httpStatus": 429,
+      "latencyMs": 303,
+      "usage": {
+        "inputTokens": null,
+        "outputTokens": null,
+        "totalTokens": null
+      },
+      "providerRequestId": "req_01m7n6bf8me1g9sdk4dwjda4te",
+      "systemFingerprint": null,
+      "rateLimit": {
+        "requestLimit": "1000",
+        "remainingRequests": "994",
+        "tokenLimit": "8000",
+        "remainingTokens": "7640",
+        "requestReset": "8m38.4s",
+        "tokenReset": "21.599s"
+      },
+      "failureCode": "http_429",
+      "failureDetail": "{\"message\":\"Request too large for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Requested 1024. The request's expected output tokens exceed the enforced limit; reduce max_tokens (or the request's expected output) and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
+      "retryable": true
+    },
+    {
+      "provider": "groq",
+      "modelId": "qwen/qwen3.8-27b",
+      "attempt": 3,
+      "requestSha256": "7bbf4962a5e51188d4eddf4013b7164820ba65e520168eea919f8c98b87c8580",
+      "responseSha256": "1d1cb91ba7d6cd4362de51ba85459bda5de27ac79b4371c9d888752bc84d27c1",
+      "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+      "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+      "httpStatus": 429,
+      "latencyMs": 196,
+      "usage": {
+        "inputTokens": null,
+        "outputTokens": null,
+        "totalTokens": null
+      },
+      "providerRequestId": "req_01m7n6bge4eb5v2bjre7qjnrrc",
+      "systemFingerprint": null,
+      "rateLimit": {
+        "requestLimit": "1000",
+        "remainingRequests": "994",
+        "tokenLimit": "8000",
+        "remainingTokens": "7660",
+        "requestReset": "8m38.4s",
+        "tokenReset": "20.4s"
+      },
+      "failureCode": "http_429",
+      "failureDetail": "{\"message\":\"Request too large for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Requested 1024. The request's expected output tokens exceed the enforced limit; reduce max_tokens (or the request's expected output) and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
+      "retryable": true
+    }
+  ],
+  "message": "Groq Judge stopped without fallback after attempt 3: http_429 ({\"message\":\"Request too large for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Requested 1024. The request's expected output tokens exceed the enforced limit; reduce max_tokens (or the request's expected output) and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"})."
+}
