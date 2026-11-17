@@ -1,0 +1,52 @@
+[
+  {
+    "pairId": "P001",
+    "output": {
+      "candidate_alias": "CANDIDATE_001",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics speak of God's invitation and waiting, offering praise, but lack explicit reference to trials or spiritual warfare central to the query.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "bdbc121aee0614adf89664cf58e79dd4a7a2c726d237172f3b869d86ed34e27a",
+        "responseSha256": "6fb790413071ad16bc6dae281af8cb4313742a7d18cbd1517dddc9e320245aa3",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 916,
+        "usage": {
+          "inputTokens": 621,
+          "outputTokens": 198,
+          "totalTokens": 819
+        },
+        "providerRequestId": "chatcmpl-60a57a39-5a82-479d-bd91-0c7f8e70b4eb",
+        "systemFingerprint": "fp_87b3c396db",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "993",
+          "tokenLimit": "8000",
+          "remainingTokens": "7149",
+          "requestReset": "10m4.8s",
+          "tokenReset": "6.382s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  }
+]

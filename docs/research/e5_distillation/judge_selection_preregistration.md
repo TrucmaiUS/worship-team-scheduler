@@ -31,6 +31,8 @@ Both candidates receive identical pair order, rubric, prompt, input, JSON mode, 
 
 The initial v2 execution attempt used provider-side strict JSON Schema. GPT-OSS completed 50 pairs, but Groq returned HTTP 400 for Qwen because the current Models API advertises `json_mode` but not `structured_outputs` for `qwen/qwen3.8-27b`. No v2 comparison or selection was performed. Version 3 therefore uses the strongest response format currently shared by both exact models (`json_object`) and applies the same strict Zod/evidence validation locally. Both candidates must be rerun under v3; v2 GPT-OSS outputs are not mixed into the comparison.
 
+The first v3 preflight exposed missing field names in the prompt, so prompt v4.2 makes the six-key JSON contract explicit. A subsequent Qwen preflight returned an empty provider `failed_generation` at the 512-token cap. Before any complete v3 run, the shared cap was raised to 1024 for both candidates and the preflight expanded to the first three frozen pairs.
+
 ## Metrics
 
 Report exact counts and denominators plus:

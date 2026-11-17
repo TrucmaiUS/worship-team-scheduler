@@ -42,7 +42,7 @@ const configFor = (modelId: typeof JUDGE_CANDIDATE_MODEL_IDS[number]) => ({
   promptSha256,
   allowFallback: false as const,
   maxAttempts: 3,
-  maxOutputTokens: 512,
+  maxOutputTokens: 1024,
   timeoutMs: 30_000,
   responseSchemaSha256: groqJudgeResponseSchemaSha256(),
   responseFormat: 'json_object' as const,
@@ -105,7 +105,7 @@ async function main(): Promise<void> {
     'evidence_quotes', 'evidence_context_supported', 'auditor_notes',
   ]];
 
-  const executionPairs = preflight ? references.slice(0, 1) : references;
+  const executionPairs = preflight ? references.slice(0, 3) : references;
   for (const modelId of JUDGE_CANDIDATE_MODEL_IDS) {
     const rawRecords: unknown[] = [];
     const evaluationOutputs: JudgeSelectionOutput[] = [];

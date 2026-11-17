@@ -1,0 +1,15 @@
+[
+  {
+    "pairId": "P001",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 621,
+    "outputTokens": 198,
+    "latencyMs": 916,
+    "failureCode": null
+  }
+]
