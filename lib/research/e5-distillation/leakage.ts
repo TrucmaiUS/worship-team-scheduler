@@ -16,6 +16,7 @@ export interface LeakageAuditInput {
   references: ReferenceText[];
   frozenE5CosineByReferenceId?: Readonly<Record<string, number>>;
   heldOutIntentFlag?: boolean;
+  requiresHumanReview?: boolean;
   requireSemanticCheck?: boolean;
   thresholds?: Partial<LeakageThresholds>;
 }
@@ -125,6 +126,7 @@ export function auditQueryLeakage(input: LeakageAuditInput): LeakageAuditResult 
   const maxFrozenE5Cosine =
     suppliedCosines.length > 0 ? Math.max(...suppliedCosines) : null;
   const heldOutIntentFlag = input.heldOutIntentFlag ?? false;
+  const requiresHumanReview = input.requiresHumanReview ?? false;
   const requireSemanticCheck = input.requireSemanticCheck ?? true;
   const reasons: string[] = [];
 
@@ -160,14 +162,16 @@ export function auditQueryLeakage(input: LeakageAuditInput): LeakageAuditResult 
   let decision: LeakageAuditResult['decision'];
   if (reasons.some((reason) => rejectReasons.has(reason))) {
     decision = 'rejected';
-  } else if (maxFrozenE5Cosine === null && requireSemanticCheck) {
+  } else if (requireSemanticCheck && suppliedCosines.length !== comparisons.length) {
     reasons.push('semantic_check_missing');
     decision = 'incomplete';
-  } else if (
+  } else if (requiresHumanReview || (
     maxFrozenE5Cosine !== null &&
     maxFrozenE5Cosine >= thresholds.reviewFrozenE5CosineAtOrAbove
-  ) {
-    reasons.push('frozen_e5_cosine_requires_human_review');
+  )) {
+    reasons.push(requiresHumanReview
+      ? 'held_out_vocabulary_requires_human_review'
+      : 'frozen_e5_cosine_requires_human_review');
     decision = 'human_review';
   } else {
     decision = 'passed';

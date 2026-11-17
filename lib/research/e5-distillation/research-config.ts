@@ -18,27 +18,39 @@ const ExactModelIdSchema = z.string().min(3).superRefine((value, context) => {
 
 export const PinnedProviderConfigSchema = z
   .object({
-    role: z.enum(['gemini_teacher', 'gpt_independent_judge']),
-    provider: z.enum(['google', 'openai']),
+    role: z.enum(['gemini_teacher', 'independent_judge', 'gpt_independent_judge']),
+    task: z.enum(['generation', 'label']),
+    provider: z.enum(['google', 'groq', 'openai']),
     modelId: ExactModelIdSchema,
     promptVersion: z.string().min(1),
     promptSha256: z.string().regex(/^[a-f0-9]{64}$/iu),
     allowFallback: z.literal(false),
     maxAttempts: z.number().int().min(1).max(5),
-    temperature: z.number().min(0).max(2),
+    maxOutputTokens: z.number().int().min(1).max(65536),
+    timeoutMs: z.number().int().min(1000).max(300000),
+    responseSchemaSha256: z.string().regex(/^[a-f0-9]{64}$/iu),
+    temperature: z.number().min(0).max(2).optional(),
     topP: z.number().min(0).max(1).optional(),
     seed: z.number().int().optional(),
+    reasoningEffort: z.enum(['none', 'low', 'medium', 'high']).optional(),
   })
   .strict()
   .superRefine((config, context) => {
-    const expectedProvider =
-      config.role === 'gemini_teacher' ? 'google' : 'openai';
-    if (config.provider !== expectedProvider) {
+    const providerAllowed = config.role === 'gemini_teacher'
+      ? config.provider === 'google'
+      : config.role === 'independent_judge'
+        ? config.provider === 'groq'
+        : config.provider === 'openai';
+    if (!providerAllowed) {
       context.addIssue({
         code: 'custom',
         path: ['provider'],
-        message: `${config.role} must use provider ${expectedProvider}.`,
+        message: `${config.role} is not compatible with provider ${config.provider}.`,
       });
+    }
+    if (config.role !== 'gemini_teacher' && config.task !== 'label') {
+      context.addIssue({ code: 'custom', path: ['task'],
+        message: 'The independent Judge may label only.' });
     }
   });
 
@@ -62,7 +74,7 @@ export function parsePinnedProviderConfig(input: unknown): PinnedProviderConfig 
 }
 
 export interface ObservedProviderIdentity {
-  provider: 'google' | 'openai';
+  provider: 'google' | 'groq' | 'openai';
   modelId: string;
 }
 

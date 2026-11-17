@@ -1,0 +1,578 @@
+﻿pair_id,source_query_id,source_topic_id,split,input_language,query_group,query_type,query_source_type,query_difficulty,query_source_song_id,query_source_excerpt,query_source_notes,query,section_type,section_lyrics,relevance_score,relevance_label,evidence_quotes,reasoning_summary,is_lexical_overlap_only,label_source,evidence_source,reviewer_1_score,reviewer_1_evidence_quotes,reviewer_1_rationale,reviewer_2_score,reviewer_2_evidence_quotes,reviewer_2_rationale,adjudicator_final_grade,adjudicator_evidence_quotes,adjudicator_rationale,adjudicator_notes,absolute_reviewer_grade_difference
+P001,G4-Q006,,development_only,vi,G4,Cross-language ambiguity,Benchmark-authored,Hard,8e9e95b9-1bc1-40bf-8fc5-cafd82417d97,Raise A Hallelujah and See A Victory,Spiritual warfare through worship cross-matching multiple victory songs,Ngợi khen Chúa giữa thử thách và cuộc chiến thuộc linh,verse,"Ngài mời gọi con đến đây
+
+Bày tiệc Ngài chào đón
+
+Mọi sự nay sẵn sàng
+
+Nhà Chúa luôn đợi chờ
+
+Vượt mọi ranh giới kia
+
+Và mọi miền xa xôi
+
+Tìm người đang vỡ tan
+
+Vì nhà Chúa luôn đợi chờ",0,Not Relevant,[],"Reviewer 1: Lời bài hát nói về nhà Chúa rộng mở đón nhận những người lạc mất, không đề cập đến việc ngợi khen Chúa giữa thử thách hay cuộc chiến thuộc linh.
+Reviewer 2: Lời bài hát nói về việc Chúa mời gọi con cái đến và dự phần vào nhà Chúa, dù cho họ đang là ai, không đề cập đến sự ngợi khen Chúa hay cuộc chiến thuộc linh",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,0,[],"Lời bài hát nói về nhà Chúa rộng mở đón nhận những người lạc mất, không đề cập đến việc ngợi khen Chúa giữa thử thách hay cuộc chiến thuộc linh.",0,[],"Lời bài hát nói về việc Chúa mời gọi con cái đến và dự phần vào nhà Chúa, dù cho họ đang là ai, không đề cập đến sự ngợi khen Chúa hay cuộc chiến thuộc linh",,[],,,0
+P002,G2-Q036,T10,development_only,en,G2,Natural-language Intent,Benchmark-authored,Hard,,,Authored intent for T10,Find songs about the Holy Spirit teaching us and reminding us of the words and teachings of Jesus.,verse,"Bọn chúng reo hò, cười chê Chúa Con
+
+Họ đóng đinh Ngài, với tiếng reo vang
+
+Lằn roi trên lưng, nhuộm đong huyết Chúa
+
+Chúa vẫn vui lòng, chết thay cho con",0,Not Relevant,[],"Reviewer 1: Đoạn lời nhấn mạnh sự hy sinh và cứu chuộc của Chúa Giê-xu, không đề cập đến việc Đức Thánh Linh dạy dỗ hay nhắc nhở lời Ngài.
+Reviewer 2: Lời bài hát nói về sự chết và sự cứu rỗi của Chúa Giê-su khi Ngài chịu khổ và đau đớn trên thập tự giá, không nói về công việc của Đức Thánh Linh hay sự dạy dỗ về Chúa Giê-su",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,0,[],"Đoạn lời nhấn mạnh sự hy sinh và cứu chuộc của Chúa Giê-xu, không đề cập đến việc Đức Thánh Linh dạy dỗ hay nhắc nhở lời Ngài.",0,[],"Lời bài hát nói về sự chết và sự cứu rỗi của Chúa Giê-su khi Ngài chịu khổ và đau đớn trên thập tự giá, không nói về công việc của Đức Thánh Linh hay sự dạy dỗ về Chúa Giê-su",,[],,,0
+P003,G4-Q012,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,03df92ed-47d0-4162-98db-a2d04c00ac4f,"Broad atonement theme across Nothing But The Blood, Beautiful Love, Carry My Cross, Living Hope",Broad atonement query with multiple relevant cross-centered hymns,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",bridge,"Lời mời từ góc phố nhỏ
+
+Chạy qua muôn miền xa
+
+Hãy cứ đến đây
+
+Dù cho con có chưa vẹn toàn",0,Not Relevant,[],"Đoạn lời đang nhấn mạnh kêu gọi dự phần vào nhà Chúa, không nói gì về thập tự giá, sự cứu chuộc hay huyết Chúa Giê-xu",,third_party_adjudication,final_adjudicator_decision,1,"[""Hãy cứ đến đây\n\nDù cho con có chưa vẹn toàn""]","Đoạn lời nhấn mạnh sự kêu gọi trở thành con cái Chúa dù chưa hoàn hảo, nhưng không nhấn mạnh về sự Cứu Chuộc và huyết Chúa",0,[],"Lời bài hát nói về lời mời gọi đến nhà Chúa, lời mời vang vọng từ góc phố nhỏ đến khắc mọi nơi, bất kể con dân đang ở bao xa; không đề cập đến thập tự giá, sự cứu chuộc và Chúa Giê-su",0,[],"Đoạn lời đang nhấn mạnh kêu gọi dự phần vào nhà Chúa, không nói gì về thập tự giá, sự cứu chuộc hay huyết Chúa Giê-xu",,1
+P004,G2-Q029,T03,development_only,en,G2,Natural-language Intent,Benchmark-authored,Hard,,,Authored intent for T03,"Find songs about passing on faith, discipling others, and equipping future generations to continue God's work.",bridge,"Con sẽ thấy một ngày
+
+Lời Chúa được mang đi xa muôn nơi trên đất này
+
+Và khi Chúa kêu gọi
+
+Con sẽ nghe theo",1,Slightly Relevant,"[""Và khi Chúa kêu gọi\n\nCon sẽ nghe theo"", ""Con sẽ thấy một ngày\nLời Chúa được mang đi xa muôn nơi trên đất này""]","Reviewer 1: Lời bài hát nói về sự đáp lời khi Chúa kêu gọi nhưng chưa thể hiện được sự môn đồ hóa, trang bị cho thế hệ tiếp theo
+Reviewer 2: Lời bài hát có đề cập đến việc bước đi trong đức tin, niềm hy vọng vào sự rao giảng và lan truyền Lời Chúa, cũng như sự vâng phục. Tuy nhiên, bài hát chưa đề cập trực tiếp đến việc môn đồ hóa hay việc truyền đức tin cho các thế hệ tiếp theo.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,1,"[""Và khi Chúa kêu gọi\n\nCon sẽ nghe theo""]","Lời bài hát nói về sự đáp lời khi Chúa kêu gọi nhưng chưa thể hiện được sự môn đồ hóa, trang bị cho thế hệ tiếp theo",1,"[""Con sẽ thấy một ngày\nLời Chúa được mang đi xa muôn nơi trên đất này""]","Lời bài hát có đề cập đến việc bước đi trong đức tin, niềm hy vọng vào sự rao giảng và lan truyền Lời Chúa, cũng như sự vâng phục. Tuy nhiên, bài hát chưa đề cập trực tiếp đến việc môn đồ hóa hay việc truyền đức tin cho các thế hệ tiếp theo.",,[],,,0
+P005,G4-Q005,,development_only,vi,G4,Cross-language ambiguity,Benchmark-authored,Hard,41a0e027-789d-4ca9-b0a8-e1dcdf76772e,A Little Fire (Burn Brighter) and Holy Spirit / Rest On Us,Vietnamese spiritual metaphor mapping to fire themes and Holy Spirit songs,Thắp lên ngọn lửa đức tin,verse,"Linh Thánh sẽ đến
+
+Trong ngọn lửa và gió cuốn
+
+Tâm linh con nơi đây
+
+Nguyện mở đón Chúa đến
+
+Hãy đến trên con
+
+Hãy đến trên con",1,Slightly Relevant,"[""Linh Thánh sẽ đến\n\nTrong ngọn lửa và gió cuốn\n\nTâm linh con nơi đây\n\nNguyện mở đón Chúa đến""]","Lời bài hát có đề cập đến việc mời gọi Đức Thánh Linh đến tác động trên tâm linh và tấm lòng. Nội dung này có thể liên hệ gián tiếp đến việc khơi dậy ngọn lửa đức tin, nhưng bài hát chưa đề cập trực tiếp đến đức tin mà chủ yếu tập trung vào việc mở lòng đón nhận sự hiện diện và công việc của Đức Thánh Linh.",,third_party_adjudication,final_adjudicator_decision,2,"[""Linh Thánh sẽ đến\n\nTrong ngọn lửa và gió cuốn\n\nTâm linh con nơi đây\n\nNguyện mở đón Chúa đến\n\nHãy đến trên con\n\nHãy đến trên con""]","Cụm từ ""Nguyện mở đón Chúa đến"" thể hiện sự mở lòng đón nhận Đức Thánh Linh, phù hợp với chủ đề làm mới đời sống đức tin. Tuy nhiên, đoạn lời chưa trực tiếp nói về việc thắp lên ngọn lửa đức tin.",1,"[""Linh Thánh sẽ đến\n\nTrong ngọn lửa và gió cuốn\n\nTâm linh con nơi đây\n\nNguyện mở đón Chúa đến""]","Lời bài hát có đề cập đến việc mời gọi Đức Thánh Linh đến tác động trên tâm linh và tấm lòng. Nội dung này có thể liên hệ gián tiếp đến việc khơi dậy ngọn lửa đức tin, nhưng bài hát chưa đề cập trực tiếp đến đức tin mà chủ yếu tập trung vào việc mở lòng đón nhận sự hiện diện và công việc của Đức Thánh Linh.",1,"[""Linh Thánh sẽ đến\n\nTrong ngọn lửa và gió cuốn\n\nTâm linh con nơi đây\n\nNguyện mở đón Chúa đến""]","Lời bài hát có đề cập đến việc mời gọi Đức Thánh Linh đến tác động trên tâm linh và tấm lòng. Nội dung này có thể liên hệ gián tiếp đến việc khơi dậy ngọn lửa đức tin, nhưng bài hát chưa đề cập trực tiếp đến đức tin mà chủ yếu tập trung vào việc mở lòng đón nhận sự hiện diện và công việc của Đức Thánh Linh.",,1
+P006,G2-Q031,T05,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T05,"Find songs about our identity in Christ and how God defines who we are regardless of our past, failures, or doubts.",verse,"Ngài phá vỡ mọi gôm cùm
+
+Cả cái chết đầu phục Ngài
+
+Quý báu, ân điển Cha muôn đời
+
+
+
+Bằng huyết Chúa nên chúng ta
+
+Được xứng danh con của Cha
+
+Quý báu, ân điển Cha muôn đời
+
+Mãi mãi con được về bên Cha 
+
+Trong Chúa, con chiến thắng thế gian.",2,Relevant,"[""Bằng huyết Chúa nên chúng ta\n\nĐược xứng danh con của Cha\n\nQuý báu, ân điển Cha muôn đời""]","Lời bài hát khẳng định danh phận của chúng ta là con cái Đức Chúa Trời, bất kể quá khứ như thế nào, đồng thời nhấn mạnh sự cứu rỗi thông qua huyết Chúa. Tuy nhiên, nội dung chủ yếu tập trung vào sự cứu chuộc và danh phận mới trong Chúa, chưa triển khai sâu hơn về cách Chúa định nghĩa chúng ta.",,third_party_adjudication,final_adjudicator_decision,3,"[""Bằng huyết Chúa nên chúng ta\n\nĐược xứng danh con của Cha\n\nQuý báu, ân điển Cha muôn đời\n\nMãi mãi con được về bên Cha\n\nTrong Chúa, con chiến thắng thế gian.""]","Cụm từ ""Được xứng danh con của Cha"" thể hiện danh phận làm con Đức Chúa Trời nhờ huyết Chúa Giê-xu, phù hợp trực tiếp với chủ đề danh phận của chúng ta trong Đấng Christ. ""Quý báu ân điển Cha muôn đời"" có thể suy ra được ân điển Ngài tha thứ tội lỗi, quá khứ của chúng ta",2,"[""Bằng huyết Chúa nên chúng ta\n\nĐược xứng danh con của Cha\n\nQuý báu, ân điển Cha muôn đời""]","Lời bài hát khẳng định danh phận của chúng ta là con cái Đức Chúa Trời, bất kể quá khứ như thế nào, đồng thời nhấn mạnh sự cứu rỗi thông qua huyết Chúa. Tuy nhiên, nội dung chủ yếu tập trung vào sự cứu chuộc và danh phận mới trong Chúa, chưa trin khai sâu hơn về cách Chúa định nghĩa chúng ta;.",2,"[""Bằng huyết Chúa nên chúng ta\n\nĐược xứng danh con của Cha\n\nQuý báu, ân điển Cha muôn đời""]","Lời bài hát khẳng định danh phận của chúng ta là con cái Đức Chúa Trời, bất kể quá khứ như thế nào, đồng thời nhấn mạnh sự cứu rỗi thông qua huyết Chúa. Tuy nhiên, nội dung chủ yếu tập trung vào sự cứu chuộc và danh phận mới trong Chúa, chưa triển khai sâu hơn về cách Chúa định nghĩa chúng ta.",,1
+P007,G2-Q027,T01,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T01,Find worship songs about the power of the Holy Spirit working in and through believers.,verse,"Bọn chúng reo hò, cười chê Chúa Con
+
+Họ đóng đinh Ngài, với tiếng reo vang
+
+Lằn roi trên lưng, nhuộm đong huyết Chúa
+
+Chúa vẫn vui lòng, chết thay cho con",0,Not Relevant,[],"Reviewer 1: Đoạn lời nhấn mạnh sự chịu khổ và hy sinh của Chúa Giê-xu trên thập tự giá, không đề cập đến năng quyền Đức Thánh Linh vận hành trong đời sống tín hữu.
+Reviewer 2: Lời bài hát nói về sự chết và sự cứu rỗi của Chúa Giê-su khi Ngài chịu khổ và đau đớn trên thập tự giá, không nói về công việc của Đức Thánh Linh hay sự dạy dỗ về Chúa Giê-su",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,0,[],"Đoạn lời nhấn mạnh sự chịu khổ và hy sinh của Chúa Giê-xu trên thập tự giá, không đề cập đến năng quyền Đức Thánh Linh vận hành trong đời sống tín hữu.",0,[],"Lời bài hát nói về sự chết và sự cứu rỗi của Chúa Giê-su khi Ngài chịu khổ và đau đớn trên thập tự giá, không nói về công việc của Đức Thánh Linh hay sự dạy dỗ về Chúa Giê-su",,[],,,0
+P008,G2-Q033,T07,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T07,Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.,verse,"Nhục ô quá khứ khiến con xa Ngài
+
+Tình yêu nơi Chúa vẫn không lay dời
+
+Thật là vô giá, Thánh ân Cha ban
+
+Chẳng có chi đong được",0,Not Relevant,[],"Reviewer 1: Đoạn lời cho thấy tình yêu của Chúa là vô điều kiện, không nói gì về việc chúng ta bước đi theo Chúa và để Đức Thánh Linh hướng dẫn
+Reviewer 2: Lời bài hát tập trung nói về tình yêu của Chúa dành cho con cái Ngài, ngay cả khi họ còn nhiều tội lỗi. Tuy nhiên, bài hát không đề cập đến việc bước đi theo Chúa hay vâng theo sự hướng dẫn của Đức Thánh Linh để tăng trưởng và trưởng thành trong đức tin.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,0,[],"Đoạn lời cho thấy tình yêu của Chúa là vô điều kiện, không nói gì về việc chúng ta bước đi theo Chúa và để Đức Thánh Linh hướng dẫn",0,[],"Lời bài hát tập trung nói về tình yêu của Chúa dành cho con cái Ngài, ngay cả khi họ còn nhiều tội lỗi. Tuy nhiên, bài hát không đề cập đến việc bước đi theo Chúa hay vâng theo sự hướng dẫn của Đức Thánh Linh để tăng trưởng và trưởng thành trong đức tin.",,[],,,0
+P009,G2-Q032,T06,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T06,"Find songs about belonging to God's family, experiencing His love, and walking together as a community of faith.",verse,"Tận sâu bên dưới của
+
+Những lo lắng vẫn cứ luôn bám lấy con
+
+Là khao khát có được
+
+Sự bình an chỉ có trong Ngài
+
+Điều ấy sẽ lấy đi
+
+Mọi thiếu sót, mọi điều gây cớ nghi ngờ
+
+Vì Ngài ở bên con
+
+Tâm linh con như được về nhà",1,Slightly Relevant,"[""Vì Ngài ở bên con\n\nTâm linh con như được về nhà""]","Cụm ""Tâm linh con như được về nhà"" thể hiện sự thuộc về, sự bình an khi ở bên Chúa. Tuy nhiên, bài hát không đề cập đến gia đình thuộc linh hay sự gắn kết, nâng đỡ lẫn nhau trong cộng đồng đức tin.",,third_party_adjudication,final_adjudicator_decision,2,"[""Vì Ngài ở bên con\n\nTâm linh con như được về nhà""]","Cụm từ ""Tâm linh con như được về nhà"" thể hiện cảm giác bình an và thuộc về khi có Chúa ở bên, phù hợp với chủ đề được thuộc về gia đình Chúa. Tuy nhiên, đoạn lời chưa đề cập đến sự hiệp một và đồng hành trong cộng đồng đức tin.",0,[],"Lời bài hát nói về một người tìm thấy sự bình an trong Chúa giữa những lo lắng và bất an. Tuy nhiên, bài hát không đề cập đến gia đình thuộc linh hay sự gắn kết, nâng đỡ lẫn nhau trong cộng đồng đức tin.",1,"[""Vì Ngài ở bên con\n\nTâm linh con như được về nhà""]","Cụm ""Tâm linh con như được về nhà"" thể hiện sự thuộc về, sự bình an khi ở bên Chúa. Tuy nhiên, bài hát không đề cập đến gia đình thuộc linh hay sự gắn kết, nâng đỡ lẫn nhau trong cộng đồng đức tin.",,2
+P010,G2-Q030,T04,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T04,"Find worship songs that express love through action, serving others, and demonstrating God's love in everyday life.",verse,"Ngài tìm con trong đêm tối tuyệt vọng
+
+Ngài ban cho con tương lai, hy vọng
+
+Tình yêu Ngài cao lớn thay
+
+Dắt đưa con khỏi tối tăm Vào ánh sáng
+
+
+
+Mắt tối tăm nay đã thấy được
+
+Lòng thương xót Ngài cho con tự do
+
+Ân huệ Ngài cao lớn thay
+
+Tình yêu Ngài đến với con
+
+Giờ con ca vang",0,Not Relevant,[],"Reviewer 1: Đoạn lời không dạy về việc bày tỏ tình yêu qua hành động, phục vụ người khác trong đời sống mà đang thể hiện về tình yêu Chúa to lớn
+Reviewer 2: Lời bài hát nói về việc Chúa tìm kiếm con cái Ngài và bày tỏ tình yêu, ban cho họ tương lai và hy vọng, giúp một người bước ra khỏi bóng tối để tìm thấy ánh sáng. Tuy nhiên, bài hát không đề cập đến việc chủ động lan tỏa tình yêu thương của Chúa đến người khác thông qua hành động quan tâm, giúp đỡ và phục vụ.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,0,[],"Đoạn lời không dạy về việc bày tỏ tình yêu qua hành động, phục vụ người khác trong đời sống mà đang thể hiện về tình yêu Chúa to lớn",0,[],"Lời bài hát nói về việc Chúa tìm kiếm con cái Ngài và bày tỏ tình yêu, ban cho họ tương lai và hy vọng, giúp một người bước ra khỏi bóng tối để tìm thấy ánh sáng. Tuy nhiên, bài hát không đề cập đến việc chủ động lan tỏa tình yêu thương của Chúa đến người khác thông qua hành động quan tâm, giúp đỡ và phục vụ.",,[],,,0
+P011,G4-Q010,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,e7e27cca-227f-4907-8ed4-9396127bbedc,"Broad thanksgiving theme across Gratitude, God Is Good, Joy Like A River",Broad thanksgiving and praise query with many eligible songs,Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài,bridge,"Trước hết, hãy kiếm tìm
+
+Về đất nước của Chúa Trời
+
+Trước hết, hãy kiếm tìm
+
+Sự chí công của Chúa Trời
+
+Những gì mà con cần
+
+Ngài sẽ ban chẳng thiếu gì
+
+Sẽ ban chẳng thiếu gì
+
+Sẽ ban chẳng thiếu gì",0,Not Relevant,[],"Reviewer 1: Đoạn lời chỉ đang nói về việc hãy tìm kiếm Chúa, hãy tìm sẽ gặp Chúa. Không đề cập đến ngợi khen và cảm tạ vì sự nhân từ của Chúa
+Reviewer 2: Lời bài hát tập trung nói về việc tìm kiếm nước Đức Chúa Trời, nhưng không đề cập đến việc ngợi khen và dâng lời cảm tạ Chúa vì sự nhân từ của Ngài.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,0,[],"Đoạn lời chỉ đang nói về việc hãy tìm kiếm Chúa, hãy tìm sẽ gặp Chúa. Không đề cập đến ngợi khen và cảm tạ vì sự nhân từ của Chúa",0,[],"Lời bài hát tập trung nói về việc tìm kiếm nước Đức Chúa Trời, nhưng không đề cập đến việc ngợi khen và dâng lời cảm tạ Chúa vì sự nhân từ của Ngài.",,[],,,0
+P012,G2-Q029,T03,development_only,en,G2,Natural-language Intent,Benchmark-authored,Hard,,,Authored intent for T03,"Find songs about passing on faith, discipling others, and equipping future generations to continue God's work.",chorus,"Trong Cha có con
+
+Ai yêu con nhất trần gian
+
+Không chi con muốn hơn
+
+Được sống theo ý muốn Cha
+
+
+
+Vì Ngài là Chúa con
+
+Ai yêu con nhất trần gian
+
+Không chi con muốn hơn
+
+Được sống theo ý muốn Cha",0,Not Relevant,[],"Lời bài hát bày tỏ tình yêu của Chúa Cha và tấm lòng khao khát được sống theo ý muốn Ngài. Tuy nhiên, đoạn lời này không đề cập đến việc truyền lại đức tin, môn đồ hóa hay trang bị cho các thế hệ tiếp theo tiếp nối công việc Chúa.",,third_party_adjudication,final_adjudicator_decision,1,"[""Được sống theo ý muốn Cha""]","Đoạn lời không nói về việc truyền lại đức tin, môn đệ hóa người khác mà chỉ nhấn mạnh việc sống theo ý muốn Chúa",0,[],"Lời bài hát bày tỏ tình yêu của Chúa Cha và tấm lòng khao khát được sống theo ý muốn Ngài. Tuy nhiên, đoạn lời này không đề cập đến việc truyền lại đức tin, môn đồ hóa hay trang bị cho các thế hệ tiếp theo tiếp nối công việc Chúa.",0,[],"Lời bài hát bày tỏ tình yêu của Chúa Cha và tấm lòng khao khát được sống theo ý muốn Ngài. Tuy nhiên, đoạn lời này không đề cập đến việc truyền lại đức tin, môn đồ hóa hay trang bị cho các thế hệ tiếp theo tiếp nối công việc Chúa.",,1
+P013,G4-Q012,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,03df92ed-47d0-4162-98db-a2d04c00ac4f,"Broad atonement theme across Nothing But The Blood, Beautiful Love, Carry My Cross, Living Hope",Broad atonement query with multiple relevant cross-centered hymns,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",bridge,"Hy sinh thân Ngài
+
+Cứu lấy thân con
+
+Thập tự, sự phục sinh
+
+Tội con Ngài xóa hết",3,Highly Relevant,"[""Hy sinh thân Ngài\n\nCứu lấy thân con\n\nThập tự, sự phục sinh\n\nTội con Ngài xóa hết""]","Reviewer 1: Đoạn lời đề cập đầy đủ về Thập tự, sự cứu chuộc và huyết Chúa cứu lấy chúng ta
+Reviewer 2: Lời bài hát trực tiếp nhấn mạnh sự hy sinh của Chúa trên thập tự giá và sự cứu chuộc để xóa hết mọi tội lỗi cho con người, hoàn toàn đáp ứng trọng tâm của query.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,3,"[""Hy sinh thân Ngài\n\nCứu lấy thân con\n\nThập tự, sự phục sinh\n\nTội con Ngài xóa hết""]","Đoạn lời đề cập đầy đủ về Thập tự, sự cứu chuộc và huyết Chúa cứu lấy chúng ta",3,"[""Hy sinh thân Ngài\n\nCứu lấy thân con\n\nThập tự, sự phục sinh\n\nTội con Ngài xóa hết""]","Lời bài hát trực tiếp nhấn mạnh sự hy sinh của Chúa trên thập tự giá và sự cứu chuộc để xóa hết mọi tội lỗi cho con người, hoàn toàn đáp ứng trọng tâm của query.",,[],,,0
+P014,G4-Q012,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,03df92ed-47d0-4162-98db-a2d04c00ac4f,"Broad atonement theme across Nothing But The Blood, Beautiful Love, Carry My Cross, Living Hope",Broad atonement query with multiple relevant cross-centered hymns,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",bridge,"Thật Cha công chính, quyền năng, thương xót
+
+Ngài mãi mãi còn nguyên
+
+Thật Cha công chính, quyền năng, thương xót
+
+Ngài mãi mãi yêu con",0,Not Relevant,[],"Đoạn lời chỉ đề cập về bản chất không bao giờ thay đổi của Chúa là công chính, quyền năng và yêu thương. Không đề cập đến thập giá, sự cứu chuộc",,third_party_adjudication,final_adjudicator_decision,0,[],"Đoạn lời chỉ đề cập về bản chất không bao giờ thay đổi của Chúa là công chính, quyền năng và yêu thương. Không đề cập đến thập giá, sự cứu chuộc",1,"[""Thật Cha công chính, quyền năng, thương xót\n\nNgài mãi mãi yêu con""]","Lời bài hát ca ngợi bản tính công chính, quyền năng, lòng thương xót và tình yêu đời đời của Chúa, có liên hệ chung chung đến ân điển nhưng không đề cập trực tiếp đến thập tự giá, sự cứu chuộc hay huyết Chúa Giê-xu tha tội.",0,[],"Đoạn lời chỉ đề cập về bản chất không bao giờ thay đổi của Chúa là công chính, quyền năng và yêu thương. Không đề cập đến thập giá, sự cứu chuộc",,1
+P015,G4-Q010,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,e7e27cca-227f-4907-8ed4-9396127bbedc,"Broad thanksgiving theme across Gratitude, God Is Good, Joy Like A River",Broad thanksgiving and praise query with many eligible songs,Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài,chorus,"Chẳng có gì có thể so, so được với ơn từ Chúa Chúa ơi
+
+Không ai sánh ngang được Ngài
+
+Đấng Chí Cao
+
+Con nay biết ơn vì Ngài mãi bên mình",3,Highly Relevant,"[""Chẳng có gì có thể so, so được với ơn từ Chúa Chúa ơi\n\nKhông ai sánh ngang được Ngài\n\nĐấng Chí Cao\n\nCon nay biết ơn vì Ngài mãi bên mình""]","Reviewer 1: Cụm từ ""Chẳng có gì có thể so được với ơn từ Chúa"" là câu cảm thán ngợi khen Ơn của Chúa và sự nhân từ của Chúa.
+Reviewer 2: Lời bài hát trực tiếp tôn ngợi sự cao trọng không gì sánh bằng của Chúa và bày tỏ lòng biết ơn sâu sắc vì ân điển cùng sự đồng hành nhân từ của Ngài.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,3,"[""Chẳng có gì có thể so, so được với ơn từ Chúa Chúa ơi\n\nKhông ai sánh ngang được Ngài\n\nĐấng Chí Cao\n\nCon nay biết ơn vì Ngài mãi bên mình""]","Cụm từ ""Chẳng có gì có thể so được với ơn từ Chúa"" là câu cảm thán ngợi khen Ơn của Chúa và sự nhân từ của Chúa.",3,"[""Chẳng có gì có thể so, so được với ơn từ Chúa Chúa ơi\n\nKhông ai sánh ngang được Ngài\n\nĐấng Chí Cao\n\nCon nay biết ơn vì Ngài mãi bên mình""]",Lời bài hát trực tiếp tôn ngợi sự cao trọng không gì sánh bằng của Chúa và bày tỏ lòng biết ơn sâu sắc vì ân điển cùng sự đồng hành nhân từ của Ngài.,,[],,,0
+P016,G2-Q031,T05,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T05,"Find songs about our identity in Christ and how God defines who we are regardless of our past, failures, or doubts.",bridge,"Ngài là Đấng chúng con xin được tôn cao
+
+Với vinh quang đầy tràn nơi đây
+
+Chúa chúng con sẽ được ca khen
+
+Chỉ Danh Chúa đứng trên vạn vật",0,Not Relevant,[],"Reviewer 1: Đoạn lời tập trung tôn cao danh Chúa và vinh quang Ngài, không đề cập đến danh phận hay giá trị của con người trong Đấng Christ.
+Reviewer 2: Lời bài hát tập trung vào việc tôn cao danh Chúa và vinh quang tối thượng của Ngài trên muôn vật, không đề cập đến danh phận của chúng ta trong Đấng Christ hay việc Chúa định nghĩa con người chúng ta bất chấp quá khứ và thất bại.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,0,[],"Đoạn lời tập trung tôn cao danh Chúa và vinh quang Ngài, không đề cập đến danh phận hay giá trị của con người trong Đấng Christ.",0,[],"Lời bài hát tập trung vào việc tôn cao danh Chúa và vinh quang tối thượng của Ngài trên muôn vật, không đề cập đến danh phận của chúng ta trong Đấng Christ hay việc Chúa định nghĩa con người chúng ta bất chấp quá khứ và thất bại.",,[],,,0
+P017,G4-Q011,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,e827e4f4-94cf-43a6-926b-feba42d9fcaf,"Broad surrender theme across I Surrender, Have All Of Me, Lay It Down, Build My Life",Broad surrender & devotion query with multiple canonical targets,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,verse,"Tận sâu bên dưới của
+
+Những lo lắng vẫn cứ luôn bám lấy con
+
+Là khao khát có được
+
+Sự bình an chỉ có trong Ngài
+
+Điều ấy sẽ lấy đi
+
+Mọi thiếu sót, mọi điều gây cớ nghi ngờ
+
+Vì Ngài ở bên con
+
+Tâm linh con như được về nhà",0,Not Relevant,[],"Reviewer 1: Cụm từ này thể hiện sự bình an khi được ở trong sự hiện diện của Chúa. Tuy nhiên, đoạn lời chưa thể hiện sự đầu phục hay dâng trọn đời sống cho Chúa.
+Reviewer 2: Lời bài hát nói về một người tìm thấy sự bình an trong Chúa giữa những lo lắng và bất an, nhưng không đề cập đến sự đầu phục hay dâng trọn đời mình cho Chúa Giê-xu.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,0,[],"Cụm từ này thể hiện sự bình an khi được ở trong sự hiện diện của Chúa. Tuy nhiên, đoạn lời chưa thể hiện sự đầu phục hay dâng trọn đời sống cho Chúa.",0,[],"Lời bài hát nói về một người tìm thấy sự bình an trong Chúa giữa những lo lắng và bất an, nhưng không đề cập đến sự đầu phục hay dâng trọn đời mình cho Chúa Giê-xu.",,[],,,0
+P018,G4-Q012,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,03df92ed-47d0-4162-98db-a2d04c00ac4f,"Broad atonement theme across Nothing But The Blood, Beautiful Love, Carry My Cross, Living Hope",Broad atonement query with multiple relevant cross-centered hymns,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",verse,"Bọn chúng reo hò, cười chê Chúa Con
+
+Họ đóng đinh Ngài, với tiếng reo vang
+
+Lằn roi trên lưng, nhuộm đong huyết Chúa
+
+Chúa vẫn vui lòng, chết thay cho con",3,Highly Relevant,"[""Bọn chúng reo hò, cười chê Chúa Con\n\nHọ đóng đinh Ngài, với tiếng reo vang\n\nLằn roi trên lưng, nhuộm đong huyết Chúa\n\nChúa vẫn vui lòng, chết thay cho con"", ""Họ đóng đinh Ngài, với tiếng reo vang\n\nLằn roi trên lưng, nhuộm đong huyết Chúa\n\nChúa vẫn vui lòng, chết thay cho con""]","Reviewer 1: Cụm từ này cùng với hình ảnh Chúa chịu đóng đinh trực tiếp thể hiện sự hy sinh thay cho con người, phù hợp với chủ đề thập tự giá và sự cứu chuộc.
+Reviewer 2: Lời bài hát miêu tả trực tiếp sự đóng đinh trên thập tự giá, huyết Chúa đổ ra và sự chết thay của Chúa Giê-xu để cứu chuộc tội lỗi cho con người.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,3,"[""Bọn chúng reo hò, cười chê Chúa Con\n\nHọ đóng đinh Ngài, với tiếng reo vang\n\nLằn roi trên lưng, nhuộm đong huyết Chúa\n\nChúa vẫn vui lòng, chết thay cho con""]","Cụm từ này cùng với hình ảnh Chúa chịu đóng đinh trực tiếp thể hiện sự hy sinh thay cho con người, phù hợp với chủ đề thập tự giá và sự cứu chuộc.",3,"[""Họ đóng đinh Ngài, với tiếng reo vang\n\nLằn roi trên lưng, nhuộm đong huyết Chúa\n\nChúa vẫn vui lòng, chết thay cho con""]","Lời bài hát miêu tả trực tiếp sự đóng đinh trên thập tự giá, huyết Chúa đổ ra và sự chết thay của Chúa Giê-xu để cứu chuộc tội lỗi cho con người.",,[],,,0
+P019,G2-Q033,T07,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T07,Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.,chorus,"(Vì) Ngài là Đấng chiến đấu cho con
+
+Ngài là Đấng sẽ luôn chiến thắng
+
+Ha-lê-lu-gia, ha-lê-lu-gia
+
+Biển Đỏ kia Chúa đã chia hai
+
+Ngài dẫn lối đưa con đi qua
+
+Ha-lê-lu-gia, ha-lê-lu-gia",1,Slightly Relevant,"[""Biển Đỏ kia Chúa đã chia hai\n\nNgài dẫn lối đưa con đi qua""]","Lời bài hát có nhắc đến việc Chúa dẫn lối và chiến đấu cho con dân Ngài, nhưng chủ yếu ca ngợi quyền năng giải cứu của Chúa chứ chưa đề cập trực tiếp đến việc bước theo Chúa Giê-xu hay để sự hướng dẫn thuộc linh uốn nắn sự trưởng thành và mục đích sống.",,third_party_adjudication,final_adjudicator_decision,2,"[""Ngài dẫn lối đưa con đi qua""]","Cụm từ này thể hiện sự dẫn dắt của Chúa trong hành trình vượt qua khó khăn, phù hợp với chủ đề bước theo sự hướng dẫn của Ngài. Tuy nhiên, đoạn lời chưa trực tiếp nói về sự trưởng thành thuộc linh và mục đích sống.",1,"[""Biển Đỏ kia Chúa đã chia hai\n\nNgài dẫn lối đưa con đi qua""]","Lời bài hát có nhắc đến việc Chúa dẫn lối và chiến đấu cho con dân Ngài, nhưng chủ yếu ca ngợi quyền năng giải cứu của Chúa chứ chưa đề cập trực tiếp đến việc bước theo Chúa Giê-xu hay để sự hướng dẫn thuộc linh uốn nắn sự trưởng thành và mục đích sống.",1,"[""Biển Đỏ kia Chúa đã chia hai\n\nNgài dẫn lối đưa con đi qua""]","Lời bài hát có nhắc đến việc Chúa dẫn lối và chiến đấu cho con dân Ngài, nhưng chủ yếu ca ngợi quyền năng giải cứu của Chúa chứ chưa đề cập trực tiếp đến việc bước theo Chúa Giê-xu hay để sự hướng dẫn thuộc linh uốn nắn sự trưởng thành và mục đích sống.",,1
+P020,G2-Q033,T07,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T07,Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.,bridge,"Con sẽ không quay đầu
+
+Vững chắc về tương lai
+
+Sẽ bước theo Giê-su,
+
+nguyện cả cuộc đời con
+
+
+
+Con sẽ không quay đầu
+
+Vững chắc về tương lai
+
+Sẽ bước theo Giê-su,
+
+nguyện cả cuộc đời này",2,Relevant,"[""Con sẽ không quay đầu\n\nVững chắc về tương lai\n\nSẽ bước theo Giê-su,\n\nnguyện cả cuộc đời con""]","Lời bài hát thể hiện rõ quyết tâm bước theo Chúa Giê-xu trọn cuộc đời và hướng về tương lai, nhưng chưa đề cập trực tiếp đến sự hướng dẫn của Đức Thánh Linh trong việc hình thành mục đích sống và sự tăng trưởng thuộc linh.",,third_party_adjudication,final_adjudicator_decision,3,"[""Con sẽ không quay đầu\n\nVững chắc về tương lai\n\nSẽ bước theo Giê-su,\n\nnguyện cả cuộc đời con""]","Cụm từ này trực tiếp thể hiện quyết tâm bước theo Chúa Giê-xu và dâng cả cuộc đời cho Ngài, phù hợp với chủ đề để sự dẫn dắt của Chúa định hướng hành trình đức tin.",2,"[""Con sẽ không quay đầu\n\nVững chắc về tương lai\n\nSẽ bước theo Giê-su,\n\nnguyện cả cuộc đời con""]","Lời bài hát thể hiện rõ quyết tâm bước theo Chúa Giê-xu trọn cuộc đời và hướng về tương lai, nhưng chưa đề cập trực tiếp đến sự hướng dẫn của Đức Thánh Linh trong việc hình thành mục đích sống và sự tăng trưởng thuộc linh.",2,"[""Con sẽ không quay đầu\n\nVững chắc về tương lai\n\nSẽ bước theo Giê-su,\n\nnguyện cả cuộc đời con""]","Lời bài hát thể hiện rõ quyết tâm bước theo Chúa Giê-xu trọn cuộc đời và hướng về tương lai, nhưng chưa đề cập trực tiếp đến sự hướng dẫn của Đức Thánh Linh trong việc hình thành mục đích sống và sự tăng trưởng thuộc linh.",,1
+P021,G2-Q034,T08,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T08,"Find songs about discovering God's purpose, being called by Him, and becoming an instrument for His mission.",verse,"Khi Cha làm nên mọi nơi trên đời
+
+Con được, được Ngài chăm sóc
+
+Nhưng khi chìm trong màn đêm con sợ
+
+Nhưng Ngài, Ngài cùng con bước",0,Not Relevant,[],"Lời bài hát nói về sự chăm sóc và đồng hành của Chúa khi con người đối diện với nỗi sợ hãi, không đề cập đến việc khám phá mục đích của Chúa, được Ngài kêu gọi hay trở thành công cụ cho sứ mạng của Ngài.",,third_party_adjudication,final_adjudicator_decision,1,"[""Nhưng Ngài, Ngài cùng con bước""]","Cụm từ này thể hiện sự đồng hành của Chúa trong đời sống, có liên hệ gián tiếp với hành trình tìm kiếm mục đích Ngài. Tuy nhiên, đoạn lời chưa nói về sự kêu gọi hay việc trở thành công cụ thực hiện sứ mệnh Chúa.",0,[],"Lời bài hát nói về sự chăm sóc và đồng hành của Chúa khi con người đối diện với nỗi sợ hãi, không đề cập đến việc khám phá mục đích của Chúa, được Ngài kêu gọi hay trở thành công cụ cho sứ mạng của Ngài.",0,[],"Lời bài hát nói về sự chăm sóc và đồng hành của Chúa khi con người đối diện với nỗi sợ hãi, không đề cập đến việc khám phá mục đích của Chúa, được Ngài kêu gọi hay trở thành công cụ cho sứ mạng của Ngài.",,1
+P022,G4-Q012,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,03df92ed-47d0-4162-98db-a2d04c00ac4f,"Broad atonement theme across Nothing But The Blood, Beautiful Love, Carry My Cross, Living Hope",Broad atonement query with multiple relevant cross-centered hymns,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",verse,"Lòng tội này sao cho trắng băng?
+
+Còn gì ngoài huyết báu Đấng Giê-su
+
+Điều gì làm vẹn nguyên chúng con?
+
+Còn gì ngoài huyết báu Đấng Giê-su",3,Highly Relevant,"[""Lòng tội này sao cho trắng băng?\n\nCòn gì ngoài huyết báu Đấng Giê-su"", ""Lòng tội này sao cho trắng băng?\n\nCòn gì ngoài huyết báu Đấng Giê-su\n\nĐiều gì làm vẹn nguyên chúng con?\n\nCòn gì ngoài huyết báu Đấng Giê-su""]","Reviewer 1: Cụm từ này trực tiếp thể hiện huyết Chúa Giê-xu có quyền năng thanh tẩy tội lỗi, phù hợp với chủ đề sự cứu chuộc và tha tội.
+Reviewer 2: Lời bài hát khẳng định trực tiếp rằng chỉ duy huyết báu của Chúa Giê-xu mới có thể tẩy sạch tội lỗi và làm cho con người trở nên vẹn nguyên, đáp ứng đầy đủ trọng tâm về sự cứu chuộc và tha tội.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,3,"[""Lòng tội này sao cho trắng băng?\n\nCòn gì ngoài huyết báu Đấng Giê-su""]","Cụm từ này trực tiếp thể hiện huyết Chúa Giê-xu có quyền năng thanh tẩy tội lỗi, phù hợp với chủ đề sự cứu chuộc và tha tội.",3,"[""Lòng tội này sao cho trắng băng?\n\nCòn gì ngoài huyết báu Đấng Giê-su\n\nĐiều gì làm vẹn nguyên chúng con?\n\nCòn gì ngoài huyết báu Đấng Giê-su""]","Lời bài hát khẳng định trực tiếp rằng chỉ duy huyết báu của Chúa Giê-xu mới có thể tẩy sạch tội lỗi và làm cho con người trở nên vẹn nguyên, đáp ứng đầy đủ trọng tâm về sự cứu chuộc và tha tội.",,[],,,0
+P023,G4-Q012,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,03df92ed-47d0-4162-98db-a2d04c00ac4f,"Broad atonement theme across Nothing But The Blood, Beautiful Love, Carry My Cross, Living Hope",Broad atonement query with multiple relevant cross-centered hymns,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",verse,"Ngài đã đổi lấy
+
+Ngài lấy đi tội lỗi này
+
+Để chính ánh sáng nơi Ngài
+
+Dẫn lối con đi
+
+
+
+Hãy cùng vững bước
+
+Cùng hướng theo về phía Ngài
+
+Chỉ duy Ngài tốt lành
+
+Là Đấng yêu thương",2,Relevant,"[""Ngài lấy đi tội lỗi này"", ""Ngài đã đổi lấy\n\nNgài lấy đi tội lỗi này\n\nĐể chính ánh sáng nơi Ngài\n\nDẫn lối con đi""]","Reviewer 1: Cụm từ này thể hiện việc Chúa cất bỏ tội lỗi và dẫn con người vào ánh sáng, phù hợp với chủ đề sự cứu chuộc. Tuy nhiên, đoạn lời chưa trực tiếp đề cập đến thập tự giá hay huyết Chúa Giê-xu.
+Reviewer 2: Lời bài hát đề cập rõ đến sự cứu chuộc khi Chúa cất đi tội lỗi để dẫn lối con người bước theo Ngài, nhưng chưa nhắc trực tiếp đến thập tự giá hay huyết Chúa Giê-xu.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,2,"[""Ngài lấy đi tội lỗi này""]","Cụm từ này thể hiện việc Chúa cất bỏ tội lỗi và dẫn con người vào ánh sáng, phù hợp với chủ đề sự cứu chuộc. Tuy nhiên, đoạn lời chưa trực tiếp đề cập đến thập tự giá hay huyết Chúa Giê-xu.",2,"[""Ngài đã đổi lấy\n\nNgài lấy đi tội lỗi này\n\nĐể chính ánh sáng nơi Ngài\n\nDẫn lối con đi""]","Lời bài hát đề cập rõ đến sự cứu chuộc khi Chúa cất đi tội lỗi để dẫn lối con người bước theo Ngài, nhưng chưa nhắc trực tiếp đến thập tự giá hay huyết Chúa Giê-xu.",,[],,,0
+P024,G4-Q011,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,e827e4f4-94cf-43a6-926b-feba42d9fcaf,"Broad surrender theme across I Surrender, Have All Of Me, Lay It Down, Build My Life",Broad surrender & devotion query with multiple canonical targets,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,chorus,"Trong Cha có con
+
+Ai yêu con nhất trần gian
+
+Không chi con muốn hơn
+
+Được sống theo ý muốn Cha
+
+
+
+Vì Ngài là Chúa con
+
+Ai yêu con nhất trần gian
+
+Không chi con muốn hơn
+
+Được sống theo ý muốn Cha",2,Relevant,"[""Không chi con muốn hơn\n\nĐược sống theo ý muốn Cha""]","Lời bài hát thể hiện tấm lòng khao khát sống thuận phục theo ý muốn của Chúa Cha, nhưng chưa diễn đạt trực tiếp hành động đầu phục hoàn toàn và dâng trọn đời mình cho Chúa Giê-xu.",,third_party_adjudication,final_adjudicator_decision,3,"[""Không chi con muốn hơn\n\nĐược sống theo ý muốn Cha""]","Cụm từ này thể hiện sự đầu phục hoàn toàn và khao khát đặt ý muốn Chúa lên trên mong muốn cá nhân, phù hợp trực tiếp với chủ đề dâng trọn đời sống cho Ngài.",2,"[""Không chi con muốn hơn\n\nĐược sống theo ý muốn Cha""]","Lời bài hát thể hiện tấm lòng khao khát sống thuận phục theo ý muốn của Chúa Cha, nhưng chưa diễn đạt trực tiếp hành động đầu phục hoàn toàn và dâng trọn đời mình cho Chúa Giê-xu.",2,"[""Không chi con muốn hơn\n\nĐược sống theo ý muốn Cha""]","Lời bài hát thể hiện tấm lòng khao khát sống thuận phục theo ý muốn của Chúa Cha, nhưng chưa diễn đạt trực tiếp hành động đầu phục hoàn toàn và dâng trọn đời mình cho Chúa Giê-xu.",,1
+P025,G2-Q027,T01,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T01,Find worship songs about the power of the Holy Spirit working in and through believers.,bridge,"Chúa vẫn luôn ở bên cạnh con
+
+Dang cánh tay chở che đời con
+
+Nhờ sức Chúa con giờ đây mạnh mẽ
+
+Vì con có Ngài, đời con bình an",1,Slightly Relevant,"[""Nhờ sức Chúa con giờ đây mạnh mẽ\n\nVì con có Ngài, đời con bình an""]","Lời bài hát nhắc đến sự chở che và sức mạnh đến từ Chúa, có liên hệ chung chung đến sự nâng đỡ thuộc linh nhưng không đề cập trực tiếp đến quyền năng của Đức Thánh Linh vận hành trong và qua đời sống tín hữu.",,third_party_adjudication,final_adjudicator_decision,2,"[""Nhờ sức Chúa con giờ đây mạnh mẽ""]","Cụm từ này thể hiện sức mạnh Chúa ban cho con người, phù hợp với chủ đề năng quyền thuộc linh trong đời sống tín hữu. Tuy nhiên, đoạn lời chưa xác định trực tiếp đây là sự vận hành của Đức Thánh Linh.",1,"[""Nhờ sức Chúa con giờ đây mạnh mẽ\n\nVì con có Ngài, đời con bình an""]","Lời bài hát nhắc đến sự chở che và sức mạnh đến từ Chúa, có liên hệ chung chung đến sự nâng đỡ thuộc linh nhưng không đề cập trực tiếp đến quyền năng của Đức Thánh Linh vận hành trong và qua đời sống tín hữu.",1,"[""Nhờ sức Chúa con giờ đây mạnh mẽ\n\nVì con có Ngài, đời con bình an""]","Lời bài hát nhắc đến sự chở che và sức mạnh đến từ Chúa, có liên hệ chung chung đến sự nâng đỡ thuộc linh nhưng không đề cập trực tiếp đến quyền năng của Đức Thánh Linh vận hành trong và qua đời sống tín hữu.",,1
+P026,G2-Q035,T09,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T09,"Find songs about the Holy Spirit staying with us, helping us, and providing strength in our lives.",chorus,"Đường đời con luôn có Chúa
+
+Đường đời con luôn có Chúa
+
+Là Đấng luôn bên cạnh
+
+Là Đấng luôn bên cạnh
+
+
+
+Vì ngự trong con chính Thánh Linh
+
+Chẳng sợ chi sẽ vững bước!
+
+Vì Chúa luôn bên cạnh
+
+Vì Chúa luôn cạnh bên",3,Highly Relevant,"[""Vì ngự trong con chính Thánh Linh\n\nChẳng sợ chi sẽ vững bước!"", ""Vì ngự trong con chính Thánh Linh\n\nChẳng sợ chi sẽ vững bước!\n\nVì Chúa luôn bên cạnh""]","Reviewer 1: Cụm từ này trực tiếp thể hiện Đức Thánh Linh ngự trong tín hữu, ban sức mạnh và sự can đảm để bước đi, phù hợp với chủ đề Ngài đồng hành và nâng đỡ chúng ta.
+Reviewer 2: Lời bài hát khẳng định trực tiếp sự ngự trị và đồng hành của Đức Thánh Linh ở bên cạnh, ban sự vững vàng và sức mạnh để người tin Chúa bước đi không sợ hãi.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,3,"[""Vì ngự trong con chính Thánh Linh\n\nChẳng sợ chi sẽ vững bước!""]","Cụm từ này trực tiếp thể hiện Đức Thánh Linh ngự trong tín hữu, ban sức mạnh và sự can đảm để bước đi, phù hợp với chủ đề Ngài đồng hành và nâng đỡ chúng ta.",3,"[""Vì ngự trong con chính Thánh Linh\n\nChẳng sợ chi sẽ vững bước!\n\nVì Chúa luôn bên cạnh""]","Lời bài hát khẳng định trực tiếp sự ngự trị và đồng hành của Đức Thánh Linh ở bên cạnh, ban sự vững vàng và sức mạnh để người tin Chúa bước đi không sợ hãi.",,[],,,0
+P027,G4-Q006,,development_only,vi,G4,Cross-language ambiguity,Benchmark-authored,Hard,8e9e95b9-1bc1-40bf-8fc5-cafd82417d97,Raise A Hallelujah and See A Victory,Spiritual warfare through worship cross-matching multiple victory songs,Ngợi khen Chúa giữa thử thách và cuộc chiến thuộc linh,chorus,"Chẳng hề khiếp hãi trước ngọn sóng dâng trào
+
+Chẳng hề khiếp hãi dù phải bước qua nguy nan
+
+Vì chúng con có Ngài, chúng con có Ngài
+
+Ngài đã cứu lấy thân con",2,Relevant,"[""Chẳng hề khiếp hãi trước ngọn sóng dâng trào\n\nChẳng hề khiếp hãi dù phải bước qua nguy nan\n\nVì chúng con có Ngài, chúng con có Ngài\n\nNgài đã cứu lấy thân con""]",Lời bài hát nói về sự vững lòng không sợ hãi giữa sóng gió và nguy nan vì chúng ta có Chúa. Gián tiếp ngợi khen Chúa giữa thử thách. Tuy nhiên chưa đề cập đến cuộc chiến thuộc linh,,third_party_adjudication,final_adjudicator_decision,2,"[""Chẳng hề khiếp hãi dù phải bước qua nguy nan\n\nVì chúng con có Ngài, chúng con có Ngài""]","Cụm từ này thể hiện sự can đảm và tin cậy Chúa giữa thử thách, phù hợp với chủ đề đắc thắng nghịch cảnh. Tuy nhiên, đoạn lời chưa trực tiếp nói về việc ngợi khen Chúa trong những thử thách ấy.",1,"[""Chẳng hề khiếp hãi trước ngọn sóng dâng trào\n\nChẳng hề khiếp hãi dù phải bước qua nguy nan\n\nVì chúng con có Ngài, chúng con có Ngài""]","Lời bài hát nói về sự vững lòng không sợ hãi giữa sóng gió và nguy nan nhờ có Chúa giải cứu, nhưng chưa thể hiện rõ hành động ngợi khen Chúa hay bối cảnh cuộc chiến thuộc linh.",2,"[""Chẳng hề khiếp hãi trước ngọn sóng dâng trào\n\nChẳng hề khiếp hãi dù phải bước qua nguy nan\n\nVì chúng con có Ngài, chúng con có Ngài\n\nNgài đã cứu lấy thân con""]",Lời bài hát nói về sự vững lòng không sợ hãi giữa sóng gió và nguy nan vì chúng ta có Chúa. Gián tiếp ngợi khen Chúa giữa thử thách. Tuy nhiên chưa đề cập đến cuộc chiến thuộc linh,,1
+P028,G4-Q006,,development_only,vi,G4,Cross-language ambiguity,Benchmark-authored,Hard,8e9e95b9-1bc1-40bf-8fc5-cafd82417d97,Raise A Hallelujah and See A Victory,Spiritual warfare through worship cross-matching multiple victory songs,Ngợi khen Chúa giữa thử thách và cuộc chiến thuộc linh,bridge,"Tâm linh con đây
+
+Sẽ dùng lời hát chúc tôn Ngài
+
+Chẳng biết ngại ngần
+
+Vì ngự bên trong con chính là Sư Tử Giu-đa
+
+Hãy hát ca khen Danh Ngài",2,Relevant,"[""Tâm linh con đây\n\nSẽ dùng lời hát chúc tôn Ngài\n\nChẳng biết ngại ngần\n\nVì ngự bên trong con chính là Sư Tử Giu-đa""]",Lời bài hát thể hiện tinh thần mạnh dạn cất tiếng hát chúc tôn danh Chúa bởi quyền năng đắc thắng của Sư Tử Giu-đa ngự bên trong tâm linh nhưng chưa thể hiện rõ bối cảnh thử thách,,third_party_adjudication,final_adjudicator_decision,2,"[""Sẽ dùng lời hát chúc tôn Ngài\n\nChẳng biết ngại ngần\n\nVì ngự bên trong con chính là Sư Tử Giu-đa""]","Cụm từ này thể hiện sự mạnh dạn ngợi khen Chúa nhờ sức mạnh từ Ngài, phù hợp với chủ đề ngợi khen trong cuộc chiến thuộc linh. Tuy nhiên, đoạn lời chưa trực tiếp đề cập đến thử thách hay một cuộc chiến cụ thể.",3,"[""Tâm linh con đây\n\nSẽ dùng lời hát chúc tôn Ngài\n\nChẳng biết ngại ngần\n\nVì ngự bên trong con chính là Sư Tử Giu-đa""]",Lời bài hát trực tiếp thể hiện tinh thần mạnh dạn cất tiếng hát chúc tôn danh Chúa bởi quyền năng đắc thắng của Sư Tử Giu-đa ngự bên trong tâm linh giữa cuộc chiến thuộc linh.,2,"[""Tâm linh con đây\n\nSẽ dùng lời hát chúc tôn Ngài\n\nChẳng biết ngại ngần\n\nVì ngự bên trong con chính là Sư Tử Giu-đa""]",Lời bài hát thể hiện tinh thần mạnh dạn cất tiếng hát chúc tôn danh Chúa bởi quyền năng đắc thắng của Sư Tử Giu-đa ngự bên trong tâm linh nhưng chưa thể hiện rõ bối cảnh thử thách,,1
+P029,G2-Q034,T08,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T08,"Find songs about discovering God's purpose, being called by Him, and becoming an instrument for His mission.",chorus,"Chúng con nguyện, đến muôn thành
+
+Hô vang “Duy Danh “Cha” thật thánh thay”
+
+Thánh quang Ngài, sáng nơi này
+
+Để muôn dân suy tôn Đấng Chí Cao
+
+Chúng con nguyện đi bởi
+
+Ngài sai con
+
+Chúng con nguyện đi mãi
+
+Vì Ngài con sẽ không dừng lại",3,Highly Relevant,"[""Chúng con nguyện đi bởi\n\nNgài sai con\n\nChúng con nguyện đi mãi"", ""Chúng con nguyện đi bởi\n\nNgài sai con\n\nChúng con nguyện đi mãi\n\nVì Ngài con sẽ không dừng lại""]","Reviewer 1: Cụm từ này trực tiếp thể hiện sự đáp ứng tiếng gọi của Chúa và sẵn sàng đi thực hiện sứ mệnh Ngài, phù hợp với chủ đề được kêu gọi trở thành công cụ của Chúa.
+Reviewer 2: Lời bài hát trực tiếp bày tỏ tinh thần đáp ứng sự kêu gọi và sai phái của Chúa, sẵn sàng bước đi đến muôn nơi để rao truyền danh Ngài và hoàn thành sứ mạng Chúa giao.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,3,"[""Chúng con nguyện đi bởi\n\nNgài sai con\n\nChúng con nguyện đi mãi""]","Cụm từ này trực tiếp thể hiện sự đáp ứng tiếng gọi của Chúa và sẵn sàng đi thực hiện sứ mệnh Ngài, phù hợp với chủ đề được kêu gọi trở thành công cụ của Chúa.",3,"[""Chúng con nguyện đi bởi\n\nNgài sai con\n\nChúng con nguyện đi mãi\n\nVì Ngài con sẽ không dừng lại""]","Lời bài hát trực tiếp bày tỏ tinh thần đáp ứng sự kêu gọi và sai phái của Chúa, sẵn sàng bước đi đến muôn nơi để rao truyền danh Ngài và hoàn thành sứ mạng Chúa giao.",,[],,,0
+P030,G4-Q012,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,03df92ed-47d0-4162-98db-a2d04c00ac4f,"Broad atonement theme across Nothing But The Blood, Beautiful Love, Carry My Cross, Living Hope",Broad atonement query with multiple relevant cross-centered hymns,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",chorus,"Dù bao nhiêu chông gai
+
+Dù bao nhiêu đau thương
+
+Thập giá, xóa hết tất cả rồi
+
+
+
+Chẳng có tan vỡ chi
+
+Mà Cha không mang đi
+
+Mãi mãi, Ngài chiến thắng thế gian",3,Highly Relevant,"[""Dù bao nhiêu chông gai\n\nDù bao nhiêu đau thương\n\nThập giá, xóa hết tất cả rồi""]","Lời bài hát trực tiếp khẳng định quyền năng của thập tự giá đã xóa bỏ mọi đau thương, tội lỗi và sự tan vỡ để đem lại sự đắc thắng đời đời.",,third_party_adjudication,final_adjudicator_decision,2,"[""Dù bao nhiêu chông gai\n\nDù bao nhiêu đau thương\n\nThập giá, xóa hết tất cả rồi""]","Cụm từ này thể hiện quyền năng của thập tự giá trong việc cất bỏ đau thương và sự tan vỡ, phù hợp với chủ đề cứu chuộc. Tuy nhiên, đoạn lời chưa trực tiếp nhấn mạnh huyết Chúa hay sự tha thứ tội lỗi.",3,"[""Dù bao nhiêu chông gai\n\nDù bao nhiêu đau thương\n\nThập giá, xóa hết tất cả rồi""]","Lời bài hát trực tiếp khẳng định quyền năng của thập tự giá đã xóa bỏ mọi đau thương, tội lỗi và sự tan vỡ để đem lại sự đắc thắng đời đời.",3,"[""Dù bao nhiêu chông gai\n\nDù bao nhiêu đau thương\n\nThập giá, xóa hết tất cả rồi""]","Lời bài hát trực tiếp khẳng định quyền năng của thập tự giá đã xóa bỏ mọi đau thương, tội lỗi và sự tan vỡ để đem lại sự đắc thắng đời đời.",,1
+P031,G2-Q028,T02,development_only,en,G2,Natural-language Intent,Benchmark-authored,Hard,,,Authored intent for T02,"Find songs that encourage the next generation to grow in faith, embrace God's calling, and boldly live according to Scripture.",chorus,"Nguyện xin Cha ban cho con giờ này
+
+Ngọn Lửa, Sức Thiêng
+
+Cháy lên trong con, Bước đi muôn nơi
+
+Lời Chúa được đến khắp nơi
+
+
+
+Vì con đã sẵn sàng, Ngài hãy phái con đi
+
+Vì con đã sẵn sàng, Ngài hãy sai con
+
+Đến khắp muôn nơi",2,Relevant,"[""Vì con đã sẵn sàng, Ngài hãy phái con đi\n\nVì con đã sẵn sàng, Ngài hãy sai con"", ""Cháy lên trong con, Bước đi muôn nơi\n\nLời Chúa được đến khắp nơi\n\nVì con đã sẵn sàng, Ngài hãy phái con đi""]","Reviewer 1: Cụm từ này thể hiện sự sẵn sàng đáp ứng tiếng gọi và dũng cảm đem Lời Chúa đến muôn nơi, phù hợp với chủ đề sống đức tin và thực hiện sứ mệnh. Tuy nhiên, đoạn lời chưa hướng trực tiếp đến việc khích lệ thế hệ tiếp theo.
+Reviewer 2: Lời bài hát khích lệ tinh thần sẵn sàng đáp ứng tiếng gọi của Chúa, dạn dĩ mang Lời Chúa đi khắp nơi, nhưng chưa đề cập trực tiếp đến đối tượng là thế hệ trẻ tiếp theo.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,2,"[""Vì con đã sẵn sàng, Ngài hãy phái con đi\n\nVì con đã sẵn sàng, Ngài hãy sai con""]","Cụm từ này thể hiện sự sẵn sàng đáp ứng tiếng gọi và dũng cảm đem Lời Chúa đến muôn nơi, phù hợp với chủ đề sống đức tin và thực hiện sứ mệnh. Tuy nhiên, đoạn lời chưa hướng trực tiếp đến việc khích lệ thế hệ tiếp theo.",2,"[""Cháy lên trong con, Bước đi muôn nơi\n\nLời Chúa được đến khắp nơi\n\nVì con đã sẵn sàng, Ngài hãy phái con đi""]","Lời bài hát khích lệ tinh thần sẵn sàng đáp ứng tiếng gọi của Chúa, dạn dĩ mang Lời Chúa đi khắp nơi, nhưng chưa đề cập trực tiếp đến đối tượng là thế hệ trẻ tiếp theo.",,[],,,0
+P032,G2-Q030,T04,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T04,"Find worship songs that express love through action, serving others, and demonstrating God's love in everyday life.",verse,"Phước cho ai đầy lòng thương
+
+(Vì) kẻ ấy sẽ được xót thương
+
+Phước cho ai lòng sạch trong
+
+Vì sẽ, thấy Đức Chúa Trời
+
+Phước cho ai mang tới thái bình
+
+(Vì) sẽ được biết đến như con của Ngài
+
+Phước cho ai đang phải chịu sự bức hại
+
+Vì tìm kiếm công chính Ngài
+
+Vì Nước Chúa là của người
+
+Nước Chúa là của người
+
+Nước ấy là của con cái Chúa Trời",3,Highly Relevant,"[""Phước cho ai đầy lòng thương"", ""Phước cho ai mang tới thái bình\n\n(Vì) sẽ được biết đến như con của Ngài""]","Đoạn lời cùng với lời chúc phước cho người mang đến hòa bình thể hiện tình yêu qua lòng thương xót và cách đối xử với người khác, phù hợp trực tiếp với chủ đề sống bày tỏ tình yêu Chúa bằng hành động.",,third_party_adjudication,final_adjudicator_decision,3,"[""Phước cho ai đầy lòng thương\n\n(Vì) kẻ ấy sẽ được xót thương""]","Cụm từ này cùng với lời chúc phước cho người mang đến hòa bình thể hiện tình yêu qua lòng thương xót và cách đối xử với người khác, phù hợp trực tiếp với chủ đề sống bày tỏ tình yêu Chúa bằng hành động.",2,"[""Phước cho ai đầy lòng thương"", ""Phước cho ai mang tới thái bình\n\n(Vì) sẽ được biết đến như con của Ngài""]","Lời bài hát trích dẫn các phước lành về việc sống đầy lòng thương xót và đem lại sự hòa bình như con cái Đức Chúa Trời, nhưng chưa đi sâu vào hành động phục vụ cụ thể người khác trong đời sống hằng ngày.",3,"[""Phước cho ai đầy lòng thương"", ""Phước cho ai mang tới thái bình\n\n(Vì) sẽ được biết đến như con của Ngài""]","Đoạn lời cùng với lời chúc phước cho người mang đến hòa bình thể hiện tình yêu qua lòng thương xót và cách đối xử với người khác, phù hợp trực tiếp với chủ đề sống bày tỏ tình yêu Chúa bằng hành động.",,1
+P033,G2-Q036,T10,development_only,en,G2,Natural-language Intent,Benchmark-authored,Hard,,,Authored intent for T10,Find songs about the Holy Spirit teaching us and reminding us of the words and teachings of Jesus.,verse,"Ngài là Thần của Đức Chúa Trời
+
+Bao vây lấy chúng con
+
+Đấng đã đến với tâm linh con
+
+Ngài đến trên con
+
+Ngài đến trên con",1,Slightly Relevant,"[""Ngài là Thần của Đức Chúa Trời\n\nBao vây lấy chúng con\n\nĐấng đã đến với tâm linh con\n\nNgài đến trên con"", ""Ngài là Thần của Đức Chúa Trời\n\nBao vây lấy chúng con\n\nĐấng đã đến với tâm linh con""]","Reviewer 1: Cụm từ này xác định sự hiện diện của Đức Thánh Linh trong đời sống tín hữu. Tuy nhiên, đoạn lời chưa đề cập đến vai trò dạy dỗ và nhắc nhở những lời Chúa Giê-xu đã phán.
+Reviewer 2: Lời bài hát đề cập đến sự hiện diện của Thần Đức Chúa Trời đến trên tâm linh con người, nhưng chưa nhắc đến vai trò dạy dỗ hay nhắc nhớ lời và sự giảng dạy của Chúa Giê-xu.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,1,"[""Ngài là Thần của Đức Chúa Trời\n\nBao vây lấy chúng con\n\nĐấng đã đến với tâm linh con\n\nNgài đến trên con""]","Cụm từ này xác định sự hiện diện của Đức Thánh Linh trong đời sống tín hữu. Tuy nhiên, đoạn lời chưa đề cập đến vai trò dạy dỗ và nhắc nhở những lời Chúa Giê-xu đã phán.",1,"[""Ngài là Thần của Đức Chúa Trời\n\nBao vây lấy chúng con\n\nĐấng đã đến với tâm linh con""]","Lời bài hát đề cập đến sự hiện diện của Thần Đức Chúa Trời đến trên tâm linh con người, nhưng chưa nhắc đến vai trò dạy dỗ hay nhắc nhớ lời và sự giảng dạy của Chúa Giê-xu.",,[],,,0
+P034,G4-Q006,,development_only,vi,G4,Cross-language ambiguity,Benchmark-authored,Hard,8e9e95b9-1bc1-40bf-8fc5-cafd82417d97,Raise A Hallelujah and See A Victory,Spiritual warfare through worship cross-matching multiple victory songs,Ngợi khen Chúa giữa thử thách và cuộc chiến thuộc linh,chorus,"Con đã đắc thắng vì con có Chúa
+
+Con đã đắc thắng vì Ngài bên con
+
+Trận chiến đã thuộc về Đấng con ca khen
+
+Con đã đắc thắng vì con có Chúa
+
+Con đã đắc thắng vì Ngài bên con
+
+Trận chiến đã thuộc về Đấng con ca khen",3,Highly Relevant,"[""Con đã đắc thắng vì con có Chúa\n\nCon đã đắc thắng vì Ngài bên con\n\nTrận chiến đã thuộc về Đấng con ca khen\n\nCon đã đắc thắng vì con có Chúa"", ""Con đã đắc thắng vì con có Chúa\n\nCon đã đắc thắng vì Ngài bên con\n\nTrận chiến đã thuộc về Đấng con ca khen""]","Reviewer 1: Đoạn lời trực tiếp kết hợp sự ngợi khen với cuộc chiến thuộc linh, thể hiện niềm tin rằng chiến thắng thuộc về Chúa mà chúng ta đang ngợi khen.
+Reviewer 2: Lời bài hát trực tiếp công bố sự đắc thắng trong trận chiến thuộc linh nhờ có Chúa ở cùng và dâng lời ca khen lên Đấng nắm giữ chiến trận.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,3,"[""Con đã đắc thắng vì con có Chúa\n\nCon đã đắc thắng vì Ngài bên con\n\nTrận chiến đã thuộc về Đấng con ca khen\n\nCon đã đắc thắng vì con có Chúa""]","Đoạn lời trực tiếp kết hợp sự ngợi khen với cuộc chiến thuộc linh, thể hiện niềm tin rằng chiến thắng thuộc về Chúa mà chúng ta đang ngợi khen.",3,"[""Con đã đắc thắng vì con có Chúa\n\nCon đã đắc thắng vì Ngài bên con\n\nTrận chiến đã thuộc về Đấng con ca khen""]",Lời bài hát trực tiếp công bố sự đắc thắng trong trận chiến thuộc linh nhờ có Chúa ở cùng và dâng lời ca khen lên Đấng nắm giữ chiến trận.,,[],,,0
+P035,G4-Q011,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,e827e4f4-94cf-43a6-926b-feba42d9fcaf,"Broad surrender theme across I Surrender, Have All Of Me, Lay It Down, Build My Life",Broad surrender & devotion query with multiple canonical targets,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,chorus,"Con sẽ dâng chính mình, con nguyện luôn đầu phục
+
+Vì mọi điều cuộc sống con dâng nơi Cha
+
+Con sẽ dâng chính mình, con nguyện luôn đầu phục
+
+Ngự trong con Cha ơi",3,Highly Relevant,"[""Con sẽ dâng chính mình, con nguyện luôn đầu phục\n\nVì mọi điều cuộc sống con dâng nơi Cha\n\nCon sẽ dâng chính mình, con nguyện luôn đầu phục\n\nNgự trong con Cha ơi"", ""Con sẽ dâng chính mình, con nguyện luôn đầu phục\n\nVì mọi điều cuộc sống con dâng nơi Cha""]","Reviewer 1: Cụm từ này trực tiếp thể hiện sự dâng chính mình, đầu phục và trao trọn mọi điều trong cuộc sống cho Chúa, hoàn toàn phù hợp với chủ đề cần tìm.
+Reviewer 2: Lời bài hát bày tỏ trực tiếp quyết tâm đầu phục hoàn toàn và dâng trọn bản thân cùng mọi điều trong cuộc sống lên cho Chúa.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,3,"[""Con sẽ dâng chính mình, con nguyện luôn đầu phục\n\nVì mọi điều cuộc sống con dâng nơi Cha\n\nCon sẽ dâng chính mình, con nguyện luôn đầu phục\n\nNgự trong con Cha ơi""]","Cụm từ này trực tiếp thể hiện sự dâng chính mình, đầu phục và trao trọn mọi điều trong cuộc sống cho Chúa, hoàn toàn phù hợp với chủ đề cần tìm.",3,"[""Con sẽ dâng chính mình, con nguyện luôn đầu phục\n\nVì mọi điều cuộc sống con dâng nơi Cha""]",Lời bài hát bày tỏ trực tiếp quyết tâm đầu phục hoàn toàn và dâng trọn bản thân cùng mọi điều trong cuộc sống lên cho Chúa.,,[],,,0
+P036,G2-Q030,T04,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T04,"Find worship songs that express love through action, serving others, and demonstrating God's love in everyday life.",chorus,"(Vì) Ngài là Đấng chiến đấu cho con
+
+Ngài là Đấng sẽ luôn chiến thắng
+
+Ha-lê-lu-gia, ha-lê-lu-gia
+
+Biển Đỏ kia Chúa đã chia hai
+
+Ngài dẫn lối đưa con đi qua
+
+Ha-lê-lu-gia, ha-lê-lu-gia",0,Not Relevant,[],"Reviewer 1: Đoạn lời nhấn mạnh quyền năng, sự chiến thắng và giải cứu của Chúa, không đề cập đến việc con người thể hiện tình yêu Chúa qua hành động yêu thương và phục vụ người khác.
+Reviewer 2: Lời bài hát ca ngợi quyền năng chiến thắng và sự dẫn dắt của Chúa khi chia rẽ Biển Đỏ cho dân Ngài đi qua, không đề cập đến việc bày tỏ tình yêu qua hành động hay phục vụ người khác.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,0,[],"Đoạn lời nhấn mạnh quyền năng, sự chiến thắng và giải cứu của Chúa, không đề cập đến việc con người thể hiện tình yêu Chúa qua hành động yêu thương và phục vụ người khác.",0,[],"Lời bài hát ca ngợi quyền năng chiến thắng và sự dẫn dắt của Chúa khi chia rẽ Biển Đỏ cho dân Ngài đi qua, không đề cập đến việc bày tỏ tình yêu qua hành động hay phục vụ người khác.",,[],,,0
+P037,G2-Q032,T06,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T06,"Find songs about belonging to God's family, experiencing His love, and walking together as a community of faith.",verse,"Là con dân Ngài, kề vai sát cánh
+
+Cùng vinh quang này, làm tôn cao Chúa
+
+Chúng con hiệp một cùng đi trong Ngài
+
+Bởi Thánh Linh Ngài, làm con nghe thấy
+
+Được ơn kêu gọi, làm con dân Thánh
+
+Chúng con hiệp một cùng đi trong Ngài",3,Highly Relevant,"[""Là con dân Ngài, kề vai sát cánh\n\nCùng vinh quang này, làm tôn cao Chúa\n\nChúng con hiệp một cùng đi trong Ngài\n\nBởi Thánh Linh Ngài, làm con nghe thấy"", ""Là con dân Ngài, kề vai sát cánh\n\nCùng vinh quang này, làm tôn cao Chúa\n\nChúng con hiệp một cùng đi trong Ngài""]","Reviewer 1: Cụm từ này trực tiếp thể hiện danh phận là con dân Chúa, sự hiệp một và đồng hành trong cộng đồng đức tin, phù hợp với chủ đề thuộc về gia đình Chúa.
+Reviewer 2: Lời bài hát diễn tả trực tiếp sự thuộc về gia đình con dân Chúa, kề vai sát cánh và hiệp một cùng bước đi với nhau trong cộng đồng đức tin.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,3,"[""Là con dân Ngài, kề vai sát cánh\n\nCùng vinh quang này, làm tôn cao Chúa\n\nChúng con hiệp một cùng đi trong Ngài\n\nBởi Thánh Linh Ngài, làm con nghe thấy""]","Cụm từ này trực tiếp thể hiện danh phận là con dân Chúa, sự hiệp một và đồng hành trong cộng đồng đức tin, phù hợp với chủ đề thuộc về gia đình Chúa.",3,"[""Là con dân Ngài, kề vai sát cánh\n\nCùng vinh quang này, làm tôn cao Chúa\n\nChúng con hiệp một cùng đi trong Ngài""]","Lời bài hát diễn tả trực tiếp sự thuộc về gia đình con dân Chúa, kề vai sát cánh và hiệp một cùng bước đi với nhau trong cộng đồng đức tin.",,[],,,0
+P038,G2-Q027,T01,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T01,Find worship songs about the power of the Holy Spirit working in and through believers.,chorus,"Nơi đây
+
+Khi Thánh Linh vận hành
+
+Ngài chạm vào tâm con
+
+Cho chúng con nhận biết
+
+Thánh Linh trong chúng con
+
+Mang bao năng quyền
+
+Chúng con luôn vững tin
+
+Vì Ngài thành tín",3,Highly Relevant,"[""Nơi đây\n\nKhi Thánh Linh vận hành\n\nNgài chạm vào tâm con\n\nCho chúng con nhận biết"", ""Khi Thánh Linh vận hành\n\nNgài chạm vào tâm con\n\nCho chúng con nhận biết\n\nThánh Linh trong chúng con\n\nMang bao năng quyền""]","Reviewer 1: Cụm từ này trực tiếp thể hiện năng quyền của Đức Thánh Linh hiện diện và vận hành trong đời sống tín hữu, phù hợp với chủ đề năng quyền Đức Thánh Linh.
+Reviewer 2: Lời bài hát trực tiếp nói về sự vận hành đầy năng quyền của Đức Thánh Linh chạm đến tấm lòng và ở trong đời sống của các tín hữu.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,3,"[""Nơi đây\n\nKhi Thánh Linh vận hành\n\nNgài chạm vào tâm con\n\nCho chúng con nhận biết""]","Cụm từ này trực tiếp thể hiện năng quyền của Đức Thánh Linh hiện diện và vận hành trong đời sống tín hữu, phù hợp với chủ đề năng quyền Đức Thánh Linh.",3,"[""Khi Thánh Linh vận hành\n\nNgài chạm vào tâm con\n\nCho chúng con nhận biết\n\nThánh Linh trong chúng con\n\nMang bao năng quyền""]",Lời bài hát trực tiếp nói về sự vận hành đầy năng quyền của Đức Thánh Linh chạm đến tấm lòng và ở trong đời sống của các tín hữu.,,[],,,0
+P039,G4-Q010,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,e7e27cca-227f-4907-8ed4-9396127bbedc,"Broad thanksgiving theme across Gratitude, God Is Good, Joy Like A River",Broad thanksgiving and praise query with many eligible songs,Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài,chorus,"Vì Danh Chúa thật đáng tôn thờ
+
+Con xin dâng ngợi ca
+
+“Đáng thay là Danh Ngài”",0,Not Relevant,[],"Đoạn lời thể hiện sự ngợi khen và tôn thờ Chúa. Tuy nhiên, đoạn lời chưa đề cập cụ thể đến lòng nhân từ hay sự cảm tạ vì những điều Ngài đã làm.",,third_party_adjudication,final_adjudicator_decision,0,[],"Đoạn lời thể hiện sự ngợi khen và tôn thờ Chúa. Tuy nhiên, đoạn lời chưa đề cập cụ thể đến lòng nhân từ hay sự cảm tạ vì những điều Ngài đã làm.",2,"[""Vì Danh Chúa thật đáng tôn thờ\n\nCon xin dâng ngợi ca\n\n“Đáng thay là Danh Ngài”""]","Lời bài hát thể hiện rõ tinh thần ngợi khen và tôn thờ danh Chúa, nhưng chưa nêu cụ thể lời cảm tạ vì sự nhân từ của Ngài.",0,[],"Đoạn lời thể hiện sự ngợi khen và tôn thờ Chúa. Tuy nhiên, đoạn lời chưa đề cập cụ thể đến lòng nhân từ hay sự cảm tạ vì những điều Ngài đã làm.",,2
+P040,G4-Q011,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,e827e4f4-94cf-43a6-926b-feba42d9fcaf,"Broad surrender theme across I Surrender, Have All Of Me, Lay It Down, Build My Life",Broad surrender & devotion query with multiple canonical targets,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,chorus,"Con nơi đây, thưa Chúa
+
+Nguyện dâng hết thảy tất cả
+
+Phó dâng mọi thứ
+
+Chạy đến dưới chân Đấng Thiên Thượng
+
+Phước ân Ngài đã cứu con
+
+Dâng Giê-su tất cả mọi điều",3,Highly Relevant,"[""Con nơi đây, thưa Chúa\n\nNguyện dâng hết thảy tất cả\n\nPhó dâng mọi thứ\n\nChạy đến dưới chân Đấng Thiên Thượng"", ""Nguyện dâng hết thảy tất cả\n\nPhó dâng mọi thứ\n\nChạy đến dưới chân Đấng Thiên Thượng"", ""Dâng Giê-su tất cả mọi điều""]","Reviewer 1: Cụm từ này trực tiếp thể hiện sự phó dâng hoàn toàn và trao mọi điều trong đời sống cho Chúa, phù hợp với chủ đề đầu phục và dâng trọn đời mình cho Chúa Giê-xu.
+Reviewer 2: Lời bài hát thể hiện trực tiếp tấm lòng đầu phục dưới chân Chúa và dâng trọn tất cả mọi điều trong đời sống cho Chúa Giê-xu.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,3,"[""Con nơi đây, thưa Chúa\n\nNguyện dâng hết thảy tất cả\n\nPhó dâng mọi thứ\n\nChạy đến dưới chân Đấng Thiên Thượng""]","Cụm từ này trực tiếp thể hiện sự phó dâng hoàn toàn và trao mọi điều trong đời sống cho Chúa, phù hợp với chủ đề đầu phục và dâng trọn đời mình cho Chúa Giê-xu.",3,"[""Nguyện dâng hết thảy tất cả\n\nPhó dâng mọi thứ\n\nChạy đến dưới chân Đấng Thiên Thượng"", ""Dâng Giê-su tất cả mọi điều""]",Lời bài hát thể hiện trực tiếp tấm lòng đầu phục dưới chân Chúa và dâng trọn tất cả mọi điều trong đời sống cho Chúa Giê-xu.,,[],,,0
+P041,G2-Q036,T10,development_only,en,G2,Natural-language Intent,Benchmark-authored,Hard,,,Authored intent for T10,Find songs about the Holy Spirit teaching us and reminding us of the words and teachings of Jesus.,verse,"Đời tìm đâu lối bước được lại gần nơi ánh sáng,
+
+Là nguồn chân lý sống, chẳng gì có thể sánh bằng.
+
+Con khát khao Ngài.",1,Slightly Relevant,"[""Là nguồn chân lý sống, chẳng gì có thể sánh bằng"", ""Đời tìm đâu lối bước được lại gần nơi ánh sáng,\n\nLà nguồn chân lý sống, chẳng gì có thể sánh bằng.""]","Reviewer 1: Đoạn lời cho thấy Chúa là chân lý, con khát khao lời dạy của Chúa nhưng không thể hiện hoặc nhắc nhở lời dạy của Chúa là gì
+Reviewer 2: Lời bài hát bày tỏ sự khao khát tìm kiếm ánh sáng và chân lý sống của Chúa, có liên hệ gián tiếp đến sự soi sáng nhưng chưa đề cập trực tiếp đến Đức Thánh Linh hay việc nhắc nhớ lời dạy của Chúa Giê-xu.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,1,"[""Là nguồn chân lý sống, chẳng gì có thể sánh bằng""]","Đoạn lời cho thấy Chúa là chân lý, con khát khao lời dạy của Chúa nhưng không thể hiện hoặc nhắc nhở lời dạy của Chúa là gì",1,"[""Đời tìm đâu lối bước được lại gần nơi ánh sáng,\n\nLà nguồn chân lý sống, chẳng gì có thể sánh bằng.""]","Lời bài hát bày tỏ sự khao khát tìm kiếm ánh sáng và chân lý sống của Chúa, có liên hệ gián tiếp đến sự soi sáng nhưng chưa đề cập trực tiếp đến Đức Thánh Linh hay việc nhắc nhớ lời dạy của Chúa Giê-xu.",,[],,,0
+P042,G2-Q029,T03,development_only,en,G2,Natural-language Intent,Benchmark-authored,Hard,,,Authored intent for T03,"Find songs about passing on faith, discipling others, and equipping future generations to continue God's work.",verse,"Ân điển Ngài ban, lòng thương xót Chúa luôn đong đầy
+
+Dưới cánh tay Chúa, Ngài che chở lúc yếu mềm
+
+Và tâm con bình an, nhờ lời hứa Chúa trao bằng tình yêu",0,Not Relevant,[],"Reviewer 1: Đoạn lời đang nhấn mạnh về lòng thương xót và sự bảo vệ, sự bình an của Chúa. Không nói về việc trang bị cho thế hệ kế tiếp
+Reviewer 2: Lời bài hát nói về sự bình an, ân điển và lòng thương xót che chở của Chúa dành cho người yếu mềm, không đề cập đến việc truyền lại đức tin, môn đồ hóa hay trang bị cho thế hệ tương lai.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,0,[],"Đoạn lời đang nhấn mạnh về lòng thương xót và sự bảo vệ, sự bình an của Chúa. Không nói về việc trang bị cho thế hệ kế tiếp",0,[],"Lời bài hát nói về sự bình an, ân điển và lòng thương xót che chở của Chúa dành cho người yếu mềm, không đề cập đến việc truyền lại đức tin, môn đồ hóa hay trang bị cho thế hệ tương lai.",,[],,,0
+P043,G4-Q010,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,e7e27cca-227f-4907-8ed4-9396127bbedc,"Broad thanksgiving theme across Gratitude, God Is Good, Joy Like A River",Broad thanksgiving and praise query with many eligible songs,Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài,chorus,"Trong Cha con an lành, thỏa vui!
+
+Và tâm con xin nương cậy, mỗi Ngài
+
+Quyền năng danh Chúa
+
+Đời con được chở che
+
+Ngài mãi bên con!",1,Slightly Relevant,"[""Trong Cha con an lành, thỏa vui!\n\nVà tâm con xin nương cậy, mỗi Ngài\n\nQuyền năng danh Chúa\n\nĐời con được chở che""]","Lời bài hát bày tỏ sự thỏa vui và nương cậy nơi Chúa vì được Ngài chở che, có liên hệ chung chung đến ơn phước Chúa nhưng chưa thể hiện rõ lời ngợi khen và cảm tạ vì sự nhân từ của Ngài.",,third_party_adjudication,final_adjudicator_decision,0,[],"Cụm từ ""tâm con xin nương cậy"", ""Đời con được chở che"" thể hiện quyền năng Chúa và sự nương cậy của chúng ta vào danh Ngài. Không đề cập đến sự nhân từ của Chúa",1,"[""Trong Cha con an lành, thỏa vui!\n\nVà tâm con xin nương cậy, mỗi Ngài""]","Lời bài hát bày tỏ sự thỏa vui và nương cậy nơi Chúa vì được Ngài chở che, có liên hệ chung chung đến ơn phước Chúa nhưng chưa thể hiện rõ lời ngợi khen và cảm tạ vì sự nhân từ của Ngài.",1,"[""Trong Cha con an lành, thỏa vui!\n\nVà tâm con xin nương cậy, mỗi Ngài\n\nQuyền năng danh Chúa\n\nĐời con được chở che""]","Lời bài hát bày tỏ sự thỏa vui và nương cậy nơi Chúa vì được Ngài chở che, có liên hệ chung chung đến ơn phước Chúa nhưng chưa thể hiện rõ lời ngợi khen và cảm tạ vì sự nhân từ của Ngài.",,1
+P044,G2-Q028,T02,development_only,en,G2,Natural-language Intent,Benchmark-authored,Hard,,,Authored intent for T02,"Find songs that encourage the next generation to grow in faith, embrace God's calling, and boldly live according to Scripture.",chorus,"Ngọn lửa đang cháy trong con
+
+Ngài làm thành ngọn lửa sức thiêng
+
+Làm tươi mới tâm linh để
+
+Khiến con được vững mạnh
+
+Ngọn lửa đang cháy trong con
+
+Ngài làm thành ngọn lửa sức thiêng
+
+Sự bùng cháy nơi tâm linh con thật
+
+Bởi trong Danh Chúa thôi",1,Slightly Relevant,"[""Ngọn lửa đang cháy trong con\n\nNgài làm thành ngọn lửa sức thiêng\n\nLàm tươi mới tâm linh để\n\nKhiến con được vững mạnh""]","Reviewer 1: Cụm từ ""Ngọn lửa đang cháy trong con"" và ""Làm tươi mới tâm linh"" thể hiện ý nghĩa thắp lên ngọn lửa đức tin của bản thân. Không đề cập đến sự khích lệ thế hệ kế tiếp lớn lên trong đức tin, đón nhận sự kêu gọi của Thiên Chúa và can đảm sống theo Kinh Thánh.
+Reviewer 2: Lời bài hát nói về ngọn lửa sức thiêng làm tươi mới và vững mạnh tâm linh người tin Chúa, nhưng không đề cập trực tiếp đến việc khích lệ thế hệ trẻ, đáp ứng tiếng gọi hay sống theo Kinh Thánh.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,1,"[""Ngọn lửa đang cháy trong con\n\nNgài làm thành ngọn lửa sức thiêng\n\nLàm tươi mới tâm linh để\n\nKhiến con được vững mạnh""]","Cụm từ ""Ngọn lửa đang cháy trong con"" và ""Làm tươi mới tâm linh"" thể hiện ý nghĩa thắp lên ngọn lửa đức tin của bản thân. Không đề cập đến sự khích lệ thế hệ kế tiếp lớn lên trong đức tin, đón nhận sự kêu gọi của Thiên Chúa và can đảm sống theo Kinh Thánh.",1,"[""Ngọn lửa đang cháy trong con\n\nNgài làm thành ngọn lửa sức thiêng\n\nLàm tươi mới tâm linh để\n\nKhiến con được vững mạnh""]","Lời bài hát nói về ngọn lửa sức thiêng làm tươi mới và vững mạnh tâm linh người tin Chúa, nhưng không đề cập trực tiếp đến việc khích lệ thế hệ trẻ, đáp ứng tiếng gọi hay sống theo Kinh Thánh.",,[],,,0
+P045,G4-Q010,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,e7e27cca-227f-4907-8ed4-9396127bbedc,"Broad thanksgiving theme across Gratitude, God Is Good, Joy Like A River",Broad thanksgiving and praise query with many eligible songs,Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài,verse,"Dù con ca ngợi Chúa
+
+Và dâng hiến mọi thứ
+
+Cũng chẳng thể hiện hết
+
+Lòng biết ơn nơi Ngài",2,Relevant,"[""Dù con ca ngợi Chúa\n\nVà dâng hiến mọi thứ\n\nCũng chẳng thể hiện hết\n\nLòng biết ơn nơi Ngài""]","Lời bài hát thể hiện rõ tấm lòng ca ngợi và biết ơn sâu sắc đối với Chúa, nhưng chưa nhắc trực tiếp đến sự nhân từ của Ngài.",,third_party_adjudication,final_adjudicator_decision,3,"[""Dù con ca ngợi Chúa\n\nVà dâng hiến mọi thứ\n\nCũng chẳng thể hiện hết\n\nLòng biết ơn nơi Ngài""]","Cụm từ ""Dù con ca ngợi Chúa"", ""Cũng chẳng thể hiện hết lòng biết ơn nơi Ngài"" thể hiện sự ngợi khen, cảm tạ vì sự nhân từ của Chúa",2,"[""Dù con ca ngợi Chúa\n\nVà dâng hiến mọi thứ\n\nCũng chẳng thể hiện hết\n\nLòng biết ơn nơi Ngài""]","Lời bài hát thể hiện rõ tấm lòng ca ngợi và biết ơn sâu sắc đối với Chúa, nhưng chưa nhắc trực tiếp đến sự nhân từ của Ngài.",2,"[""Dù con ca ngợi Chúa\n\nVà dâng hiến mọi thứ\n\nCũng chẳng thể hiện hết\n\nLòng biết ơn nơi Ngài""]","Lời bài hát thể hiện rõ tấm lòng ca ngợi và biết ơn sâu sắc đối với Chúa, nhưng chưa nhắc trực tiếp đến sự nhân từ của Ngài.",,1
+P046,G2-Q032,T06,development_only,en,G2,Natural-language Intent,Benchmark-authored,Medium,,,Authored intent for T06,"Find songs about belonging to God's family, experiencing His love, and walking together as a community of faith.",verse,"Lòng tội này sao cho trắng băng?
+
+Còn gì ngoài huyết báu Đấng Giê-su
+
+Điều gì làm vẹn nguyên chúng con?
+
+Còn gì ngoài huyết báu Đấng Giê-su",0,Not Relevant,[],"Reviewer 1: Đoạn lời đang nói về huyết Chúa đã đổ ra để cứu chuộc cho con dân Ngài. Không đề cập gì về sự thuộc về gia đình Chúa, trải nghiệm tình yêu thương và bước đi trong cộng đồng thuộc linh
+Reviewer 2: Lời bài hát nói về sự tẩy sạch tội lỗi và làm cho vẹn nguyên nhờ huyết báu của Chúa Giê-xu, không đề cập đến gia đình của Chúa hay việc cùng nhau bước đi trong cộng đồng đức tin.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,0,[],"Đoạn lời đang nói về huyết Chúa đã đổ ra để cứu chuộc cho con dân Ngài. Không đề cập gì về sự thuộc về gia đình Chúa, trải nghiệm tình yêu thương và bước đi trong cộng đồng thuộc linh",0,[],"Lời bài hát nói về sự tẩy sạch tội lỗi và làm cho vẹn nguyên nhờ huyết báu của Chúa Giê-xu, không đề cập đến gia đình của Chúa hay việc cùng nhau bước đi trong cộng đồng đức tin.",,[],,,0
+P047,G4-Q005,,development_only,vi,G4,Cross-language ambiguity,Benchmark-authored,Hard,41a0e027-789d-4ca9-b0a8-e1dcdf76772e,A Little Fire (Burn Brighter) and Holy Spirit / Rest On Us,Vietnamese spiritual metaphor mapping to fire themes and Holy Spirit songs,Thắp lên ngọn lửa đức tin,chorus,"Ngọn lửa đang cháy trong con
+
+Ngài làm thành ngọn lửa sức thiêng
+
+Làm tươi mới tâm linh để
+
+Khiến con được vững mạnh
+
+Ngọn lửa đang cháy trong con
+
+Ngài làm thành ngọn lửa sức thiêng
+
+Sự bùng cháy nơi tâm linh con thật
+
+Bởi trong Danh Chúa thôi",3,Highly Relevant,"[""Ngọn lửa đang cháy trong con\n\nNgài làm thành ngọn lửa sức thiêng\n\nLàm tươi mới tâm linh để\n\nKhiến con được vững mạnh""]","Lời bài hát nói rõ về ngọn lửa sức thiêng bùng cháy trong tâm linh để làm tươi mới và vững mạnh người tin, liên hệ với việc thắp lên ngọn lửa đức tin.",,third_party_adjudication,final_adjudicator_decision,3,"[""Ngọn lửa đang cháy trong con\n\nNgài làm thành ngọn lửa sức thiêng\n\nLàm tươi mới tâm linh để\n\nKhiến con được vững mạnh""]","Cụm từ ""Ngọn lửa đang cháy trong con"" và ""Làm tươi mới tâm linh"" thể hiện đầy đủ ý nghĩa thắp lên ngọn lửa đức tin",2,"[""Ngọn lửa đang cháy trong con\n\nNgài làm thành ngọn lửa sức thiêng\n\nLàm tươi mới tâm linh để\n\nKhiến con được vững mạnh""]","Lời bài hát nói rõ về ngọn lửa sức thiêng bùng cháy trong tâm linh để làm tươi mới và vững mạnh người tin, liên hệ gần gũi với việc thắp lên ngọn lửa đức tin dù chưa dùng trực tiếp từ đức tin.",3,"[""Ngọn lửa đang cháy trong con\n\nNgài làm thành ngọn lửa sức thiêng\n\nLàm tươi mới tâm linh để\n\nKhiến con được vững mạnh""]","Lời bài hát nói rõ về ngọn lửa sức thiêng bùng cháy trong tâm linh để làm tươi mới và vững mạnh người tin, liên hệ với việc thắp lên ngọn lửa đức tin.",,1
+P048,G4-Q011,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,e827e4f4-94cf-43a6-926b-feba42d9fcaf,"Broad surrender theme across I Surrender, Have All Of Me, Lay It Down, Build My Life",Broad surrender & devotion query with multiple canonical targets,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,chorus,"Sự sống là Ngài, Giê-su
+
+Con bám lấy hy vọng ở nơi mình Ngài
+
+Mỗi bước trên đường đời
+
+(Đến khi) Chết là một ích lợi
+
+Bằng vui thỏa, con sẽ vác thập tự
+
+Hiến dâng đời này
+
+Bởi Chúa luôn bên con",3,Highly Relevant,"[""Sự sống là Ngài, Giê-su\n\nCon bám lấy hy vọng ở nơi mình Ngài\n\nMỗi bước trên đường đời\n\n(Đến khi) Chết là một ích lợi"", ""Bằng vui thỏa, con sẽ vác thập tự\n\nHiến dâng đời này\n\nBởi Chúa luôn bên con""]","Reviewer 1: Cụm từ ""Sự sống là Ngài, Giê-su Con bám lấy hy vọng ở nơi Ngài"" thể hiện sự dâng trọn đời mình cho Chúa, đầu phục và tuyên xưng Chúa là sự sống
+Reviewer 2: Lời bài hát trực tiếp thể hiện sự đầu phục trọn vẹn, sẵn sàng vác thập tự giá và hiến dâng cả cuộc đời mình cho Chúa Giê-xu với lòng vui thỏa.",,reviewer_agreement,union_of_reviewer_1_and_reviewer_2_spans,3,"[""Sự sống là Ngài, Giê-su\n\nCon bám lấy hy vọng ở nơi mình Ngài\n\nMỗi bước trên đường đời\n\n(Đến khi) Chết là một ích lợi""]","Cụm từ ""Sự sống là Ngài, Giê-su Con bám lấy hy vọng ở nơi Ngài"" thể hiện sự dâng trọn đời mình cho Chúa, đầu phục và tuyên xưng Chúa là sự sống",3,"[""Bằng vui thỏa, con sẽ vác thập tự\n\nHiến dâng đời này\n\nBởi Chúa luôn bên con""]","Lời bài hát trực tiếp thể hiện sự đầu phục trọn vẹn, sẵn sàng vác thập tự giá và hiến dâng cả cuộc đời mình cho Chúa Giê-xu với lòng vui thỏa.",,[],,,0
+P049,G4-Q010,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,e7e27cca-227f-4907-8ed4-9396127bbedc,"Broad thanksgiving theme across Gratitude, God Is Good, Joy Like A River",Broad thanksgiving and praise query with many eligible songs,Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài,chorus,"Lòng con đây dâng lên với Chúa hết thảy ngàn lời chúc tán
+
+Lòng con đây yêu thương với Chúa cất tiếng ngàn lời ca vang
+
+Chỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi
+
+Tốt thay, Chúa Cha đời đời (mãi mãi)",3,Highly Relevant,"[""Lòng con đây dâng lên với Chúa hết thảy ngàn lời chúc tán"", ""Chỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi\n\nTốt thay, Chúa Cha đời đời (mãi mãi)""]","Lời bài hát trực tiếp dâng lên Chúa ngàn lời chúc tán, ngợi ca và cảm tạ vì sự tốt lành, nhân từ đời đời của Chúa Cha.",,third_party_adjudication,final_adjudicator_decision,2,"[""Lòng con đây dâng lên với Chúa hết thảy ngàn lời chúc tán\n\nLòng con đây yêu thương với Chúa cất tiếng ngàn lời ca vang\n\nChỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi\n\nTốt thay, Chúa Cha đời đời (mãi mãi)""]","Cụm tự ""dâng lên với Chúa hết thảy ngàn lời chúc tán"" thể hiện sự ngợi khen, cảm tạ. Tuy nhiên, đoạn lời chỉ nói về sự tốt lành của Chúa và Chúa xứng đáng với lời ca ngợi, chưa nói về sự nhân từ",3,"[""Lòng con đây dâng lên với Chúa hết thảy ngàn lời chúc tán"", ""Chỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi\n\nTốt thay, Chúa Cha đời đời (mãi mãi)""]","Lời bài hát trực tiếp dâng lên Chúa ngàn lời chúc tán, ngợi ca và cảm tạ vì sự tốt lành, nhân từ đời đời của Chúa Cha.",3,"[""Lòng con đây dâng lên với Chúa hết thảy ngàn lời chúc tán"", ""Chỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi\n\nTốt thay, Chúa Cha đời đời (mãi mãi)""]","Lời bài hát trực tiếp dâng lên Chúa ngàn lời chúc tán, ngợi ca và cảm tạ vì sự tốt lành, nhân từ đời đời của Chúa Cha.",,1
+P050,G4-Q011,,development_only,vi,G4,Broad semantic query,Benchmark-authored,Medium,e827e4f4-94cf-43a6-926b-feba42d9fcaf,"Broad surrender theme across I Surrender, Have All Of Me, Lay It Down, Build My Life",Broad surrender & devotion query with multiple canonical targets,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,chorus,"(Vì) Ngài là Đấng chiến đấu cho con
+
+Ngài là Đấng sẽ luôn chiến thắng
+
+Ha-lê-lu-gia, ha-lê-lu-gia
+
+Biển Đỏ kia Chúa đã chia hai
+
+Ngài dẫn lối đưa con đi qua
+
+Ha-lê-lu-gia, ha-lê-lu-gia",0,Not Relevant,[],"Lời bài hát ca ngợi Chúa là Đấng chiến đấu, chiến thắng và rẽ Biển Đỏ dẫn lối cho dân Ngài, không đề cập đến sự đầu phục hay dâng trọn đời mình cho Chúa Giê-xu.",,third_party_adjudication,final_adjudicator_decision,1,"[""Ngài dẫn lối đưa con đi qua""]","Cụm từ ""Ngài dẫn lối đưa con đi qua"" thể hiện sự dẫn dắt của Chúa, có liên hệ gián tiếp với việc tin cậy và đầu phục Ngài. Tuy nhiên, đoạn lời chủ yếu nhấn mạnh quyền năng và sự chiến thắng của Chúa, chưa thể hiện sự đầu phục hay dâng trọn đời sống cho Ngài.",0,[],"Lời bài hát ca ngợi Chúa là Đấng chiến đấu, chiến thắng và rẽ Biển Đỏ dẫn lối cho dân Ngài, không đề cập đến sự đầu phục hay dâng trọn đời mình cho Chúa Giê-xu.",0,[],"Lời bài hát ca ngợi Chúa là Đấng chiến đấu, chiến thắng và rẽ Biển Đỏ dẫn lối cho dân Ngài, không đề cập đến sự đầu phục hay dâng trọn đời mình cho Chúa Giê-xu.",,1

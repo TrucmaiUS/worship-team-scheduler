@@ -14,6 +14,8 @@ export type EvidenceStatus = z.infer<typeof EvidenceStatusSchema>;
 
 export const JudgmentRoleSchema = z.enum([
   'gemini_teacher',
+  'independent_judge',
+  // Legacy pre-Groq artifact role; retained only so old offline fixtures remain readable.
   'gpt_independent_judge',
 ]);
 export type JudgmentRole = z.infer<typeof JudgmentRoleSchema>;
@@ -25,7 +27,7 @@ export const RelevanceJudgmentSchema = z
     candidateSongId: z.string().min(1),
     candidateSectionId: z.string().min(1),
     role: JudgmentRoleSchema,
-    provider: z.enum(['google', 'openai']),
+    provider: z.enum(['google', 'groq', 'openai']),
     modelId: z.string().min(1),
     promptVersion: z.string().min(1),
     relevanceScore: RelevanceScoreSchema,

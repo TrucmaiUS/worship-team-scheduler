@@ -6,6 +6,7 @@ export interface EvidenceQuoteResult {
   normalizedQuote: string;
   isSubstring: boolean;
   isMeaningful: boolean;
+  hasForbiddenSyntax: boolean;
 }
 
 export interface EvidenceValidationResult {
@@ -22,13 +23,16 @@ function isMeaningfulQuote(quote: string): boolean {
   return normalized.length >= 6 && tokenizeWords(normalized).length >= 2;
 }
 
+export function hasForbiddenEvidenceSyntax(quote: string): boolean {
+  return /\.{3}|…|\//u.test(quote);
+}
+
 export function validateEvidence(
   lyrics: string,
   evidenceQuotes: readonly string[],
   relevanceScore: RelevanceScore
 ): EvidenceValidationResult {
-  const normalizedLyrics = normalizeForComparison(lyrics);
-  if (!normalizedLyrics) throw new Error('Lyrics must not be empty.');
+  if (!normalizeForComparison(lyrics)) throw new Error('Lyrics must not be empty.');
 
   const required = relevanceScore >= 2;
   const quoteResults = evidenceQuotes.map((quote) => {
@@ -36,18 +40,22 @@ export function validateEvidence(
     return {
       quote,
       normalizedQuote,
-      isSubstring: normalizedQuote.length > 0 && normalizedLyrics.includes(normalizedQuote),
+      isSubstring: quote.length > 0 && lyrics.includes(quote),
       isMeaningful: isMeaningfulQuote(quote),
+      hasForbiddenSyntax: hasForbiddenEvidenceSyntax(quote),
     };
   });
 
   const allQuotesAreSubstrings = quoteResults.every((item) => item.isSubstring);
   const allQuotesAreMeaningful = quoteResults.every((item) => item.isMeaningful);
+  const hasForbiddenSyntax = quoteResults.some((item) => item.hasForbiddenSyntax);
   const reasons: string[] = [];
 
+  if (relevanceScore === 0 && quoteResults.length > 0) reasons.push('grade_zero_evidence_must_be_empty');
   if (required && quoteResults.length === 0) reasons.push('required_evidence_missing');
   if (!allQuotesAreSubstrings) reasons.push('evidence_not_verbatim_substring');
   if (!allQuotesAreMeaningful) reasons.push('evidence_too_short_or_generic');
+  if (hasForbiddenSyntax) reasons.push('evidence_contains_ellipsis_or_slash');
 
   let status: EvidenceStatus;
   if (reasons.length > 0) {

@@ -79,6 +79,29 @@ describe('offline Milestone 2 research controls', () => {
       expect(result.decision).toBe('human_review');
     });
 
+    it('keeps a partial semantic comparison incomplete', () => {
+      const result = auditQueryLeakage({
+        queryText: 'Khúc ca về niềm hy vọng được đổi mới mỗi ngày',
+        references: [...references, {
+          id: 'DEV-2',
+          text: 'Tìm bài hát về tình yêu của hội thánh',
+          scope: 'development',
+        }],
+        frozenE5CosineByReferenceId: { 'DEV-1': 0.2 },
+      });
+      expect(result.decision).toBe('incomplete');
+    });
+
+    it('sends ambiguous held-out vocabulary to human review', () => {
+      const result = auditQueryLeakage({
+        queryText: 'Khúc ca về niềm hy vọng được đổi mới mỗi ngày',
+        references,
+        frozenE5CosineByReferenceId: { 'DEV-1': 0.2 },
+        requiresHumanReview: true,
+      });
+      expect(result.decision).toBe('human_review');
+    });
+
     it('rejects a held-out intent even when lexical checks are low', () => {
       const result = auditQueryLeakage({
         queryText: 'Một lời cầu xin được sai đi đến muôn dân',
@@ -112,6 +135,29 @@ describe('offline Milestone 2 research controls', () => {
 
     it('allows grade 0 without a quote', () => {
       expect(validateEvidence(lyrics, [], 0).status).toBe('not_required');
+    });
+
+    it('accepts multiple separate contiguous spans', () => {
+      const result = validateEvidence(lyrics, [
+        'Giữa đêm tối',
+        'Lòng con tin cậy nơi Ngài',
+      ], 3);
+      expect(result.status).toBe('valid');
+    });
+
+    it('requires exact case and whitespace for verbatim evidence', () => {
+      expect(validateEvidence(lyrics, ['ngài vẫn dẫn lối con đi'], 2).status).toBe('invalid');
+      expect(validateEvidence(lyrics, ['Giữa đêm tối\nNgài vẫn dẫn lối con đi'], 2).status)
+        .toBe('invalid');
+    });
+
+    it('rejects ellipsis, slash delimiters, and grade 0 evidence', () => {
+      expect(validateEvidence(lyrics, ['Ngài vẫn...con đi'], 2).reasons)
+        .toContain('evidence_contains_ellipsis_or_slash');
+      expect(validateEvidence(lyrics, ['Giữa đêm tối / Lòng con tin cậy nơi Ngài'], 2).reasons)
+        .toContain('evidence_contains_ellipsis_or_slash');
+      expect(validateEvidence(lyrics, ['Giữa đêm tối'], 0).reasons)
+        .toContain('grade_zero_evidence_must_be_empty');
     });
   });
 
@@ -220,12 +266,16 @@ describe('offline Milestone 2 research controls', () => {
   describe('fail-closed provider configuration', () => {
     const validConfig = {
       role: 'gemini_teacher' as const,
+      task: 'label' as const,
       provider: 'google' as const,
       modelId: 'gemini-concrete-model',
       promptVersion: 'gemini-relevance-label-v3.0',
       promptSha256: 'a'.repeat(64),
       allowFallback: false as const,
       maxAttempts: 3,
+      maxOutputTokens: 512,
+      timeoutMs: 30000,
+      responseSchemaSha256: 'b'.repeat(64),
       temperature: 0,
       topP: 0.95,
     };
@@ -247,6 +297,15 @@ describe('offline Milestone 2 research controls', () => {
           modelId: 'different-model',
         })
       ).toThrow(/Model mismatch/);
+    });
+
+    it('permits a GPT Judge config without unsupported temperature and forbids generation', () => {
+      const { temperature: _temperature, topP: _topP, ...base } = validConfig;
+      const judge = { ...base, role: 'gpt_independent_judge' as const,
+        provider: 'openai' as const, modelId: 'gpt-5.4-mini-2026-03-17',
+        reasoningEffort: 'none' as const };
+      expect(parsePinnedProviderConfig(judge).temperature).toBeUndefined();
+      expect(() => parsePinnedProviderConfig({ ...judge, task: 'generation' })).toThrow();
     });
   });
 

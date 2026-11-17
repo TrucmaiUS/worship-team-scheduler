@@ -161,7 +161,7 @@ Labeling uses temperature `0` when supported. All other parameters remain pendin
 
 ## 4. Evidence Verification
 
-For grades 2–3, every evidence quote must match a contiguous span of the supplied lyrics after Unicode NFC and whitespace normalization. Case folding may be used for comparison, but the stored quote remains verbatim. A single generic token is insufficient even if it technically matches.
+For grades 2–3, every item in `evidence_quotes` must be an exact contiguous span of the supplied lyrics, including case and whitespace. Multiple non-contiguous spans use separate array items. Ellipsis, slash delimiters and reconstructed quotes are invalid. Grade 0 requires an empty array; grade 1 evidence is optional. A single generic token is insufficient even if it technically matches.
 
 If any required quote fails verification, mark `teacher_evidence_valid=false` and exclude the judgment from automatic training. Do not ask the model to “repair” evidence in place without creating a new logged attempt.
 

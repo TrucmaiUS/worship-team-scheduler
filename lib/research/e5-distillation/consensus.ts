@@ -23,8 +23,8 @@ function assertSameCandidate(
   if (teacher.role !== 'gemini_teacher') {
     throw new Error('Teacher judgment must use role gemini_teacher.');
   }
-  if (judge.role !== 'gpt_independent_judge') {
-    throw new Error('Judge judgment must use role gpt_independent_judge.');
+  if (!['independent_judge', 'gpt_independent_judge'].includes(judge.role)) {
+    throw new Error('Judge judgment must use an independent Judge role.');
   }
 }
 

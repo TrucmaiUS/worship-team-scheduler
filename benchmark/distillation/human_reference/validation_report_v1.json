@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "human-reference-validation-v1",
+  "status": "BLOCKED",
+  "source": {
+    "path": "benchmark/distillation/human_reference/human_reference_v1.csv",
+    "sha256": "3d9c2bd99c5ed96ea91207789e1249d2ae3ff82a1e72117ffed907cb28761d04",
+    "rows": 50
+  },
+  "frozenHumanLabels": true,
+  "gradeDistribution": [
+    17,
+    9,
+    8,
+    16
+  ],
+  "expectedGradeDistribution": [
+    17,
+    9,
+    8,
+    16
+  ],
+  "minimumPerGrade": 8,
+  "uniquePairIds": 50,
+  "missingProvenanceColumns": [
+    "reviewer_1_id",
+    "reviewer_2_id",
+    "adjudicator_id",
+    "source_section_id",
+    "language_bucket",
+    "difficult_theological_distinction",
+    "distinction_tag"
+  ],
+  "errors": [
+    "P004: invalid final evidence (evidence_not_verbatim_substring).",
+    "P004: invalid reviewer 2 evidence (evidence_not_verbatim_substring).",
+    "P006: invalid reviewer 1 evidence (evidence_not_verbatim_substring).",
+    "P031: invalid final evidence (evidence_not_verbatim_substring).",
+    "P031: invalid reviewer 2 evidence (evidence_not_verbatim_substring)."
+  ],
+  "warnings": [
+    "Missing provenance columns (not inferred): reviewer_1_id, reviewer_2_id, adjudicator_id, source_section_id, language_bucket, difficult_theological_distinction, distinction_tag.",
+    "Human grade 1 uses source label \"Slightly Relevant\"; model output rubric uses \"Partially Relevant\"."
+  ]
+}

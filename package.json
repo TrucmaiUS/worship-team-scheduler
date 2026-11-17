@@ -8,8 +8,12 @@
     "start": "next start",
     "lint": "eslint",
     "benchmark": "npx tsx --env-file=.env.local scripts/benchmark.ts",
-    "research:test": "vitest run lib/research/e5-distillation/__tests__/protocol.test.ts",
-    "research:validate": "npx tsx scripts/validate_distillation_protocol.ts"
+    "research:test": "vitest run lib/research/e5-distillation/__tests__",
+    "research:validate": "npx tsx scripts/validate_distillation_protocol.ts",
+    "research:human-reference:validate": "npx tsx scripts/validate_human_reference.ts",
+    "research:judge:smoke": "npx tsx --env-file=.env.local scripts/groq_judge_smoke.ts",
+    "research:judge:smoke:live": "npx tsx --env-file=.env.local scripts/groq_judge_smoke.ts --live",
+    "research:judge:evaluate": "npx tsx scripts/evaluate_judge_selection.ts"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.23",

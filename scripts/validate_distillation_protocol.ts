@@ -136,12 +136,16 @@ function main(): void {
 
   parsePinnedProviderConfig({
     role: 'gemini_teacher',
+    task: 'label',
     provider: 'google',
     modelId: 'offline-self-check-model',
     promptVersion: 'offline-self-check-v1',
     promptSha256: 'a'.repeat(64),
     allowFallback: false,
     maxAttempts: 1,
+    maxOutputTokens: 128,
+    timeoutMs: 5_000,
+    responseSchemaSha256: 'b'.repeat(64),
     temperature: 0,
   });
 

@@ -72,7 +72,7 @@ Only T01–T10 may appear in `source_topic_ids`. Development, diagnostic, and ex
 
 ## 3. Independent Judgment Record
 
-Teacher and Judge use the same record shape but are stored separately. The GPT Judge record must have no parent field referencing the Teacher result until after both raw files are sealed.
+Teacher and Judge use the same record shape but are stored separately. The independent Judge record must have no parent field referencing the Teacher result until after both raw files are sealed. New Judge records use role `independent_judge`, provider `groq`, and a separately stored exact model ID; the legacy `gpt_independent_judge`/`openai` example is retained only for old offline fixtures.
 
 ```json
 {
@@ -82,8 +82,8 @@ Teacher and Judge use the same record shape but are stored separately. The GPT J
   "candidate_alias": "CANDIDATE_07",
   "candidate_song_id": "<resolved-after-blind-run>",
   "candidate_section_id": "<resolved-after-blind-run>",
-  "judge_role": "gemini_teacher|gpt_independent_judge",
-  "provider": "google|openai",
+  "judge_role": "gemini_teacher|independent_judge",
+  "provider": "google|groq",
   "model_id": "<exact-pinned-id>",
   "provider_model_revision": "<returned-or-null>",
   "prompt_version": "<version>",
@@ -107,7 +107,7 @@ Teacher and Judge use the same record shape but are stored separately. The GPT J
 }
 ```
 
-Grades 2–3 require valid evidence. Grade 1 requires a rationale identifying both the partial match and the missing intent. Grade 0 requires a non-empty rationale but not a quote.
+`evidence_quotes` is always an array. Each item is one exact contiguous verbatim span; separate non-contiguous spans use separate items. Ellipsis, slash delimiters and reconstructed quotes are invalid. Grades 2–3 require at least one valid span. Grade 1 evidence is optional and its rationale identifies both the partial match and the missing intent. Grade 0 requires `[]` and a non-empty rationale.
 
 ---
 
