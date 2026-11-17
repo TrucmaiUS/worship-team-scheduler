@@ -76,13 +76,17 @@ describe('Groq independent Judge adapter', () => {
   it('retries only transient failures and never changes model', async () => {
     let calls = 0;
     const models: string[] = [];
+    const delays: number[] = [];
     const result = await callGroqJudge({
       apiKey: 'fixture-key', config: { ...baseConfig, maxAttempts: 2 },
-      systemPrompt: 'same rubric', request: blindRequest, sleep: async () => undefined,
+      systemPrompt: 'same rubric', request: blindRequest,
+      sleep: async milliseconds => { delays.push(milliseconds); },
       fetchImpl: async (_url, init) => {
         calls += 1;
         models.push(JSON.parse(String(init?.body)).model);
-        if (calls === 1) return new Response('{"error":"busy"}', { status: 429 });
+        if (calls === 1) return new Response(JSON.stringify({
+          error: { message: 'Rate limited. Please try again in 4.5s.' },
+        }), { status: 429 });
         return new Response(JSON.stringify({
           id: 'fixture-request', model: 'openai/gpt-oss-120b',
           choices: [{ message: { content: JSON.stringify({
@@ -96,6 +100,7 @@ describe('Groq independent Judge adapter', () => {
     });
     expect(result.attempts).toHaveLength(2);
     expect(models).toEqual(['openai/gpt-oss-120b', 'openai/gpt-oss-120b']);
+    expect(delays).toEqual([5000]);
   });
 });
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "judge-selection-execution-v3",
-  "status": "paused_for_rate_limit_retry_fix",
+  "status": "resuming_after_rate_limit",
   "runId": "judge-selection-v3-2026-11-17T16-47-13-968Z",
   "mode": "full_50_pair_comparison",
   "createdAtUtc": "2026-11-17T16:47:13.968Z",
@@ -133,5 +133,7 @@
   "codeCommit": "155b1eb53901eaea389faa9b335b6b10ac77a887",
   "fallbackAllowed": false,
   "protectedHeldOutDataUsed": false,
-  "responseFormatRationale": "Shared JSON mode with identical local strict-schema validation because the current Groq inventory does not advertise structured_outputs for qwen/qwen3.8-27b."
+  "responseFormatRationale": "Shared JSON mode with identical local strict-schema validation because the current Groq inventory does not advertise structured_outputs for qwen/qwen3.8-27b.",
+  "resumedAtUtc": "2026-11-17T16:57:48.639Z",
+  "resumeCodeCommit": "4ada3c3d0bbf8854d549029955ed393dc04e35e7"
 }

@@ -7,54 +7,25 @@
       "modelId": "qwen/qwen3.8-27b",
       "attempt": 1,
       "requestSha256": "cc549d902181d7fc50998cbeb1805f9d5e25387a7851836b38636fbe27cbb26f",
-      "responseSha256": "002ef10d646b1ca43f184ce869c1228a3482abdff954e6040d38ad2cd3834a6d",
-      "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
-      "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
-      "httpStatus": 429,
-      "latencyMs": 306,
-      "usage": {
-        "inputTokens": null,
-        "outputTokens": null,
-        "totalTokens": null
-      },
-      "providerRequestId": "req_01m7n6yghnevta3c3gwb2v2yvw",
-      "systemFingerprint": null,
-      "rateLimit": {
-        "requestLimit": "1000",
-        "remainingRequests": "991",
-        "tokenLimit": "8000",
-        "remainingTokens": "7109",
-        "requestReset": "12m57.599s",
-        "tokenReset": "53.46s"
-      },
-      "failureCode": "http_429",
-      "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 891, Requested 547. Please try again in 26.28s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
-      "retryable": true
-    },
-    {
-      "provider": "groq",
-      "modelId": "qwen/qwen3.8-27b",
-      "attempt": 2,
-      "requestSha256": "cc549d902181d7fc50998cbeb1805f9d5e25387a7851836b38636fbe27cbb26f",
-      "responseSha256": "21e7a6c320448599804c1e34c8716800fc579ed7b74b44e51d213fcac36c7c1c",
+      "responseSha256": "554f1e7beea4f10f0d3674bbc0198ceddeabde28ec45a308123616021d962675",
       "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
       "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
       "httpStatus": 200,
-      "latencyMs": 3098,
+      "latencyMs": 2091,
       "usage": {
         "inputTokens": null,
         "outputTokens": null,
         "totalTokens": null
       },
-      "providerRequestId": "req_01m7n6zb7eetw8zqtt9czjnef2",
+      "providerRequestId": "req_01m7n730dqeewawqfmpv7fn0wk",
       "systemFingerprint": null,
       "rateLimit": {
         "requestLimit": "1000",
         "remainingRequests": "990",
         "tokenLimit": "8000",
-        "remainingTokens": "6417",
+        "remainingTokens": "6737",
         "requestReset": "14m24s",
-        "tokenReset": "58.98s"
+        "tokenReset": "9.472s"
       },
       "failureCode": "protocol_validation_failure",
       "failureDetail": "Required evidence failed verbatim validation: evidence_not_verbatim_substring.",
@@ -63,32 +34,61 @@
     {
       "provider": "groq",
       "modelId": "qwen/qwen3.8-27b",
-      "attempt": 3,
+      "attempt": 2,
       "requestSha256": "cc549d902181d7fc50998cbeb1805f9d5e25387a7851836b38636fbe27cbb26f",
-      "responseSha256": "4547a2ee4fcfdaabae1a20b3018afad28311b7789e7698253b7b7c70813f7f1d",
+      "responseSha256": "d43efedfc6bc8cd85b0e1579f6fc52674d11be7fd03838cc2f082c1c2ab409b5",
       "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
       "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
       "httpStatus": 429,
-      "latencyMs": 210,
+      "latencyMs": 312,
       "usage": {
         "inputTokens": null,
         "outputTokens": null,
         "totalTokens": null
       },
-      "providerRequestId": "req_01m7n6zf4me9nbm3gzs6m7zveb",
+      "providerRequestId": "req_01m7n73c29expsrtkwmhkkhkqj",
       "systemFingerprint": null,
       "rateLimit": {
         "requestLimit": "1000",
         "remainingRequests": "990",
         "tokenLimit": "8000",
-        "remainingTokens": "6887",
+        "remainingTokens": "7343",
         "requestReset": "14m24s",
-        "tokenReset": "58.8s"
+        "tokenReset": "39.42s"
       },
       "failureCode": "http_429",
-      "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 980, Requested 681. Please try again in 39.66s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
+      "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 657, Requested 681. Please try again in 20.28s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
+      "retryable": true
+    },
+    {
+      "provider": "groq",
+      "modelId": "qwen/qwen3.8-27b",
+      "attempt": 3,
+      "requestSha256": "cc549d902181d7fc50998cbeb1805f9d5e25387a7851836b38636fbe27cbb26f",
+      "responseSha256": "ab453e0838e75648dc42ca8559d11b52854e48f9780440c345012021dda2ec67",
+      "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+      "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+      "httpStatus": 429,
+      "latencyMs": 268,
+      "usage": {
+        "inputTokens": null,
+        "outputTokens": null,
+        "totalTokens": null
+      },
+      "providerRequestId": "req_01m7n74144ezvsr2t9tgzv6w8k",
+      "systemFingerprint": null,
+      "rateLimit": {
+        "requestLimit": "1000",
+        "remainingRequests": "990",
+        "tokenLimit": "8000",
+        "remainingTokens": "7704",
+        "requestReset": "14m24s",
+        "tokenReset": "17.759s"
+      },
+      "failureCode": "http_429",
+      "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 296, Requested 780. Please try again in 4.56s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
       "retryable": true
     }
   ],
-  "message": "Groq Judge stopped without fallback after attempt 3: http_429 ({\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 980, Requested 681. Please try again in 39.66s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"})."
+  "message": "Groq Judge stopped without fallback after attempt 3: http_429 ({\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 296, Requested 780. Please try again in 4.56s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"})."
 }

@@ -192,7 +192,12 @@ function durationMs(value: string | null): number {
   return matched ? total : Number.NaN;
 }
 
-function retryDelayMs(attempt: number, retryAfter: string | null, tokenReset: string | null): number {
+function retryDelayMs(
+  attempt: number,
+  retryAfter: string | null,
+  tokenReset: string | null,
+  failureDetail: string | null
+): number {
   const retryAfterSeconds = retryAfter === null ? Number.NaN : Number(retryAfter);
   if (Number.isFinite(retryAfterSeconds) && retryAfterSeconds >= 0) {
     return Math.min(60_000, Math.ceil(retryAfterSeconds * 1000) + 250);
@@ -200,6 +205,11 @@ function retryDelayMs(attempt: number, retryAfter: string | null, tokenReset: st
   const resetMilliseconds = durationMs(tokenReset);
   if (Number.isFinite(resetMilliseconds) && resetMilliseconds >= 0) {
     return Math.min(60_000, Math.ceil(resetMilliseconds) + 250);
+  }
+  const providerHint = failureDetail?.match(/try again in ([0-9]+(?:\.[0-9]+)?(?:ms|s|m|h))/iu)?.[1] ?? null;
+  const providerHintMilliseconds = durationMs(providerHint);
+  if (Number.isFinite(providerHintMilliseconds) && providerHintMilliseconds >= 0) {
+    return Math.min(60_000, Math.ceil(providerHintMilliseconds) + 500);
   }
   return Math.min(8_000, 500 * 2 ** (attempt - 1));
 }
@@ -331,7 +341,8 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
     await sleep(retryDelayMs(
       attempt,
       response?.headers.get('retry-after') ?? null,
-      response?.headers.get('x-ratelimit-reset-tokens') ?? null
+      response?.headers.get('x-ratelimit-reset-tokens') ?? null,
+      failureDetail
     ));
   }
   throw new ResearchProtocolError('Groq Judge exhausted attempts without a result.');
