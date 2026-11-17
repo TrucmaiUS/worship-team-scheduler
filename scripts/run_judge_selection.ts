@@ -220,7 +220,8 @@ async function main(): Promise<void> {
     }
     writeJson(`${stem}_raw.json`, rawRecords);
     writeJson(`${stem}_evaluation.json`, evaluationOutputs);
-    fs.rmSync(path.join(outputDirectory, partialName));
+    fs.rmSync(path.join(outputDirectory, partialName), { force: true });
+    fs.rmSync(path.join(outputDirectory, `${stem}_failure.json`), { force: true });
   }
 
   const auditRows: string[][] = [[
@@ -238,6 +239,7 @@ async function main(): Promise<void> {
   }
   fs.writeFileSync(path.join(outputDirectory, 'evidence_context_audit.csv'),
     `${auditRows.map(row => row.map(csvEscape).join(',')).join('\n')}\n`, 'utf8');
+  fs.rmSync(path.join(outputDirectory, 'failure.json'), { force: true });
   const currentManifest = JSON.parse(fs.readFileSync(path.join(outputDirectory, 'run_manifest.json'), 'utf8'));
   writeJson('run_manifest.json', { ...currentManifest, status: 'raw_outputs_complete',
     completedAtUtc: new Date().toISOString(), evidenceContextAuditRequired: true });

@@ -117,6 +117,7 @@ export interface JudgeMetrics {
   quadraticWeightedKappa: number | null;
   macroF1: number | null;
   confusionMatrix: number[][];
+  confusionMatrixColumns: readonly ['0', '1', '2', '3', 'schema_failure'];
   perGrade: Array<{
     grade: RelevanceScore;
     support: number;
@@ -136,6 +137,31 @@ export interface JudgeMetrics {
   outputTokens: number;
   meanLatencyMs: number | null;
   p95LatencyMs: number | null;
+  queryClusterBootstrap: {
+    clusterField: 'sourceQueryId';
+    clusterCount: number;
+    replicates: number;
+    seed: number;
+    confidenceLevel: 0.95;
+    intervals: {
+      exactAgreement: MetricInterval | null;
+      meanAbsoluteError: MetricInterval | null;
+      quadraticWeightedKappa: MetricInterval | null;
+      macroF1: MetricInterval | null;
+    };
+  };
+}
+
+interface MetricInterval {
+  lower: number;
+  upper: number;
+}
+
+type NullablePrediction = RelevanceScore | null;
+
+interface AlignedJudgeItem {
+  pair: JudgeSelectionPair;
+  output: JudgeSelectionOutput;
 }
 
 export const JUDGE_SELECTION_CRITERIA = {
@@ -218,7 +244,7 @@ function normalizeVersionedCandidate(value: string): string {
 
 function quadraticWeightedKappa(reference: RelevanceScore[], predicted: RelevanceScore[]): number {
   const categories = 4;
-  const observed = buildConfusionMatrix(reference, predicted);
+  const observed = buildScoredConfusionMatrix(reference, predicted);
   const refCounts = Array(categories).fill(0);
   const predCounts = Array(categories).fill(0);
   for (let index = 0; index < reference.length; index += 1) {
@@ -237,7 +263,7 @@ function quadraticWeightedKappa(reference: RelevanceScore[], predicted: Relevanc
   return weightedExpected === 0 ? (weightedObserved === 0 ? 1 : 0) : 1 - weightedObserved / weightedExpected;
 }
 
-function buildConfusionMatrix(reference: RelevanceScore[], predicted: RelevanceScore[]): number[][] {
+function buildScoredConfusionMatrix(reference: RelevanceScore[], predicted: RelevanceScore[]): number[][] {
   const matrix = Array.from({ length: 4 }, () => Array<number>(4).fill(0));
   for (let index = 0; index < reference.length; index += 1) {
     matrix[reference[index]][predicted[index]] += 1;
@@ -245,7 +271,18 @@ function buildConfusionMatrix(reference: RelevanceScore[], predicted: RelevanceS
   return matrix;
 }
 
-function perGradeMetrics(reference: RelevanceScore[], predicted: RelevanceScore[]): JudgeMetrics['perGrade'] {
+function buildReportedConfusionMatrix(
+  reference: RelevanceScore[],
+  predicted: NullablePrediction[]
+): number[][] {
+  const matrix = Array.from({ length: 4 }, () => Array<number>(5).fill(0));
+  for (let index = 0; index < reference.length; index += 1) {
+    matrix[reference[index]][predicted[index] ?? 4] += 1;
+  }
+  return matrix;
+}
+
+function perGradeMetrics(reference: RelevanceScore[], predicted: NullablePrediction[]): JudgeMetrics['perGrade'] {
   return ([0, 1, 2, 3] as const).map(grade => {
     let truePositive = 0;
     let falsePositive = 0;
@@ -269,7 +306,7 @@ function perGradeMetrics(reference: RelevanceScore[], predicted: RelevanceScore[
   });
 }
 
-function macroF1(reference: RelevanceScore[], predicted: RelevanceScore[]): number {
+function macroF1(reference: RelevanceScore[], predicted: NullablePrediction[]): number {
   return [0, 1, 2, 3].reduce((sum, label) => {
     let truePositive = 0;
     let falsePositive = 0;
@@ -286,6 +323,83 @@ function macroF1(reference: RelevanceScore[], predicted: RelevanceScore[]): numb
   }, 0) / 4;
 }
 
+function percentile(values: number[], probability: number): number | null {
+  if (values.length === 0) return null;
+  const sorted = [...values].sort((left, right) => left - right);
+  const position = (sorted.length - 1) * probability;
+  const lower = Math.floor(position);
+  const upper = Math.ceil(position);
+  if (lower === upper) return sorted[lower];
+  return sorted[lower] + (sorted[upper] - sorted[lower]) * (position - lower);
+}
+
+function metricInterval(values: Array<number | null>): MetricInterval | null {
+  const finite = values.filter((value): value is number => value !== null && Number.isFinite(value));
+  const lower = percentile(finite, 0.025);
+  const upper = percentile(finite, 0.975);
+  return lower === null || upper === null ? null : { lower, upper };
+}
+
+function seededRandom(seed: number): () => number {
+  let state = seed >>> 0;
+  return () => {
+    state = (state + 0x6D2B79F5) >>> 0;
+    let value = state;
+    value = Math.imul(value ^ value >>> 15, value | 1);
+    value ^= value + Math.imul(value ^ value >>> 7, value | 61);
+    return ((value ^ value >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+function sampleMetrics(items: AlignedJudgeItem[]): {
+  exactAgreement: number;
+  meanAbsoluteError: number | null;
+  quadraticWeightedKappa: number | null;
+  macroF1: number;
+} {
+  const references = items.map(item => finalHumanScore(item.pair));
+  const predictions = items.map(item => item.output.schemaPass ? item.output.relevanceScore : null);
+  const scored = items.flatMap((item, index) => predictions[index] === null ? [] : [{
+    reference: references[index], prediction: predictions[index] as RelevanceScore,
+  }]);
+  const scoredReferences = scored.map(item => item.reference);
+  const scoredPredictions = scored.map(item => item.prediction);
+  return {
+    exactAgreement: items.length === 0 ? 0 : scored.filter(item =>
+      item.reference === item.prediction).length / items.length,
+    meanAbsoluteError: scored.length === 0 ? null : scored.reduce((sum, item) =>
+      sum + Math.abs(item.reference - item.prediction), 0) / scored.length,
+    quadraticWeightedKappa: scored.length === 0 ? null :
+      quadraticWeightedKappa(scoredReferences, scoredPredictions),
+    macroF1: macroF1(references, predictions),
+  };
+}
+
+function queryClusterBootstrap(items: AlignedJudgeItem[]): JudgeMetrics['queryClusterBootstrap'] {
+  const seed = 20261113;
+  const replicates = 2000;
+  const clusters = [...Map.groupBy(items, item => item.pair.sourceQueryId).values()];
+  const random = seededRandom(seed);
+  const samples = Array.from({ length: replicates }, () => {
+    const resampled = Array.from({ length: clusters.length }, () =>
+      clusters[Math.floor(random() * clusters.length)]).flat();
+    return sampleMetrics(resampled);
+  });
+  return {
+    clusterField: 'sourceQueryId',
+    clusterCount: clusters.length,
+    replicates,
+    seed,
+    confidenceLevel: 0.95,
+    intervals: {
+      exactAgreement: metricInterval(samples.map(sample => sample.exactAgreement)),
+      meanAbsoluteError: metricInterval(samples.map(sample => sample.meanAbsoluteError)),
+      quadraticWeightedKappa: metricInterval(samples.map(sample => sample.quadraticWeightedKappa)),
+      macroF1: metricInterval(samples.map(sample => sample.macroF1)),
+    },
+  };
+}
+
 export function evaluateJudgeCandidate(
   pairInput: unknown,
   outputInput: unknown,
@@ -300,6 +414,8 @@ export function evaluateJudgeCandidate(
   }
   const aligned = pairs.map(pair => ({ pair, output: outputByPair.get(pair.pairId)! }));
   const valid = aligned.filter(item => item.output.schemaPass && item.output.relevanceScore !== null);
+  const allReferences = aligned.map(item => finalHumanScore(item.pair));
+  const allPredictions = aligned.map(item => item.output.schemaPass ? item.output.relevanceScore : null);
   const references = valid.map(item => finalHumanScore(item.pair));
   const predictions = valid.map(item => item.output.relevanceScore as RelevanceScore);
   const evidenceRequired = valid.filter(item => (item.output.relevanceScore as number) >= 2)
@@ -326,10 +442,11 @@ export function evaluateJudgeCandidate(
     scoredPairs: valid.length,
     exactAgreement: exactCorrect / pairs.length,
     meanAbsoluteError: valid.length === 0 ? null : absoluteError / valid.length,
-    quadraticWeightedKappa: valid.length === pairs.length ? quadraticWeightedKappa(references, predictions) : null,
-    macroF1: valid.length === pairs.length ? macroF1(references, predictions) : null,
-    confusionMatrix: buildConfusionMatrix(references, predictions),
-    perGrade: perGradeMetrics(references, predictions),
+    quadraticWeightedKappa: valid.length === 0 ? null : quadraticWeightedKappa(references, predictions),
+    macroF1: macroF1(allReferences, allPredictions),
+    confusionMatrix: buildReportedConfusionMatrix(allReferences, allPredictions),
+    confusionMatrixColumns: ['0', '1', '2', '3', 'schema_failure'],
+    perGrade: perGradeMetrics(allReferences, allPredictions),
     evidenceRequiredCount: evidenceRequired.length,
     evidenceVerbatimMatchRate: evidenceRequired.length === 0 ? null :
       evidenceRequired.filter(item => item.evidenceValidation.status === 'valid').length / evidenceRequired.length,
@@ -343,6 +460,7 @@ export function evaluateJudgeCandidate(
     outputTokens: outputs.reduce((sum, output) => sum + (output.outputTokens ?? 0), 0),
     meanLatencyMs: latencies.length === 0 ? null : latencies.reduce((sum, value) => sum + value, 0) / latencies.length,
     p95LatencyMs: latencies.length === 0 ? null : latencies[Math.ceil(latencies.length * 0.95) - 1],
+    queryClusterBootstrap: queryClusterBootstrap(aligned),
   };
 }
 

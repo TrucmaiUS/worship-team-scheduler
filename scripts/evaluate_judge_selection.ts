@@ -1,3 +1,4 @@
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import {
@@ -23,6 +24,12 @@ const outputPath = argument('--out');
 if (fs.existsSync(outputPath)) throw new Error(`Refusing to overwrite existing report: ${outputPath}`);
 
 const root = path.resolve(__dirname, '..');
+function inputRecord(file: string): { path: string; sha256: string } {
+  return {
+    path: path.relative(root, file).replaceAll('\\', '/'),
+    sha256: crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'),
+  };
+}
 const queryRows = parseCsv(fs.readFileSync(path.join(root,
   'benchmark/distillation/human_reference/query_manifest_v2.csv'), 'utf8'));
 const developmentQueries = new Map(queryRows.map(row => [row.reference_query_id, {
@@ -43,7 +50,18 @@ const report = {
   schemaVersion: 'judge-selection-report-v1',
   createdAtUtc: new Date().toISOString(),
   criteria: JUDGE_SELECTION_CRITERIA,
-  referencesPath,
+  metricPolicy: {
+    schemaFailuresCountAsIncorrect: true,
+    strictAllPairMetrics: ['exactAgreement', 'macroF1', 'confusionMatrix', 'perGrade'],
+    scoredPairConditionalMetrics: ['meanAbsoluteError', 'quadraticWeightedKappa'],
+    confidenceIntervals: '95% percentile bootstrap resampling sourceQueryId clusters (2,000 replicates)',
+  },
+  referencesPath: inputRecord(referencesPath).path,
+  inputs: {
+    references: inputRecord(referencesPath),
+    gptOss: inputRecord(gptOssPath),
+    qwen: inputRecord(qwenPath),
+  },
   candidates: [gptOss, qwen],
   comparison,
 };

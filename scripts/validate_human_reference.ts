@@ -54,7 +54,7 @@ function parseQuotes(value: string, field: string, pairId: string): string[] {
 }
 
 const inputPath = option('--input') ?? path.resolve(
-  'benchmark/distillation/human_reference/human_reference_v1.csv'
+  'benchmark/distillation/human_reference/human_reference_v2.csv'
 );
 const outputPath = option('--out');
 const bytes = fs.readFileSync(inputPath);
@@ -215,7 +215,9 @@ if (outputPath) {
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
   if (fs.existsSync(outputPath)) {
     const current = fs.readFileSync(outputPath, 'utf8');
-    if (current !== serialized) throw new Error(`Refusing to overwrite non-matching report: ${outputPath}`);
+    if (current.replace(/\r\n?/gu, '\n') !== serialized) {
+      throw new Error(`Refusing to overwrite non-matching report: ${outputPath}`);
+    }
   } else {
     fs.writeFileSync(outputPath, serialized, { encoding: 'utf8', flag: 'wx' });
   }

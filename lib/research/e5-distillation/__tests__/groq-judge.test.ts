@@ -166,6 +166,35 @@ describe('Judge selection metrics and contamination controls', () => {
     expect(passesJudgeSelectionGates(metrics)).toBe(true);
   });
 
+  it('counts schema failures as incorrect while keeping ordinal metrics coverage explicit', () => {
+    const pairs = referencePairs();
+    const outputs = pairs.map((pair, index) => ({
+      pairId: pair.pairId, provider: 'groq' as const,
+      modelId: 'qwen/qwen3.8-27b' as const, schemaPass: index !== 0,
+      relevanceScore: index === 0 ? null : pair.humanReference.initialReviews[0].relevanceScore,
+      evidenceQuotes: index === 0 ? [] : pair.humanReference.initialReviews[0].evidenceQuotes,
+      evidenceContextSupported: index === 0 ? null :
+        pair.humanReference.initialReviews[0].relevanceScore >= 2 ? true : null,
+      inputTokens: index === 0 ? null : 100,
+      outputTokens: index === 0 ? null : 30,
+      latencyMs: 10 + index,
+      failureCode: index === 0 ? 'schema_validation_failure' : null,
+    }));
+    const metrics = evaluateJudgeCandidate(pairs, outputs);
+    expect(metrics.scoredPairs).toBe(49);
+    expect(metrics.exactAgreement).toBe(49 / 50);
+    expect(metrics.meanAbsoluteError).toBe(0);
+    expect(metrics.quadraticWeightedKappa).toBe(1);
+    expect(metrics.macroF1).toBeLessThan(1);
+    expect(metrics.confusionMatrixColumns).toEqual(['0', '1', '2', '3', 'schema_failure']);
+    expect(metrics.confusionMatrix[0][4]).toBe(1);
+    expect(metrics.perGrade[0].support).toBe(17);
+    expect(metrics.perGrade[0].recall).toBe(16 / 17);
+    expect(metrics.schemaPassRate).toBe(49 / 50);
+    expect(metrics.queryClusterBootstrap.clusterCount).toBe(50);
+    expect(passesJudgeSelectionGates(metrics)).toBe(false);
+  });
+
   it('rejects T11–T16 and external contamination', () => {
     const pairs = referencePairs();
     expect(() => validateJudgeSelectionSet([
