@@ -1,5 +1,5 @@
 {
   "status": "FAILED",
-  "failedAtUtc": "2026-11-17T17:00:13.781Z",
-  "message": "Groq Judge stopped without fallback after attempt 3: protocol_validation_failure (Required evidence failed verbatim validation: evidence_not_verbatim_substring.)."
+  "failedAtUtc": "2026-11-17T17:16:00.052Z",
+  "message": "Groq Judge stopped without fallback after attempt 2: http_400 ({\"message\":\"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"max completion tokens reached before generating a valid document\"})."
 }

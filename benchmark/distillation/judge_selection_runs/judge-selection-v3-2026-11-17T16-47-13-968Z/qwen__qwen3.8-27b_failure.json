@@ -1,94 +1,65 @@
 {
-  "pairId": "P006",
-  "pairIndex": 5,
+  "pairId": "P029",
+  "pairIndex": 28,
   "attempts": [
     {
       "provider": "groq",
       "modelId": "qwen/qwen3.8-27b",
       "attempt": 1,
-      "requestSha256": "cc549d902181d7fc50998cbeb1805f9d5e25387a7851836b38636fbe27cbb26f",
-      "responseSha256": "da22e6f0c2160827195f335d6348d7afedf98b9d0f73f447144f4e8d9fcc42ff",
+      "requestSha256": "ad5d2c828f00b46e60cca602373f5f1874321e4ddbeed63e71aa11fd72f106b0",
+      "responseSha256": "10dc169f746b465ce84da3dbe8353713fecdb8059f0d55163c5109f0009ea482",
       "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
       "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
-      "httpStatus": 200,
-      "latencyMs": 1981,
+      "httpStatus": 429,
+      "latencyMs": 317,
       "usage": {
         "inputTokens": null,
         "outputTokens": null,
         "totalTokens": null
       },
-      "providerRequestId": "req_01m7n760e2em78n14ds8hnfjzs",
+      "providerRequestId": "req_01m7n839g9ey2stg2fad0jfrnn",
       "systemFingerprint": null,
       "rateLimit": {
         "requestLimit": "1000",
-        "remainingRequests": "990",
+        "remainingRequests": "967",
         "tokenLimit": "8000",
-        "remainingTokens": "7033",
-        "requestReset": "14m24s",
-        "tokenReset": "7.252s"
+        "remainingTokens": "7244",
+        "requestReset": "47m31.2s",
+        "tokenReset": "45.36s"
       },
-      "failureCode": "protocol_validation_failure",
-      "failureDetail": "Required evidence failed verbatim validation: evidence_not_verbatim_substring.",
+      "failureCode": "http_429",
+      "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 756, Requested 740. Please try again in 29.759999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
       "retryable": true
     },
     {
       "provider": "groq",
       "modelId": "qwen/qwen3.8-27b",
       "attempt": 2,
-      "requestSha256": "cc549d902181d7fc50998cbeb1805f9d5e25387a7851836b38636fbe27cbb26f",
-      "responseSha256": "0da250cb224899182d18dd42a89f2557af041caba0fd9e1f404190573823b37b",
+      "requestSha256": "ad5d2c828f00b46e60cca602373f5f1874321e4ddbeed63e71aa11fd72f106b0",
+      "responseSha256": "88e9fd71f1978521a988ec599161b1bb110d05f5de889c7a23af6287f821422f",
       "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
       "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
-      "httpStatus": 429,
-      "latencyMs": 401,
+      "httpStatus": 400,
+      "latencyMs": 2242,
       "usage": {
         "inputTokens": null,
         "outputTokens": null,
         "totalTokens": null
       },
-      "providerRequestId": "req_01m7n769xveta8324skp1gtwjj",
+      "providerRequestId": "req_01m7n847b8es2sjpkq33w1q1a6",
       "systemFingerprint": null,
       "rateLimit": {
         "requestLimit": "1000",
-        "remainingRequests": "990",
+        "remainingRequests": "966",
         "tokenLimit": "8000",
-        "remainingTokens": "7307",
-        "requestReset": "14m24s",
-        "tokenReset": "41.58s"
+        "remainingTokens": "6472",
+        "requestReset": "48m57.6s",
+        "tokenReset": "56.1s"
       },
-      "failureCode": "http_429",
-      "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 693, Requested 853. Please try again in 32.76s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
-      "retryable": true
-    },
-    {
-      "provider": "groq",
-      "modelId": "qwen/qwen3.8-27b",
-      "attempt": 3,
-      "requestSha256": "cc549d902181d7fc50998cbeb1805f9d5e25387a7851836b38636fbe27cbb26f",
-      "responseSha256": "a5e0cd80443258761c295ef1c1bd69d82fbed68dfc01630d5c81438689014acb",
-      "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
-      "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
-      "httpStatus": 200,
-      "latencyMs": 2821,
-      "usage": {
-        "inputTokens": null,
-        "outputTokens": null,
-        "totalTokens": null
-      },
-      "providerRequestId": "req_01m7n77anceqhv35qhg4pj18xk",
-      "systemFingerprint": null,
-      "rateLimit": {
-        "requestLimit": "1000",
-        "remainingRequests": "989",
-        "tokenLimit": "8000",
-        "remainingTokens": "6413",
-        "requestReset": "15m50.4s",
-        "tokenReset": "59.22s"
-      },
-      "failureCode": "protocol_validation_failure",
-      "failureDetail": "Required evidence failed verbatim validation: evidence_not_verbatim_substring.",
-      "retryable": true
+      "failureCode": "http_400",
+      "failureDetail": "{\"message\":\"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"max completion tokens reached before generating a valid document\"}",
+      "retryable": false
     }
   ],
-  "message": "Groq Judge stopped without fallback after attempt 3: protocol_validation_failure (Required evidence failed verbatim validation: evidence_not_verbatim_substring.)."
+  "message": "Groq Judge stopped without fallback after attempt 2: http_400 ({\"message\":\"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"max completion tokens reached before generating a valid document\"})."
 }

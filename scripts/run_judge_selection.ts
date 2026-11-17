@@ -158,13 +158,41 @@ async function main(): Promise<void> {
           onAttempt: log => attempts.push(log),
         });
       } catch (error) {
+        const lastAttempt = attempts.at(-1);
         writeJson(`${modelId.replaceAll('/', '__')}_failure.json`, {
           pairId: pair.pairId,
           pairIndex: index,
           attempts,
           message: error instanceof Error ? error.message : String(error),
         });
-        throw error;
+        const recordableSchemaFailure = Boolean(lastAttempt && (
+          ['schema_validation_failure', 'invalid_json', 'protocol_validation_failure']
+            .includes(lastAttempt.failureCode ?? '') ||
+          (lastAttempt.failureCode === 'http_400' &&
+            /generate JSON|validate JSON|json_validate_failed/iu.test(lastAttempt.failureDetail ?? ''))
+        ));
+        if (!recordableSchemaFailure) throw error;
+        const latencyMs = attempts.reduce((sum, attempt) => sum + attempt.latencyMs, 0);
+        rawRecords.push({ pairId: pair.pairId, output: null, attempts,
+          failureCode: lastAttempt?.failureCode ?? 'schema_failure' });
+        evaluationOutputs.push({
+          pairId: pair.pairId,
+          provider: 'groq',
+          modelId,
+          schemaPass: false,
+          relevanceScore: null,
+          evidenceQuotes: [],
+          evidenceContextSupported: null,
+          inputTokens: null,
+          outputTokens: null,
+          latencyMs,
+          failureCode: lastAttempt?.failureCode ?? 'schema_failure',
+        });
+        writeJson(partialName, {
+          modelId, completedPairs: index + 1, rawRecords, evaluationOutputs,
+        });
+        console.warn(`${modelId}: recorded schema failure for ${pair.pairId}; continuing`);
+        continue;
       }
       const latencyMs = attempts.reduce((sum, attempt) => sum + attempt.latencyMs, 0);
       const inputTokens = attempts.reduce((sum, attempt) => sum + (attempt.usage.inputTokens ?? 0), 0);
