@@ -1,6 +1,6 @@
 {
   "schemaVersion": "judge-selection-execution-v3",
-  "status": "resuming_after_rate_limit",
+  "status": "raw_outputs_complete",
   "runId": "judge-selection-v3-2026-11-17T16-47-13-968Z",
   "mode": "full_50_pair_comparison",
   "createdAtUtc": "2026-11-17T16:47:13.968Z",
@@ -134,6 +134,16 @@
   "fallbackAllowed": false,
   "protectedHeldOutDataUsed": false,
   "responseFormatRationale": "Shared JSON mode with identical local strict-schema validation because the current Groq inventory does not advertise structured_outputs for qwen/qwen3.8-27b.",
-  "resumedAtUtc": "2026-11-17T17:01:49.315Z",
-  "resumeCodeCommit": "e3ebe51d42e60a6340e13b4a7dc3457b5a946359"
+  "resumedAtUtc": "2026-11-17T17:18:56.790Z",
+  "resumeCodeCommit": "76054d35709887849f6e3398d87a482f79329ed3",
+  "outputs": {
+    "openai__gpt-oss-120b_raw.json": "b06264010a939da4224b9d2108c2b0387c483e5fdd80ae86aa4deea5379b2385",
+    "openai__gpt-oss-120b_evaluation.json": "d656b7e5b79aeb717d7da66fa567e6a8bcd8dda1dcb558db0efb84348af427ac",
+    "qwen__qwen3.8-27b_raw.json": "049e32f410fe14f71567850438909d16362af50e4d48e80ba94ff22a172a5a04",
+    "qwen__qwen3.8-27b_evaluation.json": "6ae3f2ecab201800e04c57696c514a73e6a9a9b33ee7caaabedc416597734df3",
+    "evidence_context_audit.csv": "8a2b925b08c823e620ae087853007e85d137ef03810cc4663294e154e65f136a",
+    "model_comparison_pre_audit.json": "1917e9152c70ad2db597e55fe3bc22de34aeeab2f1fc9f48a3fbd9bd310605b3"
+  },
+  "completedAtUtc": "2026-11-17T17:31:49.583Z",
+  "evidenceContextAuditRequired": true
 }
