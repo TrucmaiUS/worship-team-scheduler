@@ -37,6 +37,10 @@ The initial v2 execution attempt used provider-side strict JSON Schema. GPT-OSS 
 
 The first v3 preflight exposed missing field names in the prompt, so prompt v4.2 makes the six-key JSON contract explicit. A subsequent Qwen preflight returned an empty provider `failed_generation` at the 512-token cap. A 1024-token preflight passed three pairs per model, but the full Qwen run then exposed an account OTPM limit of 1000 that rejects a 1024 maximum-output request. Before any complete comparable run, the shared cap was set to 900 for both candidates. Outputs from all earlier partial runs are retained as failure evidence and excluded from comparison.
 
+Version 3 completed all 50 pairs but Qwen produced no valid JSON for P029 and P047 because it reached the shared 900-token completion cap. The adapter had counted every HTTP request against `maxAttempts`, so transient 429 responses could consume generation opportunities; additionally, a provider `json_validate_failed` HTTP 400 was not retried. Version 4 corrects this before a new comparison: `maxAttempts=3` means three completed generation attempts, while at most six transient rate-limit/network retries are tracked separately. The same retry semantics apply to both candidates. Prompt v4.3 retains the rubric and schema but limits `reasoning_summary` to two short sentences and 60 words. A disclosed regression preflight uses P001, P029 and P047; passing it authorizes a fresh full 50-pair run for both models, never a selective replacement of v3 rows.
+
+The live Groq Models API checked before v4 still advertises `structured_outputs` for GPT-OSS 120B but only `json_mode` for Qwen 3.8 27B. Despite broader catalog documentation, v4 therefore remains on the strongest response mode verified as shared by the exact live model IDs: JSON Object Mode plus identical strict local validation.
+
 ## Metrics
 
 Report exact counts and denominators plus:

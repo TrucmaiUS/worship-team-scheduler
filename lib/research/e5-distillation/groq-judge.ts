@@ -61,6 +61,7 @@ export interface GroqJudgeAttemptLog {
   provider: 'groq';
   modelId: string;
   attempt: number;
+  generationAttempt: number | null;
   requestSha256: string;
   responseSha256: string | null;
   promptSha256: string;
@@ -178,6 +179,17 @@ function retryableStatus(status: number): boolean {
   return [408, 409, 429, 500, 502, 503, 504].includes(status);
 }
 
+function retryableJsonGenerationFailure(
+  status: number,
+  providerErrorCode: string | null,
+  failureDetail: string | null
+): boolean {
+  return status === 400 && (
+    providerErrorCode === 'json_validate_failed' ||
+    /generate JSON|validate JSON|max completion tokens reached/iu.test(failureDetail ?? '')
+  );
+}
+
 function durationMs(value: string | null): number {
   if (!value) return Number.NaN;
   const numericSeconds = Number(value);
@@ -240,13 +252,19 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
   const sleep = options.sleep ?? ((milliseconds: number) =>
     new Promise<void>((resolve) => setTimeout(resolve, milliseconds)));
 
-  for (let attempt = 1; attempt <= config.maxAttempts; attempt += 1) {
+  let requestAttempt = 0;
+  let generationAttempts = 0;
+  let transientFailures = 0;
+  while (generationAttempts < config.maxAttempts) {
+    requestAttempt += 1;
     const started = Date.now();
     let response: Response | null = null;
     let raw = '';
     let failureCode: string | null = null;
     let failureDetail: string | null = null;
+    let providerErrorCode: string | null = null;
     let retryable = false;
+    let generationAttempted = false;
     try {
       response = await fetchImpl(`${GROQ_OPENAI_BASE_URL}/chat/completions`, {
         method: 'POST',
@@ -264,14 +282,19 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
           const payload = JSON.parse(raw) as {
             error?: { message?: string; code?: string; failed_generation?: string };
           };
+          providerErrorCode = payload.error?.code ?? null;
           failureDetail = payload.error
             ? JSON.stringify(payload.error).slice(0, 4000)
             : raw.slice(0, 4000);
         } catch {
           failureDetail = raw.slice(0, 4000);
         }
-        retryable = retryableStatus(response.status);
+        generationAttempted = retryableJsonGenerationFailure(
+          response.status, providerErrorCode, failureDetail
+        );
+        retryable = retryableStatus(response.status) || generationAttempted;
       } else {
+        generationAttempted = true;
         const payload = JSON.parse(raw) as GroqChatResponse;
         assertPinnedProviderIdentity(config, {
           provider: 'groq',
@@ -291,7 +314,8 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
           );
         }
         const log: GroqJudgeAttemptLog = {
-          provider: 'groq', modelId: config.modelId, attempt, requestSha256,
+          provider: 'groq', modelId: config.modelId, attempt: requestAttempt,
+          generationAttempt: generationAttempts + 1, requestSha256,
           responseSha256: sha256CanonicalJson(payload), promptSha256: config.promptSha256,
           responseSchemaSha256: config.responseSchemaSha256,
           httpStatus: response.status, latencyMs: Date.now() - started,
@@ -325,9 +349,12 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
       );
     }
 
+    if (generationAttempted) generationAttempts += 1;
+    else transientFailures += 1;
     failureDetail = redactProviderIdentifiers(failureDetail);
     const log: GroqJudgeAttemptLog = {
-      provider: 'groq', modelId: config.modelId, attempt, requestSha256,
+      provider: 'groq', modelId: config.modelId, attempt: requestAttempt,
+      generationAttempt: generationAttempted ? generationAttempts : null, requestSha256,
       responseSha256: raw ? crypto.createHash('sha256').update(raw).digest('hex') : null,
       promptSha256: config.promptSha256, responseSchemaSha256: config.responseSchemaSha256,
       httpStatus: response?.status ?? null, latencyMs: Date.now() - started,
@@ -338,13 +365,16 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
     };
     attempts.push(log);
     options.onAttempt?.(log);
-    if (!retryable || attempt === config.maxAttempts) {
+    if (!retryable || generationAttempts >= config.maxAttempts ||
+        transientFailures > config.maxTransientRetries) {
       throw new ResearchProtocolError(
-        `Groq Judge stopped without fallback after attempt ${attempt}: ${failureCode} (${failureDetail}).`
+        `Groq Judge stopped without fallback after request ${requestAttempt} ` +
+        `and generation ${generationAttempts}/${config.maxAttempts}: ` +
+        `${failureCode} (${failureDetail}).`
       );
     }
     await sleep(retryDelayMs(
-      attempt,
+      requestAttempt,
       response?.headers.get('retry-after') ?? null,
       response?.headers.get('x-ratelimit-reset-tokens') ?? null,
       failureDetail

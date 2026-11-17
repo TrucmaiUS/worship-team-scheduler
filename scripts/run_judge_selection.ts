@@ -21,7 +21,7 @@ const requiredApiKey: string = apiKey;
 const referencePath = path.join(ROOT,
   'benchmark/distillation/human_reference/judge_selection_reference_v2.json');
 const promptPath = path.join(ROOT,
-  'docs/research/e5_distillation/prompts/groq-independent-judge-v4.2.txt');
+  'docs/research/e5_distillation/prompts/groq-independent-judge-v4.3.txt');
 const references = validateJudgeSelectionSet(JSON.parse(fs.readFileSync(referencePath, 'utf8')));
 const systemPrompt = fs.readFileSync(promptPath, 'utf8').replace(/\r\n/gu, '\n').trimEnd();
 const promptSha256 = crypto.createHash('sha256').update(systemPrompt).digest('hex');
@@ -32,7 +32,7 @@ const resumeIndex = process.argv.indexOf('--resume');
 const resumeRunId = resumeIndex >= 0 ? process.argv[resumeIndex + 1] : null;
 if (resumeIndex >= 0 && !resumeRunId) throw new Error('Missing --resume <run-id>.');
 const runId = resumeRunId ??
-  `judge-selection-v3${preflight ? '-preflight' : ''}-${createdAtUtc.replace(/[:.]/gu, '-')}`;
+  `judge-selection-v4${preflight ? '-preflight' : ''}-${createdAtUtc.replace(/[:.]/gu, '-')}`;
 const outputDirectory = path.join(ROOT, 'benchmark/distillation/judge_selection_runs', runId);
 if (resumeRunId) {
   if (!fs.existsSync(outputDirectory)) throw new Error(`Resume run does not exist: ${outputDirectory}`);
@@ -46,10 +46,11 @@ const configFor = (modelId: typeof JUDGE_CANDIDATE_MODEL_IDS[number]) => ({
   task: 'label' as const,
   provider: 'groq' as const,
   modelId,
-  promptVersion: 'groq-independent-judge-v4.2',
+  promptVersion: 'groq-independent-judge-v4.3',
   promptSha256,
   allowFallback: false as const,
   maxAttempts: 3,
+  maxTransientRetries: 6,
   maxOutputTokens: 900,
   timeoutMs: 30_000,
   responseSchemaSha256: groqJudgeResponseSchemaSha256(),
@@ -88,10 +89,10 @@ async function main(): Promise<void> {
 
   const envelopes = JUDGE_CANDIDATE_MODEL_IDS.map(modelId => configFor(modelId));
   const manifest = {
-    schemaVersion: 'judge-selection-execution-v3',
+    schemaVersion: 'judge-selection-execution-v4',
     status: 'running',
     runId,
-    mode: preflight ? 'one_pair_per_model_preflight' : 'full_50_pair_comparison',
+    mode: preflight ? 'three_pair_schema_regression_preflight' : 'full_50_pair_comparison',
     createdAtUtc,
     provider: 'groq',
     models: observedModels,
@@ -105,6 +106,7 @@ async function main(): Promise<void> {
     fallbackAllowed: false,
     protectedHeldOutDataUsed: false,
     responseFormatRationale: 'Shared JSON mode with identical local strict-schema validation because the current Groq inventory does not advertise structured_outputs for qwen/qwen3.8-27b.',
+    retryPolicy: 'Three completed generation attempts per pair; up to six transient transport/rate-limit retries do not consume generation attempts.',
   };
   if (resumeRunId) {
     const prior = JSON.parse(fs.readFileSync(path.join(outputDirectory, 'run_manifest.json'), 'utf8')) as {
@@ -120,7 +122,13 @@ async function main(): Promise<void> {
     writeJson('run_manifest.json', manifest);
   }
 
-  const executionPairs = preflight ? references.slice(0, 3) : references;
+  const preflightPairIds = new Set(['P001', 'P029', 'P047']);
+  const executionPairs = preflight
+    ? references.filter(pair => preflightPairIds.has(pair.pairId))
+    : references;
+  if (preflight && executionPairs.length !== preflightPairIds.size) {
+    throw new Error('Judge v4 preflight pair set is incomplete.');
+  }
   for (const modelId of JUDGE_CANDIDATE_MODEL_IDS) {
     const stem = modelId.replaceAll('/', '__');
     const rawPath = path.join(outputDirectory, `${stem}_raw.json`);

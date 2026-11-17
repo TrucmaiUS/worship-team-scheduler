@@ -26,6 +26,7 @@ export const PinnedProviderConfigSchema = z
     promptSha256: z.string().regex(/^[a-f0-9]{64}$/iu),
     allowFallback: z.literal(false),
     maxAttempts: z.number().int().min(1).max(5),
+    maxTransientRetries: z.number().int().min(0).max(20).default(6),
     maxOutputTokens: z.number().int().min(1).max(65536),
     timeoutMs: z.number().int().min(1000).max(300000),
     responseSchemaSha256: z.string().regex(/^[a-f0-9]{64}$/iu),
