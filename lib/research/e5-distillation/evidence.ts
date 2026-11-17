@@ -35,12 +35,13 @@ export function validateEvidence(
   if (!normalizeForComparison(lyrics)) throw new Error('Lyrics must not be empty.');
 
   const required = relevanceScore >= 2;
+  const canonicallyNormalizedLyrics = lyrics.normalize('NFC');
   const quoteResults = evidenceQuotes.map((quote) => {
     const normalizedQuote = normalizeForComparison(quote);
     return {
       quote,
       normalizedQuote,
-      isSubstring: quote.length > 0 && lyrics.includes(quote),
+      isSubstring: quote.length > 0 && canonicallyNormalizedLyrics.includes(quote.normalize('NFC')),
       isMeaningful: isMeaningfulQuote(quote),
       hasForbiddenSyntax: hasForbiddenEvidenceSyntax(quote),
     };

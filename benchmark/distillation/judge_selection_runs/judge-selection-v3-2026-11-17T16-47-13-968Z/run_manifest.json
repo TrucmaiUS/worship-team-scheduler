@@ -134,6 +134,6 @@
   "fallbackAllowed": false,
   "protectedHeldOutDataUsed": false,
   "responseFormatRationale": "Shared JSON mode with identical local strict-schema validation because the current Groq inventory does not advertise structured_outputs for qwen/qwen3.8-27b.",
-  "resumedAtUtc": "2026-11-17T16:57:48.639Z",
-  "resumeCodeCommit": "4ada3c3d0bbf8854d549029955ed393dc04e35e7"
+  "resumedAtUtc": "2026-11-17T16:59:27.069Z",
+  "resumeCodeCommit": "17cfa0db4d1d0cef6ac44a61bfca06420d6af48a"
 }

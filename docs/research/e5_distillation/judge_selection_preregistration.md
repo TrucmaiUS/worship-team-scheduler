@@ -23,7 +23,7 @@ Required balance before either model runs:
 
 Two named domain reviewers independently label every pair with the same 0–3 rubric and rationale. They cannot see either model output or each other's first label. A distinct adjudicator assigns the final reference label whenever the two initial labels differ. Reference labels and adjudication must be sealed before model execution.
 
-Evidence is stored as `evidence_quotes: string[]`. Each item is one exact contiguous verbatim span. Multiple non-contiguous spans use separate array items. Ellipsis, slash delimiters and reconstructed quotes are invalid. Grade 0 requires `[]`; grade 1 may use `[]`; grades 2–3 require at least one span.
+Evidence is stored as `evidence_quotes: string[]`. Each item is one exact contiguous verbatim span after Unicode NFC canonicalization only; whitespace, case and punctuation are not normalized. This accommodates canonically equivalent Vietnamese combining sequences without accepting reconstructed text. Multiple non-contiguous spans use separate array items. Ellipsis, slash delimiters and reconstructed quotes are invalid. Grade 0 requires `[]`; grade 1 may use `[]`; grades 2–3 require at least one span.
 
 ## Blind candidate execution
 

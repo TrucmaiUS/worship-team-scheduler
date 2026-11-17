@@ -7,25 +7,25 @@
       "modelId": "qwen/qwen3.8-27b",
       "attempt": 1,
       "requestSha256": "cc549d902181d7fc50998cbeb1805f9d5e25387a7851836b38636fbe27cbb26f",
-      "responseSha256": "554f1e7beea4f10f0d3674bbc0198ceddeabde28ec45a308123616021d962675",
+      "responseSha256": "da22e6f0c2160827195f335d6348d7afedf98b9d0f73f447144f4e8d9fcc42ff",
       "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
       "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
       "httpStatus": 200,
-      "latencyMs": 2091,
+      "latencyMs": 1981,
       "usage": {
         "inputTokens": null,
         "outputTokens": null,
         "totalTokens": null
       },
-      "providerRequestId": "req_01m7n730dqeewawqfmpv7fn0wk",
+      "providerRequestId": "req_01m7n760e2em78n14ds8hnfjzs",
       "systemFingerprint": null,
       "rateLimit": {
         "requestLimit": "1000",
         "remainingRequests": "990",
         "tokenLimit": "8000",
-        "remainingTokens": "6737",
+        "remainingTokens": "7033",
         "requestReset": "14m24s",
-        "tokenReset": "9.472s"
+        "tokenReset": "7.252s"
       },
       "failureCode": "protocol_validation_failure",
       "failureDetail": "Required evidence failed verbatim validation: evidence_not_verbatim_substring.",
@@ -36,28 +36,28 @@
       "modelId": "qwen/qwen3.8-27b",
       "attempt": 2,
       "requestSha256": "cc549d902181d7fc50998cbeb1805f9d5e25387a7851836b38636fbe27cbb26f",
-      "responseSha256": "d43efedfc6bc8cd85b0e1579f6fc52674d11be7fd03838cc2f082c1c2ab409b5",
+      "responseSha256": "0da250cb224899182d18dd42a89f2557af041caba0fd9e1f404190573823b37b",
       "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
       "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
       "httpStatus": 429,
-      "latencyMs": 312,
+      "latencyMs": 401,
       "usage": {
         "inputTokens": null,
         "outputTokens": null,
         "totalTokens": null
       },
-      "providerRequestId": "req_01m7n73c29expsrtkwmhkkhkqj",
+      "providerRequestId": "req_01m7n769xveta8324skp1gtwjj",
       "systemFingerprint": null,
       "rateLimit": {
         "requestLimit": "1000",
         "remainingRequests": "990",
         "tokenLimit": "8000",
-        "remainingTokens": "7343",
+        "remainingTokens": "7307",
         "requestReset": "14m24s",
-        "tokenReset": "39.42s"
+        "tokenReset": "41.58s"
       },
       "failureCode": "http_429",
-      "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 657, Requested 681. Please try again in 20.28s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
+      "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 693, Requested 853. Please try again in 32.76s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
       "retryable": true
     },
     {
@@ -65,30 +65,30 @@
       "modelId": "qwen/qwen3.8-27b",
       "attempt": 3,
       "requestSha256": "cc549d902181d7fc50998cbeb1805f9d5e25387a7851836b38636fbe27cbb26f",
-      "responseSha256": "ab453e0838e75648dc42ca8559d11b52854e48f9780440c345012021dda2ec67",
+      "responseSha256": "a5e0cd80443258761c295ef1c1bd69d82fbed68dfc01630d5c81438689014acb",
       "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
       "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
-      "httpStatus": 429,
-      "latencyMs": 268,
+      "httpStatus": 200,
+      "latencyMs": 2821,
       "usage": {
         "inputTokens": null,
         "outputTokens": null,
         "totalTokens": null
       },
-      "providerRequestId": "req_01m7n74144ezvsr2t9tgzv6w8k",
+      "providerRequestId": "req_01m7n77anceqhv35qhg4pj18xk",
       "systemFingerprint": null,
       "rateLimit": {
         "requestLimit": "1000",
-        "remainingRequests": "990",
+        "remainingRequests": "989",
         "tokenLimit": "8000",
-        "remainingTokens": "7704",
-        "requestReset": "14m24s",
-        "tokenReset": "17.759s"
+        "remainingTokens": "6413",
+        "requestReset": "15m50.4s",
+        "tokenReset": "59.22s"
       },
-      "failureCode": "http_429",
-      "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 296, Requested 780. Please try again in 4.56s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
+      "failureCode": "protocol_validation_failure",
+      "failureDetail": "Required evidence failed verbatim validation: evidence_not_verbatim_substring.",
       "retryable": true
     }
   ],
-  "message": "Groq Judge stopped without fallback after attempt 3: http_429 ({\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 296, Requested 780. Please try again in 4.56s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"})."
+  "message": "Groq Judge stopped without fallback after attempt 3: protocol_validation_failure (Required evidence failed verbatim validation: evidence_not_verbatim_substring.)."
 }

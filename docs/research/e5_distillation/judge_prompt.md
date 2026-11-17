@@ -64,7 +64,7 @@ Required keys are `candidate_alias`, `relevance_score`, `relevance_label`, `evid
 
 Input contains only `query_text` and one candidate with `candidate_alias`, `section_type`, and `lyrics`. Strict output contains the alias, numeric score, matching label, an `evidence_quotes` array, short reasoning summary, and lexical-overlap flag. `request-contracts.ts` performs cross-field checks. `groq-judge.ts` independently requires each array item to be an exact contiguous substring and rejects ellipsis or slash delimiters.
 
-Verbatim matching and contextual support are different measurements. Code verifies verbatim matching. For the Judge-selection experiment, a human reviewer separately marks whether each quoted span actually supports the assigned query/grade; the model cannot self-certify contextual support.
+Verbatim matching and contextual support are different measurements. Code verifies contiguous matching after Unicode NFC canonicalization only; it does not normalize whitespace, case or punctuation. For the Judge-selection experiment, a human reviewer separately marks whether each quoted span actually supports the assigned query/grade; the model cannot self-certify contextual support.
 
 ## 5. Frozen comparison envelope
 

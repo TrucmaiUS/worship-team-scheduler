@@ -54,4 +54,17 @@ describe('Judge evidence response contract', () => {
       evidence_quotes: [],
     })).toThrow(/require evidence/);
   });
+
+  it('accepts canonically equivalent Unicode without changing whitespace or punctuation', () => {
+    const decomposedCandidate = {
+      ...candidate,
+      lyrics: 'Ma\u0303i ma\u0303i con được về bên Cha',
+    };
+    const unicodeRequest = buildBlindLabelRequest('Căn tính trong Chúa', decomposedCandidate);
+    expect(validateBlindLabelResponse(unicodeRequest, {
+      ...response,
+      candidate_alias: unicodeRequest.candidate.candidate_alias,
+      evidence_quotes: ['Mãi mãi con được về bên Cha'],
+    }).evidence_quotes).toEqual(['Mãi mãi con được về bên Cha']);
+  });
 });
