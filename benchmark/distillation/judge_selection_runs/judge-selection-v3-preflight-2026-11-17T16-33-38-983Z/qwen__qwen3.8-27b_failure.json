@@ -1,0 +1,36 @@
+{
+  "pairId": "P001",
+  "pairIndex": 0,
+  "attempts": [
+    {
+      "provider": "groq",
+      "modelId": "qwen/qwen3.8-27b",
+      "attempt": 1,
+      "requestSha256": "d5fd66559e707bf9531575f7bb5fd93aa857b98a33e7de899c7566d784c3ec01",
+      "responseSha256": "ab3f4794fa5141904338eedce1aaf1f2a8a29c8719308084059dc9c518f94374",
+      "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+      "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+      "httpStatus": 400,
+      "latencyMs": 1523,
+      "usage": {
+        "inputTokens": null,
+        "outputTokens": null,
+        "totalTokens": null
+      },
+      "providerRequestId": "req_01m7n5pstde83s7t8hjkh7pb3s",
+      "systemFingerprint": null,
+      "rateLimit": {
+        "requestLimit": "1000",
+        "remainingRequests": "999",
+        "tokenLimit": "8000",
+        "remainingTokens": "7243",
+        "requestReset": "1m26.4s",
+        "tokenReset": "5.677s"
+      },
+      "failureCode": "http_400",
+      "failureDetail": "Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.",
+      "retryable": false
+    }
+  ],
+  "message": "Groq Judge stopped without fallback after attempt 1: http_400 (Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.)."
+}

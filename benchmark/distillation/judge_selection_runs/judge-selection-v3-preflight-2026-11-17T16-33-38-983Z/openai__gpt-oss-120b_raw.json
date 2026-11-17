@@ -1,0 +1,52 @@
+[
+  {
+    "pairId": "P001",
+    "output": {
+      "candidate_alias": "CANDIDATE_001",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics mention God’s invitation and a waiting house, offering comfort, but lack any reference to trials or spiritual warfare that the query emphasizes.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "bdbc121aee0614adf89664cf58e79dd4a7a2c726d237172f3b869d86ed34e27a",
+        "responseSha256": "ad2d2f4d984fe77eeba36544e466eee95025d9bf622d996685b29ec228706fd4",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1416,
+        "usage": {
+          "inputTokens": 621,
+          "outputTokens": 231,
+          "totalTokens": 852
+        },
+        "providerRequestId": "chatcmpl-0b711cfc-4007-4293-8795-5cf84037f510",
+        "systemFingerprint": "fp_854fa9be4c",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "994",
+          "tokenLimit": "8000",
+          "remainingTokens": "7211",
+          "requestReset": "8m38.4s",
+          "tokenReset": "5.917s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  }
+]

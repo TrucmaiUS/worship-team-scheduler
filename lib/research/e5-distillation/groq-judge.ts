@@ -229,10 +229,14 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
       if (!response.ok) {
         failureCode = `http_${response.status}`;
         try {
-          const payload = JSON.parse(raw) as { error?: { message?: string } };
-          failureDetail = payload.error?.message ?? raw.slice(0, 1000);
+          const payload = JSON.parse(raw) as {
+            error?: { message?: string; code?: string; failed_generation?: string };
+          };
+          failureDetail = payload.error
+            ? JSON.stringify(payload.error).slice(0, 4000)
+            : raw.slice(0, 4000);
         } catch {
-          failureDetail = raw.slice(0, 1000);
+          failureDetail = raw.slice(0, 4000);
         }
         retryable = retryableStatus(response.status);
       } else {

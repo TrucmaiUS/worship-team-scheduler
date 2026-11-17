@@ -1,0 +1,5 @@
+{
+  "status": "FAILED",
+  "failedAtUtc": "2026-11-17T16:33:42.532Z",
+  "message": "Groq Judge stopped without fallback after attempt 1: http_400 (Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.)."
+}
