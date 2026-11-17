@@ -225,6 +225,10 @@ function rateLimitHeaders(headers: Headers | undefined): GroqJudgeAttemptLog['ra
   };
 }
 
+function redactProviderIdentifiers(value: string | null): string | null {
+  return value?.replace(/\borg_[a-z0-9_]+\b/giu, '[REDACTED_ORGANIZATION]') ?? null;
+}
+
 export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudgeResult> {
   if (!options.apiKey.trim()) throw new ResearchProtocolError('GROQ_API_KEY is missing.');
   const config = assertGroqJudgeConfig(options.config);
@@ -321,6 +325,7 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
       );
     }
 
+    failureDetail = redactProviderIdentifiers(failureDetail);
     const log: GroqJudgeAttemptLog = {
       provider: 'groq', modelId: config.modelId, attempt, requestSha256,
       responseSha256: raw ? crypto.createHash('sha256').update(raw).digest('hex') : null,

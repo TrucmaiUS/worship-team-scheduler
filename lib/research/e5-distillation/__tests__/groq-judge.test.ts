@@ -85,7 +85,7 @@ describe('Groq independent Judge adapter', () => {
         calls += 1;
         models.push(JSON.parse(String(init?.body)).model);
         if (calls === 1) return new Response(JSON.stringify({
-          error: { message: 'Rate limited. Please try again in 4.5s.' },
+          error: { message: 'Rate limited for organization org_fixture. Please try again in 4.5s.' },
         }), { status: 429 });
         return new Response(JSON.stringify({
           id: 'fixture-request', model: 'openai/gpt-oss-120b',
@@ -101,6 +101,8 @@ describe('Groq independent Judge adapter', () => {
     expect(result.attempts).toHaveLength(2);
     expect(models).toEqual(['openai/gpt-oss-120b', 'openai/gpt-oss-120b']);
     expect(delays).toEqual([5000]);
+    expect(result.attempts[0].failureDetail).toContain('[REDACTED_ORGANIZATION]');
+    expect(result.attempts[0].failureDetail).not.toContain('org_fixture');
   });
 });
 
