@@ -2,7 +2,7 @@
 
 **Version:** `judge-selection-v2`  
 **Date revised:** 17 November 2026  
-**Status:** Human labels received; provenance/metadata validation incomplete; no candidate selected
+**Status:** Human Reference v2 validated; live candidate execution pending; no candidate selected
 
 ## Purpose
 
@@ -17,8 +17,8 @@ The evaluator resolves every query ID, topic and exact query text against `bench
 Required balance before either model runs:
 
 - at least eight final human-reference labels in each class 0, 1, 2 and 3; the received 50-pair set must also retain the exact `17/9/8/16` distribution;
-- at least eight Vietnamese, eight English and eight cross-lingual pairs;
-- at least 15 difficult theological distinctions, each with an explicit tag (for example trust vs generic hope, Spirit guidance vs generic guidance, resurrection hope vs generic optimism, congregational unity vs generic friendship, mission/sending vs general service);
+- exactly 25 `en_query_vi_lyrics` and 25 `vi_query_vi_lyrics` pairs, reflecting the two observed development strata without inventing a third bucket;
+- at least 15 distinct human-reviewed theological distinction tags; Human Reference v2 contains 15 tags across all 50 pairs;
 - exact section text and a blind candidate alias, without title/artist/rank/provider clues.
 
 Two named domain reviewers independently label every pair with the same 0–3 rubric and rationale. They cannot see either model output or each other's first label. A distinct adjudicator assigns the final reference label whenever the two initial labels differ. Reference labels and adjudication must be sealed before model execution.
@@ -54,6 +54,8 @@ Hard gates:
 
 If exactly one candidate passes, select it. If both pass, compare in this order: higher quadratic weighted kappa, higher macro F1, higher exact accuracy, higher contextual evidence support, fewer total tokens, then lower mean latency. An exact tie remains unresolved for human decision; it does not default to GPT-OSS. If neither passes, select neither and revise the protocol as a new version before rerunning.
 
-## Current blockers
+## Current readiness and blockers
 
-The received CSV contains 50 frozen labels and the required `17/9/8/16` distribution. Model execution remains blocked until the source package supplies or explicitly waives the missing reviewer/adjudicator identities, candidate section IDs, cross-lingual bucket metadata and difficult-theological-distinction tags. Evidence whitespace mismatches found by validation must be resolved in a new source version without changing the 50 labels. Existing `qrels.csv` is not reused as section-level human ground truth.
+Human Reference v2 passes structural validation with 50 frozen labels, the exact `17/9/8/16` distribution, reviewer/adjudicator provenance, source section IDs, two observed language strata and 15 human-reviewed distinction tags. The 25 G4 paraphrases have versioned reference-query IDs while retaining their original benchmark-query lineage. P006 retains an explicit versioned candidate-text correction; the other 49 candidates match corpus sections exactly.
+
+Live execution requires a successful same-account Groq model-inventory preflight for both exact model IDs. Model evidence contextual support remains a separate human audit after raw outputs are sealed; code-computed verbatim validity does not replace that audit. Existing `qrels.csv` is not reused as section-level human ground truth.

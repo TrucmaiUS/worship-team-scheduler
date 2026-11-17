@@ -12,8 +12,10 @@
     "research:validate": "npx tsx scripts/validate_distillation_protocol.ts",
     "research:human-reference:build:v2": "npx tsx scripts/build_human_reference_v2.ts",
     "research:human-reference:validate": "npx tsx scripts/validate_human_reference.ts",
+    "research:judge:build-reference": "npx tsx scripts/build_judge_selection_reference.ts",
     "research:judge:smoke": "npx tsx --env-file=.env.local scripts/groq_judge_smoke.ts",
     "research:judge:smoke:live": "npx tsx --env-file=.env.local scripts/groq_judge_smoke.ts --live",
+    "research:judge:run-selection": "npx tsx --env-file=.env.local scripts/run_judge_selection.ts",
     "research:judge:evaluate": "npx tsx scripts/evaluate_judge_selection.ts"
   },
   "dependencies": {

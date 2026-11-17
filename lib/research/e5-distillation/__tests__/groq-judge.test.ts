@@ -105,20 +105,21 @@ function referencePairs() {
     ...Array<3>(16).fill(3),
   ] as Array<0 | 1 | 2 | 3>;
   return scores.map((score, index) => {
-    const difficult = index < 16;
     return {
       pairId: `DEV-PAIR-${String(index + 1).padStart(2, '0')}`,
       sourceQueryId: `G2-Q${String(index + 1).padStart(3, '0')}`,
+      originalSourceQueryId: `G2-Q${String(index + 1).padStart(3, '0')}`,
       sourceTopicId: `T${String((index % 10) + 1).padStart(2, '0')}`,
       split: 'development_only',
-      language: (['vi', 'en', 'cross_lingual'] as const)[index % 3],
-      difficultTheologicalDistinction: difficult,
-      distinctionTag: difficult ? 'trust-versus-generic-hope' : null,
+      languageStratum: (['en_query_vi_lyrics', 'vi_query_vi_lyrics'] as const)[index % 2],
+      difficultTheologicalDistinction: `Human-reviewed distinction ${index % 15}.`,
+      distinctionTag: `distinction_${index % 15}`,
       queryText: `Fixture query ${index}`,
       candidate: {
         sourceSectionId: `SECTION-${index}`,
         candidateAlias: `CANDIDATE_${String(index + 1).padStart(2, '0')}`,
         sectionType: 'verse', lyrics: `Fixture lyrics ${index}`,
+        textProvenance: 'exact_corpus_section' as const,
       },
       humanReference: {
         initialReviews: [

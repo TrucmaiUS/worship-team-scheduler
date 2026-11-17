@@ -11,7 +11,7 @@
 
 **Prompt version:** `groq-independent-judge-v4.1`
 
-**Execution status:** Adapter and synthetic two-model smoke test only; no development selection run or pilot
+**Execution status:** Adapter and synthetic two-model smoke test complete; Human Reference v2 ready; no development selection run yet
 
 ## 1. Provider, model, and role are separate
 

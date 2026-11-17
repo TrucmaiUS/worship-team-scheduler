@@ -23,9 +23,10 @@ const outputPath = argument('--out');
 if (fs.existsSync(outputPath)) throw new Error(`Refusing to overwrite existing report: ${outputPath}`);
 
 const root = path.resolve(__dirname, '..');
-const queryRows = parseCsv(fs.readFileSync(path.join(root, 'benchmark/data/queries.csv'), 'utf8'));
-const developmentQueries = new Map(queryRows.map(row => [row.query_id, {
-  topicId: row.topic_id || null,
+const queryRows = parseCsv(fs.readFileSync(path.join(root,
+  'benchmark/distillation/human_reference/query_manifest_v2.csv'), 'utf8'));
+const developmentQueries = new Map(queryRows.map(row => [row.reference_query_id, {
+  topicId: row.source_topic_id || null,
   queryText: row.query_text,
 }]));
 const corpus = loadCorpus(path.join(root, 'benchmark/data/songs.csv'));

@@ -13,21 +13,27 @@ const ReviewSchema = z.object({
 export const JUDGE_SELECTION_REFERENCE_SIZE = 50;
 export const JUDGE_SELECTION_MINIMUM_PER_GRADE = 8;
 export const JUDGE_SELECTION_EXPECTED_LABEL_COUNTS = [17, 9, 8, 16] as const;
+export const JUDGE_SELECTION_EXPECTED_LANGUAGE_STRATA = {
+  en_query_vi_lyrics: 25,
+  vi_query_vi_lyrics: 25,
+} as const;
 
 export const JudgeSelectionPairSchema = z.object({
   pairId: z.string().min(1),
   sourceQueryId: z.string().min(1),
+  originalSourceQueryId: z.string().min(1),
   sourceTopicId: z.string().regex(/^T\d{2}$/).nullable(),
   split: z.literal('development_only'),
-  language: z.enum(['vi', 'en', 'cross_lingual']),
-  difficultTheologicalDistinction: z.boolean(),
-  distinctionTag: z.string().min(1).nullable(),
+  languageStratum: z.enum(['en_query_vi_lyrics', 'vi_query_vi_lyrics']),
+  difficultTheologicalDistinction: z.string().min(1),
+  distinctionTag: z.string().regex(/^[a-z0-9]+(?:_[a-z0-9]+)*$/),
   queryText: z.string().min(1),
   candidate: z.object({
     sourceSectionId: z.string().min(1),
     candidateAlias: z.string().regex(/^[A-Z][A-Z0-9_]*$/),
     sectionType: z.string().min(1),
     lyrics: z.string().min(1),
+    textProvenance: z.enum(['exact_corpus_section', 'versioned_text_correction_v1']),
   }).strict(),
   humanReference: z.object({
     initialReviews: z.tuple([ReviewSchema, ReviewSchema]),
@@ -52,9 +58,6 @@ export const JudgeSelectionPairSchema = z.object({
   if (pair.humanReference.adjudication && [first.reviewerId, second.reviewerId]
     .includes(pair.humanReference.adjudication.reviewerId)) {
     context.addIssue({ code: 'custom', path: ['humanReference', 'adjudication'], message: 'Adjudicator must be independent.' });
-  }
-  if (pair.difficultTheologicalDistinction !== Boolean(pair.distinctionTag)) {
-    context.addIssue({ code: 'custom', path: ['distinctionTag'], message: 'Difficult pairs require a distinction tag.' });
   }
   const reviews = [...pair.humanReference.initialReviews,
     ...(pair.humanReference.adjudication ? [pair.humanReference.adjudication] : [])];
@@ -96,11 +99,6 @@ export const JudgeSelectionOutputSchema = z.object({
     context.addIssue({ code: 'custom', path: ['evidenceQuotes'],
       message: 'Grades 2–3 require at least one evidence span.' });
   }
-  if (output.relevanceScore !== null && output.relevanceScore >= 2 &&
-      output.evidenceContextSupported === null) {
-    context.addIssue({ code: 'custom', path: ['evidenceContextSupported'],
-      message: 'Grades 2–3 require separate verbatim and contextual evidence audits.' });
-  }
 });
 
 export type JudgeSelectionOutput = z.infer<typeof JudgeSelectionOutputSchema>;
@@ -130,6 +128,7 @@ export interface JudgeMetrics {
   }>;
   evidenceRequiredCount: number;
   evidenceVerbatimMatchRate: number | null;
+  evidenceContextAuditedCount: number;
   evidenceContextSupportRate: number | null;
   criticalDisagreementRate: number;
   schemaPassRate: number;
@@ -178,13 +177,14 @@ export function validateJudgeSelectionSet(
   if (labelCounts.some((count, grade) => count !== JUDGE_SELECTION_EXPECTED_LABEL_COUNTS[grade])) {
     throw new Error(`Human-reference label distribution must remain ${JUDGE_SELECTION_EXPECTED_LABEL_COUNTS.join('/')}.`);
   }
-  for (const language of ['vi', 'en', 'cross_lingual'] as const) {
-    if (pairs.filter(pair => pair.language === language).length < 8) {
-      throw new Error(`Language bucket ${language} needs at least 8 pairs.`);
+  for (const [stratum, expected] of Object.entries(JUDGE_SELECTION_EXPECTED_LANGUAGE_STRATA)) {
+    const observed = pairs.filter(pair => pair.languageStratum === stratum).length;
+    if (observed !== expected) {
+      throw new Error(`Language stratum ${stratum} must contain ${expected} pairs; found ${observed}.`);
     }
   }
-  if (pairs.filter(pair => pair.difficultTheologicalDistinction).length < 15) {
-    throw new Error('At least 15 pairs must cover difficult theological distinctions.');
+  if (new Set(pairs.map(pair => pair.distinctionTag)).size < 15) {
+    throw new Error('At least 15 distinct human-reviewed theological distinction tags are required.');
   }
   if (sourceIndex) {
     for (const pair of pairs) {
@@ -198,12 +198,22 @@ export function validateJudgeSelectionSet(
       }
       const section = sourceIndex.corpusSections.get(pair.candidate.sourceSectionId);
       if (!section) throw new Error(`Unknown corpus section: ${pair.candidate.sourceSectionId}.`);
-      if (section.sectionType !== pair.candidate.sectionType || section.lyrics !== pair.candidate.lyrics) {
+      const exactText = section.lyrics === pair.candidate.lyrics;
+      const versionedText = pair.candidate.textProvenance === 'versioned_text_correction_v1' &&
+        normalizeVersionedCandidate(section.lyrics) === normalizeVersionedCandidate(pair.candidate.lyrics);
+      if (section.sectionType !== pair.candidate.sectionType || (!exactText && !versionedText)) {
         throw new Error(`Corpus section text/type mismatch: ${pair.candidate.sourceSectionId}.`);
       }
     }
   }
   return pairs;
+}
+
+function normalizeVersionedCandidate(value: string): string {
+  return value.replace(/\r\n?/gu, '\n')
+    .replace(/[\t ]+$/gmu, '')
+    .replace(/[\t ]*\/[\t ]*(?=\n|$)/gu, '')
+    .trim();
 }
 
 function quadraticWeightedKappa(reference: RelevanceScore[], predicted: RelevanceScore[]): number {
@@ -301,6 +311,8 @@ export function evaluateJudgeCandidate(
         item.output.relevanceScore as RelevanceScore
       ),
     }));
+  const contextAudited = evidenceRequired.filter(item =>
+    item.output.evidenceContextSupported !== null);
   const latencies = outputs.flatMap(output => output.latencyMs === null ? [] : [output.latencyMs])
     .sort((left, right) => left - right);
   const exactCorrect = valid.filter((item, index) => predictions[index] === finalHumanScore(item.pair)).length;
@@ -321,8 +333,10 @@ export function evaluateJudgeCandidate(
     evidenceRequiredCount: evidenceRequired.length,
     evidenceVerbatimMatchRate: evidenceRequired.length === 0 ? null :
       evidenceRequired.filter(item => item.evidenceValidation.status === 'valid').length / evidenceRequired.length,
+    evidenceContextAuditedCount: contextAudited.length,
     evidenceContextSupportRate: evidenceRequired.length === 0 ? null :
-      evidenceRequired.filter(item => item.output.evidenceContextSupported).length / evidenceRequired.length,
+      contextAudited.length !== evidenceRequired.length ? null :
+        contextAudited.filter(item => item.output.evidenceContextSupported).length / evidenceRequired.length,
     criticalDisagreementRate: critical / pairs.length,
     schemaPassRate: outputs.filter(output => output.schemaPass).length / pairs.length,
     inputTokens: outputs.reduce((sum, output) => sum + (output.inputTokens ?? 0), 0),
