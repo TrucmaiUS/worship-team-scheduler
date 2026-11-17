@@ -13,6 +13,7 @@ const V2_MANIFEST_PATH = path.join(ROOT, 'human_reference_v2_manifest.json');
 const QUERY_PATH = path.resolve('benchmark/data/queries.csv');
 const SONG_PATH = path.resolve('benchmark/data/songs.csv');
 const P006_SECTION_ID = 'd0cfa7d0-e895-4834-b7b5-adf4ef350c3d';
+const THEOLOGICAL_METADATA_REVIEWER_ID = 'theological_metadata_reviewer_1';
 
 type CsvRow = Record<string, string>;
 
@@ -99,6 +100,55 @@ const v1Rows = parseCsv(v1Bytes.toString('utf8').replace(/^\uFEFF/u, ''));
 if (v1Rows.length !== 50) throw new Error(`Expected 50 v1 rows; found ${v1Rows.length}.`);
 const originalHeaders = Object.keys(v1Rows[0]);
 
+const blankReviewRows: CsvRow[] = v1Rows.map(row => ({
+  pair_id: row.pair_id,
+  query: row.query,
+  section_type: row.section_type,
+  relevance_score: row.relevance_score,
+  query_difficulty: row.query_difficulty,
+  difficult_theological_distinction: '',
+  distinction_tag: '',
+  reviewer_notes: '',
+}));
+const reviewHeaders = [
+  'pair_id',
+  'query',
+  'section_type',
+  'relevance_score',
+  'query_difficulty',
+  'difficult_theological_distinction',
+  'distinction_tag',
+  'reviewer_notes',
+] as const;
+const reviewCsv = fs.existsSync(REVIEW_PATH)
+  ? fs.readFileSync(REVIEW_PATH, 'utf8')
+  : serializeCsv(blankReviewRows, reviewHeaders);
+const reviewRows = parseCsv(reviewCsv.replace(/^\uFEFF/u, ''));
+if (reviewRows.length !== v1Rows.length) {
+  throw new Error(`Expected ${v1Rows.length} theological review rows; found ${reviewRows.length}.`);
+}
+const reviewByPairId = new Map<string, CsvRow>();
+for (const review of reviewRows) {
+  if (reviewByPairId.has(review.pair_id)) {
+    throw new Error(`${review.pair_id}: duplicate theological review row.`);
+  }
+  const source = v1Rows.find(row => row.pair_id === review.pair_id);
+  if (!source) throw new Error(`${review.pair_id}: theological review pair is not in v1.`);
+  for (const field of ['query', 'section_type', 'relevance_score', 'query_difficulty']) {
+    if (review[field] !== source[field]) {
+      throw new Error(`${review.pair_id}: theological review changed frozen field ${field}.`);
+    }
+  }
+  if (review.distinction_tag && !/^[a-z0-9]+(?:_[a-z0-9]+)*$/u.test(review.distinction_tag)) {
+    throw new Error(`${review.pair_id}: distinction_tag must use lowercase snake_case.`);
+  }
+  reviewByPairId.set(review.pair_id, review);
+}
+const unresolvedMetadataPairIds = reviewRows
+  .filter(row => !row.difficult_theological_distinction || !row.distinction_tag)
+  .map(row => row.pair_id);
+const humanMetadataComplete = unresolvedMetadataPairIds.length === 0;
+
 const queryRows = parseCsv(fs.readFileSync(QUERY_PATH, 'utf8'));
 const queriesById = new Map(queryRows.map(row => [row.query_id, row]));
 
@@ -124,6 +174,8 @@ const languageStratumCounts: Record<string, number> = {};
 
 const v2Rows = v1Rows.map<CsvRow>(source => {
   const row: CsvRow = { ...source };
+  const theologicalReview = reviewByPairId.get(row.pair_id);
+  if (!theologicalReview) throw new Error(`${row.pair_id}: missing theological review row.`);
   const benchmarkQuery = queriesById.get(row.source_query_id);
   if (!benchmarkQuery) throw new Error(`${row.pair_id}: unknown source_query_id ${row.source_query_id}.`);
 
@@ -196,8 +248,13 @@ const v2Rows = v1Rows.map<CsvRow>(source => {
     source_section_id: sourceSectionId,
     candidate_text_provenance: candidateProvenance,
     evaluation_language_stratum: languageStratum,
-    difficult_theological_distinction: '',
-    distinction_tag: '',
+    theological_metadata_reviewer_id:
+      theologicalReview.difficult_theological_distinction && theologicalReview.distinction_tag
+      ? THEOLOGICAL_METADATA_REVIEWER_ID
+      : '',
+    difficult_theological_distinction: theologicalReview.difficult_theological_distinction,
+    distinction_tag: theologicalReview.distinction_tag,
+    theological_metadata_reviewer_notes: theologicalReview.reviewer_notes,
     evidence_correction_notes: corrections.length > 0
       ? `Whitespace-only verbatim restoration: ${corrections.join(', ')}`
       : '',
@@ -216,8 +273,10 @@ const addedHeaders = [
   'source_section_id',
   'candidate_text_provenance',
   'evaluation_language_stratum',
+  'theological_metadata_reviewer_id',
   'difficult_theological_distinction',
   'distinction_tag',
+  'theological_metadata_reviewer_notes',
   'evidence_correction_notes',
 ] as const;
 const v2Csv = serializeCsv(v2Rows, [...addedHeaders, ...originalHeaders]);
@@ -235,27 +294,6 @@ const queryManifestCsv = serializeCsv(queryManifestRows, [
   'source_topic_id',
 ]);
 
-const reviewRows = v2Rows.map(row => ({
-  pair_id: row.pair_id,
-  query: row.query,
-  section_type: row.section_type,
-  relevance_score: row.relevance_score,
-  query_difficulty: row.query_difficulty,
-  difficult_theological_distinction: '',
-  distinction_tag: '',
-  reviewer_notes: '',
-}));
-const reviewCsv = serializeCsv(reviewRows, [
-  'pair_id',
-  'query',
-  'section_type',
-  'relevance_score',
-  'query_difficulty',
-  'difficult_theological_distinction',
-  'distinction_tag',
-  'reviewer_notes',
-]);
-
 const reviewerManifest = {
   schemaVersion: 'reviewer-manifest-v1',
   independence: {
@@ -265,6 +303,14 @@ const reviewerManifest = {
     confirmationDate: '2026-11-17',
     confirmationSource: 'User confirmation in Codex chat',
     personalIdentitiesStored: false,
+  },
+  theologicalMetadataReview: {
+    confirmedHumanReview: true,
+    reviewerPseudonymousId: THEOLOGICAL_METADATA_REVIEWER_ID,
+    confirmationDate: '2026-11-17',
+    confirmationSource: 'User confirmation in Codex chat',
+    relationshipToLabelReviewers: 'not_recorded',
+    reviewedRows: reviewRows.length - unresolvedMetadataPairIds.length,
   },
   sourceFiles: [
     workbookRecord('reviewer_1.xlsx', 'reviewer_1'),
@@ -289,7 +335,7 @@ for (let index = 0; index < v1Rows.length; index += 1) {
 
 const v2Manifest = {
   schemaVersion: 'human-reference-v2-manifest',
-  status: 'AWAITING_THEOLOGICAL_METADATA',
+  status: humanMetadataComplete ? 'READY_FOR_MODEL_EVALUATION' : 'AWAITING_THEOLOGICAL_METADATA',
   frozenHumanLabels: true,
   source: {
     path: path.relative(process.cwd(), V1_PATH).replaceAll('\\', '/'),
@@ -312,7 +358,9 @@ const v2Manifest = {
   humanReviewChecklist: {
     path: path.relative(process.cwd(), REVIEW_PATH).replaceAll('\\', '/'),
     sha256: sha256(reviewCsv),
-    unresolvedRows: reviewRows.length,
+    reviewedRows: reviewRows.length - unresolvedMetadataPairIds.length,
+    unresolvedRows: unresolvedMetadataPairIds.length,
+    unresolvedPairIds: unresolvedMetadataPairIds,
   },
   gradeDistribution,
   evidenceCorrections: {

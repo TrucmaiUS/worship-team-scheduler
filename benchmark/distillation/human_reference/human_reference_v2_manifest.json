@@ -1,6 +1,6 @@
 {
   "schemaVersion": "human-reference-v2-manifest",
-  "status": "AWAITING_THEOLOGICAL_METADATA",
+  "status": "READY_FOR_MODEL_EVALUATION",
   "frozenHumanLabels": true,
   "source": {
     "path": "benchmark/distillation/human_reference/human_reference_v1.csv",
@@ -8,11 +8,11 @@
   },
   "reviewerManifest": {
     "path": "benchmark/distillation/human_reference/reviewer_manifest_v1.json",
-    "sha256": "a58e601513a4f104575249a761a7176c7274cce0896e65980b7eeda2ea7f24ad"
+    "sha256": "10c8c92422caadfb348eeccab868f9e281c425ee0c2e2a2bc1dd6a30cd8d0ea0"
   },
   "output": {
     "path": "benchmark/distillation/human_reference/human_reference_v2.csv",
-    "sha256": "5861df4a3892bd9df595e4e624fe381ba7a5b3312636052206220f5314263b53",
+    "sha256": "f8b34af1a98781053f2a77fd09f0b7a62e0c36b7f06d441a9295276c40d34d0e",
     "rows": 50
   },
   "queryManifest": {
@@ -22,8 +22,10 @@
   },
   "humanReviewChecklist": {
     "path": "benchmark/distillation/human_reference/difficult_distinction_review_v1.csv",
-    "sha256": "e19938c38996934dc2cfe923c911a53f25291f7663ce46e04ab6cd978b16cd4c",
-    "unresolvedRows": 50
+    "sha256": "13ac879d40c91bc3f1c79faee87083e3c39a908b0c033dd0d49707775602d452",
+    "reviewedRows": 50,
+    "unresolvedRows": 0,
+    "unresolvedPairIds": []
   },
   "gradeDistribution": [
     17,

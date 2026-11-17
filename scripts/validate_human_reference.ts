@@ -27,8 +27,10 @@ const V2_REQUIRED_COLUMNS = [
   'source_section_id',
   'candidate_text_provenance',
   'evaluation_language_stratum',
+  'theological_metadata_reviewer_id',
   'difficult_theological_distinction',
   'distinction_tag',
+  'theological_metadata_reviewer_notes',
 ] as const;
 const ALLOWED_LANGUAGE_STRATA = new Set(['en_query_vi_lyrics', 'vi_query_vi_lyrics']);
 
@@ -145,6 +147,18 @@ for (const row of rows) {
       }
       if (!row.difficult_theological_distinction) missingDifficultFlag.push(pairId);
       if (!row.distinction_tag) missingDistinctionTag.push(pairId);
+      if (row.distinction_tag && !/^[a-z0-9]+(?:_[a-z0-9]+)*$/u.test(row.distinction_tag)) {
+        errors.push(`${pairId}: distinction_tag must use lowercase snake_case.`);
+      }
+      const hasTheologicalMetadata = Boolean(
+        row.difficult_theological_distinction && row.distinction_tag
+      );
+      const expectedMetadataReviewer = hasTheologicalMetadata
+        ? 'theological_metadata_reviewer_1'
+        : '';
+      if (row.theological_metadata_reviewer_id !== expectedMetadataReviewer) {
+        errors.push(`${pairId}: theological metadata reviewer provenance is inconsistent.`);
+      }
     }
   } catch (error) {
     errors.push(error instanceof Error ? error.message : `${pairId}: unknown validation failure.`);

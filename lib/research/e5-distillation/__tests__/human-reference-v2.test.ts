@@ -14,6 +14,7 @@ function rows(fileName: string) {
 describe('Human Reference v2 artifact', () => {
   const v1 = rows('human_reference_v1.csv');
   const v2 = rows('human_reference_v2.csv');
+  const theologicalReview = rows('difficult_distinction_review_v1.csv');
 
   it('preserves all 50 human labels and the frozen grade distribution', () => {
     expect(v2).toHaveLength(50);
@@ -57,9 +58,17 @@ describe('Human Reference v2 artifact', () => {
     }
   });
 
-  it('leaves theological-difficulty metadata for human review', () => {
-    expect(v2.every(row =>
-      row.difficult_theological_distinction === '' && row.distinction_tag === ''
-    )).toBe(true);
+  it('records completed human-reviewed theological metadata without changing labels', () => {
+    const reviewByPairId = new Map(theologicalReview.map(row => [row.pair_id, row]));
+    for (const row of v2) {
+      const review = reviewByPairId.get(row.pair_id);
+      expect(review).toBeDefined();
+      expect(row.theological_metadata_reviewer_id)
+        .toBe('theological_metadata_reviewer_1');
+      expect(row.difficult_theological_distinction)
+        .toBe(review?.difficult_theological_distinction);
+      expect(row.distinction_tag).toBe(review?.distinction_tag);
+      expect(row.theological_metadata_reviewer_notes).toBe(review?.reviewer_notes);
+    }
   });
 });

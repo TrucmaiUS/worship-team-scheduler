@@ -12,6 +12,14 @@
     "confirmationSource": "User confirmation in Codex chat",
     "personalIdentitiesStored": false
   },
+  "theologicalMetadataReview": {
+    "confirmedHumanReview": true,
+    "reviewerPseudonymousId": "theological_metadata_reviewer_1",
+    "confirmationDate": "2026-11-17",
+    "confirmationSource": "User confirmation in Codex chat",
+    "relationshipToLabelReviewers": "not_recorded",
+    "reviewedRows": 50
+  },
   "sourceFiles": [
     {
       "role": "reviewer_1",
