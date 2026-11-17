@@ -1,0 +1,16 @@
+reference_query_id,original_source_query_id,query_text,query_text_provenance,query_group,input_language,source_topic_id
+G2-Q027,G2-Q027,Find worship songs about the power of the Holy Spirit working in and through believers.,exact_benchmark_query,G2,en,T01
+G2-Q028,G2-Q028,"Find songs that encourage the next generation to grow in faith, embrace God's calling, and boldly live according to Scripture.",exact_benchmark_query,G2,en,T02
+G2-Q029,G2-Q029,"Find songs about passing on faith, discipling others, and equipping future generations to continue God's work.",exact_benchmark_query,G2,en,T03
+G2-Q030,G2-Q030,"Find worship songs that express love through action, serving others, and demonstrating God's love in everyday life.",exact_benchmark_query,G2,en,T04
+G2-Q031,G2-Q031,"Find songs about our identity in Christ and how God defines who we are regardless of our past, failures, or doubts.",exact_benchmark_query,G2,en,T05
+G2-Q032,G2-Q032,"Find songs about belonging to God's family, experiencing His love, and walking together as a community of faith.",exact_benchmark_query,G2,en,T06
+G2-Q033,G2-Q033,Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.,exact_benchmark_query,G2,en,T07
+G2-Q034,G2-Q034,"Find songs about discovering God's purpose, being called by Him, and becoming an instrument for His mission.",exact_benchmark_query,G2,en,T08
+G2-Q035,G2-Q035,"Find songs about the Holy Spirit staying with us, helping us, and providing strength in our lives.",exact_benchmark_query,G2,en,T09
+G2-Q036,G2-Q036,Find songs about the Holy Spirit teaching us and reminding us of the words and teachings of Jesus.,exact_benchmark_query,G2,en,T10
+HRV2-G4-Q005-PARAPHRASE-V1,G4-Q005,Thắp lên ngọn lửa đức tin,human_reference_paraphrase_v1,G4,vi,
+HRV2-G4-Q006-PARAPHRASE-V1,G4-Q006,Ngợi khen Chúa giữa thử thách và cuộc chiến thuộc linh,human_reference_paraphrase_v1,G4,vi,
+HRV2-G4-Q010-PARAPHRASE-V1,G4-Q010,Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài,human_reference_paraphrase_v1,G4,vi,
+HRV2-G4-Q011-PARAPHRASE-V1,G4-Q011,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,human_reference_paraphrase_v1,G4,vi,
+HRV2-G4-Q012-PARAPHRASE-V1,G4-Q012,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",human_reference_paraphrase_v1,G4,vi,

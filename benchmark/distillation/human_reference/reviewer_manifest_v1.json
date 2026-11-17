@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "reviewer-manifest-v1",
+  "independence": {
+    "confirmed": true,
+    "participantCount": 3,
+    "roles": [
+      "reviewer_1",
+      "reviewer_2",
+      "adjudicator_1"
+    ],
+    "confirmationDate": "2026-11-17",
+    "confirmationSource": "User confirmation in Codex chat",
+    "personalIdentitiesStored": false
+  },
+  "sourceFiles": [
+    {
+      "role": "reviewer_1",
+      "pseudonymousId": "reviewer_1",
+      "path": "benchmark/distillation/human_reference/source_annotations/reviewer_1.xlsx",
+      "sha256": "34ae206dd721e417b4af9b6d7d7e790989b2fac5d70168e6bfd36a085575ecda",
+      "bytes": 20263
+    },
+    {
+      "role": "reviewer_2",
+      "pseudonymousId": "reviewer_2",
+      "path": "benchmark/distillation/human_reference/source_annotations/reviewer_2.xlsx",
+      "sha256": "8568f928b27c53175d721bd1d7336d169c837b66beaec1ef22e6ce9bde34550a",
+      "bytes": 20136
+    },
+    {
+      "role": "adjudicator_1",
+      "pseudonymousId": "adjudicator_1",
+      "path": "benchmark/distillation/human_reference/source_annotations/human_adjudication_21_pairs_v1.xlsx",
+      "sha256": "b4d15dccb5295939561c8a644da8cbc4b39db9553f0bc6caf4e3fd7eabc64f55",
+      "bytes": 20232
+    }
+  ]
+}

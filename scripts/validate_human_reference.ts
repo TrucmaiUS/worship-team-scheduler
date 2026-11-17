@@ -7,7 +7,7 @@ import type { RelevanceScore } from '../lib/research/e5-distillation/types';
 
 const EXPECTED_COUNTS = [17, 9, 8, 16] as const;
 const SOURCE_LABELS = ['Not Relevant', 'Slightly Relevant', 'Relevant', 'Highly Relevant'] as const;
-const REQUIRED_PROVENANCE_COLUMNS = [
+const V1_REQUIRED_PROVENANCE_COLUMNS = [
   'reviewer_1_id',
   'reviewer_2_id',
   'adjudicator_id',
@@ -16,6 +16,21 @@ const REQUIRED_PROVENANCE_COLUMNS = [
   'difficult_theological_distinction',
   'distinction_tag',
 ] as const;
+const V2_REQUIRED_COLUMNS = [
+  'schema_version',
+  'reviewer_1_id',
+  'reviewer_2_id',
+  'adjudicator_id',
+  'original_source_query_id',
+  'reference_query_id',
+  'query_text_provenance',
+  'source_section_id',
+  'candidate_text_provenance',
+  'evaluation_language_stratum',
+  'difficult_theological_distinction',
+  'distinction_tag',
+] as const;
+const ALLOWED_LANGUAGE_STRATA = new Set(['en_query_vi_lyrics', 'vi_query_vi_lyrics']);
 
 function option(name: string): string | null {
   const index = process.argv.indexOf(name);
@@ -43,10 +58,14 @@ const outputPath = option('--out');
 const bytes = fs.readFileSync(inputPath);
 const rows = parseCsv(bytes.toString('utf8').replace(/^\uFEFF/u, ''));
 const headers = rows[0] ? Object.keys(rows[0]) : [];
+const isV2 = headers.includes('schema_version');
 const errors: string[] = [];
 const warnings: string[] = [];
 const pairIds = new Set<string>();
 const gradeCounts = [0, 0, 0, 0];
+const missingDifficultFlag: string[] = [];
+const missingDistinctionTag: string[] = [];
+const languageStratumCounts: Record<string, number> = {};
 
 for (const row of rows) {
   const pairId = row.pair_id || '<missing-pair-id>';
@@ -100,6 +119,33 @@ for (const row of rows) {
         errors.push(`${pairId}: invalid adjudicator evidence (${adjudicatorEvidence.reasons.join(',')}).`);
       }
     }
+
+    if (isV2) {
+      if (row.schema_version !== 'human-reference-v2') {
+        errors.push(`${pairId}: invalid schema_version.`);
+      }
+      if (row.reviewer_1_id !== 'reviewer_1' || row.reviewer_2_id !== 'reviewer_2') {
+        errors.push(`${pairId}: reviewer provenance is missing or inconsistent.`);
+      }
+      const expectedAdjudicator = difference === 0 ? '' : 'adjudicator_1';
+      if (row.adjudicator_id !== expectedAdjudicator) {
+        errors.push(`${pairId}: adjudicator provenance is inconsistent with label_source.`);
+      }
+      if (row.original_source_query_id !== row.source_query_id) {
+        errors.push(`${pairId}: original source query lineage is inconsistent.`);
+      }
+      if (!row.reference_query_id || !row.source_section_id) {
+        errors.push(`${pairId}: query or corpus section provenance is missing.`);
+      }
+      if (!ALLOWED_LANGUAGE_STRATA.has(row.evaluation_language_stratum)) {
+        errors.push(`${pairId}: invalid evaluation language stratum.`);
+      } else {
+        languageStratumCounts[row.evaluation_language_stratum] =
+          (languageStratumCounts[row.evaluation_language_stratum] ?? 0) + 1;
+      }
+      if (!row.difficult_theological_distinction) missingDifficultFlag.push(pairId);
+      if (!row.distinction_tag) missingDistinctionTag.push(pairId);
+    }
   } catch (error) {
     errors.push(error instanceof Error ? error.message : `${pairId}: unknown validation failure.`);
   }
@@ -110,15 +156,25 @@ if (pairIds.size !== rows.length) errors.push('Pair IDs are not unique.');
 if (gradeCounts.some((count, grade) => count !== EXPECTED_COUNTS[grade])) {
   errors.push(`Grade distribution must remain ${EXPECTED_COUNTS.join('/')}; found ${gradeCounts.join('/')}.`);
 }
-const missingProvenanceColumns = REQUIRED_PROVENANCE_COLUMNS.filter(column => !headers.includes(column));
+const requiredColumns = isV2 ? V2_REQUIRED_COLUMNS : V1_REQUIRED_PROVENANCE_COLUMNS;
+const missingProvenanceColumns = requiredColumns.filter(column => !headers.includes(column));
 if (missingProvenanceColumns.length > 0) {
   warnings.push(`Missing provenance columns (not inferred): ${missingProvenanceColumns.join(', ')}.`);
 }
+if (isV2 && (missingDifficultFlag.length > 0 || missingDistinctionTag.length > 0)) {
+  warnings.push('Theological-difficulty metadata is intentionally awaiting human review; no values were inferred.');
+}
 warnings.push('Human grade 1 uses source label "Slightly Relevant"; model output rubric uses "Partially Relevant".');
 
+const coreValidationPassed = errors.length === 0 && missingProvenanceColumns.length === 0;
+const humanMetadataComplete = !isV2 ||
+  (missingDifficultFlag.length === 0 && missingDistinctionTag.length === 0);
+
 const report = {
-  schemaVersion: 'human-reference-validation-v1',
-  status: errors.length === 0 && missingProvenanceColumns.length === 0 ? 'PASS' : 'BLOCKED',
+  schemaVersion: isV2 ? 'human-reference-validation-v2' : 'human-reference-validation-v1',
+  status: coreValidationPassed && humanMetadataComplete ? 'PASS' : 'BLOCKED',
+  coreValidationStatus: coreValidationPassed ? 'PASS' : 'FAIL',
+  humanMetadataStatus: humanMetadataComplete ? 'COMPLETE' : 'AWAITING_HUMAN_REVIEW',
   source: {
     path: path.relative(process.cwd(), inputPath).replaceAll('\\', '/'),
     sha256: crypto.createHash('sha256').update(bytes).digest('hex'),
@@ -130,6 +186,12 @@ const report = {
   minimumPerGrade: 8,
   uniquePairIds: pairIds.size,
   missingProvenanceColumns,
+  languageStratumCounts,
+  missingHumanMetadata: {
+    difficultTheologicalDistinction: missingDifficultFlag.length,
+    distinctionTag: missingDistinctionTag.length,
+    pairsMissingAny: [...new Set([...missingDifficultFlag, ...missingDistinctionTag])],
+  },
   errors,
   warnings,
 };
@@ -137,7 +199,12 @@ const report = {
 const serialized = `${JSON.stringify(report, null, 2)}\n`;
 if (outputPath) {
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-  fs.writeFileSync(outputPath, serialized, { encoding: 'utf8', flag: 'wx' });
+  if (fs.existsSync(outputPath)) {
+    const current = fs.readFileSync(outputPath, 'utf8');
+    if (current !== serialized) throw new Error(`Refusing to overwrite non-matching report: ${outputPath}`);
+  } else {
+    fs.writeFileSync(outputPath, serialized, { encoding: 'utf8', flag: 'wx' });
+  }
 }
 console.log(serialized.trimEnd());
 if (report.status !== 'PASS') process.exitCode = 2;

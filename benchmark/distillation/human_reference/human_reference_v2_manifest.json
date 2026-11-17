@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "human-reference-v2-manifest",
+  "status": "AWAITING_THEOLOGICAL_METADATA",
+  "frozenHumanLabels": true,
+  "source": {
+    "path": "benchmark/distillation/human_reference/human_reference_v1.csv",
+    "sha256": "3d9c2bd99c5ed96ea91207789e1249d2ae3ff82a1e72117ffed907cb28761d04"
+  },
+  "reviewerManifest": {
+    "path": "benchmark/distillation/human_reference/reviewer_manifest_v1.json",
+    "sha256": "a58e601513a4f104575249a761a7176c7274cce0896e65980b7eeda2ea7f24ad"
+  },
+  "output": {
+    "path": "benchmark/distillation/human_reference/human_reference_v2.csv",
+    "sha256": "5861df4a3892bd9df595e4e624fe381ba7a5b3312636052206220f5314263b53",
+    "rows": 50
+  },
+  "queryManifest": {
+    "path": "benchmark/distillation/human_reference/query_manifest_v2.csv",
+    "sha256": "152450cd343d86c572c10f261b8ef00b16f14b599c44557b009f88aa9aa45c7f",
+    "uniqueQueries": 15
+  },
+  "humanReviewChecklist": {
+    "path": "benchmark/distillation/human_reference/difficult_distinction_review_v1.csv",
+    "sha256": "e19938c38996934dc2cfe923c911a53f25291f7663ce46e04ab6cd978b16cd4c",
+    "unresolvedRows": 50
+  },
+  "gradeDistribution": [
+    17,
+    9,
+    8,
+    16
+  ],
+  "evidenceCorrections": {
+    "method": "whitespace-only restoration to one unique contiguous span in section_lyrics",
+    "pairIds": [
+      "P004",
+      "P031"
+    ]
+  },
+  "queryTextProvenance": {
+    "human_reference_paraphrase_v1": 25,
+    "exact_benchmark_query": 25
+  },
+  "candidateTextProvenance": {
+    "exact_corpus_section": 49,
+    "versioned_text_correction_v1": 1
+  },
+  "evaluationLanguageStrata": {
+    "vi_query_vi_lyrics": 25,
+    "en_query_vi_lyrics": 25
+  },
+  "serializationNormalization": "LF line endings and removal of trailing horizontal whitespace",
+  "generatedBy": "scripts/build_human_reference_v2.ts"
+}
