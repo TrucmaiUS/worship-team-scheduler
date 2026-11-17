@@ -83,6 +83,7 @@ export interface GroqJudgeAttemptLog {
     tokenReset: string | null;
   };
   failureCode: string | null;
+  failureDetail: string | null;
   retryable: boolean;
 }
 
@@ -212,6 +213,7 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
     let response: Response | null = null;
     let raw = '';
     let failureCode: string | null = null;
+    let failureDetail: string | null = null;
     let retryable = false;
     try {
       response = await fetchImpl(`${GROQ_OPENAI_BASE_URL}/chat/completions`, {
@@ -226,6 +228,12 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
       raw = await response.text();
       if (!response.ok) {
         failureCode = `http_${response.status}`;
+        try {
+          const payload = JSON.parse(raw) as { error?: { message?: string } };
+          failureDetail = payload.error?.message ?? raw.slice(0, 1000);
+        } catch {
+          failureDetail = raw.slice(0, 1000);
+        }
         retryable = retryableStatus(response.status);
       } else {
         const payload = JSON.parse(raw) as GroqChatResponse;
@@ -259,13 +267,14 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
           providerRequestId: payload.id ?? null,
           systemFingerprint: payload.system_fingerprint ?? null,
           rateLimit: rateLimitHeaders(response.headers),
-          failureCode: null, retryable: false,
+          failureCode: null, failureDetail: null, retryable: false,
         };
         attempts.push(log);
         options.onAttempt?.(log);
         return { provider: 'groq', modelId: config.modelId, output, evidenceVerbatim, attempts };
       }
     } catch (error) {
+      failureDetail = error instanceof Error ? error.message : String(error);
       failureCode = error instanceof ResearchProtocolError
         ? 'protocol_validation_failure'
         : error instanceof SyntaxError
@@ -286,13 +295,13 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
       usage: { inputTokens: null, outputTokens: null, totalTokens: null },
       providerRequestId: response?.headers.get('x-request-id') ?? null,
       systemFingerprint: null, rateLimit: rateLimitHeaders(response?.headers),
-      failureCode, retryable,
+      failureCode, failureDetail, retryable,
     };
     attempts.push(log);
     options.onAttempt?.(log);
     if (!retryable || attempt === config.maxAttempts) {
       throw new ResearchProtocolError(
-        `Groq Judge stopped without fallback after attempt ${attempt}: ${failureCode}.`
+        `Groq Judge stopped without fallback after attempt ${attempt}: ${failureCode} (${failureDetail}).`
       );
     }
     await sleep(retryDelayMs(attempt, response?.headers.get('retry-after') ?? null));

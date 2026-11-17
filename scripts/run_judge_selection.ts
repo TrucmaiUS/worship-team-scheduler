@@ -7,6 +7,7 @@ import {
   groqJudgeResponseSchemaSha256,
   JUDGE_CANDIDATE_MODEL_IDS,
   type GroqJudgeAttemptLog,
+  type GroqJudgeResult,
 } from '../lib/research/e5-distillation/groq-judge';
 import {
   validateJudgeSelectionSet,
@@ -109,20 +110,31 @@ async function main(): Promise<void> {
     for (let index = 0; index < references.length; index += 1) {
       const pair = references[index];
       const attempts: GroqJudgeAttemptLog[] = [];
-      const result = await callGroqJudge({
-        apiKey: requiredApiKey,
-        config: configFor(modelId),
-        systemPrompt,
-        request: {
-          query_text: pair.queryText,
-          candidate: {
-            candidate_alias: pair.candidate.candidateAlias,
-            section_type: pair.candidate.sectionType,
-            lyrics: pair.candidate.lyrics,
+      let result: GroqJudgeResult;
+      try {
+        result = await callGroqJudge({
+          apiKey: requiredApiKey,
+          config: configFor(modelId),
+          systemPrompt,
+          request: {
+            query_text: pair.queryText,
+            candidate: {
+              candidate_alias: pair.candidate.candidateAlias,
+              section_type: pair.candidate.sectionType,
+              lyrics: pair.candidate.lyrics,
+            },
           },
-        },
-        onAttempt: log => attempts.push(log),
-      });
+          onAttempt: log => attempts.push(log),
+        });
+      } catch (error) {
+        writeJson(`${modelId.replaceAll('/', '__')}_failure.json`, {
+          pairId: pair.pairId,
+          pairIndex: index,
+          attempts,
+          message: error instanceof Error ? error.message : String(error),
+        });
+        throw error;
+      }
       const latencyMs = attempts.reduce((sum, attempt) => sum + attempt.latencyMs, 0);
       const inputTokens = attempts.reduce((sum, attempt) => sum + (attempt.usage.inputTokens ?? 0), 0);
       const outputTokens = attempts.reduce((sum, attempt) => sum + (attempt.usage.outputTokens ?? 0), 0);

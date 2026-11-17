@@ -1,0 +1,5 @@
+{
+  "status": "FAILED",
+  "failedAtUtc": "2026-11-17T16:30:39.928Z",
+  "message": "Groq Judge stopped without fallback after attempt 3: network_or_runtime_failure."
+}
