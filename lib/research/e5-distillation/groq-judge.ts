@@ -178,10 +178,28 @@ function retryableStatus(status: number): boolean {
   return [408, 409, 429, 500, 502, 503, 504].includes(status);
 }
 
-function retryDelayMs(attempt: number, retryAfter: string | null): number {
+function durationMs(value: string | null): number {
+  if (!value) return Number.NaN;
+  const numericSeconds = Number(value);
+  if (Number.isFinite(numericSeconds) && numericSeconds >= 0) return numericSeconds * 1000;
+  let total = 0;
+  let matched = false;
+  for (const match of value.matchAll(/([0-9]+(?:\.[0-9]+)?)(ms|s|m|h)/gu)) {
+    matched = true;
+    const amount = Number(match[1]);
+    total += amount * ({ ms: 1, s: 1000, m: 60_000, h: 3_600_000 }[match[2]] ?? 0);
+  }
+  return matched ? total : Number.NaN;
+}
+
+function retryDelayMs(attempt: number, retryAfter: string | null, tokenReset: string | null): number {
   const retryAfterSeconds = retryAfter === null ? Number.NaN : Number(retryAfter);
   if (Number.isFinite(retryAfterSeconds) && retryAfterSeconds >= 0) {
-    return Math.min(30_000, Math.ceil(retryAfterSeconds * 1000));
+    return Math.min(60_000, Math.ceil(retryAfterSeconds * 1000) + 250);
+  }
+  const resetMilliseconds = durationMs(tokenReset);
+  if (Number.isFinite(resetMilliseconds) && resetMilliseconds >= 0) {
+    return Math.min(60_000, Math.ceil(resetMilliseconds) + 250);
   }
   return Math.min(8_000, 500 * 2 ** (attempt - 1));
 }
@@ -310,7 +328,11 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
         `Groq Judge stopped without fallback after attempt ${attempt}: ${failureCode} (${failureDetail}).`
       );
     }
-    await sleep(retryDelayMs(attempt, response?.headers.get('retry-after') ?? null));
+    await sleep(retryDelayMs(
+      attempt,
+      response?.headers.get('retry-after') ?? null,
+      response?.headers.get('x-ratelimit-reset-tokens') ?? null
+    ));
   }
   throw new ResearchProtocolError('Groq Judge exhausted attempts without a result.');
 }

@@ -1,0 +1,43 @@
+[
+  {
+    "pairId": "P001",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Tìm người đang vỡ tan"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 571,
+    "outputTokens": 780,
+    "latencyMs": 1854,
+    "failureCode": null
+  },
+  {
+    "pairId": "P002",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 565,
+    "outputTokens": 332,
+    "latencyMs": 2056,
+    "failureCode": null
+  },
+  {
+    "pairId": "P003",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 548,
+    "outputTokens": 663,
+    "latencyMs": 2507,
+    "failureCode": null
+  }
+]

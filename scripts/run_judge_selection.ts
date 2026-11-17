@@ -28,10 +28,18 @@ const promptSha256 = crypto.createHash('sha256').update(systemPrompt).digest('he
 const referenceSha256 = crypto.createHash('sha256').update(fs.readFileSync(referencePath)).digest('hex');
 const createdAtUtc = new Date().toISOString();
 const preflight = process.argv.includes('--preflight');
-const runId = `judge-selection-v3${preflight ? '-preflight' : ''}-${createdAtUtc.replace(/[:.]/gu, '-')}`;
+const resumeIndex = process.argv.indexOf('--resume');
+const resumeRunId = resumeIndex >= 0 ? process.argv[resumeIndex + 1] : null;
+if (resumeIndex >= 0 && !resumeRunId) throw new Error('Missing --resume <run-id>.');
+const runId = resumeRunId ??
+  `judge-selection-v3${preflight ? '-preflight' : ''}-${createdAtUtc.replace(/[:.]/gu, '-')}`;
 const outputDirectory = path.join(ROOT, 'benchmark/distillation/judge_selection_runs', runId);
-if (fs.existsSync(outputDirectory)) throw new Error(`Run directory already exists: ${outputDirectory}`);
-fs.mkdirSync(outputDirectory, { recursive: true });
+if (resumeRunId) {
+  if (!fs.existsSync(outputDirectory)) throw new Error(`Resume run does not exist: ${outputDirectory}`);
+} else {
+  if (fs.existsSync(outputDirectory)) throw new Error(`Run directory already exists: ${outputDirectory}`);
+  fs.mkdirSync(outputDirectory, { recursive: true });
+}
 
 const configFor = (modelId: typeof JUDGE_CANDIDATE_MODEL_IDS[number]) => ({
   role: 'independent_judge' as const,
@@ -98,19 +106,39 @@ async function main(): Promise<void> {
     protectedHeldOutDataUsed: false,
     responseFormatRationale: 'Shared JSON mode with identical local strict-schema validation because the current Groq inventory does not advertise structured_outputs for qwen/qwen3.8-27b.',
   };
-  writeJson('run_manifest.json', manifest);
-
-  const auditRows: string[][] = [[
-    'model_id', 'pair_id', 'query_text', 'candidate_lyrics', 'relevance_score',
-    'evidence_quotes', 'evidence_context_supported', 'auditor_notes',
-  ]];
+  if (resumeRunId) {
+    const prior = JSON.parse(fs.readFileSync(path.join(outputDirectory, 'run_manifest.json'), 'utf8')) as {
+      referenceSha256?: string; promptSha256?: string;
+    };
+    if (prior.referenceSha256 !== referenceSha256 || prior.promptSha256 !== promptSha256) {
+      throw new Error('Resume run prompt/reference hash mismatch.');
+    }
+    writeJson('run_manifest.json', { ...prior, status: 'resuming_after_rate_limit',
+      resumedAtUtc: createdAtUtc,
+      resumeCodeCommit: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: ROOT, encoding: 'utf8' }).trim() });
+  } else {
+    writeJson('run_manifest.json', manifest);
+  }
 
   const executionPairs = preflight ? references.slice(0, 3) : references;
   for (const modelId of JUDGE_CANDIDATE_MODEL_IDS) {
-    const rawRecords: unknown[] = [];
-    const evaluationOutputs: JudgeSelectionOutput[] = [];
+    const stem = modelId.replaceAll('/', '__');
+    const rawPath = path.join(outputDirectory, `${stem}_raw.json`);
+    const evaluationPath = path.join(outputDirectory, `${stem}_evaluation.json`);
+    if (resumeRunId && fs.existsSync(rawPath) && fs.existsSync(evaluationPath)) {
+      console.log(`${modelId}: already complete; preserving sealed outputs`);
+      continue;
+    }
     const partialName = `${modelId.replaceAll('/', '__')}.partial.json`;
-    for (let index = 0; index < executionPairs.length; index += 1) {
+    const partialPath = path.join(outputDirectory, partialName);
+    const partial = resumeRunId && fs.existsSync(partialPath)
+      ? JSON.parse(fs.readFileSync(partialPath, 'utf8')) as {
+          rawRecords: unknown[]; evaluationOutputs: JudgeSelectionOutput[];
+        }
+      : { rawRecords: [], evaluationOutputs: [] };
+    const rawRecords = partial.rawRecords;
+    const evaluationOutputs = partial.evaluationOutputs;
+    for (let index = evaluationOutputs.length; index < executionPairs.length; index += 1) {
       const pair = executionPairs[index];
       const attempts: GroqJudgeAttemptLog[] = [];
       let result: GroqJudgeResult;
@@ -156,26 +184,34 @@ async function main(): Promise<void> {
         latencyMs,
         failureCode: null,
       });
-      if (result.output.relevance_score >= 2) {
-        auditRows.push([
-          modelId, pair.pairId, pair.queryText, pair.candidate.lyrics,
-          String(result.output.relevance_score), JSON.stringify(result.output.evidence_quotes), '', '',
-        ]);
-      }
       writeJson(partialName, { modelId, completedPairs: index + 1, rawRecords, evaluationOutputs });
       if (preflight || (index + 1) % 5 === 0) {
         console.log(`${modelId}: ${index + 1}/${executionPairs.length}`);
       }
       if (index + 1 < executionPairs.length) await pause(6_000);
     }
-    writeJson(`${modelId.replaceAll('/', '__')}_raw.json`, rawRecords);
-    writeJson(`${modelId.replaceAll('/', '__')}_evaluation.json`, evaluationOutputs);
+    writeJson(`${stem}_raw.json`, rawRecords);
+    writeJson(`${stem}_evaluation.json`, evaluationOutputs);
     fs.rmSync(path.join(outputDirectory, partialName));
   }
 
+  const auditRows: string[][] = [[
+    'model_id', 'pair_id', 'query_text', 'candidate_lyrics', 'relevance_score',
+    'evidence_quotes', 'evidence_context_supported', 'auditor_notes',
+  ]];
+  for (const modelId of JUDGE_CANDIDATE_MODEL_IDS) {
+    const evaluationOutputs = JSON.parse(fs.readFileSync(path.join(outputDirectory,
+      `${modelId.replaceAll('/', '__')}_evaluation.json`), 'utf8')) as JudgeSelectionOutput[];
+    for (const output of evaluationOutputs.filter(item => (item.relevanceScore ?? -1) >= 2)) {
+      const pair = references.find(item => item.pairId === output.pairId)!;
+      auditRows.push([modelId, pair.pairId, pair.queryText, pair.candidate.lyrics,
+        String(output.relevanceScore), JSON.stringify(output.evidenceQuotes), '', '']);
+    }
+  }
   fs.writeFileSync(path.join(outputDirectory, 'evidence_context_audit.csv'),
     `${auditRows.map(row => row.map(csvEscape).join(',')).join('\n')}\n`, 'utf8');
-  writeJson('run_manifest.json', { ...manifest, status: 'raw_outputs_complete',
+  const currentManifest = JSON.parse(fs.readFileSync(path.join(outputDirectory, 'run_manifest.json'), 'utf8'));
+  writeJson('run_manifest.json', { ...currentManifest, status: 'raw_outputs_complete',
     completedAtUtc: new Date().toISOString(), evidenceContextAuditRequired: true });
   console.log(JSON.stringify({ status: 'RAW_OUTPUTS_COMPLETE', runId, outputDirectory,
     evidenceContextAuditRows: auditRows.length - 1 }, null, 2));

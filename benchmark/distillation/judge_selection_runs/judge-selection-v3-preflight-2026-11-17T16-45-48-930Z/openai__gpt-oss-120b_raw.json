@@ -1,0 +1,152 @@
+[
+  {
+    "pairId": "P001",
+    "output": {
+      "candidate_alias": "CANDIDATE_001",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics speak of God's invitation and waiting, offering praise, but lack explicit reference to trials or spiritual warfare central to the query.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "30a12e355ee95483a6f4d78fecacfd008cbd02e51117decac62527e3f36ddd38",
+        "responseSha256": "47925b37fb6f1f88a07f1eca74562ab7612d41970aca6b42de49b2376db50554",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 676,
+        "usage": {
+          "inputTokens": 621,
+          "outputTokens": 208,
+          "totalTokens": 829
+        },
+        "providerRequestId": "chatcmpl-0daf4803-6a3b-4432-959c-0bb651bda2bc",
+        "systemFingerprint": "fp_27194a498a",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "940",
+          "tokenLimit": "8000",
+          "remainingTokens": "6479",
+          "requestReset": "1h26m24s",
+          "tokenReset": "11.407s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P002",
+    "output": {
+      "candidate_alias": "CANDIDATE_002",
+      "relevance_score": 0,
+      "relevance_label": "Not Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics focus on Christ's crucifixion without mention of the Holy Spirit or teaching of Jesus, so they do not address the query's intent.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "2905cd91d1839461430a3b86ed6ebb55b35f025d1b90b8ecb9f6a6a6459f4ea0",
+        "responseSha256": "a6420f510caadb211711ceab072859ee382ec31e544e1c57f644781628417fa6",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1026,
+        "usage": {
+          "inputTokens": 603,
+          "outputTokens": 136,
+          "totalTokens": 739
+        },
+        "providerRequestId": "chatcmpl-a5fbe8fc-cffa-472d-af29-2ce2d0c41b6a",
+        "systemFingerprint": "fp_267e812a3a",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "939",
+          "tokenLimit": "8000",
+          "remainingTokens": "7114",
+          "requestReset": "1h27m50.4s",
+          "tokenReset": "6.645s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P003",
+    "output": {
+      "candidate_alias": "CANDIDATE_003",
+      "relevance_score": 0,
+      "relevance_label": "Not Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics lack any mention of the cross, redemption, or Christ's blood, showing no theological relevance to the query.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "96bb9265658cf90819921876e2768340935133eca5337bfe5e225346e222ebe8",
+        "responseSha256": "b305f74ecffdccbd617ffedfa109eafa819332d41ab5e462cf59634790f8559f",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1074,
+        "usage": {
+          "inputTokens": 587,
+          "outputTokens": 117,
+          "totalTokens": 704
+        },
+        "providerRequestId": "chatcmpl-ea16361f-930b-450b-864a-e22006641a74",
+        "systemFingerprint": "fp_27194a498a",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "938",
+          "tokenLimit": "8000",
+          "remainingTokens": "7162",
+          "requestReset": "1h29m16.8s",
+          "tokenReset": "6.285s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  }
+]

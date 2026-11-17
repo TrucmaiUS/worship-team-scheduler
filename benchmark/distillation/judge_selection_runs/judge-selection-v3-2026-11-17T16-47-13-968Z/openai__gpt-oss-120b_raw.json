@@ -1,0 +1,3081 @@
+[
+  {
+    "pairId": "P001",
+    "output": {
+      "candidate_alias": "CANDIDATE_001",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics speak of God's invitation and waiting, offering praise, but lack any reference to trials or spiritual warfare central to the query.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "30a12e355ee95483a6f4d78fecacfd008cbd02e51117decac62527e3f36ddd38",
+        "responseSha256": "cc240e0a18c9e50682a4becdd51d6b2f10307e855077dfa57d789a0a675b4b8b",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 999,
+        "usage": {
+          "inputTokens": 621,
+          "outputTokens": 230,
+          "totalTokens": 851
+        },
+        "providerRequestId": "chatcmpl-9711b9cb-5871-47a8-b139-9f1015b1bdcf",
+        "systemFingerprint": "fp_64b2f1c926",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "937",
+          "tokenLimit": "8000",
+          "remainingTokens": "7143",
+          "requestReset": "1h30m43.2s",
+          "tokenReset": "6.427s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P002",
+    "output": {
+      "candidate_alias": "CANDIDATE_002",
+      "relevance_score": 0,
+      "relevance_label": "Not Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics focus on Christ's crucifixion without mention of the Holy Spirit or teaching of Jesus, lacking the query's core intent.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "2905cd91d1839461430a3b86ed6ebb55b35f025d1b90b8ecb9f6a6a6459f4ea0",
+        "responseSha256": "f185517d2f61627e26d817f46ef35aaa05ef1a9757c2fa2840b5a1267b8bc569",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 902,
+        "usage": {
+          "inputTokens": 603,
+          "outputTokens": 133,
+          "totalTokens": 736
+        },
+        "providerRequestId": "chatcmpl-60ab6961-584e-459d-afe2-bdde5644eba8",
+        "systemFingerprint": "fp_64b2f1c926",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "936",
+          "tokenLimit": "8000",
+          "remainingTokens": "7161",
+          "requestReset": "1h32m9.6s",
+          "tokenReset": "6.292s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P003",
+    "output": {
+      "candidate_alias": "CANDIDATE_003",
+      "relevance_score": 0,
+      "relevance_label": "Not Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics lack any reference to the cross, redemption, or Christ's blood, showing no theological connection to the query.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "96bb9265658cf90819921876e2768340935133eca5337bfe5e225346e222ebe8",
+        "responseSha256": "7dacc7abaa8944990a326927ddb5c11764a3eebd8dca1e07299a6ef2257638d5",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1701,
+        "usage": {
+          "inputTokens": 587,
+          "outputTokens": 125,
+          "totalTokens": 712
+        },
+        "providerRequestId": "chatcmpl-4606a7af-78b6-46a0-bbbf-013932665133",
+        "systemFingerprint": "fp_c800245357",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "935",
+          "tokenLimit": "8000",
+          "remainingTokens": "7130",
+          "requestReset": "1h33m36s",
+          "tokenReset": "6.525s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P004",
+    "output": {
+      "candidate_alias": "CANDIDATE_004",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics mention hearing God's call and spreading His word, hinting at future outreach, but lack explicit focus on discipling or equipping future generations.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "5ad76cd3534a10c06df3106ca78c31c6a5bf2e64a8bfc2a8d2a49d7b31fe0966",
+        "responseSha256": "38fc5f28b00e72a19494426b1b0bd23b494ba98a22e236e1f67d94bc12db5c5d",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1504,
+        "usage": {
+          "inputTokens": 583,
+          "outputTokens": 241,
+          "totalTokens": 824
+        },
+        "providerRequestId": "chatcmpl-84d95a13-fe98-4f0c-85ff-14451d68e8c5",
+        "systemFingerprint": "fp_5082008e34",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "934",
+          "tokenLimit": "8000",
+          "remainingTokens": "7182",
+          "requestReset": "1h35m2.4s",
+          "tokenReset": "6.135s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P005",
+    "output": {
+      "candidate_alias": "CANDIDATE_005",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics mention fire imagery but lack clear focus on igniting or sustaining faith, so only a vague connection to the query’s theme.",
+      "is_lexical_overlap_only": true
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "0e723ff5542b8fd1e47905a5442268fb3b44a5d2cf45bcb780db0ed9c4cc3a42",
+        "responseSha256": "ddb9c9fc9c256533060410df45de68d4ec2724c40b5d302cf723a6c033a11f10",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1787,
+        "usage": {
+          "inputTokens": 586,
+          "outputTokens": 264,
+          "totalTokens": 850
+        },
+        "providerRequestId": "chatcmpl-b19826f3-4df9-4fab-b39d-eabd47eb3738",
+        "systemFingerprint": "fp_87b3c396db",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "933",
+          "tokenLimit": "8000",
+          "remainingTokens": "7133",
+          "requestReset": "1h36m28.8s",
+          "tokenReset": "6.502s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P006",
+    "output": {
+      "candidate_alias": "CANDIDATE_006",
+      "relevance_score": 3,
+      "relevance_label": "Highly Relevant",
+      "evidence_quotes": [
+        "Quý báu, ân điển Cha muôn đời",
+        "Được xứng danh con của Cha",
+        "Mãi mãi con được về bên Cha",
+        "Trong Chúa, con chiến thắng thế gian."
+      ],
+      "reasoning_summary": "Lyrics affirm identity as God's child and eternal grace, matching the query about God defining who we are beyond past failures.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Quý báu, ân điển Cha muôn đời",
+          "normalizedQuote": "quý báu, ân điển cha muôn đời",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Được xứng danh con của Cha",
+          "normalizedQuote": "được xứng danh con của cha",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Mãi mãi con được về bên Cha",
+          "normalizedQuote": "mãi mãi con được về bên cha",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Trong Chúa, con chiến thắng thế gian.",
+          "normalizedQuote": "trong chúa, con chiến thắng thế gian.",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "7df864de933f0a7f52d539ef28262380a6f4fb93699ba09f926118229bcc0e9c",
+        "responseSha256": "abfd61df7a11593e77ed72d76d09fad1fe867ddd4ef86b8c5c4c1c11effa449d",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1391,
+        "usage": {
+          "inputTokens": 691,
+          "outputTokens": 245,
+          "totalTokens": 936
+        },
+        "providerRequestId": "chatcmpl-6e3b56b1-2a0d-45da-9208-11e679eb14ad",
+        "systemFingerprint": "fp_47082602e2",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "932",
+          "tokenLimit": "8000",
+          "remainingTokens": "7028",
+          "requestReset": "1h37m55.2s",
+          "tokenReset": "7.29s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P007",
+    "output": {
+      "candidate_alias": "CANDIDATE_007",
+      "relevance_score": 0,
+      "relevance_label": "Not Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "The lyrics focus on Christ's crucifixion and sacrifice, with no mention of the Holy Spirit or its empowering work in believers, thus not addressing the query's core intent.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "61793e33db79239726daf68c8f5fc27fd39ce3b79aec55f79ac0b6ca7f474cc3",
+        "responseSha256": "fe232842a29d6b791a910a7c5cfab1f31bf81e2431d9ab7926f9f048b7c1128b",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1229,
+        "usage": {
+          "inputTokens": 600,
+          "outputTokens": 132,
+          "totalTokens": 732
+        },
+        "providerRequestId": "chatcmpl-0a3c9c82-6f76-4c30-9841-3390e569f1b9",
+        "systemFingerprint": "fp_64b2f1c926",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "931",
+          "tokenLimit": "8000",
+          "remainingTokens": "7120",
+          "requestReset": "1h39m21.6s",
+          "tokenReset": "6.6s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P008",
+    "output": {
+      "candidate_alias": "CANDIDATE_008",
+      "relevance_score": 2,
+      "relevance_label": "Relevant",
+      "evidence_quotes": [
+        "Nhục ô quá khứ khiến con xa Ngài",
+        "Tình yêu nơi Chúa vẫn không lay dời",
+        "Thật là vô giá, Thánh ân Cha ban"
+      ],
+      "reasoning_summary": "Lyrics express turning away from Christ, then receiving steadfast love and priceless grace, reflecting the theme of following Jesus and being guided spiritually toward growth.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Nhục ô quá khứ khiến con xa Ngài",
+          "normalizedQuote": "nhục ô quá khứ khiến con xa ngài",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Tình yêu nơi Chúa vẫn không lay dời",
+          "normalizedQuote": "tình yêu nơi chúa vẫn không lay dời",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Thật là vô giá, Thánh ân Cha ban",
+          "normalizedQuote": "thật là vô giá, thánh ân cha ban",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "16b23cb951861727f1e2e7ec34c521a55aa6edecbb462f91518c3f23b4f1ff78",
+        "responseSha256": "1d115d0c7709cee84e0ea4d333b7664051cac332d357aef1b8fc6961409939be",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1244,
+        "usage": {
+          "inputTokens": 588,
+          "outputTokens": 246,
+          "totalTokens": 834
+        },
+        "providerRequestId": "chatcmpl-6224c0df-8c76-4e62-82d4-581d0d270b19",
+        "systemFingerprint": "fp_8ea50c0161",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "930",
+          "tokenLimit": "8000",
+          "remainingTokens": "7172",
+          "requestReset": "1h40m48s",
+          "tokenReset": "6.21s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P009",
+    "output": {
+      "candidate_alias": "CANDIDATE_009",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [
+        "Vì Ngài ở bên con"
+      ],
+      "reasoning_summary": "Lyrics express personal peace and God's presence, touching on belonging to Him, but lack explicit reference to God's family or communal faith walk",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Vì Ngài ở bên con",
+          "normalizedQuote": "vì ngài ở bên con",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "623b47a7d6e55e25aa8765b3c79a03b927720900fc79394ff441926ce933fd3f",
+        "responseSha256": "34d5550aed3ff335347aefaec2c53be4a4b10e3e247a28882d5ce49dbd7e75be",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 770,
+        "usage": {
+          "inputTokens": 630,
+          "outputTokens": 220,
+          "totalTokens": 850
+        },
+        "providerRequestId": "chatcmpl-2d386198-edfc-4a9a-b2f8-d66027349daa",
+        "systemFingerprint": "fp_5a93aea882",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "929",
+          "tokenLimit": "8000",
+          "remainingTokens": "6726",
+          "requestReset": "1h42m14.4s",
+          "tokenReset": "9.555s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P010",
+    "output": {
+      "candidate_alias": "CANDIDATE_010",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [
+        "Tình yêu Ngài cao lớn thay"
+      ],
+      "reasoning_summary": "Lyrics speak of God's love but lack explicit action or service to others, so only partially matches the query’s focus on love expressed through serving.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Tình yêu Ngài cao lớn thay",
+          "normalizedQuote": "tình yêu ngài cao lớn thay",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "e6fbf5321c42b0e22904e1aa5550defee8fd9d7f28e5f15aa0075e2eab007c19",
+        "responseSha256": "97fbf536594e724cf3d64a44a880c05f1708ddb74d13ff9a230267b038dc85d7",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 2259,
+        "usage": {
+          "inputTokens": 645,
+          "outputTokens": 193,
+          "totalTokens": 838
+        },
+        "providerRequestId": "chatcmpl-17c9d1c9-6e4b-415f-94c8-722053c33e8a",
+        "systemFingerprint": "fp_8ea50c0161",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "928",
+          "tokenLimit": "8000",
+          "remainingTokens": "7076",
+          "requestReset": "1h43m40.799s",
+          "tokenReset": "6.93s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P011",
+    "output": {
+      "candidate_alias": "CANDIDATE_011",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics speak of seeking God and His provision, which loosely aligns with praising God, but they do not specifically mention or focus on thanking Him for His mercy, the core intent of the query.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "7155afcff44b30993ac65c5618875b26c1f28447a73e6db9c527ba5ec65a9a17",
+        "responseSha256": "5da6aadc77cb7b7f06311ca52233fe176b08da1ecb27209af27ca782261f948b",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 967,
+        "usage": {
+          "inputTokens": 617,
+          "outputTokens": 192,
+          "totalTokens": 809
+        },
+        "providerRequestId": "chatcmpl-68ed9d86-bc36-402b-b476-630940a1c543",
+        "systemFingerprint": "fp_f73454f048",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "927",
+          "tokenLimit": "8000",
+          "remainingTokens": "7138",
+          "requestReset": "1h45m7.2s",
+          "tokenReset": "6.465s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P012",
+    "output": {
+      "candidate_alias": "CANDIDATE_012",
+      "relevance_score": 0,
+      "relevance_label": "Not Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics focus on personal devotion to God, lacking any notion of passing faith or discipling others.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "b67e8c824dd4528ec4e46e2bea7b83e3b06af384251407952b7efe44144660dc",
+        "responseSha256": "2f8c906e82cbc61ae7b7481bc62d7e2a3ca8b9db6e27419a44bc8b8a4f6fa4d0",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1148,
+        "usage": {
+          "inputTokens": 613,
+          "outputTokens": 172,
+          "totalTokens": 785
+        },
+        "providerRequestId": "chatcmpl-2d023e77-b07a-47cd-83b3-4351e41ade08",
+        "systemFingerprint": "fp_854fa9be4c",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "926",
+          "tokenLimit": "8000",
+          "remainingTokens": "6974",
+          "requestReset": "1h46m33.599s",
+          "tokenReset": "7.695s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P013",
+    "output": {
+      "candidate_alias": "CANDIDATE_013",
+      "relevance_score": 2,
+      "relevance_label": "Relevant",
+      "evidence_quotes": [
+        "Thập tự, sự phục sinh",
+        "Tội con Ngài xóa hết"
+      ],
+      "reasoning_summary": "Lyrics mention the cross, sacrifice and forgiveness, matching the query’s focus on the crucifixion, redemption and Christ’s blood",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Thập tự, sự phục sinh",
+          "normalizedQuote": "thập tự, sự phục sinh",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Tội con Ngài xóa hết",
+          "normalizedQuote": "tội con ngài xóa hết",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "95c6ab76eb8530ee291de422f616b0592d24c3975a7165fddf43075b367f0658",
+        "responseSha256": "cff836f1a2e0ee3030158e74f3aa05fefc5be105369ae385e45b03a303f58173",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 970,
+        "usage": {
+          "inputTokens": 583,
+          "outputTokens": 225,
+          "totalTokens": 808
+        },
+        "providerRequestId": "chatcmpl-2dac2a09-ee6b-4b8c-93de-08755db96708",
+        "systemFingerprint": "fp_267e812a3a",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "925",
+          "tokenLimit": "8000",
+          "remainingTokens": "7245",
+          "requestReset": "1h48m0s",
+          "tokenReset": "5.662s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P014",
+    "output": {
+      "candidate_alias": "CANDIDATE_014",
+      "relevance_score": 0,
+      "relevance_label": "Not Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics discuss God's justice and love without reference to the cross, redemption, or Christ's blood, so they do not address the query's core themes.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "090c77de44b2dddf50bcd1aaf1132fb3eb23aeb71258aa1c1b699b016dc24e55",
+        "responseSha256": "86043e23a0222b4b00c341be3419e3892fdcfbf4dd0b0b796d368f055938292e",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 668,
+        "usage": {
+          "inputTokens": 597,
+          "outputTokens": 155,
+          "totalTokens": 752
+        },
+        "providerRequestId": "chatcmpl-4a990342-94a9-4708-a484-8a18f1b07f91",
+        "systemFingerprint": "fp_69334c0be3",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "925",
+          "tokenLimit": "8000",
+          "remainingTokens": "7195",
+          "requestReset": "1h48m0s",
+          "tokenReset": "6.037s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P015",
+    "output": {
+      "candidate_alias": "CANDIDATE_015",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics praise God's greatness but do not mention His mercy, so only a partial match to a song of thanks for God's mercy.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "254edddc8a5b28ca191e9fec88ff9b4eaf36166cb3a24edefe2cac74d3a9ed72",
+        "responseSha256": "dcf4c7dda94c6dfa7c1f40159346d3af3735bbc30e4a1fb507d0ae763c0b1f84",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1250,
+        "usage": {
+          "inputTokens": 637,
+          "outputTokens": 301,
+          "totalTokens": 938
+        },
+        "providerRequestId": "chatcmpl-819f3bd3-8336-4677-a6d9-c9e835a89ecb",
+        "systemFingerprint": "fp_7a4ab09ae4",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "923",
+          "tokenLimit": "8000",
+          "remainingTokens": "6947",
+          "requestReset": "1h50m52.8s",
+          "tokenReset": "7.897s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P016",
+    "output": {
+      "candidate_alias": "CANDIDATE_016",
+      "relevance_score": 0,
+      "relevance_label": "Not Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics only praise God without addressing personal identity in Christ or redemption themes related to past failures or doubts.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "dc557037776d29428a7f085e34f6ab350040cd82c95f979ee6ba9582b1b08f1e",
+        "responseSha256": "23cf4b72bb5bf023ee6f0d803a2b59e14b8f31da2b6bbbb80f03ee1e456c502f",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 4281,
+        "usage": {
+          "inputTokens": 599,
+          "outputTokens": 179,
+          "totalTokens": 778
+        },
+        "providerRequestId": "chatcmpl-4faea03e-f203-46d0-b142-da0b1450013b",
+        "systemFingerprint": "fp_5082008e34",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "922",
+          "tokenLimit": "8000",
+          "remainingTokens": "7156",
+          "requestReset": "1h52m19.2s",
+          "tokenReset": "6.33s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P017",
+    "output": {
+      "candidate_alias": "CANDIDATE_017",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics mention peace in Him and His presence, hinting at devotion, but lack explicit surrender or lifelong dedication to Jesus, so only partially match the query's core intent.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "16a9244913f69ee8da500cca7cf450f2e4481eebf1b6525ea2d24381d87dd361",
+        "responseSha256": "e36ae0d3a8364d101be8274851cd4414701eaaf7c53a11b39a8f094ce58f9806",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1871,
+        "usage": {
+          "inputTokens": 631,
+          "outputTokens": 246,
+          "totalTokens": 877
+        },
+        "providerRequestId": "chatcmpl-b5fe4fdd-06c1-45d0-907f-f1eb80ccea33",
+        "systemFingerprint": "fp_27194a498a",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "921",
+          "tokenLimit": "8000",
+          "remainingTokens": "6469",
+          "requestReset": "1h53m45.6s",
+          "tokenReset": "11.482s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P018",
+    "output": {
+      "candidate_alias": "CANDIDATE_018",
+      "relevance_score": 3,
+      "relevance_label": "Highly Relevant",
+      "evidence_quotes": [
+        "Họ đóng đinh Ngài, với tiếng reo vang",
+        "Lằn roi trên lưng, nhuộm đong huyết Chúa",
+        "Chúa vẫn vui lòng, chết thay cho con"
+      ],
+      "reasoning_summary": "Lyrics explicitly describe Jesus being nailed, his blood, and his sacrificial death for redemption, directly matching the query about the cross, salvation, and Christ's blood",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Họ đóng đinh Ngài, với tiếng reo vang",
+          "normalizedQuote": "họ đóng đinh ngài, với tiếng reo vang",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Lằn roi trên lưng, nhuộm đong huyết Chúa",
+          "normalizedQuote": "lằn roi trên lưng, nhuộm đong huyết chúa",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Chúa vẫn vui lòng, chết thay cho con",
+          "normalizedQuote": "chúa vẫn vui lòng, chết thay cho con",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "b1b0f7a0eb8cbb87c81a9edeb5a4af83522eb4f0802eac16f6337249fe36dba5",
+        "responseSha256": "1d48cf9e19e04fcbaa981593f52fd795445f040ee6f90a92e6e238e1a2d812af",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1092,
+        "usage": {
+          "inputTokens": 610,
+          "outputTokens": 226,
+          "totalTokens": 836
+        },
+        "providerRequestId": "chatcmpl-7e8d68c8-4319-4950-a7f6-9d6e4a927f2f",
+        "systemFingerprint": "fp_e1a78f200e",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "920",
+          "tokenLimit": "8000",
+          "remainingTokens": "6006",
+          "requestReset": "1h55m12s",
+          "tokenReset": "14.955s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P019",
+    "output": {
+      "candidate_alias": "CANDIDATE_019",
+      "relevance_score": 2,
+      "relevance_label": "Relevant",
+      "evidence_quotes": [
+        "Ngài dẫn lối đưa con đi qua",
+        "Ngài là Đấng chiến đấu cho con"
+      ],
+      "reasoning_summary": "Lyrics describe God leading and fighting for the believer, reflecting following Jesus and spiritual guidance shaping one's path, matching the query's core intent.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Ngài dẫn lối đưa con đi qua",
+          "normalizedQuote": "ngài dẫn lối đưa con đi qua",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Ngài là Đấng chiến đấu cho con",
+          "normalizedQuote": "ngài là đấng chiến đấu cho con",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "b64dde065db4168504ab08fdf21fe2a76170da4bbb3e20054e578b47a22d94ad",
+        "responseSha256": "7115664676b246e408a52fe4f8dd68e49b537e3873a283d7d1266cd101e87555",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 914,
+        "usage": {
+          "inputTokens": 625,
+          "outputTokens": 286,
+          "totalTokens": 911
+        },
+        "providerRequestId": "chatcmpl-0219a11e-c27a-4894-9e40-8098f08a5ff8",
+        "systemFingerprint": "fp_c15aa9c1b7",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "919",
+          "tokenLimit": "8000",
+          "remainingTokens": "6868",
+          "requestReset": "1h56m38.4s",
+          "tokenReset": "8.489s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P020",
+    "output": {
+      "candidate_alias": "CANDIDATE_020",
+      "relevance_score": 2,
+      "relevance_label": "Relevant",
+      "evidence_quotes": [
+        "Sẽ bước theo Giê-su,",
+        "nguyện cả cuộc đời này"
+      ],
+      "reasoning_summary": "Lyrics express a commitment to follow Jesus throughout life, aligning with the query’s focus on following Jesus and letting spiritual guidance shape purpose.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Sẽ bước theo Giê-su,",
+          "normalizedQuote": "sẽ bước theo giê-su,",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "nguyện cả cuộc đời này",
+          "normalizedQuote": "nguyện cả cuộc đời này",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "db0ddffe5a2f83aa3b5fcb9c17b8745f1b6c25ef542c4c8c26f944e25b00c255",
+        "responseSha256": "230d745f4cfde17595b326872cffd579a55be6cecd32bc87091c29a23bad6cff",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1066,
+        "usage": {
+          "inputTokens": 607,
+          "outputTokens": 216,
+          "totalTokens": 823
+        },
+        "providerRequestId": "chatcmpl-158feb9d-b9a7-439f-bcff-5cfc6b0439ad",
+        "systemFingerprint": "fp_96d96a151c",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "918",
+          "tokenLimit": "8000",
+          "remainingTokens": "7092",
+          "requestReset": "1h58m4.8s",
+          "tokenReset": "6.81s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P021",
+    "output": {
+      "candidate_alias": "CANDIDATE_021",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics mention God's care and presence, touching on divine relationship, but lack explicit reference to discovering purpose, calling, or becoming an instrument for mission.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "68407449a2bf2e1eac054aaae65ee6b585099c604e4f101b45ffdb2817998e06",
+        "responseSha256": "1643f07edf10a38e8107fbbca5d62181af3a6da9dd78143c88ba1d59b404cbac",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1531,
+        "usage": {
+          "inputTokens": 632,
+          "outputTokens": 217,
+          "totalTokens": 849
+        },
+        "providerRequestId": "chatcmpl-ca4e8a01-dd77-4579-bc41-bbc2310dd25f",
+        "systemFingerprint": "fp_49bfac06f1",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "917",
+          "tokenLimit": "8000",
+          "remainingTokens": "7122",
+          "requestReset": "1h59m31.2s",
+          "tokenReset": "6.585s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P022",
+    "output": {
+      "candidate_alias": "CANDIDATE_022",
+      "relevance_score": 2,
+      "relevance_label": "Relevant",
+      "evidence_quotes": [
+        "Còn gì ngoài huyết báu Đấng Giê-su"
+      ],
+      "reasoning_summary": "Lyrics focus on Jesus' blood as the means of cleansing sin, directly matching the query's theme of redemption and Christ's sacrificial blood.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Còn gì ngoài huyết báu Đấng Giê-su",
+          "normalizedQuote": "còn gì ngoài huyết báu đấng giê-su",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "5eb483016cf982afd0ab48434af6f25b4daf06eb061c91a5d8d855d543c105b6",
+        "responseSha256": "3a51e520f9933e306ff1d0a5aa72388d2c1fa51a52ca82b645ec4d3ee9103ecf",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 981,
+        "usage": {
+          "inputTokens": 606,
+          "outputTokens": 199,
+          "totalTokens": 805
+        },
+        "providerRequestId": "chatcmpl-826361ac-3d31-455b-8c2e-84e88df1f533",
+        "systemFingerprint": "fp_27194a498a",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "916",
+          "tokenLimit": "8000",
+          "remainingTokens": "7093",
+          "requestReset": "2h0m57.6s",
+          "tokenReset": "6.802s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P023",
+    "output": {
+      "candidate_alias": "CANDIDATE_023",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [
+        "Ngài lấy đi tội lỗi này",
+        "Để chính ánh sáng nơi Ngài"
+      ],
+      "reasoning_summary": "Lyrics hint at sin removal and guidance, touching redemption, but lack explicit reference to the cross or Christ's blood, so only partially match the query's core intent.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Ngài lấy đi tội lỗi này",
+          "normalizedQuote": "ngài lấy đi tội lỗi này",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Để chính ánh sáng nơi Ngài",
+          "normalizedQuote": "để chính ánh sáng nơi ngài",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "4170cbbffe9749d0cd87ad00a2004fa05e8d9333f3f5d4403ae40063e347c489",
+        "responseSha256": "7af31cdf25d4d0b4b41b95df25e792bbdab8aef04807b459118ba631dc93d8be",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1866,
+        "usage": {
+          "inputTokens": 623,
+          "outputTokens": 253,
+          "totalTokens": 876
+        },
+        "providerRequestId": "chatcmpl-76abdc2c-b03c-489e-ad14-92458f654e1d",
+        "systemFingerprint": "fp_27194a498a",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "915",
+          "tokenLimit": "8000",
+          "remainingTokens": "7152",
+          "requestReset": "2h2m24s",
+          "tokenReset": "6.359s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P024",
+    "output": {
+      "candidate_alias": "CANDIDATE_024",
+      "relevance_score": 3,
+      "relevance_label": "Highly Relevant",
+      "evidence_quotes": [
+        "Được sống theo ý muốn Cha",
+        "Vì Ngài là Chúa con"
+      ],
+      "reasoning_summary": "Lyrics express surrender to the Father and living according to His will, matching the query about giving one’s life to Jesus",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Được sống theo ý muốn Cha",
+          "normalizedQuote": "được sống theo ý muốn cha",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Vì Ngài là Chúa con",
+          "normalizedQuote": "vì ngài là chúa con",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "e4c7b34f967cdb3a5564e6d9269f713afa8e3094d0cc8f10db1a23eca39cc2ad",
+        "responseSha256": "55e76d3d170750982349c07c586a1e86d2a222ebaff6c1c019ccccf565cb461b",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 2162,
+        "usage": {
+          "inputTokens": 614,
+          "outputTokens": 216,
+          "totalTokens": 830
+        },
+        "providerRequestId": "chatcmpl-3cb4cc4e-aff7-4105-802c-9c9dc797332f",
+        "systemFingerprint": "fp_8ea50c0161",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "914",
+          "tokenLimit": "8000",
+          "remainingTokens": "7085",
+          "requestReset": "2h3m50.4s",
+          "tokenReset": "6.862s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P025",
+    "output": {
+      "candidate_alias": "CANDIDATE_025",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [
+        "Nhờ sức Chúa con giờ đây mạnh mẽ"
+      ],
+      "reasoning_summary": "Lyrics speak of God's strength and peace but do not reference the Holy Spirit’s empowering work, so only a partial match to the query’s focus on the Spirit’s power.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Nhờ sức Chúa con giờ đây mạnh mẽ",
+          "normalizedQuote": "nhờ sức chúa con giờ đây mạnh mẽ",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "af5cd1a78723e6501b91a4a5317b740d0f4c5c8d3bb0ad7ed52f9e5bb86bc3ae",
+        "responseSha256": "ae2b52256126cef36133ed9c9b33e222539a59e7e59f9ebee0806e3fbdd7712c",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1633,
+        "usage": {
+          "inputTokens": 586,
+          "outputTokens": 195,
+          "totalTokens": 781
+        },
+        "providerRequestId": "chatcmpl-6abe07a4-7831-4576-bfd7-747a538fe839",
+        "systemFingerprint": "fp_e1a78f200e",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "913",
+          "tokenLimit": "8000",
+          "remainingTokens": "7161",
+          "requestReset": "2h5m16.799s",
+          "tokenReset": "6.292s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P026",
+    "output": {
+      "candidate_alias": "CANDIDATE_026",
+      "relevance_score": 3,
+      "relevance_label": "Highly Relevant",
+      "evidence_quotes": [
+        "Vì ngự trong con chính Thánh Linh",
+        "Chẳng sợ chi sẽ vững bước!"
+      ],
+      "reasoning_summary": "Lyrics explicitly mention the Holy Spirit dwelling within and giving strength, matching the query about the Spirit staying with and empowering us.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Vì ngự trong con chính Thánh Linh",
+          "normalizedQuote": "vì ngự trong con chính thánh linh",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Chẳng sợ chi sẽ vững bước!",
+          "normalizedQuote": "chẳng sợ chi sẽ vững bước!",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "db62e441f836e452961e13bc4350941e51a8b9c0715116e294b746fb51c0a997",
+        "responseSha256": "9ef61ea137ed65bfe889ec54d5a962ac7c607be73bdf51a6981b27d53020f273",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1626,
+        "usage": {
+          "inputTokens": 629,
+          "outputTokens": 282,
+          "totalTokens": 911
+        },
+        "providerRequestId": "chatcmpl-0b38ac78-6899-4906-8e29-f76dca5c8a62",
+        "systemFingerprint": "fp_854fa9be4c",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "912",
+          "tokenLimit": "8000",
+          "remainingTokens": "7070",
+          "requestReset": "2h6m43.2s",
+          "tokenReset": "6.975s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P027",
+    "output": {
+      "candidate_alias": "CANDIDATE_027",
+      "relevance_score": 2,
+      "relevance_label": "Relevant",
+      "evidence_quotes": [
+        "Chẳng hề khiếp hãi trước ngọn sóng dâng trào",
+        "Vì chúng con có Ngài, chúng con có Ngài"
+      ],
+      "reasoning_summary": "Lyrics express confidence in God despite danger, matching the query’s theme of praising God amid trials and spiritual conflict.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Chẳng hề khiếp hãi trước ngọn sóng dâng trào",
+          "normalizedQuote": "chẳng hề khiếp hãi trước ngọn sóng dâng trào",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Vì chúng con có Ngài, chúng con có Ngài",
+          "normalizedQuote": "vì chúng con có ngài, chúng con có ngài",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "ae0895d4b7d5ce00a13be28eede4cca4e16879e35c5da70d5d4fae7be131d639",
+        "responseSha256": "c4a679cd12e0cfd11e34dc89c76e523c19146a8d7026ebc75ca1a6415a2fda9a",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1350,
+        "usage": {
+          "inputTokens": 599,
+          "outputTokens": 238,
+          "totalTokens": 837
+        },
+        "providerRequestId": "chatcmpl-4bb0dee8-b4f6-406f-8190-4821c7b37e53",
+        "systemFingerprint": "fp_c15aa9c1b7",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "911",
+          "tokenLimit": "8000",
+          "remainingTokens": "7115",
+          "requestReset": "2h8m9.599s",
+          "tokenReset": "6.637s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P028",
+    "output": {
+      "candidate_alias": "CANDIDATE_028",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics express praise and inner spiritual strength but lack explicit reference to trials or spiritual warfare, so only a partial match to the query's core intent.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "c158d2045119e006720aa325ea5c1db6c7c289212b0d92abda1d9ac9d29c30b2",
+        "responseSha256": "786064838fc7d110d1e8eced975c39057e06fa877bc4de6d9858f4560eb26707",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 874,
+        "usage": {
+          "inputTokens": 599,
+          "outputTokens": 182,
+          "totalTokens": 781
+        },
+        "providerRequestId": "chatcmpl-accc7f93-8531-4944-8213-db41050e9738",
+        "systemFingerprint": "fp_267e812a3a",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "910",
+          "tokenLimit": "8000",
+          "remainingTokens": "7148",
+          "requestReset": "2h9m36s",
+          "tokenReset": "6.39s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P029",
+    "output": {
+      "candidate_alias": "CANDIDATE_029",
+      "relevance_score": 2,
+      "relevance_label": "Relevant",
+      "evidence_quotes": [
+        "Ngài sai con",
+        "Chúng con nguyện đi mãi"
+      ],
+      "reasoning_summary": "Lyrics express a willing response to God's sending and ongoing mission, matching the query’s themes of divine calling and purpose.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Ngài sai con",
+          "normalizedQuote": "ngài sai con",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Chúng con nguyện đi mãi",
+          "normalizedQuote": "chúng con nguyện đi mãi",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "f0448aadc44319a4cad5b4326bd534ee79061c67b14dc1e1ff14837995613123",
+        "responseSha256": "270bed164c2e41b72ceeaa87d153bcb28f71d6d9e60d0d418734de7fbc47a398",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 947,
+        "usage": {
+          "inputTokens": null,
+          "outputTokens": null,
+          "totalTokens": null
+        },
+        "providerRequestId": "req_01m7n6p01yesg9btgv6aqqk2fz",
+        "systemFingerprint": null,
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "909",
+          "tokenLimit": "8000",
+          "remainingTokens": "7107",
+          "requestReset": "2h11m2.4s",
+          "tokenReset": "6.697s"
+        },
+        "failureCode": "protocol_validation_failure",
+        "failureDetail": "Required evidence failed verbatim validation: evidence_not_verbatim_substring.",
+        "retryable": true
+      },
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 2,
+        "requestSha256": "f0448aadc44319a4cad5b4326bd534ee79061c67b14dc1e1ff14837995613123",
+        "responseSha256": "a7d6d92a8b54c1f5ab9627f9e0872d8dec944a745a7e557db4eeec50a4ac8818",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 937,
+        "usage": {
+          "inputTokens": 640,
+          "outputTokens": 204,
+          "totalTokens": 844
+        },
+        "providerRequestId": "chatcmpl-ecdde6f2-8a90-46ed-b582-a2d27496430c",
+        "systemFingerprint": "fp_02b0d31eca",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "908",
+          "tokenLimit": "8000",
+          "remainingTokens": "6606",
+          "requestReset": "2h12m28.8s",
+          "tokenReset": "10.455s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P030",
+    "output": {
+      "candidate_alias": "CANDIDATE_030",
+      "relevance_score": 2,
+      "relevance_label": "Relevant",
+      "evidence_quotes": [
+        "Thập giá, xóa hết tất cả rồi"
+      ],
+      "reasoning_summary": "Lyrics reference the cross, aligning with the query's focus on the crucifixion and redemption themes, though details about Christ's blood and atonement are limited.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Thập giá, xóa hết tất cả rồi",
+          "normalizedQuote": "thập giá, xóa hết tất cả rồi",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "69c476b3d5a17b0f6e532cd6d334fb8e5120b7145ce6eeab286bed53559956b9",
+        "responseSha256": "8abbc8a002a42b18e3a5aa6aa23f70e3f7e93ca8ad14027f9722b9279fb3541f",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1615,
+        "usage": {
+          "inputTokens": 635,
+          "outputTokens": 173,
+          "totalTokens": 808
+        },
+        "providerRequestId": "chatcmpl-94d0ac62-002c-4647-bdc9-0520f7312173",
+        "systemFingerprint": "fp_f640395b96",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "907",
+          "tokenLimit": "8000",
+          "remainingTokens": "6781",
+          "requestReset": "2h13m55.2s",
+          "tokenReset": "9.142s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P031",
+    "output": {
+      "candidate_alias": "CANDIDATE_031",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [
+        "Vì con đã sẵn sàng, Ngài hãy phái con đi",
+        "Ngọn Lửa, Sức Thiêng\n\nCháy lên trong con, Bước đi muôn nơi"
+      ],
+      "reasoning_summary": "Lyrics express personal readiness and being sent by God, aligning with calling and bold action, but do not specifically address encouraging the next generation to grow in faith.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Vì con đã sẵn sàng, Ngài hãy phái con đi",
+          "normalizedQuote": "vì con đã sẵn sàng, ngài hãy phái con đi",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Ngọn Lửa, Sức Thiêng\n\nCháy lên trong con, Bước đi muôn nơi",
+          "normalizedQuote": "ngọn lửa, sức thiêng cháy lên trong con, bước đi muôn nơi",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "d775926381170c223927b2b9ebf1688c281a1447d505f98412c1d11925c3d23f",
+        "responseSha256": "a957ea53fe342fcbbb2141923cdb562deeeea062e565e9e65626b789ea56286b",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 2563,
+        "usage": {
+          "inputTokens": 640,
+          "outputTokens": 310,
+          "totalTokens": 950
+        },
+        "providerRequestId": "chatcmpl-e3efb52f-1922-4206-a2a9-6372c53f54eb",
+        "systemFingerprint": "fp_df9620fe21",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "906",
+          "tokenLimit": "8000",
+          "remainingTokens": "7107",
+          "requestReset": "2h15m21.6s",
+          "tokenReset": "6.697s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P032",
+    "output": {
+      "candidate_alias": "CANDIDATE_032",
+      "relevance_score": 2,
+      "relevance_label": "Relevant",
+      "evidence_quotes": [
+        "Phước cho ai đầy lòng thương",
+        "Phước cho ai mang tới thái bình",
+        "Vì tìm kiếm công chính Ngài"
+      ],
+      "reasoning_summary": "Lyrics speak of blessings for those who love, bring peace, and seek justice, reflecting love expressed through action and service in daily life.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Phước cho ai đầy lòng thương",
+          "normalizedQuote": "phước cho ai đầy lòng thương",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Phước cho ai mang tới thái bình",
+          "normalizedQuote": "phước cho ai mang tới thái bình",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Vì tìm kiếm công chính Ngài",
+          "normalizedQuote": "vì tìm kiếm công chính ngài",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "d4d5c7c0f6ba43e2c3fbe47733747d3f1f41f3528f63a3832a4327346b7b7c75",
+        "responseSha256": "79a4dcc6d494dbcb05fb8bb188cac76e671eb75da3fdb58a378eaa4227f12dfd",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1373,
+        "usage": {
+          "inputTokens": 667,
+          "outputTokens": 254,
+          "totalTokens": 921
+        },
+        "providerRequestId": "chatcmpl-abe2ec9c-c446-4bd9-8cc7-a6a5c90d15a2",
+        "systemFingerprint": "fp_a655021f7d",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "905",
+          "tokenLimit": "8000",
+          "remainingTokens": "7023",
+          "requestReset": "2h16m48s",
+          "tokenReset": "7.327s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P033",
+    "output": {
+      "candidate_alias": "CANDIDATE_033",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [
+        "Ngài là Thần của Đức Chúa Trời"
+      ],
+      "reasoning_summary": "Lyrics mention the Holy Spirit but lack any reference to teaching or reminding of Jesus' words, so only a partial match.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Ngài là Thần của Đức Chúa Trời",
+          "normalizedQuote": "ngài là thần của đức chúa trời",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "1c941108194d7ffb056fd729b61e5ac175eae11bd9578f24f7db39e19f6c5e8b",
+        "responseSha256": "6fa8a622f495fadcc41b9c6e718a62fb119746f99fe004770a1a718339ccbac9",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 785,
+        "usage": {
+          "inputTokens": 588,
+          "outputTokens": 234,
+          "totalTokens": 822
+        },
+        "providerRequestId": "chatcmpl-f511eded-0d63-4944-82b5-e102bf90e394",
+        "systemFingerprint": "fp_c15aa9c1b7",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "904",
+          "tokenLimit": "8000",
+          "remainingTokens": "7126",
+          "requestReset": "2h18m14.4s",
+          "tokenReset": "6.555s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P034",
+    "output": {
+      "candidate_alias": "CANDIDATE_034",
+      "relevance_score": 3,
+      "relevance_label": "Highly Relevant",
+      "evidence_quotes": [
+        "Con đã đắc thắng vì con có Chúa",
+        "Trận chiến đã thuộc về Đấng con ca khen"
+      ],
+      "reasoning_summary": "Lyrics explicitly praise God as source of victory in spiritual battle, matching the query’s focus on praising God amid trials and warfare",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Con đã đắc thắng vì con có Chúa",
+          "normalizedQuote": "con đã đắc thắng vì con có chúa",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Trận chiến đã thuộc về Đấng con ca khen",
+          "normalizedQuote": "trận chiến đã thuộc về đấng con ca khen",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "a2fe368f1186be8da9d36a8713b2dd4ec03ce30dee097a3dacebf304f3223b52",
+        "responseSha256": "eb5df7d045c570e80d4c90c09842fc797d1fb39134eb59f0991f12879a1b1e43",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1538,
+        "usage": {
+          "inputTokens": 618,
+          "outputTokens": 203,
+          "totalTokens": 821
+        },
+        "providerRequestId": "chatcmpl-2b87aff5-e7fd-44c4-8cc4-d2c7b1745ac4",
+        "systemFingerprint": "fp_803c0ba83d",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "903",
+          "tokenLimit": "8000",
+          "remainingTokens": "7136",
+          "requestReset": "2h19m40.8s",
+          "tokenReset": "6.48s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P035",
+    "output": {
+      "candidate_alias": "CANDIDATE_035",
+      "relevance_score": 3,
+      "relevance_label": "Highly Relevant",
+      "evidence_quotes": [
+        "Con sẽ dâng chính mình, con nguyện luôn đầu phục",
+        "Vì mọi điều cuộc sống con dâng nơi Cha"
+      ],
+      "reasoning_summary": "Lyrics explicitly express surrender and offering one's whole life to the Lord, matching the query's intent",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Con sẽ dâng chính mình, con nguyện luôn đầu phục",
+          "normalizedQuote": "con sẽ dâng chính mình, con nguyện luôn đầu phục",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Vì mọi điều cuộc sống con dâng nơi Cha",
+          "normalizedQuote": "vì mọi điều cuộc sống con dâng nơi cha",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "42470818db17ebe4afaa24fc7c9193caffc9585ae5c7e06b8a90fcfaaa78a085",
+        "responseSha256": "75033764b556df251bbca607c1e627868aae7324212d4d018fd539f212f4f096",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 907,
+        "usage": {
+          "inputTokens": 638,
+          "outputTokens": 230,
+          "totalTokens": 868
+        },
+        "providerRequestId": "chatcmpl-1918c45a-05d3-444f-91f3-f3a7352de4f2",
+        "systemFingerprint": "fp_4de1d6a1ee",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "902",
+          "tokenLimit": "8000",
+          "remainingTokens": "7052",
+          "requestReset": "2h21m7.2s",
+          "tokenReset": "7.109s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P036",
+    "output": {
+      "candidate_alias": "CANDIDATE_036",
+      "relevance_score": 0,
+      "relevance_label": "Not Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics focus on God's victory and deliverance, lacking themes of love expressed through service or everyday action.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "662957e223ec4591d3d388c989ad0c37c033d8f3b018e26dcc963d6c5af51651",
+        "responseSha256": "14f56967ab341d22e165b6befdb6371e6adff84b428d5eb49418d6600271e4dd",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 905,
+        "usage": {
+          "inputTokens": 629,
+          "outputTokens": 153,
+          "totalTokens": 782
+        },
+        "providerRequestId": "chatcmpl-85982fe2-7dc1-4e14-9ee4-2209200e83c4",
+        "systemFingerprint": "fp_27194a498a",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "901",
+          "tokenLimit": "8000",
+          "remainingTokens": "7125",
+          "requestReset": "2h22m33.6s",
+          "tokenReset": "6.562s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P037",
+    "output": {
+      "candidate_alias": "CANDIDATE_037",
+      "relevance_score": 3,
+      "relevance_label": "Highly Relevant",
+      "evidence_quotes": [
+        "Là con dân Ngài, kề vai sát cánh",
+        "Chúng con hiệp một cùng đi trong Ngài"
+      ],
+      "reasoning_summary": "Lyrics express unity with God and walking together as a united community, directly matching the query’s themes of belonging, love, and communal faith walk.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Là con dân Ngài, kề vai sát cánh",
+          "normalizedQuote": "là con dân ngài, kề vai sát cánh",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Chúng con hiệp một cùng đi trong Ngài",
+          "normalizedQuote": "chúng con hiệp một cùng đi trong ngài",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "a7f3b05b96f2b43b665e23cc3f9d7fbe9608c0528f786889c07ce2dc715e8145",
+        "responseSha256": "6e1aff54ccc11ef4d03a36059e20375c198adbc956f28dfb3d1b0d59807a61df",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1566,
+        "usage": {
+          "inputTokens": 631,
+          "outputTokens": 232,
+          "totalTokens": 863
+        },
+        "providerRequestId": "chatcmpl-c9b40067-93ec-4eb1-bab8-bd6773dbc659",
+        "systemFingerprint": "fp_f640395b96",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "900",
+          "tokenLimit": "8000",
+          "remainingTokens": "7059",
+          "requestReset": "2h24m0s",
+          "tokenReset": "7.057s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P038",
+    "output": {
+      "candidate_alias": "CANDIDATE_038",
+      "relevance_score": 3,
+      "relevance_label": "Highly Relevant",
+      "evidence_quotes": [
+        "Khi Thánh Linh vận hành",
+        "Mang bao năng quyền"
+      ],
+      "reasoning_summary": "Lyrics explicitly describe the Holy Spirit operating in believers and imparting power, directly matching the query about the Spirit's power working in and through believers.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Khi Thánh Linh vận hành",
+          "normalizedQuote": "khi thánh linh vận hành",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Mang bao năng quyền",
+          "normalizedQuote": "mang bao năng quyền",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "03ed2f3ade8de9178d07e3a6acc6b5d598bb297d64b80dbf461c420c0898508b",
+        "responseSha256": "74ca11be6371e0d09d459eca75ef5c768d7eae1ddb6e4886477a37ca9d50a298",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1499,
+        "usage": {
+          "inputTokens": 603,
+          "outputTokens": 206,
+          "totalTokens": 809
+        },
+        "providerRequestId": "chatcmpl-60213c8e-da38-4174-a66c-fedb5c99028c",
+        "systemFingerprint": "fp_8ea50c0161",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "899",
+          "tokenLimit": "8000",
+          "remainingTokens": "7087",
+          "requestReset": "2h25m26.4s",
+          "tokenReset": "6.847s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P039",
+    "output": {
+      "candidate_alias": "CANDIDATE_039",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [
+        "Vì Danh Chúa thật đáng tôn thờ",
+        "Con xin dâng ngợi ca"
+      ],
+      "reasoning_summary": "Lyrics express worship and praise of God’s name, aligning with praising God, but they do not mention His mercy or thanksgiving for it, so core intent is missing.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Vì Danh Chúa thật đáng tôn thờ",
+          "normalizedQuote": "vì danh chúa thật đáng tôn thờ",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Con xin dâng ngợi ca",
+          "normalizedQuote": "con xin dâng ngợi ca",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "07e33da1aa49570799897483dedf01c61010c798569da91cb581419ddc93a7ab",
+        "responseSha256": "f1c4586835145c2cab3cf4a64e6b740f17b765703efb3ce9de014984014660bd",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1303,
+        "usage": {
+          "inputTokens": 580,
+          "outputTokens": 250,
+          "totalTokens": 830
+        },
+        "providerRequestId": "chatcmpl-feb273d4-8075-40a8-b022-4e562488e24d",
+        "systemFingerprint": "fp_fe269835c7",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "898",
+          "tokenLimit": "8000",
+          "remainingTokens": "7119",
+          "requestReset": "2h26m52.8s",
+          "tokenReset": "6.607s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P040",
+    "output": {
+      "candidate_alias": "CANDIDATE_040",
+      "relevance_score": 3,
+      "relevance_label": "Highly Relevant",
+      "evidence_quotes": [
+        "Nguyện dâng hết thảy tất cả",
+        "Dâng Giê-su tất cả mọi điều"
+      ],
+      "reasoning_summary": "Lyrics explicitly express surrender and giving all to Jesus, matching the query's core intent",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Nguyện dâng hết thảy tất cả",
+          "normalizedQuote": "nguyện dâng hết thảy tất cả",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Dâng Giê-su tất cả mọi điều",
+          "normalizedQuote": "dâng giê-su tất cả mọi điều",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "8b491a16b72e10074f0cc8638a0fe54874679bb9d01ec7089524c039c015a999",
+        "responseSha256": "b33060f28608947c26b8b1a2f4a9ba22c0238fefa11151f16bbda5f5b5ca643d",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 3004,
+        "usage": {
+          "inputTokens": 611,
+          "outputTokens": 161,
+          "totalTokens": 772
+        },
+        "providerRequestId": "chatcmpl-07fba59a-593c-4676-be7f-ca3d0036b445",
+        "systemFingerprint": "fp_5082008e34",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "897",
+          "tokenLimit": "8000",
+          "remainingTokens": "7079",
+          "requestReset": "2h28m19.199s",
+          "tokenReset": "6.907s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P041",
+    "output": {
+      "candidate_alias": "CANDIDATE_041",
+      "relevance_score": 0,
+      "relevance_label": "Not Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics speak of searching for light and truth, without reference to the Holy Spirit or Jesus' teachings, so they do not address the query's core intent.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "ee520c5bddbb2db197694afd6d8a7a99520f304639d4a5ff02fd144ae5305537",
+        "responseSha256": "95d0af6822540ff3afe3497895514a335adbc4494b5756394a4913c30421548a",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 851,
+        "usage": {
+          "inputTokens": 585,
+          "outputTokens": 165,
+          "totalTokens": 750
+        },
+        "providerRequestId": "chatcmpl-17974191-5790-4791-88f8-0d1c35526d8d",
+        "systemFingerprint": "fp_4a7bb72c24",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "896",
+          "tokenLimit": "8000",
+          "remainingTokens": "7169",
+          "requestReset": "2h29m45.6s",
+          "tokenReset": "6.232s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P042",
+    "output": {
+      "candidate_alias": "CANDIDATE_042",
+      "relevance_score": 0,
+      "relevance_label": "Not Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics speak of God's grace and personal comfort, lacking any reference to discipleship, passing faith, or equipping future generations.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "fa2510cde435e8190f28047a898218054b63125c65770d1d0344942810a84327",
+        "responseSha256": "5cdeaaba8f7ea24f19453a3ccbe323c6ad1acd12096705884a9bca0f88f03a49",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 744,
+        "usage": {
+          "inputTokens": 603,
+          "outputTokens": 144,
+          "totalTokens": 747
+        },
+        "providerRequestId": "chatcmpl-a473065e-8b45-4e2d-91c0-ccbba026411e",
+        "systemFingerprint": "fp_4a7bb72c24",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "895",
+          "tokenLimit": "8000",
+          "remainingTokens": "7087",
+          "requestReset": "2h31m12s",
+          "tokenReset": "6.847s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P043",
+    "output": {
+      "candidate_alias": "CANDIDATE_043",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [
+        "Quyền năng danh Chúa",
+        "Đời con được chở che"
+      ],
+      "reasoning_summary": "Lyrics praise and thank God for protection and presence, aligning with general worship, but they do not specifically mention or focus on God’s mercy as the query emphasizes.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Quyền năng danh Chúa",
+          "normalizedQuote": "quyền năng danh chúa",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Đời con được chở che",
+          "normalizedQuote": "đời con được chở che",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "bdfdd94d9910ed9c03c085c8b5d17090b2e001e66e8bdb3b850938e566c8f65d",
+        "responseSha256": "c49d59b64be8eae3f2c4b324a68d81f8995386f86af419ee7696704b146a9ad5",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1101,
+        "usage": {
+          "inputTokens": 600,
+          "outputTokens": 255,
+          "totalTokens": 855
+        },
+        "providerRequestId": "chatcmpl-6fd7c521-d8e9-49d7-9ec7-639d9f3844bd",
+        "systemFingerprint": "fp_27194a498a",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "894",
+          "tokenLimit": "8000",
+          "remainingTokens": "7099",
+          "requestReset": "2h32m38.4s",
+          "tokenReset": "6.757s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P044",
+    "output": {
+      "candidate_alias": "CANDIDATE_044",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [
+        "Ngọn lửa đang cháy trong con"
+      ],
+      "reasoning_summary": "Lyrics speak of inner spiritual fire and renewal, aligning with personal faith growth, but lack any reference to the next generation, calling, or bold scriptural living.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Ngọn lửa đang cháy trong con",
+          "normalizedQuote": "ngọn lửa đang cháy trong con",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "6292cd4721f88d226dc6bd13831efc7efeddd2f87536d739aaf86e4fb9713e87",
+        "responseSha256": "8f85d85cb84283fe2910fe0a1a523de5c2dc986575f7f6a5e379f9e3c0eadbc6",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1475,
+        "usage": {
+          "inputTokens": 638,
+          "outputTokens": 199,
+          "totalTokens": 837
+        },
+        "providerRequestId": "chatcmpl-f246b0e1-6672-4ced-8857-f76ebb3ec157",
+        "systemFingerprint": "fp_4a7bb72c24",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "893",
+          "tokenLimit": "8000",
+          "remainingTokens": "7061",
+          "requestReset": "2h34m4.8s",
+          "tokenReset": "7.042s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P045",
+    "output": {
+      "candidate_alias": "CANDIDATE_045",
+      "relevance_score": 2,
+      "relevance_label": "Relevant",
+      "evidence_quotes": [
+        "Dù con ca ngợi Chúa\n\nVà dâng hiến mọi thứ\n\nCũng chẳng thể hiện hết\n\nLòng biết ơn nơi Ngài"
+      ],
+      "reasoning_summary": "Lyrics express praise and gratitude toward God, matching the query's intent to thank Him, though specific mention of mercy is absent.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Dù con ca ngợi Chúa\n\nVà dâng hiến mọi thứ\n\nCũng chẳng thể hiện hết\n\nLòng biết ơn nơi Ngài",
+          "normalizedQuote": "dù con ca ngợi chúa và dâng hiến mọi thứ cũng chẳng thể hiện hết lòng biết ơn nơi ngài",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "bb15efafb969bd2d01d09707b38e9eb89bf8650883e5e6c70e3c72b1d87bb25b",
+        "responseSha256": "86cd16b7b04138eaf75c7d484014af6c552a83a4a9381e6d22154c181b810715",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1334,
+        "usage": {
+          "inputTokens": 582,
+          "outputTokens": 264,
+          "totalTokens": 846
+        },
+        "providerRequestId": "chatcmpl-587e61aa-6d6a-4763-9f08-d1b1fa5d24dc",
+        "systemFingerprint": "fp_86dc843b12",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "892",
+          "tokenLimit": "8000",
+          "remainingTokens": "7108",
+          "requestReset": "2h35m31.2s",
+          "tokenReset": "6.69s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P046",
+    "output": {
+      "candidate_alias": "CANDIDATE_046",
+      "relevance_score": 0,
+      "relevance_label": "Not Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics focus on personal sin cleansing and Jesus' blood, lacking themes of family belonging, love, or communal faith walk.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "bc4b2c73bf198277bc2e7340f91fdb9808f46a7c27cc866371aec72bde5531b5",
+        "responseSha256": "3803b46f9fe39a742618ac27f68a4e00a7165b4214652e21e602b68e365b86d3",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 859,
+        "usage": {
+          "inputTokens": 601,
+          "outputTokens": 193,
+          "totalTokens": 794
+        },
+        "providerRequestId": "chatcmpl-a43c4926-c341-4850-8db2-93ad6d5ecfce",
+        "systemFingerprint": "fp_27194a498a",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "891",
+          "tokenLimit": "8000",
+          "remainingTokens": "7092",
+          "requestReset": "2h36m57.6s",
+          "tokenReset": "6.81s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P047",
+    "output": {
+      "candidate_alias": "CANDIDATE_047",
+      "relevance_score": 3,
+      "relevance_label": "Highly Relevant",
+      "evidence_quotes": [
+        "Ngọn lửa đang cháy trong con",
+        "Ngài làm thành ngọn lửa sức thiêng"
+      ],
+      "reasoning_summary": "Lyrics describe a divine flame burning within and being made holy, directly matching the query’s call to kindle a flame of faith.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Ngọn lửa đang cháy trong con",
+          "normalizedQuote": "ngọn lửa đang cháy trong con",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Ngài làm thành ngọn lửa sức thiêng",
+          "normalizedQuote": "ngài làm thành ngọn lửa sức thiêng",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "0e8383032dd58487095ca35e886a3d1f6e7e4668fd6fbffd1d426330f9d868aa",
+        "responseSha256": "2b41f32acf1d23777536962bc4e592c8bdf61d25400bb756a273fd572ed03538",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1699,
+        "usage": {
+          "inputTokens": 626,
+          "outputTokens": 207,
+          "totalTokens": 833
+        },
+        "providerRequestId": "chatcmpl-fecb2a42-43e8-4930-9c61-0935527a28d7",
+        "systemFingerprint": "fp_5082008e34",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "890",
+          "tokenLimit": "8000",
+          "remainingTokens": "7069",
+          "requestReset": "2h38m24s",
+          "tokenReset": "6.982s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P048",
+    "output": {
+      "candidate_alias": "CANDIDATE_048",
+      "relevance_score": 3,
+      "relevance_label": "Highly Relevant",
+      "evidence_quotes": [
+        "Sự sống là Ngài, Giê-su",
+        "Hiến dâng đời này",
+        "Bằng vui thỏa, con sẽ vác thập tự"
+      ],
+      "reasoning_summary": "Lyrics express surrender, dedication of life to Jesus, and carrying the cross, matching the query’s core intent",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Sự sống là Ngài, Giê-su",
+          "normalizedQuote": "sự sống là ngài, giê-su",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Hiến dâng đời này",
+          "normalizedQuote": "hiến dâng đời này",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Bằng vui thỏa, con sẽ vác thập tự",
+          "normalizedQuote": "bằng vui thỏa, con sẽ vác thập tự",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "b81f904c3588e108fd08f1dede6acce75949a20a96dc005dd6fff456aba6fc65",
+        "responseSha256": "aa7bbef9231696007db0c243a0ac433a2ad127539880d9d6ad62669aef872539",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1202,
+        "usage": {
+          "inputTokens": 624,
+          "outputTokens": 227,
+          "totalTokens": 851
+        },
+        "providerRequestId": "chatcmpl-5fa43b1c-ec90-4598-ada8-52f6a2916cff",
+        "systemFingerprint": "fp_69334c0be3",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "889",
+          "tokenLimit": "8000",
+          "remainingTokens": "7073",
+          "requestReset": "2h39m50.4s",
+          "tokenReset": "6.952s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P049",
+    "output": {
+      "candidate_alias": "CANDIDATE_049",
+      "relevance_score": 2,
+      "relevance_label": "Relevant",
+      "evidence_quotes": [
+        "Lòng con đây dâng lên với Chúa hết thảy ngàn lời chúc tán",
+        "Chỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi",
+        "Tốt thay, Chúa Cha đời đời"
+      ],
+      "reasoning_summary": "Lyrics express heartfelt praise and worship of God, aligning with the query's intent to thank and glorify God, though specific mention of mercy is absent.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Lòng con đây dâng lên với Chúa hết thảy ngàn lời chúc tán",
+          "normalizedQuote": "lòng con đây dâng lên với chúa hết thảy ngàn lời chúc tán",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Chỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi",
+          "normalizedQuote": "chỉ duy chúa xứng đáng với tiếng hát ngợi ca mãi mãi",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Tốt thay, Chúa Cha đời đời",
+          "normalizedQuote": "tốt thay, chúa cha đời đời",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "c699cae592d5b04a0f835fe4784e0893712126e36cd45b41eda61e398f6789c7",
+        "responseSha256": "9afecd7a60b970530f36458b79ac7cbfff8753e3f46f035c5b8bfd444d733cae",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1017,
+        "usage": {
+          "inputTokens": 623,
+          "outputTokens": 267,
+          "totalTokens": 890
+        },
+        "providerRequestId": "chatcmpl-08ed01bb-5bf6-4f96-9fd8-03e6cbdae456",
+        "systemFingerprint": "fp_4de1d6a1ee",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "888",
+          "tokenLimit": "8000",
+          "remainingTokens": "7131",
+          "requestReset": "2h41m16.8s",
+          "tokenReset": "6.517s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P050",
+    "output": {
+      "candidate_alias": "CANDIDATE_050",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Lyrics speak of God's guidance and victory but lack explicit surrender or lifelong dedication to Jesus, so only a vague thematic link.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "requestSha256": "01b54a123961560e583de9af37ca6d7c1df1509ad82d692a528cbb02ad0c4402",
+        "responseSha256": "4402b446fae50f03da7a1d0fe96ed0de918ffe12afd6e7f8fb4a9e48cb371504",
+        "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1650,
+        "usage": {
+          "inputTokens": 631,
+          "outputTokens": 251,
+          "totalTokens": 882
+        },
+        "providerRequestId": "chatcmpl-cf2c09e6-5397-45cc-b416-567930c8507d",
+        "systemFingerprint": "fp_c3da0d4bb9",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "887",
+          "tokenLimit": "8000",
+          "remainingTokens": "7069",
+          "requestReset": "2h42m43.2s",
+          "tokenReset": "6.982s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  }
+]

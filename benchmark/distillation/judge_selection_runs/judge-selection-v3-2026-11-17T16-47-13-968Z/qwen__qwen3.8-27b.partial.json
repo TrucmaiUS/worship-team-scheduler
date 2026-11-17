@@ -1,0 +1,475 @@
+{
+  "modelId": "qwen/qwen3.8-27b",
+  "completedPairs": 5,
+  "rawRecords": [
+    {
+      "pairId": "P001",
+      "output": {
+        "candidate_alias": "CANDIDATE_001",
+        "relevance_score": 1,
+        "relevance_label": "Partially Relevant",
+        "evidence_quotes": [
+          "Tìm người đang vỡ tan"
+        ],
+        "reasoning_summary": "The lyrics touch on God seeking the broken, which loosely connects to the idea of God's presence in difficult circumstances. However, the core intents of the query—praising God (ngợi khen) and spiritual warfare (cuộc chiến thuộc linh)—are entirely absent. The section is about God's invitation and welcome, not about praise in the midst of trials or spiritual battle.",
+        "is_lexical_overlap_only": false
+      },
+      "evidenceVerbatim": {
+        "required": false,
+        "status": "valid",
+        "allQuotesAreSubstrings": true,
+        "allQuotesAreMeaningful": true,
+        "quoteResults": [
+          {
+            "quote": "Tìm người đang vỡ tan",
+            "normalizedQuote": "tìm người đang vỡ tan",
+            "isSubstring": true,
+            "isMeaningful": true,
+            "hasForbiddenSyntax": false
+          }
+        ],
+        "reasons": []
+      },
+      "attempts": [
+        {
+          "provider": "groq",
+          "modelId": "qwen/qwen3.8-27b",
+          "attempt": 1,
+          "requestSha256": "0e25efd1a118de8f7f6ba9e0f30211ae60bde74e75e0ee46b3fffb84d9739a32",
+          "responseSha256": "511321eedcb6c678d8707571bd6b2ae9891c568ca0c0bc13f8997515797df2ca",
+          "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+          "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+          "httpStatus": 200,
+          "latencyMs": 1862,
+          "usage": {
+            "inputTokens": 571,
+            "outputTokens": 780,
+            "totalTokens": 1351
+          },
+          "providerRequestId": "chatcmpl-38f5343f-b105-4cc8-b0da-a44a57bb7e6f",
+          "systemFingerprint": "fp_424cb89518",
+          "rateLimit": {
+            "requestLimit": "1000",
+            "remainingRequests": "995",
+            "tokenLimit": "8000",
+            "remainingTokens": "7183",
+            "requestReset": "7m12s",
+            "tokenReset": "6.127s"
+          },
+          "failureCode": null,
+          "failureDetail": null,
+          "retryable": false
+        }
+      ]
+    },
+    {
+      "pairId": "P002",
+      "output": {
+        "candidate_alias": "CANDIDATE_002",
+        "relevance_score": 0,
+        "relevance_label": "Not Relevant",
+        "evidence_quotes": [],
+        "reasoning_summary": "The lyrics describe the crucifixion and suffering of Jesus (mockery, nailing, whipping, willing death), with no mention of the Holy Spirit's role in teaching or reminding believers of Jesus' words.",
+        "is_lexical_overlap_only": false
+      },
+      "evidenceVerbatim": {
+        "required": false,
+        "status": "not_required",
+        "allQuotesAreSubstrings": true,
+        "allQuotesAreMeaningful": true,
+        "quoteResults": [],
+        "reasons": []
+      },
+      "attempts": [
+        {
+          "provider": "groq",
+          "modelId": "qwen/qwen3.8-27b",
+          "attempt": 1,
+          "requestSha256": "0213083a279c1a96105743641e98dcc8c7803cbefecf4eaa96a3139343a38c4b",
+          "responseSha256": "f16af91615f5e28fd0dbda116356a41e3841bb0a993251311923eedcefd2a9f4",
+          "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+          "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+          "httpStatus": 429,
+          "latencyMs": 269,
+          "usage": {
+            "inputTokens": null,
+            "outputTokens": null,
+            "totalTokens": null
+          },
+          "providerRequestId": "req_01m7n6v1p7ed9rbqqttn55rs0e",
+          "systemFingerprint": null,
+          "rateLimit": {
+            "requestLimit": "1000",
+            "remainingRequests": "995",
+            "tokenLimit": "8000",
+            "remainingTokens": "7352",
+            "requestReset": "7m12s",
+            "tokenReset": "38.88s"
+          },
+          "failureCode": "http_429",
+          "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 648, Requested 780. Please try again in 25.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
+          "retryable": true
+        },
+        {
+          "provider": "groq",
+          "modelId": "qwen/qwen3.8-27b",
+          "attempt": 2,
+          "requestSha256": "0213083a279c1a96105743641e98dcc8c7803cbefecf4eaa96a3139343a38c4b",
+          "responseSha256": "747514d3db5b3e085def663406e7216dae2cd325c54af1b487386b59d3d65dbb",
+          "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+          "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+          "httpStatus": 200,
+          "latencyMs": 949,
+          "usage": {
+            "inputTokens": 565,
+            "outputTokens": 238,
+            "totalTokens": 803
+          },
+          "providerRequestId": "chatcmpl-29fab7d0-72ec-4264-b860-23e9f19de4a3",
+          "systemFingerprint": "fp_a1293f40b5",
+          "rateLimit": {
+            "requestLimit": "1000",
+            "remainingRequests": "994",
+            "tokenLimit": "8000",
+            "remainingTokens": "7092",
+            "requestReset": "8m38.4s",
+            "tokenReset": "20.58s"
+          },
+          "failureCode": null,
+          "failureDetail": null,
+          "retryable": false
+        }
+      ]
+    },
+    {
+      "pairId": "P003",
+      "output": {
+        "candidate_alias": "CANDIDATE_003",
+        "relevance_score": 1,
+        "relevance_label": "Partially Relevant",
+        "evidence_quotes": [],
+        "reasoning_summary": "The bridge speaks of an invitation and coming despite imperfection, which loosely connects to a salvation narrative, but the core theological concepts requested—cross, redemption, blood of Jesus, and forgiveness of sin—are entirely absent from this section.",
+        "is_lexical_overlap_only": false
+      },
+      "evidenceVerbatim": {
+        "required": false,
+        "status": "not_required",
+        "allQuotesAreSubstrings": true,
+        "allQuotesAreMeaningful": true,
+        "quoteResults": [],
+        "reasons": []
+      },
+      "attempts": [
+        {
+          "provider": "groq",
+          "modelId": "qwen/qwen3.8-27b",
+          "attempt": 1,
+          "requestSha256": "3580cb54154f10ef4dd8450369cf6c86eda9dbe3531ff3cd9636754bdbbb07de",
+          "responseSha256": "6de8070c118abd842c140a7806cb74e18e91fc0cd909c2622592cf0ba493a768",
+          "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+          "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+          "httpStatus": 200,
+          "latencyMs": 1964,
+          "usage": {
+            "inputTokens": 548,
+            "outputTokens": 663,
+            "totalTokens": 1211
+          },
+          "providerRequestId": "chatcmpl-a9e86eaa-88e1-4979-87f7-fff63cc9d095",
+          "systemFingerprint": "fp_21e59ac2de",
+          "rateLimit": {
+            "requestLimit": "1000",
+            "remainingRequests": "993",
+            "tokenLimit": "8000",
+            "remainingTokens": "6935",
+            "requestReset": "10m4.8s",
+            "tokenReset": "31.02s"
+          },
+          "failureCode": null,
+          "failureDetail": null,
+          "retryable": false
+        }
+      ]
+    },
+    {
+      "pairId": "P004",
+      "output": {
+        "candidate_alias": "CANDIDATE_004",
+        "relevance_score": 1,
+        "relevance_label": "Partially Relevant",
+        "evidence_quotes": [
+          "Lời Chúa được mang đi xa muôn nơi trên đất này"
+        ],
+        "reasoning_summary": "The lyrics reference the Word of God being carried far and wide, which tangentially relates to continuing God's work. However, the core intent of the query—passing on faith, discipling others, and equipping future generations—is absent. The focus is on personal obedience and global spread of the Word, not on intergenerational discipleship or equipping others.",
+        "is_lexical_overlap_only": false
+      },
+      "evidenceVerbatim": {
+        "required": false,
+        "status": "valid",
+        "allQuotesAreSubstrings": true,
+        "allQuotesAreMeaningful": true,
+        "quoteResults": [
+          {
+            "quote": "Lời Chúa được mang đi xa muôn nơi trên đất này",
+            "normalizedQuote": "lời chúa được mang đi xa muôn nơi trên đất này",
+            "isSubstring": true,
+            "isMeaningful": true,
+            "hasForbiddenSyntax": false
+          }
+        ],
+        "reasons": []
+      },
+      "attempts": [
+        {
+          "provider": "groq",
+          "modelId": "qwen/qwen3.8-27b",
+          "attempt": 1,
+          "requestSha256": "c314319c085ea23e13c490a8d98db5694b20266497ed3223436de4ef26171eb2",
+          "responseSha256": "192a569725f02eddde2c69a4dcd63f6729c5e4a94a76763b74bda046facee32a",
+          "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+          "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+          "httpStatus": 429,
+          "latencyMs": 279,
+          "usage": {
+            "inputTokens": null,
+            "outputTokens": null,
+            "totalTokens": null
+          },
+          "providerRequestId": "req_01m7n6w9ybenkrwzc17axbvp5h",
+          "systemFingerprint": null,
+          "rateLimit": {
+            "requestLimit": "1000",
+            "remainingRequests": "993",
+            "tokenLimit": "8000",
+            "remainingTokens": "7136",
+            "requestReset": "10m4.8s",
+            "tokenReset": "51.84s"
+          },
+          "failureCode": "http_429",
+          "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 864, Requested 663. Please try again in 31.62s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
+          "retryable": true
+        },
+        {
+          "provider": "groq",
+          "modelId": "qwen/qwen3.8-27b",
+          "attempt": 2,
+          "requestSha256": "c314319c085ea23e13c490a8d98db5694b20266497ed3223436de4ef26171eb2",
+          "responseSha256": "20ecc9bf532f0c7761b8432515855a4b91519d3b420240bbe95f854794dda4fd",
+          "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+          "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+          "httpStatus": 200,
+          "latencyMs": 1997,
+          "usage": {
+            "inputTokens": 552,
+            "outputTokens": 547,
+            "totalTokens": 1099
+          },
+          "providerRequestId": "chatcmpl-37316637-82fc-4e9a-9e94-e7882f8e5d85",
+          "systemFingerprint": "fp_c17bd6bdd1",
+          "rateLimit": {
+            "requestLimit": "1000",
+            "remainingRequests": "992",
+            "tokenLimit": "8000",
+            "remainingTokens": "6539",
+            "requestReset": "11m31.2s",
+            "tokenReset": "54.54s"
+          },
+          "failureCode": null,
+          "failureDetail": null,
+          "retryable": false
+        }
+      ]
+    },
+    {
+      "pairId": "P005",
+      "output": {
+        "candidate_alias": "CANDIDATE_005",
+        "relevance_score": 1,
+        "relevance_label": "Partially Relevant",
+        "evidence_quotes": [
+          "Trong ngọn lửa và gió cuốn"
+        ],
+        "reasoning_summary": "The lyrics share the fire/flame imagery (ngọn lửa) with the query, but the core intent of 'đức tin' (faith) and the active act of 'thắp lên' (lighting up) faith is absent. The lyrics focus on the Holy Spirit's coming in fire (Pentecost imagery) rather than on faith itself.",
+        "is_lexical_overlap_only": false
+      },
+      "evidenceVerbatim": {
+        "required": false,
+        "status": "valid",
+        "allQuotesAreSubstrings": true,
+        "allQuotesAreMeaningful": true,
+        "quoteResults": [
+          {
+            "quote": "Trong ngọn lửa và gió cuốn",
+            "normalizedQuote": "trong ngọn lửa và gió cuốn",
+            "isSubstring": true,
+            "isMeaningful": true,
+            "hasForbiddenSyntax": false
+          }
+        ],
+        "reasons": []
+      },
+      "attempts": [
+        {
+          "provider": "groq",
+          "modelId": "qwen/qwen3.8-27b",
+          "attempt": 1,
+          "requestSha256": "42877cfacc990f389b3d1869156304c4b06646cba8cf0f45d8dca0c5bca6ea92",
+          "responseSha256": "ef237667bf358f64d19f723ef3ff317c0559e0e5d4d762da54cc205a68fad83a",
+          "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+          "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+          "httpStatus": 429,
+          "latencyMs": 307,
+          "usage": {
+            "inputTokens": null,
+            "outputTokens": null,
+            "totalTokens": null
+          },
+          "providerRequestId": "req_01m7n6xfb0etjrvaz952j9w3va",
+          "systemFingerprint": null,
+          "rateLimit": {
+            "requestLimit": "1000",
+            "remainingRequests": "992",
+            "tokenLimit": "8000",
+            "remainingTokens": "7224",
+            "requestReset": "11m31.2s",
+            "tokenReset": "46.56s"
+          },
+          "failureCode": "http_429",
+          "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 776, Requested 547. Please try again in 19.38s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
+          "retryable": true
+        },
+        {
+          "provider": "groq",
+          "modelId": "qwen/qwen3.8-27b",
+          "attempt": 2,
+          "requestSha256": "42877cfacc990f389b3d1869156304c4b06646cba8cf0f45d8dca0c5bca6ea92",
+          "responseSha256": "697c43f3ec56e6bf0b9393f30e00122343ba2ba2770a31035ee15482b7989e01",
+          "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+          "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+          "httpStatus": 429,
+          "latencyMs": 282,
+          "usage": {
+            "inputTokens": null,
+            "outputTokens": null,
+            "totalTokens": null
+          },
+          "providerRequestId": "req_01m7n6y35serbvavn9k0cw446m",
+          "systemFingerprint": null,
+          "rateLimit": {
+            "requestLimit": "1000",
+            "remainingRequests": "992",
+            "tokenLimit": "8000",
+            "remainingTokens": "7565",
+            "requestReset": "11m31.2s",
+            "tokenReset": "26.1s"
+          },
+          "failureCode": "http_429",
+          "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01m7apm8gze0mvzx815pdc58a9` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 435, Requested 663. Please try again in 5.88s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
+          "retryable": true
+        },
+        {
+          "provider": "groq",
+          "modelId": "qwen/qwen3.8-27b",
+          "attempt": 3,
+          "requestSha256": "42877cfacc990f389b3d1869156304c4b06646cba8cf0f45d8dca0c5bca6ea92",
+          "responseSha256": "59605ed6d11eb7eb1f852223a9177ee70f314cdec9a40e79f8531c4448cc3a74",
+          "promptSha256": "7e515304e30456d6f2a47b83de394f619957456c19f0d5fa5d7e52ab000d77c8",
+          "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+          "httpStatus": 200,
+          "latencyMs": 1390,
+          "usage": {
+            "inputTokens": 546,
+            "outputTokens": 681,
+            "totalTokens": 1227
+          },
+          "providerRequestId": "chatcmpl-6be49ff2-c46b-4ed8-8a38-d92dce71ba8c",
+          "systemFingerprint": "fp_c17bd6bdd1",
+          "rateLimit": {
+            "requestLimit": "1000",
+            "remainingRequests": "991",
+            "tokenLimit": "8000",
+            "remainingTokens": "6647",
+            "requestReset": "12m57.599s",
+            "tokenReset": "48.42s"
+          },
+          "failureCode": null,
+          "failureDetail": null,
+          "retryable": false
+        }
+      ]
+    }
+  ],
+  "evaluationOutputs": [
+    {
+      "pairId": "P001",
+      "provider": "groq",
+      "modelId": "qwen/qwen3.8-27b",
+      "schemaPass": true,
+      "relevanceScore": 1,
+      "evidenceQuotes": [
+        "Tìm người đang vỡ tan"
+      ],
+      "evidenceContextSupported": null,
+      "inputTokens": 571,
+      "outputTokens": 780,
+      "latencyMs": 1862,
+      "failureCode": null
+    },
+    {
+      "pairId": "P002",
+      "provider": "groq",
+      "modelId": "qwen/qwen3.8-27b",
+      "schemaPass": true,
+      "relevanceScore": 0,
+      "evidenceQuotes": [],
+      "evidenceContextSupported": null,
+      "inputTokens": 565,
+      "outputTokens": 238,
+      "latencyMs": 1218,
+      "failureCode": null
+    },
+    {
+      "pairId": "P003",
+      "provider": "groq",
+      "modelId": "qwen/qwen3.8-27b",
+      "schemaPass": true,
+      "relevanceScore": 1,
+      "evidenceQuotes": [],
+      "evidenceContextSupported": null,
+      "inputTokens": 548,
+      "outputTokens": 663,
+      "latencyMs": 1964,
+      "failureCode": null
+    },
+    {
+      "pairId": "P004",
+      "provider": "groq",
+      "modelId": "qwen/qwen3.8-27b",
+      "schemaPass": true,
+      "relevanceScore": 1,
+      "evidenceQuotes": [
+        "Lời Chúa được mang đi xa muôn nơi trên đất này"
+      ],
+      "evidenceContextSupported": null,
+      "inputTokens": 552,
+      "outputTokens": 547,
+      "latencyMs": 2276,
+      "failureCode": null
+    },
+    {
+      "pairId": "P005",
+      "provider": "groq",
+      "modelId": "qwen/qwen3.8-27b",
+      "schemaPass": true,
+      "relevanceScore": 1,
+      "evidenceQuotes": [
+        "Trong ngọn lửa và gió cuốn"
+      ],
+      "evidenceContextSupported": null,
+      "inputTokens": 546,
+      "outputTokens": 681,
+      "latencyMs": 1979,
+      "failureCode": null
+    }
+  ]
+}
