@@ -29,6 +29,7 @@ export const PinnedProviderConfigSchema = z
     maxOutputTokens: z.number().int().min(1).max(65536),
     timeoutMs: z.number().int().min(1000).max(300000),
     responseSchemaSha256: z.string().regex(/^[a-f0-9]{64}$/iu),
+    responseFormat: z.enum(['json_schema', 'json_object']).optional(),
     temperature: z.number().min(0).max(2).optional(),
     topP: z.number().min(0).max(1).optional(),
     seed: z.number().int().optional(),

@@ -39,12 +39,14 @@ const blindRequest = {
 
 describe('Groq independent Judge adapter', () => {
   it('keeps the candidate envelopes identical except for exact model ID', () => {
-    const first = buildGroqJudgeEnvelope(baseConfig, 'same rubric', blindRequest);
-    const second = buildGroqJudgeEnvelope({ ...baseConfig, modelId: 'qwen/qwen3.8-27b' },
+    const sharedConfig = { ...baseConfig, responseFormat: 'json_object' as const };
+    const first = buildGroqJudgeEnvelope(sharedConfig, 'same rubric', blindRequest);
+    const second = buildGroqJudgeEnvelope({ ...sharedConfig, modelId: 'qwen/qwen3.8-27b' },
       'same rubric', blindRequest);
     expect({ ...first, model: undefined }).toEqual({ ...second, model: undefined });
     expect(first.model).toBe('openai/gpt-oss-120b');
     expect(second.model).toBe('qwen/qwen3.8-27b');
+    expect(first.response_format).toEqual({ type: 'json_object' });
   });
 
   it('validates strict JSON, observed model identity and verbatim evidence', async () => {

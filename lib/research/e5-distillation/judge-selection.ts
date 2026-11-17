@@ -139,7 +139,7 @@ export interface JudgeMetrics {
 }
 
 export const JUDGE_SELECTION_CRITERIA = {
-  version: 'judge-selection-v2',
+  version: 'judge-selection-v3',
   hardGates: {
     schemaPassRate: 1,
     evidenceVerbatimMatchRate: 1,

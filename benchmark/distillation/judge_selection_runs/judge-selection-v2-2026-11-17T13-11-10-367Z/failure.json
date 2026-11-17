@@ -1,0 +1,5 @@
+{
+  "status": "FAILED",
+  "failedAtUtc": "2026-11-17T13:17:36.385Z",
+  "message": "Groq Judge stopped without fallback after attempt 1: http_400."
+}

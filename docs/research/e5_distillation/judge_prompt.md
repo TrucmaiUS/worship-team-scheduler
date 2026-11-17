@@ -67,7 +67,7 @@ Verbatim matching and contextual support are different measurements. Code verifi
 ## 5. Frozen comparison envelope
 
 - Endpoint: `https://api.groq.com/openai/v1/chat/completions`.
-- Structured output: `response_format.type=json_schema`, `strict=true`.
+- Shared response mode: `response_format.type=json_object`; the same strict response schema and cross-field evidence rules are enforced locally for both models. This replaces provider-side strict JSON Schema because the current Groq inventory does not advertise `structured_outputs` for Qwen 3.8 27B.
 - `max_completion_tokens=512`, `temperature=0.2`, `top_p=0.95`, `seed=20261113`.
 - `reasoning_effort=low`, `reasoning_format=hidden` for both candidates.
 - Timeout 30 seconds; at most three same-model attempts for an approved experiment.

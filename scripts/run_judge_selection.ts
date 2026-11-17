@@ -26,7 +26,7 @@ const systemPrompt = fs.readFileSync(promptPath, 'utf8').replace(/\r\n/gu, '\n')
 const promptSha256 = crypto.createHash('sha256').update(systemPrompt).digest('hex');
 const referenceSha256 = crypto.createHash('sha256').update(fs.readFileSync(referencePath)).digest('hex');
 const createdAtUtc = new Date().toISOString();
-const runId = `judge-selection-v2-${createdAtUtc.replace(/[:.]/gu, '-')}`;
+const runId = `judge-selection-v3-${createdAtUtc.replace(/[:.]/gu, '-')}`;
 const outputDirectory = path.join(ROOT, 'benchmark/distillation/judge_selection_runs', runId);
 if (fs.existsSync(outputDirectory)) throw new Error(`Run directory already exists: ${outputDirectory}`);
 fs.mkdirSync(outputDirectory, { recursive: true });
@@ -43,6 +43,7 @@ const configFor = (modelId: typeof JUDGE_CANDIDATE_MODEL_IDS[number]) => ({
   maxOutputTokens: 512,
   timeoutMs: 30_000,
   responseSchemaSha256: groqJudgeResponseSchemaSha256(),
+  responseFormat: 'json_object' as const,
   temperature: 0.2,
   topP: 0.95,
   seed: 20261113,
@@ -77,7 +78,7 @@ async function main(): Promise<void> {
 
   const envelopes = JUDGE_CANDIDATE_MODEL_IDS.map(modelId => configFor(modelId));
   const manifest = {
-    schemaVersion: 'judge-selection-execution-v2',
+    schemaVersion: 'judge-selection-execution-v3',
     status: 'running',
     runId,
     createdAtUtc,
@@ -92,6 +93,7 @@ async function main(): Promise<void> {
     codeCommit: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: ROOT, encoding: 'utf8' }).trim(),
     fallbackAllowed: false,
     protectedHeldOutDataUsed: false,
+    responseFormatRationale: 'Shared JSON mode with identical local strict-schema validation because the current Groq inventory does not advertise structured_outputs for qwen/qwen3.8-27b.',
   };
   writeJson('run_manifest.json', manifest);
 

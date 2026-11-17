@@ -152,14 +152,16 @@ export function buildGroqJudgeEnvelope(
       { role: 'system', content: systemPrompt },
       { role: 'user', content: JSON.stringify(request) },
     ],
-    response_format: {
-      type: 'json_schema',
-      json_schema: {
-        name: 'blind_relevance_judgment',
-        strict: true,
-        schema: GROQ_JUDGE_RESPONSE_JSON_SCHEMA,
-      },
-    },
+    response_format: config.responseFormat === 'json_object'
+      ? { type: 'json_object' }
+      : {
+          type: 'json_schema',
+          json_schema: {
+            name: 'blind_relevance_judgment',
+            strict: true,
+            schema: GROQ_JUDGE_RESPONSE_JSON_SCHEMA,
+          },
+        },
     max_completion_tokens: config.maxOutputTokens,
     stream: false,
   };

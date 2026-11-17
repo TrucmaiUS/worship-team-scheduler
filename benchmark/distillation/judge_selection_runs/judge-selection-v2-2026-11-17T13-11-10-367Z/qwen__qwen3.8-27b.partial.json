@@ -1,0 +1,132 @@
+{
+  "modelId": "qwen/qwen3.8-27b",
+  "completedPairs": 2,
+  "rawRecords": [
+    {
+      "pairId": "P001",
+      "output": {
+        "candidate_alias": "CANDIDATE_001",
+        "relevance_score": 0,
+        "relevance_label": "Not Relevant",
+        "evidence_quotes": [],
+        "reasoning_summary": "The query asks for praise of God amid trials and spiritual warfare. The lyrics describe God's invitation, hospitality, and welcoming of broken people to His house. While there is a general theme of God's care, there is no mention of trials, spiritual warfare, or praise in the context of struggle. The core intent of the query is not present.",
+        "is_lexical_overlap_only": false
+      },
+      "evidenceVerbatim": {
+        "required": false,
+        "status": "not_required",
+        "allQuotesAreSubstrings": true,
+        "allQuotesAreMeaningful": true,
+        "quoteResults": [],
+        "reasons": []
+      },
+      "attempts": [
+        {
+          "provider": "groq",
+          "modelId": "qwen/qwen3.8-27b",
+          "attempt": 1,
+          "requestSha256": "40137fe8ce4eaccd06fabf986b33468825a981c5f6c425a94d21cd3908f0b54a",
+          "responseSha256": "5956cf6f34943b10f3eab58f11dba70a82534d97449723d8fa4e3ed1fb0d07a0",
+          "promptSha256": "a9f9cd07b1494080bee54d5134b59204632c93ae2f6919046b1d4b2da0d6f15f",
+          "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+          "httpStatus": 200,
+          "latencyMs": 521,
+          "usage": {
+            "inputTokens": 411,
+            "outputTokens": 126,
+            "totalTokens": 537
+          },
+          "providerRequestId": "chatcmpl-76326a9c-a05a-4a7c-9ae4-ad23d2e53f13",
+          "systemFingerprint": "fp_21e59ac2de",
+          "rateLimit": {
+            "requestLimit": "1000",
+            "remainingRequests": "999",
+            "tokenLimit": "8000",
+            "remainingTokens": "7461",
+            "requestReset": "1m26.4s",
+            "tokenReset": "4.042s"
+          },
+          "failureCode": null,
+          "retryable": false
+        }
+      ]
+    },
+    {
+      "pairId": "P002",
+      "output": {
+        "candidate_alias": "CANDIDATE_002",
+        "relevance_score": 0,
+        "relevance_label": "Not Relevant",
+        "evidence_quotes": [],
+        "reasoning_summary": "The lyrics describe the crucifixion of Jesus, focusing on the mockery, the nails, the scourging, and His willing death as a substitute. There is no mention of the Holy Spirit, teaching, or reminding believers of Jesus' words. The core intent of the query is entirely absent.",
+        "is_lexical_overlap_only": false
+      },
+      "evidenceVerbatim": {
+        "required": false,
+        "status": "not_required",
+        "allQuotesAreSubstrings": true,
+        "allQuotesAreMeaningful": true,
+        "quoteResults": [],
+        "reasons": []
+      },
+      "attempts": [
+        {
+          "provider": "groq",
+          "modelId": "qwen/qwen3.8-27b",
+          "attempt": 1,
+          "requestSha256": "3c1deb8afd5b747905b32d131668b352805192172e90c55ca0bd3dfd2ea94972",
+          "responseSha256": "571bdc61d1b2db7e1312dc45ce710f3e071671dd116f78cedadea91fe616dcfe",
+          "promptSha256": "a9f9cd07b1494080bee54d5134b59204632c93ae2f6919046b1d4b2da0d6f15f",
+          "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+          "httpStatus": 200,
+          "latencyMs": 860,
+          "usage": {
+            "inputTokens": 405,
+            "outputTokens": 115,
+            "totalTokens": 520
+          },
+          "providerRequestId": "chatcmpl-b52f8497-9bd8-41b6-ae12-8f1c46894f9e",
+          "systemFingerprint": "fp_424cb89518",
+          "rateLimit": {
+            "requestLimit": "1000",
+            "remainingRequests": "998",
+            "tokenLimit": "8000",
+            "remainingTokens": "7431",
+            "requestReset": "2m52.8s",
+            "tokenReset": "9.84s"
+          },
+          "failureCode": null,
+          "retryable": false
+        }
+      ]
+    }
+  ],
+  "evaluationOutputs": [
+    {
+      "pairId": "P001",
+      "provider": "groq",
+      "modelId": "qwen/qwen3.8-27b",
+      "schemaPass": true,
+      "relevanceScore": 0,
+      "evidenceQuotes": [],
+      "evidenceContextSupported": null,
+      "inputTokens": 411,
+      "outputTokens": 126,
+      "latencyMs": 521,
+      "failureCode": null
+    },
+    {
+      "pairId": "P002",
+      "provider": "groq",
+      "modelId": "qwen/qwen3.8-27b",
+      "schemaPass": true,
+      "relevanceScore": 0,
+      "evidenceQuotes": [],
+      "evidenceContextSupported": null,
+      "inputTokens": 405,
+      "outputTokens": 115,
+      "latencyMs": 860,
+      "failureCode": null
+    }
+  ]
+}

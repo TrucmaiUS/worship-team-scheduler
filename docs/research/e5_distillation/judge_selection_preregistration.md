@@ -1,6 +1,6 @@
 # Judge Selection & Validation Preregistration
 
-**Version:** `judge-selection-v2`  
+**Version:** `judge-selection-v3`
 **Date revised:** 17 November 2026  
 **Status:** Human Reference v2 validated; live candidate execution pending; no candidate selected
 
@@ -27,7 +27,9 @@ Evidence is stored as `evidence_quotes: string[]`. Each item is one exact contig
 
 ## Blind candidate execution
 
-Both candidates receive identical pair order, rubric, prompt, input, schema, token cap, sampling parameters and retry policy. Each model runs in its own sealed output file. Neither sees Gemini outputs, human rationale, reference label, or the other candidate. There is no model fallback and no partial run reported as complete.
+Both candidates receive identical pair order, rubric, prompt, input, JSON mode, local strict-schema validation, token cap, sampling parameters and retry policy. Each model runs in its own sealed output file. Neither sees Gemini outputs, human rationale, reference label, or the other candidate. There is no model fallback and no partial run reported as complete.
+
+The initial v2 execution attempt used provider-side strict JSON Schema. GPT-OSS completed 50 pairs, but Groq returned HTTP 400 for Qwen because the current Models API advertises `json_mode` but not `structured_outputs` for `qwen/qwen3.8-27b`. No v2 comparison or selection was performed. Version 3 therefore uses the strongest response format currently shared by both exact models (`json_object`) and applies the same strict Zod/evidence validation locally. Both candidates must be rerun under v3; v2 GPT-OSS outputs are not mixed into the comparison.
 
 ## Metrics
 
