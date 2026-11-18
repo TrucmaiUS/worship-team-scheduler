@@ -1,0 +1,396 @@
+[
+  {
+    "pairId": "P001",
+    "output": {
+      "candidate_alias": "CANDIDATE_001",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [
+        "Tìm người đang vỡ tan"
+      ],
+      "reasoning_summary": "The lyrics mention God seeking the broken, loosely connecting to those in trials, but the core intent of praising God amid spiritual warfare is entirely absent.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Tìm người đang vỡ tan",
+          "normalizedQuote": "tìm người đang vỡ tan",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "qwen/qwen3.8-27b",
+        "attempt": 1,
+        "generationAttempt": 1,
+        "seed": 20261113,
+        "requestSha256": "7a5bf89b0d8e06dde3a45fd5961ef4a94a0ab14093b19f7d3dd32a4b680e3dd7",
+        "responseSha256": "734bdef363929e50cd65b7bb12b94850c56aff0b7914b226a3dd8e2b6b9de405",
+        "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1195,
+        "usage": {
+          "inputTokens": 593,
+          "outputTokens": 488,
+          "totalTokens": 1081
+        },
+        "providerRequestId": "chatcmpl-512b3218-b3eb-464e-a73f-b6c3ed362cd2",
+        "systemFingerprint": "fp_21e59ac2de",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "989",
+          "tokenLimit": "8000",
+          "remainingTokens": "6896",
+          "requestReset": "15m50.4s",
+          "tokenReset": "8.28s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P006",
+    "output": {
+      "candidate_alias": "CANDIDATE_006",
+      "relevance_score": 2,
+      "relevance_label": "Relevant",
+      "evidence_quotes": [
+        "Bằng huyết Chúa nên chúng ta\n\nĐược xứng danh con của Cha",
+        "Trong Chúa, con chiến thắng thế gian",
+        "Ngài phá vỡ mọi gôm cùm"
+      ],
+      "reasoning_summary": "The lyrics affirm identity as children of the Father through Christ's blood and overcoming in Christ, with breaking chains implying freedom from past bondage. However, it does not explicitly address failures or doubts.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Bằng huyết Chúa nên chúng ta\n\nĐược xứng danh con của Cha",
+          "normalizedQuote": "bằng huyết chúa nên chúng ta được xứng danh con của cha",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Trong Chúa, con chiến thắng thế gian",
+          "normalizedQuote": "trong chúa, con chiến thắng thế gian",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Ngài phá vỡ mọi gôm cùm",
+          "normalizedQuote": "ngài phá vỡ mọi gôm cùm",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "qwen/qwen3.8-27b",
+        "attempt": 1,
+        "generationAttempt": null,
+        "seed": 20261113,
+        "requestSha256": "6be9d586eb09eac407b0e18bfdb5080247794f90f851b8a6e9624d2307f2d3ab",
+        "responseSha256": "3b9e787f12ed4a04908c1c64ae39910c82aaafa00b75941392e82ac53add79ed",
+        "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 429,
+        "latencyMs": 331,
+        "usage": {
+          "inputTokens": null,
+          "outputTokens": null,
+          "totalTokens": null
+        },
+        "providerRequestId": "req_01m7pean97e9ss75jh1mpbjs1h",
+        "systemFingerprint": null,
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "989",
+          "tokenLimit": "8000",
+          "remainingTokens": "7632",
+          "requestReset": "15m50.4s",
+          "tokenReset": "22.08s"
+        },
+        "failureCode": "http_429",
+        "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `[REDACTED_ORGANIZATION]` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 368, Requested 900. Please try again in 16.08s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
+        "retryable": true
+      },
+      {
+        "provider": "groq",
+        "modelId": "qwen/qwen3.8-27b",
+        "attempt": 2,
+        "generationAttempt": 1,
+        "seed": 20261113,
+        "requestSha256": "6be9d586eb09eac407b0e18bfdb5080247794f90f851b8a6e9624d2307f2d3ab",
+        "responseSha256": "88e9fd71f1978521a988ec599161b1bb110d05f5de889c7a23af6287f821422f",
+        "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 400,
+        "latencyMs": 2262,
+        "usage": {
+          "inputTokens": null,
+          "outputTokens": null,
+          "totalTokens": null
+        },
+        "providerRequestId": "req_01m7peb6e3eckv37s4zxx8nqe5",
+        "systemFingerprint": null,
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "988",
+          "tokenLimit": "8000",
+          "remainingTokens": "6794",
+          "requestReset": "17m16.8s",
+          "tokenReset": "35.04s"
+        },
+        "failureCode": "http_400",
+        "failureDetail": "{\"message\":\"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"max completion tokens reached before generating a valid document\"}",
+        "retryable": true
+      },
+      {
+        "provider": "groq",
+        "modelId": "qwen/qwen3.8-27b",
+        "attempt": 3,
+        "generationAttempt": 2,
+        "seed": 20261114,
+        "requestSha256": "e46e35830cb6b7040e1b58c2e305a01c9ee48ce892031b3adf17ea845fcf67bc",
+        "responseSha256": "d4f77a56688438af3a438509731daff2ee76f6f4ba9640a97807671af1c3d132",
+        "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1701,
+        "usage": {
+          "inputTokens": 622,
+          "outputTokens": 682,
+          "totalTokens": 1304
+        },
+        "providerRequestId": "chatcmpl-cc52b750-520d-4aa6-a14a-e5d1e82ea992",
+        "systemFingerprint": "fp_21e59ac2de",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "987",
+          "tokenLimit": "8000",
+          "remainingTokens": "6867",
+          "requestReset": "18m43.2s",
+          "tokenReset": "8.497s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P029",
+    "output": {
+      "candidate_alias": "CANDIDATE_029",
+      "relevance_score": 3,
+      "relevance_label": "Highly Relevant",
+      "evidence_quotes": [
+        "Chúng con nguyện đi bởi\n\nNgài sai con",
+        "Chúng con nguyện đi mãi\n\nVì Ngài con sẽ không dừng lại",
+        "Để muôn dân suy tôn Đấng Chí Cao"
+      ],
+      "reasoning_summary": "The lyrics directly express being sent by God ('Ngài sai con') and committing to go on His mission to all nations, strongly matching the themes of being called and becoming an instrument for His mission.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Chúng con nguyện đi bởi\n\nNgài sai con",
+          "normalizedQuote": "chúng con nguyện đi bởi ngài sai con",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Chúng con nguyện đi mãi\n\nVì Ngài con sẽ không dừng lại",
+          "normalizedQuote": "chúng con nguyện đi mãi vì ngài con sẽ không dừng lại",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Để muôn dân suy tôn Đấng Chí Cao",
+          "normalizedQuote": "để muôn dân suy tôn đấng chí cao",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "qwen/qwen3.8-27b",
+        "attempt": 1,
+        "generationAttempt": null,
+        "seed": 20261113,
+        "requestSha256": "e62e6317ae9d7ece65b4ce8b435b10f82ccb0322e67305083aa86abd5827d239",
+        "responseSha256": "1e9fd54bfd1ce0995675b690b8841d7b3f98280522e1f96418da230544adf139",
+        "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 429,
+        "latencyMs": 344,
+        "usage": {
+          "inputTokens": null,
+          "outputTokens": null,
+          "totalTokens": null
+        },
+        "providerRequestId": "req_01m7pecjn4edysfgz3b3fd5nsw",
+        "systemFingerprint": null,
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "987",
+          "tokenLimit": "8000",
+          "remainingTokens": "7445",
+          "requestReset": "18m43.2s",
+          "tokenReset": "33.3s"
+        },
+        "failureCode": "http_429",
+        "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `[REDACTED_ORGANIZATION]` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 555, Requested 702. Please try again in 15.42s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
+        "retryable": true
+      },
+      {
+        "provider": "groq",
+        "modelId": "qwen/qwen3.8-27b",
+        "attempt": 2,
+        "generationAttempt": 1,
+        "seed": 20261113,
+        "requestSha256": "e62e6317ae9d7ece65b4ce8b435b10f82ccb0322e67305083aa86abd5827d239",
+        "responseSha256": "7ab2ca1dfeeb4910b751cc0de2029d36e20c73fbc2f16c0ea865ec1c3f4f11c1",
+        "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1739,
+        "usage": {
+          "inputTokens": 615,
+          "outputTokens": 853,
+          "totalTokens": 1468
+        },
+        "providerRequestId": "chatcmpl-5010d6bb-f659-46be-89c0-d3b71eb21358",
+        "systemFingerprint": "fp_c17bd6bdd1",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "986",
+          "tokenLimit": "8000",
+          "remainingTokens": "6581",
+          "requestReset": "20m9.6s",
+          "tokenReset": "48.24s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P047",
+    "output": {
+      "candidate_alias": "CANDIDATE_047",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Shares the fire/flame metaphor in a spiritual context, but lacks the specific intent of 'lighting up' (thắp lên) and 'faith' (đức tin); instead focuses on an already-burning flame of spiritual power.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "qwen/qwen3.8-27b",
+        "attempt": 1,
+        "generationAttempt": null,
+        "seed": 20261113,
+        "requestSha256": "9b91c0560313cf2bee10d3b4db8ad0677d2d6f388f552a2665d640dca1d5b62f",
+        "responseSha256": "b2a8fc8a4a132e9a87adb4fa85f816c6e2553497cb243e351c18736e18ee0e94",
+        "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 429,
+        "latencyMs": 399,
+        "usage": {
+          "inputTokens": null,
+          "outputTokens": null,
+          "totalTokens": null
+        },
+        "providerRequestId": "req_01m7pedadsey7a7gvh1d9g1ewy",
+        "systemFingerprint": null,
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "986",
+          "tokenLimit": "8000",
+          "remainingTokens": "7105",
+          "requestReset": "20m9.6s",
+          "tokenReset": "53.7s"
+        },
+        "failureCode": "http_429",
+        "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `[REDACTED_ORGANIZATION]` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 895, Requested 682. Please try again in 34.62s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
+        "retryable": true
+      },
+      {
+        "provider": "groq",
+        "modelId": "qwen/qwen3.8-27b",
+        "attempt": 2,
+        "generationAttempt": 1,
+        "seed": 20261113,
+        "requestSha256": "9b91c0560313cf2bee10d3b4db8ad0677d2d6f388f552a2665d640dca1d5b62f",
+        "responseSha256": "c65e4b1bdd02d8779f3331be257c8a2c622ad9952347ccfe8110f040057eb5f1",
+        "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1329,
+        "usage": {
+          "inputTokens": 597,
+          "outputTokens": 462,
+          "totalTokens": 1059
+        },
+        "providerRequestId": "chatcmpl-f0cb6458-81c4-4310-94b8-de7334861008",
+        "systemFingerprint": "fp_424cb89518",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "985",
+          "tokenLimit": "8000",
+          "remainingTokens": "6584",
+          "requestReset": "21m36s",
+          "tokenReset": "49.14s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  }
+]

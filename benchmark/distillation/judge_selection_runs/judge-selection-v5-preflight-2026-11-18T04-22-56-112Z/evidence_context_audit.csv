@@ -1,0 +1,80 @@
+model_id,pair_id,query_text,candidate_lyrics,relevance_score,evidence_quotes,evidence_context_supported,auditor_notes
+openai/gpt-oss-120b,P006,"Find songs about our identity in Christ and how God defines who we are regardless of our past, failures, or doubts.","Ngài phá vỡ mọi gôm cùm
+
+Cả cái chết đầu phục Ngài
+
+Quý báu, ân điển Cha muôn đời
+
+
+
+Bằng huyết Chúa nên chúng ta
+
+Được xứng danh con của Cha
+
+Quý báu, ân điển Cha muôn đời
+
+Mãi mãi con được về bên Cha
+
+Trong Chúa, con chiến thắng thế gian.",2,"[""Được xứng danh con của Cha"",""Mãi mãi con được về bên Cha"",""Trong Chúa, con chiến thắng thế gian.""]",,
+openai/gpt-oss-120b,P029,"Find songs about discovering God's purpose, being called by Him, and becoming an instrument for His mission.","Chúng con nguyện, đến muôn thành
+
+Hô vang “Duy Danh “Cha” thật thánh thay”
+
+Thánh quang Ngài, sáng nơi này
+
+Để muôn dân suy tôn Đấng Chí Cao
+
+Chúng con nguyện đi bởi
+
+Ngài sai con
+
+Chúng con nguyện đi mãi
+
+Vì Ngài con sẽ không dừng lại",2,"[""Ngài sai con"",""Chúng con nguyện đi mãi\n\nVì Ngài con sẽ không dừng lại""]",,
+openai/gpt-oss-120b,P047,Thắp lên ngọn lửa đức tin,"Ngọn lửa đang cháy trong con
+
+Ngài làm thành ngọn lửa sức thiêng
+
+Làm tươi mới tâm linh để
+
+Khiến con được vững mạnh
+
+Ngọn lửa đang cháy trong con
+
+Ngài làm thành ngọn lửa sức thiêng
+
+Sự bùng cháy nơi tâm linh con thật
+
+Bởi trong Danh Chúa thôi",3,"[""Ngọn lửa đang cháy trong con"",""Ngài làm thành ngọn lửa sức thiêng""]",,
+qwen/qwen3.8-27b,P006,"Find songs about our identity in Christ and how God defines who we are regardless of our past, failures, or doubts.","Ngài phá vỡ mọi gôm cùm
+
+Cả cái chết đầu phục Ngài
+
+Quý báu, ân điển Cha muôn đời
+
+
+
+Bằng huyết Chúa nên chúng ta
+
+Được xứng danh con của Cha
+
+Quý báu, ân điển Cha muôn đời
+
+Mãi mãi con được về bên Cha
+
+Trong Chúa, con chiến thắng thế gian.",2,"[""Bằng huyết Chúa nên chúng ta\n\nĐược xứng danh con của Cha"",""Trong Chúa, con chiến thắng thế gian"",""Ngài phá vỡ mọi gôm cùm""]",,
+qwen/qwen3.8-27b,P029,"Find songs about discovering God's purpose, being called by Him, and becoming an instrument for His mission.","Chúng con nguyện, đến muôn thành
+
+Hô vang “Duy Danh “Cha” thật thánh thay”
+
+Thánh quang Ngài, sáng nơi này
+
+Để muôn dân suy tôn Đấng Chí Cao
+
+Chúng con nguyện đi bởi
+
+Ngài sai con
+
+Chúng con nguyện đi mãi
+
+Vì Ngài con sẽ không dừng lại",3,"[""Chúng con nguyện đi bởi\n\nNgài sai con"",""Chúng con nguyện đi mãi\n\nVì Ngài con sẽ không dừng lại"",""Để muôn dân suy tôn Đấng Chí Cao""]",,

@@ -1,0 +1,64 @@
+[
+  {
+    "pairId": "P001",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Tìm người đang vỡ tan"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 593,
+    "outputTokens": 488,
+    "latencyMs": 1195,
+    "failureCode": null
+  },
+  {
+    "pairId": "P006",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Bằng huyết Chúa nên chúng ta\n\nĐược xứng danh con của Cha",
+      "Trong Chúa, con chiến thắng thế gian",
+      "Ngài phá vỡ mọi gôm cùm"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 622,
+    "outputTokens": 682,
+    "latencyMs": 4294,
+    "failureCode": null
+  },
+  {
+    "pairId": "P029",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Chúng con nguyện đi bởi\n\nNgài sai con",
+      "Chúng con nguyện đi mãi\n\nVì Ngài con sẽ không dừng lại",
+      "Để muôn dân suy tôn Đấng Chí Cao"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 615,
+    "outputTokens": 853,
+    "latencyMs": 2083,
+    "failureCode": null
+  },
+  {
+    "pairId": "P047",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 597,
+    "outputTokens": 462,
+    "latencyMs": 1728,
+    "failureCode": null
+  }
+]
