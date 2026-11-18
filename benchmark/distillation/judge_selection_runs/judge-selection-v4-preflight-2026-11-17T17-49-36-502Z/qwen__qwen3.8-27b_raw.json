@@ -1,0 +1,229 @@
+[
+  {
+    "pairId": "P001",
+    "output": {
+      "candidate_alias": "CANDIDATE_001",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [
+        "Tìm người đang vỡ tan"
+      ],
+      "reasoning_summary": "The lyrics mention seeking the broken, which tangentially relates to trials, but the core intent of praising God in spiritual warfare is entirely absent.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Tìm người đang vỡ tan",
+          "normalizedQuote": "tìm người đang vỡ tan",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "qwen/qwen3.8-27b",
+        "attempt": 1,
+        "generationAttempt": 1,
+        "requestSha256": "7a5bf89b0d8e06dde3a45fd5961ef4a94a0ab14093b19f7d3dd32a4b680e3dd7",
+        "responseSha256": "a54763567034dc3f6bd644e142f0c5e3e0721f26547e62100d6855bcc95d2f2e",
+        "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1371,
+        "usage": {
+          "inputTokens": 593,
+          "outputTokens": 486,
+          "totalTokens": 1079
+        },
+        "providerRequestId": "chatcmpl-9ebc3077-35f0-43e0-8bfc-a43c5cdc4595",
+        "systemFingerprint": "fp_2473ed55dd",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "957",
+          "tokenLimit": "8000",
+          "remainingTokens": "6739",
+          "requestReset": "1h1m55.2s",
+          "tokenReset": "9.457s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P029",
+    "output": {
+      "candidate_alias": "CANDIDATE_029",
+      "relevance_score": 3,
+      "relevance_label": "Highly Relevant",
+      "evidence_quotes": [
+        "Ngài sai con",
+        "Chúng con nguyện đi mãi",
+        "đến muôn thành",
+        "Để muôn dân suy tôn Đấng Chí Cao"
+      ],
+      "reasoning_summary": "The chorus directly expresses being sent by God ('He sent us') and committing to go on His mission to all nations, aligning strongly with the query's themes of divine calling and mission.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Ngài sai con",
+          "normalizedQuote": "ngài sai con",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Chúng con nguyện đi mãi",
+          "normalizedQuote": "chúng con nguyện đi mãi",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "đến muôn thành",
+          "normalizedQuote": "đến muôn thành",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Để muôn dân suy tôn Đấng Chí Cao",
+          "normalizedQuote": "để muôn dân suy tôn đấng chí cao",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "qwen/qwen3.8-27b",
+        "attempt": 1,
+        "generationAttempt": 1,
+        "requestSha256": "e62e6317ae9d7ece65b4ce8b435b10f82ccb0322e67305083aa86abd5827d239",
+        "responseSha256": "189811108a1d6423b4b90936c7de69a2cacc6d825d03c7a32b81cef09c2d16d5",
+        "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 2117,
+        "usage": {
+          "inputTokens": 615,
+          "outputTokens": 744,
+          "totalTokens": 1359
+        },
+        "providerRequestId": "chatcmpl-d1ebf930-8316-4eab-af6c-1540ceaa8ace",
+        "systemFingerprint": "fp_a1293f40b5",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "956",
+          "tokenLimit": "8000",
+          "remainingTokens": "6772",
+          "requestReset": "1h3m21.6s",
+          "tokenReset": "36.78s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P047",
+    "output": {
+      "candidate_alias": "CANDIDATE_047",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [],
+      "reasoning_summary": "Shares the fire/flame metaphor in a spiritual context, but lacks the specific intent of 'lighting up' (thắp lên) and 'faith' (đức tin); instead focuses on an already-burning flame of spiritual power.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "not_required",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "qwen/qwen3.8-27b",
+        "attempt": 1,
+        "generationAttempt": null,
+        "requestSha256": "9b91c0560313cf2bee10d3b4db8ad0677d2d6f388f552a2665d640dca1d5b62f",
+        "responseSha256": "fb8b93129b70352d295596f1b3b0ffefa82a67404bd0ccafc2120010a2deb9f6",
+        "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 429,
+        "latencyMs": 305,
+        "usage": {
+          "inputTokens": null,
+          "outputTokens": null,
+          "totalTokens": null
+        },
+        "providerRequestId": "req_01m7na2skmeadbc7j0ffm5j6cb",
+        "systemFingerprint": null,
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "956",
+          "tokenLimit": "8000",
+          "remainingTokens": "7105",
+          "requestReset": "1h3m21.6s",
+          "tokenReset": "53.7s"
+        },
+        "failureCode": "http_429",
+        "failureDetail": "{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `[REDACTED_ORGANIZATION]` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Used 895, Requested 744. Please try again in 38.34s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}",
+        "retryable": true
+      },
+      {
+        "provider": "groq",
+        "modelId": "qwen/qwen3.8-27b",
+        "attempt": 2,
+        "generationAttempt": 1,
+        "requestSha256": "9b91c0560313cf2bee10d3b4db8ad0677d2d6f388f552a2665d640dca1d5b62f",
+        "responseSha256": "fb5ed8822335dbd3a9853e9e852d96d2645d277d35c32d297a6d47013d524502",
+        "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1384,
+        "usage": {
+          "inputTokens": 597,
+          "outputTokens": 462,
+          "totalTokens": 1059
+        },
+        "providerRequestId": "chatcmpl-56e866ae-a8bc-4a83-bdf3-1468584a8d51",
+        "systemFingerprint": "fp_424cb89518",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "955",
+          "tokenLimit": "8000",
+          "remainingTokens": "6424",
+          "requestReset": "1h4m48s",
+          "tokenReset": "58.74s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  }
+]

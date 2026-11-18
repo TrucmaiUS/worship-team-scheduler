@@ -1,0 +1,49 @@
+[
+  {
+    "pairId": "P001",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Nhà Chúa luôn đợi chờ"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 640,
+    "outputTokens": 235,
+    "latencyMs": 995,
+    "failureCode": null
+  },
+  {
+    "pairId": "P029",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Ngài sai con",
+      "Chúng con nguyện đi mãi"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 659,
+    "outputTokens": 238,
+    "latencyMs": 1286,
+    "failureCode": null
+  },
+  {
+    "pairId": "P047",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Ngọn lửa đang cháy trong con",
+      "Ngài làm thành ngọn lửa sức thiêng"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 645,
+    "outputTokens": 247,
+    "latencyMs": 1089,
+    "failureCode": null
+  }
+]

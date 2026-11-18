@@ -1,0 +1,201 @@
+[
+  {
+    "pairId": "P001",
+    "output": {
+      "candidate_alias": "CANDIDATE_001",
+      "relevance_score": 1,
+      "relevance_label": "Partially Relevant",
+      "evidence_quotes": [
+        "Nhà Chúa luôn đợi chờ"
+      ],
+      "reasoning_summary": "Lyrics speak of God's house waiting and invitation, showing general praise, but lack explicit reference to trials or spiritual warfare the query emphasizes.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": false,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Nhà Chúa luôn đợi chờ",
+          "normalizedQuote": "nhà chúa luôn đợi chờ",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "generationAttempt": 1,
+        "requestSha256": "79e89b19b4a6f8e0aa661eabb78a596ee8ba8589e4e3077b8b78075bf27819d8",
+        "responseSha256": "27d4332dff3ac745c6be610a1709b90c83a1209ec27b630ad217934a3d1eabde",
+        "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 995,
+        "usage": {
+          "inputTokens": 640,
+          "outputTokens": 235,
+          "totalTokens": 875
+        },
+        "providerRequestId": "chatcmpl-d70a111c-8457-4512-8ca6-062fec5d955c",
+        "systemFingerprint": "fp_87b3c396db",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "925",
+          "tokenLimit": "8000",
+          "remainingTokens": "6691",
+          "requestReset": "1h48m0s",
+          "tokenReset": "9.817s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P029",
+    "output": {
+      "candidate_alias": "CANDIDATE_029",
+      "relevance_score": 2,
+      "relevance_label": "Relevant",
+      "evidence_quotes": [
+        "Ngài sai con",
+        "Chúng con nguyện đi mãi"
+      ],
+      "reasoning_summary": "Lyrics express being sent by God and a willing, ongoing response, matching the query's theme of divine calling and purpose. Core intent is present.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Ngài sai con",
+          "normalizedQuote": "ngài sai con",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Chúng con nguyện đi mãi",
+          "normalizedQuote": "chúng con nguyện đi mãi",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "generationAttempt": 1,
+        "requestSha256": "bb6b55c352e65e77a137731b4b741c8f30c54012ceda8943aef61cdb5c827d2b",
+        "responseSha256": "06ccb34a6d9130610ff190a74561eb0df11c401e4ec11f74b0475d8e212edf7c",
+        "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1286,
+        "usage": {
+          "inputTokens": 659,
+          "outputTokens": 238,
+          "totalTokens": 897
+        },
+        "providerRequestId": "chatcmpl-063df2aa-f844-4c64-9b12-6f7e1bba597f",
+        "systemFingerprint": "fp_5082008e34",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "924",
+          "tokenLimit": "8000",
+          "remainingTokens": "6799",
+          "requestReset": "1h49m26.4s",
+          "tokenReset": "9.007s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  },
+  {
+    "pairId": "P047",
+    "output": {
+      "candidate_alias": "CANDIDATE_047",
+      "relevance_score": 3,
+      "relevance_label": "Highly Relevant",
+      "evidence_quotes": [
+        "Ngọn lửa đang cháy trong con",
+        "Ngài làm thành ngọn lửa sức thiêng"
+      ],
+      "reasoning_summary": "Lyrics describe God igniting a holy flame within, matching the query's intent to kindle faith. The theme aligns closely with the concept of a faith flame.",
+      "is_lexical_overlap_only": false
+    },
+    "evidenceVerbatim": {
+      "required": true,
+      "status": "valid",
+      "allQuotesAreSubstrings": true,
+      "allQuotesAreMeaningful": true,
+      "quoteResults": [
+        {
+          "quote": "Ngọn lửa đang cháy trong con",
+          "normalizedQuote": "ngọn lửa đang cháy trong con",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        },
+        {
+          "quote": "Ngài làm thành ngọn lửa sức thiêng",
+          "normalizedQuote": "ngài làm thành ngọn lửa sức thiêng",
+          "isSubstring": true,
+          "isMeaningful": true,
+          "hasForbiddenSyntax": false
+        }
+      ],
+      "reasons": []
+    },
+    "attempts": [
+      {
+        "provider": "groq",
+        "modelId": "openai/gpt-oss-120b",
+        "attempt": 1,
+        "generationAttempt": 1,
+        "requestSha256": "5b166d07b483fda903ba64a2bc072105607ef89193c2131f6b6fa21c4c0b68f8",
+        "responseSha256": "28e9359f9eb7b0a771608c22701a1f92d850618b4f7ed5805fc406029843fcfb",
+        "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+        "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+        "httpStatus": 200,
+        "latencyMs": 1089,
+        "usage": {
+          "inputTokens": 645,
+          "outputTokens": 247,
+          "totalTokens": 892
+        },
+        "providerRequestId": "chatcmpl-f4c7805d-5257-48b3-8df1-cbd72eb647e7",
+        "systemFingerprint": "fp_49bfac06f1",
+        "rateLimit": {
+          "requestLimit": "1000",
+          "remainingRequests": "923",
+          "tokenLimit": "8000",
+          "remainingTokens": "6981",
+          "requestReset": "1h50m52.8s",
+          "tokenReset": "7.642s"
+        },
+        "failureCode": null,
+        "failureDetail": null,
+        "retryable": false
+      }
+    ]
+  }
+]
