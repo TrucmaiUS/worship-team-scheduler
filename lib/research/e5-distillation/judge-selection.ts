@@ -103,6 +103,19 @@ export const JudgeSelectionOutputSchema = z.object({
 
 export type JudgeSelectionOutput = z.infer<typeof JudgeSelectionOutputSchema>;
 
+const EvidenceContextAuditRowSchema = z.object({
+  model_id: z.enum(['openai/gpt-oss-120b', 'qwen/qwen3.8-27b']),
+  pair_id: z.string().min(1),
+  query_text: z.string().min(1),
+  candidate_lyrics: z.string().min(1),
+  relevance_score: z.string().regex(/^[0-3]$/u),
+  evidence_quotes: z.string().min(2),
+  evidence_context_supported: z.enum(['true', 'false']),
+  auditor_notes: z.string(),
+}).strict();
+
+export type EvidenceContextAuditRow = z.infer<typeof EvidenceContextAuditRowSchema>;
+
 export interface JudgeSelectionSourceIndex {
   developmentQueries: ReadonlyMap<string, { topicId: string | null; queryText: string }>;
   corpusSections: ReadonlyMap<string, { sectionType: string; lyrics: string }>;
@@ -233,6 +246,65 @@ export function validateJudgeSelectionSet(
     }
   }
   return pairs;
+}
+
+function canonicallyEqual(left: string, right: string): boolean {
+  return left.normalize('NFC') === right.normalize('NFC');
+}
+
+export function applyEvidenceContextAudit(
+  pairInput: unknown,
+  outputInput: unknown,
+  auditInput: unknown
+): JudgeSelectionOutput[] {
+  const pairs = validateJudgeSelectionSet(pairInput);
+  const outputs = z.array(JudgeSelectionOutputSchema).length(pairs.length).parse(outputInput);
+  if (new Set(outputs.map(output => output.modelId)).size !== 1) {
+    throw new Error('Apply one model evidence audit at a time.');
+  }
+  const modelId = outputs[0].modelId;
+  const rows = z.array(EvidenceContextAuditRowSchema).parse(auditInput)
+    .filter(row => row.model_id === modelId);
+  const required = outputs.filter(output =>
+    output.schemaPass && output.relevanceScore !== null && output.relevanceScore >= 2);
+  const pairById = new Map(pairs.map(pair => [pair.pairId, pair]));
+  const rowByPair = new Map(rows.map(row => [row.pair_id, row]));
+  if (rowByPair.size !== rows.length) throw new Error(`Duplicate evidence-audit row for ${modelId}.`);
+  if (rows.length !== required.length || required.some(output => !rowByPair.has(output.pairId))) {
+    throw new Error(`Evidence-audit rows for ${modelId} must match every grade 2–3 output exactly.`);
+  }
+  if (rows.some(row => !required.some(output => output.pairId === row.pair_id))) {
+    throw new Error(`Evidence audit for ${modelId} contains an unexpected pair.`);
+  }
+  const supportByPair = new Map<string, boolean>();
+  for (const output of required) {
+    const row = rowByPair.get(output.pairId)!;
+    const pair = pairById.get(output.pairId)!;
+    if (!canonicallyEqual(row.query_text, pair.queryText) ||
+        !canonicallyEqual(row.candidate_lyrics, pair.candidate.lyrics)) {
+      throw new Error(`Evidence audit source text mismatch: ${modelId}/${output.pairId}.`);
+    }
+    if (Number(row.relevance_score) !== output.relevanceScore) {
+      throw new Error(`Evidence audit score mismatch: ${modelId}/${output.pairId}.`);
+    }
+    let evidenceQuotes: string[];
+    try {
+      evidenceQuotes = z.array(EvidenceQuoteSchema).parse(JSON.parse(row.evidence_quotes));
+    } catch {
+      throw new Error(`Evidence audit quotes are invalid JSON: ${modelId}/${output.pairId}.`);
+    }
+    if (evidenceQuotes.length !== output.evidenceQuotes.length || evidenceQuotes.some((quote, index) =>
+      !canonicallyEqual(quote, output.evidenceQuotes[index]))) {
+      throw new Error(`Evidence audit quote mismatch: ${modelId}/${output.pairId}.`);
+    }
+    if (row.evidence_context_supported === 'false' && row.auditor_notes.trim().length === 0) {
+      throw new Error(`Unsupported evidence needs an auditor note: ${modelId}/${output.pairId}.`);
+    }
+    supportByPair.set(output.pairId, row.evidence_context_supported === 'true');
+  }
+  return outputs.map(output => supportByPair.has(output.pairId)
+    ? { ...output, evidenceContextSupported: supportByPair.get(output.pairId)! }
+    : output);
 }
 
 function normalizeVersionedCandidate(value: string): string {

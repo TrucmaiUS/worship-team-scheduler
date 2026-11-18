@@ -28,3 +28,17 @@ weighted kappa, macro-F1, confusion matrix and per-grade metrics. Run
 explicit `:live` variant sends the same synthetic demonstration pair once to
 each candidate; it does not run development selection, the pilot, generation,
 training, or external evaluation.
+
+After a complete candidate run, a human auditor fills every grade 2–3 row in
+`evidence_context_audit.csv` with `true` or `false`; unsupported evidence also
+requires a note. The evaluator verifies that pair IDs, source text, scores and
+evidence quotes are unchanged before applying the audit. Finalize a sealed run
+with:
+
+```text
+npm run research:judge:finalize -- --run <judge-selection-run-directory>
+```
+
+Finalization writes audited evaluation copies, the final comparison, evidence
+validation report, selection report and frozen Judge configuration. It refuses
+to overwrite finalized artifacts and does not access the held-out test set.

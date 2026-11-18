@@ -9,7 +9,7 @@ Nguyện mở đón Chúa đến
 
 Hãy đến trên con
 
-Hãy đến trên con",2,"[""Trong ngọn lửa và gió cuốn""]",,
+Hãy đến trên con",2,"[""Trong ngọn lửa và gió cuốn""]",false,"Câu evidence chưa đủ ý nghĩa để kết luận. Hiện tại câu chỉ khớp về từ, cần thêm câu ""Linh Thánh sẽ đến"""
 openai/gpt-oss-120b,P006,"Find songs about our identity in Christ and how God defines who we are regardless of our past, failures, or doubts.","Ngài phá vỡ mọi gôm cùm
 
 Cả cái chết đầu phục Ngài
@@ -26,28 +26,28 @@ Quý báu, ân điển Cha muôn đời
 
 Mãi mãi con được về bên Cha
 
-Trong Chúa, con chiến thắng thế gian.",2,"[""Được xứng danh con của Cha"",""Mãi mãi con được về bên Cha"",""Trong Chúa, con chiến thắng thế gian.""]",,
+Trong Chúa, con chiến thắng thế gian.",2,"[""Được xứng danh con của Cha"",""Mãi mãi con được về bên Cha"",""Trong Chúa, con chiến thắng thế gian.""]",true,
 openai/gpt-oss-120b,P013,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội","Hy sinh thân Ngài
 
 Cứu lấy thân con
 
 Thập tự, sự phục sinh
 
-Tội con Ngài xóa hết",3,"[""Thập tự, sự phục sinh"",""Tội con Ngài xóa hết""]",,
+Tội con Ngài xóa hết",3,"[""Thập tự, sự phục sinh"",""Tội con Ngài xóa hết""]",true,
 openai/gpt-oss-120b,P015,Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài,"Chẳng có gì có thể so, so được với ơn từ Chúa Chúa ơi
 
 Không ai sánh ngang được Ngài
 
 Đấng Chí Cao
 
-Con nay biết ơn vì Ngài mãi bên mình",3,"[""Không ai sánh ngang được Ngài"",""Con nay biết ơn vì Ngài mãi bên mình""]",,
+Con nay biết ơn vì Ngài mãi bên mình",3,"[""Không ai sánh ngang được Ngài"",""Con nay biết ơn vì Ngài mãi bên mình""]",true,
 openai/gpt-oss-120b,P018,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội","Bọn chúng reo hò, cười chê Chúa Con
 
 Họ đóng đinh Ngài, với tiếng reo vang
 
 Lằn roi trên lưng, nhuộm đong huyết Chúa
 
-Chúa vẫn vui lòng, chết thay cho con",3,"[""đóng đinh Ngài"",""nhuộm đong huyết Chúa"",""chết thay cho con""]",,
+Chúa vẫn vui lòng, chết thay cho con",3,"[""đóng đinh Ngài"",""nhuộm đong huyết Chúa"",""chết thay cho con""]",true,
 openai/gpt-oss-120b,P019,Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.,"(Vì) Ngài là Đấng chiến đấu cho con
 
 Ngài là Đấng sẽ luôn chiến thắng
@@ -58,7 +58,7 @@ Biển Đỏ kia Chúa đã chia hai
 
 Ngài dẫn lối đưa con đi qua
 
-Ha-lê-lu-gia, ha-lê-lu-gia",3,"[""Ngài dẫn lối đưa con đi qua"",""Ngài là Đấng chiến đấu cho con""]",,
+Ha-lê-lu-gia, ha-lê-lu-gia",3,"[""Ngài dẫn lối đưa con đi qua"",""Ngài là Đấng chiến đấu cho con""]",false,"Lời bài hát có nhắc đến việc Chúa dẫn lối và chiến đấu cho con dân Ngài, nhưng chủ yếu ca ngợi quyền năng giải cứu của Chúa chứ chưa đề cập trực tiếp đến việc bước theo Chúa Giê-xu hay để sự hướng dẫn thuộc linh uốn nắn sự trưởng thành và mục đích sống."
 openai/gpt-oss-120b,P020,Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.,"Con sẽ không quay đầu
 
 Vững chắc về tương lai
@@ -75,14 +75,14 @@ Vững chắc về tương lai
 
 Sẽ bước theo Giê-su,
 
-nguyện cả cuộc đời này",2,"[""Sẽ bước theo Giê-su,\n\nnguyện cả cuộc đời""]",,
+nguyện cả cuộc đời này",2,"[""Sẽ bước theo Giê-su,\n\nnguyện cả cuộc đời""]",true,"Lời bài hát thể hiện rõ quyết tâm bước theo Chúa Giê-xu trọn cuộc đời và hướng về tương lai, nhưng chưa đề cập trực tiếp đến sự hướng dẫn của Đức Thánh Linh trong việc hình thành mục đích sống và sự tăng trưởng thuộc linh."
 openai/gpt-oss-120b,P022,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội","Lòng tội này sao cho trắng băng?
 
 Còn gì ngoài huyết báu Đấng Giê-su
 
 Điều gì làm vẹn nguyên chúng con?
 
-Còn gì ngoài huyết báu Đấng Giê-su",2,"[""Còn gì ngoài huyết báu Đấng Giê-su"",""Lòng tội này sao cho trắng băng?""]",,
+Còn gì ngoài huyết báu Đấng Giê-su",2,"[""Còn gì ngoài huyết báu Đấng Giê-su"",""Lòng tội này sao cho trắng băng?""]",true,
 openai/gpt-oss-120b,P024,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,"Trong Cha có con
 
 Ai yêu con nhất trần gian
@@ -99,7 +99,7 @@ Ai yêu con nhất trần gian
 
 Không chi con muốn hơn
 
-Được sống theo ý muốn Cha",3,"[""Được sống theo ý muốn Cha"",""Vì Ngài là Chúa con""]",,
+Được sống theo ý muốn Cha",3,"[""Được sống theo ý muốn Cha"",""Vì Ngài là Chúa con""]",true,"Câu ""Không chi con muốn hơn"" thể hiện rõ ý đầu phục và dâng trọn đời mình hơn là câu ""Vi Ngài là Chúa con"""
 openai/gpt-oss-120b,P026,"Find songs about the Holy Spirit staying with us, helping us, and providing strength in our lives.","Đường đời con luôn có Chúa
 
 Đường đời con luôn có Chúa
@@ -116,14 +116,14 @@ Chẳng sợ chi sẽ vững bước!
 
 Vì Chúa luôn bên cạnh
 
-Vì Chúa luôn cạnh bên",3,"[""Vì ngự trong con chính Thánh Linh"",""Chẳng sợ chi sẽ vững bước!""]",,
+Vì Chúa luôn cạnh bên",3,"[""Vì ngự trong con chính Thánh Linh"",""Chẳng sợ chi sẽ vững bước!""]",true,
 openai/gpt-oss-120b,P027,Ngợi khen Chúa giữa thử thách và cuộc chiến thuộc linh,"Chẳng hề khiếp hãi trước ngọn sóng dâng trào
 
 Chẳng hề khiếp hãi dù phải bước qua nguy nan
 
 Vì chúng con có Ngài, chúng con có Ngài
 
-Ngài đã cứu lấy thân con",2,"[""Chẳng hề khiếp hãi trước ngọn sóng dâng trào"",""Chẳng hề khiếp hãi dù phải bước qua nguy nan"",""Vì chúng con có Ngài, chúng con có Ngài"",""Ngài đã cứu lấy thân con""]",,
+Ngài đã cứu lấy thân con",2,"[""Chẳng hề khiếp hãi trước ngọn sóng dâng trào"",""Chẳng hề khiếp hãi dù phải bước qua nguy nan"",""Vì chúng con có Ngài, chúng con có Ngài"",""Ngài đã cứu lấy thân con""]",true,
 openai/gpt-oss-120b,P029,"Find songs about discovering God's purpose, being called by Him, and becoming an instrument for His mission.","Chúng con nguyện, đến muôn thành
 
 Hô vang “Duy Danh “Cha” thật thánh thay”
@@ -138,7 +138,7 @@ Ngài sai con
 
 Chúng con nguyện đi mãi
 
-Vì Ngài con sẽ không dừng lại",2,"[""Ngài sai con"",""Chúng con nguyện đi mãi""]",,
+Vì Ngài con sẽ không dừng lại",2,"[""Ngài sai con"",""Chúng con nguyện đi mãi""]",true,
 openai/gpt-oss-120b,P031,"Find songs that encourage the next generation to grow in faith, embrace God's calling, and boldly live according to Scripture.","Nguyện xin Cha ban cho con giờ này
 
 Ngọn Lửa, Sức Thiêng
@@ -153,7 +153,7 @@ Vì con đã sẵn sàng, Ngài hãy phái con đi
 
 Vì con đã sẵn sàng, Ngài hãy sai con
 
-Đến khắp muôn nơi",2,"[""Vì con đã sẵn sàng, Ngài hãy phái con đi"",""Lời Chúa được đến khắp nơi""]",,
+Đến khắp muôn nơi",2,"[""Vì con đã sẵn sàng, Ngài hãy phái con đi"",""Lời Chúa được đến khắp nơi""]",true,
 openai/gpt-oss-120b,P032,"Find worship songs that express love through action, serving others, and demonstrating God's love in everyday life.","Phước cho ai đầy lòng thương
 
 (Vì) kẻ ấy sẽ được xót thương
@@ -174,7 +174,7 @@ Vì Nước Chúa là của người
 
 Nước Chúa là của người
 
-Nước ấy là của con cái Chúa Trời",2,"[""Phước cho ai đầy lòng thương"",""Vì tìm kiếm công chính Ngài""]",,
+Nước ấy là của con cái Chúa Trời",2,"[""Phước cho ai đầy lòng thương"",""Vì tìm kiếm công chính Ngài""]",true,"Câu ""Phước cho ai mang tới thái bình"", ""(Vì) sẽ được biết đến như con của Ngài"" cũng thể hiện việc hành động yêu thương, giúp đỡ người khác sẽ giúp chúng ta được biết đến như con Chúa"
 openai/gpt-oss-120b,P034,Ngợi khen Chúa giữa thử thách và cuộc chiến thuộc linh,"Con đã đắc thắng vì con có Chúa
 
 Con đã đắc thắng vì Ngài bên con
@@ -185,14 +185,14 @@ Con đã đắc thắng vì con có Chúa
 
 Con đã đắc thắng vì Ngài bên con
 
-Trận chiến đã thuộc về Đấng con ca khen",3,"[""Con đã đắc thắng vì con có Chúa"",""Trận chiến đã thuộc về Đấng con ca khen""]",,
+Trận chiến đã thuộc về Đấng con ca khen",3,"[""Con đã đắc thắng vì con có Chúa"",""Trận chiến đã thuộc về Đấng con ca khen""]",true,
 openai/gpt-oss-120b,P035,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,"Con sẽ dâng chính mình, con nguyện luôn đầu phục
 
 Vì mọi điều cuộc sống con dâng nơi Cha
 
 Con sẽ dâng chính mình, con nguyện luôn đầu phục
 
-Ngự trong con Cha ơi",3,"[""Con sẽ dâng chính mình, con nguyện luôn đầu phục"",""Vì mọi điều cuộc sống con dâng nơi Cha""]",,
+Ngự trong con Cha ơi",3,"[""Con sẽ dâng chính mình, con nguyện luôn đầu phục"",""Vì mọi điều cuộc sống con dâng nơi Cha""]",true,
 openai/gpt-oss-120b,P037,"Find songs about belonging to God's family, experiencing His love, and walking together as a community of faith.","Là con dân Ngài, kề vai sát cánh
 
 Cùng vinh quang này, làm tôn cao Chúa
@@ -203,7 +203,7 @@ Bởi Thánh Linh Ngài, làm con nghe thấy
 
 Được ơn kêu gọi, làm con dân Thánh
 
-Chúng con hiệp một cùng đi trong Ngài",3,"[""Là con dân Ngài, kề vai sát cánh"",""Chúng con hiệp một cùng đi trong Ngài""]",,
+Chúng con hiệp một cùng đi trong Ngài",3,"[""Là con dân Ngài, kề vai sát cánh"",""Chúng con hiệp một cùng đi trong Ngài""]",true,
 openai/gpt-oss-120b,P038,Find worship songs about the power of the Holy Spirit working in and through believers.,"Nơi đây
 
 Khi Thánh Linh vận hành
@@ -218,7 +218,7 @@ Mang bao năng quyền
 
 Chúng con luôn vững tin
 
-Vì Ngài thành tín",3,"[""Khi Thánh Linh vận hành"",""Thánh Linh trong chúng con\n\nMang bao năng quyền""]",,
+Vì Ngài thành tín",3,"[""Khi Thánh Linh vận hành"",""Thánh Linh trong chúng con\n\nMang bao năng quyền""]",true,
 openai/gpt-oss-120b,P040,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,"Con nơi đây, thưa Chúa
 
 Nguyện dâng hết thảy tất cả
@@ -229,14 +229,14 @@ Chạy đến dưới chân Đấng Thiên Thượng
 
 Phước ân Ngài đã cứu con
 
-Dâng Giê-su tất cả mọi điều",3,"[""Nguyện dâng hết thảy tất cả"",""Dâng Giê-su tất cả mọi điều""]",,
+Dâng Giê-su tất cả mọi điều",3,"[""Nguyện dâng hết thảy tất cả"",""Dâng Giê-su tất cả mọi điều""]",true,
 openai/gpt-oss-120b,P045,Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài,"Dù con ca ngợi Chúa
 
 Và dâng hiến mọi thứ
 
 Cũng chẳng thể hiện hết
 
-Lòng biết ơn nơi Ngài",2,"[""Dù con ca ngợi Chúa"",""Lòng biết ơn nơi Ngài""]",,
+Lòng biết ơn nơi Ngài",2,"[""Dù con ca ngợi Chúa"",""Lòng biết ơn nơi Ngài""]",true,
 openai/gpt-oss-120b,P047,Thắp lên ngọn lửa đức tin,"Ngọn lửa đang cháy trong con
 
 Ngài làm thành ngọn lửa sức thiêng
@@ -251,7 +251,7 @@ Ngài làm thành ngọn lửa sức thiêng
 
 Sự bùng cháy nơi tâm linh con thật
 
-Bởi trong Danh Chúa thôi",3,"[""Ngọn lửa đang cháy trong con"",""Ngài làm thành ngọn lửa sức thiêng""]",,
+Bởi trong Danh Chúa thôi",3,"[""Ngọn lửa đang cháy trong con"",""Ngài làm thành ngọn lửa sức thiêng""]",true,
 openai/gpt-oss-120b,P048,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,"Sự sống là Ngài, Giê-su
 
 Con bám lấy hy vọng ở nơi mình Ngài
@@ -264,7 +264,7 @@ Bằng vui thỏa, con sẽ vác thập tự
 
 Hiến dâng đời này
 
-Bởi Chúa luôn bên con",3,"[""Sự sống là Ngài, Giê-su"",""Hiến dâng đời này""]",,
+Bởi Chúa luôn bên con",3,"[""Sự sống là Ngài, Giê-su"",""Hiến dâng đời này""]",true,
 qwen/qwen3.8-27b,P006,"Find songs about our identity in Christ and how God defines who we are regardless of our past, failures, or doubts.","Ngài phá vỡ mọi gôm cùm
 
 Cả cái chết đầu phục Ngài
@@ -281,28 +281,28 @@ Quý báu, ân điển Cha muôn đời
 
 Mãi mãi con được về bên Cha
 
-Trong Chúa, con chiến thắng thế gian.",2,"[""Bằng huyết Chúa nên chúng ta\n\nĐược xứng danh con của Cha"",""Trong Chúa, con chiến thắng thế gian"",""Ngài phá vỡ mọi gôm cùm""]",,
+Trong Chúa, con chiến thắng thế gian.",2,"[""Bằng huyết Chúa nên chúng ta\n\nĐược xứng danh con của Cha"",""Trong Chúa, con chiến thắng thế gian"",""Ngài phá vỡ mọi gôm cùm""]",true,
 qwen/qwen3.8-27b,P013,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội","Hy sinh thân Ngài
 
 Cứu lấy thân con
 
 Thập tự, sự phục sinh
 
-Tội con Ngài xóa hết",3,"[""Thập tự, sự phục sinh"",""Tội con Ngài xóa hết"",""Hy sinh thân Ngài"",""Cứu lấy thân con""]",,
+Tội con Ngài xóa hết",3,"[""Thập tự, sự phục sinh"",""Tội con Ngài xóa hết"",""Hy sinh thân Ngài"",""Cứu lấy thân con""]",true,
 qwen/qwen3.8-27b,P015,Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài,"Chẳng có gì có thể so, so được với ơn từ Chúa Chúa ơi
 
 Không ai sánh ngang được Ngài
 
 Đấng Chí Cao
 
-Con nay biết ơn vì Ngài mãi bên mình",3,"[""Chẳng có gì có thể so, so được với ơn từ Chúa Chúa ơi"",""Con nay biết ơn vì Ngài mãi bên mình""]",,
+Con nay biết ơn vì Ngài mãi bên mình",3,"[""Chẳng có gì có thể so, so được với ơn từ Chúa Chúa ơi"",""Con nay biết ơn vì Ngài mãi bên mình""]",true,
 qwen/qwen3.8-27b,P018,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội","Bọn chúng reo hò, cười chê Chúa Con
 
 Họ đóng đinh Ngài, với tiếng reo vang
 
 Lằn roi trên lưng, nhuộm đong huyết Chúa
 
-Chúa vẫn vui lòng, chết thay cho con",3,"[""Họ đóng đinh Ngài, với tiếng reo vang"",""Lằn roi trên lưng, nhuộm đong huyết Chúa"",""Chúa vẫn vui lòng, chết thay cho con""]",,
+Chúa vẫn vui lòng, chết thay cho con",3,"[""Họ đóng đinh Ngài, với tiếng reo vang"",""Lằn roi trên lưng, nhuộm đong huyết Chúa"",""Chúa vẫn vui lòng, chết thay cho con""]",true,
 qwen/qwen3.8-27b,P020,Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.,"Con sẽ không quay đầu
 
 Vững chắc về tương lai
@@ -319,14 +319,14 @@ Vững chắc về tương lai
 
 Sẽ bước theo Giê-su,
 
-nguyện cả cuộc đời này",2,"[""Sẽ bước theo Giê-su,"",""nguyện cả cuộc đời con""]",,
+nguyện cả cuộc đời này",2,"[""Sẽ bước theo Giê-su,"",""nguyện cả cuộc đời con""]",true,
 qwen/qwen3.8-27b,P022,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội","Lòng tội này sao cho trắng băng?
 
 Còn gì ngoài huyết báu Đấng Giê-su
 
 Điều gì làm vẹn nguyên chúng con?
 
-Còn gì ngoài huyết báu Đấng Giê-su",3,"[""Lòng tội này sao cho trắng băng?"",""Còn gì ngoài huyết báu Đấng Giê-su"",""Điều gì làm vẹn nguyên chúng con?""]",,
+Còn gì ngoài huyết báu Đấng Giê-su",3,"[""Lòng tội này sao cho trắng băng?"",""Còn gì ngoài huyết báu Đấng Giê-su"",""Điều gì làm vẹn nguyên chúng con?""]",true,
 qwen/qwen3.8-27b,P024,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,"Trong Cha có con
 
 Ai yêu con nhất trần gian
@@ -343,7 +343,7 @@ Ai yêu con nhất trần gian
 
 Không chi con muốn hơn
 
-Được sống theo ý muốn Cha",2,"[""Không chi con muốn hơn\n\nĐược sống theo ý muốn Cha"",""Vì Ngài là Chúa con""]",,
+Được sống theo ý muốn Cha",2,"[""Không chi con muốn hơn\n\nĐược sống theo ý muốn Cha"",""Vì Ngài là Chúa con""]",true,
 qwen/qwen3.8-27b,P026,"Find songs about the Holy Spirit staying with us, helping us, and providing strength in our lives.","Đường đời con luôn có Chúa
 
 Đường đời con luôn có Chúa
@@ -360,7 +360,7 @@ Chẳng sợ chi sẽ vững bước!
 
 Vì Chúa luôn bên cạnh
 
-Vì Chúa luôn cạnh bên",3,"[""Vì ngự trong con chính Thánh Linh"",""Chẳng sợ chi sẽ vững bước!"",""Là Đấng luôn bên cạnh""]",,
+Vì Chúa luôn cạnh bên",3,"[""Vì ngự trong con chính Thánh Linh"",""Chẳng sợ chi sẽ vững bước!"",""Là Đấng luôn bên cạnh""]",true,
 qwen/qwen3.8-27b,P028,Ngợi khen Chúa giữa thử thách và cuộc chiến thuộc linh,"Tâm linh con đây
 
 Sẽ dùng lời hát chúc tôn Ngài
@@ -369,7 +369,7 @@ Chẳng biết ngại ngần
 
 Vì ngự bên trong con chính là Sư Tử Giu-đa
 
-Hãy hát ca khen Danh Ngài",2,"[""Sẽ dùng lời hát chúc tôn Ngài"",""Vì ngự bên trong con chính là Sư Tử Giu-đa"",""Hãy hát ca khen Danh Ngài""]",,
+Hãy hát ca khen Danh Ngài",2,"[""Sẽ dùng lời hát chúc tôn Ngài"",""Vì ngự bên trong con chính là Sư Tử Giu-đa"",""Hãy hát ca khen Danh Ngài""]",true,
 qwen/qwen3.8-27b,P029,"Find songs about discovering God's purpose, being called by Him, and becoming an instrument for His mission.","Chúng con nguyện, đến muôn thành
 
 Hô vang “Duy Danh “Cha” thật thánh thay”
@@ -384,7 +384,7 @@ Ngài sai con
 
 Chúng con nguyện đi mãi
 
-Vì Ngài con sẽ không dừng lại",3,"[""Ngài sai con"",""Chúng con nguyện đi mãi"",""đến muôn thành"",""Để muôn dân suy tôn Đấng Chí Cao""]",,
+Vì Ngài con sẽ không dừng lại",3,"[""Ngài sai con"",""Chúng con nguyện đi mãi"",""đến muôn thành"",""Để muôn dân suy tôn Đấng Chí Cao""]",true,
 qwen/qwen3.8-27b,P030,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội","Dù bao nhiêu chông gai
 
 Dù bao nhiêu đau thương
@@ -397,7 +397,7 @@ Chẳng có tan vỡ chi
 
 Mà Cha không mang đi
 
-Mãi mãi, Ngài chiến thắng thế gian",2,"[""Thập giá, xóa hết tất cả rồi"",""Mãi mãi, Ngài chiến thắng thế gian""]",,
+Mãi mãi, Ngài chiến thắng thế gian",2,"[""Thập giá, xóa hết tất cả rồi"",""Mãi mãi, Ngài chiến thắng thế gian""]",true,
 qwen/qwen3.8-27b,P031,"Find songs that encourage the next generation to grow in faith, embrace God's calling, and boldly live according to Scripture.","Nguyện xin Cha ban cho con giờ này
 
 Ngọn Lửa, Sức Thiêng
@@ -412,7 +412,7 @@ Vì con đã sẵn sàng, Ngài hãy phái con đi
 
 Vì con đã sẵn sàng, Ngài hãy sai con
 
-Đến khắp muôn nơi",2,"[""Vì con đã sẵn sàng, Ngài hãy phái con đi"",""Lời Chúa được đến khắp nơi"",""Ngọn Lửa, Sức Thiêng"",""Cháy lên trong con, Bước đi muôn nơi""]",,
+Đến khắp muôn nơi",2,"[""Vì con đã sẵn sàng, Ngài hãy phái con đi"",""Lời Chúa được đến khắp nơi"",""Ngọn Lửa, Sức Thiêng"",""Cháy lên trong con, Bước đi muôn nơi""]",true,
 qwen/qwen3.8-27b,P034,Ngợi khen Chúa giữa thử thách và cuộc chiến thuộc linh,"Con đã đắc thắng vì con có Chúa
 
 Con đã đắc thắng vì Ngài bên con
@@ -423,14 +423,14 @@ Con đã đắc thắng vì con có Chúa
 
 Con đã đắc thắng vì Ngài bên con
 
-Trận chiến đã thuộc về Đấng con ca khen",2,"[""Trận chiến đã thuộc về Đấng con ca khen"",""Con đã đắc thắng vì con có Chúa""]",,
+Trận chiến đã thuộc về Đấng con ca khen",2,"[""Trận chiến đã thuộc về Đấng con ca khen"",""Con đã đắc thắng vì con có Chúa""]",true,
 qwen/qwen3.8-27b,P035,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,"Con sẽ dâng chính mình, con nguyện luôn đầu phục
 
 Vì mọi điều cuộc sống con dâng nơi Cha
 
 Con sẽ dâng chính mình, con nguyện luôn đầu phục
 
-Ngự trong con Cha ơi",3,"[""Con sẽ dâng chính mình, con nguyện luôn đầu phục"",""Vì mọi điều cuộc sống con dâng nơi Cha""]",,
+Ngự trong con Cha ơi",3,"[""Con sẽ dâng chính mình, con nguyện luôn đầu phục"",""Vì mọi điều cuộc sống con dâng nơi Cha""]",true,
 qwen/qwen3.8-27b,P037,"Find songs about belonging to God's family, experiencing His love, and walking together as a community of faith.","Là con dân Ngài, kề vai sát cánh
 
 Cùng vinh quang này, làm tôn cao Chúa
@@ -441,7 +441,7 @@ Bởi Thánh Linh Ngài, làm con nghe thấy
 
 Được ơn kêu gọi, làm con dân Thánh
 
-Chúng con hiệp một cùng đi trong Ngài",3,"[""Là con dân Ngài, kề vai sát cánh"",""Chúng con hiệp một cùng đi trong Ngài"",""Được ơn kêu gọi, làm con dân Thánh""]",,
+Chúng con hiệp một cùng đi trong Ngài",3,"[""Là con dân Ngài, kề vai sát cánh"",""Chúng con hiệp một cùng đi trong Ngài"",""Được ơn kêu gọi, làm con dân Thánh""]",true,
 qwen/qwen3.8-27b,P038,Find worship songs about the power of the Holy Spirit working in and through believers.,"Nơi đây
 
 Khi Thánh Linh vận hành
@@ -456,7 +456,7 @@ Mang bao năng quyền
 
 Chúng con luôn vững tin
 
-Vì Ngài thành tín",3,"[""Khi Thánh Linh vận hành"",""Thánh Linh trong chúng con"",""Mang bao năng quyền""]",,
+Vì Ngài thành tín",3,"[""Khi Thánh Linh vận hành"",""Thánh Linh trong chúng con"",""Mang bao năng quyền""]",true,
 qwen/qwen3.8-27b,P040,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,"Con nơi đây, thưa Chúa
 
 Nguyện dâng hết thảy tất cả
@@ -467,14 +467,14 @@ Chạy đến dưới chân Đấng Thiên Thượng
 
 Phước ân Ngài đã cứu con
 
-Dâng Giê-su tất cả mọi điều",3,"[""Nguyện dâng hết thảy tất cả"",""Phó dâng mọi thứ"",""Dâng Giê-su tất cả mọi điều""]",,
+Dâng Giê-su tất cả mọi điều",3,"[""Nguyện dâng hết thảy tất cả"",""Phó dâng mọi thứ"",""Dâng Giê-su tất cả mọi điều""]",true,
 qwen/qwen3.8-27b,P045,Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài,"Dù con ca ngợi Chúa
 
 Và dâng hiến mọi thứ
 
 Cũng chẳng thể hiện hết
 
-Lòng biết ơn nơi Ngài",2,"[""Dù con ca ngợi Chúa"",""Lòng biết ơn nơi Ngài""]",,
+Lòng biết ơn nơi Ngài",2,"[""Dù con ca ngợi Chúa"",""Lòng biết ơn nơi Ngài""]",true,
 qwen/qwen3.8-27b,P048,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,"Sự sống là Ngài, Giê-su
 
 Con bám lấy hy vọng ở nơi mình Ngài
@@ -487,11 +487,11 @@ Bằng vui thỏa, con sẽ vác thập tự
 
 Hiến dâng đời này
 
-Bởi Chúa luôn bên con",3,"[""Sự sống là Ngài, Giê-su"",""Bằng vui thỏa, con sẽ vác thập tự"",""Hiến dâng đời này""]",,
+Bởi Chúa luôn bên con",3,"[""Sự sống là Ngài, Giê-su"",""Bằng vui thỏa, con sẽ vác thập tự"",""Hiến dâng đời này""]",true,
 qwen/qwen3.8-27b,P049,Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài,"Lòng con đây dâng lên với Chúa hết thảy ngàn lời chúc tán
 
 Lòng con đây yêu thương với Chúa cất tiếng ngàn lời ca vang
 
 Chỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi
 
-Tốt thay, Chúa Cha đời đời (mãi mãi)",2,"[""Chỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi"",""Tốt thay, Chúa Cha đời đời (mãi mãi)""]",,
+Tốt thay, Chúa Cha đời đời (mãi mãi)",2,"[""Chỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi"",""Tốt thay, Chúa Cha đời đời (mãi mãi)""]",true,

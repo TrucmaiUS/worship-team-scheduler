@@ -2,6 +2,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import {
+  applyEvidenceContextAudit,
   compareJudgeCandidates,
   evaluateJudgeCandidate,
   JUDGE_SELECTION_CRITERIA,
@@ -21,6 +22,8 @@ const referencesPath = argument('--references');
 const gptOssPath = argument('--gpt-oss');
 const qwenPath = argument('--qwen');
 const outputPath = argument('--out');
+const auditIndex = process.argv.indexOf('--audit');
+const auditPath = auditIndex >= 0 ? argument('--audit') : null;
 if (fs.existsSync(outputPath)) throw new Error(`Refusing to overwrite existing report: ${outputPath}`);
 
 const root = path.resolve(__dirname, '..');
@@ -43,8 +46,15 @@ const corpusSections = new Map(corpus.songs.flatMap(song => song.sections.map(se
 ] as const)));
 const sourceIndex = { developmentQueries, corpusSections };
 const references = readJson(referencesPath);
-const gptOss = evaluateJudgeCandidate(references, readJson(gptOssPath), sourceIndex);
-const qwen = evaluateJudgeCandidate(references, readJson(qwenPath), sourceIndex);
+const auditRows = auditPath ? parseCsv(fs.readFileSync(auditPath, 'utf8')) : null;
+const gptOssOutputs = auditRows
+  ? applyEvidenceContextAudit(references, readJson(gptOssPath), auditRows)
+  : readJson(gptOssPath);
+const qwenOutputs = auditRows
+  ? applyEvidenceContextAudit(references, readJson(qwenPath), auditRows)
+  : readJson(qwenPath);
+const gptOss = evaluateJudgeCandidate(references, gptOssOutputs, sourceIndex);
+const qwen = evaluateJudgeCandidate(references, qwenOutputs, sourceIndex);
 const comparison = compareJudgeCandidates(gptOss, qwen);
 const report = {
   schemaVersion: 'judge-selection-report-v1',
@@ -61,6 +71,7 @@ const report = {
     references: inputRecord(referencesPath),
     gptOss: inputRecord(gptOssPath),
     qwen: inputRecord(qwenPath),
+    ...(auditPath ? { evidenceContextAudit: inputRecord(auditPath) } : {}),
   },
   candidates: [gptOss, qwen],
   comparison,

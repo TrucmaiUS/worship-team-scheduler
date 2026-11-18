@@ -5,6 +5,7 @@ import {
   groqJudgeResponseSchemaSha256,
 } from '../groq-judge';
 import {
+  applyEvidenceContextAudit,
   evaluateJudgeCandidate,
   passesJudgeSelectionGates,
   validateJudgeSelectionSet,
@@ -188,6 +189,69 @@ function referencePairs() {
 }
 
 describe('Judge selection metrics and contamination controls', () => {
+  it('applies a complete human evidence audit without changing model outputs', () => {
+    const pairs = referencePairs();
+    const outputs = pairs.map(pair => ({
+      pairId: pair.pairId, provider: 'groq' as const,
+      modelId: 'openai/gpt-oss-120b' as const, schemaPass: true,
+      relevanceScore: pair.humanReference.initialReviews[0].relevanceScore,
+      evidenceQuotes: pair.humanReference.initialReviews[0].evidenceQuotes,
+      evidenceContextSupported: null,
+      inputTokens: 100, outputTokens: 30, latencyMs: 10, failureCode: null,
+    }));
+    const auditRows = outputs.filter(output => (output.relevanceScore ?? -1) >= 2).map(output => {
+      const pair = pairs.find(item => item.pairId === output.pairId)!;
+      return {
+        model_id: output.modelId,
+        pair_id: output.pairId,
+        query_text: pair.queryText,
+        candidate_lyrics: pair.candidate.lyrics,
+        relevance_score: String(output.relevanceScore),
+        evidence_quotes: JSON.stringify(output.evidenceQuotes),
+        evidence_context_supported: output.pairId === 'DEV-PAIR-27' ? 'false' : 'true',
+        auditor_notes: output.pairId === 'DEV-PAIR-27' ? 'Quote does not support the assigned grade.' : '',
+      };
+    });
+    const audited = applyEvidenceContextAudit(pairs, outputs, auditRows);
+    expect(audited.find(output => output.pairId === 'DEV-PAIR-27')?.evidenceContextSupported)
+      .toBe(false);
+    expect(audited.find(output => output.pairId === 'DEV-PAIR-26')?.evidenceContextSupported)
+      .toBe(null);
+    expect(audited.find(output => output.pairId === 'DEV-PAIR-28')?.evidenceContextSupported)
+      .toBe(true);
+    expect(outputs.every(output => output.evidenceContextSupported === null)).toBe(true);
+  });
+
+  it('rejects incomplete or altered human evidence audit rows', () => {
+    const pairs = referencePairs();
+    const outputs = pairs.map(pair => ({
+      pairId: pair.pairId, provider: 'groq' as const,
+      modelId: 'qwen/qwen3.8-27b' as const, schemaPass: true,
+      relevanceScore: pair.humanReference.initialReviews[0].relevanceScore,
+      evidenceQuotes: pair.humanReference.initialReviews[0].evidenceQuotes,
+      evidenceContextSupported: null,
+      inputTokens: 100, outputTokens: 30, latencyMs: 10, failureCode: null,
+    }));
+    const auditRows = outputs.filter(output => (output.relevanceScore ?? -1) >= 2).map(output => {
+      const pair = pairs.find(item => item.pairId === output.pairId)!;
+      return {
+        model_id: output.modelId,
+        pair_id: output.pairId,
+        query_text: pair.queryText,
+        candidate_lyrics: pair.candidate.lyrics,
+        relevance_score: String(output.relevanceScore),
+        evidence_quotes: JSON.stringify(output.evidenceQuotes),
+        evidence_context_supported: 'true',
+        auditor_notes: '',
+      };
+    });
+    expect(() => applyEvidenceContextAudit(pairs, outputs, auditRows.slice(1)))
+      .toThrow(/must match every grade 2–3 output/);
+    expect(() => applyEvidenceContextAudit(pairs, outputs, [
+      { ...auditRows[0], query_text: 'altered query' }, ...auditRows.slice(1),
+    ])).toThrow(/source text mismatch/);
+  });
+
   it('computes the preregistered metrics against independent human references', () => {
     const pairs = referencePairs();
     const outputs = pairs.map((pair, index) => ({
