@@ -32,7 +32,7 @@ const resumeIndex = process.argv.indexOf('--resume');
 const resumeRunId = resumeIndex >= 0 ? process.argv[resumeIndex + 1] : null;
 if (resumeIndex >= 0 && !resumeRunId) throw new Error('Missing --resume <run-id>.');
 const runId = resumeRunId ??
-  `judge-selection-v4${preflight ? '-preflight' : ''}-${createdAtUtc.replace(/[:.]/gu, '-')}`;
+  `judge-selection-v5${preflight ? '-preflight' : ''}-${createdAtUtc.replace(/[:.]/gu, '-')}`;
 const outputDirectory = path.join(ROOT, 'benchmark/distillation/judge_selection_runs', runId);
 if (resumeRunId) {
   if (!fs.existsSync(outputDirectory)) throw new Error(`Resume run does not exist: ${outputDirectory}`);
@@ -89,10 +89,10 @@ async function main(): Promise<void> {
 
   const envelopes = JUDGE_CANDIDATE_MODEL_IDS.map(modelId => configFor(modelId));
   const manifest = {
-    schemaVersion: 'judge-selection-execution-v4',
+    schemaVersion: 'judge-selection-execution-v5',
     status: 'running',
     runId,
-    mode: preflight ? 'three_pair_schema_regression_preflight' : 'full_50_pair_comparison',
+    mode: preflight ? 'four_pair_schema_regression_preflight' : 'full_50_pair_comparison',
     createdAtUtc,
     provider: 'groq',
     models: observedModels,
@@ -107,6 +107,7 @@ async function main(): Promise<void> {
     protectedHeldOutDataUsed: false,
     responseFormatRationale: 'Shared JSON mode with identical local strict-schema validation because the current Groq inventory does not advertise structured_outputs for qwen/qwen3.8-27b.',
     retryPolicy: 'Three completed generation attempts per pair; up to six transient transport/rate-limit retries do not consume generation attempts.',
+    retrySeedPolicy: 'Generation attempts use base seed + zero-based generation index; transient retries preserve the pending generation seed.',
   };
   if (resumeRunId) {
     const prior = JSON.parse(fs.readFileSync(path.join(outputDirectory, 'run_manifest.json'), 'utf8')) as {
@@ -122,12 +123,12 @@ async function main(): Promise<void> {
     writeJson('run_manifest.json', manifest);
   }
 
-  const preflightPairIds = new Set(['P001', 'P029', 'P047']);
+  const preflightPairIds = new Set(['P001', 'P006', 'P029', 'P047']);
   const executionPairs = preflight
     ? references.filter(pair => preflightPairIds.has(pair.pairId))
     : references;
   if (preflight && executionPairs.length !== preflightPairIds.size) {
-    throw new Error('Judge v4 preflight pair set is incomplete.');
+    throw new Error('Judge v5 preflight pair set is incomplete.');
   }
   for (const modelId of JUDGE_CANDIDATE_MODEL_IDS) {
     const stem = modelId.replaceAll('/', '__');

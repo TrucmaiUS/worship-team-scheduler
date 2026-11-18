@@ -41,6 +41,8 @@ Version 3 completed all 50 pairs but Qwen produced no valid JSON for P029 and P0
 
 The live Groq Models API checked before v4 still advertises `structured_outputs` for GPT-OSS 120B but only `json_mode` for Qwen 3.8 27B. Despite broader catalog documentation, v4 therefore remains on the strongest response mode verified as shared by the exact live model IDs: JSON Object Mode plus identical strict local validation.
 
+The first v4 full run was stopped after P006 exposed deterministic retry: three generation attempts used an identical fixed seed and therefore reproduced the same token-cap failure. Its incomplete outputs are excluded from comparison. Version 5 keeps the v4 transport/generation budgets and prompt v4.3, but preregisters an identical retry seed sequence for both candidates: base seed `20261113` on generation 1, then `20261114` and `20261115`. Transient retries preserve the seed of the generation that has not yet completed. The P001/P006/P029/P047 preflight and the full 50-pair comparison must both be rerun under v5; no v4 rows are reused.
+
 ## Metrics
 
 Report exact counts and denominators plus:

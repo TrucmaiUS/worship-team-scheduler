@@ -165,7 +165,7 @@ interface AlignedJudgeItem {
 }
 
 export const JUDGE_SELECTION_CRITERIA = {
-  version: 'judge-selection-v4',
+  version: 'judge-selection-v5',
   hardGates: {
     schemaPassRate: 1,
     evidenceVerbatimMatchRate: 1,

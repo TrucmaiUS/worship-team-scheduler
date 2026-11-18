@@ -100,6 +100,7 @@ describe('Groq independent Judge adapter', () => {
     });
     expect(result.attempts).toHaveLength(2);
     expect(result.attempts.map(attempt => attempt.generationAttempt)).toEqual([null, 1]);
+    expect(result.attempts.map(attempt => attempt.seed)).toEqual([20261113, 20261113]);
     expect(models).toEqual(['openai/gpt-oss-120b', 'openai/gpt-oss-120b']);
     expect(delays).toEqual([5000]);
     expect(result.attempts[0].failureDetail).toContain('[REDACTED_ORGANIZATION]');
@@ -109,12 +110,14 @@ describe('Groq independent Judge adapter', () => {
   it('retries JSON generation failures without charging rate limits to the generation budget', async () => {
     let calls = 0;
     const delays: number[] = [];
+    const seeds: number[] = [];
     const result = await callGroqJudge({
       apiKey: 'fixture-key', config: { ...baseConfig, maxAttempts: 2 },
       systemPrompt: 'same rubric', request: blindRequest,
       sleep: async milliseconds => { delays.push(milliseconds); },
-      fetchImpl: async () => {
+      fetchImpl: async (_url, init) => {
         calls += 1;
+        seeds.push(JSON.parse(String(init?.body)).seed);
         if (calls === 1) return new Response(JSON.stringify({ error: {
           message: 'Failed to generate JSON.', code: 'json_validate_failed',
           failed_generation: 'max completion tokens reached before generating a valid document',
@@ -135,6 +138,8 @@ describe('Groq independent Judge adapter', () => {
     });
     expect(calls).toBe(3);
     expect(result.attempts.map(attempt => attempt.generationAttempt)).toEqual([1, null, 2]);
+    expect(seeds).toEqual([20261113, 20261114, 20261114]);
+    expect(result.attempts.map(attempt => attempt.seed)).toEqual(seeds);
     expect(result.attempts.map(attempt => attempt.failureCode)).toEqual([
       'http_400', 'http_429', null,
     ]);

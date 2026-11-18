@@ -62,6 +62,7 @@ export interface GroqJudgeAttemptLog {
   modelId: string;
   attempt: number;
   generationAttempt: number | null;
+  seed: number | null;
   requestSha256: string;
   responseSha256: string | null;
   promptSha256: string;
@@ -245,8 +246,6 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
   if (!options.apiKey.trim()) throw new ResearchProtocolError('GROQ_API_KEY is missing.');
   const config = assertGroqJudgeConfig(options.config);
   const request = options.request;
-  const envelope = buildGroqJudgeEnvelope(config, options.systemPrompt, request);
-  const requestSha256 = sha256CanonicalJson(envelope);
   const attempts: GroqJudgeAttemptLog[] = [];
   const fetchImpl = options.fetchImpl ?? fetch;
   const sleep = options.sleep ?? ((milliseconds: number) =>
@@ -257,6 +256,11 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
   let transientFailures = 0;
   while (generationAttempts < config.maxAttempts) {
     requestAttempt += 1;
+    const attemptSeed = config.seed === undefined ? undefined : config.seed + generationAttempts;
+    const envelope = buildGroqJudgeEnvelope(
+      { ...config, seed: attemptSeed }, options.systemPrompt, request
+    );
+    const requestSha256 = sha256CanonicalJson(envelope);
     const started = Date.now();
     let response: Response | null = null;
     let raw = '';
@@ -315,7 +319,7 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
         }
         const log: GroqJudgeAttemptLog = {
           provider: 'groq', modelId: config.modelId, attempt: requestAttempt,
-          generationAttempt: generationAttempts + 1, requestSha256,
+          generationAttempt: generationAttempts + 1, seed: attemptSeed ?? null, requestSha256,
           responseSha256: sha256CanonicalJson(payload), promptSha256: config.promptSha256,
           responseSchemaSha256: config.responseSchemaSha256,
           httpStatus: response.status, latencyMs: Date.now() - started,
@@ -354,7 +358,8 @@ export async function callGroqJudge(options: GroqJudgeOptions): Promise<GroqJudg
     failureDetail = redactProviderIdentifiers(failureDetail);
     const log: GroqJudgeAttemptLog = {
       provider: 'groq', modelId: config.modelId, attempt: requestAttempt,
-      generationAttempt: generationAttempted ? generationAttempts : null, requestSha256,
+      generationAttempt: generationAttempted ? generationAttempts : null,
+      seed: attemptSeed ?? null, requestSha256,
       responseSha256: raw ? crypto.createHash('sha256').update(raw).digest('hex') : null,
       promptSha256: config.promptSha256, responseSchemaSha256: config.responseSchemaSha256,
       httpStatus: response?.status ?? null, latencyMs: Date.now() - started,

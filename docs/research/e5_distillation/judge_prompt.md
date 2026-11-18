@@ -71,6 +71,7 @@ Verbatim matching and contextual support are different measurements. Code verifi
 - Endpoint: `https://api.groq.com/openai/v1/chat/completions`.
 - Shared response mode: `response_format.type=json_object`; the same strict response schema and cross-field evidence rules are enforced locally for both models. This replaces provider-side strict JSON Schema because the current Groq inventory does not advertise `structured_outputs` for Qwen 3.8 27B.
 - Judge-selection v4 uses prompt v4.3 and separates three completed generation attempts from up to six transient transport/rate-limit retries. Its disclosed schema-regression preflight is P001/P029/P047.
+- Judge-selection v5 retains prompt v4.3 and adds a shared deterministic generation-retry seed sequence (`20261113`, `20261114`, `20261115`); transient retries keep the pending generation seed. Its regression preflight is P001/P006/P029/P047.
 - `max_completion_tokens=900`, `temperature=0.2`, `top_p=0.95`, `seed=20261113`. A 1024-token preflight passed, but the subsequent Qwen run exposed an account OTPM limit of 1000 that rejects any request capped at 1024. The shared cap is therefore 900 for both candidates; neither earlier partial run is used for comparison.
 - `reasoning_effort=low`, `reasoning_format=hidden` for both candidates.
 - Timeout 30 seconds; at most three same-model attempts for an approved experiment.
