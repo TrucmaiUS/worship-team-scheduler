@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "judge-selection-finalization-v1",
+  "createdAtUtc": "2026-11-18T06:14:04.883Z",
+  "runId": "judge-selection-v5-2026-11-18T04-26-20-960Z",
+  "selectedModelId": "qwen/qwen3.8-27b",
+  "status": "selected",
+  "protectedHeldOutDataUsed": false,
+  "artifacts": [
+    {
+      "name": "gptAudited",
+      "path": "benchmark/distillation/judge_selection_runs/judge-selection-v5-2026-11-18T04-26-20-960Z/openai__gpt-oss-120b_evaluation_audited.json",
+      "sha256": "b4ea2e82cb4294916bfadae3202f36393ac6f5f9b8cdd2d959b6ba76cfb218b8"
+    },
+    {
+      "name": "qwenAudited",
+      "path": "benchmark/distillation/judge_selection_runs/judge-selection-v5-2026-11-18T04-26-20-960Z/qwen__qwen3.8-27b_evaluation_audited.json",
+      "sha256": "c2b1d37509160d27c4825ff9574b0d3d13be6726d619c7428ee6263b0c0830ec"
+    },
+    {
+      "name": "comparison",
+      "path": "benchmark/distillation/judge_selection_runs/judge-selection-v5-2026-11-18T04-26-20-960Z/model_comparison_final.json",
+      "sha256": "35d0c74319413c91abdfe5fcaff989e1f93901a25e67ca7b612082ce4530e6d7"
+    },
+    {
+      "name": "validation",
+      "path": "benchmark/distillation/judge_selection_runs/judge-selection-v5-2026-11-18T04-26-20-960Z/evidence_context_validation_report.json",
+      "sha256": "6c387f656b8118d89de97953105e70bb984c51a9656742082431a70975dda100"
+    },
+    {
+      "name": "frozenConfig",
+      "path": "benchmark/distillation/judge_selection_runs/judge-selection-v5-2026-11-18T04-26-20-960Z/frozen_judge_config.json",
+      "sha256": "474b9f9a349bd53fca56d4769fd3a21e4d6f3b4be1cab63d2a75f37f5a887e99"
+    },
+    {
+      "name": "report",
+      "path": "benchmark/distillation/judge_selection_runs/judge-selection-v5-2026-11-18T04-26-20-960Z/judge_selection_report.md",
+      "sha256": "8edc09914a2b4c9cf392ff7241ff5dcdd0c6c352ee5cd3871fa4d69412db437c"
+    }
+  ]
+}

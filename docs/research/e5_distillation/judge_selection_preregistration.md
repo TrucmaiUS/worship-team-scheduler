@@ -1,8 +1,10 @@
 # Judge Selection & Validation Preregistration
 
-**Version:** `judge-selection-v3`
-**Date revised:** 17 November 2026  
-**Status:** Human Reference v2 validated; live candidate execution pending; no candidate selected
+**Version:** `judge-selection-v5`
+
+**Date revised:** 18 November 2026
+
+**Status:** Development-set Judge Selection complete; `qwen/qwen3.8-27b` selected and frozen
 
 ## Purpose
 
@@ -72,4 +74,13 @@ If exactly one candidate passes, select it. If both pass, compare in this order:
 
 Human Reference v2 passes structural validation with 50 frozen labels, the exact `17/9/8/16` distribution, reviewer/adjudicator provenance, source section IDs, two observed language strata and 15 human-reviewed distinction tags. The 25 G4 paraphrases have versioned reference-query IDs while retaining their original benchmark-query lineage. P006 retains an explicit versioned candidate-text correction; the other 49 candidates match corpus sections exactly.
 
-Live execution requires a successful same-account Groq model-inventory preflight for both exact model IDs. Model evidence contextual support remains a separate human audit after raw outputs are sealed; code-computed verbatim validity does not replace that audit. Existing `qrels.csv` is not reused as section-level human ground truth.
+Live execution completed only after a successful same-account Groq model-inventory preflight for both exact model IDs. Model evidence contextual support was audited separately by a human after raw outputs were sealed; code-computed verbatim validity did not replace that audit. Existing `qrels.csv` was not reused as section-level human ground truth.
+
+## Recorded outcome
+
+The v5 full run completed 50/50 development pairs for each exact model with 100% schema compliance and 100% verbatim evidence validity. The independent evidence-context audit covered all 42 outputs graded 2–3 without changing any model score, quote, query or candidate text.
+
+- GPT-OSS: exact agreement 62%, MAE 0.44, QWK 0.7956, Macro-F1 0.6145, contextual evidence support 20/22 (90.91%), critical disagreement 3/50 (6%). It fails two hard gates.
+- Qwen: exact agreement 66%, MAE 0.38, QWK 0.8188, Macro-F1 0.6666, contextual evidence support 20/20 (100%), critical disagreement 2/50 (4%). It passes every hard gate and is selected.
+
+The exact Qwen API model ID, observed provider inventory metadata, prompt and schema hashes, decoding configuration, reference/audit hashes, code commits and selection criteria are recorded in the frozen Judge configuration. Groq did not expose an immutable revision digest, so future reuse must check the exact model ID for alias drift. The 240-pair held-out test set was not accessed or executed at this checkpoint.

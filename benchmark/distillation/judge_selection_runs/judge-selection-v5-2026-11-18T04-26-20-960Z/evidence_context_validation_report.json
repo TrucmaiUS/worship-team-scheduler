@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "evidence-context-validation-v1",
+  "createdAtUtc": "2026-11-18T06:14:04.883Z",
+  "audit": {
+    "path": "benchmark/distillation/judge_selection_runs/judge-selection-v5-2026-11-18T04-26-20-960Z/evidence_context_audit.csv",
+    "sha256": "8ffce7924b3e0e0d7c415f98723f3c840a7ccb673c90c50944fa40742494810c"
+  },
+  "expectedRows": 42,
+  "observedRows": 42,
+  "sourceFieldsMatched": true,
+  "duplicates": 0,
+  "missingRows": 0,
+  "invalidRows": 0,
+  "unsupportedRowsWithNotes": 2,
+  "models": [
+    {
+      "modelId": "openai/gpt-oss-120b",
+      "auditedRows": 22,
+      "supportedRows": 20,
+      "evidenceContextSupportRate": 0.9090909090909091,
+      "gateMinimum": 0.95,
+      "gatePass": false
+    },
+    {
+      "modelId": "qwen/qwen3.8-27b",
+      "auditedRows": 20,
+      "supportedRows": 20,
+      "evidenceContextSupportRate": 1,
+      "gateMinimum": 0.95,
+      "gatePass": true
+    }
+  ]
+}

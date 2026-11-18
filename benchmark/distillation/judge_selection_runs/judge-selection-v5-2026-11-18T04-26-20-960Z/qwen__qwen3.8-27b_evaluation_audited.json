@@ -1,0 +1,754 @@
+[
+  {
+    "pairId": "P001",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Tìm người đang vỡ tan"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 593,
+    "outputTokens": 488,
+    "latencyMs": 1194,
+    "failureCode": null
+  },
+  {
+    "pairId": "P002",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 587,
+    "outputTokens": 331,
+    "latencyMs": 1254,
+    "failureCode": null
+  },
+  {
+    "pairId": "P003",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 570,
+    "outputTokens": 376,
+    "latencyMs": 1287,
+    "failureCode": null
+  },
+  {
+    "pairId": "P004",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Lời Chúa được mang đi xa muôn nơi trên đất này"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 574,
+    "outputTokens": 461,
+    "latencyMs": 1815,
+    "failureCode": null
+  },
+  {
+    "pairId": "P005",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Trong ngọn lửa và gió cuốn"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 568,
+    "outputTokens": 487,
+    "latencyMs": 2003,
+    "failureCode": null
+  },
+  {
+    "pairId": "P006",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Bằng huyết Chúa nên chúng ta\n\nĐược xứng danh con của Cha",
+      "Trong Chúa, con chiến thắng thế gian",
+      "Ngài phá vỡ mọi gôm cùm"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 622,
+    "outputTokens": 682,
+    "latencyMs": 4522,
+    "failureCode": null
+  },
+  {
+    "pairId": "P007",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 584,
+    "outputTokens": 216,
+    "latencyMs": 1162,
+    "failureCode": null
+  },
+  {
+    "pairId": "P008",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 575,
+    "outputTokens": 454,
+    "latencyMs": 1267,
+    "failureCode": null
+  },
+  {
+    "pairId": "P009",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Tâm linh con như được về nhà",
+      "Vì Ngài ở bên con"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 613,
+    "outputTokens": 645,
+    "latencyMs": 2452,
+    "failureCode": null
+  },
+  {
+    "pairId": "P010",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Tình yêu Ngài cao lớn thay",
+      "Tình yêu Ngài đến với con"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 631,
+    "outputTokens": 514,
+    "latencyMs": 1926,
+    "failureCode": null
+  },
+  {
+    "pairId": "P011",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 598,
+    "outputTokens": 345,
+    "latencyMs": 1427,
+    "failureCode": null
+  },
+  {
+    "pairId": "P012",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 603,
+    "outputTokens": 436,
+    "latencyMs": 1794,
+    "failureCode": null
+  },
+  {
+    "pairId": "P013",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Thập tự, sự phục sinh",
+      "Tội con Ngài xóa hết",
+      "Hy sinh thân Ngài",
+      "Cứu lấy thân con"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 568,
+    "outputTokens": 474,
+    "latencyMs": 1735,
+    "failureCode": null
+  },
+  {
+    "pairId": "P014",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 579,
+    "outputTokens": 390,
+    "latencyMs": 1562,
+    "failureCode": null
+  },
+  {
+    "pairId": "P015",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Chẳng có gì có thể so, so được với ơn từ Chúa Chúa ơi",
+      "Con nay biết ơn vì Ngài mãi bên mình"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 576,
+    "outputTokens": 441,
+    "latencyMs": 1659,
+    "failureCode": null
+  },
+  {
+    "pairId": "P016",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 583,
+    "outputTokens": 416,
+    "latencyMs": 1574,
+    "failureCode": null
+  },
+  {
+    "pairId": "P017",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 608,
+    "outputTokens": 517,
+    "latencyMs": 2177,
+    "failureCode": null
+  },
+  {
+    "pairId": "P018",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Họ đóng đinh Ngài, với tiếng reo vang",
+      "Lằn roi trên lưng, nhuộm đong huyết Chúa",
+      "Chúa vẫn vui lòng, chết thay cho con"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 588,
+    "outputTokens": 401,
+    "latencyMs": 2085,
+    "failureCode": null
+  },
+  {
+    "pairId": "P019",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Ngài dẫn lối đưa con đi qua"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 612,
+    "outputTokens": 536,
+    "latencyMs": 1862,
+    "failureCode": null
+  },
+  {
+    "pairId": "P020",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Sẽ bước theo Giê-su,",
+      "nguyện cả cuộc đời con"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 599,
+    "outputTokens": 582,
+    "latencyMs": 1783,
+    "failureCode": null
+  },
+  {
+    "pairId": "P021",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 578,
+    "outputTokens": 388,
+    "latencyMs": 1409,
+    "failureCode": null
+  },
+  {
+    "pairId": "P022",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Lòng tội này sao cho trắng băng?",
+      "Còn gì ngoài huyết báu Đấng Giê-su",
+      "Điều gì làm vẹn nguyên chúng con?"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 582,
+    "outputTokens": 418,
+    "latencyMs": 1711,
+    "failureCode": null
+  },
+  {
+    "pairId": "P023",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Ngài lấy đi tội lỗi này"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 600,
+    "outputTokens": 495,
+    "latencyMs": 1854,
+    "failureCode": null
+  },
+  {
+    "pairId": "P024",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Không chi con muốn hơn\n\nĐược sống theo ý muốn Cha",
+      "Vì Ngài là Chúa con"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 598,
+    "outputTokens": 671,
+    "latencyMs": 2190,
+    "failureCode": null
+  },
+  {
+    "pairId": "P025",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Nhờ sức Chúa con giờ đây mạnh mẽ"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 575,
+    "outputTokens": 503,
+    "latencyMs": 1992,
+    "failureCode": null
+  },
+  {
+    "pairId": "P026",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Vì ngự trong con chính Thánh Linh",
+      "Chẳng sợ chi sẽ vững bước!",
+      "Là Đấng luôn bên cạnh"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 609,
+    "outputTokens": 424,
+    "latencyMs": 1788,
+    "failureCode": null
+  },
+  {
+    "pairId": "P027",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 577,
+    "outputTokens": 638,
+    "latencyMs": 2001,
+    "failureCode": null
+  },
+  {
+    "pairId": "P028",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Sẽ dùng lời hát chúc tôn Ngài",
+      "Vì ngự bên trong con chính là Sư Tử Giu-đa",
+      "Hãy hát ca khen Danh Ngài"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 577,
+    "outputTokens": 781,
+    "latencyMs": 2997,
+    "failureCode": null
+  },
+  {
+    "pairId": "P029",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Ngài sai con",
+      "Chúng con nguyện đi mãi",
+      "đến muôn thành",
+      "Để muôn dân suy tôn Đấng Chí Cao"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 615,
+    "outputTokens": 744,
+    "latencyMs": 2255,
+    "failureCode": null
+  },
+  {
+    "pairId": "P030",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Thập giá, xóa hết tất cả rồi",
+      "Mãi mãi, Ngài chiến thắng thế gian"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 595,
+    "outputTokens": 730,
+    "latencyMs": 2439,
+    "failureCode": null
+  },
+  {
+    "pairId": "P031",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Vì con đã sẵn sàng, Ngài hãy phái con đi",
+      "Lời Chúa được đến khắp nơi",
+      "Ngọn Lửa, Sức Thiêng",
+      "Cháy lên trong con, Bước đi muôn nơi"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 618,
+    "outputTokens": 692,
+    "latencyMs": 4397,
+    "failureCode": null
+  },
+  {
+    "pairId": "P032",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Phước cho ai đầy lòng thương",
+      "Phước cho ai mang tới thái bình"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 646,
+    "outputTokens": 722,
+    "latencyMs": 2394,
+    "failureCode": null
+  },
+  {
+    "pairId": "P033",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Ngài là Thần của Đức Chúa Trời"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 578,
+    "outputTokens": 370,
+    "latencyMs": 1428,
+    "failureCode": null
+  },
+  {
+    "pairId": "P034",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Trận chiến đã thuộc về Đấng con ca khen",
+      "Con đã đắc thắng vì con có Chúa"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 597,
+    "outputTokens": 736,
+    "latencyMs": 3205,
+    "failureCode": null
+  },
+  {
+    "pairId": "P035",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Con sẽ dâng chính mình, con nguyện luôn đầu phục",
+      "Vì mọi điều cuộc sống con dâng nơi Cha"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 580,
+    "outputTokens": 475,
+    "latencyMs": 1910,
+    "failureCode": null
+  },
+  {
+    "pairId": "P036",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 617,
+    "outputTokens": 257,
+    "latencyMs": 1699,
+    "failureCode": null
+  },
+  {
+    "pairId": "P037",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Là con dân Ngài, kề vai sát cánh",
+      "Chúng con hiệp một cùng đi trong Ngài",
+      "Được ơn kêu gọi, làm con dân Thánh"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 607,
+    "outputTokens": 792,
+    "latencyMs": 2309,
+    "failureCode": null
+  },
+  {
+    "pairId": "P038",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Khi Thánh Linh vận hành",
+      "Thánh Linh trong chúng con",
+      "Mang bao năng quyền"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 589,
+    "outputTokens": 390,
+    "latencyMs": 1645,
+    "failureCode": null
+  },
+  {
+    "pairId": "P039",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 559,
+    "outputTokens": 503,
+    "latencyMs": 1725,
+    "failureCode": null
+  },
+  {
+    "pairId": "P040",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Nguyện dâng hết thảy tất cả",
+      "Phó dâng mọi thứ",
+      "Dâng Giê-su tất cả mọi điều"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 590,
+    "outputTokens": 372,
+    "latencyMs": 2814,
+    "failureCode": null
+  },
+  {
+    "pairId": "P041",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Là nguồn chân lý sống, chẳng gì có thể sánh bằng"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 574,
+    "outputTokens": 401,
+    "latencyMs": 1344,
+    "failureCode": null
+  },
+  {
+    "pairId": "P042",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 586,
+    "outputTokens": 339,
+    "latencyMs": 1331,
+    "failureCode": null
+  },
+  {
+    "pairId": "P043",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 579,
+    "outputTokens": 716,
+    "latencyMs": 1881,
+    "failureCode": null
+  },
+  {
+    "pairId": "P044",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 613,
+    "outputTokens": 536,
+    "latencyMs": 1854,
+    "failureCode": null
+  },
+  {
+    "pairId": "P045",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Dù con ca ngợi Chúa",
+      "Lòng biết ơn nơi Ngài"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 564,
+    "outputTokens": 627,
+    "latencyMs": 1832,
+    "failureCode": null
+  },
+  {
+    "pairId": "P046",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Điều gì làm vẹn nguyên chúng con?"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 584,
+    "outputTokens": 457,
+    "latencyMs": 1743,
+    "failureCode": null
+  },
+  {
+    "pairId": "P047",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 597,
+    "outputTokens": 462,
+    "latencyMs": 1678,
+    "failureCode": null
+  },
+  {
+    "pairId": "P048",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Sự sống là Ngài, Giê-su",
+      "Bằng vui thỏa, con sẽ vác thập tự",
+      "Hiến dâng đời này"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 603,
+    "outputTokens": 518,
+    "latencyMs": 1991,
+    "failureCode": null
+  },
+  {
+    "pairId": "P049",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Chỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi",
+      "Tốt thay, Chúa Cha đời đời (mãi mãi)"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 595,
+    "outputTokens": 780,
+    "latencyMs": 2183,
+    "failureCode": null
+  },
+  {
+    "pairId": "P050",
+    "provider": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 613,
+    "outputTokens": 300,
+    "latencyMs": 1286,
+    "failureCode": null
+  }
+]

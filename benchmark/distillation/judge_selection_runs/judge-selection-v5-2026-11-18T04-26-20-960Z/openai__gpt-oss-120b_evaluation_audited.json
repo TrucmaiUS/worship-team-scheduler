@@ -1,0 +1,738 @@
+[
+  {
+    "pairId": "P001",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Nhà Chúa luôn đợi chờ"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 640,
+    "outputTokens": 197,
+    "latencyMs": 897,
+    "failureCode": null
+  },
+  {
+    "pairId": "P002",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 622,
+    "outputTokens": 145,
+    "latencyMs": 960,
+    "failureCode": null
+  },
+  {
+    "pairId": "P003",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 606,
+    "outputTokens": 130,
+    "latencyMs": 943,
+    "failureCode": null
+  },
+  {
+    "pairId": "P004",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 602,
+    "outputTokens": 236,
+    "latencyMs": 1169,
+    "failureCode": null
+  },
+  {
+    "pairId": "P005",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Trong ngọn lửa và gió cuốn"
+    ],
+    "evidenceContextSupported": false,
+    "inputTokens": 605,
+    "outputTokens": 212,
+    "latencyMs": 1072,
+    "failureCode": null
+  },
+  {
+    "pairId": "P006",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Được xứng danh con của Cha",
+      "Mãi mãi con được về bên Cha",
+      "Trong Chúa, con chiến thắng thế gian."
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 710,
+    "outputTokens": 336,
+    "latencyMs": 3040,
+    "failureCode": null
+  },
+  {
+    "pairId": "P007",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 619,
+    "outputTokens": 126,
+    "latencyMs": 1007,
+    "failureCode": null
+  },
+  {
+    "pairId": "P008",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 607,
+    "outputTokens": 208,
+    "latencyMs": 1136,
+    "failureCode": null
+  },
+  {
+    "pairId": "P009",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 649,
+    "outputTokens": 259,
+    "latencyMs": 1403,
+    "failureCode": null
+  },
+  {
+    "pairId": "P010",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Tình yêu Ngài cao lớn thay"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 664,
+    "outputTokens": 247,
+    "latencyMs": 1251,
+    "failureCode": null
+  },
+  {
+    "pairId": "P011",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 636,
+    "outputTokens": 185,
+    "latencyMs": 963,
+    "failureCode": null
+  },
+  {
+    "pairId": "P012",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 632,
+    "outputTokens": 197,
+    "latencyMs": 1140,
+    "failureCode": null
+  },
+  {
+    "pairId": "P013",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Thập tự, sự phục sinh",
+      "Tội con Ngài xóa hết"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 602,
+    "outputTokens": 209,
+    "latencyMs": 969,
+    "failureCode": null
+  },
+  {
+    "pairId": "P014",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 616,
+    "outputTokens": 165,
+    "latencyMs": 1042,
+    "failureCode": null
+  },
+  {
+    "pairId": "P015",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Không ai sánh ngang được Ngài",
+      "Con nay biết ơn vì Ngài mãi bên mình"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 656,
+    "outputTokens": 274,
+    "latencyMs": 1596,
+    "failureCode": null
+  },
+  {
+    "pairId": "P016",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 618,
+    "outputTokens": 230,
+    "latencyMs": 1010,
+    "failureCode": null
+  },
+  {
+    "pairId": "P017",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 650,
+    "outputTokens": 168,
+    "latencyMs": 1086,
+    "failureCode": null
+  },
+  {
+    "pairId": "P018",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "đóng đinh Ngài",
+      "nhuộm đong huyết Chúa",
+      "chết thay cho con"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 629,
+    "outputTokens": 206,
+    "latencyMs": 1156,
+    "failureCode": null
+  },
+  {
+    "pairId": "P019",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Ngài dẫn lối đưa con đi qua",
+      "Ngài là Đấng chiến đấu cho con"
+    ],
+    "evidenceContextSupported": false,
+    "inputTokens": 644,
+    "outputTokens": 258,
+    "latencyMs": 1677,
+    "failureCode": null
+  },
+  {
+    "pairId": "P020",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Sẽ bước theo Giê-su,\n\nnguyện cả cuộc đời"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 626,
+    "outputTokens": 225,
+    "latencyMs": 1251,
+    "failureCode": null
+  },
+  {
+    "pairId": "P021",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 651,
+    "outputTokens": 238,
+    "latencyMs": 1217,
+    "failureCode": null
+  },
+  {
+    "pairId": "P022",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Còn gì ngoài huyết báu Đấng Giê-su",
+      "Lòng tội này sao cho trắng băng?"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 625,
+    "outputTokens": 232,
+    "latencyMs": 1103,
+    "failureCode": null
+  },
+  {
+    "pairId": "P023",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Ngài lấy đi tội lỗi này"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 642,
+    "outputTokens": 200,
+    "latencyMs": 1392,
+    "failureCode": null
+  },
+  {
+    "pairId": "P024",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Được sống theo ý muốn Cha",
+      "Vì Ngài là Chúa con"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 633,
+    "outputTokens": 240,
+    "latencyMs": 1262,
+    "failureCode": null
+  },
+  {
+    "pairId": "P025",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 605,
+    "outputTokens": 227,
+    "latencyMs": 1141,
+    "failureCode": null
+  },
+  {
+    "pairId": "P026",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Vì ngự trong con chính Thánh Linh",
+      "Chẳng sợ chi sẽ vững bước!"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 648,
+    "outputTokens": 289,
+    "latencyMs": 1551,
+    "failureCode": null
+  },
+  {
+    "pairId": "P027",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Chẳng hề khiếp hãi trước ngọn sóng dâng trào",
+      "Chẳng hề khiếp hãi dù phải bước qua nguy nan",
+      "Vì chúng con có Ngài, chúng con có Ngài",
+      "Ngài đã cứu lấy thân con"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 618,
+    "outputTokens": 278,
+    "latencyMs": 1044,
+    "failureCode": null
+  },
+  {
+    "pairId": "P028",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Sẽ dùng lời hát chúc tôn Ngài",
+      "Vì ngự bên trong con chính là Sư Tử Giu-đa"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 618,
+    "outputTokens": 209,
+    "latencyMs": 961,
+    "failureCode": null
+  },
+  {
+    "pairId": "P029",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Ngài sai con",
+      "Chúng con nguyện đi mãi"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 659,
+    "outputTokens": 200,
+    "latencyMs": 2640,
+    "failureCode": null
+  },
+  {
+    "pairId": "P030",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Thập giá, xóa hết tất cả rồi"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 654,
+    "outputTokens": 204,
+    "latencyMs": 1508,
+    "failureCode": null
+  },
+  {
+    "pairId": "P031",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Vì con đã sẵn sàng, Ngài hãy phái con đi",
+      "Lời Chúa được đến khắp nơi"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 659,
+    "outputTokens": 229,
+    "latencyMs": 1471,
+    "failureCode": null
+  },
+  {
+    "pairId": "P032",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Phước cho ai đầy lòng thương",
+      "Vì tìm kiếm công chính Ngài"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 686,
+    "outputTokens": 263,
+    "latencyMs": 1280,
+    "failureCode": null
+  },
+  {
+    "pairId": "P033",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Ngài là Thần của Đức Chúa Trời"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 607,
+    "outputTokens": 252,
+    "latencyMs": 1363,
+    "failureCode": null
+  },
+  {
+    "pairId": "P034",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Con đã đắc thắng vì con có Chúa",
+      "Trận chiến đã thuộc về Đấng con ca khen"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 637,
+    "outputTokens": 194,
+    "latencyMs": 762,
+    "failureCode": null
+  },
+  {
+    "pairId": "P035",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Con sẽ dâng chính mình, con nguyện luôn đầu phục",
+      "Vì mọi điều cuộc sống con dâng nơi Cha"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 657,
+    "outputTokens": 221,
+    "latencyMs": 859,
+    "failureCode": null
+  },
+  {
+    "pairId": "P036",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 648,
+    "outputTokens": 228,
+    "latencyMs": 961,
+    "failureCode": null
+  },
+  {
+    "pairId": "P037",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Là con dân Ngài, kề vai sát cánh",
+      "Chúng con hiệp một cùng đi trong Ngài"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 650,
+    "outputTokens": 229,
+    "latencyMs": 1790,
+    "failureCode": null
+  },
+  {
+    "pairId": "P038",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Khi Thánh Linh vận hành",
+      "Thánh Linh trong chúng con\n\nMang bao năng quyền"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 622,
+    "outputTokens": 212,
+    "latencyMs": 2454,
+    "failureCode": null
+  },
+  {
+    "pairId": "P039",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 599,
+    "outputTokens": 236,
+    "latencyMs": 1674,
+    "failureCode": null
+  },
+  {
+    "pairId": "P040",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Nguyện dâng hết thảy tất cả",
+      "Dâng Giê-su tất cả mọi điều"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 630,
+    "outputTokens": 187,
+    "latencyMs": 1157,
+    "failureCode": null
+  },
+  {
+    "pairId": "P041",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 604,
+    "outputTokens": 201,
+    "latencyMs": 1153,
+    "failureCode": null
+  },
+  {
+    "pairId": "P042",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 622,
+    "outputTokens": 144,
+    "latencyMs": 1044,
+    "failureCode": null
+  },
+  {
+    "pairId": "P043",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Quyền năng danh Chúa"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 619,
+    "outputTokens": 221,
+    "latencyMs": 1284,
+    "failureCode": null
+  },
+  {
+    "pairId": "P044",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 657,
+    "outputTokens": 238,
+    "latencyMs": 1045,
+    "failureCode": null
+  },
+  {
+    "pairId": "P045",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 2,
+    "evidenceQuotes": [
+      "Dù con ca ngợi Chúa",
+      "Lòng biết ơn nơi Ngài"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 601,
+    "outputTokens": 200,
+    "latencyMs": 1020,
+    "failureCode": null
+  },
+  {
+    "pairId": "P046",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 0,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 620,
+    "outputTokens": 224,
+    "latencyMs": 1281,
+    "failureCode": null
+  },
+  {
+    "pairId": "P047",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Ngọn lửa đang cháy trong con",
+      "Ngài làm thành ngọn lửa sức thiêng"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 645,
+    "outputTokens": 212,
+    "latencyMs": 931,
+    "failureCode": null
+  },
+  {
+    "pairId": "P048",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 3,
+    "evidenceQuotes": [
+      "Sự sống là Ngài, Giê-su",
+      "Hiến dâng đời này"
+    ],
+    "evidenceContextSupported": true,
+    "inputTokens": 643,
+    "outputTokens": 191,
+    "latencyMs": 1388,
+    "failureCode": null
+  },
+  {
+    "pairId": "P049",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [
+      "Lòng con đây dâng lên với Chúa hết thảy ngàn lời chúc tán",
+      "Chỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi"
+    ],
+    "evidenceContextSupported": null,
+    "inputTokens": 642,
+    "outputTokens": 235,
+    "latencyMs": 1374,
+    "failureCode": null
+  },
+  {
+    "pairId": "P050",
+    "provider": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "schemaPass": true,
+    "relevanceScore": 1,
+    "evidenceQuotes": [],
+    "evidenceContextSupported": null,
+    "inputTokens": 650,
+    "outputTokens": 248,
+    "latencyMs": 960,
+    "failureCode": null
+  }
+]
