@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "judge-selection-execution-v5",
+  "status": "raw_outputs_complete",
+  "runId": "judge-selection-v5-2026-11-18T04-26-20-960Z",
+  "mode": "full_50_pair_comparison",
+  "createdAtUtc": "2026-11-18T04:26:20.960Z",
+  "provider": "groq",
+  "models": [
+    {
+      "model_card": "https://openai.com/index/gpt-oss-model-card",
+      "id": "openai/gpt-oss-120b",
+      "object": "model",
+      "created": 1754408224,
+      "owned_by": "OpenAI",
+      "active": true,
+      "context_window": 131072,
+      "public_apps": null,
+      "max_completion_tokens": 65536,
+      "hugging_face_id": "openai/gpt-oss-120b",
+      "name": "GPT OSS 120B",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "context_length": 131072,
+      "max_output_length": 65536,
+      "pricing": {
+        "prompt": "0.00000015",
+        "completion": "0.0000006",
+        "image": "0",
+        "request": "0",
+        "input_cache_read": "0.000000075"
+      },
+      "supported_sampling_parameters": [
+        "temperature",
+        "top_p",
+        "stop",
+        "seed",
+        "max_tokens"
+      ],
+      "supported_features": [
+        "tools",
+        "json_mode",
+        "structured_outputs",
+        "reasoning"
+      ]
+    },
+    {
+      "id": "qwen/qwen3.8-27b",
+      "object": "model",
+      "created": 1786984846,
+      "owned_by": "Alibaba Cloud",
+      "active": true,
+      "context_window": 131072,
+      "public_apps": null,
+      "max_completion_tokens": 16384,
+      "name": "Qwen/Qwen3.8-27B",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "context_length": 131072,
+      "max_output_length": 16384,
+      "pricing": {
+        "prompt": "0.0000008",
+        "completion": "0.000004",
+        "image": "0",
+        "request": "0",
+        "input_cache_read": "0.0000004"
+      },
+      "supported_sampling_parameters": [
+        "temperature",
+        "top_p",
+        "stop",
+        "seed",
+        "max_tokens"
+      ],
+      "supported_features": [
+        "tools",
+        "json_mode",
+        "reasoning"
+      ]
+    }
+  ],
+  "referencePath": "benchmark/distillation/human_reference/judge_selection_reference_v2.json",
+  "referenceSha256": "b727ad449f440ba2a8d9d98aee300a522e14874f874b6283c9ab943574de6183",
+  "promptPath": "docs/research/e5_distillation/prompts/groq-independent-judge-v4.3.txt",
+  "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+  "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+  "configs": [
+    {
+      "role": "independent_judge",
+      "task": "label",
+      "provider": "groq",
+      "modelId": "openai/gpt-oss-120b",
+      "promptVersion": "groq-independent-judge-v4.3",
+      "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+      "allowFallback": false,
+      "maxAttempts": 3,
+      "maxTransientRetries": 6,
+      "maxOutputTokens": 900,
+      "timeoutMs": 30000,
+      "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+      "responseFormat": "json_object",
+      "temperature": 0.2,
+      "topP": 0.95,
+      "seed": 20261113,
+      "reasoningEffort": "low"
+    },
+    {
+      "role": "independent_judge",
+      "task": "label",
+      "provider": "groq",
+      "modelId": "qwen/qwen3.8-27b",
+      "promptVersion": "groq-independent-judge-v4.3",
+      "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+      "allowFallback": false,
+      "maxAttempts": 3,
+      "maxTransientRetries": 6,
+      "maxOutputTokens": 900,
+      "timeoutMs": 30000,
+      "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+      "responseFormat": "json_object",
+      "temperature": 0.2,
+      "topP": 0.95,
+      "seed": 20261113,
+      "reasoningEffort": "low"
+    }
+  ],
+  "codeCommit": "22812bbb0577923b090ffd673bb53394dcd4012b",
+  "fallbackAllowed": false,
+  "protectedHeldOutDataUsed": false,
+  "responseFormatRationale": "Shared JSON mode with identical local strict-schema validation because the current Groq inventory does not advertise structured_outputs for qwen/qwen3.8-27b.",
+  "retryPolicy": "Three completed generation attempts per pair; up to six transient transport/rate-limit retries do not consume generation attempts.",
+  "retrySeedPolicy": "Generation attempts use base seed + zero-based generation index; transient retries preserve the pending generation seed.",
+  "outputs": {
+    "openai__gpt-oss-120b_raw.json": "cfda28de8b91294964dba09a5df031abcb0ad2daf55f754a517da782f0605e7e",
+    "openai__gpt-oss-120b_evaluation.json": "539d6237b3b58de0970d3aca72888bf438ee3c86bdb30d1587449f75aa59d0b2",
+    "qwen__qwen3.8-27b_raw.json": "756b101def0667471a2cd2951f3ec6a46bde4f91d3924cae438b936f82e766de",
+    "qwen__qwen3.8-27b_evaluation.json": "19f8ccc6d7e25cc15b9bcf5b3517c407466f866627a4ed3a925e1d0e66ce44cd",
+    "evidence_context_audit.csv": "f46e1bcfa57c582b3f3ad7da6b05bdee0720f0f9c1ed9b1afee4337315f1d776",
+    "model_comparison_pre_audit.json": "741973c19710b4c78434ce67e2f18f5b4ca5c960cf0bd3ff298ee8dd814aab87"
+  },
+  "completedAtUtc": "2026-11-18T04:58:40.446Z",
+  "evidenceContextAuditRequired": true
+}

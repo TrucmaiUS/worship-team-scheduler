@@ -1,0 +1,298 @@
+{
+  "schemaVersion": "judge-selection-report-v1",
+  "createdAtUtc": "2026-11-18T04:58:57.370Z",
+  "criteria": {
+    "version": "judge-selection-v5",
+    "hardGates": {
+      "schemaPassRate": 1,
+      "evidenceVerbatimMatchRate": 1,
+      "minimumEvidenceContextSupportRate": 0.95,
+      "maximumCriticalDisagreementRate": 0.05
+    },
+    "rankingOrder": [
+      "quadraticWeightedKappa",
+      "macroF1",
+      "exactAgreement",
+      "evidenceContextSupportRate",
+      "lowerTotalTokens",
+      "lowerMeanLatencyMs"
+    ]
+  },
+  "metricPolicy": {
+    "schemaFailuresCountAsIncorrect": true,
+    "strictAllPairMetrics": [
+      "exactAgreement",
+      "macroF1",
+      "confusionMatrix",
+      "perGrade"
+    ],
+    "scoredPairConditionalMetrics": [
+      "meanAbsoluteError",
+      "quadraticWeightedKappa"
+    ],
+    "confidenceIntervals": "95% percentile bootstrap resampling sourceQueryId clusters (2,000 replicates)"
+  },
+  "referencesPath": "benchmark/distillation/human_reference/judge_selection_reference_v2.json",
+  "inputs": {
+    "references": {
+      "path": "benchmark/distillation/human_reference/judge_selection_reference_v2.json",
+      "sha256": "b727ad449f440ba2a8d9d98aee300a522e14874f874b6283c9ab943574de6183"
+    },
+    "gptOss": {
+      "path": "benchmark/distillation/judge_selection_runs/judge-selection-v5-2026-11-18T04-26-20-960Z/openai__gpt-oss-120b_evaluation.json",
+      "sha256": "539d6237b3b58de0970d3aca72888bf438ee3c86bdb30d1587449f75aa59d0b2"
+    },
+    "qwen": {
+      "path": "benchmark/distillation/judge_selection_runs/judge-selection-v5-2026-11-18T04-26-20-960Z/qwen__qwen3.8-27b_evaluation.json",
+      "sha256": "19f8ccc6d7e25cc15b9bcf5b3517c407466f866627a4ed3a925e1d0e66ce44cd"
+    }
+  },
+  "candidates": [
+    {
+      "modelId": "openai/gpt-oss-120b",
+      "totalPairs": 50,
+      "scoredPairs": 50,
+      "exactAgreement": 0.62,
+      "meanAbsoluteError": 0.44,
+      "quadraticWeightedKappa": 0.7956204379562044,
+      "macroF1": 0.6144917737209827,
+      "confusionMatrix": [
+        [
+          9,
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          6,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          5,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          3,
+          11,
+          0
+        ]
+      ],
+      "confusionMatrixColumns": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "schema_failure"
+      ],
+      "perGrade": [
+        {
+          "grade": 0,
+          "support": 17,
+          "predicted": 10,
+          "exactMatches": 9,
+          "precision": 0.9,
+          "recall": 0.5294117647058824,
+          "f1": 0.6666666666666667
+        },
+        {
+          "grade": 1,
+          "support": 9,
+          "predicted": 18,
+          "exactMatches": 6,
+          "precision": 0.3333333333333333,
+          "recall": 0.6666666666666666,
+          "f1": 0.4444444444444444
+        },
+        {
+          "grade": 2,
+          "support": 8,
+          "predicted": 9,
+          "exactMatches": 5,
+          "precision": 0.5555555555555556,
+          "recall": 0.625,
+          "f1": 0.5882352941176471
+        },
+        {
+          "grade": 3,
+          "support": 16,
+          "predicted": 13,
+          "exactMatches": 11,
+          "precision": 0.8461538461538461,
+          "recall": 0.6875,
+          "f1": 0.7586206896551724
+        }
+      ],
+      "evidenceRequiredCount": 22,
+      "evidenceVerbatimMatchRate": 1,
+      "evidenceContextAuditedCount": 0,
+      "evidenceContextSupportRate": null,
+      "criticalDisagreementRate": 0.06,
+      "schemaPassRate": 1,
+      "inputTokens": 31684,
+      "outputTokens": 10895,
+      "meanLatencyMs": 1276.76,
+      "p95LatencyMs": 2454,
+      "queryClusterBootstrap": {
+        "clusterField": "sourceQueryId",
+        "clusterCount": 15,
+        "replicates": 2000,
+        "seed": 20261113,
+        "confidenceLevel": 0.95,
+        "intervals": {
+          "exactAgreement": {
+            "lower": 0.5077380952380952,
+            "upper": 0.7555555555555555
+          },
+          "meanAbsoluteError": {
+            "lower": 0.28203125,
+            "upper": 0.5777864583333332
+          },
+          "quadraticWeightedKappa": {
+            "lower": 0.6906223426967966,
+            "upper": 0.8878534831073654
+          },
+          "macroF1": {
+            "lower": 0.47998853538978214,
+            "upper": 0.7466741797628893
+          }
+        }
+      }
+    },
+    {
+      "modelId": "qwen/qwen3.8-27b",
+      "totalPairs": 50,
+      "scoredPairs": 50,
+      "exactAgreement": 0.66,
+      "meanAbsoluteError": 0.38,
+      "quadraticWeightedKappa": 0.8187834856602584,
+      "macroF1": 0.6666326252723312,
+      "confusionMatrix": [
+        [
+          7,
+          10,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          9,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          3,
+          11,
+          0
+        ]
+      ],
+      "confusionMatrixColumns": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "schema_failure"
+      ],
+      "perGrade": [
+        {
+          "grade": 0,
+          "support": 17,
+          "predicted": 7,
+          "exactMatches": 7,
+          "precision": 1,
+          "recall": 0.4117647058823529,
+          "f1": 0.5833333333333334
+        },
+        {
+          "grade": 1,
+          "support": 9,
+          "predicted": 23,
+          "exactMatches": 9,
+          "precision": 0.391304347826087,
+          "recall": 1,
+          "f1": 0.5625
+        },
+        {
+          "grade": 2,
+          "support": 8,
+          "predicted": 9,
+          "exactMatches": 6,
+          "precision": 0.6666666666666666,
+          "recall": 0.75,
+          "f1": 0.7058823529411765
+        },
+        {
+          "grade": 3,
+          "support": 16,
+          "predicted": 11,
+          "exactMatches": 11,
+          "precision": 1,
+          "recall": 0.6875,
+          "f1": 0.8148148148148148
+        }
+      ],
+      "evidenceRequiredCount": 20,
+      "evidenceVerbatimMatchRate": 1,
+      "evidenceContextAuditedCount": 0,
+      "evidenceContextSupportRate": null,
+      "criticalDisagreementRate": 0.04,
+      "schemaPassRate": 1,
+      "inputTokens": 29626,
+      "outputTokens": 25429,
+      "meanLatencyMs": 1956.5,
+      "p95LatencyMs": 3205,
+      "queryClusterBootstrap": {
+        "clusterField": "sourceQueryId",
+        "clusterCount": 15,
+        "replicates": 2000,
+        "seed": 20261113,
+        "confidenceLevel": 0.95,
+        "intervals": {
+          "exactAgreement": {
+            "lower": 0.5384259259259259,
+            "upper": 0.8048780487804879
+          },
+          "meanAbsoluteError": {
+            "lower": 0.21945917285259808,
+            "upper": 0.5277908805031446
+          },
+          "quadraticWeightedKappa": {
+            "lower": 0.6972395787288288,
+            "upper": 0.9050347695849772
+          },
+          "macroF1": {
+            "lower": 0.5150604762149753,
+            "upper": 0.8166385706960304
+          }
+        }
+      }
+    }
+  ],
+  "comparison": {
+    "selectedModelId": null,
+    "status": "no_candidate_passed",
+    "gatePass": {
+      "openai/gpt-oss-120b": false,
+      "qwen/qwen3.8-27b": false
+    }
+  }
+}
