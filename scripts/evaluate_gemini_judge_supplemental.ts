@@ -310,7 +310,9 @@ const report = {
       mcnemarExactTwoSidedP: mcnemarExact(geminiCorrectQwenWrong, qwenCorrectGeminiWrong),
     },
     queryClusterBootstrapExactAgreementDelta: pairedBootstrap,
-    conclusionPolicy: 'Gemini cannot replace or unfreeze Qwen; contextual evidence remains pending and this supplemental run was not preregistered as a new selection round.',
+    conclusionPolicy: auditPath
+      ? 'Gemini passes the supplemental hard gates, but cannot replace or unfreeze Qwen because this experiment was not preregistered as a new selection round.'
+      : 'Gemini cannot replace or unfreeze Qwen; contextual evidence remains pending and this supplemental run was not preregistered as a new selection round.',
   },
   errorAnalysis: {
     mismatchCount: mismatches.length,
