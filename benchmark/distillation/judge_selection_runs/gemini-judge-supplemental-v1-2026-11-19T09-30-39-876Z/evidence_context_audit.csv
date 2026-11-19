@@ -9,7 +9,7 @@ Nguyện mở đón Chúa đến
 
 Hãy đến trên con
 
-Hãy đến trên con",2,"[""Trong ngọn lửa và gió cuốn""]",,
+Hãy đến trên con",2,"[""Trong ngọn lửa và gió cuốn""]",false,"Câu evidence chưa đủ ý nghĩa để kết luận. Hiện tại câu chỉ khớp về từ, cần thêm câu ""Linh Thánh sẽ đến"""
 gemini-3.1-flash-lite,P006,"Find songs about our identity in Christ and how God defines who we are regardless of our past, failures, or doubts.","Ngài phá vỡ mọi gôm cùm
 
 Cả cái chết đầu phục Ngài
@@ -26,28 +26,28 @@ Quý báu, ân điển Cha muôn đời
 
 Mãi mãi con được về bên Cha
 
-Trong Chúa, con chiến thắng thế gian.",2,"[""Bằng huyết Chúa nên chúng ta"",""Được xứng danh con của Cha""]",,
+Trong Chúa, con chiến thắng thế gian.",2,"[""Bằng huyết Chúa nên chúng ta"",""Được xứng danh con của Cha""]",true,
 gemini-3.1-flash-lite,P013,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội","Hy sinh thân Ngài
 
 Cứu lấy thân con
 
 Thập tự, sự phục sinh
 
-Tội con Ngài xóa hết",3,"[""Thập tự"",""Cứu lấy thân con"",""Tội con Ngài xóa hết""]",,
+Tội con Ngài xóa hết",3,"[""Thập tự"",""Cứu lấy thân con"",""Tội con Ngài xóa hết""]",true,
 gemini-3.1-flash-lite,P015,Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài,"Chẳng có gì có thể so, so được với ơn từ Chúa Chúa ơi
 
 Không ai sánh ngang được Ngài
 
 Đấng Chí Cao
 
-Con nay biết ơn vì Ngài mãi bên mình",3,"[""Chẳng có gì có thể so, so được với ơn từ Chúa Chúa ơi"",""Con nay biết ơn vì Ngài mãi bên mình""]",,
+Con nay biết ơn vì Ngài mãi bên mình",3,"[""Chẳng có gì có thể so, so được với ơn từ Chúa Chúa ơi"",""Con nay biết ơn vì Ngài mãi bên mình""]",true,
 gemini-3.1-flash-lite,P018,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội","Bọn chúng reo hò, cười chê Chúa Con
 
 Họ đóng đinh Ngài, với tiếng reo vang
 
 Lằn roi trên lưng, nhuộm đong huyết Chúa
 
-Chúa vẫn vui lòng, chết thay cho con",3,"[""Họ đóng đinh Ngài"",""nhuộm đong huyết Chúa"",""Chúa vẫn vui lòng, chết thay cho con""]",,
+Chúa vẫn vui lòng, chết thay cho con",3,"[""Họ đóng đinh Ngài"",""nhuộm đong huyết Chúa"",""Chúa vẫn vui lòng, chết thay cho con""]",true,
 gemini-3.1-flash-lite,P019,Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.,"(Vì) Ngài là Đấng chiến đấu cho con
 
 Ngài là Đấng sẽ luôn chiến thắng
@@ -58,7 +58,7 @@ Biển Đỏ kia Chúa đã chia hai
 
 Ngài dẫn lối đưa con đi qua
 
-Ha-lê-lu-gia, ha-lê-lu-gia",2,"[""Ngài dẫn lối đưa con đi qua""]",,
+Ha-lê-lu-gia, ha-lê-lu-gia",2,"[""Ngài dẫn lối đưa con đi qua""]",true,
 gemini-3.1-flash-lite,P020,Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.,"Con sẽ không quay đầu
 
 Vững chắc về tương lai
@@ -75,14 +75,14 @@ Vững chắc về tương lai
 
 Sẽ bước theo Giê-su,
 
-nguyện cả cuộc đời này",3,"[""Sẽ bước theo Giê-su,"",""nguyện cả cuộc đời con"",""nguyện cả cuộc đời này""]",,
+nguyện cả cuộc đời này",3,"[""Sẽ bước theo Giê-su,"",""nguyện cả cuộc đời con"",""nguyện cả cuộc đời này""]",true,
 gemini-3.1-flash-lite,P022,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội","Lòng tội này sao cho trắng băng?
 
 Còn gì ngoài huyết báu Đấng Giê-su
 
 Điều gì làm vẹn nguyên chúng con?
 
-Còn gì ngoài huyết báu Đấng Giê-su",3,"[""Lòng tội này sao cho trắng băng?"",""Còn gì ngoài huyết báu Đấng Giê-su"",""Điều gì làm vẹn nguyên chúng con?""]",,
+Còn gì ngoài huyết báu Đấng Giê-su",3,"[""Lòng tội này sao cho trắng băng?"",""Còn gì ngoài huyết báu Đấng Giê-su"",""Điều gì làm vẹn nguyên chúng con?""]",true,
 gemini-3.1-flash-lite,P024,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,"Trong Cha có con
 
 Ai yêu con nhất trần gian
@@ -99,7 +99,7 @@ Ai yêu con nhất trần gian
 
 Không chi con muốn hơn
 
-Được sống theo ý muốn Cha",3,"[""Được sống theo ý muốn Cha""]",,
+Được sống theo ý muốn Cha",3,"[""Được sống theo ý muốn Cha""]",true,"Có thể thêm evidence: ""Không chi con muốn hơn"""
 gemini-3.1-flash-lite,P026,"Find songs about the Holy Spirit staying with us, helping us, and providing strength in our lives.","Đường đời con luôn có Chúa
 
 Đường đời con luôn có Chúa
@@ -116,14 +116,14 @@ Chẳng sợ chi sẽ vững bước!
 
 Vì Chúa luôn bên cạnh
 
-Vì Chúa luôn cạnh bên",3,"[""Vì ngự trong con chính Thánh Linh"",""Chẳng sợ chi sẽ vững bước!"",""Là Đấng luôn bên cạnh""]",,
+Vì Chúa luôn cạnh bên",3,"[""Vì ngự trong con chính Thánh Linh"",""Chẳng sợ chi sẽ vững bước!"",""Là Đấng luôn bên cạnh""]",true,
 gemini-3.1-flash-lite,P027,Ngợi khen Chúa giữa thử thách và cuộc chiến thuộc linh,"Chẳng hề khiếp hãi trước ngọn sóng dâng trào
 
 Chẳng hề khiếp hãi dù phải bước qua nguy nan
 
 Vì chúng con có Ngài, chúng con có Ngài
 
-Ngài đã cứu lấy thân con",2,"[""Chẳng hề khiếp hãi trước ngọn sóng dâng trào"",""Chẳng hề khiếp hãi dù phải bước qua nguy nan""]",,
+Ngài đã cứu lấy thân con",2,"[""Chẳng hề khiếp hãi trước ngọn sóng dâng trào"",""Chẳng hề khiếp hãi dù phải bước qua nguy nan""]",true,
 gemini-3.1-flash-lite,P028,Ngợi khen Chúa giữa thử thách và cuộc chiến thuộc linh,"Tâm linh con đây
 
 Sẽ dùng lời hát chúc tôn Ngài
@@ -132,7 +132,7 @@ Chẳng biết ngại ngần
 
 Vì ngự bên trong con chính là Sư Tử Giu-đa
 
-Hãy hát ca khen Danh Ngài",2,"[""Sẽ dùng lời hát chúc tôn Ngài"",""Vì ngự bên trong con chính là Sư Tử Giu-đa""]",,
+Hãy hát ca khen Danh Ngài",2,"[""Sẽ dùng lời hát chúc tôn Ngài"",""Vì ngự bên trong con chính là Sư Tử Giu-đa""]",true,"Có thể thêm evidence: ""Hãy hát ca khen Danh Ngài"""
 gemini-3.1-flash-lite,P029,"Find songs about discovering God's purpose, being called by Him, and becoming an instrument for His mission.","Chúng con nguyện, đến muôn thành
 
 Hô vang “Duy Danh “Cha” thật thánh thay”
@@ -147,7 +147,7 @@ Ngài sai con
 
 Chúng con nguyện đi mãi
 
-Vì Ngài con sẽ không dừng lại",3,"[""Chúng con nguyện đi bởi\n\nNgài sai con"",""Vì Ngài con sẽ không dừng lại""]",,
+Vì Ngài con sẽ không dừng lại",3,"[""Chúng con nguyện đi bởi\n\nNgài sai con"",""Vì Ngài con sẽ không dừng lại""]",true,
 gemini-3.1-flash-lite,P030,"Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội","Dù bao nhiêu chông gai
 
 Dù bao nhiêu đau thương
@@ -160,7 +160,7 @@ Chẳng có tan vỡ chi
 
 Mà Cha không mang đi
 
-Mãi mãi, Ngài chiến thắng thế gian",2,"[""Thập giá, xóa hết tất cả rồi""]",,
+Mãi mãi, Ngài chiến thắng thế gian",2,"[""Thập giá, xóa hết tất cả rồi""]",true,
 gemini-3.1-flash-lite,P031,"Find songs that encourage the next generation to grow in faith, embrace God's calling, and boldly live according to Scripture.","Nguyện xin Cha ban cho con giờ này
 
 Ngọn Lửa, Sức Thiêng
@@ -175,7 +175,7 @@ Vì con đã sẵn sàng, Ngài hãy phái con đi
 
 Vì con đã sẵn sàng, Ngài hãy sai con
 
-Đến khắp muôn nơi",2,"[""Vì con đã sẵn sàng, Ngài hãy phái con đi"",""Vì con đã sẵn sàng, Ngài hãy sai con""]",,
+Đến khắp muôn nơi",2,"[""Vì con đã sẵn sàng, Ngài hãy phái con đi"",""Vì con đã sẵn sàng, Ngài hãy sai con""]",true,
 gemini-3.1-flash-lite,P034,Ngợi khen Chúa giữa thử thách và cuộc chiến thuộc linh,"Con đã đắc thắng vì con có Chúa
 
 Con đã đắc thắng vì Ngài bên con
@@ -186,14 +186,14 @@ Con đã đắc thắng vì con có Chúa
 
 Con đã đắc thắng vì Ngài bên con
 
-Trận chiến đã thuộc về Đấng con ca khen",3,"[""Trận chiến đã thuộc về Đấng con ca khen""]",,
+Trận chiến đã thuộc về Đấng con ca khen",3,"[""Trận chiến đã thuộc về Đấng con ca khen""]",true,"Nên thêm evidence: ""Con đã đắc thắng vì con có Chúa"""
 gemini-3.1-flash-lite,P035,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,"Con sẽ dâng chính mình, con nguyện luôn đầu phục
 
 Vì mọi điều cuộc sống con dâng nơi Cha
 
 Con sẽ dâng chính mình, con nguyện luôn đầu phục
 
-Ngự trong con Cha ơi",3,"[""Con sẽ dâng chính mình, con nguyện luôn đầu phục"",""Vì mọi điều cuộc sống con dâng nơi Cha""]",,
+Ngự trong con Cha ơi",3,"[""Con sẽ dâng chính mình, con nguyện luôn đầu phục"",""Vì mọi điều cuộc sống con dâng nơi Cha""]",true,
 gemini-3.1-flash-lite,P037,"Find songs about belonging to God's family, experiencing His love, and walking together as a community of faith.","Là con dân Ngài, kề vai sát cánh
 
 Cùng vinh quang này, làm tôn cao Chúa
@@ -204,7 +204,7 @@ Bởi Thánh Linh Ngài, làm con nghe thấy
 
 Được ơn kêu gọi, làm con dân Thánh
 
-Chúng con hiệp một cùng đi trong Ngài",3,"[""Là con dân Ngài, kề vai sát cánh"",""Chúng con hiệp một cùng đi trong Ngài"",""Được ơn kêu gọi, làm con dân Thánh""]",,
+Chúng con hiệp một cùng đi trong Ngài",3,"[""Là con dân Ngài, kề vai sát cánh"",""Chúng con hiệp một cùng đi trong Ngài"",""Được ơn kêu gọi, làm con dân Thánh""]",true,
 gemini-3.1-flash-lite,P038,Find worship songs about the power of the Holy Spirit working in and through believers.,"Nơi đây
 
 Khi Thánh Linh vận hành
@@ -219,7 +219,7 @@ Mang bao năng quyền
 
 Chúng con luôn vững tin
 
-Vì Ngài thành tín",3,"[""Khi Thánh Linh vận hành"",""Thánh Linh trong chúng con"",""Mang bao năng quyền""]",,
+Vì Ngài thành tín",3,"[""Khi Thánh Linh vận hành"",""Thánh Linh trong chúng con"",""Mang bao năng quyền""]",true,
 gemini-3.1-flash-lite,P040,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,"Con nơi đây, thưa Chúa
 
 Nguyện dâng hết thảy tất cả
@@ -230,14 +230,14 @@ Chạy đến dưới chân Đấng Thiên Thượng
 
 Phước ân Ngài đã cứu con
 
-Dâng Giê-su tất cả mọi điều",3,"[""Nguyện dâng hết thảy tất cả"",""Phó dâng mọi thứ"",""Dâng Giê-su tất cả mọi điều""]",,
+Dâng Giê-su tất cả mọi điều",3,"[""Nguyện dâng hết thảy tất cả"",""Phó dâng mọi thứ"",""Dâng Giê-su tất cả mọi điều""]",true,
 gemini-3.1-flash-lite,P045,Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài,"Dù con ca ngợi Chúa
 
 Và dâng hiến mọi thứ
 
 Cũng chẳng thể hiện hết
 
-Lòng biết ơn nơi Ngài",2,"[""Dù con ca ngợi Chúa"",""Lòng biết ơn nơi Ngài""]",,
+Lòng biết ơn nơi Ngài",2,"[""Dù con ca ngợi Chúa"",""Lòng biết ơn nơi Ngài""]",true,
 gemini-3.1-flash-lite,P047,Thắp lên ngọn lửa đức tin,"Ngọn lửa đang cháy trong con
 
 Ngài làm thành ngọn lửa sức thiêng
@@ -252,7 +252,7 @@ Ngài làm thành ngọn lửa sức thiêng
 
 Sự bùng cháy nơi tâm linh con thật
 
-Bởi trong Danh Chúa thôi",3,"[""Ngọn lửa đang cháy trong con"",""Ngài làm thành ngọn lửa sức thiêng""]",,
+Bởi trong Danh Chúa thôi",3,"[""Ngọn lửa đang cháy trong con"",""Ngài làm thành ngọn lửa sức thiêng""]",true,
 gemini-3.1-flash-lite,P048,Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu,"Sự sống là Ngài, Giê-su
 
 Con bám lấy hy vọng ở nơi mình Ngài
@@ -265,11 +265,11 @@ Bằng vui thỏa, con sẽ vác thập tự
 
 Hiến dâng đời này
 
-Bởi Chúa luôn bên con",3,"[""Bằng vui thỏa, con sẽ vác thập tự"",""Hiến dâng đời này""]",,
+Bởi Chúa luôn bên con",3,"[""Bằng vui thỏa, con sẽ vác thập tự"",""Hiến dâng đời này""]",true,
 gemini-3.1-flash-lite,P049,Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài,"Lòng con đây dâng lên với Chúa hết thảy ngàn lời chúc tán
 
 Lòng con đây yêu thương với Chúa cất tiếng ngàn lời ca vang
 
 Chỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi
 
-Tốt thay, Chúa Cha đời đời (mãi mãi)",2,"[""Lòng con đây dâng lên với Chúa hết thảy ngàn lời chúc tán"",""Chỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi""]",,
+Tốt thay, Chúa Cha đời đời (mãi mãi)",2,"[""Lòng con đây dâng lên với Chúa hết thảy ngàn lời chúc tán"",""Chỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi""]",true,"Nên thêm evidence: ""Tốt thay, Chúa Cha đời đời (mãi mãi)"""

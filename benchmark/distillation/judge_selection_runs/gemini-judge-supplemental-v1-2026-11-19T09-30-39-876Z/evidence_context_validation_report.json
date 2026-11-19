@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "gemini-evidence-context-validation-v1",
+  "createdAtUtc": "2026-11-19T10:17:45.555Z",
+  "source": {
+    "path": "benchmark/distillation/judge_selection_runs/gemini-judge-supplemental-v1-2026-11-19T09-30-39-876Z/evidence_context_audit.csv",
+    "sha256": "1cef40a748207dff22819bc2abfadfbe9cda5a5c0e767d6b4b8063780e073132"
+  },
+  "expectedRows": 24,
+  "observedRows": 24,
+  "sourceFieldsMatched": true,
+  "duplicates": 0,
+  "missingRows": 0,
+  "invalidRows": 0,
+  "supportedRows": 23,
+  "unsupportedRows": 1,
+  "evidenceContextSupportRate": 0.9583333333333334,
+  "gateMinimum": 0.95,
+  "gatePass": true
+}
