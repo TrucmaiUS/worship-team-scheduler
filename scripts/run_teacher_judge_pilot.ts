@@ -377,26 +377,48 @@ async function main(): Promise<void> {
   for (let index = judgeRecords.length; index < teacherRecords.length; index += 1) {
     const record = teacherRecords[index];
     const attempts: GroqJudgeAttemptLog[] = [];
-    const result = await callGroqJudge({
-      apiKey: requiredGroqApiKey,
-      config: judgeConfig,
-      systemPrompt: judgePrompt,
-      request: {
-        query_text: record.output.query_text,
-        candidate: {
-          candidate_alias: `CANDIDATE_${String(index + 1).padStart(3, '0')}`,
-          section_type: record.source.sectionType,
-          lyrics: record.source.lyrics,
+    try {
+      const result = await callGroqJudge({
+        apiKey: requiredGroqApiKey,
+        config: judgeConfig,
+        systemPrompt: judgePrompt,
+        request: {
+          query_text: record.output.query_text,
+          candidate: {
+            candidate_alias: `CANDIDATE_${String(index + 1).padStart(3, '0')}`,
+            section_type: record.source.sectionType,
+            lyrics: record.source.lyrics,
+          },
         },
-      },
-      onAttempt: log => attempts.push(log),
-    });
-    judgeRecords.push({
-      queryId: record.queryId,
-      output: result.output,
-      evidenceVerbatim: result.evidenceVerbatim,
-      attempts,
-    });
+        onAttempt: log => attempts.push(log),
+      });
+      judgeRecords.push({
+        queryId: record.queryId,
+        output: result.output,
+        evidenceVerbatim: result.evidenceVerbatim,
+        attempts,
+        schemaPass: true,
+        failureCode: null,
+        failureMessage: null,
+      });
+    } catch (error) {
+      const lastAttempt = attempts.at(-1);
+      const recordable = Boolean(lastAttempt && [
+        'schema_validation_failure',
+        'invalid_json',
+        'protocol_validation_failure',
+      ].includes(lastAttempt.failureCode ?? ''));
+      if (!recordable) throw error;
+      judgeRecords.push({
+        queryId: record.queryId,
+        output: null,
+        evidenceVerbatim: null,
+        attempts,
+        schemaPass: false,
+        failureCode: lastAttempt?.failureCode ?? 'judge_output_invalid',
+        failureMessage: error instanceof Error ? error.message : String(error),
+      });
+    }
     writeJson('qwen_judge.partial.json', judgeRecords);
     console.log(`Judge ${index + 1}/${teacherRecords.length} ${record.queryId}`);
     if (index + 1 < teacherRecords.length) await pause(1_000);
@@ -406,17 +428,25 @@ async function main(): Promise<void> {
   const pairRecords = teacherRecords.map((record, index) => {
     const generationAudit = generatedAudits[index];
     const judgment = judgeRecords[index];
-    const score = judgment.output.relevance_score as number;
-    const judgeBucket = score >= 2 ? 'positive_candidate' : score === 1 ? 'uncertain_review' : 'rejected_candidate';
-    const bucket = generationAudit.mechanicalGenerationPass
-      ? judgeBucket
-      : 'rejected_validation';
-    const falseAcceptanceRisk = score >= 2 && (
-      judgment.output.is_lexical_overlap_only ||
+    const score = judgment.output?.relevance_score ?? null;
+    const judgeBucket = score === null
+      ? 'invalid_judge_output'
+      : score >= 2
+        ? 'positive_candidate'
+        : score === 1
+          ? 'uncertain_review'
+          : 'rejected_candidate';
+    const bucket = score === null
+      ? 'invalid_judge_output'
+      : generationAudit.mechanicalGenerationPass
+        ? judgeBucket
+        : 'rejected_validation';
+    const falseAcceptanceRisk = score !== null && score >= 2 && (
+      judgment.output?.is_lexical_overlap_only ||
       generationAudit.lexicalOverlap > 0.35 ||
-      judgment.output.evidence_quotes.length === 0
+      judgment.output?.evidence_quotes.length === 0
     );
-    const falseRejectionRisk = score <= 1 && generationAudit.mechanicalGenerationPass;
+    const falseRejectionRisk = score !== null && score <= 1 && generationAudit.mechanicalGenerationPass;
     return {
       queryId: record.queryId,
       topicId: record.source.topic.topicId,
@@ -435,12 +465,17 @@ async function main(): Promise<void> {
       selectionScore: record.source.selectionScore,
       judgeModelId: frozenConfig.selectedModel.modelId,
       judgeScore: score,
-      judgeLabel: judgment.output.relevance_label,
-      evidenceQuotes: judgment.output.evidence_quotes,
-      reasoningSummary: judgment.output.reasoning_summary,
-      lexicalOverlapOnly: judgment.output.is_lexical_overlap_only,
-      evidenceVerbatimStatus: judgment.evidenceVerbatim.status,
-      evidenceContextStatus: score >= 2 ? 'pending_human_audit' : 'not_required_for_filter',
+      judgeLabel: judgment.output?.relevance_label ?? null,
+      evidenceQuotes: judgment.output?.evidence_quotes ?? [],
+      reasoningSummary: judgment.output?.reasoning_summary ?? null,
+      lexicalOverlapOnly: judgment.output?.is_lexical_overlap_only ?? null,
+      judgeSchemaPass: judgment.schemaPass ?? judgment.output !== null,
+      judgeFailureCode: judgment.failureCode ?? null,
+      judgeFailureMessage: judgment.failureMessage ?? null,
+      evidenceVerbatimStatus: judgment.evidenceVerbatim?.status ?? 'invalid_judge_output',
+      evidenceContextStatus: score !== null && score >= 2
+        ? 'pending_human_audit'
+        : 'not_required_for_filter',
       theologicalConsistencyStatus: 'pending_human_audit',
       leakageDecision: generationAudit.leakage.decision,
       leakageReasons: generationAudit.leakage.reasons,
@@ -471,6 +506,7 @@ async function main(): Promise<void> {
   const uncertain = pairRecords.filter(record => record.pilotBucket === 'uncertain_review');
   const rejected = pairRecords.filter(record =>
     record.pilotBucket === 'rejected_candidate' || record.pilotBucket === 'rejected_validation');
+  const invalidJudgeOutputs = pairRecords.filter(record => record.pilotBucket === 'invalid_judge_output');
   const pairwiseSimilarities: number[] = [];
   for (let left = 0; left < pairRecords.length; left += 1) {
     for (let right = 0; right < left; right += 1) {
@@ -490,9 +526,12 @@ async function main(): Promise<void> {
       uncertainRate: uncertain.length / pairRecords.length,
       rejected: rejected.length,
       rejectedRate: rejected.length / pairRecords.length,
+      invalidJudgeOutputs: invalidJudgeOutputs.length,
+      invalidJudgeOutputRate: invalidJudgeOutputs.length / pairRecords.length,
       note: 'Positive candidates remain ineligible for training until human contextual and theological audit.',
     },
-    scoreDistribution: frequency(pairRecords.map(record => record.judgeScore)),
+    scoreDistribution: frequency(pairRecords.map(record =>
+      record.judgeScore === null ? 'schema_failure' : record.judgeScore)),
     queryDiversity: {
       uniqueNormalizedQueries: new Set(pairRecords.map(record => normalizeForComparison(record.queryText))).size,
       duplicateCount: pairRecords.filter(record => record.generatedDuplicateOf).length,
@@ -510,6 +549,8 @@ async function main(): Promise<void> {
     },
     validation: {
       mechanicalGenerationPass: pairRecords.filter(record => record.mechanicalGenerationPass).length,
+      judgeSchemaPass: pairRecords.filter(record => record.judgeSchemaPass).length,
+      judgeSchemaFailure: invalidJudgeOutputs.length,
       leakageRejected: pairRecords.filter(record => record.leakageDecision === 'rejected').length,
       leakageHumanReview: pairRecords.filter(record => record.leakageDecision === 'human_review').length,
       copiedLyricSpan: pairRecords.filter(record => record.copiedLyricSpan).length,
@@ -552,7 +593,8 @@ async function main(): Promise<void> {
     'query_id', 'pilot_bucket', 'topic_id', 'language', 'coverage_category', 'query_style',
     'query_text', 'source_song_id', 'source_section_id', 'section_type', 'source_lyrics',
     'judge_score', 'judge_label', 'evidence_quotes', 'judge_reasoning',
-    'evidence_verbatim_status', 'evidence_context_supported', 'theological_consistency',
+    'judge_schema_pass', 'judge_failure_code', 'evidence_verbatim_status',
+    'evidence_context_supported', 'theological_consistency',
     'human_decision', 'reviewer_notes', 'leakage_decision', 'leakage_reasons',
     'duplicate_of', 'query_lyric_word_overlap', 'copied_lyric_span',
     'false_acceptance_risk', 'false_rejection_risk', 'hard_negative_eligible',
@@ -573,6 +615,8 @@ async function main(): Promise<void> {
     judge_label: record.judgeLabel,
     evidence_quotes: JSON.stringify(record.evidenceQuotes),
     judge_reasoning: record.reasoningSummary,
+    judge_schema_pass: record.judgeSchemaPass,
+    judge_failure_code: record.judgeFailureCode ?? '',
     evidence_verbatim_status: record.evidenceVerbatimStatus,
     evidence_context_supported: '',
     theological_consistency: '',
@@ -599,6 +643,7 @@ async function main(): Promise<void> {
     `${positiveCandidates.length}/${pairRecords.length} (${(metrics.acceptance.acceptanceRate * 100).toFixed(1)}%).\n` +
     `- Grade 1 uncertain/review: ${uncertain.length}.\n` +
     `- Rejected candidates or validation failures: ${rejected.length}.\n` +
+    `- Invalid Judge outputs excluded without inferred grades: ${invalidJudgeOutputs.length}.\n` +
     `- Frozen Judge score distribution: ${JSON.stringify(metrics.scoreDistribution)}.\n` +
     `- No rejected pair was promoted to a hard negative. No training was started.\n\n` +
     `## Diversity and coverage\n\n` +
@@ -610,6 +655,8 @@ async function main(): Promise<void> {
     `mean pairwise word Jaccard: ${metrics.queryDiversity.meanPairwiseWordJaccard?.toFixed(4)}.\n\n` +
     `## Validation and risk\n\n` +
     `- Mechanical generation pass: ${metrics.validation.mechanicalGenerationPass}/${pairRecords.length}.\n` +
+    `- Judge schema pass: ${metrics.validation.judgeSchemaPass}/${pairRecords.length}; ` +
+    `invalid outputs: ${metrics.validation.judgeSchemaFailure}.\n` +
     `- Protected-query leakage rejected: ${metrics.validation.leakageRejected}; ` +
     `held-out vocabulary requiring human review: ${metrics.validation.leakageHumanReview}.\n` +
     `- Copied lyric spans (4+ normalized words): ${metrics.validation.copiedLyricSpan}; ` +
@@ -632,6 +679,7 @@ async function main(): Promise<void> {
 
   fs.rmSync(teacherPartialPath, { force: true });
   fs.rmSync(judgePartialPath, { force: true });
+  fs.rmSync(path.join(outputDirectory, 'failure.json'), { force: true });
   writeJson('run_manifest.json', {
     ...initialManifest,
     status: 'checkpoint_complete_pending_human_audit',
