@@ -2,6 +2,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import {
+  applyEvidenceContextAudit,
   evaluateJudgeCandidate,
   finalHumanScore,
   JUDGE_SELECTION_CRITERIA,
@@ -145,12 +146,20 @@ function percent(value: number | null): string {
 
 const root = path.resolve(__dirname, '..');
 const runDirectory = argument('--run');
+const auditIndex = process.argv.indexOf('--audit');
+const auditPath = auditIndex >= 0 ? argument('--audit') : null;
 const manifestPath = path.join(runDirectory, 'run_manifest.json');
 const geminiEvaluationPath = path.join(runDirectory, 'gemini-3.1-flash-lite_evaluation.json');
 const geminiRawPath = path.join(runDirectory, 'gemini-3.1-flash-lite_raw.json');
-const outputJson = path.join(runDirectory, 'supplemental_model_comparison.json');
-const outputMarkdown = path.join(runDirectory, 'gemini_judge_supplemental_report.md');
-if (fs.existsSync(outputJson) || fs.existsSync(outputMarkdown)) {
+const outputJson = path.join(runDirectory, auditPath
+  ? 'supplemental_model_comparison_final.json' : 'supplemental_model_comparison.json');
+const outputMarkdown = path.join(runDirectory, auditPath
+  ? 'gemini_judge_supplemental_final_report.md' : 'gemini_judge_supplemental_report.md');
+const auditedEvaluationPath = path.join(runDirectory,
+  'gemini-3.1-flash-lite_evaluation_audited.json');
+const validationPath = path.join(runDirectory, 'evidence_context_validation_report.json');
+if (fs.existsSync(outputJson) || fs.existsSync(outputMarkdown) ||
+    (auditPath && (fs.existsSync(auditedEvaluationPath) || fs.existsSync(validationPath)))) {
   throw new Error('Refusing to overwrite supplemental evaluation report.');
 }
 
@@ -163,7 +172,11 @@ const qwenEvaluationPath = path.join(frozenRun, 'qwen__qwen3.8-27b_evaluation_au
 const gptEvaluationPath = path.join(frozenRun, 'openai__gpt-oss-120b_evaluation_audited.json');
 const frozenConfigPath = path.join(frozenRun, 'frozen_judge_config.json');
 const references = readJson(referencePath) as JudgeSelectionPair[];
-const geminiOutputs = readJson(geminiEvaluationPath) as JudgeSelectionOutput[];
+const baseGeminiOutputs = readJson(geminiEvaluationPath) as JudgeSelectionOutput[];
+const auditRows = auditPath ? parseCsv(fs.readFileSync(auditPath, 'utf8')) : null;
+const geminiOutputs = auditRows
+  ? applyEvidenceContextAudit(references, baseGeminiOutputs, auditRows)
+  : baseGeminiOutputs;
 const qwenOutputs = readJson(qwenEvaluationPath) as JudgeSelectionOutput[];
 const gptOutputs = readJson(gptEvaluationPath) as JudgeSelectionOutput[];
 
@@ -235,9 +248,13 @@ const hardGateStatus = {
     status: geminiMetrics.evidenceVerbatimMatchRate === 1 ? 'pass' : 'fail',
   },
   evidenceContextSupportRate: {
-    value: null,
+    value: geminiMetrics.evidenceContextSupportRate,
     threshold: JUDGE_SELECTION_CRITERIA.hardGates.minimumEvidenceContextSupportRate,
-    status: 'pending_human_audit',
+    status: geminiMetrics.evidenceContextSupportRate === null
+      ? 'pending_human_audit'
+      : geminiMetrics.evidenceContextSupportRate >=
+        JUDGE_SELECTION_CRITERIA.hardGates.minimumEvidenceContextSupportRate
+        ? 'pass' : 'fail',
   },
   criticalDisagreementRate: {
     value: geminiMetrics.criticalDisagreementRate,
@@ -260,6 +277,11 @@ const report = {
     runManifest: { path: path.relative(root, manifestPath).replaceAll('\\', '/'), sha256: sha256(manifestPath) },
     humanReference: { path: path.relative(root, referencePath).replaceAll('\\', '/'), sha256: sha256(referencePath) },
     geminiEvaluation: { path: path.relative(root, geminiEvaluationPath).replaceAll('\\', '/'), sha256: sha256(geminiEvaluationPath) },
+    ...(auditPath ? {
+      evidenceContextAudit: {
+        path: path.relative(root, auditPath).replaceAll('\\', '/'), sha256: sha256(auditPath),
+      },
+    } : {}),
     frozenComparison: { path: path.relative(root, frozenComparisonPath).replaceAll('\\', '/'), sha256: sha256(frozenComparisonPath) },
     frozenQwenConfig: { path: path.relative(root, frozenConfigPath).replaceAll('\\', '/'), sha256: sha256(frozenConfigPath) },
   },
@@ -302,11 +324,40 @@ const report = {
     'The grade distribution is fixed at 17/9/8/16, so per-grade estimates have small denominators.',
     'At 50 pairs, one error changes a rate by two percentage points and the 5% critical-disagreement gate effectively permits at most two errors.',
     'This is one seeded API run; provider nondeterminism and future model alias drift are not measured.',
-    'Gemini contextual evidence support requires a separate human audit before all hard gates can be evaluated.',
+    auditPath
+      ? 'Gemini contextual evidence support is based on one completed human audit of the 24 grade 2–3 outputs.'
+      : 'Gemini contextual evidence support requires a separate human audit before all hard gates can be evaluated.',
     'Sampling and low-reasoning controls are matched by value where supported, but provider semantics and token accounting are not identical.',
   ],
 };
 fs.writeFileSync(outputJson, `${JSON.stringify(report, null, 2)}\n`, { encoding: 'utf8', flag: 'wx' });
+if (auditPath) {
+  fs.writeFileSync(auditedEvaluationPath, `${JSON.stringify(geminiOutputs, null, 2)}\n`, {
+    encoding: 'utf8', flag: 'wx',
+  });
+  const supportedRows = auditRows!.filter(row => row.evidence_context_supported === 'true').length;
+  fs.writeFileSync(validationPath, `${JSON.stringify({
+    schemaVersion: 'gemini-evidence-context-validation-v1',
+    createdAtUtc: new Date().toISOString(),
+    source: {
+      path: path.relative(root, auditPath).replaceAll('\\', '/'),
+      sha256: sha256(auditPath),
+    },
+    expectedRows: geminiMetrics.evidenceRequiredCount,
+    observedRows: auditRows!.length,
+    sourceFieldsMatched: true,
+    duplicates: 0,
+    missingRows: 0,
+    invalidRows: 0,
+    supportedRows,
+    unsupportedRows: auditRows!.length - supportedRows,
+    evidenceContextSupportRate: geminiMetrics.evidenceContextSupportRate,
+    gateMinimum: JUDGE_SELECTION_CRITERIA.hardGates.minimumEvidenceContextSupportRate,
+    gatePass: geminiMetrics.evidenceContextSupportRate !== null &&
+      geminiMetrics.evidenceContextSupportRate >=
+        JUDGE_SELECTION_CRITERIA.hardGates.minimumEvidenceContextSupportRate,
+  }, null, 2)}\n`, { encoding: 'utf8', flag: 'wx' });
+}
 
 const reportMarkdown = `# Gemini 3.1 Flash-Lite Supplemental Judge Report\n\n` +
   `This is a supplemental development-set experiment. It does not change the frozen Qwen Judge and does not use the held-out test set.\n\n` +
@@ -319,7 +370,7 @@ const reportMarkdown = `# Gemini 3.1 Flash-Lite Supplemental Judge Report\n\n` +
   `| Positive precision (grade >= 2) | ${percent(gptPositive.precision)} | ${percent(qwenPositive.precision)} | ${percent(geminiPositive.precision)} |\n` +
   `| Positive recall (grade >= 2) | ${percent(gptPositive.recall)} | ${percent(qwenPositive.recall)} | ${percent(geminiPositive.recall)} |\n` +
   `| Evidence verbatim validity | ${percent(gptMetrics.evidenceVerbatimMatchRate)} | ${percent(qwenMetrics.evidenceVerbatimMatchRate)} | ${percent(geminiMetrics.evidenceVerbatimMatchRate)} |\n` +
-  `| Evidence contextual support | ${percent(gptMetrics.evidenceContextSupportRate)} | ${percent(qwenMetrics.evidenceContextSupportRate)} | pending human audit |\n` +
+  `| Evidence contextual support | ${percent(gptMetrics.evidenceContextSupportRate)} | ${percent(qwenMetrics.evidenceContextSupportRate)} | ${percent(geminiMetrics.evidenceContextSupportRate)} |\n` +
   `| Critical disagreement | ${percent(gptMetrics.criticalDisagreementRate)} | ${percent(qwenMetrics.criticalDisagreementRate)} | ${percent(geminiMetrics.criticalDisagreementRate)} |\n` +
   `| Schema pass | ${percent(gptMetrics.schemaPassRate)} | ${percent(qwenMetrics.schemaPassRate)} | ${percent(geminiMetrics.schemaPassRate)} |\n` +
   `| Total tokens | ${gptMetrics.inputTokens + gptMetrics.outputTokens} | ${qwenMetrics.inputTokens + qwenMetrics.outputTokens} | ${geminiMetrics.inputTokens + geminiMetrics.outputTokens} |\n` +
@@ -333,13 +384,16 @@ const reportMarkdown = `# Gemini 3.1 Flash-Lite Supplemental Judge Report\n\n` +
   `McNemar exact p=${mcnemarExact(geminiCorrectQwenWrong, qwenCorrectGeminiWrong).toFixed(4)} ` +
   `(${geminiCorrectQwenWrong} Gemini-only correct vs ${qwenCorrectGeminiWrong} Qwen-only correct).\n\n` +
   `## Evidence and decision boundary\n\n` +
-  `Verbatim evidence is code-validated. Contextual evidence support is not inferred by the model and remains pending an independent human audit. ` +
+  (auditPath
+    ? `Verbatim evidence is code-validated and contextual evidence support is based on the completed human audit. `
+    : `Verbatim evidence is code-validated. Contextual evidence support is not inferred by the model and remains pending an independent human audit. `) +
   `This experiment cannot change the frozen Qwen Judge configuration.\n\n` +
   `## Statistical limitations\n\n` +
   report.limitations.map(item => `- ${item}`).join('\n') + '\n';
 fs.writeFileSync(outputMarkdown, reportMarkdown, { encoding: 'utf8', flag: 'wx' });
 console.log(JSON.stringify({
   status: 'EVALUATED', outputJson, outputMarkdown,
+  ...(auditPath ? { auditedEvaluationPath, validationPath } : {}),
   geminiMetrics: metricRow(geminiMetrics, geminiPositive),
   hardGateStatus, directGeminiVsQwen: report.directGeminiVsQwen,
 }, null, 2));
