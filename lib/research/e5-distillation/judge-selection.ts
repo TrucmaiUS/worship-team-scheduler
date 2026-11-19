@@ -74,8 +74,12 @@ export type JudgeSelectionPair = z.infer<typeof JudgeSelectionPairSchema>;
 
 export const JudgeSelectionOutputSchema = z.object({
   pairId: z.string().min(1),
-  provider: z.literal('groq'),
-  modelId: z.enum(['openai/gpt-oss-120b', 'qwen/qwen3.8-27b']),
+  provider: z.enum(['groq', 'google']),
+  modelId: z.enum([
+    'openai/gpt-oss-120b',
+    'qwen/qwen3.8-27b',
+    'gemini-3.1-flash-lite',
+  ]),
   schemaPass: z.boolean(),
   relevanceScore: RelevanceScoreSchema.nullable(),
   evidenceQuotes: z.array(EvidenceQuoteSchema),
@@ -104,7 +108,11 @@ export const JudgeSelectionOutputSchema = z.object({
 export type JudgeSelectionOutput = z.infer<typeof JudgeSelectionOutputSchema>;
 
 const EvidenceContextAuditRowSchema = z.object({
-  model_id: z.enum(['openai/gpt-oss-120b', 'qwen/qwen3.8-27b']),
+  model_id: z.enum([
+    'openai/gpt-oss-120b',
+    'qwen/qwen3.8-27b',
+    'gemini-3.1-flash-lite',
+  ]),
   pair_id: z.string().min(1),
   query_text: z.string().min(1),
   candidate_lyrics: z.string().min(1),
