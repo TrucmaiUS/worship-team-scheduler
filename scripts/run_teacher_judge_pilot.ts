@@ -275,6 +275,7 @@ async function main(): Promise<void> {
     heldOutQueriesSentToTeacher: false,
     trainingStarted: false,
   };
+  let completedManifestBase: Record<string, unknown> = initialManifest;
   if (resumeRunId) {
     const prior = JSON.parse(fs.readFileSync(path.join(outputDirectory, 'run_manifest.json'), 'utf8'));
     if (prior.teacherPrompt?.sha256 !== initialManifest.teacherPrompt.sha256 ||
@@ -282,6 +283,13 @@ async function main(): Promise<void> {
         prior.sourceFiles?.corpus?.sha256 !== initialManifest.sourceFiles.corpus.sha256) {
       throw new Error('Resume blocked by prompt, Judge config, or corpus hash drift.');
     }
+    completedManifestBase = {
+      ...initialManifest,
+      createdAtUtc: prior.createdAtUtc,
+      initialCodeCommit: prior.initialCodeCommit ?? prior.codeCommit,
+      resumedAtUtc: createdAtUtc,
+      codeCommit,
+    };
     writeJson('run_manifest.json', { ...prior, status: 'resuming', resumedAtUtc: createdAtUtc, codeCommit });
   } else {
     writeJson('run_manifest.json', initialManifest);
@@ -561,8 +569,11 @@ async function main(): Promise<void> {
       theologicalConsistencyPending: pairRecords.length,
     },
     riskIndicators: {
-      falseAcceptanceRisk: pairRecords.filter(record => record.falseAcceptanceRisk).length,
+      automatedFalseAcceptanceFlags: pairRecords.filter(record => record.falseAcceptanceRisk).length,
+      positiveCandidatesPendingHumanContextAndTheologyAudit: positiveCandidates.length,
       falseRejectionRisk: pairRecords.filter(record => record.falseRejectionRisk).length,
+      validationRejectedQueriesRequiringHumanAudit: pairRecords.filter(record =>
+        record.pilotBucket === 'rejected_validation').length,
       rejectedPairsPromotedToHardNegatives: 0,
     },
     latencyAndTokens: {
@@ -662,8 +673,12 @@ async function main(): Promise<void> {
     `- Copied lyric spans (4+ normalized words): ${metrics.validation.copiedLyricSpan}; ` +
     `title/artist leakage: ${metrics.validation.titleOrArtistLeak}.\n` +
     `- Evidence verbatim valid where supplied: ${metrics.validation.evidenceVerbatimValid}.\n` +
-    `- False-acceptance risk flags: ${metrics.riskIndicators.falseAcceptanceRisk}; ` +
-    `false-rejection risk flags: ${metrics.riskIndicators.falseRejectionRisk}.\n` +
+    `- Automated false-acceptance flags: ${metrics.riskIndicators.automatedFalseAcceptanceFlags}; ` +
+    `${metrics.riskIndicators.positiveCandidatesPendingHumanContextAndTheologyAudit} positive candidates ` +
+    `remain exposed to unmeasured contextual/theological false-acceptance risk until human audit.\n` +
+    `- False-rejection screening flags: ${metrics.riskIndicators.falseRejectionRisk}; ` +
+    `validation rejects requiring human review: ` +
+    `${metrics.riskIndicators.validationRejectedQueriesRequiringHumanAudit}.\n` +
     `- Contextual evidence support and theological consistency remain pending human audit for the ` +
     `checkpoint workbook. Positive candidates are not training-ready until those fields are reviewed.\n\n` +
     `## Leakage and provenance\n\n` +
@@ -681,7 +696,7 @@ async function main(): Promise<void> {
   fs.rmSync(judgePartialPath, { force: true });
   fs.rmSync(path.join(outputDirectory, 'failure.json'), { force: true });
   writeJson('run_manifest.json', {
-    ...initialManifest,
+    ...completedManifestBase,
     status: 'checkpoint_complete_pending_human_audit',
     completedAtUtc: new Date().toISOString(),
     completedPairs: pairRecords.length,
