@@ -1,0 +1,759 @@
+{
+  "schemaVersion": "gemini-judge-supplemental-report-v1",
+  "createdAtUtc": "2026-11-19T09:35:29.228Z",
+  "supplementalOnly": true,
+  "selectedJudgeConfigurationChanged": false,
+  "protectedHeldOutDataUsed": false,
+  "inputs": {
+    "runManifest": {
+      "path": "benchmark/distillation/judge_selection_runs/gemini-judge-supplemental-v1-2026-11-19T09-30-39-876Z/run_manifest.json",
+      "sha256": "d53d41e4cafbb969a8c311cf9dd657e80b11f5f83c55aa64738a23e45ebb6c34"
+    },
+    "humanReference": {
+      "path": "benchmark/distillation/human_reference/judge_selection_reference_v2.json",
+      "sha256": "b727ad449f440ba2a8d9d98aee300a522e14874f874b6283c9ab943574de6183"
+    },
+    "geminiEvaluation": {
+      "path": "benchmark/distillation/judge_selection_runs/gemini-judge-supplemental-v1-2026-11-19T09-30-39-876Z/gemini-3.1-flash-lite_evaluation.json",
+      "sha256": "c1a5db44e6d50f1bccc7e94d8e28da138013eb693e6a197cd6e08b970d5fe93a"
+    },
+    "frozenComparison": {
+      "path": "benchmark/distillation/judge_selection_runs/judge-selection-v5-2026-11-18T04-26-20-960Z/model_comparison_final.json",
+      "sha256": "d205576093bec5d26e3a0399c3fe4b142211b3e9ec085bc4a20ae481649e4fa5"
+    },
+    "frozenQwenConfig": {
+      "path": "benchmark/distillation/judge_selection_runs/judge-selection-v5-2026-11-18T04-26-20-960Z/frozen_judge_config.json",
+      "sha256": "c99222b93a1864c09f293137b2402bda859d8d47e6d37f56f0a12c55eed64641"
+    }
+  },
+  "criteria": {
+    "version": "judge-selection-v5",
+    "hardGates": {
+      "schemaPassRate": 1,
+      "evidenceVerbatimMatchRate": 1,
+      "minimumEvidenceContextSupportRate": 0.95,
+      "maximumCriticalDisagreementRate": 0.05
+    },
+    "rankingOrder": [
+      "quadraticWeightedKappa",
+      "macroF1",
+      "exactAgreement",
+      "evidenceContextSupportRate",
+      "lowerTotalTokens",
+      "lowerMeanLatencyMs"
+    ]
+  },
+  "candidates": [
+    {
+      "modelId": "openai/gpt-oss-120b",
+      "totalPairs": 50,
+      "scoredPairs": 50,
+      "exactAgreement": 0.62,
+      "meanAbsoluteError": 0.44,
+      "quadraticWeightedKappa": 0.7956204379562044,
+      "macroF1": 0.6144917737209827,
+      "confusionMatrix": [
+        [
+          9,
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          6,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          5,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          3,
+          11,
+          0
+        ]
+      ],
+      "confusionMatrixColumns": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "schema_failure"
+      ],
+      "perGrade": [
+        {
+          "grade": 0,
+          "support": 17,
+          "predicted": 10,
+          "exactMatches": 9,
+          "precision": 0.9,
+          "recall": 0.5294117647058824,
+          "f1": 0.6666666666666667
+        },
+        {
+          "grade": 1,
+          "support": 9,
+          "predicted": 18,
+          "exactMatches": 6,
+          "precision": 0.3333333333333333,
+          "recall": 0.6666666666666666,
+          "f1": 0.4444444444444444
+        },
+        {
+          "grade": 2,
+          "support": 8,
+          "predicted": 9,
+          "exactMatches": 5,
+          "precision": 0.5555555555555556,
+          "recall": 0.625,
+          "f1": 0.5882352941176471
+        },
+        {
+          "grade": 3,
+          "support": 16,
+          "predicted": 13,
+          "exactMatches": 11,
+          "precision": 0.8461538461538461,
+          "recall": 0.6875,
+          "f1": 0.7586206896551724
+        }
+      ],
+      "evidenceRequiredCount": 22,
+      "evidenceVerbatimMatchRate": 1,
+      "evidenceContextAuditedCount": 22,
+      "evidenceContextSupportRate": 0.9090909090909091,
+      "criticalDisagreementRate": 0.06,
+      "schemaPassRate": 1,
+      "inputTokens": 31684,
+      "outputTokens": 10895,
+      "meanLatencyMs": 1276.76,
+      "p95LatencyMs": 2454,
+      "queryClusterBootstrap": {
+        "clusterField": "sourceQueryId",
+        "clusterCount": 15,
+        "replicates": 2000,
+        "seed": 20261113,
+        "confidenceLevel": 0.95,
+        "intervals": {
+          "exactAgreement": {
+            "lower": 0.5077380952380952,
+            "upper": 0.7555555555555555
+          },
+          "meanAbsoluteError": {
+            "lower": 0.28203125,
+            "upper": 0.5777864583333332
+          },
+          "quadraticWeightedKappa": {
+            "lower": 0.6906223426967966,
+            "upper": 0.8878534831073654
+          },
+          "macroF1": {
+            "lower": 0.47998853538978214,
+            "upper": 0.7466741797628893
+          }
+        }
+      },
+      "positiveGradeAtLeast2": {
+        "threshold": "grade >= 2",
+        "truePositive": 20,
+        "falsePositive": 2,
+        "falseNegative": 4,
+        "trueNegative": 24,
+        "precision": 0.9090909090909091,
+        "recall": 0.8333333333333334,
+        "f1": 0.8695652173913043
+      },
+      "totalTokens": 42579
+    },
+    {
+      "modelId": "qwen/qwen3.8-27b",
+      "totalPairs": 50,
+      "scoredPairs": 50,
+      "exactAgreement": 0.66,
+      "meanAbsoluteError": 0.38,
+      "quadraticWeightedKappa": 0.8187834856602584,
+      "macroF1": 0.6666326252723312,
+      "confusionMatrix": [
+        [
+          7,
+          10,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          9,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          3,
+          11,
+          0
+        ]
+      ],
+      "confusionMatrixColumns": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "schema_failure"
+      ],
+      "perGrade": [
+        {
+          "grade": 0,
+          "support": 17,
+          "predicted": 7,
+          "exactMatches": 7,
+          "precision": 1,
+          "recall": 0.4117647058823529,
+          "f1": 0.5833333333333334
+        },
+        {
+          "grade": 1,
+          "support": 9,
+          "predicted": 23,
+          "exactMatches": 9,
+          "precision": 0.391304347826087,
+          "recall": 1,
+          "f1": 0.5625
+        },
+        {
+          "grade": 2,
+          "support": 8,
+          "predicted": 9,
+          "exactMatches": 6,
+          "precision": 0.6666666666666666,
+          "recall": 0.75,
+          "f1": 0.7058823529411765
+        },
+        {
+          "grade": 3,
+          "support": 16,
+          "predicted": 11,
+          "exactMatches": 11,
+          "precision": 1,
+          "recall": 0.6875,
+          "f1": 0.8148148148148148
+        }
+      ],
+      "evidenceRequiredCount": 20,
+      "evidenceVerbatimMatchRate": 1,
+      "evidenceContextAuditedCount": 20,
+      "evidenceContextSupportRate": 1,
+      "criticalDisagreementRate": 0.04,
+      "schemaPassRate": 1,
+      "inputTokens": 29626,
+      "outputTokens": 25429,
+      "meanLatencyMs": 1956.5,
+      "p95LatencyMs": 3205,
+      "queryClusterBootstrap": {
+        "clusterField": "sourceQueryId",
+        "clusterCount": 15,
+        "replicates": 2000,
+        "seed": 20261113,
+        "confidenceLevel": 0.95,
+        "intervals": {
+          "exactAgreement": {
+            "lower": 0.5384259259259259,
+            "upper": 0.8048780487804879
+          },
+          "meanAbsoluteError": {
+            "lower": 0.21945917285259808,
+            "upper": 0.5277908805031446
+          },
+          "quadraticWeightedKappa": {
+            "lower": 0.6972395787288288,
+            "upper": 0.9050347695849772
+          },
+          "macroF1": {
+            "lower": 0.5150604762149753,
+            "upper": 0.8166385706960304
+          }
+        }
+      },
+      "positiveGradeAtLeast2": {
+        "threshold": "grade >= 2",
+        "truePositive": 20,
+        "falsePositive": 0,
+        "falseNegative": 4,
+        "trueNegative": 26,
+        "precision": 1,
+        "recall": 0.8333333333333334,
+        "f1": 0.9090909090909091
+      },
+      "totalTokens": 55055
+    },
+    {
+      "modelId": "gemini-3.1-flash-lite",
+      "totalPairs": 50,
+      "scoredPairs": 50,
+      "exactAgreement": 0.74,
+      "meanAbsoluteError": 0.28,
+      "quadraticWeightedKappa": 0.8953153624705574,
+      "macroF1": 0.7004364023738837,
+      "confusionMatrix": [
+        [
+          14,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          5,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          5,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          13,
+          0
+        ]
+      ],
+      "confusionMatrixColumns": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "schema_failure"
+      ],
+      "perGrade": [
+        {
+          "grade": 0,
+          "support": 17,
+          "predicted": 16,
+          "exactMatches": 14,
+          "precision": 0.875,
+          "recall": 0.8235294117647058,
+          "f1": 0.8484848484848485
+        },
+        {
+          "grade": 1,
+          "support": 9,
+          "predicted": 10,
+          "exactMatches": 5,
+          "precision": 0.5,
+          "recall": 0.5555555555555556,
+          "f1": 0.5263157894736842
+        },
+        {
+          "grade": 2,
+          "support": 8,
+          "predicted": 9,
+          "exactMatches": 5,
+          "precision": 0.5555555555555556,
+          "recall": 0.625,
+          "f1": 0.5882352941176471
+        },
+        {
+          "grade": 3,
+          "support": 16,
+          "predicted": 15,
+          "exactMatches": 13,
+          "precision": 0.8666666666666667,
+          "recall": 0.8125,
+          "f1": 0.8387096774193549
+        }
+      ],
+      "evidenceRequiredCount": 24,
+      "evidenceVerbatimMatchRate": 1,
+      "evidenceContextAuditedCount": 0,
+      "evidenceContextSupportRate": null,
+      "criticalDisagreementRate": 0.02,
+      "schemaPassRate": 1,
+      "inputTokens": 28980,
+      "outputTokens": 12299,
+      "meanLatencyMs": 4592.36,
+      "p95LatencyMs": 6162,
+      "queryClusterBootstrap": {
+        "clusterField": "sourceQueryId",
+        "clusterCount": 15,
+        "replicates": 2000,
+        "seed": 20261113,
+        "confidenceLevel": 0.95,
+        "intervals": {
+          "exactAgreement": {
+            "lower": 0.622943086916177,
+            "upper": 0.875
+          },
+          "meanAbsoluteError": {
+            "lower": 0.13953488372093023,
+            "upper": 0.40425531914893614
+          },
+          "quadraticWeightedKappa": {
+            "lower": 0.8266852863679954,
+            "upper": 0.9485209888578271
+          },
+          "macroF1": {
+            "lower": 0.5500563639702705,
+            "upper": 0.8516833989907323
+          }
+        }
+      },
+      "positiveGradeAtLeast2": {
+        "threshold": "grade >= 2",
+        "truePositive": 22,
+        "falsePositive": 2,
+        "falseNegative": 2,
+        "trueNegative": 24,
+        "precision": 0.9166666666666666,
+        "recall": 0.9166666666666666,
+        "f1": 0.9166666666666666
+      },
+      "totalTokens": 41279,
+      "visibleOutputTokens": 6479,
+      "thoughtTokens": 5820,
+      "hardGateStatus": {
+        "schemaPassRate": {
+          "value": 1,
+          "threshold": 1,
+          "status": "pass"
+        },
+        "evidenceVerbatimMatchRate": {
+          "value": 1,
+          "threshold": 1,
+          "status": "pass"
+        },
+        "evidenceContextSupportRate": {
+          "value": null,
+          "threshold": 0.95,
+          "status": "pending_human_audit"
+        },
+        "criticalDisagreementRate": {
+          "value": 0.02,
+          "threshold": 0.05,
+          "status": "pass"
+        }
+      }
+    }
+  ],
+  "directGeminiVsQwen": {
+    "observedMetricLeader": "gemini-3.1-flash-lite",
+    "exactAgreementDelta": 0.07999999999999996,
+    "qwkDelta": 0.07653187681029905,
+    "macroF1Delta": 0.03380377710155247,
+    "maeDelta": -0.09999999999999998,
+    "positivePrecisionDelta": -0.08333333333333337,
+    "positiveRecallDelta": 0.08333333333333326,
+    "pairedCorrectness": {
+      "geminiCorrectQwenWrong": 10,
+      "qwenCorrectGeminiWrong": 6,
+      "mcnemarExactTwoSidedP": 0.454498291015625
+    },
+    "queryClusterBootstrapExactAgreementDelta": {
+      "clusterField": "sourceQueryId",
+      "clusterCount": 15,
+      "replicates": 2000,
+      "seed": 20261113,
+      "confidenceLevel": 0.95,
+      "deltaDefinition": "Gemini exact agreement minus Qwen exact agreement",
+      "interval": {
+        "lower": -0.08004081632653057,
+        "upper": 0.24561403508771928
+      }
+    },
+    "conclusionPolicy": "Gemini cannot replace or unfreeze Qwen; contextual evidence remains pending and this supplemental run was not preregistered as a new selection round."
+  },
+  "errorAnalysis": {
+    "mismatchCount": 13,
+    "criticalDisagreements": [
+      {
+        "pairId": "P032",
+        "sourceQueryId": "G2-Q030",
+        "queryText": "Find worship songs that express love through action, serving others, and demonstrating God's love in everyday life.",
+        "candidateLyrics": "Phước cho ai đầy lòng thương\n\n(Vì) kẻ ấy sẽ được xót thương\n\nPhước cho ai lòng sạch trong\n\nVì sẽ, thấy Đức Chúa Trời\n\nPhước cho ai mang tới thái bình\n\n(Vì) sẽ được biết đến như con của Ngài\n\nPhước cho ai đang phải chịu sự bức hại\n\nVì tìm kiếm công chính Ngài\n\nVì Nước Chúa là của người\n\nNước Chúa là của người\n\nNước ấy là của con cái Chúa Trời",
+        "humanScore": 3,
+        "geminiScore": 1,
+        "qwenScore": 1,
+        "absoluteDifference": 2,
+        "evidenceQuotes": [
+          "Phước cho ai đầy lòng thương",
+          "Phước cho ai mang tới thái bình"
+        ],
+        "schemaPass": true
+      }
+    ],
+    "humanZeroToJudgeOne": [
+      {
+        "pairId": "P011",
+        "sourceQueryId": "HRV2-G4-Q010-PARAPHRASE-V1",
+        "queryText": "Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài",
+        "candidateLyrics": "Trước hết, hãy kiếm tìm\n\nVề đất nước của Chúa Trời\n\nTrước hết, hãy kiếm tìm\n\nSự chí công của Chúa Trời\n\nNhững gì mà con cần\n\nNgài sẽ ban chẳng thiếu gì\n\nSẽ ban chẳng thiếu gì\n\nSẽ ban chẳng thiếu gì",
+        "humanScore": 0,
+        "geminiScore": 1,
+        "qwenScore": 1,
+        "absoluteDifference": 1,
+        "evidenceQuotes": [],
+        "schemaPass": true
+      },
+      {
+        "pairId": "P017",
+        "sourceQueryId": "HRV2-G4-Q011-PARAPHRASE-V1",
+        "queryText": "Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu",
+        "candidateLyrics": "Tận sâu bên dưới của\n\nNhững lo lắng vẫn cứ luôn bám lấy con\n\nLà khao khát có được\n\nSự bình an chỉ có trong Ngài\n\nĐiều ấy sẽ lấy đi\n\nMọi thiếu sót, mọi điều gây cớ nghi ngờ\n\nVì Ngài ở bên con\n\nTâm linh con như được về nhà",
+        "humanScore": 0,
+        "geminiScore": 1,
+        "qwenScore": 1,
+        "absoluteDifference": 1,
+        "evidenceQuotes": [
+          "khao khát có được\n\nSự bình an chỉ có trong Ngài"
+        ],
+        "schemaPass": true
+      },
+      {
+        "pairId": "P039",
+        "sourceQueryId": "HRV2-G4-Q010-PARAPHRASE-V1",
+        "queryText": "Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài",
+        "candidateLyrics": "Vì Danh Chúa thật đáng tôn thờ\n\nCon xin dâng ngợi ca\n\n“Đáng thay là Danh Ngài”",
+        "humanScore": 0,
+        "geminiScore": 1,
+        "qwenScore": 1,
+        "absoluteDifference": 1,
+        "evidenceQuotes": [
+          "Con xin dâng ngợi ca"
+        ],
+        "schemaPass": true
+      }
+    ],
+    "focusPairs": [
+      {
+        "pairId": "P032",
+        "sourceQueryId": "G2-Q030",
+        "queryText": "Find worship songs that express love through action, serving others, and demonstrating God's love in everyday life.",
+        "candidateLyrics": "Phước cho ai đầy lòng thương\n\n(Vì) kẻ ấy sẽ được xót thương\n\nPhước cho ai lòng sạch trong\n\nVì sẽ, thấy Đức Chúa Trời\n\nPhước cho ai mang tới thái bình\n\n(Vì) sẽ được biết đến như con của Ngài\n\nPhước cho ai đang phải chịu sự bức hại\n\nVì tìm kiếm công chính Ngài\n\nVì Nước Chúa là của người\n\nNước Chúa là của người\n\nNước ấy là của con cái Chúa Trời",
+        "humanScore": 3,
+        "geminiScore": 1,
+        "qwenScore": 1,
+        "absoluteDifference": 2,
+        "evidenceQuotes": [
+          "Phước cho ai đầy lòng thương",
+          "Phước cho ai mang tới thái bình"
+        ],
+        "schemaPass": true
+      }
+    ],
+    "allMismatches": [
+      {
+        "pairId": "P005",
+        "sourceQueryId": "HRV2-G4-Q005-PARAPHRASE-V1",
+        "queryText": "Thắp lên ngọn lửa đức tin",
+        "candidateLyrics": "Linh Thánh sẽ đến\n\nTrong ngọn lửa và gió cuốn\n\nTâm linh con nơi đây\n\nNguyện mở đón Chúa đến\n\nHãy đến trên con\n\nHãy đến trên con",
+        "humanScore": 1,
+        "geminiScore": 2,
+        "qwenScore": 1,
+        "absoluteDifference": 1,
+        "evidenceQuotes": [
+          "Trong ngọn lửa và gió cuốn"
+        ],
+        "schemaPass": true
+      },
+      {
+        "pairId": "P011",
+        "sourceQueryId": "HRV2-G4-Q010-PARAPHRASE-V1",
+        "queryText": "Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài",
+        "candidateLyrics": "Trước hết, hãy kiếm tìm\n\nVề đất nước của Chúa Trời\n\nTrước hết, hãy kiếm tìm\n\nSự chí công của Chúa Trời\n\nNhững gì mà con cần\n\nNgài sẽ ban chẳng thiếu gì\n\nSẽ ban chẳng thiếu gì\n\nSẽ ban chẳng thiếu gì",
+        "humanScore": 0,
+        "geminiScore": 1,
+        "qwenScore": 1,
+        "absoluteDifference": 1,
+        "evidenceQuotes": [],
+        "schemaPass": true
+      },
+      {
+        "pairId": "P017",
+        "sourceQueryId": "HRV2-G4-Q011-PARAPHRASE-V1",
+        "queryText": "Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu",
+        "candidateLyrics": "Tận sâu bên dưới của\n\nNhững lo lắng vẫn cứ luôn bám lấy con\n\nLà khao khát có được\n\nSự bình an chỉ có trong Ngài\n\nĐiều ấy sẽ lấy đi\n\nMọi thiếu sót, mọi điều gây cớ nghi ngờ\n\nVì Ngài ở bên con\n\nTâm linh con như được về nhà",
+        "humanScore": 0,
+        "geminiScore": 1,
+        "qwenScore": 1,
+        "absoluteDifference": 1,
+        "evidenceQuotes": [
+          "khao khát có được\n\nSự bình an chỉ có trong Ngài"
+        ],
+        "schemaPass": true
+      },
+      {
+        "pairId": "P019",
+        "sourceQueryId": "G2-Q033",
+        "queryText": "Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.",
+        "candidateLyrics": "(Vì) Ngài là Đấng chiến đấu cho con\n\nNgài là Đấng sẽ luôn chiến thắng\n\nHa-lê-lu-gia, ha-lê-lu-gia\n\nBiển Đỏ kia Chúa đã chia hai\n\nNgài dẫn lối đưa con đi qua\n\nHa-lê-lu-gia, ha-lê-lu-gia",
+        "humanScore": 1,
+        "geminiScore": 2,
+        "qwenScore": 1,
+        "absoluteDifference": 1,
+        "evidenceQuotes": [
+          "Ngài dẫn lối đưa con đi qua"
+        ],
+        "schemaPass": true
+      },
+      {
+        "pairId": "P020",
+        "sourceQueryId": "G2-Q033",
+        "queryText": "Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.",
+        "candidateLyrics": "Con sẽ không quay đầu\n\nVững chắc về tương lai\n\nSẽ bước theo Giê-su,\n\nnguyện cả cuộc đời con\n\n\n\nCon sẽ không quay đầu\n\nVững chắc về tương lai\n\nSẽ bước theo Giê-su,\n\nnguyện cả cuộc đời này",
+        "humanScore": 2,
+        "geminiScore": 3,
+        "qwenScore": 2,
+        "absoluteDifference": 1,
+        "evidenceQuotes": [
+          "Sẽ bước theo Giê-su,",
+          "nguyện cả cuộc đời con",
+          "nguyện cả cuộc đời này"
+        ],
+        "schemaPass": true
+      },
+      {
+        "pairId": "P023",
+        "sourceQueryId": "HRV2-G4-Q012-PARAPHRASE-V1",
+        "queryText": "Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",
+        "candidateLyrics": "Ngài đã đổi lấy\n\nNgài lấy đi tội lỗi này\n\nĐể chính ánh sáng nơi Ngài\n\nDẫn lối con đi\n\n\n\nHãy cùng vững bước\n\nCùng hướng theo về phía Ngài\n\nChỉ duy Ngài tốt lành\n\nLà Đấng yêu thương",
+        "humanScore": 2,
+        "geminiScore": 1,
+        "qwenScore": 1,
+        "absoluteDifference": 1,
+        "evidenceQuotes": [
+          "Ngài đã đổi lấy",
+          "Ngài lấy đi tội lỗi này"
+        ],
+        "schemaPass": true
+      },
+      {
+        "pairId": "P024",
+        "sourceQueryId": "HRV2-G4-Q011-PARAPHRASE-V1",
+        "queryText": "Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu",
+        "candidateLyrics": "Trong Cha có con\n\nAi yêu con nhất trần gian\n\nKhông chi con muốn hơn\n\nĐược sống theo ý muốn Cha\n\n\n\nVì Ngài là Chúa con\n\nAi yêu con nhất trần gian\n\nKhông chi con muốn hơn\n\nĐược sống theo ý muốn Cha",
+        "humanScore": 2,
+        "geminiScore": 3,
+        "qwenScore": 2,
+        "absoluteDifference": 1,
+        "evidenceQuotes": [
+          "Được sống theo ý muốn Cha"
+        ],
+        "schemaPass": true
+      },
+      {
+        "pairId": "P030",
+        "sourceQueryId": "HRV2-G4-Q012-PARAPHRASE-V1",
+        "queryText": "Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",
+        "candidateLyrics": "Dù bao nhiêu chông gai\n\nDù bao nhiêu đau thương\n\nThập giá, xóa hết tất cả rồi\n\n\n\nChẳng có tan vỡ chi\n\nMà Cha không mang đi\n\nMãi mãi, Ngài chiến thắng thế gian",
+        "humanScore": 3,
+        "geminiScore": 2,
+        "qwenScore": 2,
+        "absoluteDifference": 1,
+        "evidenceQuotes": [
+          "Thập giá, xóa hết tất cả rồi"
+        ],
+        "schemaPass": true
+      },
+      {
+        "pairId": "P032",
+        "sourceQueryId": "G2-Q030",
+        "queryText": "Find worship songs that express love through action, serving others, and demonstrating God's love in everyday life.",
+        "candidateLyrics": "Phước cho ai đầy lòng thương\n\n(Vì) kẻ ấy sẽ được xót thương\n\nPhước cho ai lòng sạch trong\n\nVì sẽ, thấy Đức Chúa Trời\n\nPhước cho ai mang tới thái bình\n\n(Vì) sẽ được biết đến như con của Ngài\n\nPhước cho ai đang phải chịu sự bức hại\n\nVì tìm kiếm công chính Ngài\n\nVì Nước Chúa là của người\n\nNước Chúa là của người\n\nNước ấy là của con cái Chúa Trời",
+        "humanScore": 3,
+        "geminiScore": 1,
+        "qwenScore": 1,
+        "absoluteDifference": 2,
+        "evidenceQuotes": [
+          "Phước cho ai đầy lòng thương",
+          "Phước cho ai mang tới thái bình"
+        ],
+        "schemaPass": true
+      },
+      {
+        "pairId": "P033",
+        "sourceQueryId": "G2-Q036",
+        "queryText": "Find songs about the Holy Spirit teaching us and reminding us of the words and teachings of Jesus.",
+        "candidateLyrics": "Ngài là Thần của Đức Chúa Trời\n\nBao vây lấy chúng con\n\nĐấng đã đến với tâm linh con\n\nNgài đến trên con\n\nNgài đến trên con",
+        "humanScore": 1,
+        "geminiScore": 0,
+        "qwenScore": 1,
+        "absoluteDifference": 1,
+        "evidenceQuotes": [],
+        "schemaPass": true
+      },
+      {
+        "pairId": "P039",
+        "sourceQueryId": "HRV2-G4-Q010-PARAPHRASE-V1",
+        "queryText": "Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài",
+        "candidateLyrics": "Vì Danh Chúa thật đáng tôn thờ\n\nCon xin dâng ngợi ca\n\n“Đáng thay là Danh Ngài”",
+        "humanScore": 0,
+        "geminiScore": 1,
+        "qwenScore": 1,
+        "absoluteDifference": 1,
+        "evidenceQuotes": [
+          "Con xin dâng ngợi ca"
+        ],
+        "schemaPass": true
+      },
+      {
+        "pairId": "P041",
+        "sourceQueryId": "G2-Q036",
+        "queryText": "Find songs about the Holy Spirit teaching us and reminding us of the words and teachings of Jesus.",
+        "candidateLyrics": "Đời tìm đâu lối bước được lại gần nơi ánh sáng,\n\nLà nguồn chân lý sống, chẳng gì có thể sánh bằng.\n\nCon khát khao Ngài.",
+        "humanScore": 1,
+        "geminiScore": 0,
+        "qwenScore": 1,
+        "absoluteDifference": 1,
+        "evidenceQuotes": [],
+        "schemaPass": true
+      },
+      {
+        "pairId": "P049",
+        "sourceQueryId": "HRV2-G4-Q010-PARAPHRASE-V1",
+        "queryText": "Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài",
+        "candidateLyrics": "Lòng con đây dâng lên với Chúa hết thảy ngàn lời chúc tán\n\nLòng con đây yêu thương với Chúa cất tiếng ngàn lời ca vang\n\nChỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi\n\nTốt thay, Chúa Cha đời đời (mãi mãi)",
+        "humanScore": 3,
+        "geminiScore": 2,
+        "qwenScore": 2,
+        "absoluteDifference": 1,
+        "evidenceQuotes": [
+          "Lòng con đây dâng lên với Chúa hết thảy ngàn lời chúc tán",
+          "Chỉ duy Chúa xứng đáng với tiếng hát ngợi ca mãi mãi"
+        ],
+        "schemaPass": true
+      }
+    ]
+  },
+  "limitations": [
+    "Only 50 development pairs and 15 sourceQueryId clusters are available; confidence intervals are wide.",
+    "The grade distribution is fixed at 17/9/8/16, so per-grade estimates have small denominators.",
+    "At 50 pairs, one error changes a rate by two percentage points and the 5% critical-disagreement gate effectively permits at most two errors.",
+    "This is one seeded API run; provider nondeterminism and future model alias drift are not measured.",
+    "Gemini contextual evidence support requires a separate human audit before all hard gates can be evaluated.",
+    "Sampling and low-reasoning controls are matched by value where supported, but provider semantics and token accounting are not identical."
+  ]
+}
