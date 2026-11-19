@@ -22,7 +22,9 @@
     "research:judge:finalize": "npx tsx scripts/finalize_judge_selection.ts",
     "research:judge:gemini:preflight": "npx tsx --env-file=.env.local scripts/run_gemini_judge_supplemental.ts --preflight",
     "research:judge:gemini:run": "npx tsx --env-file=.env.local scripts/run_gemini_judge_supplemental.ts",
-    "research:judge:gemini:evaluate": "npx tsx scripts/evaluate_gemini_judge_supplemental.ts"
+    "research:judge:gemini:evaluate": "npx tsx scripts/evaluate_gemini_judge_supplemental.ts",
+    "research:pilot:teacher-judge:preflight": "npx tsx --env-file=.env.local scripts/run_teacher_judge_pilot.ts --preflight",
+    "research:pilot:teacher-judge": "npx tsx --env-file=.env.local scripts/run_teacher_judge_pilot.ts"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.23",
