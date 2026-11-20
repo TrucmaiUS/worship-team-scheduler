@@ -1,9 +1,9 @@
 # Teacher–Judge Pilot Report
 
-**Run:** `teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z`  
-**Teacher:** `gemini-3.1-flash-lite`  
-**Frozen Judge:** `qwen/qwen3.8-27b`  
-**Pairs:** 50
+- **Run:** `teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z`
+- **Teacher:** `gemini-3.1-flash-lite`
+- **Frozen Judge:** `qwen/qwen3.8-27b`
+- **Pairs:** 50
 
 ## Checkpoint result
 

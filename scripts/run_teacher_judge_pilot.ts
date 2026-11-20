@@ -645,10 +645,10 @@ async function main(): Promise<void> {
   writeCsv('human_audit.csv', auditHeaders, auditRows);
 
   const report = `# Teacher–Judge Pilot Report\n\n` +
-    `**Run:** \`${runId}\`  \n` +
-    `**Teacher:** \`${GEMINI_TEACHER_MODEL_ID}\`  \n` +
-    `**Frozen Judge:** \`${frozenConfig.selectedModel.modelId}\`  \n` +
-    `**Pairs:** ${pairRecords.length}\n\n` +
+    `- **Run:** \`${runId}\`\n` +
+    `- **Teacher:** \`${GEMINI_TEACHER_MODEL_ID}\`\n` +
+    `- **Frozen Judge:** \`${frozenConfig.selectedModel.modelId}\`\n` +
+    `- **Pairs:** ${pairRecords.length}\n\n` +
     `## Checkpoint result\n\n` +
     `- Positive candidates (Grade ≥ 2 after mechanical generation filters): ` +
     `${positiveCandidates.length}/${pairRecords.length} (${(metrics.acceptance.acceptanceRate * 100).toFixed(1)}%).\n` +
