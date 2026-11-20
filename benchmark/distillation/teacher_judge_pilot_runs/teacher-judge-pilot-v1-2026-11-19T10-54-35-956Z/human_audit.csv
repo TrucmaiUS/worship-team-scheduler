@@ -1,0 +1,713 @@
+query_id,pilot_bucket,topic_id,language,coverage_category,query_style,query_text,source_song_id,source_section_id,section_type,source_lyrics,judge_score,judge_label,evidence_quotes,judge_reasoning,judge_schema_pass,judge_failure_code,evidence_verbatim_status,evidence_context_supported,theological_consistency,human_decision,reviewer_notes,leakage_decision,leakage_reasons,duplicate_of,query_lyric_word_overlap,copied_lyric_span,false_acceptance_risk,false_rejection_risk,hard_negative_eligible
+TP001,positive_candidate,T01,vi,semantic_paraphrase,lyric_paraphrase,Tìm bài hát về việc Thánh Linh phục hồi sự sống và thắp lên ngọn lửa hy vọng trong những lúc yếu đuối,41a0e027-789d-4ca9-b0a8-e1dcdf76772e,a31ec101-5d17-4750-b4f4-c9d7d7def3f2,verse,"Trong đổ vỡ con vẫn được sáng soi
+
+Chính sức Chúa tràn đầy nơi đây
+
+Bởi Thánh Linh Chúa mang sức sống lại
+
+Ngài làm ngọn lửa trong con thắp lên",3,Highly Relevant,"[""Bởi Thánh Linh Chúa mang sức sống lại"",""Ngài làm ngọn lửa trong con thắp lên"",""Trong đổ vỡ con vẫn được sáng soi""]","Lyrics directly address the Holy Spirit restoring life and igniting a flame within, set in a context of brokenness/weakness, matching the query's core intent.",true,,valid,,,,,human_review,held_out_vocabulary_requires_human_review,,0.19047619047619047,,false,false,false
+TP002,positive_candidate,T01,vi,sermon_topic,natural_thematic_request,Tôi cần những bài hát tôn vinh quyền năng vô hạn của Chúa trong việc sáng tạo và tể trị vũ trụ để dùng cho buổi thờ phượng chủ đề về sự vĩ đại của Đấng Tạo Hóa.,d15f40ad-eb38-44d5-80e5-5cdeb9ec999b,2662a0fe-f339-4d3e-addd-cf97d3dadcfa,bridge,"Liệu ai có thể đong nước biển
+
+Ngoài quyền năng trong tay Ngài
+
+Là Đấng con luôn ca ngợi
+
+
+
+Ai có thể ôm trọn đất trời
+
+Bằng cánh tay năng quyền
+
+Hằng Hữu Chí Cao",3,Highly Relevant,"[""Liệu ai có thể đong nước biển"",""Ngoài quyền năng trong tay Ngài"",""Ai có thể ôm trọn đất trời"",""Bằng cánh tay năng quyền"",""Hằng Hữu Chí Cao""]","Lyrics directly praise God's infinite power over creation (sea, earth, sky) and His sovereign governance, perfectly matching the query's theme of the Creator's greatness.",true,,valid,,,,,passed,,,0.06557377049180328,,false,false,false
+TP003,positive_candidate,T01,en,cross_lingual,lyric_paraphrase,worship songs about surrendering control to God and magnifying the incomparable strength of His love,608245c7-f6a5-44fa-84bc-21e278510060,37df8906-2d96-48b6-9b73-8839b65c9829,bridge,"Giờ con sẽ dâng lên lời ca khen Ngài
+
+Nguyện Chúa luôn tể trị đời con
+
+Chẳng gì có thể so được quyền năng của tình yêu Chúa
+
+
+
+Giờ con sẽ dâng lên lời ca khen Ngài
+
+Nguyện Chúa luôn tể trị đời con
+
+Chẳng gì có thể so được quyền năng của tình yêu Ngài
+
+Con chỉ muốn tìm kiếm Chúa",3,Highly Relevant,"[""Nguyện Chúa luôn tể trị đời con"",""Chẳng gì có thể so được quyền năng của tình yêu Chúa""]","The bridge explicitly expresses surrendering life to God's rule and declares nothing can compare to the power of His love, matching both core themes of the query.",true,,valid,,,,,passed,,,0,,false,false,false
+TP004,positive_candidate,T01,vi,theological_concept,ambiguous_request,Tìm bài hát về quyền năng Chúa giải phóng chúng ta khỏi xiềng xích quá khứ,61fa2632-9a99-434c-87de-8329000f263a,a559b930-dd90-429a-9799-997f72fd4be2,bridge,"Chúa đến nơi Ai Cập trong con
+
+Chúa nắm lấy cánh tay con
+
+Con bước đi hiên ngang trong Ngài
+
+Đến với đất đã được hứa
+
+Con sẽ không quên Đấng Tốt Lành
+
+Ơn Chúa ban con ca khen
+
+Sự chết đã đánh mất đi năng quyền
+
+Nơi yêu thương rực cháy của Chúa",3,Highly Relevant,"[""Chúa đến nơi Ai Cập trong con"",""Con bước đi hiên ngang trong Ngài"",""Sự chết đã đánh mất đi năng quyền""]","The Egypt metaphor directly represents bondage to the past, and the bridge describes God's power liberating the believer to walk boldly in freedom.",true,,valid,,,,,passed,,,0.05454545454545454,,false,false,false
+TP005,positive_candidate,T01,en,cross_lingual,natural_thematic_request,I am looking for worship songs that focus on inviting the Holy Spirit to fill us and empower our lives during prayer.,91001c6f-96f6-40c2-9bb3-c97ef1f7c648,49b786ec-1053-4403-a133-13916a4b4b30,chorus,"Thánh Linh Chúa,
+
+Con xin Ngài hãy đến
+
+Thánh Linh Chúa,
+
+Con nguyện quỳ nơi đây
+
+Nguyện Chúa đong đầy
+
+Thần Chúa trên con",3,Highly Relevant,"[""Con xin Ngài hãy đến"",""Con nguyện quỳ nơi đây"",""Nguyện Chúa đong đầy"",""Thần Chúa trên con""]","The lyrics directly invite the Holy Spirit to come, ask to be filled, and do so while kneeling in prayer—matching all three core elements of the query.",true,,valid,,,,,human_review,held_out_vocabulary_requires_human_review,,0,,false,false,false
+TP006,positive_candidate,T02,vi,semantic_paraphrase,lyric_paraphrase,Tìm bài hát về niềm hy vọng tương lai khi thế hệ tin kính cùng ca vang ngợi khen Chúa là Vua muôn đời,11d96089-3515-40cf-b0f5-e30002e3fd47,68e139c6-311f-4a26-b6b1-16d28e6023e1,verse,"Thời khắc ấy
+
+Phục sinh sẽ đến với dân Ngài
+
+Và được chung vui
+
+Những vĩ nhân trong đức tin
+
+Khi muôn dân
+
+Hòa chung câu ca dâng lên Ngài
+
+Rằng Ngài xứng đáng những chúc tôn đời đời
+
+
+
+
+
+
+
+
+
+[Verse III] (Dynamic)
+
+Thời khắc ấy
+
+Tất cả vỡ òa cùng với Chúa
+
+Và được chung vui
+
+Những vĩ nhân trong đức tin
+
+Khắp muôn nơi
+
+Hòa chung câu ca dâng lên Ngài
+
+Rằng Ngài, Chiên Con xứng đáng mọi chúc tôn
+
+Ngài là Đức Vua đời đời",3,Highly Relevant,"[""Thời khắc ấy"",""Phục sinh sẽ đến với dân Ngài"",""Những vĩ nhân trong đức tin"",""Hòa chung câu ca dâng lên Ngài"",""Ngài là Đức Vua đời đời""]","Lyrics directly express future hope (resurrection), generations of faith rejoicing together in praise, and declaring God as eternal King—matching every core element of the query.",true,,valid,,,,,passed,,,0.140625,,false,false,false
+TP007,positive_candidate,T02,vi,sermon_topic,natural_thematic_request,"Tôi cần tìm bài hát cho buổi nhóm thanh niên với chủ đề khích lệ đức tin, tập trung vào việc hướng thế hệ trẻ giữ vững sự tập chú vào Chúa, Đấng không thay đổi, để họ tự tin bước đi với Ngài trong mọi hoàn cảnh.",49b037a4-2126-4708-ad6f-157538ba3c66,fdcc736d-8bb2-4b32-9568-fb9f225c5228,verse,"Để mắt con dõi theo Đấng chẳng đổi dời
+
+Lòng này vững bước đức tin nơi Chúa
+
+Rằng phước ơn Ngài ban sẽ theo bên cạnh
+
+Mọi bước đi ở trong đời con",3,Highly Relevant,"[""Để mắt con dõi theo Đấng chẳng đổi dời"",""Lòng này vững bước đức tin nơi Chúa"",""Mọi bước đi ở trong đời con""]","Lyrics directly address focusing on the unchanging God, walking firmly in faith, and in every step of life—matching the query's core intent of encouraging faith and confident walking with God in all circumstances.",true,,valid,,,,,passed,,,0.1935483870967742,,false,false,false
+TP008,positive_candidate,T02,en,cross_lingual,lyric_paraphrase,Songs about placing our complete trust in Christ for salvation and living for His glory alone,d8be7b3a-93a1-4966-b89c-f2c0d1336b19,1d17cf4e-e074-4f2e-976f-e22a5dd41356,verse,"Bàn tay con chẳng thể cứu lấy
+
+con khỏi tội đày
+
+Chỉ bởi đức tin nơi Giê-su
+
+con đã được sống
+
+Vậy hãy dâng mọi vinh quang
+
+lên cho Đấng luôn xứng đáng
+
+Giê-su, chỉ Ngài
+
+Giê-su, chính Ngài",3,Highly Relevant,"[""Chỉ bởi đức tin nơi Giê-su\n\ncon đã được sống"",""Vậy hãy dâng mọi vinh quang\n\nlên cho Đấng luôn xứng đáng"",""Giê-su, chỉ Ngài""]","The lyrics explicitly state salvation comes only through faith in Jesus and call for giving all glory to Him alone, matching both core themes of the query.",true,,valid,,,,,passed,,,0,,false,false,false
+TP009,positive_candidate,T02,vi,theological_concept,ambiguous_request,Tìm các bài hát về việc các thế hệ cùng nhau tôn vinh quyền tể trị của Chúa,ea33670a-3fa3-479e-ba59-0b55cf1f8ed4,bfe02469-4007-4c99-9c8c-1946cf45214c,verse,"Muôn dân đồng thanh hát vang lên
+
+Cất tiếng để làm chứng nhân
+
+Tất cả thế hệ tôn rằng
+
+Ngài chính Chúa, là Chúa thôi",3,Highly Relevant,"[""Tất cả thế hệ tôn rằng"",""Ngài chính Chúa, là Chúa thôi"",""Muôn dân đồng thanh hát vang lên""]","Lyrics directly express all generations together honoring the Lord's sovereignty, matching every core concept in the query.",true,,valid,,,,,passed,,,0.1388888888888889,,false,false,false
+TP010,positive_candidate,T02,en,cross_lingual,natural_thematic_request,I need worship songs for a youth service focused on igniting spiritual passion and finding confidence in God's presence to overcome personal anxiety.,21358b75-ff2c-4df2-b662-b70c67783131,c2a2e34b-11aa-4b51-8bcb-444bce9334ff,chorus,"Tuyên xưng danh của Chúa
+
+Khiến đức tin con bừng lên
+
+Tuyên xưng danh của Chúa
+
+Lo âu sẽ được vùi tan
+
+Tuyên xưng danh của Chúa
+
+Chúa dắt đưa con đến gần Ngài hơn
+
+
+
+Tuyên xưng danh của Chúa
+
+Con tin Chúa hồi phục con
+
+Tuyên xưng danh của Chúa
+
+Con chẳng thiếu điều gì đâu
+
+Tuyên xưng danh của Chúa
+
+Chúa dắt đưa con đến gần Ngài hơn",3,Highly Relevant,"[""Khiến đức tin con bừng lên"",""Lo âu sẽ được vùi tan"",""Chúa dắt đưa con đến gần Ngài hơn"",""Con tin Chúa hồi phục con""]","The lyrics directly address igniting faith ('bừng lên'), dissolving anxiety ('Lo âu sẽ được vùi tan'), and growing confidence in God's presence, all within a worship context of proclaiming His name.",true,,valid,,,,,passed,,,0,,false,false,false
+TP011,positive_candidate,T03,vi,semantic_paraphrase,lyric_paraphrase,Tìm bài hát về việc sẵn lòng vâng phục ý muốn của Đức Chúa Trời và mong muốn được Ngài sai phái đi khắp nơi để loan truyền danh xưng cao trọng của Đấng Cứu Thế cho mọi người,9cdfce70-a573-4392-a817-afeb8dca4104,1921cd70-c345-4fd0-8aa5-25befc628542,chorus,"Nguyện cầu ý Chúa, trọn vẹn trong con.
+
+Khao khát muôn dân nơi đây, ngợi ca Đấng Thánh
+
+Chỉ Ngài xứng đáng, được hát ca khen
+
+
+
+Con xin được Ngài sai đi, nhờ hồng ân Giê-su
+
+Muôn nơi sẽ được nghe danh Ngài - Chúa Cứu Thế
+
+Để mọi con tim, thờ tôn danh Ngài",3,Highly Relevant,"[""Nguyện cầu ý Chúa, trọn vẹn trong con"",""Con xin được Ngài sai đi, nhờ hồng ân Giê-su"",""Muôn nơi sẽ được nghe danh Ngài - Chúa Cứu Thế"",""Để mọi con tim, thờ tôn danh Ngài""]","Lyrics directly express willingness to obey God's will, desire to be sent, proclaiming the Savior's name everywhere to all people—matching every core theme of the query.",true,,valid,,,,,passed,,,0.21212121212121213,,false,false,false
+TP012,invalid_judge_output,T03,vi,sermon_topic,natural_thematic_request,Tìm bài hát thờ phượng về sự vĩ đại và quyền năng cứu chuộc của Chúa để khích lệ thế hệ trẻ tiếp nối đức tin,fdabd847-e2f0-4f79-a637-eeac2165f5f3,1eea97be-9b2c-4097-9fcd-52c9c709c411,verse,"Nguyện tôn vinh danh Chúa Cứu Thế/ Vua của đời con
+
+Vì giải cứu tội lỗi nơi con/ Chúa đã hy sinhChẳng điều chi có thể sánh thay/ huyết máu Chiên ConNhờ ân điển trong Danh Giê-su/ giải thoát chúng con[Bridge]Ngài nắm lấy mọi điều trong tay, quyền năng Giê-su đất trời tôn caVượt trên mọi vinh quang. Danh Ngài lớn thay
+
+Kìa ánh sáng Ngài mở mắt tối, tất cả muôn dân đầu phục suy tôn
+
+Hát vang danh Giê-su. Duy Ngài mãi thôi
+
+
+
+[Tag] Oh oh",,,[],,false,schema_validation_failure,invalid_judge_output,,,,,passed,,,0.07865168539325842,,false,false,false
+TP013,positive_candidate,T03,en,cross_lingual,lyric_paraphrase,songs about boldly proclaiming God's glory and finding strength in His word to persevere until every nation acknowledges His sovereignty,16973874-73e3-4827-b8d4-1a986333db53,601d1766-35a2-4f25-9cbc-674f354f8159,pre_chorus,"Con sẽ chẳng ngần ngại
+
+Nguyện tôn vinh danh của Ngài lên cao rất cao
+
+Lời Chúa giúp con rực lên
+
+Chạy qua khó khăn, vững bước
+
+(Cho đến khi) Muôn dân sẽ cúi đầu",3,Highly Relevant,"[""Con sẽ chẳng ngần ngại"",""Nguyện tôn vinh danh của Ngài lên cao rất cao"",""Lời Chúa giúp con rực lên"",""Chạy qua khó khăn, vững bước"",""(Cho đến khi) Muôn dân sẽ cúi đầu""]","Every core theme of the query—bold proclamation of God's glory, strength in His word, perseverance, and all nations acknowledging His sovereignty—is directly and explicitly present in these lyrics.",true,,valid,,,,,passed,,,0,,false,false,false
+TP014,positive_candidate,T03,vi,theological_concept,ambiguous_request,Tôi cần tìm những bài hát nói về việc bước đi theo sự dẫn dắt của Chúa để làm gương cho người khác,46a73f8f-ccd9-434d-9024-a323cc05690e,a0c3ab24-b8e1-429c-a1e9-dfb0d38f2aea,bridge,"Chân con đi cùng Chúa
+
+Từng lời Ngài truyền phán
+
+Khắp dương gian sẽ thấy
+
+Duy Cha thôi, đầy năng quyền",2,Relevant,"[""Chân con đi cùng Chúa"",""Khắp dương gian sẽ thấy""]","Lyrics clearly express walking with the Lord and being seen by the world, matching both core themes of the query: following God's guidance and being visible as an example to others.",true,,valid,,,,,passed,,,0.047619047619047616,,false,false,false
+TP015,positive_candidate,T03,en,cross_lingual,natural_thematic_request,I need songs that inspire our congregation to proclaim God's name to all nations and encourage believers to actively share their faith with the world.,a7606cd6-57a9-42de-b753-cf546c9a9677,755012db-f661-4cc0-b5c2-8b18a7333f5b,pre_chorus,"Chúng con cùng nhau ca vang
+
+(Để) muôn dân nhận biết Chúa
+
+Hãy mời gọi muôn nơi trên thế gian
+
+Chúng con cùng nhau ca vang
+
+(Để) muôn dân nhận biết Chúa
+
+Whoa",3,Highly Relevant,"[""(Để) muôn dân nhận biết Chúa"",""Hãy mời gọi muôn nơi trên thế gian"",""Chúng con cùng nhau ca vang""]","The lyrics directly call for congregational praise so that all nations may know the Lord and invite the whole world, matching the query's intent to proclaim God's name globally and encourage active faith-sharing.",true,,valid,,,,,passed,,,0,,false,false,false
+TP016,positive_candidate,T04,vi,semantic_paraphrase,lyric_paraphrase,Tìm bài hát nói về sự nhân từ không thay đổi của Thiên Chúa và tình yêu Ngài luôn đồng hành cùng chúng ta mỗi ngày.,a88877aa-6e09-47ee-8b4c-12fba261f6ea,bc0d4621-7851-4482-b090-455af9a28557,chorus,"Thật! Chúa tốt
+
+Chẳng đổi thay
+
+Lòng thương xót Chúa cho con mỗi sớm mai
+
+Tươi mới con mỗi ngày
+
+Thật! Chúa tốt
+
+Chẳng đổi thay
+
+Tình yêu thương trọn vẹn mà Ngài đã ban theo đuổi con đời đời
+
+Chúa mãi tốt",3,Highly Relevant,"[""Chẳng đổi thay"",""Lòng thương xót Chúa cho con mỗi sớm mai"",""Tươi mới con mỗi ngày"",""Tình yêu thương trọn vẹn mà Ngài đã ban theo đuổi con đời đời""]","The lyrics directly express God's unchanging mercy and His love pursuing the believer every day, matching both core themes of the query.",true,,valid,,,,,passed,,,0.1702127659574468,,false,false,false
+TP017,positive_candidate,T04,vi,sermon_topic,natural_thematic_request,"Tôi đang tìm bài hát cho buổi nhóm chủ đề về sự hy sinh cao cả của Chúa trên thập tự giá để bày tỏ tình yêu thực tế đối với nhân loại, giúp hội chúng suy ngẫm về ân điển cứu chuộc.",0570c043-4efa-4dd9-ac98-96ded7527cc4,661d7d07-72c4-45b9-9bb5-74f48a8dab2f,chorus,"Ôi tình yêu Ngài sao đẹp thay!
+
+Thập Tự kia, Chúa mang đau đớn
+
+Cớ sao Ngài, đoái thương con nhiều
+
+Và Chúa mãi yêu thương con",2,Relevant,"[""Thập Tự kia, Chúa mang đau đớn"",""Ôi tình yêu Ngài sao đẹp thay""]","Lyrics directly address the cross sacrifice and divine love, matching the query's core theme, but lack explicit reference to grace of redemption or practical love toward humanity for congregational reflection.",true,,valid,,,,,passed,,,0.08620689655172414,,false,false,false
+TP018,rejected_validation,T04,en,cross_lingual,lyric_paraphrase,worship songs about God coming near to support me when I fail and showing faithfulness in the dark,460cd5b6-3cba-47c5-bcba-5ab639457287,cd663f42-134d-462b-8c3a-2d82698d5632,verse,"Ngài lại gần bên con
+
+Cho dù con gục ngã, Ngài luôn đỡ đần
+
+Và Ngài tìm kiếm con
+
+Trong màn đêm mờ che, Ngài mang sự sáng
+
+Dám mơ ước
+
+Trong tình yêu Ngài luôn thành tín bao dung
+
+Ý Chúa ban, con luôn bước theo",3,Highly Relevant,"[""Ngài lại gần bên con"",""Cho dù con gục ngã, Ngài luôn đỡ đần"",""Trong màn đêm mờ che, Ngài mang sự sáng"",""Trong tình yêu Ngài luôn thành tín bao dung""]","The lyrics directly express God coming near, supporting the singer when they fall, bringing light in darkness, and being faithful in love—matching every core concept of the query.",true,,valid,,,,,rejected,substring_match,,0,,false,false,false
+TP019,positive_candidate,T04,vi,theological_concept,ambiguous_request,Tìm bài hát về việc Chúa yêu thương và hiện diện trong đời sống,141570cd-bff3-41ad-bca1-477d70549133,8409af06-6509-4bd1-a7be-c8a47ae45615,verse,"Đẹp tươi thay Đấng Giê-su ơi!
+
+Tình yêu Chúa đổ tuôn tâm hồn
+
+Dìu con đi bước qua lo âu
+
+Ngự trong con, cả trong tâm hồn",3,Highly Relevant,"[""Tình yêu Chúa đổ tuôn tâm hồn"",""Ngự trong con, cả trong tâm hồn"",""Dìu con đi bước qua lo âu""]","Lyrics directly express God's love pouring into the soul and His dwelling presence within the believer, matching both core themes of the query.",true,,valid,,,,,passed,,,0.08571428571428572,,false,false,false
+TP020,positive_candidate,T04,en,cross_lingual,natural_thematic_request,I am looking for worship songs that reflect on the theme of God's love transforming our lives and the realization that our salvation comes solely from Him.,8509e035-f68a-4411-96fa-23a8907da3c1,802a0adb-bc66-4591-a40f-e267c08d1ebc,verse,"Không ai thể tự cứu chính mình
+
+Chẳng ai có thể ban sự sống
+
+Giê-su, Ngài đến thế gian
+
+Tình yêu Ngài chiếm lấy con
+
+Giờ con ca vang",3,Highly Relevant,"[""Không ai thể tự cứu chính mình"",""Chẳng ai có thể ban sự sống"",""Giê-su, Ngài đến thế gian"",""Tình yêu Ngài chiếm lấy con""]","The lyrics explicitly state no one can save themselves or give life, pointing solely to Jesus, and declare His love has claimed the singer—directly matching both core themes of the query.",true,,valid,,,,,passed,,,0,,false,false,false
+TP021,uncertain_review,T05,vi,semantic_paraphrase,lyric_paraphrase,Tìm bài hát về việc chúng ta là dân thánh được giải phóng khỏi xiềng xích và thuộc về Chúa,d3c705ce-a3c3-4282-936f-7623eeef37c7,9e63d21e-04e1-48cb-92ff-71afc1b7f03e,verse,"Bầu trời kia ngời sáng
+
+Ấy là chính cô dâu của Ngài
+
+Được tự do khỏi mọi lời nguyền, gian dối
+
+
+
+Đền thờ nào sẽ bền lâu
+
+Bởi chỉ có Chiên Con, Giê-su
+
+Mãi là nơi thánh cho dân sự chúc tôn",1,Partially Relevant,"[""Được tự do khỏi mọi lời nguyền, gian dối"",""Ấy là chính cô dâu của Ngài"",""Mãi là nơi thánh cho dân sự chúc tôn""]","Lyrics share themes of freedom and belonging to God (His bride), but 'holy people' is absent (only 'holy place') and freedom is from curses/lies, not chains specifically.",true,,valid,,,,,passed,,,0.08928571428571429,,false,true,false
+TP022,positive_candidate,T05,vi,sermon_topic,natural_thematic_request,"Tôi cần tìm những bài hát thờ phượng về chủ đề nhận biết giá trị bản thân khi ở trong Chúa, tập trung vào việc Ngài luôn hiện diện và ban sự sống mới cho chúng ta",6dfff256-a866-4ccc-b9c2-96cc0492eb61,5b1d36dc-8306-4c0c-977b-db6148655551,pre_chorus,"Chúa ở đây, gần ngay bên con
+
+Lòng cần chỉ Chúa thôi, tình yêu không phai
+
+Ngài hiến dâng thân và ban sức sống
+
+Tạ ơn Chúa (được tự do)",2,Relevant,"[""Chúa ở đây, gần ngay bên con"",""Ngài hiến dâng thân và ban sức sống""]","Lyrics address God's constant presence and giving new life, matching two key sub-themes of the query, but do not explicitly speak to knowing one's worth in Christ.",true,,valid,,,,,passed,,,0.14035087719298245,,false,false,false
+TP023,positive_candidate,T05,en,cross_lingual,lyric_paraphrase,songs about finding my true purpose and belonging because of the sacrifice Jesus made for me,e3516fa3-601d-41f8-a600-3e126c642bae,c28f6497-efbd-4372-8834-49c99c4ca7cb,verse,"Thập tự Chúa đã chịu thay
+
+Để trao cho con
+
+Tự do bước đi gần Chúa hơn
+
+Mạng sống chúng con thuộc Chúa
+
+Và con sẽ hát
+
+Ngợi ca Đấng Tốt Lành mãi không ngưng",3,Highly Relevant,"[""Thập tự Chúa đã chịu thay"",""Tự do bước đi gần Chúa hơn"",""Mạng sống chúng con thuộc Chúa""]","The verse directly references the cross as Jesus's sacrifice, freedom to walk closer to God (purpose), and belonging to the Lord, matching all core elements of the query.",true,,valid,,,,,passed,,,0,,false,false,false
+TP024,positive_candidate,T05,vi,theological_concept,ambiguous_request,Tôi cần những bài hát nói về sự tự do trong Chúa và khẳng định Ngài là chủ tể của cuộc đời mình.,5f48dff8-0370-4a8b-8a6d-2928ae63c7dc,98b7f746-acf4-4b40-9e57-cdb98b3f0191,chorus,"Giê su, Đấng hằng sống
+
+Chúa tể đời con
+
+Chẳng có chi tách rời Ngài xa con
+
+Trọn trái tim con Ngài nắm lấy
+
+
+
+Giê-su - Đấng Chân lý
+
+Chúa! Đấng sự sống
+
+Xiềng xích kia không thể trói buộc
+
+Xiềng xích kia không thể trói con
+
+Tự do nơi Giê-su",3,Highly Relevant,"[""Chúa tể đời con"",""Tự do nơi Giê-su"",""Xiềng xích kia không thể trói buộc""]","The lyrics explicitly affirm Christ as 'Chúa tể đời con' (Lord of my life) and declare 'Tự do nơi Giê-su' (Freedom in Jesus), directly matching both core intents of the query.",true,,valid,,,,,passed,,,0.14,,false,false,false
+TP025,positive_candidate,T05,en,cross_lingual,natural_thematic_request,worship songs about finding our true home and belonging in God's kingdom rather than in this world,a52477e9-0fce-4888-8e41-4275b8c04e96,c90da3b9-dd7b-4eb6-b0d9-8ff0f35ced37,chorus,"Ngài sẽ thêm cho
+
+Ngài sẽ thêm cho
+
+Vương quốc của Chúa Trời
+
+Vương quốc của Chúa Trời
+
+Đấy chính là nơi dân Chúa thuộc về
+
+Hãy tìm kiếm Chúa
+
+Hãy tìm kiếm Chúa
+
+Vương quốc của Chúa Trời
+
+Vương quốc của Chúa Trời
+
+Đấy chính là nơi dân Chúa thuộc về",3,Highly Relevant,"[""Đấy chính là nơi dân Chúa thuộc về"",""Vương quốc của Chúa Trời"",""Hãy tìm kiếm Chúa""]","The chorus directly states that God's Kingdom is where God's people belong and urges seeking the Lord, matching the query's theme of finding true home and belonging in God's kingdom.",true,,valid,,,,,passed,,,0,,false,false,false
+TP026,positive_candidate,T06,vi,semantic_paraphrase,lyric_paraphrase,Tìm bài hát nói về sự hiệp nhất của cộng đồng đức tin khi cùng nhau tôn vinh quyền năng vô đối của Chúa,2feedc36-0d66-47be-871b-4028acbab508,5eae88a5-5eba-42d7-835f-5c23bb56c487,bridge,"Con tin nơi Ngài, vẹn toàn ý Chúa
+
+“Không chi vươn hơn được
+
+Quyền năng nơi Đấng Giê-xu”
+
+Muôn dân hiệp một, tặng lời ca khen
+
+“Không chi vươn hơn được
+
+Quyền năng nơi Đấng Giê-xu”",3,Highly Relevant,"[""Muôn dân hiệp một, tặng lời ca khen"",""Không chi vươn hơn được\n\nQuyền năng nơi Đấng Giê-xu""]","Lyrics directly express unity of all peoples praising together and the unsurpassable power of Jesus, matching all three core concepts of the query.",true,,valid,,,,,passed,,,0.11363636363636363,,false,false,false
+TP027,positive_candidate,T06,vi,sermon_topic,natural_thematic_request,"Tìm bài hát về sự hiệp một trong cộng đồng đức tin, nơi chúng ta cùng nhau đặt gánh nặng xuống trước mặt Chúa và vui mừng tôn vinh sự thánh khiết của Ngài",3ce9cf7c-f75e-437e-8947-07e153a0b9f0,1a5acea0-398e-4ff0-baf7-45d9b6af8570,bridge,"Dâng hết gánh nặng
+
+Trước nơi chân Chúa
+
+Tiếng yêu thương ca vang
+
+Muôn nơi hiệp một
+
+Chung vui ca hát
+
+Đấng Thánh mãi tôn cao",3,Highly Relevant,"[""Dâng hết gánh nặng"",""Trước nơi chân Chúa"",""Muôn nơi hiệp một"",""Chung vui ca hát"",""Đấng Thánh mãi tôn cao""]","All three core query concepts—laying burdens before the Lord, unity in the faith community, and joyfully exalting His holiness—are directly and explicitly present in the lyrics.",true,,valid,,,,,passed,,,0.2391304347826087,,false,false,false
+TP028,positive_candidate,T06,en,cross_lingual,lyric_paraphrase,Songs about believers united in purpose to walk together in His light and impact the world around them,504d0ec2-7646-4d7d-96c7-9c07323a6350,873e5a3a-27fe-4ec5-9728-c9e773fc91fc,verse,"Xin giúp chúng con sống đúng mục đích
+
+Để ánh sáng rọi vào nơi tăm tối
+
+Chúng con hiệp một cùng đi trong Ngài
+
+Cùng loan tin mừng nơi con sẽ đi đến
+
+Thành cao lay động, rung chuyển các nước
+
+Chúng con hiệp một cùng đi trong Ngài",3,Highly Relevant,"[""Chúng con hiệp một cùng đi trong Ngài"",""Để ánh sáng rọi vào nơi tăm tối"",""Thành cao lay động, rung chuyển các nước"",""Xin giúp chúng con sống đúng mục đích""]","The lyrics directly express believers united in purpose, walking together in Him, light shining into darkness, and impacting the world by shaking nations and proclaiming the gospel.",true,,valid,,,,,passed,,,0,,false,false,false
+TP029,positive_candidate,T06,vi,theological_concept,ambiguous_request,Tìm bài hát về sự hiệp nhất của cộng đồng đức tin khi cùng thờ phượng Chúa,11d96089-3515-40cf-b0f5-e30002e3fd47,f42697f7-7a14-44c0-97d8-0acb29e0d806,chorus,"Chính thế, vào ngày hôm nay
+
+Hãy hát khúc thánh ca vì Chúa
+
+Với những môn đồ muôn nơi
+
+Hãy cùng hiệp một dâng lên
+
+Vinh hiển cho Danh Ngài
+
+Đấng ban sức sống chiến thắng sự chết
+
+Hỡi Chúa, chỉ Ngài là Đấng Thánh",3,Highly Relevant,"[""Với những môn đồ muôn nơi"",""Hãy cùng hiệp một dâng lên"",""Hãy hát khúc thánh ca vì Chúa""]","The chorus explicitly combines unity of the faith community ('môn đồ muôn nơi', 'hiệp một') with collective worship ('hát khúc thánh ca', 'dâng lên'), directly matching the query's intent.",true,,valid,,,,,passed,,,0.09615384615384616,,false,false,false
+TP030,positive_candidate,T06,en,cross_lingual,natural_thematic_request,I am looking for worship songs that reflect on the Beatitudes and the comfort God provides to the humble and those who are spiritually needy in our community.,a52477e9-0fce-4888-8e41-4275b8c04e96,4b173a0b-96fe-4f5a-808f-866e0a3804ab,verse,"Phước cho những ai nghèo khó trong tâm linh
+
+Vì chính Nước Đức Chúa Trời thuộc về người
+
+Phước cho ai than khóc
+
+Vì sẽ được an ủi trong Cha
+
+Phước cho ai khiêm nhu
+
+Vì thế gian này sẽ thuộc về người
+
+Phước cho ai lòng hằng luôn khát khao
+
+Công chính nơi Ngài",3,Highly Relevant,"[""Phước cho những ai nghèo khó trong tâm linh"",""Vì sẽ được an ủi trong Cha"",""Phước cho ai khiêm nhu""]","The lyrics are a direct Vietnamese rendering of the Beatitudes, explicitly addressing the poor in spirit, comfort for those who mourn, and the meek—matching the query's core intent precisely.",true,,valid,,,,,passed,,,0,,false,false,false
+TP031,positive_candidate,T07,vi,semantic_paraphrase,lyric_paraphrase,Tìm bài hát nói về việc Chúa luôn đồng hành và không bao giờ để con phải cô đơn trên hành trình đức tin của mình,e5e4bfad-0a1f-452f-a6ea-0cc4e2173f83,d6a6c82f-6e5a-49e9-a80a-8e31fe72dda3,tag,"Ngài vẫn luôn luôn ở bên cạnh
+
+Ngài chẳng bao giờ rời xa
+
+Ngài vẫn luôn luôn ở bên cạnh
+
+Con chẳng bước đi một mình",3,Highly Relevant,"[""Ngài vẫn luôn luôn ở bên cạnh"",""Ngài chẳng bao giờ rời xa"",""Con chẳng bước đi một mình""]","The lyrics directly express God's constant presence and the believer never walking alone, matching the query's core intent about God accompanying on the faith journey.",true,,valid,,,,,passed,,,0.1388888888888889,,false,false,false
+TP032,positive_candidate,T07,vi,sermon_topic,natural_thematic_request,Tôi cần tìm các bài hát về chủ đề tin cậy sự dẫn dắt của Chúa khi đi qua những hoàn cảnh khó khăn để trưởng thành trong đức tin,44ba4e35-8a0a-45ba-9135-3da6ae42be39,0c2e5e2f-de82-4469-95ab-2906cfda3537,verse,"Chúa Thánh Linh ở nơi đây
+
+Thung lũng sâu thẳm chẳng màng,
+
+Con sẽ vững bước đi
+
+Chúa dẫn mỗi bước con đi
+
+Sức sống trong con đầy tràn
+
+Con chỉ muốn Ngài",3,Highly Relevant,"[""Chúa dẫn mỗi bước con đi"",""Thung lũng sâu thẳm chẳng màng"",""Con sẽ vững bước đi"",""Sức sống trong con đầy tràn""]","Lyrics directly express trusting God's guidance through a deep valley (difficulty) with steady steps and spiritual fullness, matching the query's core themes of trust, hardship, and faith growth.",true,,valid,,,,,passed,,,0.07692307692307693,,false,false,false
+TP033,positive_candidate,T07,en,cross_lingual,lyric_paraphrase,worship songs about rejecting worldly patterns to follow God's higher way,c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab,4a350d98-091c-40a6-8ceb-67087fde7fb6,bridge,"Con sẽ chống đối
+
+Lề thói đang đi ngược Ngài
+
+Phá tan bức vách
+
+Những giáo phái đã xây nên
+
+Đường Ngài là chí cao
+
+Đường Ngài là chí cao",3,Highly Relevant,"[""Lề thói đang đi ngược Ngài"",""Đường Ngài là chí cao"",""Con sẽ chống đối""]","The lyrics directly express resisting customs that oppose God and affirming His way as the highest, matching both core elements of the query.",true,,valid,,,,,passed,,,0,,false,false,false
+TP034,positive_candidate,T07,vi,theological_concept,ambiguous_request,Tìm bài hát về việc bước đi theo Chúa để được dẫn dắt đến mục đích sống mới,a3452a9c-f6fc-4714-99a9-5bdf4f6aadae,3b9969ff-0d0d-4a67-b83f-969534dd042a,verse,"Ánh sáng Ngài, sáng soi đường
+
+Bước đi theo , bỏ lại quá khứ
+
+Sự sống nơi Ngài, đã thay đổi con
+
+Mang đi xa những gian dối kia
+
+Chính Chúa Con - Đấng Cứu Ân",3,Highly Relevant,"[""Ánh sáng Ngài, sáng soi đường"",""Bước đi theo , bỏ lại quá khứ"",""Sự sống nơi Ngài, đã thay đổi con""]","Lyrics explicitly mention walking with the Lord, being guided by His light, and experiencing a transformed new life—matching all three core concepts of the query.",true,,valid,,,,,passed,,,0.11627906976744186,,false,false,false
+TP035,positive_candidate,T07,en,cross_lingual,natural_thematic_request,I am looking for a song about trusting God's guidance and committing to follow His path for our lives as we grow in faith.,5a737dd9-49f3-4644-9d86-73f882b2389c,039e02b7-1254-4858-9bab-12a0a9505ac1,other,"Verse 1:
+
+Muôn đời, danh Cha là Đấng
+
+Yêu thương đầy năng quyền
+
+Chúa vẫn như thế
+
+Hôm nay và mãi sau
+
+Mãi mãi đến muôn đời
+
+
+
+Verse 2:
+
+Chúa Cha, tất cả mọi thứ
+
+Chúa ban tặng chúng con
+
+Ngài đáp ứng mong muốn
+
+Nhu cầu của chúng con
+
+Chân lý của Chúa mãi vững bền
+
+
+
+Pre-Chorus:
+
+Chúng con đến với Ngài
+
+Nguyện cầu danh Chúa
+
+
+
+
+
+
+
+
+
+
+
+Chorus:
+
+Oh oh, Chúa chúng con tôn vinh Ngài
+
+Oh oh, mãi sống trong danh Cha
+
+Oh oh, vững bước đi trong Ngài
+
+Nguyện ước, Ngài sẽ mãi luôn bên con
+
+
+
+Con tin, Ngài dẫn lối con đi theo Ngài
+
+Con mang, lời hứa Chúa, con tuyên xưng
+
+Con luôn, vững bước đi trong Ngài
+
+Có Cha, nguyện mãi mãi luôn bên Cha
+
+
+
+Bridge:
+
+Nguyện theo Cha
+
+Nguyện sẽ mãi bên Cha
+
+Lòng vững bước trong Cha
+
+Lòng mãi hướng về Cha",2,Relevant,"[""Con tin, Ngài dẫn lối con đi theo Ngài"",""Nguyện theo Cha"",""vững bước đi trong Ngài"",""Lòng vững bước trong Cha""]","Lyrics strongly express trusting God's guidance and committing to follow His path, but lack the 'growing in faith' dimension present in the query.",true,,valid,,,,,passed,,,0,,false,false,false
+TP036,positive_candidate,T08,vi,semantic_paraphrase,lyric_paraphrase,Tìm bài hát về việc dâng hiến đời sống để được Chúa biến đổi và dùng làm công cụ đem ánh sáng của Ngài đến cho muôn dân,860403f4-c7de-42c8-a50f-92631d958ad1,2c7b772b-d7a4-4424-b483-02b3e88cc410,verse,"Như chính Ê-sai
+
+Thấy ánh sáng (của) thiên đàng
+
+Bởi vinh quang Ngài, biến đổi cuộc đời con
+
+Trong ý muốn Ngài
+
+Tâm linh con (được) thánh sạch
+
+
+
+Sự kêu gọi này, như đốm than cháy rực
+
+Lửa thiêng đang
+
+Bùng cháy mạnh mẽ trong con
+
+Dâng Chúa hết mọi sự
+
+Đến khi muôn dân biết Ngài",3,Highly Relevant,"[""Dâng Chúa hết mọi sự"",""biến đổi cuộc đời con"",""Thấy ánh sáng (của) thiên đàng"",""Đến khi muôn dân biết Ngài""]","Lyrics directly address dedicating life to God, being transformed by His glory, seeing His light, and reaching all peoples—matching all core themes of the query.",true,,valid,,,,,passed,,,0.2,,false,false,false
+TP037,positive_candidate,T08,vi,sermon_topic,natural_thematic_request,"Tôi cần một bài hát về sự sẵn lòng dâng hiến cuộc đời để phục vụ Chúa, bày tỏ tấm lòng đáp ứng khi Ngài kêu gọi chúng ta làm công việc của Ngài.",83ce0b16-0886-409f-8326-996eaa50eab1,397b317e-f2cf-4949-89d3-622ad15c4162,bridge,"Ngự trên ngai
+
+Tiếng phán của Ngài vang vọng
+
+“Ai sẽ đi?
+
+Ta sẽ sai ai đây?”
+
+
+
+Ngài, con ở đây
+
+Xin Ngài hãy dùng con
+
+Suốt cả đời con
+
+Xin dâng lời ca chúc tôn",3,Highly Relevant,"[""Ai sẽ đi?\n\nTa sẽ sai ai đây?"",""Ngài, con ở đây\n\nXin Ngài hãy dùng con\n\nSuốt cả đời con""]","The lyrics directly express willingness to dedicate one's life to serve God in response to His call, matching the query's core intent of a responsive heart to God's summons.",true,,valid,,,,,passed,,,0.09090909090909091,,false,false,false
+TP038,positive_candidate,T08,en,cross_lingual,lyric_paraphrase,Songs about trusting in the God of our ancestors to intervene in our current life and fulfill His promises for our future path,b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5,2ece80bf-683f-4677-ac54-2cc06a5d4a26,verse,"Con cầu xin nơi Đức Chúa của Gia-cốp
+
+Đấng yêu thương dân
+
+Chúa qua bao nhiêu đời
+
+Con tin Chúa sẽ giữ những lời hứa của Ngài
+
+Con cầu xin nơi Đức Chúa của Môi-se
+
+Biển cả Chúa đã chia hai cho dân Ngài
+
+Nguyện cầu xin Cha
+
+Hãy đến bên con ngay giờ này",3,Highly Relevant,"[""Con cầu xin nơi Đức Chúa của Gia-cốp"",""Chúa qua bao nhiêu đời"",""Con tin Chúa sẽ giữ những lời hứa của Ngài"",""Con cầu xin nơi Đức Chúa của Môi-se"",""Hãy đến bên con ngay giờ này""]","The lyrics directly invoke the God of Jacob and Moses (ancestors), express trust that He will keep His promises, and plead for His intervention right now—matching all three core elements of the query.",true,,valid,,,,,passed,,,0,,false,false,false
+TP039,positive_candidate,T08,vi,theological_concept,ambiguous_request,Tìm bài hát về việc nương dựa vào sức mạnh của Chúa để bước đi trong sự kêu gọi của Ngài bất chấp khó khăn,dde347a0-d8df-433f-a5b5-a39a5500053e,8997d414-64f4-493f-b3af-71272fe27cce,bridge,"Sự sống là Cha, Nguồn Sáng dẫn lối đời con
+
+Nhờ sức lực Cha, vượt bao gian khó con quyết không lui",2,Relevant,"[""Nhờ sức lực Cha, vượt bao gian khó con quyết không lui"",""Nguồn Sáng dẫn lối đời con""]","Lyrics clearly express relying on God's strength to overcome hardships and being guided forward, matching the core intent of the query. The 'calling' aspect is implied through guidance imagery rather than stated explicitly.",true,,valid,,,,,passed,,,0.07317073170731707,,false,false,false
+TP040,invalid_judge_output,T08,en,cross_lingual,natural_thematic_request,I am looking for a worship song about dedicating our daily lives to God's purpose so that others may witness His greatness through our actions.,f60d3b21-17a7-40ee-96b7-56291938bb2f,b9c3c417-b7c7-4c5a-9c44-fbf48f42bbb5,chorus,"Đời này trọn dâng vì Chúa
+
+Ngài được ngợi ca mãi Chúa ơi
+
+Cuộc đời con sẽ hát
+
+Chỉ chúa xứng đáng được tôn
+
+
+
+Dành mọi điều Chúa giao phó
+
+Nguyện Ngài luôn được hiển vinh
+
+Và mọi người dân sẽ thấy,
+
+sẽ nghe, sẽ hiểu
+
+Ngài là Chúa của muôn mọi điều",,,[],,false,protocol_validation_failure,invalid_judge_output,,,,,passed,,,0,,false,false,false
+TP041,positive_candidate,T09,vi,semantic_paraphrase,lyric_paraphrase,"Tìm bài hát về việc Đức Thánh Linh là Đấng an ủi, phục hồi tâm hồn khi con mệt mỏi và ban sức mới để con vững bước.",2d76a707-980a-4a75-855e-ffac3d169dd1,1fdae799-d222-4ab8-92d3-89d79be4cdb2,verse,"Con yếu đuối được Ngài chở che
+
+Khi con thấy mệt nhoài, buông xuôi
+
+Nhưng trái tim này Ngài phục hồi
+
+Ngài dìu con đi qua,
+
+Ngài đỡ nâng con đi
+
+
+
+Lừa dối nói con không trọn vẹn
+
+Ngài nhắc con đủ đầy luôn luôn
+
+Vì Chúa luôn thoả mãn tâm con
+
+Thổi một nguồn sức mới
+
+Ngài làm con nên mới",3,Highly Relevant,"[""Khi con thấy mệt nhoài, buông xuôi"",""Nhưng trái tim này Ngài phục hồi"",""Thổi một nguồn sức mới"",""Ngài dìu con đi qua,\n\nNgài đỡ nâng con đi""]","Lyrics directly address comfort when exhausted, heart restoration, and new strength to keep going, matching all core elements of the query about the Holy Spirit as comforter and restorer.",true,,valid,,,,,human_review,held_out_vocabulary_requires_human_review,,0.12307692307692308,,false,false,false
+TP042,positive_candidate,T09,vi,sermon_topic,natural_thematic_request,Tìm các bài hát về sự an ủi và nâng đỡ của Thánh Linh khi chúng ta cảm thấy thất bại hoặc vấp ngã trong đời sống đức tin,1064050b-d15c-4b7b-9390-0ce53ccf801c,810b1e99-a624-4337-ab74-cb84bcf845e2,verse,"Chúa luôn ở bên con
+
+Ủi an con khỏi những thất bại
+
+Tiếng của Ngài ấm êm
+
+Chở che con khỏi bóng tối
+
+Dù là vấp ngã chẳng đáng thứ tha
+
+Ở trong Ngài cũng sẽ nên phước lành
+
+Ở trong Ngài sẽ trở nên phước lành",2,Relevant,"[""Ủi an con khỏi những thất bại"",""Dù là vấp ngã chẳng đáng thứ tha"",""Chở che con khỏi bóng tối""]","Lyrics strongly match the themes of comfort from failure and stumbling in faith, but reference 'Chúa' (the Lord) rather than explicitly naming the Holy Spirit (Thánh Linh) as the query specifies.",true,,valid,,,,,human_review,held_out_vocabulary_requires_human_review,,0.14285714285714285,,false,false,false
+TP043,positive_candidate,T09,en,cross_lingual,lyric_paraphrase,worship songs about the Holy Spirit being our constant companion who empowers us to bear witness to His glory everywhere,16973874-73e3-4827-b8d4-1a986333db53,1923ee2a-41d2-483f-9a92-7102c8c31fe0,verse,"Thánh Linh Chúa ở cùng chúng con
+
+Nguyện được Chúa sai đi bất cứ đâu
+
+Làm chứng nhân cho muôn khắp nhân gian
+
+
+
+Vinh quang chính tên Ngài, thánh thay
+
+(Nguyện) Tôn vinh Ngài, Đức Vua
+
+Ngài ngự trên ngai, tể trị muôn nơi",3,Highly Relevant,"[""Thánh Linh Chúa ở cùng chúng con"",""Nguyện được Chúa sai đi bất cứ đâu"",""Làm chứng nhân cho muôn khắp nhân gian"",""Vinh quang chính tên Ngài, thánh thay"",""Ngài ngự trên ngai, tể trị muôn nơi""]","The lyrics directly address the Holy Spirit being with us, being sent anywhere to bear witness, and glorifying His name everywhere—matching all core query concepts.",true,,valid,,,,,human_review,held_out_vocabulary_requires_human_review,,0,,false,false,false
+TP044,uncertain_review,T09,vi,theological_concept,ambiguous_request,Tôi cần những bài hát về sự hiện diện và nâng đỡ của Chúa Thánh Linh khi chúng ta gặp khó khăn.,d15f40ad-eb38-44d5-80e5-5cdeb9ec999b,3d653473-e71d-4e8e-a9ae-6b646b84f4dc,chorus,"Bình an nơi Chúa
+
+Neo giữ tấm lòng con
+
+Và không buông lơi
+
+Ngài đến nâng đỡ con
+
+Giê-su, con thờ tôn
+
+
+
+Niềm vui nơi Chúa
+
+Ân điển luôn cạnh bên
+
+Chẳng chút âu lo
+
+Bởi sức thiêng Ngài ban
+
+Giê-su, con thờ tôn",1,Partially Relevant,"[""Ngài đến nâng đỡ con"",""Bởi sức thiêng Ngài ban""]","Lyrics address Jesus's support and spiritual power, partially matching the theme of comfort in difficulty, but do not specifically reference the Holy Spirit (Chúa Thánh Linh) as the query requires.",true,,valid,,,,,human_review,held_out_vocabulary_requires_human_review,,0.07407407407407407,,false,true,false
+TP045,positive_candidate,T09,en,cross_lingual,natural_thematic_request,worship songs about the Holy Spirit empowering us and giving us renewed strength during difficult times,9cdfce70-a573-4392-a817-afeb8dca4104,ccc887f3-2577-4d18-a15d-24a080ad1622,verse,"Chúa lấy đi những lo âu và cùng con bước đi
+
+Đức Thánh Linh ban cho con một nguồn sức mới
+
+Tuyên bố muôn nơi tin vui rằng Chúa đã sống lại
+
+Chúng con vâng lời, nguyện ý Chúa nên
+
+Chúng con dâng trọn sự sống nơi Ngài
+
+Chúng con tìm Chúa, tìm Chúa luôn luôn",3,Highly Relevant,"[""Đức Thánh Linh ban cho con một nguồn sức mới"",""Chúa lấy đi những lo âu và cùng con bước đi""]","The lyrics explicitly name the Holy Spirit giving a new source of strength and reference the removal of anxieties, directly matching the query's core intent of Holy Spirit empowerment and renewed strength in difficult times.",true,,valid,,,,,human_review,held_out_vocabulary_requires_human_review,,0,,false,false,false
+TP046,positive_candidate,T10,vi,semantic_paraphrase,lyric_paraphrase,Tìm bài hát về việc Đức Thánh Linh dẫn dắt tâm trí và nhắc lại lời Chúa dạy dỗ trong lòng,1119875e-0c71-44ec-949a-de26cb2cc74c,fd91a79f-3dd6-4ff2-abae-d6b28d43b3eb,verse,"Ngài là Vua ở trong con
+
+Là ngọn gió dẫn lối cánh buồm
+
+Mỏ neo trước con sóng cao
+
+Ôi, con ca khen
+
+Ngài là Vua ở trong con
+
+Ngọn lửa cháy (lên) khát khao trong con
+
+Lời Chúa nhắc nhớ cho con
+
+Ôi, con ca khen",2,Relevant,"[""Lời Chúa nhắc nhớ cho con"",""Là ngọn gió dẫn lối cánh buồm"",""Ngài là Vua ở trong con""]","Lyrics capture guidance (wind guiding sail) and reminding of God's word within, aligning with the query's core intent of the Spirit leading and reminding, though the Holy Spirit and 'mind' are not explicitly named.",true,,valid,,,,,human_review,held_out_vocabulary_requires_human_review,,0.10869565217391304,,false,false,false
+TP047,uncertain_review,T10,vi,sermon_topic,natural_thematic_request,Tôi cần các bài hát về việc để lời Chúa hướng dẫn và soi sáng tâm trí chúng ta trong đời sống hàng ngày,16a593d2-e3d2-4f4c-aada-0cb487556195,efbbaac5-7a46-42e9-ac36-8a88cbd47f49,other,"Lời Chúa sống mãi
+
+Nhịp tim Chúa sống trong con
+
+Lời Chúa sống mãi
+
+Lòng con hăng say cùng Chúa
+
+
+
+Siyayizwa inhliziyo, inhliziyo yakho
+
+Đôi chân con nguyện đi Cha ơi
+
+Siyayizwa inhliziyo, inhliziyo yakho
+
+Mang Tin Vui đến nơi nơi",1,Partially Relevant,"[""Lời Chúa sống mãi""]","The lyrics mention God's Word ('Lời Chúa') but focus on its eternal nature and eagerness to spread the Gospel, not on the Word guiding or illuminating the mind in daily life.",true,,valid,,,,,passed,,,0.08695652173913043,,false,true,false
+TP048,positive_candidate,T10,en,cross_lingual,lyric_paraphrase,Songs about the Spirit bringing God's promises to mind when life feels overwhelming and weary,0ac708c4-a8a8-4d99-be5e-a1b932f32856,014994a1-489f-4e2f-810d-3e9b2f6ac1ff,verse,"Khi thế giới của con chênh vênh
+
+Và lòng con cũng đã mệt nhoài
+
+Oh, lời Ngài hứa nhắc con giữ vững lòng
+
+Tình yêu với sự tốt đẹp của Chúa",2,Relevant,"[""Khi thế giới của con chênh vênh"",""Và lòng con cũng đã mệt nhoài"",""lời Ngài hứa nhắc con giữ vững lòng""]","Captures overwhelming/unstable world, weary heart, and God's promises reminding the singer, but lacks explicit mention of the Spirit as the agent bringing promises to mind.",true,,valid,,,,,passed,,,0,,false,false,false
+TP049,positive_candidate,T10,vi,theological_concept,ambiguous_request,Tìm bài hát tôn vinh sự cao trọng và quyền năng của Chúa trong mọi việc Ngài làm,5e6bd968-85cb-4117-aed0-abc20d3f7aa7,7b7adb11-02db-4656-b642-bcf478fb18f7,verse,"Nguyện Danh Thánh của Chúa là Danh mà con nhắc đến
+
+Và là Danh của Đấng Toàn Năng chính con thờ lạy
+
+Mọi điều Cha làm nên tuyệt thật lòng con chúc tán
+
+Chỉ duy Chúa quyền năng trên đất không ai bì cùng
+
+Chỉ duy Chúa quyền năng trên đất con đây tôn vinh",3,Highly Relevant,"[""Mọi điều Cha làm nên tuyệt thật lòng con chúc tán"",""Chỉ duy Chúa quyền năng trên đất không ai bì cùng"",""Chỉ duy Chúa quyền năng trên đất con đây tôn vinh"",""Và là Danh của Đấng Toàn Năng chính con thờ lạy""]","Lyrics directly honor God's greatness, power, and all things He does with explicit praise, matching every element of the query.",true,,valid,,,,,passed,,,0.1875,,false,false,false
+TP050,uncertain_review,T10,en,cross_lingual,natural_thematic_request,I am looking for a worship song that reflects on the Holy Spirit helping us understand and align with God's sovereign will and eternal purposes on earth.,1064050b-d15c-4b7b-9390-0ce53ccf801c,fca89799-0e70-493a-8992-c0ef051ecb7a,bridge,"Trên cao, lời Chúa vững bền mãi mãi
+
+Và điều ấy đang
+
+Được đầy dẫy trên đất này
+
+Mãi chỉ một Đấng đáng được tôn cao
+
+Và Ngài đã đến
+
+(Để) Ý Chúa được nên!",1,Partially Relevant,"[""Ý Chúa được nên"",""lời Chúa vững bền mãi mãi"",""Được đầy dẫy trên đất này""]","The lyrics reference God's will being done on earth and the eternal nature of His word, partially matching the query's theme of sovereign will and eternal purposes. However, the Holy Spirit's specific role in helping us understand and align is absent.",true,,valid,,,,,human_review,held_out_vocabulary_requires_human_review,,0,,false,true,false

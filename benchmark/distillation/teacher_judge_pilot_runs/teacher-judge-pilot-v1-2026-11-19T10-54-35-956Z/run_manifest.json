@@ -1,0 +1,152 @@
+{
+  "schemaVersion": "teacher-judge-pilot-run-v1",
+  "status": "checkpoint_complete_pending_human_audit",
+  "runId": "teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z",
+  "mode": "fifty_pair_teacher_judge_pilot",
+  "createdAtUtc": "2026-11-19T10:54:35.956Z",
+  "initialCodeCommit": "a6707310cfcb66bc4adc1d1f21d34600597629d2",
+  "resumedAtUtc": "2026-11-19T11:05:54.145Z",
+  "codeCommit": "4b896f53d7968c669fe19f1246ba3a111bdb0315",
+  "teacherPrompt": {
+    "path": "docs/research/e5_distillation/prompts/gemini-query-generation-teacher-pilot-v1.txt",
+    "sha256": "b4132779c6c233aba2a365cf7495bd260def0f83720f36ff8c62f6b9c97a522f"
+  },
+  "frozenJudgeConfig": {
+    "path": "benchmark/distillation/judge_selection_runs/judge-selection-v5-2026-11-18T04-26-20-960Z/frozen_judge_config.json",
+    "sha256": "c99222b93a1864c09f293137b2402bda859d8d47e6d37f56f0a12c55eed64641"
+  },
+  "sourceFiles": {
+    "corpus": {
+      "path": "benchmark/data/songs.csv",
+      "sha256": "14b260753a12b78e29f036169a567cf095f5925c3b51ffe2b64d54a6561eb49e"
+    },
+    "topics": {
+      "path": "benchmark/data/topics.csv",
+      "sha256": "3e9776371bff24bde660670ac0a486f2104b2ee505bb6c9c0c0fd9b74935dbc3"
+    },
+    "protectedQueries": {
+      "path": "benchmark/data/queries.csv",
+      "sha256": "3699b7af5c7d86a92163ced8cc156d866550dfee70fb8986291fe30740b1c13f"
+    },
+    "humanReference": {
+      "path": "benchmark/distillation/human_reference/judge_selection_reference_v2.json",
+      "sha256": "b727ad449f440ba2a8d9d98aee300a522e14874f874b6283c9ab943574de6183"
+    }
+  },
+  "inventories": {
+    "geminiTeacher": {
+      "name": "models/gemini-3.1-flash-lite",
+      "version": "3.1-flash-lite-05-2026",
+      "displayName": "Gemini 3.1 Flash Lite",
+      "description": "Gemini 3.1 Flash Lite",
+      "inputTokenLimit": 1048576,
+      "outputTokenLimit": 65536,
+      "supportedGenerationMethods": [
+        "generateContent",
+        "countTokens",
+        "createCachedContent",
+        "batchGenerateContent"
+      ],
+      "temperature": 1,
+      "topP": 0.95,
+      "topK": 64,
+      "maxTemperature": 2,
+      "thinking": true
+    },
+    "frozenQwenJudge": {
+      "id": "qwen/qwen3.8-27b",
+      "object": "model",
+      "created": 1786984846,
+      "owned_by": "Alibaba Cloud",
+      "active": true,
+      "context_window": 131072,
+      "public_apps": null,
+      "max_completion_tokens": 16384,
+      "name": "Qwen/Qwen3.8-27B",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "context_length": 131072,
+      "max_output_length": 16384,
+      "pricing": {
+        "prompt": "0.0000008",
+        "completion": "0.000004",
+        "image": "0",
+        "request": "0",
+        "input_cache_read": "0.0000004"
+      },
+      "supported_sampling_parameters": [
+        "temperature",
+        "top_p",
+        "stop",
+        "seed",
+        "max_tokens"
+      ],
+      "supported_features": [
+        "tools",
+        "json_mode",
+        "reasoning"
+      ]
+    }
+  },
+  "sourceManifest": {
+    "schemaVersion": "source-manifest-v1",
+    "corpusSha256": "14b260753a12b78e29f036169a567cf095f5925c3b51ffe2b64d54a6561eb49e",
+    "approvedSongs": 67,
+    "eligibleSongs": 61,
+    "eligibleSections": 284,
+    "anchorSongIds": [
+      "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+      "53a46ade-8695-400d-895e-9cf74afe0700",
+      "5d419226-2508-41de-89a8-42fdb4fb3fd3",
+      "8e9e95b9-1bc1-40bf-8fc5-cafd82417d97",
+      "c240c3a3-3157-4a55-8fae-fb356076f509",
+      "e827e4f4-94cf-43a6-926b-feba42d9fcaf"
+    ],
+    "trainTopicIds": [
+      "T01",
+      "T02",
+      "T03",
+      "T04",
+      "T05",
+      "T06",
+      "T07",
+      "T08",
+      "T09",
+      "T10"
+    ],
+    "protectedQueryCount": 90,
+    "eligibleSourceSha256": "93b83eb499aff8d5d64365940cfe03f518a001289430be92f484fa816eda2e76",
+    "humanReferencePairsExcluded": 50,
+    "humanReferenceSectionsExcluded": 42,
+    "selectedSourceSongs": 44,
+    "selectedSourceSections": 50,
+    "externalHeldOutSetPresent": false,
+    "externalHeldOutSetNote": "No frozen external held-out query artifact exists in the repository at pilot time."
+  },
+  "requestedPairs": 50,
+  "noFallback": true,
+  "humanReferenceUsedForTraining": false,
+  "diagnosticQueriesUsedForGeneration": false,
+  "heldOutQueriesSentToTeacher": false,
+  "trainingStarted": false,
+  "completedAtUtc": "2026-11-19T11:33:19.956Z",
+  "completedPairs": 50,
+  "outputs": {
+    "teacherRaw": "gemini_teacher_raw.json",
+    "judgeRaw": "qwen_judge_raw.json",
+    "pairs": "pilot_pairs.jsonl",
+    "metrics": "pilot_metrics.json",
+    "executionLog": "execution_log.jsonl",
+    "humanAuditCsv": "human_audit.csv",
+      "humanAuditWorkbook": {
+        "path": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z/teacher_judge_human_audit.xlsx",
+        "sha256": "b790d998c90fffb1a72771180bc0eb3020a93b82b0fc4f0554af1cf4ce46a0d7"
+      },
+    "report": "teacher_judge_pilot_report.md"
+  }
+}

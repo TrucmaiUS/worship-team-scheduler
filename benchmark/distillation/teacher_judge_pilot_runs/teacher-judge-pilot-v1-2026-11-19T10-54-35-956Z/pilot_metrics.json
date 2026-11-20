@@ -1,0 +1,95 @@
+{
+  "totalPairs": 50,
+  "acceptance": {
+    "positiveCandidates": 43,
+    "acceptanceRate": 0.86,
+    "uncertainReview": 4,
+    "uncertainRate": 0.08,
+    "rejected": 1,
+    "rejectedRate": 0.02,
+    "invalidJudgeOutputs": 2,
+    "invalidJudgeOutputRate": 0.04,
+    "note": "Positive candidates remain ineligible for training until human contextual and theological audit."
+  },
+  "scoreDistribution": {
+    "1": 4,
+    "2": 8,
+    "3": 36,
+    "schema_failure": 2
+  },
+  "queryDiversity": {
+    "uniqueNormalizedQueries": 50,
+    "duplicateCount": 0,
+    "meanPairwiseWordJaccard": 0.09294626796281799,
+    "p95PairwiseWordJaccard": 0.25925925925925924,
+    "languageDistribution": {
+      "vi": 30,
+      "en": 20
+    },
+    "styleDistribution": {
+      "lyric_paraphrase": 20,
+      "natural_thematic_request": 20,
+      "ambiguous_request": 10
+    },
+    "coverageCategoryDistribution": {
+      "semantic_paraphrase": 10,
+      "sermon_topic": 10,
+      "cross_lingual": 20,
+      "theological_concept": 10
+    }
+  },
+  "semanticCoverage": {
+    "topicsCovered": 10,
+    "topicDistribution": {
+      "T01": 5,
+      "T02": 5,
+      "T03": 5,
+      "T04": 5,
+      "T05": 5,
+      "T06": 5,
+      "T07": 5,
+      "T08": 5,
+      "T09": 5,
+      "T10": 5
+    },
+    "sourceSongsCovered": 44,
+    "sourceSectionsCovered": 50
+  },
+  "validation": {
+    "mechanicalGenerationPass": 49,
+    "judgeSchemaPass": 48,
+    "judgeSchemaFailure": 2,
+    "leakageRejected": 1,
+    "leakageHumanReview": 9,
+    "copiedLyricSpan": 0,
+    "titleOrArtistLeak": 0,
+    "highQueryLyricOverlap": 0,
+    "evidenceVerbatimValid": 48,
+    "evidenceContextPending": 44,
+    "theologicalConsistencyPending": 50
+  },
+  "riskIndicators": {
+    "automatedFalseAcceptanceFlags": 0,
+    "positiveCandidatesPendingHumanContextAndTheologyAudit": 43,
+    "falseRejectionRisk": 4,
+    "validationRejectedQueriesRequiringHumanAudit": 1,
+    "rejectedPairsPromotedToHardNegatives": 0
+  },
+  "latencyAndTokens": {
+    "teacher": {
+      "inputTokens": 33753,
+      "visibleOutputTokens": 7491,
+      "thoughtTokens": 6121,
+      "totalTokens": 47365,
+      "meanLatencyMs": 2146.92,
+      "p95LatencyMs": 3495
+    },
+    "judge": {
+      "inputTokens": 29382,
+      "outputTokens": 27736,
+      "totalTokens": 57118,
+      "meanLatencyMs": 1642.7083333333333,
+      "p95LatencyMs": 2274
+    }
+  }
+}

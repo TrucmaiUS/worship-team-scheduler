@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "source-manifest-v1",
+  "corpusSha256": "14b260753a12b78e29f036169a567cf095f5925c3b51ffe2b64d54a6561eb49e",
+  "approvedSongs": 67,
+  "eligibleSongs": 61,
+  "eligibleSections": 284,
+  "anchorSongIds": [
+    "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+    "53a46ade-8695-400d-895e-9cf74afe0700",
+    "5d419226-2508-41de-89a8-42fdb4fb3fd3",
+    "8e9e95b9-1bc1-40bf-8fc5-cafd82417d97",
+    "c240c3a3-3157-4a55-8fae-fb356076f509",
+    "e827e4f4-94cf-43a6-926b-feba42d9fcaf"
+  ],
+  "trainTopicIds": [
+    "T01",
+    "T02",
+    "T03",
+    "T04",
+    "T05",
+    "T06",
+    "T07",
+    "T08",
+    "T09",
+    "T10"
+  ],
+  "protectedQueryCount": 90,
+  "eligibleSourceSha256": "93b83eb499aff8d5d64365940cfe03f518a001289430be92f484fa816eda2e76",
+  "humanReferencePairsExcluded": 50,
+  "humanReferenceSectionsExcluded": 42,
+  "selectedSourceSongs": 44,
+  "selectedSourceSections": 50,
+  "externalHeldOutSetPresent": false,
+  "externalHeldOutSetNote": "No frozen external held-out query artifact exists in the repository at pilot time."
+}

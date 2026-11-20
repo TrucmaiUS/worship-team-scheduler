@@ -1,0 +1,100 @@
+{
+  "teacher": {
+    "role": "gemini_teacher",
+    "task": "generation",
+    "provider": "google",
+    "modelId": "gemini-3.1-flash-lite",
+    "promptVersion": "gemini-query-generation-teacher-pilot-v1",
+    "promptSha256": "b4132779c6c233aba2a365cf7495bd260def0f83720f36ff8c62f6b9c97a522f",
+    "responseSchemaSha256": "72bc7aa1d24615cae24db1a47c4d54cd5426ea62eda68ad5319719fe04ee447a",
+    "responseFormat": "json_schema",
+    "allowFallback": false,
+    "maxAttempts": 3,
+    "maxTransientRetries": 6,
+    "maxOutputTokens": 700,
+    "timeoutMs": 30000,
+    "temperature": 0.7,
+    "topP": 0.9,
+    "seed": 20261119,
+    "thinkingLevel": "low"
+  },
+  "frozenJudge": {
+    "schemaVersion": "frozen-judge-config-v1",
+    "status": "selected",
+    "frozenAtUtc": "2026-11-18T06:14:04.883Z",
+    "selectedModel": {
+      "provider": "groq",
+      "modelId": "qwen/qwen3.8-27b",
+      "observedName": "Qwen/Qwen3.8-27B",
+      "providerCreatedEpoch": 1786984846,
+      "observedContextWindow": 131072,
+      "revisionPinning": "exact_provider_model_id_plus_observed_inventory_metadata",
+      "limitation": "Groq did not expose an immutable revision digest; future runs must re-check inventory and report any alias drift."
+    },
+    "prompt": {
+      "path": "docs/research/e5_distillation/prompts/groq-independent-judge-v4.3.txt",
+      "version": "groq-independent-judge-v4.3",
+      "sha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d"
+    },
+    "responseSchema": {
+      "sha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515"
+    },
+    "decoding": {
+      "role": "independent_judge",
+      "task": "label",
+      "provider": "groq",
+      "modelId": "qwen/qwen3.8-27b",
+      "promptVersion": "groq-independent-judge-v4.3",
+      "promptSha256": "ed3830e67ccc876b6c5839f2bacba144377d776ee59313b0fe8f01eb1f7cc00d",
+      "allowFallback": false,
+      "maxAttempts": 3,
+      "maxTransientRetries": 6,
+      "maxOutputTokens": 900,
+      "timeoutMs": 30000,
+      "responseSchemaSha256": "44496a40ff6c74a6e7f778bb5a22f2d00a1e8f7db9bbed6f2933fd836a8fe515",
+      "responseFormat": "json_object",
+      "temperature": 0.2,
+      "topP": 0.95,
+      "seed": 20261113,
+      "reasoningEffort": "low"
+    },
+    "reference": {
+      "path": "benchmark/distillation/human_reference/judge_selection_reference_v2.json",
+      "sha256": "b727ad449f440ba2a8d9d98aee300a522e14874f874b6283c9ab943574de6183"
+    },
+    "evidenceContextAudit": {
+      "path": "benchmark/distillation/judge_selection_runs/judge-selection-v5-2026-11-18T04-26-20-960Z/evidence_context_audit.csv",
+      "sha256": "8ffce7924b3e0e0d7c415f98723f3c840a7ccb673c90c50944fa40742494810c"
+    },
+    "selectionCriteria": {
+      "version": "judge-selection-v5",
+      "hardGates": {
+        "schemaPassRate": 1,
+        "evidenceVerbatimMatchRate": 1,
+        "minimumEvidenceContextSupportRate": 0.95,
+        "maximumCriticalDisagreementRate": 0.05
+      },
+      "rankingOrder": [
+        "quadraticWeightedKappa",
+        "macroF1",
+        "exactAgreement",
+        "evidenceContextSupportRate",
+        "lowerTotalTokens",
+        "lowerMeanLatencyMs"
+      ]
+    },
+    "selectionResult": {
+      "selectedModelId": "qwen/qwen3.8-27b",
+      "status": "selected",
+      "gatePass": {
+        "openai/gpt-oss-120b": false,
+        "qwen/qwen3.8-27b": true
+      }
+    },
+    "codeCommits": {
+      "execution": "22812bbb0577923b090ffd673bb53394dcd4012b",
+      "evaluation": "3d3679ec41f4e3be2147be75c4d1827cfa8a41a5"
+    },
+    "protectedHeldOutDataUsed": false
+  }
+}
