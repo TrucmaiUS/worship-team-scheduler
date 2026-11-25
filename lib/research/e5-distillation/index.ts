@@ -5,6 +5,7 @@ export * from './evidence';
 export * from './groq-judge';
 export * from './judge-selection';
 export * from './leakage';
+export * from './leakage-v2';
 export * from './normalization';
 export * from './relevance-graph';
 export * from './research-config';

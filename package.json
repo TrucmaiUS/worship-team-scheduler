@@ -10,6 +10,7 @@
     "benchmark": "npx tsx --env-file=.env.local scripts/benchmark.ts",
     "research:test": "vitest run lib/research/e5-distillation/__tests__",
     "research:validate": "npx tsx scripts/validate_distillation_protocol.ts",
+    "research:leakage:v2": "npx tsx scripts/validate_leakage_v2.ts",
     "research:human-reference:build:v2": "npx tsx scripts/build_human_reference_v2.ts",
     "research:human-reference:validate": "npx tsx scripts/validate_human_reference.ts --input benchmark/distillation/human_reference/human_reference_v2.csv --out benchmark/distillation/human_reference/validation_report_v2.json",
     "research:human-reference:validate:v1": "npx tsx scripts/validate_human_reference.ts --input benchmark/distillation/human_reference/human_reference_v1.csv",

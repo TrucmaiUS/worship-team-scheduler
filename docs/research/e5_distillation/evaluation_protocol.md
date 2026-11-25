@@ -75,13 +75,15 @@ Agreement on grade 1 does not turn the item into a strong negative. Grade 1 rema
 Every synthetic query must pass the following checks against the 90 development rows, the T11–T16 diagnostic rows, and the frozen external set once available:
 
 1. Unicode NFC, lowercase, punctuation and whitespace normalization.
-2. Exact and bidirectional substring rejection.
-3. Word Jaccard `> 0.35` or character-trigram Jaccard `> 0.45`: reject.
-4. Normalized Levenshtein distance `< 0.30`: reject.
-5. Frozen pretrained-E5 cosine `> 0.80`: reject; cosine `[0.75, 0.80]`: human review.
-6. Specialized T11–T16 intent or diagnostic query–song supervision: reject.
+2. Normalized exact and bidirectional whole-token containment screening; no matches inside words.
+3. Word Jaccard `> 0.35` or character-trigram Jaccard `> 0.45`: candidate signal only.
+4. Normalized Levenshtein distance `< 0.30`: candidate signal only.
+5. Supplied frozen pretrained-E5 cosine `>= 0.75`: semantic screening candidate; never confirm leakage from cosine alone.
+6. Confirm distinctive protected query reuse, explicit specialized T11–T16 intent or substantiated protected query–song supervision; reserve human review for unresolved intent/provenance.
 
-The thresholds are preregistered design thresholds and must be versioned. They are not claimed to be empirically optimal. All component measurements, not only the final pass/fail decision, must be retained.
+These are the versioned v2 Pipeline Hardening rules adopted 25 November 2026; earlier threshold-based rejection is retained only in historical v1 artifacts. Thresholds are design choices, not claimed to be empirically optimal. All component measurements, not only the final pass/fail decision, must be retained. Missing mandatory coverage returns `incomplete`.
+
+Foundational vocabulary and general theological concepts remain allowed. Sharing a song or lyric section is not protected supervision overlap without matching specialized intent or reuse of the protected relationship. Under fixed-corpus evaluation the same section may support a different training intent. TP043 is passed by content-bound Human Adjudication dated 25 November 2026. Mapping provenance must be recorded: legacy `adjudicated=true` does not establish human gold. See `leakage_validator_v2.md`. None of these leakage decisions grants training eligibility or changes historical pilot buckets.
 
 The six anchor songs—*Way Maker, Build My Life, Raise A Hallelujah, Who You Say I Am, Do It Again,* and *I Surrender*—remain excluded from query generation, positive pairs, explicit negatives, and hard-negative mining under the current proposed protocol. They remain in the inference corpus for regression measurement. This split requires explicit approval before implementation.
 

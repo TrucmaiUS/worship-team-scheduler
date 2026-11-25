@@ -1,0 +1,206 @@
+{
+  "unchanged": true,
+  "files": [
+    {
+      "path": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/artifact_manifest_final.json",
+      "sha256": "fc1338738923eb7ae73aa164fc565ee4cfe35c2075737cefb04eb118c2acc240",
+      "unchanged": true
+    },
+    {
+      "path": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/change_log_final.json",
+      "sha256": "cd1dd85cd30a5d5e72a928ae06bfa2647c43eda4e7e98bf605da0f1b0bfb710d",
+      "unchanged": true
+    },
+    {
+      "path": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/final_pilot_quality_assessment.md",
+      "sha256": "27eed832254bd657413d075500375ae3afe1121e42986df150a0ec6a82f2a1d6",
+      "unchanged": true
+    },
+    {
+      "path": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/final_pilot_quality_metrics.json",
+      "sha256": "54cf56db1d65ec32ef59e2e8f7dde8b5c78478afef794168d17454e851fe2488",
+      "unchanged": true
+    },
+    {
+      "path": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/integrity_verification_final.json",
+      "sha256": "05eae912e55c83f02fdc69e8b956ccf08e1d331143e26dd4f3297863ce4f5f6d",
+      "unchanged": true
+    },
+    {
+      "path": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/leakage_audit_final.json",
+      "sha256": "67b51caa82d07230018e0bdfc4ad7a5d38b4f473c9b7b39db72ddcc27938ab56",
+      "unchanged": true
+    },
+    {
+      "path": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/teacher_judge_human_audit_final.xlsx",
+      "sha256": "4950a325c4e02396a1b45d77c587fe37718c5be57513720dc7693f2e05be5b47",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/teacher_judge_pilot_runs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z/execution_log.jsonl",
+      "sha256": "0bdf277ebc5220b95c195b1b4b087fa2b17110aba8a69d15e05e179ba8f8853a",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/teacher_judge_pilot_runs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z/gemini_teacher_raw.json",
+      "sha256": "1d59445bcbc5b3cffc11ced1cab3a6b53236608a242ddb783b974f2b704b9084",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/teacher_judge_pilot_runs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z/generation_validation.json",
+      "sha256": "e2fb0c3c202fb3891d1c27d28cdd1dfd582153f383da1a27c25fa377f63994c3",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/teacher_judge_pilot_runs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z/human_audit.csv",
+      "sha256": "2f01199421771c4aab09cb9fa87afa093f5b790a4e9fac8c2a562f171803c322",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/teacher_judge_pilot_runs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z/model_configs.json",
+      "sha256": "2ed046f39b02075a3baa2937a3f7f4d2d121727818e995913202027a7acccad1",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/teacher_judge_pilot_runs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z/pilot_metrics.json",
+      "sha256": "970cc021dd24ff6430f84977131ea3b866e8d1d0aeef6a86f9111ff3019ef480",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/teacher_judge_pilot_runs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z/pilot_pairs.jsonl",
+      "sha256": "bbae15430e4caa13d1dca7f4df85142b5049b313259b8c631cc91516ecfbb95d",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/teacher_judge_pilot_runs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z/qwen_judge_raw.json",
+      "sha256": "8f4b1d06550567e1a1b746f8a2208a93d48fd8350fc6bfbfce2b3b44488091b3",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/teacher_judge_pilot_runs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z/run_manifest.json",
+      "sha256": "04f39a6e89f0c731acc8c4d3b70fde48bc291313c0da4a57cb16ea2d391ad602",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/teacher_judge_pilot_runs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z/source_manifest.json",
+      "sha256": "710093638226902f183d06c4ef8662b409e44f436e010bdd4cde23f3f41af4db",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/teacher_judge_pilot_runs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z/teacher_judge_pilot_report.md",
+      "sha256": "97092c48f7def2814729a63be97339d00100adc131f89e5982997a0ced65abbd",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/human_reference/difficult_distinction_review_v1.csv",
+      "sha256": "13ac879d40c91bc3f1c79faee87083e3c39a908b0c033dd0d49707775602d452",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/human_reference/difficult_distinction_review_v1.xlsx",
+      "sha256": "a1ec8afca04814f7ef40162add3fb07ef344fcdcfc9b5bfe562cbc4237aa721e",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/human_reference/human_reference_v1.csv",
+      "sha256": "3d9c2bd99c5ed96ea91207789e1249d2ae3ff82a1e72117ffed907cb28761d04",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/human_reference/human_reference_v2.csv",
+      "sha256": "f8b34af1a98781053f2a77fd09f0b7a62e0c36b7f06d441a9295276c40d34d0e",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/human_reference/human_reference_v2_manifest.json",
+      "sha256": "87c3833a069cf2d7a012eedb1e1797ab427ff0aeb89308053d3cce15e5ef5328",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/human_reference/judge_selection_reference_v2.json",
+      "sha256": "b727ad449f440ba2a8d9d98aee300a522e14874f874b6283c9ab943574de6183",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/human_reference/query_manifest_v2.csv",
+      "sha256": "152450cd343d86c572c10f261b8ef00b16f14b599c44557b009f88aa9aa45c7f",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/human_reference/reviewer_manifest_v1.json",
+      "sha256": "5036eec347b7a7d6351816c91510b81cd1ceb68058b89ad4a073efb17b63bace",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/human_reference/validation_report_v1.json",
+      "sha256": "07d553a5c97312e21bfbf32e175a701e0e03fbfe37ad26d649b74b635c4c56d9",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/human_reference/validation_report_v2.json",
+      "sha256": "90acbc28450dfb3141c6f0f78330aaeae860e3e7e3c2c8f0ae5c952f6c5e0900",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/human_reference/source_annotations/human_adjudication_21_pairs_v1.xlsx",
+      "sha256": "b4d15dccb5295939561c8a644da8cbc4b39db9553f0bc6caf4e3fd7eabc64f55",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/human_reference/source_annotations/reviewer_1.xlsx",
+      "sha256": "34ae206dd721e417b4af9b6d7d7e790989b2fac5d70168e6bfd36a085575ecda",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/human_reference/source_annotations/reviewer_2.xlsx",
+      "sha256": "8568f928b27c53175d721bd1d7336d169c837b66beaec1ef22e6ce9bde34550a",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/distillation/judge_selection_runs/judge-selection-v5-2026-11-18T04-26-20-960Z/frozen_judge_config.json",
+      "sha256": "c99222b93a1864c09f293137b2402bda859d8d47e6d37f56f0a12c55eed64641",
+      "unchanged": true
+    },
+    {
+      "path": "lib/research/e5-distillation/leakage.ts",
+      "sha256": "ada7adb6f3ff8f0b0109ec07d8d0162017d61a63f30d779d6e146e478f560480",
+      "unchanged": true
+    },
+    {
+      "path": "lib/research/e5-distillation/held-out-intent.ts",
+      "sha256": "567d050af28525c91fab8448e04f76e459c10a11ccead6fcb647f9600fb37798",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/run_teacher_judge_pilot.ts",
+      "sha256": "6a9c1f4c6d9e90c0a2a2e006b3a9f021cedb20a01b10615baa343b7dd9ec6cd4",
+      "unchanged": true
+    },
+    {
+      "path": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z/teacher_judge_human_audit.xlsx",
+      "sha256": "a9fb08a69efc435790dab0510758ca848973672aa8262c1cacb35524452b2818",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/data/songs.csv",
+      "sha256": "14b260753a12b78e29f036169a567cf095f5925c3b51ffe2b64d54a6561eb49e",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/data/topics.csv",
+      "sha256": "3e9776371bff24bde660670ac0a486f2104b2ee505bb6c9c0c0fd9b74935dbc3",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/data/queries.csv",
+      "sha256": "3699b7af5c7d86a92163ced8cc156d866550dfee70fb8986291fe30740b1c13f",
+      "unchanged": true
+    },
+    {
+      "path": "benchmark/data/qrels.csv",
+      "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+      "unchanged": true
+    }
+  ],
+  "unavailableHistoricalInputs": []
+}

@@ -20,6 +20,8 @@ Under the default fixed-corpus design, existing songs may have appeared in train
 
 It does **not** support a claim of generalization to unseen songs. A strict song-held-out experiment would require a separately approved song split before any synthetic supervision is created.
 
+**Pipeline Hardening clarification — 25 November 2026:** validator v2 (`leakage_validator_v2.md`) distinguishes shared vocabulary, lexical similarity, specialized intent and protected query–song supervision. The same song/section under another intent is permitted in this fixed-corpus design; cosine or shared vocabulary alone cannot confirm leakage. Protected external references belong inside a separate validation boundary, never Teacher/Judge generation supervision. An absent external registry is reported as missing coverage, not fabricated; mandatory external coverage must fail closed. This implementation task does not access external test labels or authorize external authoring, expansion or training.
+
 ---
 
 ## 2. Independence and Authoring Protocol

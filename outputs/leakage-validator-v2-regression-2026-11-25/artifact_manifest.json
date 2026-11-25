@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "leakage-v2-artifact-manifest-v1",
+  "createdAtUtc": "2026-11-25T11:17:45.771Z",
+  "artifacts": [
+    {
+      "name": "execution_log.json",
+      "sha256": "b9a46cb947bc64b12204f915a1c34f511f9dd903b67ad7b3f5fb7853884db208"
+    },
+    {
+      "name": "integrity_verification.json",
+      "sha256": "86034ff4f61f6ffd49b07a4649310b02151203fb6a50f1c2e672f65ff2ff64b8"
+    },
+    {
+      "name": "protected_registry.json",
+      "sha256": "137d7f81b121c12cd525db29a48bd6f62c4c0f2e506ac523a4f1733a17a68efa"
+    },
+    {
+      "name": "regression_report.md",
+      "sha256": "e9899dbf7cb7db270a7f4a5042042777654a8d698d62ed9758e0999de0584292"
+    },
+    {
+      "name": "regression_results.json",
+      "sha256": "4b3ac811f4141a84a6124aa2e5fdc69e308f2ab52ee35f327f0d5d7ffbccb36a"
+    },
+    {
+      "name": "scoped_adjudications.json",
+      "sha256": "9d0c8f922980f33548052f021e848973b3d4c2fae885b1519f4dd595de77dd96"
+    }
+  ]
+}

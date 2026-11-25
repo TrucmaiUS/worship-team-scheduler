@@ -1,0 +1,83 @@
+{
+  "startedFrom": "D:\\WORSHIP TEAM WEBSITE",
+  "node": "v22.19.0",
+  "platform": "win32",
+  "arch": "x64",
+  "mode": "frozen_pilot_regression",
+  "command": [
+    "npx",
+    "tsx",
+    "scripts/validate_leakage_v2.ts",
+    "--pilot-regression",
+    "--out",
+    "outputs/leakage-validator-v2-regression-2026-11-25"
+  ],
+  "createdAtUtc": "2026-11-25T11:17:45.771Z",
+  "codeCommit": "1fd0059f6d4b70789683422d258dea6b0d859e02",
+  "codeDirty": true,
+  "codeHashes": [
+    {
+      "path": "lib/research/e5-distillation/leakage-v2.ts",
+      "sha256": "db307fccc54e1a3367faec1a9187b41f2ab8a4145b3d703a994e87759491e142"
+    },
+    {
+      "path": "lib/research/e5-distillation/leakage-v2-pilot.ts",
+      "sha256": "028ec5bf9b10b1560a68b3f477cd90f0624d1f7016b6f4cef30099019bd7a1c5"
+    },
+    {
+      "path": "lib/research/e5-distillation/normalization.ts",
+      "sha256": "570ae6261b0b54982b6ee7457024a6fe08ecc91a1568042b02cc3446b83fbce0"
+    },
+    {
+      "path": "lib/research/e5-distillation/corpus.ts",
+      "sha256": "d1a2424ede6d0849ca45a9f2e19023026ebdd496b8f9c8cce40d9da6db71708a"
+    },
+    {
+      "path": "lib/research/e5-distillation/__tests__/leakage-v2.test.ts",
+      "sha256": "68bc44764db08aed1dfc6a451d11f8b7c6f3e85055c7f15d418a149b29f2df87"
+    },
+    {
+      "path": "scripts/validate_leakage_v2.ts",
+      "sha256": "f2eb9ee894de3cb7b668c7d8728ceedc1a7cd5765b2ca460bf95c441c44f9355"
+    },
+    {
+      "path": "docs/research/e5_distillation/leakage_validator_v2.md",
+      "sha256": "cae0fc2a416a72005df8f287fb5206ce8c93065177c32f201026aa9d3665bebb"
+    },
+    {
+      "path": "docs/research/e5_distillation/topic_leakage_audit.md",
+      "sha256": "585b60761d10182b46565296ae2b40b54b6337b02ef9531af6b714b698f3c6c0"
+    },
+    {
+      "path": "docs/research/e5_distillation/evaluation_protocol.md",
+      "sha256": "470c6188d73f0ba150d83454fe52ef0294aec6afa0ebb8d0918602d6dff89caf"
+    },
+    {
+      "path": "docs/research/e5_distillation/external_test_specification.md",
+      "sha256": "dbf4770613d0349bdd74bd25ab46cd8cfdbc07e99d8712132e470f9d728bd4b6"
+    },
+    {
+      "path": "package.json",
+      "sha256": "55cd402631583dbe3ca79cad8e41c21ab4c898859725fc14f832c99eeca767f6"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "cd2c80bb2d8372d3496a97da197644dd81d24fbfecbc56f9ef94506dfa946847"
+    }
+  ],
+  "restrictions": {
+    "teacherCalls": 0,
+    "judgeCalls": 0,
+    "embeddingCalls": 0,
+    "externalTestLabelsRead": false,
+    "generatedQueries": 0,
+    "hardNegativesCreated": 0,
+    "trainingStarted": false,
+    "trainingEligibilityGranted": false
+  },
+  "result": {
+    "applicable": true,
+    "passed": true,
+    "mismatches": []
+  }
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "final-human:TP001:2026-11-25",
+    "candidateFingerprint": "ed1e6f998c5166f6fee05cb8204224015627090b699e14c36012bd4fb17f0755",
+    "registryFingerprint": "aa92edc5ba3c3eb8349aec00112385bd8304110640aec1e2b76f0e2490ae7840",
+    "decision": "passed",
+    "authority": "Explicit user approval in this conversation",
+    "date": "2026-11-25",
+    "rationale": "User-approved reassessment: Spirit restoration and empowerment are permitted T01 concepts; vocabulary alone does not establish held-out intent or protected mapping leakage.",
+    "provenance": {
+      "source": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/leakage_audit_final.json",
+      "sha256": "67b51caa82d07230018e0bdfc4ad7a5d38b4f473c9b7b39db72ddcc27938ab56",
+      "trust": "approved"
+    }
+  },
+  {
+    "id": "final-human:TP005:2026-11-25",
+    "candidateFingerprint": "1c951407d8deb12d422063713b74380d5a803ca544c7c3b88610748fc43f943c",
+    "registryFingerprint": "aa92edc5ba3c3eb8349aec00112385bd8304110640aec1e2b76f0e2490ae7840",
+    "decision": "passed",
+    "authority": "Explicit user approval in this conversation",
+    "date": "2026-11-25",
+    "rationale": "User-approved reassessment: inviting the Spirit to fill and empower during prayer is permitted T01 content; related vocabulary and same-song relevance do not establish protected-pair equivalence.",
+    "provenance": {
+      "source": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/leakage_audit_final.json",
+      "sha256": "67b51caa82d07230018e0bdfc4ad7a5d38b4f473c9b7b39db72ddcc27938ab56",
+      "trust": "approved"
+    }
+  },
+  {
+    "id": "final-human:TP018:2026-11-25",
+    "candidateFingerprint": "2e24f3189860e5359e17baa235e1792fcd9d0db8d519ecdeb8544b85cfd6b071",
+    "registryFingerprint": "aa92edc5ba3c3eb8349aec00112385bd8304110640aec1e2b76f0e2490ae7840",
+    "decision": "passed",
+    "authority": "Explicit user approval in this conversation",
+    "date": "2026-11-25",
+    "rationale": "User-approved reassessment: Faithful (G4-Q002) matched inside faithfulness; this is a character-substring false positive, not title/entity intent, and the protected target song differs.",
+    "provenance": {
+      "source": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/leakage_audit_final.json",
+      "sha256": "67b51caa82d07230018e0bdfc4ad7a5d38b4f473c9b7b39db72ddcc27938ab56",
+      "trust": "approved"
+    }
+  },
+  {
+    "id": "final-human:TP041:2026-11-25",
+    "candidateFingerprint": "04ee766899b94499ffc5f48a425d7c9665738f57b56dfa54e2b094c38086eee5",
+    "registryFingerprint": "aa92edc5ba3c3eb8349aec00112385bd8304110640aec1e2b76f0e2490ae7840",
+    "decision": "passed",
+    "authority": "Explicit user approval in this conversation",
+    "date": "2026-11-25",
+    "rationale": "User-approved reassessment: comfort, restoration and renewed strength are permitted T09 Helper concepts, without identified specialized T11-T16 intent.",
+    "provenance": {
+      "source": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/leakage_audit_final.json",
+      "sha256": "67b51caa82d07230018e0bdfc4ad7a5d38b4f473c9b7b39db72ddcc27938ab56",
+      "trust": "approved"
+    }
+  },
+  {
+    "id": "final-human:TP042:2026-11-25",
+    "candidateFingerprint": "8fe058459a3f6c2471e71691546bab8ef595b6bc11a8b9e67fb4f78b50355fe2",
+    "registryFingerprint": "aa92edc5ba3c3eb8349aec00112385bd8304110640aec1e2b76f0e2490ae7840",
+    "decision": "passed",
+    "authority": "Explicit user approval in this conversation",
+    "date": "2026-11-25",
+    "rationale": "User-approved reassessment: comfort and support after failure are permitted T09 Helper concepts; the original flag was vocabulary-only.",
+    "provenance": {
+      "source": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/leakage_audit_final.json",
+      "sha256": "67b51caa82d07230018e0bdfc4ad7a5d38b4f473c9b7b39db72ddcc27938ab56",
+      "trust": "approved"
+    }
+  },
+  {
+    "id": "final-human:TP043:2026-11-25",
+    "candidateFingerprint": "7a2f88f44a79a9f4d16530d53189f82ad9d6cca9ef5323b612812de8fc9a3cc8",
+    "registryFingerprint": "aa92edc5ba3c3eb8349aec00112385bd8304110640aec1e2b76f0e2490ae7840",
+    "decision": "passed",
+    "authority": "Explicit final decision by user in this conversation",
+    "date": "2026-11-25",
+    "rationale": "Human Adjudication ngày 25/11/2026: TP043 không phải data leakage. T11 bảo vệ specialized intent và query-song supervision, không cách ly toàn bộ song/section. Intent TP043 tập trung vào sự đồng hành và ban năng lực của Chúa Thánh Linh (T09), không tái hiện đầy đủ specialized intent T11 làm chứng cho Đấng Christ.",
+    "provenance": {
+      "source": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/leakage_audit_final.json",
+      "sha256": "67b51caa82d07230018e0bdfc4ad7a5d38b4f473c9b7b39db72ddcc27938ab56",
+      "trust": "approved"
+    }
+  },
+  {
+    "id": "final-human:TP044:2026-11-25",
+    "candidateFingerprint": "076d66e61643ac4b2a8345653e8f2b56d2c824e8fba487b8d5e3ea9a35af18f8",
+    "registryFingerprint": "aa92edc5ba3c3eb8349aec00112385bd8304110640aec1e2b76f0e2490ae7840",
+    "decision": "passed",
+    "authority": "Explicit user approval in this conversation",
+    "date": "2026-11-25",
+    "rationale": "User-approved reassessment: presence and support in difficulty do not establish held-out intent; the Human relevance rejection remains unchanged.",
+    "provenance": {
+      "source": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/leakage_audit_final.json",
+      "sha256": "67b51caa82d07230018e0bdfc4ad7a5d38b4f473c9b7b39db72ddcc27938ab56",
+      "trust": "approved"
+    }
+  },
+  {
+    "id": "final-human:TP045:2026-11-25",
+    "candidateFingerprint": "2a7d51ae0d99d8dc94d8d0558fd2209ad13243ba7fa8943d18ea8312ee6f3131",
+    "registryFingerprint": "aa92edc5ba3c3eb8349aec00112385bd8304110640aec1e2b76f0e2490ae7840",
+    "decision": "passed",
+    "authority": "Explicit user approval in this conversation",
+    "date": "2026-11-25",
+    "rationale": "User-approved reassessment: the generated query targets empowerment and renewed strength, not a protected witnessing or discipleship relationship.",
+    "provenance": {
+      "source": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/leakage_audit_final.json",
+      "sha256": "67b51caa82d07230018e0bdfc4ad7a5d38b4f473c9b7b39db72ddcc27938ab56",
+      "trust": "approved"
+    }
+  },
+  {
+    "id": "final-human:TP046:2026-11-25",
+    "candidateFingerprint": "6ef236ab8249eef23b130f0e33807ef0730fdf98d93aba6a6889b4a627a2db50",
+    "registryFingerprint": "aa92edc5ba3c3eb8349aec00112385bd8304110640aec1e2b76f0e2490ae7840",
+    "decision": "passed",
+    "authority": "Explicit user approval in this conversation",
+    "date": "2026-11-25",
+    "rationale": "User-approved reassessment: remembrance of teaching is permitted T10 content; general guidance language alone does not establish T12 intent.",
+    "provenance": {
+      "source": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/leakage_audit_final.json",
+      "sha256": "67b51caa82d07230018e0bdfc4ad7a5d38b4f473c9b7b39db72ddcc27938ab56",
+      "trust": "approved"
+    }
+  },
+  {
+    "id": "final-human:TP050:2026-11-25",
+    "candidateFingerprint": "cedec75d68d9c79c124db28f52aa4f23d36d2d7899c01a7e06c8409acbadfc07",
+    "registryFingerprint": "aa92edc5ba3c3eb8349aec00112385bd8304110640aec1e2b76f0e2490ae7840",
+    "decision": "passed",
+    "authority": "Explicit user approval in this conversation",
+    "date": "2026-11-25",
+    "rationale": "User-approved reassessment: understanding and alignment with Gods will do not establish the specialized all-truth intent; Human relevance rejection remains unchanged.",
+    "provenance": {
+      "source": "outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25/leakage_audit_final.json",
+      "sha256": "67b51caa82d07230018e0bdfc4ad7a5d38b4f473c9b7b39db72ddcc27938ab56",
+      "trust": "approved"
+    }
+  }
+]

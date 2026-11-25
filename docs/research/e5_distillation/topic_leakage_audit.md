@@ -78,7 +78,7 @@ Exp D includes literal taxonomy strings such as `Holy Spirit` and `Discipleship`
 | :--- | :--- | :--- |
 | Foundational vocabulary | **Allowed** | General references to faith, surrender, discipleship, or the Holy Spirit |
 | T11–T16 specialized intent | **Prohibited as a generation target** | Witness about Christ; ultimate guide to all truth; call, cost, command, or commission of discipleship as defined by the held-out topics |
-| Diagnostic query text or paraphrase | **Prohibited** | Exact, substring, close lexical, or high-semantic-similarity variants of the 14 existing diagnostic rows |
+| Diagnostic query text or intent-equivalent paraphrase | **Prohibited** | Direct protected query reuse or verified specialized-intent equivalence; shared words and similarity scores alone do not establish equivalence |
 | Diagnostic qrels or query–song mapping | **Prohibited from Teacher/Judge payloads and training** | Using an existing T11–T16 positive song as supervision because it is positive in diagnostic qrels |
 
 This prohibition does not require removing a song from the corpus merely because it is relevant to a held-out topic. It prohibits using the held-out relationship as supervision. Song-level isolation is a separate design choice documented in the evaluation protocol.
@@ -88,12 +88,14 @@ This prohibition does not require removing a song from the corpus merely because
 Every generated query must be compared against all 90 development queries, the 14 T11–T16 diagnostic rows, and the frozen 30 external queries once they exist:
 
 1. Unicode NFC, lowercase, punctuation and whitespace normalization.
-2. Exact and bidirectional substring matching.
+2. Normalized exact and bidirectional whole-token containment screening.
 3. Word Jaccard and character-trigram Jaccard.
 4. Normalized Levenshtein distance.
 5. Cosine similarity from the frozen pretrained E5 audit model.
 
-Preregistered design thresholds are: reject word Jaccard `> 0.35`, character-trigram Jaccard `> 0.45`, normalized Levenshtein distance `< 0.30`, or frozen-E5 cosine `> 0.80`; manually review cosine in `[0.75, 0.80]`. These thresholds are **design choices**, not validated performance guarantees. Each metric and decision must be stored per query.
+**Pipeline Hardening amendment — 25 November 2026, validator v2:** word Jaccard `> 0.35`, character-trigram Jaccard `> 0.45`, edit distance `< 0.30`, and supplied frozen-E5 cosine `>= 0.75` identify candidates only. They do not independently confirm leakage. The earlier v1 score-based rejection rules remain historical, not the v2 decision policy. Each metric and decision must be stored per query.
+
+V2 separates foundational vocabulary, lexical overlap, specialized intent, and protected query–song supervision. It confirms distinctive protected query copying, explicit specialized intent, or substantiated supervision reuse. Same song/section, `Holy Spirit`/`Thánh Linh`, and `Faithful`/`faithfulness` are not leakage proof. Only unresolved intent/provenance proceeds to human review. See `leakage_validator_v2.md` for schemas, scoped adjudication, missing-coverage behavior and limitations. TP043 is resolved as passed by Human Adjudication dated 25 November 2026; this is content-bound and not a topic/song exemption.
 
 Manual review distinguishes permitted foundational language from a prohibited specialized T11–T16 intent. Reviewer identity, timestamp, decision, and rationale are required.
 

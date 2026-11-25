@@ -1,0 +1,1308 @@
+{
+  "schemaVersion": "leakage-registry-v2",
+  "references": [
+    {
+      "id": "benchmark:G1-Q001",
+      "text": "Way Maker",
+      "scope": "development",
+      "topicId": null,
+      "kind": "title"
+    },
+    {
+      "id": "benchmark:G1-Q002",
+      "text": "Raise A Hallelujah",
+      "scope": "development",
+      "topicId": null,
+      "kind": "title"
+    },
+    {
+      "id": "benchmark:G1-Q003",
+      "text": "Tấm Lòng Con Sẵn Sàng",
+      "scope": "development",
+      "topicId": null,
+      "kind": "title"
+    },
+    {
+      "id": "benchmark:G1-Q004",
+      "text": "Thousand Hallelujahs",
+      "scope": "development",
+      "topicId": null,
+      "kind": "title"
+    },
+    {
+      "id": "benchmark:G1-Q005",
+      "text": "Say Your Name",
+      "scope": "development",
+      "topicId": null,
+      "kind": "title"
+    },
+    {
+      "id": "benchmark:G1-Q006",
+      "text": "Ngợi Ca Danh Cao",
+      "scope": "development",
+      "topicId": null,
+      "kind": "title"
+    },
+    {
+      "id": "benchmark:G1-Q007",
+      "text": "Elevation Worship",
+      "scope": "development",
+      "topicId": null,
+      "kind": "artist"
+    },
+    {
+      "id": "benchmark:G1-Q008",
+      "text": "Bethel Music",
+      "scope": "development",
+      "topicId": null,
+      "kind": "artist"
+    },
+    {
+      "id": "benchmark:G1-Q009",
+      "text": "Đấng Mở Đường",
+      "scope": "development",
+      "topicId": null,
+      "kind": "title"
+    },
+    {
+      "id": "benchmark:G1-Q010",
+      "text": "Đấng Sống Muôn Đời",
+      "scope": "development",
+      "topicId": null,
+      "kind": "title"
+    },
+    {
+      "id": "benchmark:G1-Q011",
+      "text": "Build My Life Freedom Movement",
+      "scope": "development",
+      "topicId": null,
+      "kind": "title"
+    },
+    {
+      "id": "benchmark:G1-Q012",
+      "text": "Who You Say I Am Hillsong",
+      "scope": "development",
+      "topicId": null,
+      "kind": "title"
+    },
+    {
+      "id": "benchmark:G2-Q001",
+      "text": "THE SPIRIT’S POWER",
+      "scope": "development",
+      "topicId": "T01",
+      "kind": "topic_label"
+    },
+    {
+      "id": "benchmark:G2-Q002",
+      "text": "Fan the flame",
+      "scope": "development",
+      "topicId": "T02",
+      "kind": "topic_label"
+    },
+    {
+      "id": "benchmark:G2-Q003",
+      "text": "Pass it on",
+      "scope": "development",
+      "topicId": "T03",
+      "kind": "topic_label"
+    },
+    {
+      "id": "benchmark:G2-Q004",
+      "text": "Love in action",
+      "scope": "development",
+      "topicId": "T04",
+      "kind": "topic_label"
+    },
+    {
+      "id": "benchmark:G2-Q005",
+      "text": "Identity: Who am I?",
+      "scope": "development",
+      "topicId": "T05",
+      "kind": "topic_label"
+    },
+    {
+      "id": "benchmark:G2-Q006",
+      "text": "Belonging: Where do I fit?",
+      "scope": "development",
+      "topicId": "T06",
+      "kind": "topic_label"
+    },
+    {
+      "id": "benchmark:G2-Q007",
+      "text": "Becoming: Who do I follow?",
+      "scope": "development",
+      "topicId": "T07",
+      "kind": "topic_label"
+    },
+    {
+      "id": "benchmark:G2-Q008",
+      "text": "Purpose: How can I make a difference?",
+      "scope": "development",
+      "topicId": "T08",
+      "kind": "topic_label"
+    },
+    {
+      "id": "benchmark:G2-Q009",
+      "text": "Holy Spirit as Helper",
+      "scope": "development",
+      "topicId": "T09",
+      "kind": "topic_label"
+    },
+    {
+      "id": "benchmark:G2-Q010",
+      "text": "Holy Spirit as Teacher",
+      "scope": "development",
+      "topicId": "T10",
+      "kind": "topic_label"
+    },
+    {
+      "id": "benchmark:G2-Q011",
+      "text": "Holy Spirit as Witness",
+      "scope": "diagnostic",
+      "topicId": "T11",
+      "kind": "topic_label"
+    },
+    {
+      "id": "benchmark:G2-Q012",
+      "text": "Holy Spirit as Guide to all Truth",
+      "scope": "diagnostic",
+      "topicId": "T12",
+      "kind": "topic_label"
+    },
+    {
+      "id": "benchmark:G2-Q013",
+      "text": "Call of Discipleship",
+      "scope": "diagnostic",
+      "topicId": "T13",
+      "kind": "topic_label"
+    },
+    {
+      "id": "benchmark:G2-Q014",
+      "text": "Cost of Discipleship",
+      "scope": "diagnostic",
+      "topicId": "T14",
+      "kind": "topic_label"
+    },
+    {
+      "id": "benchmark:G2-Q015",
+      "text": "Command of Discipleship",
+      "scope": "diagnostic",
+      "topicId": "T15",
+      "kind": "topic_label"
+    },
+    {
+      "id": "benchmark:G2-Q016",
+      "text": "Commission of Discipleship",
+      "scope": "diagnostic",
+      "topicId": "T16",
+      "kind": "topic_label"
+    },
+    {
+      "id": "benchmark:G2-Q017",
+      "text": "Focus on nurturing the next generation's faith by affirming their calling, encouraging boldness, and equipping them with the truth of Scripture. Challenge the current generation to fan the flame of faith in the next.",
+      "scope": "development",
+      "topicId": "T02",
+      "kind": "topic_description"
+    },
+    {
+      "id": "benchmark:G2-Q018",
+      "text": "Highlight the importance of discipling others who will disciple others. Call the church to mentor, train, and empower the next generation to carry on the faith legacy.",
+      "scope": "development",
+      "topicId": "T03",
+      "kind": "topic_description"
+    },
+    {
+      "id": "benchmark:G2-Q019",
+      "text": "A lot of young people are confused about their identity that affects the way they perceive themselves. Our true identity is found in who God says we are, not in our past, our failures, or even our own doubts.",
+      "scope": "development",
+      "topicId": "T05",
+      "kind": "topic_description"
+    },
+    {
+      "id": "benchmark:G2-Q020",
+      "text": "God invites us to a place of community a place to experience His love, mercy, grace, and protection. God brings people together in faith communities like churches to walk together, support each other, and experience love that goes beyond disposable relationships.",
+      "scope": "development",
+      "topicId": "T06",
+      "kind": "topic_description"
+    },
+    {
+      "id": "benchmark:G2-Q021",
+      "text": "God places people in our lives to help us grow into our God-given destiny. Young people need spiritual leaders who will guide and walk with them as they grow into their God-given destiny and purpose.",
+      "scope": "development",
+      "topicId": "T07",
+      "kind": "topic_description"
+    },
+    {
+      "id": "benchmark:G2-Q022",
+      "text": "God redeems our past and calls us into a purposeful future for His glory. Purpose starts when someone trust the power of God into his life. No excuses can disqualifies us from God's purpose. When God calls us, our life becomes meaningful and he can use it as an instrument for His mission.",
+      "scope": "development",
+      "topicId": "T08",
+      "kind": "topic_description"
+    },
+    {
+      "id": "benchmark:G2-Q023",
+      "text": "Our people will understand the role of Holy Spirit as our Helper that will be with us forever",
+      "scope": "development",
+      "topicId": "T09",
+      "kind": "topic_description"
+    },
+    {
+      "id": "benchmark:G2-Q024",
+      "text": "Our people will know Holy Spirit who will Teach and bring to remembrance the lessons taught by Christ",
+      "scope": "development",
+      "topicId": "T10",
+      "kind": "topic_description"
+    },
+    {
+      "id": "benchmark:G2-Q025",
+      "text": "Our people will learn the role of Holy Spirit as the one who will bear witness about Christ.",
+      "scope": "diagnostic",
+      "topicId": "T11",
+      "kind": "topic_description"
+    },
+    {
+      "id": "benchmark:G2-Q026",
+      "text": "Our people will trust in Holy Spirit as the ultimate guide to all truth.",
+      "scope": "diagnostic",
+      "topicId": "T12",
+      "kind": "topic_description"
+    },
+    {
+      "id": "benchmark:G2-Q027",
+      "text": "Find worship songs about the power of the Holy Spirit working in and through believers.",
+      "scope": "development",
+      "topicId": "T01",
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G2-Q028",
+      "text": "Find songs that encourage the next generation to grow in faith, embrace God's calling, and boldly live according to Scripture.",
+      "scope": "development",
+      "topicId": "T02",
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G2-Q029",
+      "text": "Find songs about passing on faith, discipling others, and equipping future generations to continue God's work.",
+      "scope": "development",
+      "topicId": "T03",
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G2-Q030",
+      "text": "Find worship songs that express love through action, serving others, and demonstrating God's love in everyday life.",
+      "scope": "development",
+      "topicId": "T04",
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G2-Q031",
+      "text": "Find songs about our identity in Christ and how God defines who we are regardless of our past, failures, or doubts.",
+      "scope": "development",
+      "topicId": "T05",
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G2-Q032",
+      "text": "Find songs about belonging to God's family, experiencing His love, and walking together as a community of faith.",
+      "scope": "development",
+      "topicId": "T06",
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G2-Q033",
+      "text": "Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.",
+      "scope": "development",
+      "topicId": "T07",
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G2-Q034",
+      "text": "Find songs about discovering God's purpose, being called by Him, and becoming an instrument for His mission.",
+      "scope": "development",
+      "topicId": "T08",
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G2-Q035",
+      "text": "Find songs about the Holy Spirit staying with us, helping us, and providing strength in our lives.",
+      "scope": "development",
+      "topicId": "T09",
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G2-Q036",
+      "text": "Find songs about the Holy Spirit teaching us and reminding us of the words and teachings of Jesus.",
+      "scope": "development",
+      "topicId": "T10",
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G2-Q037",
+      "text": "Find songs that testify about Jesus Christ and point people toward who He is.",
+      "scope": "diagnostic",
+      "topicId": "T11",
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G2-Q038",
+      "text": "Find songs about trusting the Holy Spirit to lead us in truth and guide our decisions.",
+      "scope": "diagnostic",
+      "topicId": "T12",
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G2-Q039",
+      "text": "Find songs about Jesus calling people to follow Him, be transformed by Him, and receive a new purpose.",
+      "scope": "diagnostic",
+      "topicId": "T13",
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G2-Q040",
+      "text": "Find songs about surrendering worldly possessions, status, comfort, and relationships to follow Jesus.",
+      "scope": "diagnostic",
+      "topicId": "T14",
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G2-Q041",
+      "text": "Find songs about loving one another as Jesus commanded and showing the world that we are His disciples through love.",
+      "scope": "diagnostic",
+      "topicId": "T15",
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G2-Q042",
+      "text": "Find songs about the Great Commission, going into the world, and making disciples of all nations.",
+      "scope": "diagnostic",
+      "topicId": "T16",
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q001",
+      "text": "Chính Chúa, Đấng mở đường, Đấng ban cho phép lạ",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q002",
+      "text": "Tình yêu Chúa tác thành đời sống chúng con Nền móng vững chắc đến đời đời",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q003",
+      "text": "Thanh gươm của con chính là ca từ Thiên Đàng sẽ chiến đấu bên con",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q004",
+      "text": "Trong nhà của Cha có nơi cho con Con thuộc về Ngài",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q005",
+      "text": "Vòng quanh những bức tường thành Con tin chúng sẽ đổ sập",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q006",
+      "text": "Như sóng cao cuộn trào Sức sống Chúa ban cho Con thuộc về Ngài",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q007",
+      "text": "cho dẫu con không thể thấy được Chúa đang làm con vững tin",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q008",
+      "text": "dẫn lối con bằng yêu thương lan tỏa tình yêu ấy",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q009",
+      "text": "hát vang dù là trong cơn bão tố mão hoa thay tro tàn",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q010",
+      "text": "được tự do chính Chúa tha thứ",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q011",
+      "text": "Chúa di dời núi đồi biến những thứ chẳng thể thành có thể",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q012",
+      "text": "hạ mình trước Đấng Thánh nguyện hiến dâng mọi thứ",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q013",
+      "text": "bài hát về việc dù mắt không thấy tai không nghe nhưng vẫn tin Chúa đang hành động mở lối",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q014",
+      "text": "bài hát xây dựng cuộc đời trên tình yêu và nền móng của Chúa Giê-xu",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q015",
+      "text": "bài hát dùng lời ca tiếng hát ngợi khen như vũ khí để chiến đấu đánh tan sợ hãi bóng đêm",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q016",
+      "text": "bài hát khẳng định người con hoang đàng tìm được nơi chốn và danh phận trong nhà của Cha",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q017",
+      "text": "bài hát tuyên xưng những bức tường sụp đổ và tin cậy Chúa sẽ làm phép lạ thêm một lần nữa",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q018",
+      "text": "bài hát quỳ gối đầu phục Chúa dâng trọn con người và mong muốn Chúa lay động tâm linh",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q019",
+      "text": "Even when I don't see it you're working even when I don't feel it you're working",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q020",
+      "text": "I will build my life upon your love it is a firm foundation",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q021",
+      "text": "I'm gonna sing in the middle of the storm louder and louder you're gonna hear my praises roar",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q022",
+      "text": "In my Father's house there's a place for me I'm a child of God yes I am",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q023",
+      "text": "Your promise still stands great is your faithfulness I'm still in your hands",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G3-Q024",
+      "text": "Here I am down on my knees again surrendering all to know you more",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G4-Q001",
+      "text": "Safe",
+      "scope": "development",
+      "topicId": null,
+      "kind": "title"
+    },
+    {
+      "id": "benchmark:G4-Q002",
+      "text": "Faithful",
+      "scope": "development",
+      "topicId": null,
+      "kind": "title"
+    },
+    {
+      "id": "benchmark:G4-Q003",
+      "text": "Worthy",
+      "scope": "development",
+      "topicId": null,
+      "kind": "title"
+    },
+    {
+      "id": "benchmark:G4-Q004",
+      "text": "Vương Quốc Thuộc Về Ngài",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G4-Q005",
+      "text": "Lửa Thiêng Cháy Bùng",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G4-Q006",
+      "text": "Vũ Khí Thờ Phượng Trong Gian Truân",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G4-Q007",
+      "text": "way makr dang mo duog",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G4-Q008",
+      "text": "rais halelujah bethel",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G4-Q009",
+      "text": "who u say i am",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G4-Q010",
+      "text": "bài hát tôn vinh sự ngợi khen và cảm tạ lòng nhân từ của Chúa",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G4-Q011",
+      "text": "những bài hát đầu phục dâng hiến đời sống trọn vẹn cho Chúa Giê-xu",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "benchmark:G4-Q012",
+      "text": "những bài hát về thập tự giá sự cứu chuộc và huyết báu tha tội",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P001",
+      "text": "Ngợi khen Chúa giữa thử thách và cuộc chiến thuộc linh",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P002",
+      "text": "Find songs about the Holy Spirit teaching us and reminding us of the words and teachings of Jesus.",
+      "scope": "development",
+      "topicId": "T10",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P003",
+      "text": "Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P004",
+      "text": "Find songs about passing on faith, discipling others, and equipping future generations to continue God's work.",
+      "scope": "development",
+      "topicId": "T03",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P005",
+      "text": "Thắp lên ngọn lửa đức tin",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P006",
+      "text": "Find songs about our identity in Christ and how God defines who we are regardless of our past, failures, or doubts.",
+      "scope": "development",
+      "topicId": "T05",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P007",
+      "text": "Find worship songs about the power of the Holy Spirit working in and through believers.",
+      "scope": "development",
+      "topicId": "T01",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P008",
+      "text": "Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.",
+      "scope": "development",
+      "topicId": "T07",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P009",
+      "text": "Find songs about belonging to God's family, experiencing His love, and walking together as a community of faith.",
+      "scope": "development",
+      "topicId": "T06",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P010",
+      "text": "Find worship songs that express love through action, serving others, and demonstrating God's love in everyday life.",
+      "scope": "development",
+      "topicId": "T04",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P011",
+      "text": "Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P012",
+      "text": "Find songs about passing on faith, discipling others, and equipping future generations to continue God's work.",
+      "scope": "development",
+      "topicId": "T03",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P013",
+      "text": "Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P014",
+      "text": "Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P015",
+      "text": "Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P016",
+      "text": "Find songs about our identity in Christ and how God defines who we are regardless of our past, failures, or doubts.",
+      "scope": "development",
+      "topicId": "T05",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P017",
+      "text": "Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P018",
+      "text": "Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P019",
+      "text": "Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.",
+      "scope": "development",
+      "topicId": "T07",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P020",
+      "text": "Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.",
+      "scope": "development",
+      "topicId": "T07",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P021",
+      "text": "Find songs about discovering God's purpose, being called by Him, and becoming an instrument for His mission.",
+      "scope": "development",
+      "topicId": "T08",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P022",
+      "text": "Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P023",
+      "text": "Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P024",
+      "text": "Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P025",
+      "text": "Find worship songs about the power of the Holy Spirit working in and through believers.",
+      "scope": "development",
+      "topicId": "T01",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P026",
+      "text": "Find songs about the Holy Spirit staying with us, helping us, and providing strength in our lives.",
+      "scope": "development",
+      "topicId": "T09",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P027",
+      "text": "Ngợi khen Chúa giữa thử thách và cuộc chiến thuộc linh",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P028",
+      "text": "Ngợi khen Chúa giữa thử thách và cuộc chiến thuộc linh",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P029",
+      "text": "Find songs about discovering God's purpose, being called by Him, and becoming an instrument for His mission.",
+      "scope": "development",
+      "topicId": "T08",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P030",
+      "text": "Bài hát về thập tự giá, sự cứu chuộc và huyết Chúa Giê-xu tha tội",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P031",
+      "text": "Find songs that encourage the next generation to grow in faith, embrace God's calling, and boldly live according to Scripture.",
+      "scope": "development",
+      "topicId": "T02",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P032",
+      "text": "Find worship songs that express love through action, serving others, and demonstrating God's love in everyday life.",
+      "scope": "development",
+      "topicId": "T04",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P033",
+      "text": "Find songs about the Holy Spirit teaching us and reminding us of the words and teachings of Jesus.",
+      "scope": "development",
+      "topicId": "T10",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P034",
+      "text": "Ngợi khen Chúa giữa thử thách và cuộc chiến thuộc linh",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P035",
+      "text": "Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P036",
+      "text": "Find worship songs that express love through action, serving others, and demonstrating God's love in everyday life.",
+      "scope": "development",
+      "topicId": "T04",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P037",
+      "text": "Find songs about belonging to God's family, experiencing His love, and walking together as a community of faith.",
+      "scope": "development",
+      "topicId": "T06",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P038",
+      "text": "Find worship songs about the power of the Holy Spirit working in and through believers.",
+      "scope": "development",
+      "topicId": "T01",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P039",
+      "text": "Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P040",
+      "text": "Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P041",
+      "text": "Find songs about the Holy Spirit teaching us and reminding us of the words and teachings of Jesus.",
+      "scope": "development",
+      "topicId": "T10",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P042",
+      "text": "Find songs about passing on faith, discipling others, and equipping future generations to continue God's work.",
+      "scope": "development",
+      "topicId": "T03",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P043",
+      "text": "Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P044",
+      "text": "Find songs that encourage the next generation to grow in faith, embrace God's calling, and boldly live according to Scripture.",
+      "scope": "development",
+      "topicId": "T02",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P045",
+      "text": "Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P046",
+      "text": "Find songs about belonging to God's family, experiencing His love, and walking together as a community of faith.",
+      "scope": "development",
+      "topicId": "T06",
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P047",
+      "text": "Thắp lên ngọn lửa đức tin",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P048",
+      "text": "Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P049",
+      "text": "Bài hát ngợi khen và cảm tạ Chúa vì sự nhân từ của Ngài",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    },
+    {
+      "id": "human-reference:P050",
+      "text": "Bài hát về sự đầu phục và dâng trọn đời mình cho Chúa Giê-xu",
+      "scope": "development",
+      "topicId": null,
+      "kind": "query"
+    }
+  ],
+  "mappings": [
+    {
+      "id": "diagnostic:G2-Q011:16973874-73e3-4827-b8d4-1a986333db53",
+      "referenceId": "benchmark:G2-Q011",
+      "songId": "16973874-73e3-4827-b8d4-1a986333db53",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q011:860403f4-c7de-42c8-a50f-92631d958ad1",
+      "referenceId": "benchmark:G2-Q011",
+      "songId": "860403f4-c7de-42c8-a50f-92631d958ad1",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q012:1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+      "referenceId": "benchmark:G2-Q012",
+      "songId": "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q012:53a46ade-8695-400d-895e-9cf74afe0700",
+      "referenceId": "benchmark:G2-Q012",
+      "songId": "53a46ade-8695-400d-895e-9cf74afe0700",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q013:ffb865de-4136-4257-8852-e79712cc4387",
+      "referenceId": "benchmark:G2-Q013",
+      "songId": "ffb865de-4136-4257-8852-e79712cc4387",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q013:860403f4-c7de-42c8-a50f-92631d958ad1",
+      "referenceId": "benchmark:G2-Q013",
+      "songId": "860403f4-c7de-42c8-a50f-92631d958ad1",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q014:ffb865de-4136-4257-8852-e79712cc4387",
+      "referenceId": "benchmark:G2-Q014",
+      "songId": "ffb865de-4136-4257-8852-e79712cc4387",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q014:aa793ef0-83ae-42d1-9b1a-b5e93535da1d",
+      "referenceId": "benchmark:G2-Q014",
+      "songId": "aa793ef0-83ae-42d1-9b1a-b5e93535da1d",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q014:e827e4f4-94cf-43a6-926b-feba42d9fcaf",
+      "referenceId": "benchmark:G2-Q014",
+      "songId": "e827e4f4-94cf-43a6-926b-feba42d9fcaf",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q015:1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+      "referenceId": "benchmark:G2-Q015",
+      "songId": "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q015:8509e035-f68a-4411-96fa-23a8907da3c1",
+      "referenceId": "benchmark:G2-Q015",
+      "songId": "8509e035-f68a-4411-96fa-23a8907da3c1",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q016:ea33670a-3fa3-479e-ba59-0b55cf1f8ed4",
+      "referenceId": "benchmark:G2-Q016",
+      "songId": "ea33670a-3fa3-479e-ba59-0b55cf1f8ed4",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q016:16973874-73e3-4827-b8d4-1a986333db53",
+      "referenceId": "benchmark:G2-Q016",
+      "songId": "16973874-73e3-4827-b8d4-1a986333db53",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q016:860403f4-c7de-42c8-a50f-92631d958ad1",
+      "referenceId": "benchmark:G2-Q016",
+      "songId": "860403f4-c7de-42c8-a50f-92631d958ad1",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q025:16973874-73e3-4827-b8d4-1a986333db53",
+      "referenceId": "benchmark:G2-Q025",
+      "songId": "16973874-73e3-4827-b8d4-1a986333db53",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q025:860403f4-c7de-42c8-a50f-92631d958ad1",
+      "referenceId": "benchmark:G2-Q025",
+      "songId": "860403f4-c7de-42c8-a50f-92631d958ad1",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q026:1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+      "referenceId": "benchmark:G2-Q026",
+      "songId": "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q026:53a46ade-8695-400d-895e-9cf74afe0700",
+      "referenceId": "benchmark:G2-Q026",
+      "songId": "53a46ade-8695-400d-895e-9cf74afe0700",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q037:16973874-73e3-4827-b8d4-1a986333db53",
+      "referenceId": "benchmark:G2-Q037",
+      "songId": "16973874-73e3-4827-b8d4-1a986333db53",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q037:860403f4-c7de-42c8-a50f-92631d958ad1",
+      "referenceId": "benchmark:G2-Q037",
+      "songId": "860403f4-c7de-42c8-a50f-92631d958ad1",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q038:53a46ade-8695-400d-895e-9cf74afe0700",
+      "referenceId": "benchmark:G2-Q038",
+      "songId": "53a46ade-8695-400d-895e-9cf74afe0700",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q038:1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+      "referenceId": "benchmark:G2-Q038",
+      "songId": "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q039:ffb865de-4136-4257-8852-e79712cc4387",
+      "referenceId": "benchmark:G2-Q039",
+      "songId": "ffb865de-4136-4257-8852-e79712cc4387",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q039:860403f4-c7de-42c8-a50f-92631d958ad1",
+      "referenceId": "benchmark:G2-Q039",
+      "songId": "860403f4-c7de-42c8-a50f-92631d958ad1",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q040:e827e4f4-94cf-43a6-926b-feba42d9fcaf",
+      "referenceId": "benchmark:G2-Q040",
+      "songId": "e827e4f4-94cf-43a6-926b-feba42d9fcaf",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q040:ffb865de-4136-4257-8852-e79712cc4387",
+      "referenceId": "benchmark:G2-Q040",
+      "songId": "ffb865de-4136-4257-8852-e79712cc4387",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q040:aa793ef0-83ae-42d1-9b1a-b5e93535da1d",
+      "referenceId": "benchmark:G2-Q040",
+      "songId": "aa793ef0-83ae-42d1-9b1a-b5e93535da1d",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q041:1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+      "referenceId": "benchmark:G2-Q041",
+      "songId": "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q041:8509e035-f68a-4411-96fa-23a8907da3c1",
+      "referenceId": "benchmark:G2-Q041",
+      "songId": "8509e035-f68a-4411-96fa-23a8907da3c1",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q042:16973874-73e3-4827-b8d4-1a986333db53",
+      "referenceId": "benchmark:G2-Q042",
+      "songId": "16973874-73e3-4827-b8d4-1a986333db53",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q042:ea33670a-3fa3-479e-ba59-0b55cf1f8ed4",
+      "referenceId": "benchmark:G2-Q042",
+      "songId": "ea33670a-3fa3-479e-ba59-0b55cf1f8ed4",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    },
+    {
+      "id": "diagnostic:G2-Q042:860403f4-c7de-42c8-a50f-92631d958ad1",
+      "referenceId": "benchmark:G2-Q042",
+      "songId": "860403f4-c7de-42c8-a50f-92631d958ad1",
+      "provenance": {
+        "source": "benchmark/data/qrels.csv (legacy, human provenance unverified)",
+        "sha256": "4b7487fccf95e85c5afbf6010f653a4800a31c88ebbcf1ee6e7e673ba41f094e",
+        "trust": "legacy_unverified"
+      }
+    }
+  ],
+  "externalCoverage": "not_available"
+}

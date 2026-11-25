@@ -13,6 +13,8 @@ benchmark/distillation/human_reference/*.csv -text
 /benchmark/distillation/teacher_judge_pilot_runs/** -text
 /lib/research/e5-distillation/*.ts text eol=crlf
 /lib/research/e5-distillation/leakage-v2*.ts text eol=lf
+/lib/research/e5-distillation/__tests__/artifacts-review.test.ts text eol=crlf
+/lib/research/e5-distillation/__tests__/candidate-contracts.test.ts text eol=crlf
 /lib/research/e5-distillation/__tests__/leakage-v2.test.ts text eol=lf
 /scripts/run_teacher_judge_pilot.ts text eol=lf
 /scripts/validate_leakage_v2.ts text eol=lf
