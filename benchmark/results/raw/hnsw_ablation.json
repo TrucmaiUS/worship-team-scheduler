@@ -1,0 +1,30 @@
+{
+  "total_queries": 90,
+  "storage": {
+    "total_vectors": "692",
+    "table_size": "384 kB",
+    "hnsw_index_size": "2776 kB",
+    "index_to_table_ratio": "7.23x"
+  },
+  "retrieval_agreement": {
+    "top10_jaccard_overlap": "100.0% (10.00 / 10 songs)"
+  },
+  "metrics": {
+    "exact_flat": {
+      "ndcg3": 0.381,
+      "mrr10": 0.425,
+      "hit3_percent": 45.6,
+      "latency_p50_ms": 44,
+      "latency_p95_ms": 52.3,
+      "latency_mean_ms": 45.2
+    },
+    "hnsw_ef40": {
+      "ndcg3": 0.381,
+      "mrr10": 0.425,
+      "hit3_percent": 45.6,
+      "latency_p50_ms": 44,
+      "latency_p95_ms": 50,
+      "latency_mean_ms": 45.1
+    }
+  }
+}

@@ -1,0 +1,2990 @@
+{
+  "experiment_id": "A1",
+  "method_name": "Ablation A1: Raw Topic Query -> Hybrid Retrieval",
+  "timestamp": "2026-11-12T18:17:21.480Z",
+  "total_queries": 42,
+  "runs": [
+    {
+      "query_id": "G2-Q001",
+      "query_text": "THE SPIRIT’S POWER",
+      "group": "G2",
+      "topic_id": "T01",
+      "retrieval_ms": 61.50199999999859,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.50199999999859,
+      "results": [
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "99091e62-17c5-471f-860c-ae1adce7b486",
+          "display_title": "Firm Foundation",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "cea13122-7f59-44d8-a86b-dcaedf1bdb94",
+          "display_title": "See A Victory",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "16a593d2-e3d2-4f4c-aada-0cb487556195",
+          "display_title": "The Beat",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "91001c6f-96f6-40c2-9bb3-c97ef1f7c648",
+          "display_title": "Pour Us Out",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "21358b75-ff2c-4df2-b662-b70c67783131",
+          "display_title": "When I Say Your Name",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "dde347a0-d8df-433f-a5b5-a39a5500053e",
+          "display_title": "Tấm Lòng Con Sẵn Sàng",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "c240c3a3-3157-4a55-8fae-fb356076f509",
+          "display_title": "Do It Again",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "d3c705ce-a3c3-4282-936f-7623eeef37c7",
+          "display_title": "Dwelling Place",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q002",
+      "query_text": "Fan the flame",
+      "group": "G2",
+      "topic_id": "T02",
+      "retrieval_ms": 62.34280000000035,
+      "rerank_ms": 0,
+      "total_latency_ms": 62.34280000000035,
+      "results": [
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "d8be7b3a-93a1-4966-b89c-f2c0d1336b19",
+          "display_title": "Too Good To Not Believe",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "860403f4-c7de-42c8-a50f-92631d958ad1",
+          "display_title": "I’ll Go",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "dde347a0-d8df-433f-a5b5-a39a5500053e",
+          "display_title": "Tấm Lòng Con Sẵn Sàng",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "8509e035-f68a-4411-96fa-23a8907da3c1",
+          "display_title": "Radical Love",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "d15f40ad-eb38-44d5-80e5-5cdeb9ec999b",
+          "display_title": "I Adore",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "fdabd847-e2f0-4f79-a637-eeac2165f5f3",
+          "display_title": "Ngợi Ca Danh Cao Giê-su",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "91001c6f-96f6-40c2-9bb3-c97ef1f7c648",
+          "display_title": "Pour Us Out",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "16a593d2-e3d2-4f4c-aada-0cb487556195",
+          "display_title": "The Beat",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q003",
+      "query_text": "Pass it on",
+      "group": "G2",
+      "topic_id": "T03",
+      "retrieval_ms": 62.338299999999435,
+      "rerank_ms": 0,
+      "total_latency_ms": 62.338299999999435,
+      "results": [
+        {
+          "song_id": "5f48dff8-0370-4a8b-8a6d-2928ae63c7dc",
+          "display_title": "Dance In Freedom",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "a88877aa-6e09-47ee-8b4c-12fba261f6ea",
+          "display_title": "God Is Good",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "4a06ee23-ba3b-44bf-9bcb-3d5e220a7da8",
+          "display_title": "Rest On Us",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "460cd5b6-3cba-47c5-bcba-5ab639457287",
+          "display_title": "Lay It Down",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "dde347a0-d8df-433f-a5b5-a39a5500053e",
+          "display_title": "Tấm Lòng Con Sẵn Sàng",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "8509e035-f68a-4411-96fa-23a8907da3c1",
+          "display_title": "Radical Love",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "d15f40ad-eb38-44d5-80e5-5cdeb9ec999b",
+          "display_title": "I Adore",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "0ac708c4-a8a8-4d99-be5e-a1b932f32856",
+          "display_title": "So Close",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "16a593d2-e3d2-4f4c-aada-0cb487556195",
+          "display_title": "The Beat",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q004",
+      "query_text": "Love in action",
+      "group": "G2",
+      "topic_id": "T04",
+      "retrieval_ms": 60.708300000000236,
+      "rerank_ms": 0,
+      "total_latency_ms": 60.708300000000236,
+      "results": [
+        {
+          "song_id": "608245c7-f6a5-44fa-84bc-21e278510060",
+          "display_title": "Your Love Is Greater",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "860403f4-c7de-42c8-a50f-92631d958ad1",
+          "display_title": "I’ll Go",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "bd0806db-5c3e-442f-94eb-ca152945c28c",
+          "display_title": "In Your Name",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "64230296-e971-4afe-8ae2-6eb7b3a04587",
+          "display_title": "Safe",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "5f48dff8-0370-4a8b-8a6d-2928ae63c7dc",
+          "display_title": "Dance In Freedom",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "0570c043-4efa-4dd9-ac98-96ded7527cc4",
+          "display_title": "Beautiful Love",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "e5e4bfad-0a1f-452f-a6ea-0cc4e2173f83",
+          "display_title": "I'll Never Walk Alone",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "44ba4e35-8a0a-45ba-9135-3da6ae42be39",
+          "display_title": "In Control",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "ed133e70-5c3c-4207-8fd4-a3e1d79cfaec",
+          "display_title": "With You",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "d15f40ad-eb38-44d5-80e5-5cdeb9ec999b",
+          "display_title": "I Adore",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q005",
+      "query_text": "Identity: Who am I?",
+      "group": "G2",
+      "topic_id": "T05",
+      "retrieval_ms": 61.95670000000064,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.95670000000064,
+      "results": [
+        {
+          "song_id": "860403f4-c7de-42c8-a50f-92631d958ad1",
+          "display_title": "I’ll Go",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "8e9e95b9-1bc1-40bf-8fc5-cafd82417d97",
+          "display_title": "Raise A Hallelujah",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "5d419226-2508-41de-89a8-42fdb4fb3fd3",
+          "display_title": "Who You Say I Am",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "21358b75-ff2c-4df2-b662-b70c67783131",
+          "display_title": "When I Say Your Name",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "44ba4e35-8a0a-45ba-9135-3da6ae42be39",
+          "display_title": "In Control",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "d15f40ad-eb38-44d5-80e5-5cdeb9ec999b",
+          "display_title": "I Adore",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "608245c7-f6a5-44fa-84bc-21e278510060",
+          "display_title": "Your Love Is Greater",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "5e6bd968-85cb-4117-aed0-abc20d3f7aa7",
+          "display_title": "A THOUSAND HALLELUJAHS",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "a88877aa-6e09-47ee-8b4c-12fba261f6ea",
+          "display_title": "God Is Good",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab",
+          "display_title": "Make Room",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q006",
+      "query_text": "Belonging: Where do I fit?",
+      "group": "G2",
+      "topic_id": "T06",
+      "retrieval_ms": 61.6924999999992,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.6924999999992,
+      "results": [
+        {
+          "song_id": "860403f4-c7de-42c8-a50f-92631d958ad1",
+          "display_title": "I’ll Go",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "e5e4bfad-0a1f-452f-a6ea-0cc4e2173f83",
+          "display_title": "I'll Never Walk Alone",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "16a593d2-e3d2-4f4c-aada-0cb487556195",
+          "display_title": "The Beat",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "ffb865de-4136-4257-8852-e79712cc4387",
+          "display_title": "Carry My Cross",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "8509e035-f68a-4411-96fa-23a8907da3c1",
+          "display_title": "Radical Love",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "21358b75-ff2c-4df2-b662-b70c67783131",
+          "display_title": "When I Say Your Name",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "5f48dff8-0370-4a8b-8a6d-2928ae63c7dc",
+          "display_title": "Dance In Freedom",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "d15f40ad-eb38-44d5-80e5-5cdeb9ec999b",
+          "display_title": "I Adore",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "219f0fe8-d7fe-4de0-844f-5ce22524b5f2",
+          "display_title": "This Is Why",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "ed133e70-5c3c-4207-8fd4-a3e1d79cfaec",
+          "display_title": "With You",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q007",
+      "query_text": "Becoming: Who do I follow?",
+      "group": "G2",
+      "topic_id": "T07",
+      "retrieval_ms": 61.35189999999966,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.35189999999966,
+      "results": [
+        {
+          "song_id": "ed133e70-5c3c-4207-8fd4-a3e1d79cfaec",
+          "display_title": "With You",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "860403f4-c7de-42c8-a50f-92631d958ad1",
+          "display_title": "I’ll Go",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "504d0ec2-7646-4d7d-96c7-9c07323a6350",
+          "display_title": "This Is Your Church",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "1064050b-d15c-4b7b-9390-0ce53ccf801c",
+          "display_title": "It Is So",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "5d419226-2508-41de-89a8-42fdb4fb3fd3",
+          "display_title": "Who You Say I Am",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "e5e4bfad-0a1f-452f-a6ea-0cc4e2173f83",
+          "display_title": "I'll Never Walk Alone",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab",
+          "display_title": "Make Room",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "608245c7-f6a5-44fa-84bc-21e278510060",
+          "display_title": "Your Love Is Greater",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "e7e27cca-227f-4907-8ed4-9396127bbedc",
+          "display_title": "Gratitude",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q008",
+      "query_text": "Purpose: How can I make a difference?",
+      "group": "G2",
+      "topic_id": "T08",
+      "retrieval_ms": 61.22890000000007,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.22890000000007,
+      "results": [
+        {
+          "song_id": "5f48dff8-0370-4a8b-8a6d-2928ae63c7dc",
+          "display_title": "Dance In Freedom",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "219f0fe8-d7fe-4de0-844f-5ce22524b5f2",
+          "display_title": "This Is Why",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "61fa2632-9a99-434c-87de-8329000f263a",
+          "display_title": "Egypt",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "504d0ec2-7646-4d7d-96c7-9c07323a6350",
+          "display_title": "This Is Your Church",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5",
+          "display_title": "Same God",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "ea33670a-3fa3-479e-ba59-0b55cf1f8ed4",
+          "display_title": "We Will Go",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "860403f4-c7de-42c8-a50f-92631d958ad1",
+          "display_title": "I’ll Go",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab",
+          "display_title": "Make Room",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "ebcb4c64-07b6-4369-a38e-81f00353b817",
+          "display_title": "Grace Changes Everything",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "cea13122-7f59-44d8-a86b-dcaedf1bdb94",
+          "display_title": "See A Victory",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q009",
+      "query_text": "Holy Spirit as Helper",
+      "group": "G2",
+      "topic_id": "T09",
+      "retrieval_ms": 61.30580000000009,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.30580000000009,
+      "results": [
+        {
+          "song_id": "345f44d8-3c2d-4879-b6da-ce58484a7249",
+          "display_title": "Holy Spirit",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "219f0fe8-d7fe-4de0-844f-5ce22524b5f2",
+          "display_title": "This Is Why",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "d15f40ad-eb38-44d5-80e5-5cdeb9ec999b",
+          "display_title": "I Adore",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "49b037a4-2126-4708-ad6f-157538ba3c66",
+          "display_title": "Joy Like a River",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "dde347a0-d8df-433f-a5b5-a39a5500053e",
+          "display_title": "Tấm Lòng Con Sẵn Sàng",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "41a0e027-789d-4ca9-b0a8-e1dcdf76772e",
+          "display_title": "A Little Fire (Burn Brighter)",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "83ce0b16-0886-409f-8326-996eaa50eab1",
+          "display_title": "Holy, Holy, Holy (Hymn)",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "16973874-73e3-4827-b8d4-1a986333db53",
+          "display_title": "Yours Is The Kingdom",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "0148e2d0-50c8-46a6-9726-8b398c01d397",
+          "display_title": "You Are With Me",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "141570cd-bff3-41ad-bca1-477d70549133",
+          "display_title": "Author of My Life",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q010",
+      "query_text": "Holy Spirit as Teacher",
+      "group": "G2",
+      "topic_id": "T10",
+      "retrieval_ms": 61.55709999999999,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.55709999999999,
+      "results": [
+        {
+          "song_id": "345f44d8-3c2d-4879-b6da-ce58484a7249",
+          "display_title": "Holy Spirit",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "83ce0b16-0886-409f-8326-996eaa50eab1",
+          "display_title": "Holy, Holy, Holy (Hymn)",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "ea33670a-3fa3-479e-ba59-0b55cf1f8ed4",
+          "display_title": "We Will Go",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "ffb865de-4136-4257-8852-e79712cc4387",
+          "display_title": "Carry My Cross",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "219f0fe8-d7fe-4de0-844f-5ce22524b5f2",
+          "display_title": "This Is Why",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "ebcb4c64-07b6-4369-a38e-81f00353b817",
+          "display_title": "Grace Changes Everything",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "0148e2d0-50c8-46a6-9726-8b398c01d397",
+          "display_title": "You Are With Me",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "9cdfce70-a573-4392-a817-afeb8dca4104",
+          "display_title": "Every Heart",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "dde347a0-d8df-433f-a5b5-a39a5500053e",
+          "display_title": "Tấm Lòng Con Sẵn Sàng",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q011",
+      "query_text": "Holy Spirit as Witness",
+      "group": "G2",
+      "topic_id": "T11",
+      "retrieval_ms": 61.472099999999045,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.472099999999045,
+      "results": [
+        {
+          "song_id": "345f44d8-3c2d-4879-b6da-ce58484a7249",
+          "display_title": "Holy Spirit",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "49b037a4-2126-4708-ad6f-157538ba3c66",
+          "display_title": "Joy Like a River",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "83ce0b16-0886-409f-8326-996eaa50eab1",
+          "display_title": "Holy, Holy, Holy (Hymn)",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "1119875e-0c71-44ec-949a-de26cb2cc74c",
+          "display_title": "King Of My Heart",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "860403f4-c7de-42c8-a50f-92631d958ad1",
+          "display_title": "I’ll Go",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "0148e2d0-50c8-46a6-9726-8b398c01d397",
+          "display_title": "You Are With Me",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "ebcb4c64-07b6-4369-a38e-81f00353b817",
+          "display_title": "Grace Changes Everything",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "ea33670a-3fa3-479e-ba59-0b55cf1f8ed4",
+          "display_title": "We Will Go",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "9cdfce70-a573-4392-a817-afeb8dca4104",
+          "display_title": "Every Heart",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "44ba4e35-8a0a-45ba-9135-3da6ae42be39",
+          "display_title": "In Control",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q012",
+      "query_text": "Holy Spirit as Guide to all Truth",
+      "group": "G2",
+      "topic_id": "T12",
+      "retrieval_ms": 62.55340000000069,
+      "rerank_ms": 0,
+      "total_latency_ms": 62.55340000000069,
+      "results": [
+        {
+          "song_id": "345f44d8-3c2d-4879-b6da-ce58484a7249",
+          "display_title": "Holy Spirit",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "83ce0b16-0886-409f-8326-996eaa50eab1",
+          "display_title": "Holy, Holy, Holy (Hymn)",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab",
+          "display_title": "Make Room",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5",
+          "display_title": "Same God",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "219f0fe8-d7fe-4de0-844f-5ce22524b5f2",
+          "display_title": "This Is Why",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "d8be7b3a-93a1-4966-b89c-f2c0d1336b19",
+          "display_title": "Too Good To Not Believe",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "141570cd-bff3-41ad-bca1-477d70549133",
+          "display_title": "Author of My Life",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "9cdfce70-a573-4392-a817-afeb8dca4104",
+          "display_title": "Every Heart",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "21358b75-ff2c-4df2-b662-b70c67783131",
+          "display_title": "When I Say Your Name",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q013",
+      "query_text": "Call of Discipleship",
+      "group": "G2",
+      "topic_id": "T13",
+      "retrieval_ms": 61.21759999999995,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.21759999999995,
+      "results": [
+        {
+          "song_id": "f60d3b21-17a7-40ee-96b7-56291938bb2f",
+          "display_title": "Lord Of All",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "aa793ef0-83ae-42d1-9b1a-b5e93535da1d",
+          "display_title": "Have All Of Me",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+          "display_title": "Build My Life",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "46a73f8f-ccd9-434d-9024-a323cc05690e",
+          "display_title": "For Your Purpose",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "504d0ec2-7646-4d7d-96c7-9c07323a6350",
+          "display_title": "This Is Your Church",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "5a737dd9-49f3-4644-9d86-73f882b2389c",
+          "display_title": "Faithful",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "11d96089-3515-40cf-b0f5-e30002e3fd47",
+          "display_title": "Hymn Of Heaven",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "141570cd-bff3-41ad-bca1-477d70549133",
+          "display_title": "Author of My Life",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "44ba4e35-8a0a-45ba-9135-3da6ae42be39",
+          "display_title": "In Control",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "ea33670a-3fa3-479e-ba59-0b55cf1f8ed4",
+          "display_title": "We Will Go",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q014",
+      "query_text": "Cost of Discipleship",
+      "group": "G2",
+      "topic_id": "T14",
+      "retrieval_ms": 61.28759999999966,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.28759999999966,
+      "results": [
+        {
+          "song_id": "f60d3b21-17a7-40ee-96b7-56291938bb2f",
+          "display_title": "Lord Of All",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "8509e035-f68a-4411-96fa-23a8907da3c1",
+          "display_title": "Radical Love",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+          "display_title": "Build My Life",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "aa793ef0-83ae-42d1-9b1a-b5e93535da1d",
+          "display_title": "Have All Of Me",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "46a73f8f-ccd9-434d-9024-a323cc05690e",
+          "display_title": "For Your Purpose",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "3ce9cf7c-f75e-437e-8947-07e153a0b9f0",
+          "display_title": "There's Still Room",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "860403f4-c7de-42c8-a50f-92631d958ad1",
+          "display_title": "I’ll Go",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "504d0ec2-7646-4d7d-96c7-9c07323a6350",
+          "display_title": "This Is Your Church",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "e3516fa3-601d-41f8-a600-3e126c642bae",
+          "display_title": "Worthy",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "16a593d2-e3d2-4f4c-aada-0cb487556195",
+          "display_title": "The Beat",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q015",
+      "query_text": "Command of Discipleship",
+      "group": "G2",
+      "topic_id": "T15",
+      "retrieval_ms": 61.02969999999914,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.02969999999914,
+      "results": [
+        {
+          "song_id": "b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5",
+          "display_title": "Same God",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "46a73f8f-ccd9-434d-9024-a323cc05690e",
+          "display_title": "For Your Purpose",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "5a737dd9-49f3-4644-9d86-73f882b2389c",
+          "display_title": "Faithful",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "f60d3b21-17a7-40ee-96b7-56291938bb2f",
+          "display_title": "Lord Of All",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "44ba4e35-8a0a-45ba-9135-3da6ae42be39",
+          "display_title": "In Control",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "ea33670a-3fa3-479e-ba59-0b55cf1f8ed4",
+          "display_title": "We Will Go",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "aa793ef0-83ae-42d1-9b1a-b5e93535da1d",
+          "display_title": "Have All Of Me",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "504d0ec2-7646-4d7d-96c7-9c07323a6350",
+          "display_title": "This Is Your Church",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+          "display_title": "Build My Life",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "64230296-e971-4afe-8ae2-6eb7b3a04587",
+          "display_title": "Safe",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q016",
+      "query_text": "Commission of Discipleship",
+      "group": "G2",
+      "topic_id": "T16",
+      "retrieval_ms": 61.58429999999862,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.58429999999862,
+      "results": [
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "aa793ef0-83ae-42d1-9b1a-b5e93535da1d",
+          "display_title": "Have All Of Me",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "ea33670a-3fa3-479e-ba59-0b55cf1f8ed4",
+          "display_title": "We Will Go",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "1119875e-0c71-44ec-949a-de26cb2cc74c",
+          "display_title": "King Of My Heart",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "11d96089-3515-40cf-b0f5-e30002e3fd47",
+          "display_title": "Hymn Of Heaven",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "a3452a9c-f6fc-4714-99a9-5bdf4f6aadae",
+          "display_title": "Beauty For Ashes",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "41a0e027-789d-4ca9-b0a8-e1dcdf76772e",
+          "display_title": "A Little Fire (Burn Brighter)",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "ffb865de-4136-4257-8852-e79712cc4387",
+          "display_title": "Carry My Cross",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "860403f4-c7de-42c8-a50f-92631d958ad1",
+          "display_title": "I’ll Go",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5",
+          "display_title": "Same God",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q017",
+      "query_text": "Focus on nurturing the next generation's faith by affirming their calling, encouraging boldness, and equipping them with the truth of Scripture. Challenge the current generation to fan the flame of faith in the next.",
+      "group": "G2",
+      "topic_id": "T02",
+      "retrieval_ms": 63.15509999999995,
+      "rerank_ms": 0,
+      "total_latency_ms": 63.15509999999995,
+      "results": [
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "d15f40ad-eb38-44d5-80e5-5cdeb9ec999b",
+          "display_title": "I Adore",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "8509e035-f68a-4411-96fa-23a8907da3c1",
+          "display_title": "Radical Love",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "460cd5b6-3cba-47c5-bcba-5ab639457287",
+          "display_title": "Lay It Down",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "dde347a0-d8df-433f-a5b5-a39a5500053e",
+          "display_title": "Tấm Lòng Con Sẵn Sàng",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "16a593d2-e3d2-4f4c-aada-0cb487556195",
+          "display_title": "The Beat",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "e0232131-c244-4453-a782-096444bcfdaa",
+          "display_title": "Nothing Can Separate Me",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "16973874-73e3-4827-b8d4-1a986333db53",
+          "display_title": "Yours Is The Kingdom",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "d8be7b3a-93a1-4966-b89c-f2c0d1336b19",
+          "display_title": "Too Good To Not Believe",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q018",
+      "query_text": "Highlight the importance of discipling others who will disciple others. Call the church to mentor, train, and empower the next generation to carry on the faith legacy.",
+      "group": "G2",
+      "topic_id": "T03",
+      "retrieval_ms": 61.42380000000048,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.42380000000048,
+      "results": [
+        {
+          "song_id": "dde347a0-d8df-433f-a5b5-a39a5500053e",
+          "display_title": "Tấm Lòng Con Sẵn Sàng",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "d8be7b3a-93a1-4966-b89c-f2c0d1336b19",
+          "display_title": "Too Good To Not Believe",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "219f0fe8-d7fe-4de0-844f-5ce22524b5f2",
+          "display_title": "This Is Why",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "3ce9cf7c-f75e-437e-8947-07e153a0b9f0",
+          "display_title": "There's Still Room",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "a88877aa-6e09-47ee-8b4c-12fba261f6ea",
+          "display_title": "God Is Good",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "504d0ec2-7646-4d7d-96c7-9c07323a6350",
+          "display_title": "This Is Your Church",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "03df92ed-47d0-4162-98db-a2d04c00ac4f",
+          "display_title": "Nothing But The Blood",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q019",
+      "query_text": "A lot of young people are confused about their identity that affects the way they perceive themselves. Our true identity is found in who God says we are, not in our past, our failures, or even our own doubts.",
+      "group": "G2",
+      "topic_id": "T05",
+      "retrieval_ms": 62.19549999999981,
+      "rerank_ms": 0,
+      "total_latency_ms": 62.19549999999981,
+      "results": [
+        {
+          "song_id": "9cdfce70-a573-4392-a817-afeb8dca4104",
+          "display_title": "Every Heart",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "a88877aa-6e09-47ee-8b4c-12fba261f6ea",
+          "display_title": "God Is Good",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "16a593d2-e3d2-4f4c-aada-0cb487556195",
+          "display_title": "The Beat",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "99091e62-17c5-471f-860c-ae1adce7b486",
+          "display_title": "Firm Foundation",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "91001c6f-96f6-40c2-9bb3-c97ef1f7c648",
+          "display_title": "Pour Us Out",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "16973874-73e3-4827-b8d4-1a986333db53",
+          "display_title": "Yours Is The Kingdom",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "460cd5b6-3cba-47c5-bcba-5ab639457287",
+          "display_title": "Lay It Down",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "e0232131-c244-4453-a782-096444bcfdaa",
+          "display_title": "Nothing Can Separate Me",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "41a0e027-789d-4ca9-b0a8-e1dcdf76772e",
+          "display_title": "A Little Fire (Burn Brighter)",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q020",
+      "query_text": "God invites us to a place of community a place to experience His love, mercy, grace, and protection. God brings people together in faith communities like churches to walk together, support each other, and experience love that goes beyond disposable relationships.",
+      "group": "G2",
+      "topic_id": "T06",
+      "retrieval_ms": 70.72419999999875,
+      "rerank_ms": 0,
+      "total_latency_ms": 70.72419999999875,
+      "results": [
+        {
+          "song_id": "460cd5b6-3cba-47c5-bcba-5ab639457287",
+          "display_title": "Lay It Down",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "141570cd-bff3-41ad-bca1-477d70549133",
+          "display_title": "Author of My Life",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "a88877aa-6e09-47ee-8b4c-12fba261f6ea",
+          "display_title": "God Is Good",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "f60d3b21-17a7-40ee-96b7-56291938bb2f",
+          "display_title": "Lord Of All",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "504d0ec2-7646-4d7d-96c7-9c07323a6350",
+          "display_title": "This Is Your Church",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "e7e27cca-227f-4907-8ed4-9396127bbedc",
+          "display_title": "Gratitude",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "9cdfce70-a573-4392-a817-afeb8dca4104",
+          "display_title": "Every Heart",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "ffb865de-4136-4257-8852-e79712cc4387",
+          "display_title": "Carry My Cross",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "5f48dff8-0370-4a8b-8a6d-2928ae63c7dc",
+          "display_title": "Dance In Freedom",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "0ac708c4-a8a8-4d99-be5e-a1b932f32856",
+          "display_title": "So Close",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q021",
+      "query_text": "God places people in our lives to help us grow into our God-given destiny. Young people need spiritual leaders who will guide and walk with them as they grow into their God-given destiny and purpose.",
+      "group": "G2",
+      "topic_id": "T07",
+      "retrieval_ms": 62.385700000000725,
+      "rerank_ms": 0,
+      "total_latency_ms": 62.385700000000725,
+      "results": [
+        {
+          "song_id": "b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5",
+          "display_title": "Same God",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "a88877aa-6e09-47ee-8b4c-12fba261f6ea",
+          "display_title": "God Is Good",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "3ce9cf7c-f75e-437e-8947-07e153a0b9f0",
+          "display_title": "There's Still Room",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "d3c705ce-a3c3-4282-936f-7623eeef37c7",
+          "display_title": "Dwelling Place",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "16973874-73e3-4827-b8d4-1a986333db53",
+          "display_title": "Yours Is The Kingdom",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "46a73f8f-ccd9-434d-9024-a323cc05690e",
+          "display_title": "For Your Purpose",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "ffb865de-4136-4257-8852-e79712cc4387",
+          "display_title": "Carry My Cross",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "5f48dff8-0370-4a8b-8a6d-2928ae63c7dc",
+          "display_title": "Dance In Freedom",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "cea13122-7f59-44d8-a86b-dcaedf1bdb94",
+          "display_title": "See A Victory",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q022",
+      "query_text": "God redeems our past and calls us into a purposeful future for His glory. Purpose starts when someone trust the power of God into his life. No excuses can disqualifies us from God's purpose. When God calls us, our life becomes meaningful and he can use it as an instrument for His mission.",
+      "group": "G2",
+      "topic_id": "T08",
+      "retrieval_ms": 62.52859999999964,
+      "rerank_ms": 0,
+      "total_latency_ms": 62.52859999999964,
+      "results": [
+        {
+          "song_id": "a88877aa-6e09-47ee-8b4c-12fba261f6ea",
+          "display_title": "God Is Good",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "46a73f8f-ccd9-434d-9024-a323cc05690e",
+          "display_title": "For Your Purpose",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "504d0ec2-7646-4d7d-96c7-9c07323a6350",
+          "display_title": "This Is Your Church",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "21358b75-ff2c-4df2-b662-b70c67783131",
+          "display_title": "When I Say Your Name",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "41a0e027-789d-4ca9-b0a8-e1dcdf76772e",
+          "display_title": "A Little Fire (Burn Brighter)",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "d3c705ce-a3c3-4282-936f-7623eeef37c7",
+          "display_title": "Dwelling Place",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "860403f4-c7de-42c8-a50f-92631d958ad1",
+          "display_title": "I’ll Go",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "a52477e9-0fce-4888-8e41-4275b8c04e96",
+          "display_title": "This Is The Kingdom",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "bd0806db-5c3e-442f-94eb-ca152945c28c",
+          "display_title": "In Your Name",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q023",
+      "query_text": "Our people will understand the role of Holy Spirit as our Helper that will be with us forever",
+      "group": "G2",
+      "topic_id": "T09",
+      "retrieval_ms": 61.765299999999115,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.765299999999115,
+      "results": [
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "345f44d8-3c2d-4879-b6da-ce58484a7249",
+          "display_title": "Holy Spirit",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "fdabd847-e2f0-4f79-a637-eeac2165f5f3",
+          "display_title": "Ngợi Ca Danh Cao Giê-su",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "d3c705ce-a3c3-4282-936f-7623eeef37c7",
+          "display_title": "Dwelling Place",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "0148e2d0-50c8-46a6-9726-8b398c01d397",
+          "display_title": "You Are With Me",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "3ce9cf7c-f75e-437e-8947-07e153a0b9f0",
+          "display_title": "There's Still Room",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "1119875e-0c71-44ec-949a-de26cb2cc74c",
+          "display_title": "King Of My Heart",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "83ce0b16-0886-409f-8326-996eaa50eab1",
+          "display_title": "Holy, Holy, Holy (Hymn)",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q024",
+      "query_text": "Our people will know Holy Spirit who will Teach and bring to remembrance the lessons taught by Christ",
+      "group": "G2",
+      "topic_id": "T10",
+      "retrieval_ms": 62.56169999999838,
+      "rerank_ms": 0,
+      "total_latency_ms": 62.56169999999838,
+      "results": [
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "d8be7b3a-93a1-4966-b89c-f2c0d1336b19",
+          "display_title": "Too Good To Not Believe",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "0148e2d0-50c8-46a6-9726-8b398c01d397",
+          "display_title": "You Are With Me",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "5d419226-2508-41de-89a8-42fdb4fb3fd3",
+          "display_title": "Who You Say I Am",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "345f44d8-3c2d-4879-b6da-ce58484a7249",
+          "display_title": "Holy Spirit",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "504d0ec2-7646-4d7d-96c7-9c07323a6350",
+          "display_title": "This Is Your Church",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "ea33670a-3fa3-479e-ba59-0b55cf1f8ed4",
+          "display_title": "We Will Go",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "e5e4bfad-0a1f-452f-a6ea-0cc4e2173f83",
+          "display_title": "I'll Never Walk Alone",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "5f48dff8-0370-4a8b-8a6d-2928ae63c7dc",
+          "display_title": "Dance In Freedom",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q025",
+      "query_text": "Our people will learn the role of Holy Spirit as the one who will bear witness about Christ.",
+      "group": "G2",
+      "topic_id": "T11",
+      "retrieval_ms": 62.14730000000054,
+      "rerank_ms": 0,
+      "total_latency_ms": 62.14730000000054,
+      "results": [
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "41a0e027-789d-4ca9-b0a8-e1dcdf76772e",
+          "display_title": "A Little Fire (Burn Brighter)",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "d8be7b3a-93a1-4966-b89c-f2c0d1336b19",
+          "display_title": "Too Good To Not Believe",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "99091e62-17c5-471f-860c-ae1adce7b486",
+          "display_title": "Firm Foundation",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "345f44d8-3c2d-4879-b6da-ce58484a7249",
+          "display_title": "Holy Spirit",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "dde347a0-d8df-433f-a5b5-a39a5500053e",
+          "display_title": "Tấm Lòng Con Sẵn Sàng",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "fdabd847-e2f0-4f79-a637-eeac2165f5f3",
+          "display_title": "Ngợi Ca Danh Cao Giê-su",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "3ce9cf7c-f75e-437e-8947-07e153a0b9f0",
+          "display_title": "There's Still Room",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "1119875e-0c71-44ec-949a-de26cb2cc74c",
+          "display_title": "King Of My Heart",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q026",
+      "query_text": "Our people will trust in Holy Spirit as the ultimate guide to all truth.",
+      "group": "G2",
+      "topic_id": "T12",
+      "retrieval_ms": 61.707000000000335,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.707000000000335,
+      "results": [
+        {
+          "song_id": "345f44d8-3c2d-4879-b6da-ce58484a7249",
+          "display_title": "Holy Spirit",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5",
+          "display_title": "Same God",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "9cdfce70-a573-4392-a817-afeb8dca4104",
+          "display_title": "Every Heart",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "d3c705ce-a3c3-4282-936f-7623eeef37c7",
+          "display_title": "Dwelling Place",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "a7606cd6-57a9-42de-b753-cf546c9a9677",
+          "display_title": "Fill This House",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "83ce0b16-0886-409f-8326-996eaa50eab1",
+          "display_title": "Holy, Holy, Holy (Hymn)",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+          "display_title": "Build My Life",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "dde347a0-d8df-433f-a5b5-a39a5500053e",
+          "display_title": "Tấm Lòng Con Sẵn Sàng",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q027",
+      "query_text": "Find worship songs about the power of the Holy Spirit working in and through believers.",
+      "group": "G2",
+      "topic_id": "T01",
+      "retrieval_ms": 62.878499999998894,
+      "rerank_ms": 0,
+      "total_latency_ms": 62.878499999998894,
+      "results": [
+        {
+          "song_id": "d15f40ad-eb38-44d5-80e5-5cdeb9ec999b",
+          "display_title": "I Adore",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "9cdfce70-a573-4392-a817-afeb8dca4104",
+          "display_title": "Every Heart",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "5f48dff8-0370-4a8b-8a6d-2928ae63c7dc",
+          "display_title": "Dance In Freedom",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "8509e035-f68a-4411-96fa-23a8907da3c1",
+          "display_title": "Radical Love",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "d3c705ce-a3c3-4282-936f-7623eeef37c7",
+          "display_title": "Dwelling Place",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "a7606cd6-57a9-42de-b753-cf546c9a9677",
+          "display_title": "Fill This House",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "dde347a0-d8df-433f-a5b5-a39a5500053e",
+          "display_title": "Tấm Lòng Con Sẵn Sàng",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q028",
+      "query_text": "Find songs that encourage the next generation to grow in faith, embrace God's calling, and boldly live according to Scripture.",
+      "group": "G2",
+      "topic_id": "T02",
+      "retrieval_ms": 61.282100000000355,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.282100000000355,
+      "results": [
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5",
+          "display_title": "Same God",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "1064050b-d15c-4b7b-9390-0ce53ccf801c",
+          "display_title": "It Is So",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "21358b75-ff2c-4df2-b662-b70c67783131",
+          "display_title": "When I Say Your Name",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "aa793ef0-83ae-42d1-9b1a-b5e93535da1d",
+          "display_title": "Have All Of Me",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "860403f4-c7de-42c8-a50f-92631d958ad1",
+          "display_title": "I’ll Go",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "d3c705ce-a3c3-4282-936f-7623eeef37c7",
+          "display_title": "Dwelling Place",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "46a73f8f-ccd9-434d-9024-a323cc05690e",
+          "display_title": "For Your Purpose",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "ea33670a-3fa3-479e-ba59-0b55cf1f8ed4",
+          "display_title": "We Will Go",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "11d96089-3515-40cf-b0f5-e30002e3fd47",
+          "display_title": "Hymn Of Heaven",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q029",
+      "query_text": "Find songs about passing on faith, discipling others, and equipping future generations to continue God's work.",
+      "group": "G2",
+      "topic_id": "T03",
+      "retrieval_ms": 61.332800000000134,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.332800000000134,
+      "results": [
+        {
+          "song_id": "16a593d2-e3d2-4f4c-aada-0cb487556195",
+          "display_title": "The Beat",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "d15f40ad-eb38-44d5-80e5-5cdeb9ec999b",
+          "display_title": "I Adore",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "21358b75-ff2c-4df2-b662-b70c67783131",
+          "display_title": "When I Say Your Name",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "608245c7-f6a5-44fa-84bc-21e278510060",
+          "display_title": "Your Love Is Greater",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "0570c043-4efa-4dd9-ac98-96ded7527cc4",
+          "display_title": "Beautiful Love",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "d8be7b3a-93a1-4966-b89c-f2c0d1336b19",
+          "display_title": "Too Good To Not Believe",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+          "display_title": "Build My Life",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q030",
+      "query_text": "Find worship songs that express love through action, serving others, and demonstrating God's love in everyday life.",
+      "group": "G2",
+      "topic_id": "T04",
+      "retrieval_ms": 73.19920000000093,
+      "rerank_ms": 0,
+      "total_latency_ms": 73.19920000000093,
+      "results": [
+        {
+          "song_id": "608245c7-f6a5-44fa-84bc-21e278510060",
+          "display_title": "Your Love Is Greater",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "8509e035-f68a-4411-96fa-23a8907da3c1",
+          "display_title": "Radical Love",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "5d419226-2508-41de-89a8-42fdb4fb3fd3",
+          "display_title": "Who You Say I Am",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "d15f40ad-eb38-44d5-80e5-5cdeb9ec999b",
+          "display_title": "I Adore",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "61fa2632-9a99-434c-87de-8329000f263a",
+          "display_title": "Egypt",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "16a593d2-e3d2-4f4c-aada-0cb487556195",
+          "display_title": "The Beat",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "44ba4e35-8a0a-45ba-9135-3da6ae42be39",
+          "display_title": "In Control",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5",
+          "display_title": "Same God",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "a3452a9c-f6fc-4714-99a9-5bdf4f6aadae",
+          "display_title": "Beauty For Ashes",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+          "display_title": "Build My Life",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q031",
+      "query_text": "Find songs about our identity in Christ and how God defines who we are regardless of our past, failures, or doubts.",
+      "group": "G2",
+      "topic_id": "T05",
+      "retrieval_ms": 65.1275999999998,
+      "rerank_ms": 0,
+      "total_latency_ms": 65.1275999999998,
+      "results": [
+        {
+          "song_id": "bd0806db-5c3e-442f-94eb-ca152945c28c",
+          "display_title": "In Your Name",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "ea33670a-3fa3-479e-ba59-0b55cf1f8ed4",
+          "display_title": "We Will Go",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "d3c705ce-a3c3-4282-936f-7623eeef37c7",
+          "display_title": "Dwelling Place",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "d15f40ad-eb38-44d5-80e5-5cdeb9ec999b",
+          "display_title": "I Adore",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "a7606cd6-57a9-42de-b753-cf546c9a9677",
+          "display_title": "Fill This House",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "a88877aa-6e09-47ee-8b4c-12fba261f6ea",
+          "display_title": "God Is Good",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "91001c6f-96f6-40c2-9bb3-c97ef1f7c648",
+          "display_title": "Pour Us Out",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "ed133e70-5c3c-4207-8fd4-a3e1d79cfaec",
+          "display_title": "With You",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q032",
+      "query_text": "Find songs about belonging to God's family, experiencing His love, and walking together as a community of faith.",
+      "group": "G2",
+      "topic_id": "T06",
+      "retrieval_ms": 61.87129999999888,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.87129999999888,
+      "results": [
+        {
+          "song_id": "8509e035-f68a-4411-96fa-23a8907da3c1",
+          "display_title": "Radical Love",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "a88877aa-6e09-47ee-8b4c-12fba261f6ea",
+          "display_title": "God Is Good",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "e7e27cca-227f-4907-8ed4-9396127bbedc",
+          "display_title": "Gratitude",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "219f0fe8-d7fe-4de0-844f-5ce22524b5f2",
+          "display_title": "This Is Why",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "aa793ef0-83ae-42d1-9b1a-b5e93535da1d",
+          "display_title": "Have All Of Me",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5",
+          "display_title": "Same God",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "cea13122-7f59-44d8-a86b-dcaedf1bdb94",
+          "display_title": "See A Victory",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "49b037a4-2126-4708-ad6f-157538ba3c66",
+          "display_title": "Joy Like a River",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q033",
+      "query_text": "Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.",
+      "group": "G2",
+      "topic_id": "T07",
+      "retrieval_ms": 62.740600000000995,
+      "rerank_ms": 0,
+      "total_latency_ms": 62.740600000000995,
+      "results": [
+        {
+          "song_id": "46a73f8f-ccd9-434d-9024-a323cc05690e",
+          "display_title": "For Your Purpose",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "5f48dff8-0370-4a8b-8a6d-2928ae63c7dc",
+          "display_title": "Dance In Freedom",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "219f0fe8-d7fe-4de0-844f-5ce22524b5f2",
+          "display_title": "This Is Why",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "61fa2632-9a99-434c-87de-8329000f263a",
+          "display_title": "Egypt",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "dde347a0-d8df-433f-a5b5-a39a5500053e",
+          "display_title": "Tấm Lòng Con Sẵn Sàng",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "d8be7b3a-93a1-4966-b89c-f2c0d1336b19",
+          "display_title": "Too Good To Not Believe",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "e7e27cca-227f-4907-8ed4-9396127bbedc",
+          "display_title": "Gratitude",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "0570c043-4efa-4dd9-ac98-96ded7527cc4",
+          "display_title": "Beautiful Love",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "608245c7-f6a5-44fa-84bc-21e278510060",
+          "display_title": "Your Love Is Greater",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q034",
+      "query_text": "Find songs about discovering God's purpose, being called by Him, and becoming an instrument for His mission.",
+      "group": "G2",
+      "topic_id": "T08",
+      "retrieval_ms": 61.864800000001196,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.864800000001196,
+      "results": [
+        {
+          "song_id": "219f0fe8-d7fe-4de0-844f-5ce22524b5f2",
+          "display_title": "This Is Why",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "21358b75-ff2c-4df2-b662-b70c67783131",
+          "display_title": "When I Say Your Name",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "141570cd-bff3-41ad-bca1-477d70549133",
+          "display_title": "Author of My Life",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "ed133e70-5c3c-4207-8fd4-a3e1d79cfaec",
+          "display_title": "With You",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "a88877aa-6e09-47ee-8b4c-12fba261f6ea",
+          "display_title": "God Is Good",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "ffb865de-4136-4257-8852-e79712cc4387",
+          "display_title": "Carry My Cross",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5",
+          "display_title": "Same God",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab",
+          "display_title": "Make Room",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "03df92ed-47d0-4162-98db-a2d04c00ac4f",
+          "display_title": "Nothing But The Blood",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "aa793ef0-83ae-42d1-9b1a-b5e93535da1d",
+          "display_title": "Have All Of Me",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q035",
+      "query_text": "Find songs about the Holy Spirit staying with us, helping us, and providing strength in our lives.",
+      "group": "G2",
+      "topic_id": "T09",
+      "retrieval_ms": 61.63349999999991,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.63349999999991,
+      "results": [
+        {
+          "song_id": "b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5",
+          "display_title": "Same God",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "e3516fa3-601d-41f8-a600-3e126c642bae",
+          "display_title": "Worthy",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "d8be7b3a-93a1-4966-b89c-f2c0d1336b19",
+          "display_title": "Too Good To Not Believe",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "345f44d8-3c2d-4879-b6da-ce58484a7249",
+          "display_title": "Holy Spirit",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "9cdfce70-a573-4392-a817-afeb8dca4104",
+          "display_title": "Every Heart",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "21358b75-ff2c-4df2-b662-b70c67783131",
+          "display_title": "When I Say Your Name",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "83ce0b16-0886-409f-8326-996eaa50eab1",
+          "display_title": "Holy, Holy, Holy (Hymn)",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "ebcb4c64-07b6-4369-a38e-81f00353b817",
+          "display_title": "Grace Changes Everything",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "91001c6f-96f6-40c2-9bb3-c97ef1f7c648",
+          "display_title": "Pour Us Out",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q036",
+      "query_text": "Find songs about the Holy Spirit teaching us and reminding us of the words and teachings of Jesus.",
+      "group": "G2",
+      "topic_id": "T10",
+      "retrieval_ms": 62.16140000000087,
+      "rerank_ms": 0,
+      "total_latency_ms": 62.16140000000087,
+      "results": [
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab",
+          "display_title": "Make Room",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "d8be7b3a-93a1-4966-b89c-f2c0d1336b19",
+          "display_title": "Too Good To Not Believe",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "e0232131-c244-4453-a782-096444bcfdaa",
+          "display_title": "Nothing Can Separate Me",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "91001c6f-96f6-40c2-9bb3-c97ef1f7c648",
+          "display_title": "Pour Us Out",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "d15f40ad-eb38-44d5-80e5-5cdeb9ec999b",
+          "display_title": "I Adore",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "8509e035-f68a-4411-96fa-23a8907da3c1",
+          "display_title": "Radical Love",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "cea13122-7f59-44d8-a86b-dcaedf1bdb94",
+          "display_title": "See A Victory",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "e7e27cca-227f-4907-8ed4-9396127bbedc",
+          "display_title": "Gratitude",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q037",
+      "query_text": "Find songs that testify about Jesus Christ and point people toward who He is.",
+      "group": "G2",
+      "topic_id": "T11",
+      "retrieval_ms": 61.78939999999966,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.78939999999966,
+      "results": [
+        {
+          "song_id": "608245c7-f6a5-44fa-84bc-21e278510060",
+          "display_title": "Your Love Is Greater",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "a88877aa-6e09-47ee-8b4c-12fba261f6ea",
+          "display_title": "God Is Good",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5",
+          "display_title": "Same God",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "64230296-e971-4afe-8ae2-6eb7b3a04587",
+          "display_title": "Safe",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "f60d3b21-17a7-40ee-96b7-56291938bb2f",
+          "display_title": "Lord Of All",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "5e6bd968-85cb-4117-aed0-abc20d3f7aa7",
+          "display_title": "A THOUSAND HALLELUJAHS",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "e5e4bfad-0a1f-452f-a6ea-0cc4e2173f83",
+          "display_title": "I'll Never Walk Alone",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "e3516fa3-601d-41f8-a600-3e126c642bae",
+          "display_title": "Worthy",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q038",
+      "query_text": "Find songs about trusting the Holy Spirit to lead us in truth and guide our decisions.",
+      "group": "G2",
+      "topic_id": "T12",
+      "retrieval_ms": 61.0627999999997,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.0627999999997,
+      "results": [
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "345f44d8-3c2d-4879-b6da-ce58484a7249",
+          "display_title": "Holy Spirit",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "5f48dff8-0370-4a8b-8a6d-2928ae63c7dc",
+          "display_title": "Dance In Freedom",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "141570cd-bff3-41ad-bca1-477d70549133",
+          "display_title": "Author of My Life",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "cea13122-7f59-44d8-a86b-dcaedf1bdb94",
+          "display_title": "See A Victory",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "dde347a0-d8df-433f-a5b5-a39a5500053e",
+          "display_title": "Tấm Lòng Con Sẵn Sàng",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "61fa2632-9a99-434c-87de-8329000f263a",
+          "display_title": "Egypt",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "219f0fe8-d7fe-4de0-844f-5ce22524b5f2",
+          "display_title": "This Is Why",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "83ce0b16-0886-409f-8326-996eaa50eab1",
+          "display_title": "Holy, Holy, Holy (Hymn)",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q039",
+      "query_text": "Find songs about Jesus calling people to follow Him, be transformed by Him, and receive a new purpose.",
+      "group": "G2",
+      "topic_id": "T13",
+      "retrieval_ms": 61.13690000000133,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.13690000000133,
+      "results": [
+        {
+          "song_id": "83ce0b16-0886-409f-8326-996eaa50eab1",
+          "display_title": "Holy, Holy, Holy (Hymn)",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "d15f40ad-eb38-44d5-80e5-5cdeb9ec999b",
+          "display_title": "I Adore",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "5e6bd968-85cb-4117-aed0-abc20d3f7aa7",
+          "display_title": "A THOUSAND HALLELUJAHS",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5",
+          "display_title": "Same God",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "61fa2632-9a99-434c-87de-8329000f263a",
+          "display_title": "Egypt",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "219f0fe8-d7fe-4de0-844f-5ce22524b5f2",
+          "display_title": "This Is Why",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "504d0ec2-7646-4d7d-96c7-9c07323a6350",
+          "display_title": "This Is Your Church",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "5f48dff8-0370-4a8b-8a6d-2928ae63c7dc",
+          "display_title": "Dance In Freedom",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q040",
+      "query_text": "Find songs about surrendering worldly possessions, status, comfort, and relationships to follow Jesus.",
+      "group": "G2",
+      "topic_id": "T14",
+      "retrieval_ms": 63.95689999999922,
+      "rerank_ms": 0,
+      "total_latency_ms": 63.95689999999922,
+      "results": [
+        {
+          "song_id": "e7e27cca-227f-4907-8ed4-9396127bbedc",
+          "display_title": "Gratitude",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "99091e62-17c5-471f-860c-ae1adce7b486",
+          "display_title": "Firm Foundation",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "a7606cd6-57a9-42de-b753-cf546c9a9677",
+          "display_title": "Fill This House",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "49b037a4-2126-4708-ad6f-157538ba3c66",
+          "display_title": "Joy Like a River",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "141570cd-bff3-41ad-bca1-477d70549133",
+          "display_title": "Author of My Life",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "ed133e70-5c3c-4207-8fd4-a3e1d79cfaec",
+          "display_title": "With You",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "16a593d2-e3d2-4f4c-aada-0cb487556195",
+          "display_title": "The Beat",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "61fa2632-9a99-434c-87de-8329000f263a",
+          "display_title": "Egypt",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q041",
+      "query_text": "Find songs about loving one another as Jesus commanded and showing the world that we are His disciples through love.",
+      "group": "G2",
+      "topic_id": "T15",
+      "retrieval_ms": 62.630199999999604,
+      "rerank_ms": 0,
+      "total_latency_ms": 62.630199999999604,
+      "results": [
+        {
+          "song_id": "cea13122-7f59-44d8-a86b-dcaedf1bdb94",
+          "display_title": "See A Victory",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "dde347a0-d8df-433f-a5b5-a39a5500053e",
+          "display_title": "Tấm Lòng Con Sẵn Sàng",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "ed133e70-5c3c-4207-8fd4-a3e1d79cfaec",
+          "display_title": "With You",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "d8be7b3a-93a1-4966-b89c-f2c0d1336b19",
+          "display_title": "Too Good To Not Believe",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "bd0806db-5c3e-442f-94eb-ca152945c28c",
+          "display_title": "In Your Name",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "21358b75-ff2c-4df2-b662-b70c67783131",
+          "display_title": "When I Say Your Name",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "d15f40ad-eb38-44d5-80e5-5cdeb9ec999b",
+          "display_title": "I Adore",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "46a73f8f-ccd9-434d-9024-a323cc05690e",
+          "display_title": "For Your Purpose",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "f60d3b21-17a7-40ee-96b7-56291938bb2f",
+          "display_title": "Lord Of All",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q042",
+      "query_text": "Find songs about the Great Commission, going into the world, and making disciples of all nations.",
+      "group": "G2",
+      "topic_id": "T16",
+      "retrieval_ms": 60.76260000000002,
+      "rerank_ms": 0,
+      "total_latency_ms": 60.76260000000002,
+      "results": [
+        {
+          "song_id": "f60d3b21-17a7-40ee-96b7-56291938bb2f",
+          "display_title": "Lord Of All",
+          "rank": 1,
+          "score": 0.016393
+        },
+        {
+          "song_id": "dde347a0-d8df-433f-a5b5-a39a5500053e",
+          "display_title": "Tấm Lòng Con Sẵn Sàng",
+          "rank": 2,
+          "score": 0.016129
+        },
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 3,
+          "score": 0.015873
+        },
+        {
+          "song_id": "c240c3a3-3157-4a55-8fae-fb356076f509",
+          "display_title": "Do It Again",
+          "rank": 4,
+          "score": 0.015625
+        },
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 5,
+          "score": 0.015385
+        },
+        {
+          "song_id": "2feedc36-0d66-47be-871b-4028acbab508",
+          "display_title": "There's Nothing That Our God Can't Do",
+          "rank": 6,
+          "score": 0.015152
+        },
+        {
+          "song_id": "8509e035-f68a-4411-96fa-23a8907da3c1",
+          "display_title": "Radical Love",
+          "rank": 7,
+          "score": 0.014925
+        },
+        {
+          "song_id": "99091e62-17c5-471f-860c-ae1adce7b486",
+          "display_title": "Firm Foundation",
+          "rank": 8,
+          "score": 0.014706
+        },
+        {
+          "song_id": "aa793ef0-83ae-42d1-9b1a-b5e93535da1d",
+          "display_title": "Have All Of Me",
+          "rank": 9,
+          "score": 0.014493
+        },
+        {
+          "song_id": "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+          "display_title": "Build My Life",
+          "rank": 10,
+          "score": 0.014286
+        }
+      ]
+    }
+  ]
+}

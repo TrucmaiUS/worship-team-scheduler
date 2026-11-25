@@ -1,0 +1,124 @@
+{
+  "total_queries": 90,
+  "ndcg3": 0.404,
+  "mrr10": 0.445,
+  "hit3_percent": 47.8,
+  "recall10": 0.563,
+  "precision3": 0.174,
+  "by_group": {
+    "G1": {
+      "count": 12,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3_percent": 100,
+      "recall10": 1,
+      "precision3": 0.444
+    },
+    "G2": {
+      "count": 42,
+      "ndcg3": 0.078,
+      "mrr10": 0.162,
+      "hit3_percent": 19,
+      "recall10": 0.254,
+      "precision3": 0.063
+    },
+    "G3": {
+      "count": 24,
+      "ndcg3": 0.6,
+      "mrr10": 0.606,
+      "hit3_percent": 66.7,
+      "recall10": 0.792,
+      "precision3": 0.222
+    },
+    "G4": {
+      "count": 12,
+      "ndcg3": 0.553,
+      "mrr10": 0.564,
+      "hit3_percent": 58.3,
+      "recall10": 0.75,
+      "precision3": 0.194
+    }
+  },
+  "by_topic": {
+    "T01": {
+      "count": 2,
+      "ndcg3": 0,
+      "hit3_percent": 0
+    },
+    "T02": {
+      "count": 3,
+      "ndcg3": 0,
+      "hit3_percent": 0
+    },
+    "T03": {
+      "count": 3,
+      "ndcg3": 0,
+      "hit3_percent": 0
+    },
+    "T04": {
+      "count": 2,
+      "ndcg3": 0.106,
+      "hit3_percent": 50
+    },
+    "T05": {
+      "count": 3,
+      "ndcg3": 0.131,
+      "hit3_percent": 33.3
+    },
+    "T06": {
+      "count": 3,
+      "ndcg3": 0,
+      "hit3_percent": 0
+    },
+    "T07": {
+      "count": 3,
+      "ndcg3": 0,
+      "hit3_percent": 0
+    },
+    "T08": {
+      "count": 3,
+      "ndcg3": 0.166,
+      "hit3_percent": 33.3
+    },
+    "T09": {
+      "count": 3,
+      "ndcg3": 0.333,
+      "hit3_percent": 66.7
+    },
+    "T10": {
+      "count": 3,
+      "ndcg3": 0.307,
+      "hit3_percent": 66.7
+    },
+    "T11": {
+      "count": 3,
+      "ndcg3": 0,
+      "hit3_percent": 0
+    },
+    "T12": {
+      "count": 3,
+      "ndcg3": 0,
+      "hit3_percent": 0
+    },
+    "T13": {
+      "count": 2,
+      "ndcg3": 0,
+      "hit3_percent": 0
+    },
+    "T14": {
+      "count": 2,
+      "ndcg3": 0,
+      "hit3_percent": 0
+    },
+    "T15": {
+      "count": 2,
+      "ndcg3": 0,
+      "hit3_percent": 0
+    },
+    "T16": {
+      "count": 2,
+      "ndcg3": 0.135,
+      "hit3_percent": 50
+    }
+  }
+}

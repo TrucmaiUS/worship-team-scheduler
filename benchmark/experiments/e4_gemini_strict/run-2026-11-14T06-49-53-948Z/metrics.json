@@ -1,0 +1,1139 @@
+{
+  "summary": {
+    "experiment_id": "E4_GEMINI_STRICT",
+    "method_name": "Two-Stage Hybrid RRF + Gemini Strict (gemini-3.1-flash-lite)",
+    "total_queries": 90,
+    "ndcg3": 0.6647838125465937,
+    "mrr10": 0.7554761904761905,
+    "hit3_percent": 81.11111111111111,
+    "recall10": 0.7944444444444444,
+    "precision3": 0.29259259259259224,
+    "mean_latency_ms": 6355.057129999999,
+    "p50_latency_ms": 5956.368900000001,
+    "p95_latency_ms": 10659.428799999994,
+    "by_group": {
+      "G1": {
+        "count": 12,
+        "ndcg3": 1,
+        "mrr10": 1,
+        "hit3_percent": 100,
+        "recall10": 0.9583333333333334,
+        "precision3": 0.44444444444444436
+      },
+      "G2": {
+        "count": 42,
+        "ndcg3": 0.3706829433821554,
+        "mrr10": 0.5605442176870747,
+        "hit3_percent": 66.66666666666666,
+        "recall10": 0.5952380952380953,
+        "precision3": 0.23809523809523805
+      },
+      "G3": {
+        "count": 24,
+        "ndcg3": 0.9012887397321441,
+        "mrr10": 0.9145833333333333,
+        "hit3_percent": 91.66666666666666,
+        "recall10": 1,
+        "precision3": 0.3055555555555554
+      },
+      "G4": {
+        "count": 12,
+        "ndcg3": 0.8859108127976215,
+        "mrr10": 0.875,
+        "hit3_percent": 91.66666666666666,
+        "recall10": 0.9166666666666666,
+        "precision3": 0.3055555555555556
+      }
+    },
+    "by_topic": {
+      "T01": {
+        "count": 2,
+        "ndcg3": 0.2709710647400135,
+        "mrr10": 0.625,
+        "hit3_percent": 50
+      },
+      "T02": {
+        "count": 3,
+        "ndcg3": 0.42793128755956805,
+        "mrr10": 0.5,
+        "hit3_percent": 66.66666666666666
+      },
+      "T03": {
+        "count": 3,
+        "ndcg3": 0.7871546029909718,
+        "mrr10": 1,
+        "hit3_percent": 100
+      },
+      "T04": {
+        "count": 2,
+        "ndcg3": 0.3935773014954859,
+        "mrr10": 0.3333333333333333,
+        "hit3_percent": 100
+      },
+      "T05": {
+        "count": 3,
+        "ndcg3": 0.7871546029909718,
+        "mrr10": 1,
+        "hit3_percent": 100
+      },
+      "T06": {
+        "count": 3,
+        "ndcg3": 0.6322658177266981,
+        "mrr10": 1,
+        "hit3_percent": 100
+      },
+      "T07": {
+        "count": 3,
+        "ndcg3": 0.13119243383182863,
+        "mrr10": 0.1111111111111111,
+        "hit3_percent": 33.33333333333333
+      },
+      "T08": {
+        "count": 3,
+        "ndcg3": 0.3333333333333333,
+        "mrr10": 0.5666666666666667,
+        "hit3_percent": 66.66666666666666
+      },
+      "T09": {
+        "count": 3,
+        "ndcg3": 0,
+        "mrr10": 0.19444444444444442,
+        "hit3_percent": 0
+      },
+      "T10": {
+        "count": 3,
+        "ndcg3": 0.2579018714896944,
+        "mrr10": 0.39999999999999997,
+        "hit3_percent": 66.66666666666666
+      },
+      "T11": {
+        "count": 3,
+        "ndcg3": 0.5247697353273145,
+        "mrr10": 0.6666666666666666,
+        "hit3_percent": 66.66666666666666
+      },
+      "T12": {
+        "count": 3,
+        "ndcg3": 0.05622532878506942,
+        "mrr10": 0.15873015873015872,
+        "hit3_percent": 33.33333333333333
+      },
+      "T13": {
+        "count": 2,
+        "ndcg3": 0.19678865074774296,
+        "mrr10": 0.16666666666666666,
+        "hit3_percent": 50
+      },
+      "T14": {
+        "count": 2,
+        "ndcg3": 0.541942129480027,
+        "mrr10": 1,
+        "hit3_percent": 100
+      },
+      "T15": {
+        "count": 2,
+        "ndcg3": 0.10642269850451405,
+        "mrr10": 0.25,
+        "hit3_percent": 50
+      },
+      "T16": {
+        "count": 2,
+        "ndcg3": 0.36774644500430403,
+        "mrr10": 1,
+        "hit3_percent": 100
+      }
+    }
+  },
+  "query_metrics": [
+    {
+      "query_id": "G1-Q001",
+      "group": "G1",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 3813.5325999999995
+    },
+    {
+      "query_id": "G1-Q002",
+      "group": "G1",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 4711.692800000001
+    },
+    {
+      "query_id": "G1-Q003",
+      "group": "G1",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5071.075000000001
+    },
+    {
+      "query_id": "G1-Q004",
+      "group": "G1",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5355.840699999997
+    },
+    {
+      "query_id": "G1-Q005",
+      "group": "G1",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 6971.8557999999975
+    },
+    {
+      "query_id": "G1-Q006",
+      "group": "G1",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5132.596000000005
+    },
+    {
+      "query_id": "G1-Q007",
+      "group": "G1",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 0.75,
+      "precision3": 1,
+      "latency_ms": 3362.697
+    },
+    {
+      "query_id": "G1-Q008",
+      "group": "G1",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 0.75,
+      "precision3": 1,
+      "latency_ms": 9405.996499999994
+    },
+    {
+      "query_id": "G1-Q009",
+      "group": "G1",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 6483.418399999995
+    },
+    {
+      "query_id": "G1-Q010",
+      "group": "G1",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 3861.5080000000016
+    },
+    {
+      "query_id": "G1-Q011",
+      "group": "G1",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 3877.457799999989
+    },
+    {
+      "query_id": "G1-Q012",
+      "group": "G1",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 8878.94309999999
+    },
+    {
+      "query_id": "G2-Q001",
+      "group": "G2",
+      "topic_id": "T01",
+      "ndcg3": 0.541942129480027,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 11414.189500000008
+    },
+    {
+      "query_id": "G2-Q002",
+      "group": "G2",
+      "topic_id": "T02",
+      "ndcg3": 0.7871546029909718,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 0.5,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 7210.470299999986
+    },
+    {
+      "query_id": "G2-Q003",
+      "group": "G2",
+      "topic_id": "T03",
+      "ndcg3": 0.7871546029909718,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 0.5,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 6676.737699999998
+    },
+    {
+      "query_id": "G2-Q004",
+      "group": "G2",
+      "topic_id": "T04",
+      "ndcg3": 0.3935773014954859,
+      "mrr10": 0.3333333333333333,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 3875.813599999994
+    },
+    {
+      "query_id": "G2-Q005",
+      "group": "G2",
+      "topic_id": "T05",
+      "ndcg3": 0.7871546029909718,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 0.5,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 8311.686300000001
+    },
+    {
+      "query_id": "G2-Q006",
+      "group": "G2",
+      "topic_id": "T06",
+      "ndcg3": 0.541942129480027,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 0.6666666666666666,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 4283.662299999996
+    },
+    {
+      "query_id": "G2-Q007",
+      "group": "G2",
+      "topic_id": "T07",
+      "ndcg3": 0,
+      "mrr10": 0,
+      "hit3": 0,
+      "recall10": 0,
+      "precision3": 0,
+      "latency_ms": 6428.213099999994
+    },
+    {
+      "query_id": "G2-Q008",
+      "group": "G2",
+      "topic_id": "T08",
+      "ndcg3": 0,
+      "mrr10": 0.2,
+      "hit3": 0,
+      "recall10": 0.5,
+      "precision3": 0,
+      "latency_ms": 7078.508600000001
+    },
+    {
+      "query_id": "G2-Q009",
+      "group": "G2",
+      "topic_id": "T09",
+      "ndcg3": 0,
+      "mrr10": 0.25,
+      "hit3": 0,
+      "recall10": 1,
+      "precision3": 0,
+      "latency_ms": 3602.8947000000044
+    },
+    {
+      "query_id": "G2-Q010",
+      "group": "G2",
+      "topic_id": "T10",
+      "ndcg3": 0.3868528072345416,
+      "mrr10": 0.5,
+      "hit3": 1,
+      "recall10": 0.5,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 7579.016100000008
+    },
+    {
+      "query_id": "G2-Q011",
+      "group": "G2",
+      "topic_id": "T11",
+      "ndcg3": 0.7871546029909718,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 7175.996499999979
+    },
+    {
+      "query_id": "G2-Q012",
+      "group": "G2",
+      "topic_id": "T12",
+      "ndcg3": 0.16867598635520825,
+      "mrr10": 0.3333333333333333,
+      "hit3": 1,
+      "recall10": 0.5,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 3613.7907000000123
+    },
+    {
+      "query_id": "G2-Q013",
+      "group": "G2",
+      "topic_id": "T13",
+      "ndcg3": 0.3935773014954859,
+      "mrr10": 0.3333333333333333,
+      "hit3": 1,
+      "recall10": 0.5,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 3939.6856999999727
+    },
+    {
+      "query_id": "G2-Q014",
+      "group": "G2",
+      "topic_id": "T14",
+      "ndcg3": 0.541942129480027,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 0.6666666666666666,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5325.71610000002
+    },
+    {
+      "query_id": "G2-Q015",
+      "group": "G2",
+      "topic_id": "T15",
+      "ndcg3": 0,
+      "mrr10": 0,
+      "hit3": 0,
+      "recall10": 0,
+      "precision3": 0,
+      "latency_ms": 10328.268500000006
+    },
+    {
+      "query_id": "G2-Q016",
+      "group": "G2",
+      "topic_id": "T16",
+      "ndcg3": 0.2322609126342973,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 0.6666666666666666,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 8754.964500000002
+    },
+    {
+      "query_id": "G2-Q017",
+      "group": "G2",
+      "topic_id": "T02",
+      "ndcg3": 0.4966392596877323,
+      "mrr10": 0.5,
+      "hit3": 1,
+      "recall10": 0.5,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 7318.665399999998
+    },
+    {
+      "query_id": "G2-Q018",
+      "group": "G2",
+      "topic_id": "T03",
+      "ndcg3": 0.7871546029909718,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 3818.221199999971
+    },
+    {
+      "query_id": "G2-Q019",
+      "group": "G2",
+      "topic_id": "T05",
+      "ndcg3": 0.7871546029909718,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 0.5,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 6682.256200000003
+    },
+    {
+      "query_id": "G2-Q020",
+      "group": "G2",
+      "topic_id": "T06",
+      "ndcg3": 0.541942129480027,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 0.3333333333333333,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 6490.354899999977
+    },
+    {
+      "query_id": "G2-Q021",
+      "group": "G2",
+      "topic_id": "T07",
+      "ndcg3": 0,
+      "mrr10": 0,
+      "hit3": 0,
+      "recall10": 0,
+      "precision3": 0,
+      "latency_ms": 3957.7236000000266
+    },
+    {
+      "query_id": "G2-Q022",
+      "group": "G2",
+      "topic_id": "T08",
+      "ndcg3": 0.7871546029909718,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 0.5,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5706.714800000016
+    },
+    {
+      "query_id": "G2-Q023",
+      "group": "G2",
+      "topic_id": "T09",
+      "ndcg3": 0,
+      "mrr10": 0.16666666666666666,
+      "hit3": 0,
+      "recall10": 1,
+      "precision3": 0,
+      "latency_ms": 4494.697999999975
+    },
+    {
+      "query_id": "G2-Q024",
+      "group": "G2",
+      "topic_id": "T10",
+      "ndcg3": 0.3868528072345416,
+      "mrr10": 0.5,
+      "hit3": 1,
+      "recall10": 0.5,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 4867.97629999998
+    },
+    {
+      "query_id": "G2-Q025",
+      "group": "G2",
+      "topic_id": "T11",
+      "ndcg3": 0.7871546029909718,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 7616.14850000001
+    },
+    {
+      "query_id": "G2-Q026",
+      "group": "G2",
+      "topic_id": "T12",
+      "ndcg3": 0,
+      "mrr10": 0.14285714285714285,
+      "hit3": 0,
+      "recall10": 0.5,
+      "precision3": 0,
+      "latency_ms": 6039.478300000017
+    },
+    {
+      "query_id": "G2-Q027",
+      "group": "G2",
+      "topic_id": "T01",
+      "ndcg3": 0,
+      "mrr10": 0.25,
+      "hit3": 0,
+      "recall10": 1,
+      "precision3": 0,
+      "latency_ms": 7212.393999999971
+    },
+    {
+      "query_id": "G2-Q028",
+      "group": "G2",
+      "topic_id": "T02",
+      "ndcg3": 0,
+      "mrr10": 0,
+      "hit3": 0,
+      "recall10": 0,
+      "precision3": 0,
+      "latency_ms": 6332.807700000005
+    },
+    {
+      "query_id": "G2-Q029",
+      "group": "G2",
+      "topic_id": "T03",
+      "ndcg3": 0.7871546029909718,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 0.5,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 6065.047300000035
+    },
+    {
+      "query_id": "G2-Q030",
+      "group": "G2",
+      "topic_id": "T04",
+      "ndcg3": 0.3935773014954859,
+      "mrr10": 0.3333333333333333,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5284.675800000026
+    },
+    {
+      "query_id": "G2-Q031",
+      "group": "G2",
+      "topic_id": "T05",
+      "ndcg3": 0.7871546029909718,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 0.5,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5076.214700000011
+    },
+    {
+      "query_id": "G2-Q032",
+      "group": "G2",
+      "topic_id": "T06",
+      "ndcg3": 0.8129131942200405,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 0.6666666666666666,
+      "precision3": 0.6666666666666666,
+      "latency_ms": 7392.796499999997
+    },
+    {
+      "query_id": "G2-Q033",
+      "group": "G2",
+      "topic_id": "T07",
+      "ndcg3": 0.3935773014954859,
+      "mrr10": 0.3333333333333333,
+      "hit3": 1,
+      "recall10": 0.5,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5571.89380000002
+    },
+    {
+      "query_id": "G2-Q034",
+      "group": "G2",
+      "topic_id": "T08",
+      "ndcg3": 0.2128453970090281,
+      "mrr10": 0.5,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 6214.295299999998
+    },
+    {
+      "query_id": "G2-Q035",
+      "group": "G2",
+      "topic_id": "T09",
+      "ndcg3": 0,
+      "mrr10": 0.16666666666666666,
+      "hit3": 0,
+      "recall10": 1,
+      "precision3": 0,
+      "latency_ms": 13720.183799999999
+    },
+    {
+      "query_id": "G2-Q036",
+      "group": "G2",
+      "topic_id": "T10",
+      "ndcg3": 0,
+      "mrr10": 0.2,
+      "hit3": 0,
+      "recall10": 0.5,
+      "precision3": 0,
+      "latency_ms": 6910.690100000007
+    },
+    {
+      "query_id": "G2-Q037",
+      "group": "G2",
+      "topic_id": "T11",
+      "ndcg3": 0,
+      "mrr10": 0,
+      "hit3": 0,
+      "recall10": 0,
+      "precision3": 0,
+      "latency_ms": 7045.821699999971
+    },
+    {
+      "query_id": "G2-Q038",
+      "group": "G2",
+      "topic_id": "T12",
+      "ndcg3": 0,
+      "mrr10": 0,
+      "hit3": 0,
+      "recall10": 0,
+      "precision3": 0,
+      "latency_ms": 7825.467399999965
+    },
+    {
+      "query_id": "G2-Q039",
+      "group": "G2",
+      "topic_id": "T13",
+      "ndcg3": 0,
+      "mrr10": 0,
+      "hit3": 0,
+      "recall10": 0,
+      "precision3": 0,
+      "latency_ms": 5685.138100000098
+    },
+    {
+      "query_id": "G2-Q040",
+      "group": "G2",
+      "topic_id": "T14",
+      "ndcg3": 0.541942129480027,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 6225.228500000085
+    },
+    {
+      "query_id": "G2-Q041",
+      "group": "G2",
+      "topic_id": "T15",
+      "ndcg3": 0.2128453970090281,
+      "mrr10": 0.5,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5504.071099999943
+    },
+    {
+      "query_id": "G2-Q042",
+      "group": "G2",
+      "topic_id": "T16",
+      "ndcg3": 0.5032319773743108,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.6666666666666666,
+      "latency_ms": 5274.1720000000205
+    },
+    {
+      "query_id": "G3-Q001",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 18773.41909999994
+    },
+    {
+      "query_id": "G3-Q002",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 9772.392600000021
+    },
+    {
+      "query_id": "G3-Q003",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5896.3281000000425
+    },
+    {
+      "query_id": "G3-Q004",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 12597.656499999925
+    },
+    {
+      "query_id": "G3-Q005",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 4825.835899999947
+    },
+    {
+      "query_id": "G3-Q006",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 6315.737199999974
+    },
+    {
+      "query_id": "G3-Q007",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5956.368900000001
+    },
+    {
+      "query_id": "G3-Q008",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 0,
+      "mrr10": 0.2,
+      "hit3": 0,
+      "recall10": 1,
+      "precision3": 0,
+      "latency_ms": 6683.241899999906
+    },
+    {
+      "query_id": "G3-Q009",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5597.864499999909
+    },
+    {
+      "query_id": "G3-Q010",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 0,
+      "mrr10": 0.25,
+      "hit3": 0,
+      "recall10": 1,
+      "precision3": 0,
+      "latency_ms": 5086.321300000069
+    },
+    {
+      "query_id": "G3-Q011",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5382.944699999993
+    },
+    {
+      "query_id": "G3-Q012",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5249.131700000027
+    },
+    {
+      "query_id": "G3-Q013",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 4419.395599999931
+    },
+    {
+      "query_id": "G3-Q014",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 7246.424400000018
+    },
+    {
+      "query_id": "G3-Q015",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5213.926700000069
+    },
+    {
+      "query_id": "G3-Q016",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5323.125900000101
+    },
+    {
+      "query_id": "G3-Q017",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 3909.221900000004
+    },
+    {
+      "query_id": "G3-Q018",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 0.6309297535714575,
+      "mrr10": 0.5,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 4276.1888000000035
+    },
+    {
+      "query_id": "G3-Q019",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5655.854099999997
+    },
+    {
+      "query_id": "G3-Q020",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 4432.531100000022
+    },
+    {
+      "query_id": "G3-Q021",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5275.633499999996
+    },
+    {
+      "query_id": "G3-Q022",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 10659.428799999994
+    },
+    {
+      "query_id": "G3-Q023",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 6328.725800000015
+    },
+    {
+      "query_id": "G3-Q024",
+      "group": "G3",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 7087.491900000023
+    },
+    {
+      "query_id": "G4-Q001",
+      "group": "G4",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5686.17220000003
+    },
+    {
+      "query_id": "G4-Q002",
+      "group": "G4",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 7037.735100000049
+    },
+    {
+      "query_id": "G4-Q003",
+      "group": "G4",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 6813.472100000014
+    },
+    {
+      "query_id": "G4-Q004",
+      "group": "G4",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 6673.003199999919
+    },
+    {
+      "query_id": "G4-Q005",
+      "group": "G4",
+      "topic_id": null,
+      "ndcg3": 0.6309297535714575,
+      "mrr10": 0.5,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 5720.741299999994
+    },
+    {
+      "query_id": "G4-Q006",
+      "group": "G4",
+      "topic_id": null,
+      "ndcg3": 0,
+      "mrr10": 0,
+      "hit3": 0,
+      "recall10": 0,
+      "precision3": 0,
+      "latency_ms": 4231.5554999999
+    },
+    {
+      "query_id": "G4-Q007",
+      "group": "G4",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 3368.406500000041
+    },
+    {
+      "query_id": "G4-Q008",
+      "group": "G4",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 6530.692799999961
+    },
+    {
+      "query_id": "G4-Q009",
+      "group": "G4",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 4358.8749000000535
+    },
+    {
+      "query_id": "G4-Q010",
+      "group": "G4",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 4053.5654999999097
+    },
+    {
+      "query_id": "G4-Q011",
+      "group": "G4",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 9237.444999999949
+    },
+    {
+      "query_id": "G4-Q012",
+      "group": "G4",
+      "topic_id": null,
+      "ndcg3": 1,
+      "mrr10": 1,
+      "hit3": 1,
+      "recall10": 1,
+      "precision3": 0.3333333333333333,
+      "latency_ms": 9418.92379999999
+    }
+  ]
+}

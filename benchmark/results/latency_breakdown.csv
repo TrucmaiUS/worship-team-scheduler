@@ -1,0 +1,9 @@
+configuration,architecture,p50_ms,p95_ms,cost_per_1k_queries_usd,concurrency_profile
+E1,"PostgreSQL Full-Text Search (FTS)",50.9,54.5,0.00,"Unlimited DB connection pool"
+E2,"Dense Semantic Search (pgvector Flat)",422.1,456.2,0.00,"Local unit-vector Cosine scan"
+E3,"Standard Hybrid RRF (k=60)",417.1,475.7,0.00,"Parallel FTS + pgvector execution"
+E4_Fallback,"Hybrid + Deterministic Fallback",490.6,540.2,0.00,"CPU token overlap heuristic"
+E5,"Semantic + Gemini Flash Reranker",850.4,1120.0,0.15,"Bounded by AI Studio API limits"
+E7,"Weighted RRF (ws=0.8, wl=0.2)",425.0,480.0,0.00,"Local CPU rank weighting"
+E8,"Cleaned FTS + Weighted RRF",430.0,485.0,0.00,"Regex stopword strip + WRRF"
+E9,"Intent-Based Dynamic Routing",378.5,465.0,0.00,"Adaptive routing (55ms entity, 420ms thematic)"

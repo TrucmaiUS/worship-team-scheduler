@@ -1,0 +1,238 @@
+{
+  "evaluated_at": "2026-11-13T01:54:42.836Z",
+  "hardware": {
+    "cpu": "AMD Ryzen 7 8845H (8 cores / 16 threads)",
+    "ram_allocated_rss_mb": 685.3,
+    "inference_framework": "ONNX Runtime / Transformers.js (@xenova/transformers)"
+  },
+  "experiments": {
+    "B1_Gemini_ExactCosine": {
+      "provider": "gemini-embedding-001 (cloud 768-d)",
+      "retrieval": "Exact Cosine Scan",
+      "ndcg3": 0.642,
+      "mrr10": 0.719,
+      "hit3_percent": 78.9,
+      "recall10": 0.781,
+      "precision3": 0.278,
+      "latency_p50": 422.1,
+      "by_group": {
+        "G1": {
+          "hit3_percent": 91.7,
+          "ndcg3": 0.842
+        },
+        "G2": {
+          "hit3_percent": 64.3,
+          "ndcg3": 0.376
+        },
+        "G3": {
+          "hit3_percent": 95.8,
+          "ndcg3": 0.943
+        },
+        "G4": {
+          "hit3_percent": 83.3,
+          "ndcg3": 0.772
+        }
+      }
+    },
+    "B2_E5_ExactCosine": {
+      "provider": "multilingual-e5-small (local ONNX 384-d)",
+      "retrieval": "Exact Cosine Scan",
+      "total_queries": 90,
+      "ndcg3": 0.4514,
+      "mrr10": 0.5088,
+      "hit3_percent": 57.8,
+      "recall10": 0.5787,
+      "precision3": 0.2,
+      "latency_p50": 74.6,
+      "latency_p95": 93.7,
+      "embed_ms_p50": 8.7,
+      "embed_ms_p95": 16.3,
+      "by_group": {
+        "G1": {
+          "count": 12,
+          "ndcg3": 0.8333,
+          "mrr10": 0.8583,
+          "hit3_percent": 83.3,
+          "recall10": 0.8542,
+          "precision3": 0.2778
+        },
+        "G2": {
+          "count": 42,
+          "ndcg3": 0.2111,
+          "mrr10": 0.3259,
+          "hit3_percent": 42.9,
+          "recall10": 0.3294,
+          "precision3": 0.1587
+        },
+        "G3": {
+          "count": 24,
+          "ndcg3": 0.6096,
+          "mrr10": 0.6032,
+          "hit3_percent": 66.7,
+          "recall10": 0.75,
+          "precision3": 0.2222
+        },
+        "G4": {
+          "count": 12,
+          "ndcg3": 0.5942,
+          "mrr10": 0.6111,
+          "hit3_percent": 66.7,
+          "recall10": 0.8333,
+          "precision3": 0.2222
+        }
+      }
+    },
+    "B3_Gemini_Hybrid_WRRF": {
+      "provider": "gemini-embedding-001 (cloud 768-d)",
+      "retrieval": "FTS + WRRF (ws=1.0, wl=1.0, k=60)",
+      "ndcg3": 0.595,
+      "mrr10": 0.664,
+      "hit3_percent": 74.4,
+      "recall10": 0.75,
+      "precision3": 0.278,
+      "latency_p50": 417.1,
+      "by_group": {
+        "G1": {
+          "hit3_percent": 100,
+          "ndcg3": 1
+        },
+        "G2": {
+          "hit3_percent": 64.3,
+          "ndcg3": 0.376
+        },
+        "G3": {
+          "hit3_percent": 83.3,
+          "ndcg3": 0.772
+        },
+        "G4": {
+          "hit3_percent": 66.7,
+          "ndcg3": 0.605
+        }
+      }
+    },
+    "B4_E5_Hybrid_WRRF": {
+      "provider": "multilingual-e5-small (local ONNX 384-d)",
+      "retrieval": "FTS + WRRF (ws=1.0, wl=1.0, k=60)",
+      "total_queries": 90,
+      "ndcg3": 0.4917,
+      "mrr10": 0.5416,
+      "hit3_percent": 62.2,
+      "recall10": 0.6037,
+      "precision3": 0.2296,
+      "latency_p50": 62.4,
+      "latency_p95": 74.8,
+      "embed_ms_p50": 0,
+      "embed_ms_p95": 0,
+      "by_group": {
+        "G1": {
+          "count": 12,
+          "ndcg3": 1,
+          "mrr10": 1,
+          "hit3_percent": 100,
+          "recall10": 0.9583,
+          "precision3": 0.4444
+        },
+        "G2": {
+          "count": 42,
+          "ndcg3": 0.2111,
+          "mrr10": 0.3259,
+          "hit3_percent": 42.9,
+          "recall10": 0.3294,
+          "precision3": 0.1587
+        },
+        "G3": {
+          "count": 24,
+          "ndcg3": 0.6667,
+          "mrr10": 0.6657,
+          "hit3_percent": 70.8,
+          "recall10": 0.7917,
+          "precision3": 0.2361
+        },
+        "G4": {
+          "count": 12,
+          "ndcg3": 0.6161,
+          "mrr10": 0.5903,
+          "hit3_percent": 75,
+          "recall10": 0.8333,
+          "precision3": 0.25
+        }
+      }
+    },
+    "B5_Gemini_IntentRouting": {
+      "provider": "gemini-embedding-001 (cloud 768-d)",
+      "retrieval": "Intent-Based Dynamic Routing",
+      "ndcg3": 0.647,
+      "mrr10": 0.718,
+      "hit3_percent": 80,
+      "recall10": 0.781,
+      "precision3": 0.285,
+      "latency_p50": 380.5,
+      "by_group": {
+        "G1": {
+          "hit3_percent": 100,
+          "ndcg3": 1
+        },
+        "G2": {
+          "hit3_percent": 64.3,
+          "ndcg3": 0.376
+        },
+        "G3": {
+          "hit3_percent": 91.7,
+          "ndcg3": 0.905
+        },
+        "G4": {
+          "hit3_percent": 75,
+          "ndcg3": 0.68
+        }
+      }
+    },
+    "B6_E5_IntentRouting": {
+      "provider": "multilingual-e5-small (local ONNX 384-d)",
+      "retrieval": "Intent-Based Dynamic Routing",
+      "total_queries": 90,
+      "ndcg3": 0.4917,
+      "mrr10": 0.5416,
+      "hit3_percent": 62.2,
+      "recall10": 0.6093,
+      "precision3": 0.2296,
+      "latency_p50": 60.3,
+      "latency_p95": 72,
+      "embed_ms_p50": 0,
+      "embed_ms_p95": 0,
+      "by_group": {
+        "G1": {
+          "count": 12,
+          "ndcg3": 1,
+          "mrr10": 1,
+          "hit3_percent": 100,
+          "recall10": 1,
+          "precision3": 0.4444
+        },
+        "G2": {
+          "count": 42,
+          "ndcg3": 0.2111,
+          "mrr10": 0.3259,
+          "hit3_percent": 42.9,
+          "recall10": 0.3294,
+          "precision3": 0.1587
+        },
+        "G3": {
+          "count": 24,
+          "ndcg3": 0.6667,
+          "mrr10": 0.6657,
+          "hit3_percent": 70.8,
+          "recall10": 0.7917,
+          "precision3": 0.2361
+        },
+        "G4": {
+          "count": 12,
+          "ndcg3": 0.6161,
+          "mrr10": 0.5903,
+          "hit3_percent": 75,
+          "recall10": 0.8333,
+          "precision3": 0.25
+        }
+      }
+    }
+  }
+}

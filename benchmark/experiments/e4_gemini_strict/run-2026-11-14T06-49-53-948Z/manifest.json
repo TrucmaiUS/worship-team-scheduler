@@ -1,0 +1,12 @@
+{
+  "schema_version": "e4-gemini-strict-manifest-v1",
+  "status": "PASS",
+  "model_id": "gemini-3.1-flash-lite",
+  "total_queries": 90,
+  "successful_attempts": 90,
+  "failed_attempts": 5,
+  "fallback_invocations": 0,
+  "queries_sha256": "e8721c9a91537c0f73c2fa01e3d2cbcceebf1d527268787ae5533c52182b5e8c",
+  "qrels_sha256": "72869b4851f80fcf98aaa95bdd13b6e6dd661614d9c6b37ffa5ee242074e7d56",
+  "run_sha256": "662dfac92e8288529baa0fe2793ff1115b8c2cf9fd337fb30b75979efceb421f"
+}

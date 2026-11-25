@@ -1,0 +1,21 @@
+{
+  "schema_version": "e4-gemini-strict-failure-v1",
+  "status": "FAILED_NO_FALLBACK",
+  "model_id": "gemini-3.1-flash-lite",
+  "completed_queries": 0,
+  "error": "Gemini API HTTP 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Request contains an invalid argument.\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n",
+  "attempt_logs": [
+    {
+      "query_id": "G1-Q001",
+      "attempt": 1,
+      "status": "failure",
+      "requested_model_id": "gemini-3.1-flash-lite",
+      "observed_model_version": null,
+      "usage_metadata": null,
+      "candidate_count": 15,
+      "retrieval_ms": 745.1915,
+      "rerank_ms": 3180.0873,
+      "failure": "Gemini API HTTP 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Request contains an invalid argument.\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n"
+    }
+  ]
+}

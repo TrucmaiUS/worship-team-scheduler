@@ -2,3 +2,22 @@ benchmark/distillation/human_reference/*.csv -text
 
 # Research manifests hash exact bytes; preserve exported artifacts on checkout.
 /outputs/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/benchmark/experiments/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/benchmark/results/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Reproduce the exact working bytes referenced by frozen research manifests,
+# regardless of the checkout platform or core.autocrlf setting.
+/benchmark/data/*.csv text eol=crlf
+/benchmark/distillation/human_reference/*.json text eol=crlf
+/benchmark/distillation/judge_selection_runs/**/frozen_judge_config.json text eol=crlf
+/benchmark/distillation/teacher_judge_pilot_runs/** -text
+/lib/research/e5-distillation/*.ts text eol=crlf
+/lib/research/e5-distillation/leakage-v2*.ts text eol=lf
+/lib/research/e5-distillation/__tests__/leakage-v2.test.ts text eol=lf
+/scripts/run_teacher_judge_pilot.ts text eol=lf
+/scripts/validate_leakage_v2.ts text eol=lf
+/scripts/provenance/*.ts text eol=crlf whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/docs/research/e5_distillation/*.md text eol=crlf
+/docs/research/e5_distillation/leakage_validator_v2.md text eol=lf
+/package.json text eol=crlf
+/package-lock.json text eol=crlf

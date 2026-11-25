@@ -1,0 +1,91 @@
+query_id,source_type,source_topic_id,source_song_id,source_excerpt,transformation,created_by,verified_by
+G1-Q001,Benchmark-authored,,53a46ade-8695-400d-895e-9cf74afe0700,Way Maker - Đấng Mở Đường,Exact canonical English title,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G1-Q002,Benchmark-authored,,8e9e95b9-1bc1-40bf-8fc5-cafd82417d97,Raise A Hallelujah,Exact canonical English title,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G1-Q003,Benchmark-authored,,dde347a0-d8df-433f-a5b5-a39a5500053e,Tấm Lòng Con Sẵn Sàng,Exact canonical Vietnamese title,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G1-Q004,Benchmark-authored,,5e6bd968-85cb-4117-aed0-abc20d3f7aa7,A THOUSAND HALLELUJAHS,"Dropped leading article ""A""",Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G1-Q005,Benchmark-authored,,21358b75-ff2c-4df2-b662-b70c67783131,When I Say Your Name,Omitted initial temporal clause,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G1-Q006,Benchmark-authored,,fdabd847-e2f0-4f79-a637-eeac2165f5f3,Ngợi Ca Danh Cao Giê-su,Truncated trailing name,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G1-Q007,Benchmark-authored,,c240c3a3-3157-4a55-8fae-fb356076f509,"Elevation Worship songs pool (Do It Again, It Is So, Same God, This Is The Kingdom)",Exact artist name,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G1-Q008,Benchmark-authored,,61fa2632-9a99-434c-87de-8329000f263a,"Bethel Music catalog (Egypt, Firm Foundation, Gratitude, Hymn Of Heaven)",Exact artist name,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G1-Q009,Benchmark-authored,,53a46ade-8695-400d-895e-9cf74afe0700,Way Maker - Đấng Mở Đường,Isolated Vietnamese translation subtitle,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G1-Q010,Benchmark-authored,,38f62657-1387-4de4-b3b8-5f3aa6444e26,Living Hope (Đấng Sống Muôn Đời),Isolated Vietnamese translation title,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G1-Q011,Benchmark-authored,,1463f293-6c8a-4ade-bfec-3ea0afc8ad98,Build My Life - Freedom Movement,Title concatenated with artist,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G1-Q012,Benchmark-authored,,5d419226-2508-41de-89a8-42fdb4fb3fd3,Who You Say I Am - Hillsong Worship,Title concatenated with artist fragment,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q001,Historical,T01,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q002,Historical,T02,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q003,Historical,T03,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q004,Historical,T04,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q005,Historical,T05,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q006,Historical,T06,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q007,Historical,T07,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q008,Historical,T08,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q009,Historical,T09,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q010,Historical,T10,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q011,Historical,T11,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q012,Historical,T12,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q013,Historical,T13,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q014,Historical,T14,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q015,Historical,T15,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q016,Historical,T16,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q017,Historical,T02,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q018,Historical,T03,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q019,Historical,T05,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q020,Historical,T06,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q021,Historical,T07,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q022,Historical,T08,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q023,Historical,T09,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q024,Historical,T10,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q025,Historical,T11,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q026,Historical,T12,,,Verbatim historical text,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q027,Benchmark-authored,T01,,,Benchmark-authored intent,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q028,Benchmark-authored,T02,,,Benchmark-authored intent,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q029,Benchmark-authored,T03,,,Benchmark-authored intent,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q030,Benchmark-authored,T04,,,Benchmark-authored intent,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q031,Benchmark-authored,T05,,,Benchmark-authored intent,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q032,Benchmark-authored,T06,,,Benchmark-authored intent,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q033,Benchmark-authored,T07,,,Benchmark-authored intent,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q034,Benchmark-authored,T08,,,Benchmark-authored intent,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q035,Benchmark-authored,T09,,,Benchmark-authored intent,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q036,Benchmark-authored,T10,,,Benchmark-authored intent,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q037,Benchmark-authored,T11,,,Benchmark-authored intent,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q038,Benchmark-authored,T12,,,Benchmark-authored intent,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q039,Benchmark-authored,T13,,,Benchmark-authored intent,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q040,Benchmark-authored,T14,,,Benchmark-authored intent,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q041,Benchmark-authored,T15,,,Benchmark-authored intent,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G2-Q042,Benchmark-authored,T16,,,Benchmark-authored intent,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q001,Lyric-derived,,53a46ade-8695-400d-895e-9cf74afe0700,"Chính Chúa, Đấng mở đường, Đấng ban cho phép lạ, Đấng luôn giữ lời, Ngài là ánh sáng soi",Verbatim excerpt from Chorus,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q002,Lyric-derived,,1463f293-6c8a-4ade-bfec-3ea0afc8ad98,Tình yêu Chúa tác thành đời sống chúng con Nền móng vững chắc đến đời đời,Verbatim excerpt from Bridge,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q003,Lyric-derived,,8e9e95b9-1bc1-40bf-8fc5-cafd82417d97,Thanh gươm của con chính là ca từ Thiên Đàng sẽ chiến đấu bên con,Verbatim excerpt from Verse I,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q004,Lyric-derived,,5d419226-2508-41de-89a8-42fdb4fb3fd3,Trong nhà của Cha có nơi cho con Con thuộc về Ngài Con là con của Chúa,Verbatim excerpt from Chorus,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q005,Lyric-derived,,c240c3a3-3157-4a55-8fae-fb356076f509,Vòng quanh những bức tường thành Con tin chúng sẽ đổ sập,Verbatim excerpt from Verse I,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q006,Lyric-derived,,e827e4f4-94cf-43a6-926b-feba42d9fcaf,Như sóng cao cuộn trào Sức sống Chúa ban cho Con thuộc về Ngài Đấng đang vận hành trong con,Verbatim excerpt from Bridge,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q007,Lyric-derived,,53a46ade-8695-400d-895e-9cf74afe0700,"Cho dẫu con không thể thấy được Chúa đang làm Cho dẫu con không thể cảm nhận, con vững tin",Compressed 2 lines into 1 partial memory fragment,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q008,Lyric-derived,,1463f293-6c8a-4ade-bfec-3ea0afc8ad98,Dẫn lối con bằng yêu thương Lan tỏa tình yêu ấy đến thế gian,"Omitted ending phrase ""đến thế gian""",Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q009,Lyric-derived,,8e9e95b9-1bc1-40bf-8fc5-cafd82417d97,"Con sẽ hát vang, dù là trong cơn bão tố... Mão hoa thay tro tàn Hy vọng sẽ đến",Selected two non-adjacent memorable phrases,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q010,Lyric-derived,,5d419226-2508-41de-89a8-42fdb4fb3fd3,Người được giải cứu được tự do chính Chúa tha thứ,Sub-phrase of chorus declaration,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q011,Lyric-derived,,c240c3a3-3157-4a55-8fae-fb356076f509,Chúa di dời núi đồi... Ngài biến những thứ Chẳng thể thành có thể,Fused two poetic lines into simple clause,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q012,Lyric-derived,,e827e4f4-94cf-43a6-926b-feba42d9fcaf,Xin hạ mình trước Đấng Thánh Nguyện hiến dâng mọi thứ Nguyện hiến dâng cho Ngài,Omitted repetition,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q013,Lyric-derived,,53a46ade-8695-400d-895e-9cf74afe0700,"Cho dẫu con không thể thấy được Chúa đang làm... Vì lòng con biết, Thần Ngài luôn mở con đường",Thematic natural language description without quoting title,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q014,Lyric-derived,,1463f293-6c8a-4ade-bfec-3ea0afc8ad98,Tình yêu Chúa tác thành đời sống chúng con Nền móng vững chắc đến đời đời Con đặt cả tấm lòng duy Đấng Giê-su,Described foundation concept avoiding exact words,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q015,Lyric-derived,,8e9e95b9-1bc1-40bf-8fc5-cafd82417d97,Thanh gươm của con chính là ca từ... Bóng đêm sẽ phải biến tan đi,Conceptual description of praises as a spiritual weapon,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q016,Lyric-derived,,5d419226-2508-41de-89a8-42fdb4fb3fd3,Trong nhà của Cha có nơi cho con Con thuộc về Ngài Con là con của Chúa,Biblical analogy applied to song meaning,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q017,Lyric-derived,,c240c3a3-3157-4a55-8fae-fb356076f509,Vòng quanh những bức tường thành Con tin chúng sẽ đổ sập... Chúa sẽ mang tới những phép lạ,Narrative summary of Jericho walls falling,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q018,Lyric-derived,,e827e4f4-94cf-43a6-926b-feba42d9fcaf,Xin hạ mình trước Đấng Thánh Nguyện hiến dâng mọi thứ... Như bão tố phong ba Chúa lay động tâm con,Spiritual posture description,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q019,Lyric-derived,,53a46ade-8695-400d-895e-9cf74afe0700,"Cho dẫu con không thể thấy được Chúa đang làm Cho dẫu con không thể cảm nhận, con vững tin",Original English lyric mapping to Vietnamese translation,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q020,Lyric-derived,,1463f293-6c8a-4ade-bfec-3ea0afc8ad98,Tình yêu Chúa tác thành đời sống chúng con Nền móng vững chắc đến đời đời,Original English lyric mapping to Vietnamese translation,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q021,Lyric-derived,,8e9e95b9-1bc1-40bf-8fc5-cafd82417d97,"Con sẽ hát vang, dù là trong cơn bão tố Âm thanh sẽ vang vọng Đến với muôn dân khi con ca khen",Original English lyric mapping to Vietnamese translation,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q022,Lyric-derived,,5d419226-2508-41de-89a8-42fdb4fb3fd3,Trong nhà của Cha có nơi cho con Con thuộc về Ngài Con là con của Chúa,Original English lyric mapping to Vietnamese translation,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q023,Lyric-derived,,c240c3a3-3157-4a55-8fae-fb356076f509,Điều Ngài hứa trước đây Sẽ vững chãi đến mai sau Ngài chính là Đấng thành tín,Original English lyric mapping to Vietnamese translation,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G3-Q024,Lyric-derived,,e827e4f4-94cf-43a6-926b-feba42d9fcaf,Con nơi đây Xin hạ mình trước Đấng Thánh Nguyện hiến dâng mọi thứ Con muốn hiểu hơn về Ngài,Original English lyric mapping to Vietnamese translation,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G4-Q001,Benchmark-authored,,64230296-e971-4afe-8ae2-6eb7b3a04587,Safe (Every Nation),Isolated common dictionary word title,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G4-Q002,Benchmark-authored,,5a737dd9-49f3-4644-9d86-73f882b2389c,Faithful (Victory Worship),Single adjective title,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G4-Q003,Benchmark-authored,,e3516fa3-601d-41f8-a600-3e126c642bae,Worthy (Elevation Worship),Single adjective title,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G4-Q004,Benchmark-authored,,16973874-73e3-4827-b8d4-1a986333db53,Yours Is The Kingdom & This Is The Kingdom,Theological translation that maps to two distinct English titles,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G4-Q005,Benchmark-authored,,41a0e027-789d-4ca9-b0a8-e1dcdf76772e,A Little Fire (Burn Brighter) and Holy Spirit / Rest On Us,Metaphorical phrase connecting multiple songs,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G4-Q006,Benchmark-authored,,8e9e95b9-1bc1-40bf-8fc5-cafd82417d97,Raise A Hallelujah and See A Victory,Thematic concept spanning two prominent battle-praise anthems,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G4-Q007,Benchmark-authored,,53a46ade-8695-400d-895e-9cf74afe0700,Way Maker - Đấng Mở Đường,Introduced realistic keyboard typos and dropped diacritics,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G4-Q008,Benchmark-authored,,8e9e95b9-1bc1-40bf-8fc5-cafd82417d97,Raise A Hallelujah (Bethel Music),"Dropped silent e in ""raise"", single l in ""hallelujah""",Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G4-Q009,Benchmark-authored,,5d419226-2508-41de-89a8-42fdb4fb3fd3,Who You Say I Am,"Slang abbreviation ""u"" instead of ""you""",Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G4-Q010,Benchmark-authored,,e7e27cca-227f-4907-8ed4-9396127bbedc,"Broad thanksgiving theme across Gratitude, God Is Good, Joy Like A River",High-level liturgical category,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G4-Q011,Benchmark-authored,,e827e4f4-94cf-43a6-926b-feba42d9fcaf,"Broad surrender theme across I Surrender, Have All Of Me, Lay It Down, Build My Life",High-level liturgical category,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot
+G4-Q012,Benchmark-authored,,03df92ed-47d0-4162-98db-a2d04c00ac4f,"Broad atonement theme across Nothing But The Blood, Beautiful Love, Carry My Cross, Living Hope",High-level theological category,Worship Team Benchmark Lead,Verified against Postgres Corpus Snapshot

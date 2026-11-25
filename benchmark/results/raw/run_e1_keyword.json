@@ -1,0 +1,1205 @@
+{
+  "experiment_id": "E1",
+  "method_name": "PostgreSQL Full-Text Search (Keyword)",
+  "timestamp": "2026-11-12T18:00:11.422Z",
+  "total_queries": 90,
+  "runs": [
+    {
+      "query_id": "G1-Q001",
+      "query_text": "Way Maker",
+      "group": "G1",
+      "topic_id": null,
+      "retrieval_ms": 551.5578999999999,
+      "rerank_ms": 0,
+      "total_latency_ms": 551.5578999999999,
+      "results": [
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 1,
+          "score": 0.200000002980232
+        }
+      ]
+    },
+    {
+      "query_id": "G1-Q002",
+      "query_text": "Raise A Hallelujah",
+      "group": "G1",
+      "topic_id": null,
+      "retrieval_ms": 56.608600000000024,
+      "rerank_ms": 0,
+      "total_latency_ms": 56.608600000000024,
+      "results": [
+        {
+          "song_id": "8e9e95b9-1bc1-40bf-8fc5-cafd82417d97",
+          "display_title": "Raise A Hallelujah",
+          "rank": 1,
+          "score": 0.200000002980232
+        }
+      ]
+    },
+    {
+      "query_id": "G1-Q003",
+      "query_text": "Tấm Lòng Con Sẵn Sàng",
+      "group": "G1",
+      "topic_id": null,
+      "retrieval_ms": 58.8614,
+      "rerank_ms": 0,
+      "total_latency_ms": 58.8614,
+      "results": [
+        {
+          "song_id": "dde347a0-d8df-433f-a5b5-a39a5500053e",
+          "display_title": "Tấm Lòng Con Sẵn Sàng",
+          "rank": 1,
+          "score": 0.200000002980232
+        }
+      ]
+    },
+    {
+      "query_id": "G1-Q004",
+      "query_text": "Thousand Hallelujahs",
+      "group": "G1",
+      "topic_id": null,
+      "retrieval_ms": 54.402900000000045,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.402900000000045,
+      "results": [
+        {
+          "song_id": "5e6bd968-85cb-4117-aed0-abc20d3f7aa7",
+          "display_title": "A THOUSAND HALLELUJAHS",
+          "rank": 1,
+          "score": 0.200000002980232
+        }
+      ]
+    },
+    {
+      "query_id": "G1-Q005",
+      "query_text": "Say Your Name",
+      "group": "G1",
+      "topic_id": null,
+      "retrieval_ms": 54.46420000000012,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.46420000000012,
+      "results": [
+        {
+          "song_id": "21358b75-ff2c-4df2-b662-b70c67783131",
+          "display_title": "When I Say Your Name",
+          "rank": 1,
+          "score": 0.200000002980232
+        }
+      ]
+    },
+    {
+      "query_id": "G1-Q006",
+      "query_text": "Ngợi Ca Danh Cao",
+      "group": "G1",
+      "topic_id": null,
+      "retrieval_ms": 54.52230000000009,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.52230000000009,
+      "results": [
+        {
+          "song_id": "fdabd847-e2f0-4f79-a637-eeac2165f5f3",
+          "display_title": "Ngợi Ca Danh Cao Giê-su",
+          "rank": 1,
+          "score": 0.202272730180994
+        }
+      ]
+    },
+    {
+      "query_id": "G1-Q007",
+      "query_text": "Elevation Worship",
+      "group": "G1",
+      "topic_id": null,
+      "retrieval_ms": 56.27669999999989,
+      "rerank_ms": 0,
+      "total_latency_ms": 56.27669999999989,
+      "results": [
+        {
+          "song_id": "35a7ec1a-897d-49c1-a3fe-ee996139287d",
+          "display_title": "Won't Stop Now",
+          "rank": 1,
+          "score": 0.200000002980232
+        },
+        {
+          "song_id": "cea13122-7f59-44d8-a86b-dcaedf1bdb94",
+          "display_title": "See A Victory",
+          "rank": 2,
+          "score": 0.200000002980232
+        },
+        {
+          "song_id": "e3516fa3-601d-41f8-a600-3e126c642bae",
+          "display_title": "Worthy",
+          "rank": 3,
+          "score": 0.200000002980232
+        },
+        {
+          "song_id": "ed133e70-5c3c-4207-8fd4-a3e1d79cfaec",
+          "display_title": "With You",
+          "rank": 4,
+          "score": 0.200000002980232
+        },
+        {
+          "song_id": "a52477e9-0fce-4888-8e41-4275b8c04e96",
+          "display_title": "This Is The Kingdom",
+          "rank": 5,
+          "score": 0.200000002980232
+        },
+        {
+          "song_id": "b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5",
+          "display_title": "Same God",
+          "rank": 6,
+          "score": 0.200000002980232
+        },
+        {
+          "song_id": "1064050b-d15c-4b7b-9390-0ce53ccf801c",
+          "display_title": "It Is So",
+          "rank": 7,
+          "score": 0.200000002980232
+        },
+        {
+          "song_id": "c240c3a3-3157-4a55-8fae-fb356076f509",
+          "display_title": "Do It Again",
+          "rank": 8,
+          "score": 0.200000002980232
+        }
+      ]
+    },
+    {
+      "query_id": "G1-Q008",
+      "query_text": "Bethel Music",
+      "group": "G1",
+      "topic_id": null,
+      "retrieval_ms": 55.283300000000054,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.283300000000054,
+      "results": [
+        {
+          "song_id": "61fa2632-9a99-434c-87de-8329000f263a",
+          "display_title": "Egypt",
+          "rank": 1,
+          "score": 0.200000002980232
+        },
+        {
+          "song_id": "8e9e95b9-1bc1-40bf-8fc5-cafd82417d97",
+          "display_title": "Raise A Hallelujah",
+          "rank": 2,
+          "score": 0.200000002980232
+        },
+        {
+          "song_id": "11d96089-3515-40cf-b0f5-e30002e3fd47",
+          "display_title": "Hymn Of Heaven",
+          "rank": 3,
+          "score": 0.200000002980232
+        },
+        {
+          "song_id": "1119875e-0c71-44ec-949a-de26cb2cc74c",
+          "display_title": "King Of My Heart",
+          "rank": 4,
+          "score": 0.200000002980232
+        },
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 5,
+          "score": 0.200000002980232
+        },
+        {
+          "song_id": "d8be7b3a-93a1-4966-b89c-f2c0d1336b19",
+          "display_title": "Too Good To Not Believe",
+          "rank": 6,
+          "score": 0.200000002980232
+        },
+        {
+          "song_id": "e7e27cca-227f-4907-8ed4-9396127bbedc",
+          "display_title": "Gratitude",
+          "rank": 7,
+          "score": 0.200000002980232
+        },
+        {
+          "song_id": "99091e62-17c5-471f-860c-ae1adce7b486",
+          "display_title": "Firm Foundation",
+          "rank": 8,
+          "score": 0.200000002980232
+        }
+      ]
+    },
+    {
+      "query_id": "G1-Q009",
+      "query_text": "Đấng Mở Đường",
+      "group": "G1",
+      "topic_id": null,
+      "retrieval_ms": 55.51119999999992,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.51119999999992,
+      "results": [
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 1,
+          "score": 0.604545459151268
+        },
+        {
+          "song_id": "860403f4-c7de-42c8-a50f-92631d958ad1",
+          "display_title": "I’ll Go",
+          "rank": 2,
+          "score": 0.0625
+        }
+      ]
+    },
+    {
+      "query_id": "G1-Q010",
+      "query_text": "Đấng Sống Muôn Đời",
+      "group": "G1",
+      "topic_id": null,
+      "retrieval_ms": 55.531999999999925,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.531999999999925,
+      "results": [
+        {
+          "song_id": "38f62657-1387-4de4-b3b8-5f3aa6444e26",
+          "display_title": "Living Hope (Đấng Sống Muôn Đời)",
+          "rank": 1,
+          "score": 0.300000004470348
+        },
+        {
+          "song_id": "99091e62-17c5-471f-860c-ae1adce7b486",
+          "display_title": "Firm Foundation",
+          "rank": 2,
+          "score": 0.0111111113801599
+        },
+        {
+          "song_id": "5a737dd9-49f3-4644-9d86-73f882b2389c",
+          "display_title": "Faithful",
+          "rank": 3,
+          "score": 0.00140845077112317
+        }
+      ]
+    },
+    {
+      "query_id": "G1-Q011",
+      "query_text": "Build My Life Freedom Movement",
+      "group": "G1",
+      "topic_id": null,
+      "retrieval_ms": 54.48739999999998,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.48739999999998,
+      "results": [
+        {
+          "song_id": "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+          "display_title": "Build My Life",
+          "rank": 1,
+          "score": 0.200000002980232
+        }
+      ]
+    },
+    {
+      "query_id": "G1-Q012",
+      "query_text": "Who You Say I Am Hillsong",
+      "group": "G1",
+      "topic_id": null,
+      "retrieval_ms": 55.38670000000002,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.38670000000002,
+      "results": [
+        {
+          "song_id": "5d419226-2508-41de-89a8-42fdb4fb3fd3",
+          "display_title": "Who You Say I Am",
+          "rank": 1,
+          "score": 0.200000002980232
+        }
+      ]
+    },
+    {
+      "query_id": "G2-Q001",
+      "query_text": "THE SPIRIT’S POWER",
+      "group": "G2",
+      "topic_id": "T01",
+      "retrieval_ms": 53.97460000000001,
+      "rerank_ms": 0,
+      "total_latency_ms": 53.97460000000001,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q002",
+      "query_text": "Fan the flame",
+      "group": "G2",
+      "topic_id": "T02",
+      "retrieval_ms": 54.834100000000035,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.834100000000035,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q003",
+      "query_text": "Pass it on",
+      "group": "G2",
+      "topic_id": "T03",
+      "retrieval_ms": 57.18150000000014,
+      "rerank_ms": 0,
+      "total_latency_ms": 57.18150000000014,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q004",
+      "query_text": "Love in action",
+      "group": "G2",
+      "topic_id": "T04",
+      "retrieval_ms": 54.30390000000011,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.30390000000011,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q005",
+      "query_text": "Identity: Who am I?",
+      "group": "G2",
+      "topic_id": "T05",
+      "retrieval_ms": 55.73779999999988,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.73779999999988,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q006",
+      "query_text": "Belonging: Where do I fit?",
+      "group": "G2",
+      "topic_id": "T06",
+      "retrieval_ms": 57.68029999999999,
+      "rerank_ms": 0,
+      "total_latency_ms": 57.68029999999999,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q007",
+      "query_text": "Becoming: Who do I follow?",
+      "group": "G2",
+      "topic_id": "T07",
+      "retrieval_ms": 54.44309999999996,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.44309999999996,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q008",
+      "query_text": "Purpose: How can I make a difference?",
+      "group": "G2",
+      "topic_id": "T08",
+      "retrieval_ms": 54.49379999999974,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.49379999999974,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q009",
+      "query_text": "Holy Spirit as Helper",
+      "group": "G2",
+      "topic_id": "T09",
+      "retrieval_ms": 55.06840000000011,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.06840000000011,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q010",
+      "query_text": "Holy Spirit as Teacher",
+      "group": "G2",
+      "topic_id": "T10",
+      "retrieval_ms": 57.41520000000037,
+      "rerank_ms": 0,
+      "total_latency_ms": 57.41520000000037,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q011",
+      "query_text": "Holy Spirit as Witness",
+      "group": "G2",
+      "topic_id": "T11",
+      "retrieval_ms": 53.93150000000014,
+      "rerank_ms": 0,
+      "total_latency_ms": 53.93150000000014,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q012",
+      "query_text": "Holy Spirit as Guide to all Truth",
+      "group": "G2",
+      "topic_id": "T12",
+      "retrieval_ms": 53.98479999999972,
+      "rerank_ms": 0,
+      "total_latency_ms": 53.98479999999972,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q013",
+      "query_text": "Call of Discipleship",
+      "group": "G2",
+      "topic_id": "T13",
+      "retrieval_ms": 53.98189999999977,
+      "rerank_ms": 0,
+      "total_latency_ms": 53.98189999999977,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q014",
+      "query_text": "Cost of Discipleship",
+      "group": "G2",
+      "topic_id": "T14",
+      "retrieval_ms": 61.88290000000006,
+      "rerank_ms": 0,
+      "total_latency_ms": 61.88290000000006,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q015",
+      "query_text": "Command of Discipleship",
+      "group": "G2",
+      "topic_id": "T15",
+      "retrieval_ms": 73.99310000000014,
+      "rerank_ms": 0,
+      "total_latency_ms": 73.99310000000014,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q016",
+      "query_text": "Commission of Discipleship",
+      "group": "G2",
+      "topic_id": "T16",
+      "retrieval_ms": 54.257600000000366,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.257600000000366,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q017",
+      "query_text": "Focus on nurturing the next generation's faith by affirming their calling, encouraging boldness, and equipping them with the truth of Scripture. Challenge the current generation to fan the flame of faith in the next.",
+      "group": "G2",
+      "topic_id": "T02",
+      "retrieval_ms": 54.22490000000016,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.22490000000016,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q018",
+      "query_text": "Highlight the importance of discipling others who will disciple others. Call the church to mentor, train, and empower the next generation to carry on the faith legacy.",
+      "group": "G2",
+      "topic_id": "T03",
+      "retrieval_ms": 53.959100000000035,
+      "rerank_ms": 0,
+      "total_latency_ms": 53.959100000000035,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q019",
+      "query_text": "A lot of young people are confused about their identity that affects the way they perceive themselves. Our true identity is found in who God says we are, not in our past, our failures, or even our own doubts.",
+      "group": "G2",
+      "topic_id": "T05",
+      "retrieval_ms": 54.34089999999969,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.34089999999969,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q020",
+      "query_text": "God invites us to a place of community a place to experience His love, mercy, grace, and protection. God brings people together in faith communities like churches to walk together, support each other, and experience love that goes beyond disposable relationships.",
+      "group": "G2",
+      "topic_id": "T06",
+      "retrieval_ms": 54.11970000000019,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.11970000000019,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q021",
+      "query_text": "God places people in our lives to help us grow into our God-given destiny. Young people need spiritual leaders who will guide and walk with them as they grow into their God-given destiny and purpose.",
+      "group": "G2",
+      "topic_id": "T07",
+      "retrieval_ms": 54.95679999999993,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.95679999999993,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q022",
+      "query_text": "God redeems our past and calls us into a purposeful future for His glory. Purpose starts when someone trust the power of God into his life. No excuses can disqualifies us from God's purpose. When God calls us, our life becomes meaningful and he can use it as an instrument for His mission.",
+      "group": "G2",
+      "topic_id": "T08",
+      "retrieval_ms": 54.31349999999975,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.31349999999975,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q023",
+      "query_text": "Our people will understand the role of Holy Spirit as our Helper that will be with us forever",
+      "group": "G2",
+      "topic_id": "T09",
+      "retrieval_ms": 54.79340000000002,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.79340000000002,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q024",
+      "query_text": "Our people will know Holy Spirit who will Teach and bring to remembrance the lessons taught by Christ",
+      "group": "G2",
+      "topic_id": "T10",
+      "retrieval_ms": 54.88979999999992,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.88979999999992,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q025",
+      "query_text": "Our people will learn the role of Holy Spirit as the one who will bear witness about Christ.",
+      "group": "G2",
+      "topic_id": "T11",
+      "retrieval_ms": 55.93470000000025,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.93470000000025,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q026",
+      "query_text": "Our people will trust in Holy Spirit as the ultimate guide to all truth.",
+      "group": "G2",
+      "topic_id": "T12",
+      "retrieval_ms": 53.898299999999836,
+      "rerank_ms": 0,
+      "total_latency_ms": 53.898299999999836,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q027",
+      "query_text": "Find worship songs about the power of the Holy Spirit working in and through believers.",
+      "group": "G2",
+      "topic_id": "T01",
+      "retrieval_ms": 54.3458999999998,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.3458999999998,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q028",
+      "query_text": "Find songs that encourage the next generation to grow in faith, embrace God's calling, and boldly live according to Scripture.",
+      "group": "G2",
+      "topic_id": "T02",
+      "retrieval_ms": 56.80649999999969,
+      "rerank_ms": 0,
+      "total_latency_ms": 56.80649999999969,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q029",
+      "query_text": "Find songs about passing on faith, discipling others, and equipping future generations to continue God's work.",
+      "group": "G2",
+      "topic_id": "T03",
+      "retrieval_ms": 55.277900000000045,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.277900000000045,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q030",
+      "query_text": "Find worship songs that express love through action, serving others, and demonstrating God's love in everyday life.",
+      "group": "G2",
+      "topic_id": "T04",
+      "retrieval_ms": 54.08399999999983,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.08399999999983,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q031",
+      "query_text": "Find songs about our identity in Christ and how God defines who we are regardless of our past, failures, or doubts.",
+      "group": "G2",
+      "topic_id": "T05",
+      "retrieval_ms": 54.07270000000017,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.07270000000017,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q032",
+      "query_text": "Find songs about belonging to God's family, experiencing His love, and walking together as a community of faith.",
+      "group": "G2",
+      "topic_id": "T06",
+      "retrieval_ms": 54.097499999999854,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.097499999999854,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q033",
+      "query_text": "Find songs about following Jesus and allowing spiritual guidance to shape our growth and purpose.",
+      "group": "G2",
+      "topic_id": "T07",
+      "retrieval_ms": 54.23779999999988,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.23779999999988,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q034",
+      "query_text": "Find songs about discovering God's purpose, being called by Him, and becoming an instrument for His mission.",
+      "group": "G2",
+      "topic_id": "T08",
+      "retrieval_ms": 54.99120000000039,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.99120000000039,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q035",
+      "query_text": "Find songs about the Holy Spirit staying with us, helping us, and providing strength in our lives.",
+      "group": "G2",
+      "topic_id": "T09",
+      "retrieval_ms": 56.358900000000176,
+      "rerank_ms": 0,
+      "total_latency_ms": 56.358900000000176,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q036",
+      "query_text": "Find songs about the Holy Spirit teaching us and reminding us of the words and teachings of Jesus.",
+      "group": "G2",
+      "topic_id": "T10",
+      "retrieval_ms": 53.84910000000036,
+      "rerank_ms": 0,
+      "total_latency_ms": 53.84910000000036,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q037",
+      "query_text": "Find songs that testify about Jesus Christ and point people toward who He is.",
+      "group": "G2",
+      "topic_id": "T11",
+      "retrieval_ms": 56.59739999999965,
+      "rerank_ms": 0,
+      "total_latency_ms": 56.59739999999965,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q038",
+      "query_text": "Find songs about trusting the Holy Spirit to lead us in truth and guide our decisions.",
+      "group": "G2",
+      "topic_id": "T12",
+      "retrieval_ms": 55.75,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.75,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q039",
+      "query_text": "Find songs about Jesus calling people to follow Him, be transformed by Him, and receive a new purpose.",
+      "group": "G2",
+      "topic_id": "T13",
+      "retrieval_ms": 54.05139999999983,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.05139999999983,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q040",
+      "query_text": "Find songs about surrendering worldly possessions, status, comfort, and relationships to follow Jesus.",
+      "group": "G2",
+      "topic_id": "T14",
+      "retrieval_ms": 55.27089999999998,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.27089999999998,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q041",
+      "query_text": "Find songs about loving one another as Jesus commanded and showing the world that we are His disciples through love.",
+      "group": "G2",
+      "topic_id": "T15",
+      "retrieval_ms": 54.01789999999983,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.01789999999983,
+      "results": []
+    },
+    {
+      "query_id": "G2-Q042",
+      "query_text": "Find songs about the Great Commission, going into the world, and making disciples of all nations.",
+      "group": "G2",
+      "topic_id": "T16",
+      "retrieval_ms": 54.259399999999914,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.259399999999914,
+      "results": []
+    },
+    {
+      "query_id": "G3-Q001",
+      "query_text": "Chính Chúa, Đấng mở đường, Đấng ban cho phép lạ",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 56.119800000000396,
+      "rerank_ms": 0,
+      "total_latency_ms": 56.119800000000396,
+      "results": [
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 1,
+          "score": 0.245714291930199
+        }
+      ]
+    },
+    {
+      "query_id": "G3-Q002",
+      "query_text": "Tình yêu Chúa tác thành đời sống chúng con Nền móng vững chắc đến đời đời",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 55.34730000000036,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.34730000000036,
+      "results": [
+        {
+          "song_id": "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+          "display_title": "Build My Life",
+          "rank": 1,
+          "score": 0.100000001490116
+        }
+      ]
+    },
+    {
+      "query_id": "G3-Q003",
+      "query_text": "Thanh gươm của con chính là ca từ Thiên Đàng sẽ chiến đấu bên con",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 53.8101000000006,
+      "rerank_ms": 0,
+      "total_latency_ms": 53.8101000000006,
+      "results": [
+        {
+          "song_id": "8e9e95b9-1bc1-40bf-8fc5-cafd82417d97",
+          "display_title": "Raise A Hallelujah",
+          "rank": 1,
+          "score": 0.0125000001862645
+        }
+      ]
+    },
+    {
+      "query_id": "G3-Q004",
+      "query_text": "Trong nhà của Cha có nơi cho con Con thuộc về Ngài",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 59.49619999999959,
+      "rerank_ms": 0,
+      "total_latency_ms": 59.49619999999959,
+      "results": []
+    },
+    {
+      "query_id": "G3-Q005",
+      "query_text": "Vòng quanh những bức tường thành Con tin chúng sẽ đổ sập",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 55.125,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.125,
+      "results": [
+        {
+          "song_id": "c240c3a3-3157-4a55-8fae-fb356076f509",
+          "display_title": "Do It Again",
+          "rank": 1,
+          "score": 0.100000001490116
+        }
+      ]
+    },
+    {
+      "query_id": "G3-Q006",
+      "query_text": "Như sóng cao cuộn trào Sức sống Chúa ban cho Con thuộc về Ngài",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 54.2440000000006,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.2440000000006,
+      "results": [
+        {
+          "song_id": "e827e4f4-94cf-43a6-926b-feba42d9fcaf",
+          "display_title": "I Surrender",
+          "rank": 1,
+          "score": 0.116666667163372
+        }
+      ]
+    },
+    {
+      "query_id": "G3-Q007",
+      "query_text": "cho dẫu con không thể thấy được Chúa đang làm con vững tin",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 59.15149999999994,
+      "rerank_ms": 0,
+      "total_latency_ms": 59.15149999999994,
+      "results": [
+        {
+          "song_id": "53a46ade-8695-400d-895e-9cf74afe0700",
+          "display_title": "Way Maker - Đấng Mở Đường",
+          "rank": 1,
+          "score": 0.0598343685269356
+        }
+      ]
+    },
+    {
+      "query_id": "G3-Q008",
+      "query_text": "dẫn lối con bằng yêu thương lan tỏa tình yêu ấy",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 53.99069999999938,
+      "rerank_ms": 0,
+      "total_latency_ms": 53.99069999999938,
+      "results": [
+        {
+          "song_id": "1463f293-6c8a-4ade-bfec-3ea0afc8ad98",
+          "display_title": "Build My Life",
+          "rank": 1,
+          "score": 0.100000001490116
+        }
+      ]
+    },
+    {
+      "query_id": "G3-Q009",
+      "query_text": "hát vang dù là trong cơn bão tố mão hoa thay tro tàn",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 54.45139999999992,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.45139999999992,
+      "results": [
+        {
+          "song_id": "8e9e95b9-1bc1-40bf-8fc5-cafd82417d97",
+          "display_title": "Raise A Hallelujah",
+          "rank": 1,
+          "score": 0.00833333376795053
+        }
+      ]
+    },
+    {
+      "query_id": "G3-Q010",
+      "query_text": "được tự do chính Chúa tha thứ",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 53.82420000000002,
+      "rerank_ms": 0,
+      "total_latency_ms": 53.82420000000002,
+      "results": []
+    },
+    {
+      "query_id": "G3-Q011",
+      "query_text": "Chúa di dời núi đồi biến những thứ chẳng thể thành có thể",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 54.082400000000234,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.082400000000234,
+      "results": [
+        {
+          "song_id": "c240c3a3-3157-4a55-8fae-fb356076f509",
+          "display_title": "Do It Again",
+          "rank": 1,
+          "score": 0.00909090880304575
+        }
+      ]
+    },
+    {
+      "query_id": "G3-Q012",
+      "query_text": "hạ mình trước Đấng Thánh nguyện hiến dâng mọi thứ",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 55.06790000000001,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.06790000000001,
+      "results": [
+        {
+          "song_id": "e827e4f4-94cf-43a6-926b-feba42d9fcaf",
+          "display_title": "I Surrender",
+          "rank": 1,
+          "score": 0.100000001490116
+        }
+      ]
+    },
+    {
+      "query_id": "G3-Q013",
+      "query_text": "bài hát về việc dù mắt không thấy tai không nghe nhưng vẫn tin Chúa đang hành động mở lối",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 53.520800000000236,
+      "rerank_ms": 0,
+      "total_latency_ms": 53.520800000000236,
+      "results": []
+    },
+    {
+      "query_id": "G3-Q014",
+      "query_text": "bài hát xây dựng cuộc đời trên tình yêu và nền móng của Chúa Giê-xu",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 55.109300000000076,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.109300000000076,
+      "results": []
+    },
+    {
+      "query_id": "G3-Q015",
+      "query_text": "bài hát dùng lời ca tiếng hát ngợi khen như vũ khí để chiến đấu đánh tan sợ hãi bóng đêm",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 56.21930000000066,
+      "rerank_ms": 0,
+      "total_latency_ms": 56.21930000000066,
+      "results": []
+    },
+    {
+      "query_id": "G3-Q016",
+      "query_text": "bài hát khẳng định người con hoang đàng tìm được nơi chốn và danh phận trong nhà của Cha",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 55.83470000000034,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.83470000000034,
+      "results": []
+    },
+    {
+      "query_id": "G3-Q017",
+      "query_text": "bài hát tuyên xưng những bức tường sụp đổ và tin cậy Chúa sẽ làm phép lạ thêm một lần nữa",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 53.96739999999954,
+      "rerank_ms": 0,
+      "total_latency_ms": 53.96739999999954,
+      "results": []
+    },
+    {
+      "query_id": "G3-Q018",
+      "query_text": "bài hát quỳ gối đầu phục Chúa dâng trọn con người và mong muốn Chúa lay động tâm linh",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 54.352200000000266,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.352200000000266,
+      "results": []
+    },
+    {
+      "query_id": "G3-Q019",
+      "query_text": "Even when I don't see it you're working even when I don't feel it you're working",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 54.64210000000003,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.64210000000003,
+      "results": []
+    },
+    {
+      "query_id": "G3-Q020",
+      "query_text": "I will build my life upon your love it is a firm foundation",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 54.09470000000056,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.09470000000056,
+      "results": []
+    },
+    {
+      "query_id": "G3-Q021",
+      "query_text": "I'm gonna sing in the middle of the storm louder and louder you're gonna hear my praises roar",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 54.317699999999604,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.317699999999604,
+      "results": []
+    },
+    {
+      "query_id": "G3-Q022",
+      "query_text": "In my Father's house there's a place for me I'm a child of God yes I am",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 55.30839999999989,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.30839999999989,
+      "results": []
+    },
+    {
+      "query_id": "G3-Q023",
+      "query_text": "Your promise still stands great is your faithfulness I'm still in your hands",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 56.58680000000004,
+      "rerank_ms": 0,
+      "total_latency_ms": 56.58680000000004,
+      "results": []
+    },
+    {
+      "query_id": "G3-Q024",
+      "query_text": "Here I am down on my knees again surrendering all to know you more",
+      "group": "G3",
+      "topic_id": null,
+      "retrieval_ms": 54.24110000000019,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.24110000000019,
+      "results": []
+    },
+    {
+      "query_id": "G4-Q001",
+      "query_text": "Safe",
+      "group": "G4",
+      "topic_id": null,
+      "retrieval_ms": 53.522799999999734,
+      "rerank_ms": 0,
+      "total_latency_ms": 53.522799999999734,
+      "results": [
+        {
+          "song_id": "64230296-e971-4afe-8ae2-6eb7b3a04587",
+          "display_title": "Safe",
+          "rank": 1,
+          "score": 0.200000002980232
+        }
+      ]
+    },
+    {
+      "query_id": "G4-Q002",
+      "query_text": "Faithful",
+      "group": "G4",
+      "topic_id": null,
+      "retrieval_ms": 55.59939999999915,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.59939999999915,
+      "results": [
+        {
+          "song_id": "5a737dd9-49f3-4644-9d86-73f882b2389c",
+          "display_title": "Faithful",
+          "rank": 1,
+          "score": 0.200000002980232
+        }
+      ]
+    },
+    {
+      "query_id": "G4-Q003",
+      "query_text": "Worthy",
+      "group": "G4",
+      "topic_id": null,
+      "retrieval_ms": 54.28480000000036,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.28480000000036,
+      "results": [
+        {
+          "song_id": "e3516fa3-601d-41f8-a600-3e126c642bae",
+          "display_title": "Worthy",
+          "rank": 1,
+          "score": 0.200000002980232
+        }
+      ]
+    },
+    {
+      "query_id": "G4-Q004",
+      "query_text": "Vương Quốc Thuộc Về Ngài",
+      "group": "G4",
+      "topic_id": null,
+      "retrieval_ms": 54.35080000000016,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.35080000000016,
+      "results": [
+        {
+          "song_id": "a52477e9-0fce-4888-8e41-4275b8c04e96",
+          "display_title": "This Is The Kingdom",
+          "rank": 1,
+          "score": 0.0430252104997635
+        }
+      ]
+    },
+    {
+      "query_id": "G4-Q005",
+      "query_text": "Lửa Thiêng Cháy Bùng",
+      "group": "G4",
+      "topic_id": null,
+      "retrieval_ms": 56.36589999999978,
+      "rerank_ms": 0,
+      "total_latency_ms": 56.36589999999978,
+      "results": [
+        {
+          "song_id": "860403f4-c7de-42c8-a50f-92631d958ad1",
+          "display_title": "I’ll Go",
+          "rank": 1,
+          "score": 0.0833333358168602
+        },
+        {
+          "song_id": "41a0e027-789d-4ca9-b0a8-e1dcdf76772e",
+          "display_title": "A Little Fire (Burn Brighter)",
+          "rank": 2,
+          "score": 0.0444444455206394
+        }
+      ]
+    },
+    {
+      "query_id": "G4-Q006",
+      "query_text": "Vũ Khí Thờ Phượng Trong Gian Truân",
+      "group": "G4",
+      "topic_id": null,
+      "retrieval_ms": 53.884500000000116,
+      "rerank_ms": 0,
+      "total_latency_ms": 53.884500000000116,
+      "results": []
+    },
+    {
+      "query_id": "G4-Q007",
+      "query_text": "way makr dang mo duog",
+      "group": "G4",
+      "topic_id": null,
+      "retrieval_ms": 54.174700000000485,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.174700000000485,
+      "results": []
+    },
+    {
+      "query_id": "G4-Q008",
+      "query_text": "rais halelujah bethel",
+      "group": "G4",
+      "topic_id": null,
+      "retrieval_ms": 55.22159999999985,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.22159999999985,
+      "results": []
+    },
+    {
+      "query_id": "G4-Q009",
+      "query_text": "who u say i am",
+      "group": "G4",
+      "topic_id": null,
+      "retrieval_ms": 54.013700000000426,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.013700000000426,
+      "results": []
+    },
+    {
+      "query_id": "G4-Q010",
+      "query_text": "bài hát tôn vinh sự ngợi khen và cảm tạ lòng nhân từ của Chúa",
+      "group": "G4",
+      "topic_id": null,
+      "retrieval_ms": 54.36999999999989,
+      "rerank_ms": 0,
+      "total_latency_ms": 54.36999999999989,
+      "results": []
+    },
+    {
+      "query_id": "G4-Q011",
+      "query_text": "những bài hát đầu phục dâng hiến đời sống trọn vẹn cho Chúa Giê-xu",
+      "group": "G4",
+      "topic_id": null,
+      "retrieval_ms": 56.402500000000146,
+      "rerank_ms": 0,
+      "total_latency_ms": 56.402500000000146,
+      "results": []
+    },
+    {
+      "query_id": "G4-Q012",
+      "query_text": "những bài hát về thập tự giá sự cứu chuộc và huyết báu tha tội",
+      "group": "G4",
+      "topic_id": null,
+      "retrieval_ms": 55.92630000000008,
+      "rerank_ms": 0,
+      "total_latency_ms": 55.92630000000008,
+      "results": []
+    }
+  ]
+}

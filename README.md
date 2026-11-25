@@ -72,6 +72,9 @@ Detailed methodology and analysis: [docs/BENCHMARK_REPORT.md](docs/BENCHMARK_REP
 - [AI Engineering Deep Dive (`docs/AI_ENGINEERING_DEEP_DIVE.md`)](docs/AI_ENGINEERING_DEEP_DIVE.md): In-depth dissection of parsing, chunking, vector scoring, RAG failure prevention, and scaling strategies.
 - [Benchmark Report (`docs/BENCHMARK_REPORT.md`)](docs/BENCHMARK_REPORT.md): Complete evaluation dataset, test cases, and cloud vs. local latency breakdown.
 - [Search Architecture Specification (`docs/SEARCH_ENGINE_ARCHITECTURE.md`)](docs/SEARCH_ENGINE_ARCHITECTURE.md): Database schemas, RRF implementation, and API contracts.
+- [Leakage Validator v2](docs/research/e5_distillation/leakage_validator_v2.md): Current offline validation, frozen pilot regression and limitations.
+- [Repository cleanup record](docs/repository_cleanup.md): Source organization, duplicate removal and verification.
+- [Research provenance](scripts/provenance/README.md): Three retained sources for qrel, topic-audit and historical metric provenance.
 
 ---
 

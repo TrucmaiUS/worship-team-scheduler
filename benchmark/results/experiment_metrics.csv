@@ -1,0 +1,11 @@
+experiment_id,architecture,ndcg3,mrr10,hit3_pct,recall10,precision3,g1_hit,g2_hit,g3_hit,g4_hit
+E1,"PostgreSQL Full-Text Search (Keyword)",0.285,0.283,28.9,0.289,0.111,100,0,41.66666666666667,33.33333333333333
+E2,"pgvector Exact Flat Scan (Semantic)",0.642,0.719,78.9,0.781,0.278,91.66666666666666,64.28571428571429,95.83333333333334,83.33333333333334
+E3,"Hybrid Search (FTS + pgvector with RRF k=60)",0.595,0.664,74.4,0.75,0.278,100,64.28571428571429,83.33333333333334,66.66666666666666
+E4,"Two-Stage Retrieval (Hybrid RRF + Gemini Flash Reranker)",0.649,0.708,78.9,0.775,0.293,100,59.523809523809526,100,83.33333333333334
+A1,"Ablation A1: Raw Topic Query -> Hybrid Retrieval",0.376,0.528,64.3,0.595,0.246,0,64.28571428571429,0,0
+A2,"Ablation A2: Interpreted Topic -> Hybrid Retrieval",0.356,0.487,61.9,0.595,0.246,0,61.904761904761905,0,0
+E5,"Semantic + Gemini Reranker",0.623,0.697,77.8,0.781,0.274,91.7,61.9,95.8,83.3
+E7,"Weighted RRF (ws=0.4, wl=0.6)",0.411,0.451,48.9,0.574,0.178,100,19,66.7,66.7
+E8,"FTS Cleaned WRRF",0.392,0.434,46.7,0.545,0.163,91.7,19,66.7,58.3
+E9,"Intent-Based Dynamic Routing",0.404,0.445,47.8,0.563,0.174,100,19,66.7,58.3

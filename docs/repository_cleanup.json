@@ -1,0 +1,296 @@
+{
+  "Date": "2026-11-25",
+  "Moves": [
+    {
+      "Source": "scripts/audit_topic_leakage.ts",
+      "Destination": "scripts/provenance/audit_topic_leakage.ts",
+      "Sha256": "0e22c9f03b0aec8ea31f02623d4ea3bdaea5c5c8e0d780499575fdae06d165c0"
+    },
+    {
+      "Source": "scripts/evaluate.ts",
+      "Destination": "scripts/provenance/evaluate.ts",
+      "Sha256": "1257f85fd9cb617f5a8f946c5d21d0482f862d49f19af6c80796815f9540e709"
+    },
+    {
+      "Source": "scripts/generate_candidate_pool.ts",
+      "Destination": "scripts/provenance/generate_candidate_pool.ts",
+      "Sha256": "d61567a10c399fcc195169c805b4a33d5606daecaf65d71a059547615ba0c7dd"
+    },
+    {
+      "Source": "lib/research/e5-distillation/__tests__/phase1.test.ts",
+      "Destination": "lib/research/e5-distillation/__tests__/artifacts-review.test.ts",
+      "Sha256": "0c0530db040bf060d751ffa9d36e49057c72913678fc9223fdbf3e6d4468291a"
+    },
+    {
+      "Source": "lib/research/e5-distillation/__tests__/phase2.test.ts",
+      "Destination": "lib/research/e5-distillation/__tests__/candidate-contracts.test.ts",
+      "Sha256": "a8e5a955d064abc54d5d3f263d5a1bc087ff9abf536ec86234bf2af30de6f688"
+    }
+  ],
+  "DeletedDuplicates": [
+    {
+      "Path": "songs_database.zip",
+      "Sha256": "9ce0b38c2de827af64305503637719e8bd2140f3cc53111470f18e09fd3c1dd4",
+      "Bytes": 576068
+    },
+    {
+      "Path": "benchmark/reports/benchmark_summary.json",
+      "Sha256": "40bdd912e7ea62c2256194e97e9d990443453d5e572e7f6bff1d87ca7fb3a6c9",
+      "Bytes": 20378
+    },
+    {
+      "Path": "benchmark/experiments/e4_gemini_strict/run-2026-11-14T06-49-53-948Z/checkpoint.json",
+      "Sha256": "66fb85d290fd65b0f63c246e1678c764eb696adf6c2108032723d4e96d24693d",
+      "Bytes": 429428
+    }
+  ],
+  "DeletedObsolete": [
+    {
+      "Path": "scripts/audit_e4.ts",
+      "Sha256": "534f6855b10953f7a89d7c63bb67adc117fec0276eb56432abf1aa13f9aedd0c",
+      "Bytes": 2071,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/benchmark_hnsw_ablation.ts",
+      "Sha256": "88afdc47597366420f72bd2614b7c7b329e242024b4b924221606bf4be0a51aa",
+      "Bytes": 12680,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/build_query_dataset.ts",
+      "Sha256": "18e653562529d2d308b6ac6773b3adee82182cf15fff1341f12ca24b518a60ec",
+      "Bytes": 49505,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/diagnose_failures.ts",
+      "Sha256": "bf7756a2329f42b7a63a74e23e555e653348580122e3649d35eec8705206dce0",
+      "Bytes": 4589,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/diagnose_gemini_api.ts",
+      "Sha256": "fb49a30ffcce629241db40b15107bf400c0bf89bbbe88b54abb6d55b0b693084",
+      "Bytes": 4433,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/export_corpus.ts",
+      "Sha256": "6ec32c023f2dd46d7640dfd5422f361e1dfc4eeee409a3b95260d5e609c3af0f",
+      "Bytes": 5993,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/find_working_gemini_model.ts",
+      "Sha256": "ce45c7e3f3eb37c2bad5f2af614486d93c6835dc95495ad049783a0af5ac2511",
+      "Bytes": 1269,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/generate_phase0_deliverables.ts",
+      "Sha256": "51b83857313600fb0862ec58c83bb8de220e9d31fa7ddbb3383ca6942e66c75a",
+      "Bytes": 10379,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/generate_phase3_and_8_reports.ts",
+      "Sha256": "be981b9b2bd851e8c2595223dea972628390fbf65e0a7730b1bf462b3f2bab39",
+      "Bytes": 8066,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/index_e5_embeddings.ts",
+      "Sha256": "2ca654382493cddd7259edd1e54fdb382465646ed737b2b79405e518ea856c2f",
+      "Bytes": 4491,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/list_available_gemini_models.ts",
+      "Sha256": "c76d547e7e3b5dc77155f079191b9686b4574690fca1fe43d39a8618466b20f1",
+      "Bytes": 524,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/phase1_error_analysis.ts",
+      "Sha256": "58b00367b7f2fe7025f8317d36d20e4279ed4fc8bd4ee9826e7f1e4fe1f332b9",
+      "Bytes": 13525,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/phase1_offline_check.ts",
+      "Sha256": "e634be64b60e16cad2532ff972720929ea4f3a2bdb70c03333753fb7a9380938",
+      "Bytes": 2652,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/phase2_fts_parity.ts",
+      "Sha256": "54c5378337df8220e0503665073c6e856a03ccb836888a4f422a1b8a816b4d6b",
+      "Bytes": 4411,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/phase2_readiness_check.ts",
+      "Sha256": "de5febab28de20318469216b76f6a1e8f9fdde01d2008c0e5377875b524a2f0d",
+      "Bytes": 11398,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/run_benchmark.ts",
+      "Sha256": "8679830ae5217f4a9167bd4d1fa2f3da95caacc14ee4b8449d88edb0a2a80c17",
+      "Bytes": 12496,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/run_e4_gemini_strict.ts",
+      "Sha256": "00c769647c8c364f20ce26e08243e5af116a8b3b2941ee18ab8f681ad36afd22",
+      "Bytes": 9392,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/run_provider_benchmark.ts",
+      "Sha256": "15e9430ce3528f39bc0ddb5a17942126c5a861ef99e58d07472d56324f9d8154",
+      "Bytes": 16881,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/run_v4_experiments.ts",
+      "Sha256": "4c8831b8f451e0ea781a3d9cba80c0daa285f76e07741735ba2cf61ae71622a9",
+      "Bytes": 20259,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/setup_e5_table.ts",
+      "Sha256": "08c9430ec6e3a3e970c74a9361b8125428fd42860b2f5bdbbb5c862a340819d1",
+      "Bytes": 1362,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/statistical_validation.ts",
+      "Sha256": "1b77e02e7b1c5c830bb83db30ba9e08719d570c1ab5015d098e2ed7ac48c5aa1",
+      "Bytes": 11292,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/test_e5_local.ts",
+      "Sha256": "c666bd650fae5aa457bffd5662056f497001560eea40491ad1c51daf54f6b5ba",
+      "Bytes": 1438,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/test_flash_latest.ts",
+      "Sha256": "cc4a7dcf85053d999ba155b11b896aef27b9f5174bd0e93a754b3e5a2664e0bc",
+      "Bytes": 652,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "scripts/test_reranker_direct.ts",
+      "Sha256": "7ea6e1c79578b83f62aa9d33c79a754d4d77886abe3e2b5ba2c546b0812d201d",
+      "Bytes": 2193,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "docs/benchmark_v3_specification.md",
+      "Sha256": "b64141da2123de410044af43b3366a26f4835f62de945d2d9b2da46c01b1de6f",
+      "Bytes": 55553,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "docs/benchmark_v4_instruction.md",
+      "Sha256": "f34d475c920f2a78f8b429c3dbeab62f1d95d1ed8446df9b7244b193dd8e9041",
+      "Bytes": 36010,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "docs/technical_specification.md",
+      "Sha256": "3288150b936f8b41763798a9b7b6b134b012618921cdafb1c304777db53f40de",
+      "Bytes": 28118,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "docs/research/e5_distillation/phase2_freeze.json",
+      "Sha256": "cbb06e623e8829b53acfa34ac3ab77807920531944a1debdd1269ea67b5d2a45",
+      "Bytes": 7500,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "docs/research/e5_distillation/phase2_freeze_v1_openai_draft.json",
+      "Sha256": "6624c245539218db30c58b8518dc486b9312ee701f2725ac2c8eb5f8d3ddd161",
+      "Bytes": 4324,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "docs/research/e5_distillation/phase2_fts_parity_report.json",
+      "Sha256": "21700597a90fe0da22d091eceff2d87d81d06b39b63c2d1270b41ea3d05d38bf",
+      "Bytes": 789,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "docs/research/e5_distillation/phase2_preregistration.md",
+      "Sha256": "34cbb010f79d5a0d8b29b70fc77900dcee68046048c98c1c781730e4139b8936",
+      "Bytes": 13762,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "docs/research/e5_distillation/prompts/gemini-query-generation-v3.0.txt",
+      "Sha256": "a4c9466d1d5670ae0b96dcc4211c7d2cc41e9d5d74b70e1aa0e22a6d77d5ff05",
+      "Bytes": 1239,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "docs/research/e5_distillation/prompts/gemini-relevance-label-v3.0.txt",
+      "Sha256": "c4c5754eef2e06f0a645ef79f77f6aad43617ca722429b613eeaef62ad11d813",
+      "Bytes": 1056,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "docs/research/e5_distillation/prompts/gpt-independent-judge-v3.0.txt",
+      "Sha256": "ce97e779fba292d97e28a18a93885b086a9c0ad793f942dc3c1735259c76ce53",
+      "Bytes": 904,
+      "Reason": "Superseded benchmark/diagnostic/planning file; user requested deletion rather than archiving"
+    },
+    {
+      "Path": "lib/search/topic-interpreter.ts",
+      "Sha256": "b43d96ca9cc78052097c96fb478f6f0df5fda0882c02d16d6a9896e5cbc17347",
+      "Bytes": 3686,
+      "Reason": "Unused legacy topic-expansion helper; only importer was deleted historical run_benchmark.ts"
+    }
+  ],
+  "schemaVersion": "repository-cleanup-v1",
+  "branch": "feat/pipeline-hardening",
+  "createdAtUtc": "2026-11-25T11:38:55.022227+00:00",
+  "verification": {
+    "researchTests": {
+      "command": "npm run research:test -- --reporter=dot",
+      "filesPassed": 10,
+      "testsPassed": 96,
+      "exitCode": 0
+    },
+    "typescript": {
+      "command": "npx --no-install tsc --noEmit --incremental false",
+      "exitCode": 0,
+      "runAfterBuild": true
+    },
+    "eslint": {
+      "command": "npx --no-install eslint lib/research/e5-distillation scripts/validate_leakage_v2.ts eslint.config.mjs",
+      "exitCode": 0
+    },
+    "build": {
+      "command": "npm run build",
+      "exitCode": 0,
+      "existingWarning": "middleware convention deprecated; no migration performed"
+    },
+    "preservedInputHashesVerified": 40,
+    "v2CodeHashesVerified": 12,
+    "v2ArtifactHashesVerified": 6,
+    "retainedMovesVerified": 5,
+    "deletedOriginalFiles": 38,
+    "teacherCalls": 0,
+    "judgeCalls": 0,
+    "trainingStarted": false
+  },
+  "cacheRemoved": [
+    ".next/cache",
+    "tsconfig.tsbuildinfo"
+  ]
+}

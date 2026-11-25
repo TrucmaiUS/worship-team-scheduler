@@ -1,0 +1,538 @@
+query_id,group,song_id,display_title,sem_rank,fts_rank,rrf_rank,relevance_grade,rank_change_sem_to_rrf
+"G1-Q001","G1","53a46ade-8695-400d-895e-9cf74afe0700","Way Maker - Đấng Mở Đường",1,1,1,3,0
+"G1-Q001","G1","c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab","Make Room",2,-,2,0,0
+"G1-Q001","G1","ffb865de-4136-4257-8852-e79712cc4387","Carry My Cross",3,-,3,0,0
+"G1-Q001","G1","860403f4-c7de-42c8-a50f-92631d958ad1","I’ll Go",4,-,4,0,0
+"G1-Q001","G1","21358b75-ff2c-4df2-b662-b70c67783131","When I Say Your Name",5,-,5,0,0
+"G1-Q002","G1","8e9e95b9-1bc1-40bf-8fc5-cafd82417d97","Raise A Hallelujah",1,1,1,3,0
+"G1-Q002","G1","16973874-73e3-4827-b8d4-1a986333db53","Yours Is The Kingdom",2,-,2,0,0
+"G1-Q002","G1","e7e27cca-227f-4907-8ed4-9396127bbedc","Gratitude",3,-,3,0,0
+"G1-Q002","G1","ffb865de-4136-4257-8852-e79712cc4387","Carry My Cross",4,-,4,0,0
+"G1-Q002","G1","5e6bd968-85cb-4117-aed0-abc20d3f7aa7","A THOUSAND HALLELUJAHS",5,-,5,0,0
+"G1-Q003","G1","dde347a0-d8df-433f-a5b5-a39a5500053e","Tấm Lòng Con Sẵn Sàng",1,1,1,3,0
+"G1-Q003","G1","9cdfce70-a573-4392-a817-afeb8dca4104","Every Heart",2,-,2,0,0
+"G1-Q003","G1","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",3,-,3,0,0
+"G1-Q003","G1","3ce9cf7c-f75e-437e-8947-07e153a0b9f0","There's Still Room",4,-,4,0,0
+"G1-Q003","G1","8509e035-f68a-4411-96fa-23a8907da3c1","Radical Love",5,-,5,0,0
+"G1-Q004","G1","5e6bd968-85cb-4117-aed0-abc20d3f7aa7","A THOUSAND HALLELUJAHS",1,1,1,3,0
+"G1-Q004","G1","16973874-73e3-4827-b8d4-1a986333db53","Yours Is The Kingdom",2,-,2,0,0
+"G1-Q004","G1","8e9e95b9-1bc1-40bf-8fc5-cafd82417d97","Raise A Hallelujah",3,-,3,0,0
+"G1-Q004","G1","e7e27cca-227f-4907-8ed4-9396127bbedc","Gratitude",4,-,4,0,0
+"G1-Q004","G1","ffb865de-4136-4257-8852-e79712cc4387","Carry My Cross",5,-,5,0,0
+"G1-Q005","G1","21358b75-ff2c-4df2-b662-b70c67783131","When I Say Your Name",1,1,1,3,0
+"G1-Q005","G1","bd0806db-5c3e-442f-94eb-ca152945c28c","In Your Name",2,-,2,0,0
+"G1-Q005","G1","ffb865de-4136-4257-8852-e79712cc4387","Carry My Cross",3,-,3,0,0
+"G1-Q005","G1","5d419226-2508-41de-89a8-42fdb4fb3fd3","Who You Say I Am",4,-,4,0,0
+"G1-Q005","G1","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",5,-,5,0,0
+"G1-Q006","G1","fdabd847-e2f0-4f79-a637-eeac2165f5f3","Ngợi Ca Danh Cao Giê-su",1,1,1,3,0
+"G1-Q006","G1","e3516fa3-601d-41f8-a600-3e126c642bae","Worthy",2,-,2,0,0
+"G1-Q006","G1","6dfff256-a866-4ccc-b9c2-96cc0492eb61","Here With Me",3,-,3,0,0
+"G1-Q006","G1","141570cd-bff3-41ad-bca1-477d70549133","Author of My Life",4,-,4,0,0
+"G1-Q006","G1","5e6bd968-85cb-4117-aed0-abc20d3f7aa7","A THOUSAND HALLELUJAHS",5,-,5,0,0
+"G1-Q007","G1","e3516fa3-601d-41f8-a600-3e126c642bae","Worthy",1,3,1,3,0
+"G1-Q007","G1","608245c7-f6a5-44fa-84bc-21e278510060","Your Love Is Greater",2,-,4,0,-2
+"G1-Q007","G1","ffb865de-4136-4257-8852-e79712cc4387","Carry My Cross",3,-,6,0,-3
+"G1-Q007","G1","1463f293-6c8a-4ade-bfec-3ea0afc8ad98","Build My Life",4,-,7,0,-3
+"G1-Q007","G1","44ba4e35-8a0a-45ba-9135-3da6ae42be39","In Control",5,-,9,0,-4
+"G1-Q007","G1","b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5","Same God",-,6,2,3,0
+"G1-Q007","G1","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",-,1,3,3,0
+"G1-Q007","G1","cea13122-7f59-44d8-a86b-dcaedf1bdb94","See A Victory",-,2,5,3,0
+"G1-Q008","G1","d3c705ce-a3c3-4282-936f-7623eeef37c7","Dwelling Place",1,-,4,0,-3
+"G1-Q008","G1","1463f293-6c8a-4ade-bfec-3ea0afc8ad98","Build My Life",2,-,6,0,-4
+"G1-Q008","G1","608245c7-f6a5-44fa-84bc-21e278510060","Your Love Is Greater",3,-,8,0,-5
+"G1-Q008","G1","b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5","Same God",4,-,10,0,-6
+"G1-Q008","G1","5a737dd9-49f3-4644-9d86-73f882b2389c","Faithful",5,-,-,0,0
+"G1-Q008","G1","1119875e-0c71-44ec-949a-de26cb2cc74c","King Of My Heart",6,4,1,3,5
+"G1-Q008","G1","e7e27cca-227f-4907-8ed4-9396127bbedc","Gratitude",-,7,2,3,0
+"G1-Q008","G1","d8be7b3a-93a1-4966-b89c-f2c0d1336b19","Too Good To Not Believe",-,6,3,3,0
+"G1-Q008","G1","61fa2632-9a99-434c-87de-8329000f263a","Egypt",-,1,5,3,0
+"G1-Q009","G1","5f48dff8-0370-4a8b-8a6d-2928ae63c7dc","Dance In Freedom",1,-,3,0,-2
+"G1-Q009","G1","53a46ade-8695-400d-895e-9cf74afe0700","Way Maker - Đấng Mở Đường",2,1,1,3,1
+"G1-Q009","G1","c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab","Make Room",3,-,4,0,-1
+"G1-Q009","G1","860403f4-c7de-42c8-a50f-92631d958ad1","I’ll Go",4,2,2,0,2
+"G1-Q009","G1","608245c7-f6a5-44fa-84bc-21e278510060","Your Love Is Greater",5,-,5,0,0
+"G1-Q010","G1","38f62657-1387-4de4-b3b8-5f3aa6444e26","Living Hope (Đấng Sống Muôn Đời)",1,1,1,3,0
+"G1-Q010","G1","5f48dff8-0370-4a8b-8a6d-2928ae63c7dc","Dance In Freedom",2,-,3,0,-1
+"G1-Q010","G1","11d96089-3515-40cf-b0f5-e30002e3fd47","Hymn Of Heaven",3,-,5,0,-2
+"G1-Q010","G1","e0232131-c244-4453-a782-096444bcfdaa","Nothing Can Separate Me",4,-,6,0,-2
+"G1-Q010","G1","141570cd-bff3-41ad-bca1-477d70549133","Author of My Life",5,-,7,0,-2
+"G1-Q010","G1","5a737dd9-49f3-4644-9d86-73f882b2389c","Faithful",-,3,2,0,0
+"G1-Q010","G1","99091e62-17c5-471f-860c-ae1adce7b486","Firm Foundation",-,2,4,0,0
+"G1-Q011","G1","1463f293-6c8a-4ade-bfec-3ea0afc8ad98","Build My Life",1,1,1,3,0
+"G1-Q011","G1","ffb865de-4136-4257-8852-e79712cc4387","Carry My Cross",2,-,2,0,0
+"G1-Q011","G1","5f48dff8-0370-4a8b-8a6d-2928ae63c7dc","Dance In Freedom",3,-,3,0,0
+"G1-Q011","G1","c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab","Make Room",4,-,4,0,0
+"G1-Q011","G1","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",5,-,5,0,0
+"G1-Q012","G1","5d419226-2508-41de-89a8-42fdb4fb3fd3","Who You Say I Am",1,1,1,3,0
+"G1-Q012","G1","21358b75-ff2c-4df2-b662-b70c67783131","When I Say Your Name",2,-,2,0,0
+"G1-Q012","G1","ffb865de-4136-4257-8852-e79712cc4387","Carry My Cross",3,-,3,0,0
+"G1-Q012","G1","49b037a4-2126-4708-ad6f-157538ba3c66","Joy Like a River",4,-,4,0,0
+"G1-Q012","G1","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",5,-,5,0,0
+"G2-Q001","G2","53a46ade-8695-400d-895e-9cf74afe0700","Way Maker - Đấng Mở Đường",1,-,1,0,0
+"G2-Q001","G2","44ba4e35-8a0a-45ba-9135-3da6ae42be39","In Control",2,-,2,0,0
+"G2-Q001","G2","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",3,-,3,2,0
+"G2-Q001","G2","41a0e027-789d-4ca9-b0a8-e1dcdf76772e","A Little Fire (Burn Brighter)",4,-,4,0,0
+"G2-Q001","G2","9cdfce70-a573-4392-a817-afeb8dca4104","Every Heart",5,-,5,0,0
+"G2-Q002","G2","41a0e027-789d-4ca9-b0a8-e1dcdf76772e","A Little Fire (Burn Brighter)",1,-,1,3,0
+"G2-Q002","G2","860403f4-c7de-42c8-a50f-92631d958ad1","I’ll Go",2,-,2,0,0
+"G2-Q002","G2","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",3,-,3,0,0
+"G2-Q002","G2","4a06ee23-ba3b-44bf-9bcb-3d5e220a7da8","Rest On Us",4,-,4,0,0
+"G2-Q002","G2","16a593d2-e3d2-4f4c-aada-0cb487556195","The Beat",5,-,5,0,0
+"G2-Q003","G2","a7606cd6-57a9-42de-b753-cf546c9a9677","Fill This House",1,-,1,0,0
+"G2-Q003","G2","c240c3a3-3157-4a55-8fae-fb356076f509","Do It Again",2,-,2,0,0
+"G2-Q003","G2","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",3,-,3,0,0
+"G2-Q003","G2","ffb865de-4136-4257-8852-e79712cc4387","Carry My Cross",4,-,4,0,0
+"G2-Q003","G2","460cd5b6-3cba-47c5-bcba-5ab639457287","Lay It Down",5,-,5,0,0
+"G2-Q004","G2","16a593d2-e3d2-4f4c-aada-0cb487556195","The Beat",1,-,1,0,0
+"G2-Q004","G2","5f48dff8-0370-4a8b-8a6d-2928ae63c7dc","Dance In Freedom",2,-,2,0,0
+"G2-Q004","G2","8509e035-f68a-4411-96fa-23a8907da3c1","Radical Love",3,-,3,2,0
+"G2-Q004","G2","460cd5b6-3cba-47c5-bcba-5ab639457287","Lay It Down",4,-,4,0,0
+"G2-Q004","G2","e0232131-c244-4453-a782-096444bcfdaa","Nothing Can Separate Me",5,-,5,0,0
+"G2-Q005","G2","5d419226-2508-41de-89a8-42fdb4fb3fd3","Who You Say I Am",1,-,1,3,0
+"G2-Q005","G2","e5e4bfad-0a1f-452f-a6ea-0cc4e2173f83","I'll Never Walk Alone",2,-,2,0,0
+"G2-Q005","G2","bd0806db-5c3e-442f-94eb-ca152945c28c","In Your Name",3,-,3,0,0
+"G2-Q005","G2","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",4,-,4,0,0
+"G2-Q005","G2","219f0fe8-d7fe-4de0-844f-5ce22524b5f2","This Is Why",5,-,5,0,0
+"G2-Q006","G2","ed133e70-5c3c-4207-8fd4-a3e1d79cfaec","With You",1,-,1,0,0
+"G2-Q006","G2","5d419226-2508-41de-89a8-42fdb4fb3fd3","Who You Say I Am",2,-,2,3,0
+"G2-Q006","G2","219f0fe8-d7fe-4de0-844f-5ce22524b5f2","This Is Why",3,-,3,0,0
+"G2-Q006","G2","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",4,-,4,3,0
+"G2-Q006","G2","a7606cd6-57a9-42de-b753-cf546c9a9677","Fill This House",5,-,5,0,0
+"G2-Q007","G2","aa793ef0-83ae-42d1-9b1a-b5e93535da1d","Have All Of Me",1,-,1,0,0
+"G2-Q007","G2","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",2,-,2,0,0
+"G2-Q007","G2","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",3,-,3,0,0
+"G2-Q007","G2","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",4,-,4,0,0
+"G2-Q007","G2","44ba4e35-8a0a-45ba-9135-3da6ae42be39","In Control",5,-,5,0,0
+"G2-Q008","G2","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",1,-,1,3,0
+"G2-Q008","G2","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",2,-,2,0,0
+"G2-Q008","G2","83ce0b16-0886-409f-8326-996eaa50eab1","Holy, Holy, Holy (Hymn)",3,-,3,0,0
+"G2-Q008","G2","219f0fe8-d7fe-4de0-844f-5ce22524b5f2","This Is Why",4,-,4,0,0
+"G2-Q008","G2","aa793ef0-83ae-42d1-9b1a-b5e93535da1d","Have All Of Me",5,-,5,0,0
+"G2-Q009","G2","345f44d8-3c2d-4879-b6da-ce58484a7249","Holy Spirit",1,-,1,3,0
+"G2-Q009","G2","9cdfce70-a573-4392-a817-afeb8dca4104","Every Heart",2,-,2,0,0
+"G2-Q009","G2","4a06ee23-ba3b-44bf-9bcb-3d5e220a7da8","Rest On Us",3,-,3,3,0
+"G2-Q009","G2","e5e4bfad-0a1f-452f-a6ea-0cc4e2173f83","I'll Never Walk Alone",4,-,4,0,0
+"G2-Q009","G2","44ba4e35-8a0a-45ba-9135-3da6ae42be39","In Control",5,-,5,0,0
+"G2-Q010","G2","345f44d8-3c2d-4879-b6da-ce58484a7249","Holy Spirit",1,-,1,2,0
+"G2-Q010","G2","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",2,-,2,0,0
+"G2-Q010","G2","4a06ee23-ba3b-44bf-9bcb-3d5e220a7da8","Rest On Us",3,-,3,0,0
+"G2-Q010","G2","53a46ade-8695-400d-895e-9cf74afe0700","Way Maker - Đấng Mở Đường",4,-,4,0,0
+"G2-Q010","G2","41a0e027-789d-4ca9-b0a8-e1dcdf76772e","A Little Fire (Burn Brighter)",5,-,5,0,0
+"G2-Q011","G2","16973874-73e3-4827-b8d4-1a986333db53","Yours Is The Kingdom",1,-,1,3,0
+"G2-Q011","G2","4a06ee23-ba3b-44bf-9bcb-3d5e220a7da8","Rest On Us",2,-,2,0,0
+"G2-Q011","G2","345f44d8-3c2d-4879-b6da-ce58484a7249","Holy Spirit",3,-,3,0,0
+"G2-Q011","G2","9cdfce70-a573-4392-a817-afeb8dca4104","Every Heart",4,-,4,0,0
+"G2-Q011","G2","41a0e027-789d-4ca9-b0a8-e1dcdf76772e","A Little Fire (Burn Brighter)",5,-,5,0,0
+"G2-Q012","G2","345f44d8-3c2d-4879-b6da-ce58484a7249","Holy Spirit",1,-,1,0,0
+"G2-Q012","G2","9cdfce70-a573-4392-a817-afeb8dca4104","Every Heart",2,-,2,0,0
+"G2-Q012","G2","44ba4e35-8a0a-45ba-9135-3da6ae42be39","In Control",3,-,3,0,0
+"G2-Q012","G2","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",4,-,4,0,0
+"G2-Q012","G2","16973874-73e3-4827-b8d4-1a986333db53","Yours Is The Kingdom",5,-,5,0,0
+"G2-Q013","G2","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",1,-,1,0,0
+"G2-Q013","G2","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",2,-,2,0,0
+"G2-Q013","G2","460cd5b6-3cba-47c5-bcba-5ab639457287","Lay It Down",3,-,3,0,0
+"G2-Q013","G2","f60d3b21-17a7-40ee-96b7-56291938bb2f","Lord Of All",4,-,4,0,0
+"G2-Q013","G2","ffb865de-4136-4257-8852-e79712cc4387","Carry My Cross",5,-,5,3,0
+"G2-Q014","G2","ffb865de-4136-4257-8852-e79712cc4387","Carry My Cross",1,-,1,3,0
+"G2-Q014","G2","aa793ef0-83ae-42d1-9b1a-b5e93535da1d","Have All Of Me",2,-,2,2,0
+"G2-Q014","G2","8509e035-f68a-4411-96fa-23a8907da3c1","Radical Love",3,-,3,0,0
+"G2-Q014","G2","e3516fa3-601d-41f8-a600-3e126c642bae","Worthy",4,-,4,0,0
+"G2-Q014","G2","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",5,-,5,0,0
+"G2-Q015","G2","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",1,-,1,0,0
+"G2-Q015","G2","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",2,-,2,0,0
+"G2-Q015","G2","ea33670a-3fa3-479e-ba59-0b55cf1f8ed4","We Will Go",3,-,3,0,0
+"G2-Q015","G2","aa793ef0-83ae-42d1-9b1a-b5e93535da1d","Have All Of Me",4,-,4,0,0
+"G2-Q015","G2","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",5,-,5,0,0
+"G2-Q016","G2","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",1,-,1,0,0
+"G2-Q016","G2","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",2,-,2,0,0
+"G2-Q016","G2","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",3,-,3,0,0
+"G2-Q016","G2","ea33670a-3fa3-479e-ba59-0b55cf1f8ed4","We Will Go",4,-,4,3,0
+"G2-Q016","G2","460cd5b6-3cba-47c5-bcba-5ab639457287","Lay It Down",5,-,5,0,0
+"G2-Q017","G2","16973874-73e3-4827-b8d4-1a986333db53","Yours Is The Kingdom",1,-,1,0,0
+"G2-Q017","G2","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",2,-,2,0,0
+"G2-Q017","G2","460cd5b6-3cba-47c5-bcba-5ab639457287","Lay It Down",3,-,3,0,0
+"G2-Q017","G2","a7606cd6-57a9-42de-b753-cf546c9a9677","Fill This House",4,-,4,0,0
+"G2-Q017","G2","ea33670a-3fa3-479e-ba59-0b55cf1f8ed4","We Will Go",5,-,5,0,0
+"G2-Q018","G2","ea33670a-3fa3-479e-ba59-0b55cf1f8ed4","We Will Go",1,-,1,3,0
+"G2-Q018","G2","a7606cd6-57a9-42de-b753-cf546c9a9677","Fill This House",2,-,2,0,0
+"G2-Q018","G2","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",3,-,3,2,0
+"G2-Q018","G2","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",4,-,4,0,0
+"G2-Q018","G2","c240c3a3-3157-4a55-8fae-fb356076f509","Do It Again",5,-,5,0,0
+"G2-Q019","G2","5d419226-2508-41de-89a8-42fdb4fb3fd3","Who You Say I Am",1,-,1,3,0
+"G2-Q019","G2","219f0fe8-d7fe-4de0-844f-5ce22524b5f2","This Is Why",2,-,2,0,0
+"G2-Q019","G2","2d76a707-980a-4a75-855e-ffac3d169dd1","Grace Abounds",3,-,3,0,0
+"G2-Q019","G2","ed133e70-5c3c-4207-8fd4-a3e1d79cfaec","With You",4,-,4,0,0
+"G2-Q019","G2","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",5,-,5,0,0
+"G2-Q020","G2","9cdfce70-a573-4392-a817-afeb8dca4104","Every Heart",1,-,1,0,0
+"G2-Q020","G2","460cd5b6-3cba-47c5-bcba-5ab639457287","Lay It Down",2,-,2,0,0
+"G2-Q020","G2","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",3,-,3,3,0
+"G2-Q020","G2","64230296-e971-4afe-8ae2-6eb7b3a04587","Safe",4,-,4,0,0
+"G2-Q020","G2","1064050b-d15c-4b7b-9390-0ce53ccf801c","It Is So",5,-,5,0,0
+"G2-Q021","G2","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",1,-,1,0,0
+"G2-Q021","G2","e5e4bfad-0a1f-452f-a6ea-0cc4e2173f83","I'll Never Walk Alone",2,-,2,0,0
+"G2-Q021","G2","44ba4e35-8a0a-45ba-9135-3da6ae42be39","In Control",3,-,3,0,0
+"G2-Q021","G2","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",4,-,4,0,0
+"G2-Q021","G2","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",5,-,5,0,0
+"G2-Q022","G2","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",1,-,1,3,0
+"G2-Q022","G2","219f0fe8-d7fe-4de0-844f-5ce22524b5f2","This Is Why",2,-,2,0,0
+"G2-Q022","G2","b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5","Same God",3,-,3,0,0
+"G2-Q022","G2","ebcb4c64-07b6-4369-a38e-81f00353b817","Grace Changes Everything",4,-,4,0,0
+"G2-Q022","G2","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",5,-,5,0,0
+"G2-Q023","G2","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",1,-,1,0,0
+"G2-Q023","G2","9cdfce70-a573-4392-a817-afeb8dca4104","Every Heart",2,-,2,0,0
+"G2-Q023","G2","4a06ee23-ba3b-44bf-9bcb-3d5e220a7da8","Rest On Us",3,-,3,3,0
+"G2-Q023","G2","16973874-73e3-4827-b8d4-1a986333db53","Yours Is The Kingdom",4,-,4,0,0
+"G2-Q023","G2","345f44d8-3c2d-4879-b6da-ce58484a7249","Holy Spirit",5,-,5,3,0
+"G2-Q024","G2","345f44d8-3c2d-4879-b6da-ce58484a7249","Holy Spirit",1,-,1,2,0
+"G2-Q024","G2","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",2,-,2,0,0
+"G2-Q024","G2","4a06ee23-ba3b-44bf-9bcb-3d5e220a7da8","Rest On Us",3,-,3,0,0
+"G2-Q024","G2","9cdfce70-a573-4392-a817-afeb8dca4104","Every Heart",4,-,4,0,0
+"G2-Q024","G2","a7606cd6-57a9-42de-b753-cf546c9a9677","Fill This House",5,-,5,0,0
+"G2-Q025","G2","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",1,-,1,0,0
+"G2-Q025","G2","345f44d8-3c2d-4879-b6da-ce58484a7249","Holy Spirit",2,-,2,0,0
+"G2-Q025","G2","16973874-73e3-4827-b8d4-1a986333db53","Yours Is The Kingdom",3,-,3,3,0
+"G2-Q025","G2","4a06ee23-ba3b-44bf-9bcb-3d5e220a7da8","Rest On Us",4,-,4,0,0
+"G2-Q025","G2","9cdfce70-a573-4392-a817-afeb8dca4104","Every Heart",5,-,5,0,0
+"G2-Q026","G2","4a06ee23-ba3b-44bf-9bcb-3d5e220a7da8","Rest On Us",1,-,1,0,0
+"G2-Q026","G2","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",2,-,2,0,0
+"G2-Q026","G2","345f44d8-3c2d-4879-b6da-ce58484a7249","Holy Spirit",3,-,3,0,0
+"G2-Q026","G2","44ba4e35-8a0a-45ba-9135-3da6ae42be39","In Control",4,-,4,0,0
+"G2-Q026","G2","9cdfce70-a573-4392-a817-afeb8dca4104","Every Heart",5,-,5,0,0
+"G2-Q027","G2","53a46ade-8695-400d-895e-9cf74afe0700","Way Maker - Đấng Mở Đường",1,-,1,0,0
+"G2-Q027","G2","4a06ee23-ba3b-44bf-9bcb-3d5e220a7da8","Rest On Us",2,-,2,3,0
+"G2-Q027","G2","41a0e027-789d-4ca9-b0a8-e1dcdf76772e","A Little Fire (Burn Brighter)",3,-,3,0,0
+"G2-Q027","G2","16973874-73e3-4827-b8d4-1a986333db53","Yours Is The Kingdom",4,-,4,0,0
+"G2-Q027","G2","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",5,-,5,2,0
+"G2-Q028","G2","16973874-73e3-4827-b8d4-1a986333db53","Yours Is The Kingdom",1,-,1,0,0
+"G2-Q028","G2","b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5","Same God",2,-,2,0,0
+"G2-Q028","G2","c240c3a3-3157-4a55-8fae-fb356076f509","Do It Again",3,-,3,0,0
+"G2-Q028","G2","460cd5b6-3cba-47c5-bcba-5ab639457287","Lay It Down",4,-,4,0,0
+"G2-Q028","G2","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",5,-,5,0,0
+"G2-Q029","G2","c240c3a3-3157-4a55-8fae-fb356076f509","Do It Again",1,-,1,0,0
+"G2-Q029","G2","b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5","Same God",2,-,2,0,0
+"G2-Q029","G2","e7e27cca-227f-4907-8ed4-9396127bbedc","Gratitude",3,-,3,0,0
+"G2-Q029","G2","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",4,-,4,0,0
+"G2-Q029","G2","5a737dd9-49f3-4644-9d86-73f882b2389c","Faithful",5,-,5,0,0
+"G2-Q030","G2","1463f293-6c8a-4ade-bfec-3ea0afc8ad98","Build My Life",1,-,1,3,0
+"G2-Q030","G2","e0232131-c244-4453-a782-096444bcfdaa","Nothing Can Separate Me",2,-,2,0,0
+"G2-Q030","G2","608245c7-f6a5-44fa-84bc-21e278510060","Your Love Is Greater",3,-,3,0,0
+"G2-Q030","G2","5f48dff8-0370-4a8b-8a6d-2928ae63c7dc","Dance In Freedom",4,-,4,0,0
+"G2-Q030","G2","21358b75-ff2c-4df2-b662-b70c67783131","When I Say Your Name",5,-,5,0,0
+"G2-Q031","G2","5d419226-2508-41de-89a8-42fdb4fb3fd3","Who You Say I Am",1,-,1,3,0
+"G2-Q031","G2","b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5","Same God",2,-,2,0,0
+"G2-Q031","G2","c240c3a3-3157-4a55-8fae-fb356076f509","Do It Again",3,-,3,0,0
+"G2-Q031","G2","219f0fe8-d7fe-4de0-844f-5ce22524b5f2","This Is Why",4,-,4,0,0
+"G2-Q031","G2","a3452a9c-f6fc-4714-99a9-5bdf4f6aadae","Beauty For Ashes",5,-,5,0,0
+"G2-Q032","G2","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",1,-,1,3,0
+"G2-Q032","G2","5a737dd9-49f3-4644-9d86-73f882b2389c","Faithful",2,-,2,0,0
+"G2-Q032","G2","5d419226-2508-41de-89a8-42fdb4fb3fd3","Who You Say I Am",3,-,3,3,0
+"G2-Q032","G2","b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5","Same God",4,-,4,0,0
+"G2-Q032","G2","16a593d2-e3d2-4f4c-aada-0cb487556195","The Beat",5,-,5,0,0
+"G2-Q033","G2","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",1,-,1,0,0
+"G2-Q033","G2","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",2,-,2,0,0
+"G2-Q033","G2","aa793ef0-83ae-42d1-9b1a-b5e93535da1d","Have All Of Me",3,-,3,0,0
+"G2-Q033","G2","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",4,-,4,0,0
+"G2-Q033","G2","44ba4e35-8a0a-45ba-9135-3da6ae42be39","In Control",5,-,5,0,0
+"G2-Q034","G2","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",1,-,1,3,0
+"G2-Q034","G2","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",2,-,2,0,0
+"G2-Q034","G2","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",3,-,3,0,0
+"G2-Q034","G2","83ce0b16-0886-409f-8326-996eaa50eab1","Holy, Holy, Holy (Hymn)",4,-,4,0,0
+"G2-Q034","G2","860403f4-c7de-42c8-a50f-92631d958ad1","I’ll Go",5,-,5,0,0
+"G2-Q035","G2","e5e4bfad-0a1f-452f-a6ea-0cc4e2173f83","I'll Never Walk Alone",1,-,1,0,0
+"G2-Q035","G2","4a06ee23-ba3b-44bf-9bcb-3d5e220a7da8","Rest On Us",2,-,2,3,0
+"G2-Q035","G2","9cdfce70-a573-4392-a817-afeb8dca4104","Every Heart",3,-,3,0,0
+"G2-Q035","G2","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",4,-,4,0,0
+"G2-Q035","G2","64230296-e971-4afe-8ae2-6eb7b3a04587","Safe",5,-,5,0,0
+"G2-Q036","G2","4a06ee23-ba3b-44bf-9bcb-3d5e220a7da8","Rest On Us",1,-,1,0,0
+"G2-Q036","G2","c240c3a3-3157-4a55-8fae-fb356076f509","Do It Again",2,-,2,0,0
+"G2-Q036","G2","345f44d8-3c2d-4879-b6da-ce58484a7249","Holy Spirit",3,-,3,2,0
+"G2-Q036","G2","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",4,-,4,0,0
+"G2-Q036","G2","1463f293-6c8a-4ade-bfec-3ea0afc8ad98","Build My Life",5,-,5,0,0
+"G2-Q037","G2","d8be7b3a-93a1-4966-b89c-f2c0d1336b19","Too Good To Not Believe",1,-,1,0,0
+"G2-Q037","G2","a7606cd6-57a9-42de-b753-cf546c9a9677","Fill This House",2,-,2,0,0
+"G2-Q037","G2","ea33670a-3fa3-479e-ba59-0b55cf1f8ed4","We Will Go",3,-,3,0,0
+"G2-Q037","G2","219f0fe8-d7fe-4de0-844f-5ce22524b5f2","This Is Why",4,-,4,0,0
+"G2-Q037","G2","fdabd847-e2f0-4f79-a637-eeac2165f5f3","Ngợi Ca Danh Cao Giê-su",5,-,5,0,0
+"G2-Q038","G2","345f44d8-3c2d-4879-b6da-ce58484a7249","Holy Spirit",1,-,1,0,0
+"G2-Q038","G2","4a06ee23-ba3b-44bf-9bcb-3d5e220a7da8","Rest On Us",2,-,2,0,0
+"G2-Q038","G2","44ba4e35-8a0a-45ba-9135-3da6ae42be39","In Control",3,-,3,0,0
+"G2-Q038","G2","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",4,-,4,0,0
+"G2-Q038","G2","9cdfce70-a573-4392-a817-afeb8dca4104","Every Heart",5,-,5,0,0
+"G2-Q039","G2","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",1,-,1,0,0
+"G2-Q039","G2","aa793ef0-83ae-42d1-9b1a-b5e93535da1d","Have All Of Me",2,-,2,0,0
+"G2-Q039","G2","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",3,-,3,0,0
+"G2-Q039","G2","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",4,-,4,0,0
+"G2-Q039","G2","e0232131-c244-4453-a782-096444bcfdaa","Nothing Can Separate Me",5,-,5,0,0
+"G2-Q040","G2","e827e4f4-94cf-43a6-926b-feba42d9fcaf","I Surrender",1,-,1,3,0
+"G2-Q040","G2","c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab","Make Room",2,-,2,0,0
+"G2-Q040","G2","8509e035-f68a-4411-96fa-23a8907da3c1","Radical Love",3,-,3,0,0
+"G2-Q040","G2","ed133e70-5c3c-4207-8fd4-a3e1d79cfaec","With You",4,-,4,0,0
+"G2-Q040","G2","aa793ef0-83ae-42d1-9b1a-b5e93535da1d","Have All Of Me",5,-,5,2,0
+"G2-Q041","G2","16a593d2-e3d2-4f4c-aada-0cb487556195","The Beat",1,-,1,0,0
+"G2-Q041","G2","e0232131-c244-4453-a782-096444bcfdaa","Nothing Can Separate Me",2,-,2,0,0
+"G2-Q041","G2","1463f293-6c8a-4ade-bfec-3ea0afc8ad98","Build My Life",3,-,3,3,0
+"G2-Q041","G2","0570c043-4efa-4dd9-ac98-96ded7527cc4","Beautiful Love",4,-,4,0,0
+"G2-Q041","G2","8509e035-f68a-4411-96fa-23a8907da3c1","Radical Love",5,-,5,2,0
+"G2-Q042","G2","ea33670a-3fa3-479e-ba59-0b55cf1f8ed4","We Will Go",1,-,1,3,0
+"G2-Q042","G2","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",2,-,2,0,0
+"G2-Q042","G2","a7606cd6-57a9-42de-b753-cf546c9a9677","Fill This House",3,-,3,0,0
+"G2-Q042","G2","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",4,-,4,0,0
+"G2-Q042","G2","16973874-73e3-4827-b8d4-1a986333db53","Yours Is The Kingdom",5,-,5,2,0
+"G3-Q001","G3","53a46ade-8695-400d-895e-9cf74afe0700","Way Maker - Đấng Mở Đường",1,1,1,3,0
+"G3-Q001","G3","860403f4-c7de-42c8-a50f-92631d958ad1","I’ll Go",2,-,3,0,-1
+"G3-Q001","G3","c240c3a3-3157-4a55-8fae-fb356076f509","Do It Again",3,-,-,0,0
+"G3-Q001","G3","21358b75-ff2c-4df2-b662-b70c67783131","When I Say Your Name",4,-,-,0,0
+"G3-Q001","G3","5f48dff8-0370-4a8b-8a6d-2928ae63c7dc","Dance In Freedom",5,-,5,0,0
+"G3-Q001","G3","83ce0b16-0886-409f-8326-996eaa50eab1","Holy, Holy, Holy (Hymn)",-,-,2,0,0
+"G3-Q001","G3","b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5","Same God",10,-,4,0,6
+"G3-Q002","G3","1463f293-6c8a-4ade-bfec-3ea0afc8ad98","Build My Life",1,1,1,3,0
+"G3-Q002","G3","99091e62-17c5-471f-860c-ae1adce7b486","Firm Foundation",2,-,2,0,0
+"G3-Q002","G3","e0232131-c244-4453-a782-096444bcfdaa","Nothing Can Separate Me",3,-,3,0,0
+"G3-Q002","G3","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",4,-,4,0,0
+"G3-Q002","G3","a88877aa-6e09-47ee-8b4c-12fba261f6ea","God Is Good",5,-,5,0,0
+"G3-Q003","G3","8e9e95b9-1bc1-40bf-8fc5-cafd82417d97","Raise A Hallelujah",1,1,1,3,0
+"G3-Q003","G3","11d96089-3515-40cf-b0f5-e30002e3fd47","Hymn Of Heaven",2,-,-,0,0
+"G3-Q003","G3","64230296-e971-4afe-8ae2-6eb7b3a04587","Safe",3,-,5,0,-2
+"G3-Q003","G3","44ba4e35-8a0a-45ba-9135-3da6ae42be39","In Control",4,-,4,0,0
+"G3-Q003","G3","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",5,-,-,0,0
+"G3-Q003","G3","f60d3b21-17a7-40ee-96b7-56291938bb2f","Lord Of All",-,-,2,0,0
+"G3-Q003","G3","460cd5b6-3cba-47c5-bcba-5ab639457287","Lay It Down",-,-,3,0,0
+"G3-Q004","G3","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",1,-,1,0,0
+"G3-Q004","G3","5d419226-2508-41de-89a8-42fdb4fb3fd3","Who You Say I Am",2,-,2,3,0
+"G3-Q004","G3","ed133e70-5c3c-4207-8fd4-a3e1d79cfaec","With You",3,-,3,0,0
+"G3-Q004","G3","44ba4e35-8a0a-45ba-9135-3da6ae42be39","In Control",4,-,4,0,0
+"G3-Q004","G3","6dfff256-a866-4ccc-b9c2-96cc0492eb61","Here With Me",5,-,5,0,0
+"G3-Q005","G3","c240c3a3-3157-4a55-8fae-fb356076f509","Do It Again",1,1,1,3,0
+"G3-Q005","G3","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",2,-,2,0,0
+"G3-Q005","G3","cea13122-7f59-44d8-a86b-dcaedf1bdb94","See A Victory",3,-,3,0,0
+"G3-Q005","G3","c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab","Make Room",4,-,4,0,0
+"G3-Q005","G3","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",5,-,5,0,0
+"G3-Q006","G3","e827e4f4-94cf-43a6-926b-feba42d9fcaf","I Surrender",1,1,1,3,0
+"G3-Q006","G3","44ba4e35-8a0a-45ba-9135-3da6ae42be39","In Control",2,-,7,0,-5
+"G3-Q006","G3","0148e2d0-50c8-46a6-9726-8b398c01d397","You Are With Me",3,-,-,0,0
+"G3-Q006","G3","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",4,-,-,0,0
+"G3-Q006","G3","9cdfce70-a573-4392-a817-afeb8dca4104","Every Heart",5,-,5,0,0
+"G3-Q006","G3","16a593d2-e3d2-4f4c-aada-0cb487556195","The Beat",-,-,2,0,0
+"G3-Q006","G3","ffb865de-4136-4257-8852-e79712cc4387","Carry My Cross",-,-,3,0,0
+"G3-Q006","G3","6dfff256-a866-4ccc-b9c2-96cc0492eb61","Here With Me",9,-,4,0,5
+"G3-Q007","G3","53a46ade-8695-400d-895e-9cf74afe0700","Way Maker - Đấng Mở Đường",1,1,1,3,0
+"G3-Q007","G3","99091e62-17c5-471f-860c-ae1adce7b486","Firm Foundation",2,-,2,0,0
+"G3-Q007","G3","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",3,-,3,0,0
+"G3-Q007","G3","d8be7b3a-93a1-4966-b89c-f2c0d1336b19","Too Good To Not Believe",4,-,4,0,0
+"G3-Q007","G3","44ba4e35-8a0a-45ba-9135-3da6ae42be39","In Control",5,-,5,0,0
+"G3-Q008","G3","16a593d2-e3d2-4f4c-aada-0cb487556195","The Beat",1,-,-,0,0
+"G3-Q008","G3","460cd5b6-3cba-47c5-bcba-5ab639457287","Lay It Down",2,-,-,0,0
+"G3-Q008","G3","dde347a0-d8df-433f-a5b5-a39a5500053e","Tấm Lòng Con Sẵn Sàng",3,-,10,0,-7
+"G3-Q008","G3","a7606cd6-57a9-42de-b753-cf546c9a9677","Fill This House",4,-,-,0,0
+"G3-Q008","G3","d15f40ad-eb38-44d5-80e5-5cdeb9ec999b","I Adore",5,-,-,0,0
+"G3-Q008","G3","1463f293-6c8a-4ade-bfec-3ea0afc8ad98","Build My Life",7,1,1,3,6
+"G3-Q008","G3","e827e4f4-94cf-43a6-926b-feba42d9fcaf","I Surrender",-,-,2,0,0
+"G3-Q008","G3","0148e2d0-50c8-46a6-9726-8b398c01d397","You Are With Me",-,-,3,0,0
+"G3-Q008","G3","219f0fe8-d7fe-4de0-844f-5ce22524b5f2","This Is Why",-,-,4,0,0
+"G3-Q008","G3","5f48dff8-0370-4a8b-8a6d-2928ae63c7dc","Dance In Freedom",9,-,5,0,4
+"G3-Q009","G3","8e9e95b9-1bc1-40bf-8fc5-cafd82417d97","Raise A Hallelujah",1,1,1,3,0
+"G3-Q009","G3","d15f40ad-eb38-44d5-80e5-5cdeb9ec999b","I Adore",2,-,-,0,0
+"G3-Q009","G3","5f48dff8-0370-4a8b-8a6d-2928ae63c7dc","Dance In Freedom",3,-,-,0,0
+"G3-Q009","G3","1064050b-d15c-4b7b-9390-0ce53ccf801c","It Is So",4,-,6,0,-2
+"G3-Q009","G3","0148e2d0-50c8-46a6-9726-8b398c01d397","You Are With Me",5,-,-,0,0
+"G3-Q009","G3","e7e27cca-227f-4907-8ed4-9396127bbedc","Gratitude",-,-,2,0,0
+"G3-Q009","G3","141570cd-bff3-41ad-bca1-477d70549133","Author of My Life",-,-,3,0,0
+"G3-Q009","G3","e827e4f4-94cf-43a6-926b-feba42d9fcaf","I Surrender",8,-,4,0,4
+"G3-Q009","G3","a3452a9c-f6fc-4714-99a9-5bdf4f6aadae","Beauty For Ashes",-,-,5,0,0
+"G3-Q010","G3","5d419226-2508-41de-89a8-42fdb4fb3fd3","Who You Say I Am",1,-,2,3,-1
+"G3-Q010","G3","e3516fa3-601d-41f8-a600-3e126c642bae","Worthy",2,-,8,0,-6
+"G3-Q010","G3","dde347a0-d8df-433f-a5b5-a39a5500053e","Tấm Lòng Con Sẵn Sàng",3,-,-,0,0
+"G3-Q010","G3","aa793ef0-83ae-42d1-9b1a-b5e93535da1d","Have All Of Me",4,-,10,0,-6
+"G3-Q010","G3","0148e2d0-50c8-46a6-9726-8b398c01d397","You Are With Me",5,-,-,0,0
+"G3-Q010","G3","6dfff256-a866-4ccc-b9c2-96cc0492eb61","Here With Me",-,-,1,0,0
+"G3-Q010","G3","ea33670a-3fa3-479e-ba59-0b55cf1f8ed4","We Will Go",-,-,3,0,0
+"G3-Q010","G3","d8be7b3a-93a1-4966-b89c-f2c0d1336b19","Too Good To Not Believe",-,-,4,0,0
+"G3-Q010","G3","d3c705ce-a3c3-4282-936f-7623eeef37c7","Dwelling Place",-,-,5,0,0
+"G3-Q011","G3","c240c3a3-3157-4a55-8fae-fb356076f509","Do It Again",1,1,1,3,0
+"G3-Q011","G3","2feedc36-0d66-47be-871b-4028acbab508","There's Nothing That Our God Can't Do",2,-,-,0,0
+"G3-Q011","G3","d8be7b3a-93a1-4966-b89c-f2c0d1336b19","Too Good To Not Believe",3,-,6,0,-3
+"G3-Q011","G3","860403f4-c7de-42c8-a50f-92631d958ad1","I’ll Go",4,-,-,0,0
+"G3-Q011","G3","b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5","Same God",5,-,4,0,1
+"G3-Q011","G3","d15f40ad-eb38-44d5-80e5-5cdeb9ec999b","I Adore",-,-,2,0,0
+"G3-Q011","G3","38f62657-1387-4de4-b3b8-5f3aa6444e26","Living Hope (Đấng Sống Muôn Đời)",-,-,3,0,0
+"G3-Q011","G3","99091e62-17c5-471f-860c-ae1adce7b486","Firm Foundation",-,-,5,0,0
+"G3-Q012","G3","e827e4f4-94cf-43a6-926b-feba42d9fcaf","I Surrender",1,1,1,3,0
+"G3-Q012","G3","aa793ef0-83ae-42d1-9b1a-b5e93535da1d","Have All Of Me",2,-,2,0,0
+"G3-Q012","G3","8509e035-f68a-4411-96fa-23a8907da3c1","Radical Love",3,-,-,0,0
+"G3-Q012","G3","460cd5b6-3cba-47c5-bcba-5ab639457287","Lay It Down",4,-,-,0,0
+"G3-Q012","G3","c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab","Make Room",5,-,-,0,0
+"G3-Q012","G3","e7e27cca-227f-4907-8ed4-9396127bbedc","Gratitude",-,-,3,0,0
+"G3-Q012","G3","bd0806db-5c3e-442f-94eb-ca152945c28c","In Your Name",-,-,4,0,0
+"G3-Q012","G3","e3516fa3-601d-41f8-a600-3e126c642bae","Worthy",-,-,5,0,0
+"G3-Q013","G3","53a46ade-8695-400d-895e-9cf74afe0700","Way Maker - Đấng Mở Đường",1,-,1,3,0
+"G3-Q013","G3","c240c3a3-3157-4a55-8fae-fb356076f509","Do It Again",2,-,2,0,0
+"G3-Q013","G3","2feedc36-0d66-47be-871b-4028acbab508","There's Nothing That Our God Can't Do",3,-,3,0,0
+"G3-Q013","G3","860403f4-c7de-42c8-a50f-92631d958ad1","I’ll Go",4,-,4,0,0
+"G3-Q013","G3","e5e4bfad-0a1f-452f-a6ea-0cc4e2173f83","I'll Never Walk Alone",5,-,5,0,0
+"G3-Q014","G3","1463f293-6c8a-4ade-bfec-3ea0afc8ad98","Build My Life",1,-,1,3,0
+"G3-Q014","G3","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",2,-,2,0,0
+"G3-Q014","G3","99091e62-17c5-471f-860c-ae1adce7b486","Firm Foundation",3,-,3,0,0
+"G3-Q014","G3","b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5","Same God",4,-,4,0,0
+"G3-Q014","G3","e0232131-c244-4453-a782-096444bcfdaa","Nothing Can Separate Me",5,-,5,0,0
+"G3-Q015","G3","8e9e95b9-1bc1-40bf-8fc5-cafd82417d97","Raise A Hallelujah",1,-,1,3,0
+"G3-Q015","G3","bd0806db-5c3e-442f-94eb-ca152945c28c","In Your Name",2,-,2,0,0
+"G3-Q015","G3","860403f4-c7de-42c8-a50f-92631d958ad1","I’ll Go",3,-,3,0,0
+"G3-Q015","G3","61fa2632-9a99-434c-87de-8329000f263a","Egypt",4,-,4,0,0
+"G3-Q015","G3","16973874-73e3-4827-b8d4-1a986333db53","Yours Is The Kingdom",5,-,5,0,0
+"G3-Q016","G3","5d419226-2508-41de-89a8-42fdb4fb3fd3","Who You Say I Am",1,-,-,3,0
+"G3-Q016","G3","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",2,-,6,0,-4
+"G3-Q016","G3","3ce9cf7c-f75e-437e-8947-07e153a0b9f0","There's Still Room",3,-,-,0,0
+"G3-Q016","G3","ebcb4c64-07b6-4369-a38e-81f00353b817","Grace Changes Everything",4,-,3,0,1
+"G3-Q016","G3","dde347a0-d8df-433f-a5b5-a39a5500053e","Tấm Lòng Con Sẵn Sàng",5,-,-,0,0
+"G3-Q016","G3","9cdfce70-a573-4392-a817-afeb8dca4104","Every Heart",-,-,1,0,0
+"G3-Q016","G3","5a737dd9-49f3-4644-9d86-73f882b2389c","Faithful",-,-,2,0,0
+"G3-Q016","G3","fdabd847-e2f0-4f79-a637-eeac2165f5f3","Ngợi Ca Danh Cao Giê-su",-,-,4,0,0
+"G3-Q016","G3","460cd5b6-3cba-47c5-bcba-5ab639457287","Lay It Down",-,-,5,0,0
+"G3-Q017","G3","c240c3a3-3157-4a55-8fae-fb356076f509","Do It Again",1,-,1,3,0
+"G3-Q017","G3","2feedc36-0d66-47be-871b-4028acbab508","There's Nothing That Our God Can't Do",2,-,-,0,0
+"G3-Q017","G3","d8be7b3a-93a1-4966-b89c-f2c0d1336b19","Too Good To Not Believe",3,-,-,0,0
+"G3-Q017","G3","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",4,-,4,0,0
+"G3-Q017","G3","5f48dff8-0370-4a8b-8a6d-2928ae63c7dc","Dance In Freedom",5,-,-,0,0
+"G3-Q017","G3","21358b75-ff2c-4df2-b662-b70c67783131","When I Say Your Name",7,-,2,0,5
+"G3-Q017","G3","b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5","Same God",6,-,3,0,3
+"G3-Q017","G3","f60d3b21-17a7-40ee-96b7-56291938bb2f","Lord Of All",-,-,5,0,0
+"G3-Q018","G3","e827e4f4-94cf-43a6-926b-feba42d9fcaf","I Surrender",1,-,4,3,-3
+"G3-Q018","G3","8509e035-f68a-4411-96fa-23a8907da3c1","Radical Love",2,-,9,0,-7
+"G3-Q018","G3","460cd5b6-3cba-47c5-bcba-5ab639457287","Lay It Down",3,-,5,0,-2
+"G3-Q018","G3","f60d3b21-17a7-40ee-96b7-56291938bb2f","Lord Of All",4,-,8,0,-4
+"G3-Q018","G3","c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab","Make Room",5,-,7,0,-2
+"G3-Q018","G3","9cdfce70-a573-4392-a817-afeb8dca4104","Every Heart",-,-,1,0,0
+"G3-Q018","G3","aa793ef0-83ae-42d1-9b1a-b5e93535da1d","Have All Of Me",6,-,2,0,4
+"G3-Q018","G3","91001c6f-96f6-40c2-9bb3-c97ef1f7c648","Pour Us Out",8,-,3,0,5
+"G3-Q019","G3","53a46ade-8695-400d-895e-9cf74afe0700","Way Maker - Đấng Mở Đường",1,-,-,3,0
+"G3-Q019","G3","21358b75-ff2c-4df2-b662-b70c67783131","When I Say Your Name",2,-,1,0,1
+"G3-Q019","G3","1064050b-d15c-4b7b-9390-0ce53ccf801c","It Is So",3,-,7,0,-4
+"G3-Q019","G3","2feedc36-0d66-47be-871b-4028acbab508","There's Nothing That Our God Can't Do",4,-,-,0,0
+"G3-Q019","G3","c240c3a3-3157-4a55-8fae-fb356076f509","Do It Again",5,-,-,0,0
+"G3-Q019","G3","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",-,-,2,0,0
+"G3-Q019","G3","860403f4-c7de-42c8-a50f-92631d958ad1","I’ll Go",-,-,3,0,0
+"G3-Q019","G3","0ac708c4-a8a8-4d99-be5e-a1b932f32856","So Close",10,-,4,0,6
+"G3-Q019","G3","e5e4bfad-0a1f-452f-a6ea-0cc4e2173f83","I'll Never Walk Alone",-,-,5,0,0
+"G3-Q020","G3","1463f293-6c8a-4ade-bfec-3ea0afc8ad98","Build My Life",1,-,2,3,-1
+"G3-Q020","G3","99091e62-17c5-471f-860c-ae1adce7b486","Firm Foundation",2,-,1,0,1
+"G3-Q020","G3","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",3,-,9,0,-6
+"G3-Q020","G3","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",4,-,-,0,0
+"G3-Q020","G3","608245c7-f6a5-44fa-84bc-21e278510060","Your Love Is Greater",5,-,4,0,1
+"G3-Q020","G3","1064050b-d15c-4b7b-9390-0ce53ccf801c","It Is So",8,-,3,0,5
+"G3-Q020","G3","d8be7b3a-93a1-4966-b89c-f2c0d1336b19","Too Good To Not Believe",-,-,5,0,0
+"G3-Q021","G3","8e9e95b9-1bc1-40bf-8fc5-cafd82417d97","Raise A Hallelujah",1,-,1,3,0
+"G3-Q021","G3","16973874-73e3-4827-b8d4-1a986333db53","Yours Is The Kingdom",2,-,2,0,0
+"G3-Q021","G3","e7e27cca-227f-4907-8ed4-9396127bbedc","Gratitude",3,-,3,0,0
+"G3-Q021","G3","99091e62-17c5-471f-860c-ae1adce7b486","Firm Foundation",4,-,4,0,0
+"G3-Q021","G3","141570cd-bff3-41ad-bca1-477d70549133","Author of My Life",5,-,5,0,0
+"G3-Q022","G3","5d419226-2508-41de-89a8-42fdb4fb3fd3","Who You Say I Am",1,-,2,3,-1
+"G3-Q022","G3","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",2,-,-,0,0
+"G3-Q022","G3","219f0fe8-d7fe-4de0-844f-5ce22524b5f2","This Is Why",3,-,-,0,0
+"G3-Q022","G3","46a73f8f-ccd9-434d-9024-a323cc05690e","For Your Purpose",4,-,-,0,0
+"G3-Q022","G3","3ce9cf7c-f75e-437e-8947-07e153a0b9f0","There's Still Room",5,-,3,0,2
+"G3-Q022","G3","d3c705ce-a3c3-4282-936f-7623eeef37c7","Dwelling Place",7,-,1,0,6
+"G3-Q022","G3","d8be7b3a-93a1-4966-b89c-f2c0d1336b19","Too Good To Not Believe",-,-,4,0,0
+"G3-Q022","G3","16973874-73e3-4827-b8d4-1a986333db53","Yours Is The Kingdom",10,-,5,0,5
+"G3-Q023","G3","c240c3a3-3157-4a55-8fae-fb356076f509","Do It Again",1,-,1,3,0
+"G3-Q023","G3","1119875e-0c71-44ec-949a-de26cb2cc74c","King Of My Heart",2,-,2,0,0
+"G3-Q023","G3","b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5","Same God",3,-,3,0,0
+"G3-Q023","G3","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",4,-,4,0,0
+"G3-Q023","G3","21358b75-ff2c-4df2-b662-b70c67783131","When I Say Your Name",5,-,5,0,0
+"G3-Q024","G3","e827e4f4-94cf-43a6-926b-feba42d9fcaf","I Surrender",1,-,-,3,0
+"G3-Q024","G3","aa793ef0-83ae-42d1-9b1a-b5e93535da1d","Have All Of Me",2,-,-,0,0
+"G3-Q024","G3","e0232131-c244-4453-a782-096444bcfdaa","Nothing Can Separate Me",3,-,-,0,0
+"G3-Q024","G3","608245c7-f6a5-44fa-84bc-21e278510060","Your Love Is Greater",4,-,-,0,0
+"G3-Q024","G3","c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab","Make Room",5,-,1,0,4
+"G3-Q024","G3","e5e4bfad-0a1f-452f-a6ea-0cc4e2173f83","I'll Never Walk Alone",-,-,2,0,0
+"G3-Q024","G3","504d0ec2-7646-4d7d-96c7-9c07323a6350","This Is Your Church",-,-,3,0,0
+"G3-Q024","G3","21358b75-ff2c-4df2-b662-b70c67783131","When I Say Your Name",-,-,4,0,0
+"G3-Q024","G3","8e9e95b9-1bc1-40bf-8fc5-cafd82417d97","Raise A Hallelujah",-,-,5,0,0
+"G4-Q001","G4","64230296-e971-4afe-8ae2-6eb7b3a04587","Safe",1,1,1,3,0
+"G4-Q001","G4","ffb865de-4136-4257-8852-e79712cc4387","Carry My Cross",2,-,2,0,0
+"G4-Q001","G4","0148e2d0-50c8-46a6-9726-8b398c01d397","You Are With Me",3,-,3,0,0
+"G4-Q001","G4","bd0806db-5c3e-442f-94eb-ca152945c28c","In Your Name",4,-,4,0,0
+"G4-Q001","G4","b9f0a6f5-48e2-4fc0-ba03-0a946cb7baf5","Same God",5,-,5,0,0
+"G4-Q002","G4","5a737dd9-49f3-4644-9d86-73f882b2389c","Faithful",1,1,2,3,-1
+"G4-Q002","G4","c240c3a3-3157-4a55-8fae-fb356076f509","Do It Again",2,-,-,0,0
+"G4-Q002","G4","d8be7b3a-93a1-4966-b89c-f2c0d1336b19","Too Good To Not Believe",3,-,-,0,0
+"G4-Q002","G4","a88877aa-6e09-47ee-8b4c-12fba261f6ea","God Is Good",4,-,-,0,0
+"G4-Q002","G4","21358b75-ff2c-4df2-b662-b70c67783131","When I Say Your Name",5,-,-,0,0
+"G4-Q002","G4","03df92ed-47d0-4162-98db-a2d04c00ac4f","Nothing But The Blood",-,-,1,0,0
+"G4-Q002","G4","11d96089-3515-40cf-b0f5-e30002e3fd47","Hymn Of Heaven",-,-,3,0,0
+"G4-Q002","G4","16973874-73e3-4827-b8d4-1a986333db53","Yours Is The Kingdom",-,-,4,0,0
+"G4-Q002","G4","fdabd847-e2f0-4f79-a637-eeac2165f5f3","Ngợi Ca Danh Cao Giê-su",-,-,5,0,0
+"G4-Q003","G4","e3516fa3-601d-41f8-a600-3e126c642bae","Worthy",1,1,1,3,0
+"G4-Q003","G4","1463f293-6c8a-4ade-bfec-3ea0afc8ad98","Build My Life",2,-,-,0,0
+"G4-Q003","G4","1119875e-0c71-44ec-949a-de26cb2cc74c","King Of My Heart",3,-,3,0,0
+"G4-Q003","G4","11d96089-3515-40cf-b0f5-e30002e3fd47","Hymn Of Heaven",4,-,9,0,-5
+"G4-Q003","G4","219f0fe8-d7fe-4de0-844f-5ce22524b5f2","This Is Why",5,-,-,0,0
+"G4-Q003","G4","83ce0b16-0886-409f-8326-996eaa50eab1","Holy, Holy, Holy (Hymn)",9,-,2,0,7
+"G4-Q003","G4","d8be7b3a-93a1-4966-b89c-f2c0d1336b19","Too Good To Not Believe",7,-,4,0,3
+"G4-Q003","G4","6dfff256-a866-4ccc-b9c2-96cc0492eb61","Here With Me",6,-,5,0,1
+"G4-Q004","G4","a52477e9-0fce-4888-8e41-4275b8c04e96","This Is The Kingdom",1,1,1,0,0
+"G4-Q004","G4","16973874-73e3-4827-b8d4-1a986333db53","Yours Is The Kingdom",2,-,2,3,0
+"G4-Q004","G4","1119875e-0c71-44ec-949a-de26cb2cc74c","King Of My Heart",3,-,-,0,0
+"G4-Q004","G4","d3c705ce-a3c3-4282-936f-7623eeef37c7","Dwelling Place",4,-,-,0,0
+"G4-Q004","G4","e827e4f4-94cf-43a6-926b-feba42d9fcaf","I Surrender",5,-,3,0,2
+"G4-Q004","G4","460cd5b6-3cba-47c5-bcba-5ab639457287","Lay It Down",-,-,4,0,0
+"G4-Q004","G4","5d419226-2508-41de-89a8-42fdb4fb3fd3","Who You Say I Am",-,-,5,0,0
+"G4-Q005","G4","41a0e027-789d-4ca9-b0a8-e1dcdf76772e","A Little Fire (Burn Brighter)",1,2,1,3,0
+"G4-Q005","G4","dde347a0-d8df-433f-a5b5-a39a5500053e","Tấm Lòng Con Sẵn Sàng",2,-,4,0,-2
+"G4-Q005","G4","860403f4-c7de-42c8-a50f-92631d958ad1","I’ll Go",3,1,2,0,1
+"G4-Q005","G4","345f44d8-3c2d-4879-b6da-ce58484a7249","Holy Spirit",4,-,-,0,0
+"G4-Q005","G4","83ce0b16-0886-409f-8326-996eaa50eab1","Holy, Holy, Holy (Hymn)",5,-,-,0,0
+"G4-Q005","G4","a7606cd6-57a9-42de-b753-cf546c9a9677","Fill This House",-,-,3,0,0
+"G4-Q005","G4","f60d3b21-17a7-40ee-96b7-56291938bb2f","Lord Of All",-,-,5,0,0
+"G4-Q006","G4","5f48dff8-0370-4a8b-8a6d-2928ae63c7dc","Dance In Freedom",1,-,-,0,0
+"G4-Q006","G4","6dfff256-a866-4ccc-b9c2-96cc0492eb61","Here With Me",2,-,1,0,1
+"G4-Q006","G4","21358b75-ff2c-4df2-b662-b70c67783131","When I Say Your Name",3,-,4,0,-1
+"G4-Q006","G4","c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab","Make Room",4,-,-,0,0
+"G4-Q006","G4","cea13122-7f59-44d8-a86b-dcaedf1bdb94","See A Victory",5,-,-,0,0
+"G4-Q006","G4","2feedc36-0d66-47be-871b-4028acbab508","There's Nothing That Our God Can't Do",-,-,2,0,0
+"G4-Q006","G4","38f62657-1387-4de4-b3b8-5f3aa6444e26","Living Hope (Đấng Sống Muôn Đời)",-,-,3,0,0
+"G4-Q006","G4","41a0e027-789d-4ca9-b0a8-e1dcdf76772e","A Little Fire (Burn Brighter)",-,-,5,0,0
+"G4-Q007","G4","53a46ade-8695-400d-895e-9cf74afe0700","Way Maker - Đấng Mở Đường",1,-,1,3,0
+"G4-Q007","G4","c71e5cb4-0ee8-4b99-81e0-441c1bebb8ab","Make Room",2,-,-,0,0
+"G4-Q007","G4","860403f4-c7de-42c8-a50f-92631d958ad1","I’ll Go",3,-,-,0,0
+"G4-Q007","G4","6dfff256-a866-4ccc-b9c2-96cc0492eb61","Here With Me",4,-,-,0,0
+"G4-Q007","G4","d3c705ce-a3c3-4282-936f-7623eeef37c7","Dwelling Place",5,-,-,0,0
+"G4-Q007","G4","1463f293-6c8a-4ade-bfec-3ea0afc8ad98","Build My Life",-,-,2,0,0
+"G4-Q007","G4","e3516fa3-601d-41f8-a600-3e126c642bae","Worthy",-,-,3,0,0
+"G4-Q007","G4","aa793ef0-83ae-42d1-9b1a-b5e93535da1d","Have All Of Me",-,-,4,0,0
+"G4-Q007","G4","8e9e95b9-1bc1-40bf-8fc5-cafd82417d97","Raise A Hallelujah",-,-,5,0,0
+"G4-Q008","G4","8e9e95b9-1bc1-40bf-8fc5-cafd82417d97","Raise A Hallelujah",1,-,-,3,0
+"G4-Q008","G4","61fa2632-9a99-434c-87de-8329000f263a","Egypt",2,-,-,0,0
+"G4-Q008","G4","16973874-73e3-4827-b8d4-1a986333db53","Yours Is The Kingdom",3,-,1,0,2
+"G4-Q008","G4","5e6bd968-85cb-4117-aed0-abc20d3f7aa7","A THOUSAND HALLELUJAHS",4,-,-,0,0
+"G4-Q008","G4","38f62657-1387-4de4-b3b8-5f3aa6444e26","Living Hope (Đấng Sống Muôn Đời)",5,-,8,0,-3
+"G4-Q008","G4","1119875e-0c71-44ec-949a-de26cb2cc74c","King Of My Heart",-,-,2,0,0
+"G4-Q008","G4","dde347a0-d8df-433f-a5b5-a39a5500053e","Tấm Lòng Con Sẵn Sàng",-,-,3,0,0
+"G4-Q008","G4","cea13122-7f59-44d8-a86b-dcaedf1bdb94","See A Victory",-,-,4,0,0
+"G4-Q008","G4","a88877aa-6e09-47ee-8b4c-12fba261f6ea","God Is Good",-,-,5,0,0
+"G4-Q009","G4","5d419226-2508-41de-89a8-42fdb4fb3fd3","Who You Say I Am",1,-,1,3,0
+"G4-Q009","G4","21358b75-ff2c-4df2-b662-b70c67783131","When I Say Your Name",2,-,2,0,0
+"G4-Q009","G4","4a06ee23-ba3b-44bf-9bcb-3d5e220a7da8","Rest On Us",3,-,-,0,0
+"G4-Q009","G4","83ce0b16-0886-409f-8326-996eaa50eab1","Holy, Holy, Holy (Hymn)",4,-,7,0,-3
+"G4-Q009","G4","35a7ec1a-897d-49c1-a3fe-ee996139287d","Won't Stop Now",5,-,-,0,0
+"G4-Q009","G4","860403f4-c7de-42c8-a50f-92631d958ad1","I’ll Go",6,-,3,0,3
+"G4-Q009","G4","64230296-e971-4afe-8ae2-6eb7b3a04587","Safe",-,-,4,0,0
+"G4-Q009","G4","219f0fe8-d7fe-4de0-844f-5ce22524b5f2","This Is Why",-,-,5,0,0
+"G4-Q010","G4","e7e27cca-227f-4907-8ed4-9396127bbedc","Gratitude",1,-,-,3,0
+"G4-Q010","G4","5e6bd968-85cb-4117-aed0-abc20d3f7aa7","A THOUSAND HALLELUJAHS",2,-,3,0,-1
+"G4-Q010","G4","141570cd-bff3-41ad-bca1-477d70549133","Author of My Life",3,-,-,0,0
+"G4-Q010","G4","fdabd847-e2f0-4f79-a637-eeac2165f5f3","Ngợi Ca Danh Cao Giê-su",4,-,8,0,-4
+"G4-Q010","G4","6dfff256-a866-4ccc-b9c2-96cc0492eb61","Here With Me",5,-,-,0,0
+"G4-Q010","G4","f60d3b21-17a7-40ee-96b7-56291938bb2f","Lord Of All",8,-,1,0,7
+"G4-Q010","G4","a52477e9-0fce-4888-8e41-4275b8c04e96","This Is The Kingdom",-,-,2,0,0
+"G4-Q010","G4","0ac708c4-a8a8-4d99-be5e-a1b932f32856","So Close",-,-,4,0,0
+"G4-Q010","G4","38f62657-1387-4de4-b3b8-5f3aa6444e26","Living Hope (Đấng Sống Muôn Đời)",-,-,5,0,0
+"G4-Q011","G4","8509e035-f68a-4411-96fa-23a8907da3c1","Radical Love",1,-,1,0,0
+"G4-Q011","G4","f60d3b21-17a7-40ee-96b7-56291938bb2f","Lord Of All",2,-,2,0,0
+"G4-Q011","G4","1463f293-6c8a-4ade-bfec-3ea0afc8ad98","Build My Life",3,-,3,0,0
+"G4-Q011","G4","aa793ef0-83ae-42d1-9b1a-b5e93535da1d","Have All Of Me",4,-,4,0,0
+"G4-Q011","G4","e827e4f4-94cf-43a6-926b-feba42d9fcaf","I Surrender",5,-,5,3,0
+"G4-Q012","G4","8509e035-f68a-4411-96fa-23a8907da3c1","Radical Love",1,-,5,0,-4
+"G4-Q012","G4","03df92ed-47d0-4162-98db-a2d04c00ac4f","Nothing But The Blood",2,-,1,3,1
+"G4-Q012","G4","e3516fa3-601d-41f8-a600-3e126c642bae","Worthy",3,-,3,0,0
+"G4-Q012","G4","38f62657-1387-4de4-b3b8-5f3aa6444e26","Living Hope (Đấng Sống Muôn Đời)",4,-,2,0,2
+"G4-Q012","G4","fdabd847-e2f0-4f79-a637-eeac2165f5f3","Ngợi Ca Danh Cao Giê-su",5,-,4,0,1
