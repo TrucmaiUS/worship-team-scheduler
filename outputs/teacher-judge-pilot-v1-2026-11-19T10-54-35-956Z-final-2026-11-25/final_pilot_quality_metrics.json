@@ -1,0 +1,181 @@
+{
+  "schemaVersion": "pilot-final-quality-metrics-v1",
+  "denominator": 50,
+  "humanAuditDistribution": {
+    "accept": 43,
+    "invalid": 2,
+    "uncertain": 1,
+    "reject": 4
+  },
+  "judgeScoreDistribution": {
+    "3": 36,
+    "invalid": 2,
+    "2": 8,
+    "1": 4
+  },
+  "binaryAgreement": {
+    "included": 47,
+    "excludedUncertain": [
+      "TP018"
+    ],
+    "excludedInvalid": [
+      "TP012",
+      "TP040"
+    ],
+    "TP": 43,
+    "FP": 0,
+    "FN": 0,
+    "TN": 4,
+    "agreement": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "ordinalMetrics": {
+    "QWK": null,
+    "MAE": null,
+    "reason": "No human ordinal grades were collected; accept/reject cannot be substituted for grades 0-3."
+  },
+  "evidenceContext": {
+    "allRowsTrue": 45,
+    "allRowsFalse": 4,
+    "notApplicable": 1,
+    "validJudgePositivesSupported": 44,
+    "validJudgePositiveDenominator": 44,
+    "acceptedCandidatesSupported": 43,
+    "acceptedCandidateDenominator": 43,
+    "TP040ExcludedFromEvidenceRate": true
+  },
+  "theologicalConsistency": {
+    "humanMarkedTrue": 50,
+    "denominator": 50
+  },
+  "judgeValidity": {
+    "valid": 48,
+    "invalid": 2,
+    "invalidIds": [
+      "TP012",
+      "TP040"
+    ]
+  },
+  "leakage": {
+    "passed": 50,
+    "human_review": 0,
+    "rejected": 0,
+    "TP043AdjudicationDate": "2026-11-25",
+    "TP043Authority": "Final Human decision by user"
+  },
+  "candidateEligibility": {
+    "reviewedPositiveCandidates": 43,
+    "candidateIds": [
+      "TP001",
+      "TP002",
+      "TP003",
+      "TP004",
+      "TP005",
+      "TP006",
+      "TP007",
+      "TP008",
+      "TP009",
+      "TP010",
+      "TP011",
+      "TP013",
+      "TP014",
+      "TP015",
+      "TP016",
+      "TP017",
+      "TP019",
+      "TP020",
+      "TP022",
+      "TP023",
+      "TP024",
+      "TP025",
+      "TP026",
+      "TP027",
+      "TP028",
+      "TP029",
+      "TP030",
+      "TP031",
+      "TP032",
+      "TP033",
+      "TP034",
+      "TP035",
+      "TP036",
+      "TP037",
+      "TP038",
+      "TP039",
+      "TP041",
+      "TP042",
+      "TP043",
+      "TP045",
+      "TP046",
+      "TP048",
+      "TP049"
+    ],
+    "notPositiveCandidateIds": [
+      "TP012",
+      "TP018",
+      "TP021",
+      "TP040",
+      "TP044",
+      "TP047",
+      "TP050"
+    ],
+    "trainingDatasetMaterialized": false,
+    "trainingAuthorizedRecords": 0,
+    "hardNegativesCreated": 0,
+    "teacherOrdinalLabelsAvailable": false
+  },
+  "byTopic": {
+    "T01": {
+      "accept": 5
+    },
+    "T02": {
+      "accept": 5
+    },
+    "T03": {
+      "accept": 4,
+      "invalid": 1
+    },
+    "T04": {
+      "accept": 4,
+      "uncertain": 1
+    },
+    "T05": {
+      "reject": 1,
+      "accept": 4
+    },
+    "T06": {
+      "accept": 5
+    },
+    "T07": {
+      "accept": 5
+    },
+    "T08": {
+      "accept": 4,
+      "invalid": 1
+    },
+    "T09": {
+      "accept": 4,
+      "reject": 1
+    },
+    "T10": {
+      "accept": 3,
+      "reject": 2
+    }
+  },
+  "languageDistribution": {
+    "vi": 30,
+    "en": 20
+  },
+  "sourceSongs": 44,
+  "expansionReadiness": {
+    "decision": "NO-GO_FOR_EXECUTION_NOW",
+    "pilotHumanAndLeakageAuditClosed": true,
+    "blockers": [
+      "Automatic leakage validator does not implement the adjudicated intent/mapping criteria; semantic stage was skipped.",
+      "Pilot manifest records no frozen external evaluation query set; established protocol requires it before real synthetic generation. Verify current existence and freeze an exclusion manifest before expansion.",
+      "Expansion acceptance rules, sampling allocation, failure budget and handling of generator-only Teacher versus older dual-label consensus protocol are not frozen for the 240-query run."
+    ]
+  }
+}

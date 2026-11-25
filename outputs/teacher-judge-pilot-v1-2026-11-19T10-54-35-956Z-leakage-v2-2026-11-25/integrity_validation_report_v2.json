@@ -1,0 +1,212 @@
+{
+  "status": "PASS_WITH_PREEXISTING_NOTES",
+  "scope": "Leakage status and leakage reason fields only; original pilot buckets remain historical",
+  "sourceWorkbookSha256BeforeAndAfter": "a9fb08a69efc435790dab0510758ca848973672aa8262c1cacb35524452b2818",
+  "newWorkbookSha256": "314e52419eb38dcdcb985cd76e2464f926c010b561a07b58deb184e125a077dd",
+  "sourceWorkbookUnchanged": true,
+  "originalPilotLeakageAuditUnchanged": true,
+  "recordsPerSheetAndAudit": 50,
+  "changedRecords": 9,
+  "changedWorkbookCells": 27,
+  "unexpectedCellChanges": [],
+  "leakageStatusCounts": {
+    "passed": 49,
+    "human_review": 1
+  },
+  "TP043": "human_review",
+  "reviewRawAndAuditLeakageConsistency": true,
+  "humanDecisionsUnchanged": {
+    "accept": 43,
+    "reject": 4,
+    "uncertain": 1,
+    "invalid": 2
+  },
+  "judgeScoresEvidenceReasoningQueriesLyricsAndHumanFieldsUnchanged": true,
+  "nativeWorkbookPartsUnchangedExceptTwoWorksheetXmlFiles": true,
+  "stylesFormulasValidationTablesFreezePanesPreserved": true,
+  "modelCalls": 0,
+  "validatorImplementationChanged": false,
+  "preexistingTopicMismatchesPreserved": [
+    {
+      "queryId": "TP021",
+      "reviewTopic": "T04",
+      "rawTopic": "T05"
+    }
+  ],
+  "notes": [
+    "TP018 original leakage status was rejected, not human_review.",
+    "TP018 Human decision remains uncertain and pilot bucket remains rejected_validation; only leakage has been cleared.",
+    "Raw Data human audit columns remain as in the source workbook; Human decisions in Review were not copied or overwritten.",
+    "TP043 remains pending adjudication. No training eligibility was granted."
+  ],
+  "changes": [
+    {
+      "sheet": "Review",
+      "cell": "M13",
+      "old": "human_review",
+      "new": "passed"
+    },
+    {
+      "sheet": "Review",
+      "cell": "M17",
+      "old": "human_review",
+      "new": "passed"
+    },
+    {
+      "sheet": "Review",
+      "cell": "M30",
+      "old": "rejected",
+      "new": "passed"
+    },
+    {
+      "sheet": "Review",
+      "cell": "M53",
+      "old": "human_review",
+      "new": "passed"
+    },
+    {
+      "sheet": "Review",
+      "cell": "M54",
+      "old": "human_review",
+      "new": "passed"
+    },
+    {
+      "sheet": "Review",
+      "cell": "M56",
+      "old": "human_review",
+      "new": "passed"
+    },
+    {
+      "sheet": "Review",
+      "cell": "M57",
+      "old": "human_review",
+      "new": "passed"
+    },
+    {
+      "sheet": "Review",
+      "cell": "M58",
+      "old": "human_review",
+      "new": "passed"
+    },
+    {
+      "sheet": "Review",
+      "cell": "M62",
+      "old": "human_review",
+      "new": "passed"
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "W5",
+      "old": "human_review",
+      "new": "passed"
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "X5",
+      "old": "held_out_vocabulary_requires_human_review",
+      "new": null
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "W9",
+      "old": "human_review",
+      "new": "passed"
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "X9",
+      "old": "held_out_vocabulary_requires_human_review",
+      "new": null
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "W22",
+      "old": "rejected",
+      "new": "passed"
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "X22",
+      "old": "substring_match",
+      "new": null
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "W45",
+      "old": "human_review",
+      "new": "passed"
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "X45",
+      "old": "held_out_vocabulary_requires_human_review",
+      "new": null
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "W46",
+      "old": "human_review",
+      "new": "passed"
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "X46",
+      "old": "held_out_vocabulary_requires_human_review",
+      "new": null
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "W48",
+      "old": "human_review",
+      "new": "passed"
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "X48",
+      "old": "held_out_vocabulary_requires_human_review",
+      "new": null
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "W49",
+      "old": "human_review",
+      "new": "passed"
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "X49",
+      "old": "held_out_vocabulary_requires_human_review",
+      "new": null
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "W50",
+      "old": "human_review",
+      "new": "passed"
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "X50",
+      "old": "held_out_vocabulary_requires_human_review",
+      "new": null
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "W54",
+      "old": "human_review",
+      "new": "passed"
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "X54",
+      "old": "held_out_vocabulary_requires_human_review",
+      "new": null
+    }
+  ],
+  "artifactSha256": {
+    "leakage_audit_v2.json": "9383a520b8a241fb456eab5b4fdf76eda06f1bab1158245411a899168923363a",
+    "leakage_change_log_v2.csv": "188b6f9456b30063566b52eceb3953e79e9afb681b21812f63c83ca5b4585d0b",
+    "leakage_change_log_v2.json": "5f06a4d6fa6fa186d6fecd07f121a9c9a7926821963ce11effa7dfb338b86ec1",
+    "teacher_judge_human_audit_leakage_v2.xlsx": "314e52419eb38dcdcb985cd76e2464f926c010b561a07b58deb184e125a077dd"
+  }
+}

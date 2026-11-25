@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "sourceWorkbook": "D:\\WORSHIP TEAM WEBSITE\\outputs\\teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-leakage-v2-2026-11-25\\teacher_judge_human_audit_leakage_v2.xlsx",
+  "sourceWorkbookSha256": "41ab69fbda69598378ce6576c163805a7947c02fb4abf0ad92b13419156d685c",
+  "outputWorkbook": "D:\\WORSHIP TEAM WEBSITE\\outputs\\teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-final-2026-11-25\\teacher_judge_human_audit_final.xlsx",
+  "outputWorkbookSha256": "4950a325c4e02396a1b45d77c587fe37718c5be57513720dc7693f2e05be5b47",
+  "sourceV2AndOriginalPilotPreserved": true,
+  "originalPilotHumanReferenceFrozenJudgeAndValidatorHashesUnchanged": true,
+  "protectedInputHashes": {
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\teacher_judge_pilot_runs\\teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z\\execution_log.jsonl": "0bdf277ebc5220b95c195b1b4b087fa2b17110aba8a69d15e05e179ba8f8853a",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\teacher_judge_pilot_runs\\teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z\\gemini_teacher_raw.json": "1d59445bcbc5b3cffc11ced1cab3a6b53236608a242ddb783b974f2b704b9084",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\teacher_judge_pilot_runs\\teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z\\generation_validation.json": "e2fb0c3c202fb3891d1c27d28cdd1dfd582153f383da1a27c25fa377f63994c3",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\teacher_judge_pilot_runs\\teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z\\human_audit.csv": "2f01199421771c4aab09cb9fa87afa093f5b790a4e9fac8c2a562f171803c322",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\teacher_judge_pilot_runs\\teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z\\model_configs.json": "2ed046f39b02075a3baa2937a3f7f4d2d121727818e995913202027a7acccad1",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\teacher_judge_pilot_runs\\teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z\\pilot_metrics.json": "970cc021dd24ff6430f84977131ea3b866e8d1d0aeef6a86f9111ff3019ef480",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\teacher_judge_pilot_runs\\teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z\\pilot_pairs.jsonl": "bbae15430e4caa13d1dca7f4df85142b5049b313259b8c631cc91516ecfbb95d",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\teacher_judge_pilot_runs\\teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z\\qwen_judge_raw.json": "8f4b1d06550567e1a1b746f8a2208a93d48fd8350fc6bfbfce2b3b44488091b3",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\teacher_judge_pilot_runs\\teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z\\run_manifest.json": "04f39a6e89f0c731acc8c4d3b70fde48bc291313c0da4a57cb16ea2d391ad602",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\teacher_judge_pilot_runs\\teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z\\source_manifest.json": "710093638226902f183d06c4ef8662b409e44f436e010bdd4cde23f3f41af4db",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\teacher_judge_pilot_runs\\teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z\\teacher_judge_pilot_report.md": "97092c48f7def2814729a63be97339d00100adc131f89e5982997a0ced65abbd",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\human_reference\\difficult_distinction_review_v1.csv": "13ac879d40c91bc3f1c79faee87083e3c39a908b0c033dd0d49707775602d452",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\human_reference\\difficult_distinction_review_v1.xlsx": "a1ec8afca04814f7ef40162add3fb07ef344fcdcfc9b5bfe562cbc4237aa721e",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\human_reference\\human_reference_v1.csv": "3d9c2bd99c5ed96ea91207789e1249d2ae3ff82a1e72117ffed907cb28761d04",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\human_reference\\human_reference_v2.csv": "f8b34af1a98781053f2a77fd09f0b7a62e0c36b7f06d441a9295276c40d34d0e",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\human_reference\\human_reference_v2_manifest.json": "87c3833a069cf2d7a012eedb1e1797ab427ff0aeb89308053d3cce15e5ef5328",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\human_reference\\judge_selection_reference_v2.json": "b727ad449f440ba2a8d9d98aee300a522e14874f874b6283c9ab943574de6183",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\human_reference\\query_manifest_v2.csv": "152450cd343d86c572c10f261b8ef00b16f14b599c44557b009f88aa9aa45c7f",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\human_reference\\reviewer_manifest_v1.json": "5036eec347b7a7d6351816c91510b81cd1ceb68058b89ad4a073efb17b63bace",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\human_reference\\validation_report_v1.json": "07d553a5c97312e21bfbf32e175a701e0e03fbfe37ad26d649b74b635c4c56d9",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\human_reference\\validation_report_v2.json": "90acbc28450dfb3141c6f0f78330aaeae860e3e7e3c2c8f0ae5c952f6c5e0900",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\human_reference\\source_annotations\\human_adjudication_21_pairs_v1.xlsx": "b4d15dccb5295939561c8a644da8cbc4b39db9553f0bc6caf4e3fd7eabc64f55",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\human_reference\\source_annotations\\reviewer_1.xlsx": "34ae206dd721e417b4af9b6d7d7e790989b2fac5d70168e6bfd36a085575ecda",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\human_reference\\source_annotations\\reviewer_2.xlsx": "8568f928b27c53175d721bd1d7336d169c837b66beaec1ef22e6ce9bde34550a",
+    "D:\\WORSHIP TEAM WEBSITE\\benchmark\\distillation\\judge_selection_runs\\judge-selection-v5-2026-11-18T04-26-20-960Z\\frozen_judge_config.json": "c99222b93a1864c09f293137b2402bda859d8d47e6d37f56f0a12c55eed64641",
+    "D:\\WORSHIP TEAM WEBSITE\\lib\\research\\e5-distillation\\leakage.ts": "ada7adb6f3ff8f0b0109ec07d8d0162017d61a63f30d779d6e146e478f560480",
+    "D:\\WORSHIP TEAM WEBSITE\\lib\\research\\e5-distillation\\held-out-intent.ts": "567d050af28525c91fab8448e04f76e459c10a11ccead6fcb647f9600fb37798",
+    "D:\\WORSHIP TEAM WEBSITE\\scripts\\run_teacher_judge_pilot.ts": "6a9c1f4c6d9e90c0a2a2e006b3a9f021cedb20a01b10615baa343b7dd9ec6cd4",
+    "D:\\WORSHIP TEAM WEBSITE\\outputs\\teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z\\teacher_judge_human_audit.xlsx": "a9fb08a69efc435790dab0510758ca848973672aa8262c1cacb35524452b2818"
+  },
+  "recordsInReviewRawAndAudit": 50,
+  "leakageConsistency": true,
+  "allLeakagePassed": true,
+  "TP021Metadata": {
+    "A33": "TP021",
+    "B33": "uncertain_review",
+    "C33": "T05",
+    "alreadyCorrectInInput": true
+  },
+  "TP043": {
+    "old": "human_review",
+    "new": "passed",
+    "adjudicationDate": "2026-11-25",
+    "method": "human_adjudication"
+  },
+  "priorNineReclassificationsUnchanged": true,
+  "humanDecisionsUnchanged": {
+    "accept": 43,
+    "invalid": 2,
+    "uncertain": 1,
+    "reject": 4
+  },
+  "judgeScoreEvidenceReasoningQueryLyricsEqualOriginalPilot": true,
+  "TP012AndTP040StillInvalid": true,
+  "TP018StillRejectedValidationAndHumanUncertain": true,
+  "changedCellsOnly": [
+    {
+      "sheet": "Review",
+      "cell": "M55",
+      "before": "human_review",
+      "after": "passed"
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "W47",
+      "before": "human_review",
+      "after": "passed"
+    },
+    {
+      "sheet": "Raw Data",
+      "cell": "X47",
+      "before": "held_out_vocabulary_requires_human_review",
+      "after": null
+    }
+  ],
+  "unexpectedCellChanges": 0,
+  "stylesFormulasValidationsTablesFreezePanesAndOtherNativePartsPreserved": true,
+  "modifiedZipParts": [
+    "xl/worksheets/sheet1.xml",
+    "xl/worksheets/sheet2.xml"
+  ],
+  "teacherCalls": 0,
+  "judgeCalls": 0,
+  "trainingStarted": false,
+  "queriesGenerated": 0,
+  "hardNegativesCreated": 0,
+  "scopeNote": "Human quality and leakage adjudication closed. Original pilot buckets and raw trainingEligible=false flags remain historical and unchanged.",
+  "visualVerification": {
+    "Review": "passed",
+    "Raw Data": "passed",
+    "formulaErrorScan": "0 matches",
+    "finalWorkbookReopened": true
+  }
+}

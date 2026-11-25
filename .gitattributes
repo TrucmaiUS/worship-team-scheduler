@@ -1,4 +1,4 @@
 benchmark/distillation/human_reference/*.csv -text
 
 # Research manifests hash exact bytes; preserve exported artifacts on checkout.
-/outputs/** -text
+/outputs/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

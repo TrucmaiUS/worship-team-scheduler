@@ -1,0 +1,149 @@
+{
+  "schemaVersion": "leakage-change-log-v2",
+  "changes": [
+    {
+      "queryId": "TP001",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: Spirit restoration and empowerment are permitted T01 concepts; vocabulary alone does not establish held-out intent or protected mapping leakage.",
+      "originalReasons": [
+        "held_out_vocabulary_requires_human_review"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M13",
+        "Raw Data!W5",
+        "Raw Data!X5"
+      ]
+    },
+    {
+      "queryId": "TP005",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: inviting the Spirit to fill and empower during prayer is permitted T01 content; related vocabulary and same-song relevance do not establish protected-pair equivalence.",
+      "originalReasons": [
+        "held_out_vocabulary_requires_human_review"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M17",
+        "Raw Data!W9",
+        "Raw Data!X9"
+      ]
+    },
+    {
+      "queryId": "TP041",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: comfort, restoration and renewed strength are permitted T09 Helper concepts, without identified specialized T11-T16 intent.",
+      "originalReasons": [
+        "held_out_vocabulary_requires_human_review"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M53",
+        "Raw Data!W45",
+        "Raw Data!X45"
+      ]
+    },
+    {
+      "queryId": "TP042",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: comfort and support after failure are permitted T09 Helper concepts; the original flag was vocabulary-only.",
+      "originalReasons": [
+        "held_out_vocabulary_requires_human_review"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M54",
+        "Raw Data!W46",
+        "Raw Data!X46"
+      ]
+    },
+    {
+      "queryId": "TP044",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: presence and support in difficulty do not establish held-out intent; the Human relevance rejection remains unchanged.",
+      "originalReasons": [
+        "held_out_vocabulary_requires_human_review"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M56",
+        "Raw Data!W48",
+        "Raw Data!X48"
+      ]
+    },
+    {
+      "queryId": "TP045",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: the generated query targets empowerment and renewed strength, not a protected witnessing or discipleship relationship.",
+      "originalReasons": [
+        "held_out_vocabulary_requires_human_review"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M57",
+        "Raw Data!W49",
+        "Raw Data!X49"
+      ]
+    },
+    {
+      "queryId": "TP046",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: remembrance of teaching is permitted T10 content; general guidance language alone does not establish T12 intent.",
+      "originalReasons": [
+        "held_out_vocabulary_requires_human_review"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M58",
+        "Raw Data!W50",
+        "Raw Data!X50"
+      ]
+    },
+    {
+      "queryId": "TP050",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: understanding and alignment with Gods will do not establish the specialized all-truth intent; Human relevance rejection remains unchanged.",
+      "originalReasons": [
+        "held_out_vocabulary_requires_human_review"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M62",
+        "Raw Data!W54",
+        "Raw Data!X54"
+      ]
+    },
+    {
+      "queryId": "TP018",
+      "oldStatus": "rejected",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: Faithful (G4-Q002) matched inside faithfulness; this is a character-substring false positive, not title/entity intent, and the protected target song differs.",
+      "originalReasons": [
+        "substring_match"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M30",
+        "Raw Data!W22",
+        "Raw Data!X22"
+      ]
+    }
+  ]
+}

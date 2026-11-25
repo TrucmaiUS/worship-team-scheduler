@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "pilot-final-artifact-manifest-v1",
+  "adjudicationDate": "2026-11-25",
+  "timezone": "Asia/Bangkok",
+  "createdAtUtc": "2026-11-25T10:48:35.903215+00:00",
+  "status": "human_and_leakage_checkpoint_closed_expansion_not_executed",
+  "files": [
+    {
+      "name": "change_log_final.json",
+      "bytes": 7575,
+      "sha256": "cd1dd85cd30a5d5e72a928ae06bfa2647c43eda4e7e98bf605da0f1b0bfb710d"
+    },
+    {
+      "name": "final_pilot_quality_assessment.md",
+      "bytes": 16778,
+      "sha256": "27eed832254bd657413d075500375ae3afe1121e42986df150a0ec6a82f2a1d6"
+    },
+    {
+      "name": "final_pilot_quality_metrics.json",
+      "bytes": 3901,
+      "sha256": "54cf56db1d65ec32ef59e2e8f7dde8b5c78478afef794168d17454e851fe2488"
+    },
+    {
+      "name": "integrity_verification_final.json",
+      "bytes": 8074,
+      "sha256": "05eae912e55c83f02fdc69e8b956ccf08e1d331143e26dd4f3297863ce4f5f6d"
+    },
+    {
+      "name": "leakage_audit_final.json",
+      "bytes": 40544,
+      "sha256": "67b51caa82d07230018e0bdfc4ad7a5d38b4f473c9b7b39db72ddcc27938ab56"
+    },
+    {
+      "name": "teacher_judge_human_audit_final.xlsx",
+      "bytes": 40706,
+      "sha256": "4950a325c4e02396a1b45d77c587fe37718c5be57513720dc7693f2e05be5b47"
+    }
+  ],
+  "sourceWorkbook": {
+    "path": "D:\\WORSHIP TEAM WEBSITE\\outputs\\teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-leakage-v2-2026-11-25\\teacher_judge_human_audit_leakage_v2.xlsx",
+    "sha256": "41ab69fbda69598378ce6576c163805a7947c02fb4abf0ad92b13419156d685c"
+  }
+}

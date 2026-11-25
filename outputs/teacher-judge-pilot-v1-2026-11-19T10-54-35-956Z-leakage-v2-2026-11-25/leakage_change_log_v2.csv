@@ -1,0 +1,10 @@
+﻿queryId,oldStatus,newStatus,reason,changedAtUtc
+TP001,human_review,passed,User-approved reassessment: Spirit restoration and empowerment are permitted T01 concepts; vocabulary alone does not establish held-out intent or protected mapping leakage.,2026-11-25T10:20:53.267Z
+TP005,human_review,passed,User-approved reassessment: inviting the Spirit to fill and empower during prayer is permitted T01 content; related vocabulary and same-song relevance do not establish protected-pair equivalence.,2026-11-25T10:20:53.267Z
+TP041,human_review,passed,"User-approved reassessment: comfort, restoration and renewed strength are permitted T09 Helper concepts, without identified specialized T11-T16 intent.",2026-11-25T10:20:53.267Z
+TP042,human_review,passed,User-approved reassessment: comfort and support after failure are permitted T09 Helper concepts; the original flag was vocabulary-only.,2026-11-25T10:20:53.267Z
+TP044,human_review,passed,User-approved reassessment: presence and support in difficulty do not establish held-out intent; the Human relevance rejection remains unchanged.,2026-11-25T10:20:53.267Z
+TP045,human_review,passed,"User-approved reassessment: the generated query targets empowerment and renewed strength, not a protected witnessing or discipleship relationship.",2026-11-25T10:20:53.267Z
+TP046,human_review,passed,User-approved reassessment: remembrance of teaching is permitted T10 content; general guidance language alone does not establish T12 intent.,2026-11-25T10:20:53.267Z
+TP050,human_review,passed,User-approved reassessment: understanding and alignment with Gods will do not establish the specialized all-truth intent; Human relevance rejection remains unchanged.,2026-11-25T10:20:53.267Z
+TP018,rejected,passed,"User-approved reassessment: Faithful (G4-Q002) matched inside faithfulness; this is a character-substring false positive, not title/entity intent, and the protected target song differs.",2026-11-25T10:20:53.267Z

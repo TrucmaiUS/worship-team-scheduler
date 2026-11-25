@@ -1,0 +1,205 @@
+{
+  "schemaVersion": "pilot-final-change-log-v3",
+  "sourceWorkbook": {
+    "path": "D:/WORSHIP TEAM WEBSITE/outputs/teacher-judge-pilot-v1-2026-11-19T10-54-35-956Z-leakage-v2-2026-11-25/teacher_judge_human_audit_leakage_v2.xlsx",
+    "sha256": "41ab69fbda69598378ce6576c163805a7947c02fb4abf0ad92b13419156d685c"
+  },
+  "changes": [
+    {
+      "queryId": "TP043",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "decisionMethod": "human_adjudication",
+      "adjudicationDate": "2026-11-25",
+      "timezone": "Asia/Bangkok",
+      "authority": "Explicit final decision by user in this conversation",
+      "reason": "Human Adjudication ngày 25/11/2026: TP043 không phải data leakage. T11 bảo vệ specialized intent và query-song supervision, không cách ly toàn bộ song/section. Intent TP043 tập trung vào sự đồng hành và ban năng lực của Chúa Thánh Linh (T09), không tái hiện đầy đủ specialized intent T11 làm chứng cho Đấng Christ.",
+      "changedCells": [
+        "Review!M55",
+        "Raw Data!W47",
+        "Raw Data!X47"
+      ]
+    }
+  ],
+  "cumulativeLeakageChanges": [
+    {
+      "queryId": "TP001",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: Spirit restoration and empowerment are permitted T01 concepts; vocabulary alone does not establish held-out intent or protected mapping leakage.",
+      "originalReasons": [
+        "held_out_vocabulary_requires_human_review"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M13",
+        "Raw Data!W5",
+        "Raw Data!X5"
+      ]
+    },
+    {
+      "queryId": "TP005",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: inviting the Spirit to fill and empower during prayer is permitted T01 content; related vocabulary and same-song relevance do not establish protected-pair equivalence.",
+      "originalReasons": [
+        "held_out_vocabulary_requires_human_review"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M17",
+        "Raw Data!W9",
+        "Raw Data!X9"
+      ]
+    },
+    {
+      "queryId": "TP018",
+      "oldStatus": "rejected",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: Faithful (G4-Q002) matched inside faithfulness; this is a character-substring false positive, not title/entity intent, and the protected target song differs.",
+      "originalReasons": [
+        "substring_match"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M30",
+        "Raw Data!W22",
+        "Raw Data!X22"
+      ]
+    },
+    {
+      "queryId": "TP041",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: comfort, restoration and renewed strength are permitted T09 Helper concepts, without identified specialized T11-T16 intent.",
+      "originalReasons": [
+        "held_out_vocabulary_requires_human_review"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M53",
+        "Raw Data!W45",
+        "Raw Data!X45"
+      ]
+    },
+    {
+      "queryId": "TP042",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: comfort and support after failure are permitted T09 Helper concepts; the original flag was vocabulary-only.",
+      "originalReasons": [
+        "held_out_vocabulary_requires_human_review"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M54",
+        "Raw Data!W46",
+        "Raw Data!X46"
+      ]
+    },
+    {
+      "queryId": "TP043",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "decisionMethod": "human_adjudication",
+      "adjudicationDate": "2026-11-25",
+      "timezone": "Asia/Bangkok",
+      "authority": "Explicit final decision by user in this conversation",
+      "reason": "Human Adjudication ngày 25/11/2026: TP043 không phải data leakage. T11 bảo vệ specialized intent và query-song supervision, không cách ly toàn bộ song/section. Intent TP043 tập trung vào sự đồng hành và ban năng lực của Chúa Thánh Linh (T09), không tái hiện đầy đủ specialized intent T11 làm chứng cho Đấng Christ.",
+      "changedCells": [
+        "Review!M55",
+        "Raw Data!W47",
+        "Raw Data!X47"
+      ]
+    },
+    {
+      "queryId": "TP044",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: presence and support in difficulty do not establish held-out intent; the Human relevance rejection remains unchanged.",
+      "originalReasons": [
+        "held_out_vocabulary_requires_human_review"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M56",
+        "Raw Data!W48",
+        "Raw Data!X48"
+      ]
+    },
+    {
+      "queryId": "TP045",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: the generated query targets empowerment and renewed strength, not a protected witnessing or discipleship relationship.",
+      "originalReasons": [
+        "held_out_vocabulary_requires_human_review"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M57",
+        "Raw Data!W49",
+        "Raw Data!X49"
+      ]
+    },
+    {
+      "queryId": "TP046",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: remembrance of teaching is permitted T10 content; general guidance language alone does not establish T12 intent.",
+      "originalReasons": [
+        "held_out_vocabulary_requires_human_review"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M58",
+        "Raw Data!W50",
+        "Raw Data!X50"
+      ]
+    },
+    {
+      "queryId": "TP050",
+      "oldStatus": "human_review",
+      "newStatus": "passed",
+      "reason": "User-approved reassessment: understanding and alignment with Gods will do not establish the specialized all-truth intent; Human relevance rejection remains unchanged.",
+      "originalReasons": [
+        "held_out_vocabulary_requires_human_review"
+      ],
+      "changedAtUtc": "2026-11-25T10:20:53.267Z",
+      "authority": "Explicit user approval in this conversation",
+      "changedCells": [
+        "Review!M62",
+        "Raw Data!W54",
+        "Raw Data!X54"
+      ]
+    }
+  ],
+  "metadataVerification": {
+    "TP021": {
+      "cells": {
+        "A33": "TP021",
+        "B33": "uncertain_review",
+        "C33": "T05"
+      },
+      "sourceAlreadyCorrect": true,
+      "modified": false
+    }
+  },
+  "unchangedFields": [
+    "human_decisions",
+    "query_text",
+    "source_lyrics",
+    "judge_scores",
+    "evidence_quotes",
+    "reasoning",
+    "pilot_bucket"
+  ]
+}
