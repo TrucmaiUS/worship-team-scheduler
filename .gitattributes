@@ -1,1 +1,4 @@
 benchmark/distillation/human_reference/*.csv -text
+
+# Research manifests hash exact bytes; preserve exported artifacts on checkout.
+/outputs/** -text

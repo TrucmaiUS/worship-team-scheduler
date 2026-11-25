@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+node_modules/
 /.pnp
 .pnp.*
 .yarn/*
@@ -23,6 +24,11 @@
 # misc
 .DS_Store
 *.pem
+
+# Local authoring scratch files and generated workbook inspection output
+/.tmp/
+*.xlsx.inspect.ndjson
+~$*.xlsx
 
 # debug
 npm-debug.log*
